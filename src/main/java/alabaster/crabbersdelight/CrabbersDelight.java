@@ -1,10 +1,12 @@
 package alabaster.crabbersdelight;
 
+import alabaster.crabbersdelight.init.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -25,8 +27,7 @@ import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(CrabbersDelight.MODID)
-public class CrabbersDelight
-{
+public class CrabbersDelight {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "crabbersdelight";
     // Directly reference a slf4j logger
@@ -41,47 +42,46 @@ public class CrabbersDelight
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
 
-    public CrabbersDelight()
-    {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public CrabbersDelight() {
+        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        // Register the Deferred Register to the mod event bus so blocks get registered
-        BLOCKS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
-
-        // Register ourselves for server and other game events we are interested in
+        // BLOCKS.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
+    // Creative Mode Tab
+    public static final CreativeModeTab CREATIVE_TAB = new CreativeModeTab(CrabbersDelight.MODID)
     {
-        // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
-    }
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.RAWCRAB.get());
+        }
+    };
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+        // You can use SubscribeEvent and let the Event Bus discover methods to call
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        public void onServerStarting(ServerStartingEvent event) {
+            // Do something when the server starts
+            LOGGER.info("HELLO from server starting");
+        }
+
+        // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+        @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+        public static class ClientModEvents {
+            @SubscribeEvent
+            public static void onClientSetup(FMLClientSetupEvent event) {
+                // Some client setup code
+                LOGGER.info("HELLO FROM CLIENT SETUP");
+                LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            }
         }
     }
-}

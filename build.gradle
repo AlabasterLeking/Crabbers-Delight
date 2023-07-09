@@ -126,7 +126,7 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.0'
-    implementation fg.deobf("curse.maven:farmers-delight-398521:4525646")
+    //implementation fg.deobf("curse.maven:farmers-delight-398521:4525646")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
