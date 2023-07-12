@@ -31,7 +31,7 @@ side="BOTH"
 
 [[dependencies.crabbersdelight]]
 modId = "farmersdelight"
-mandatory = false
+mandatory = true
 versionRange = "[1.2.1,)"
 ordering = "NONE"
 side = "BOTH"

@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight;
 
 import alabaster.crabbersdelight.init.ModItems;
+import alabaster.crabbersdelight.init.ModBlocks;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
@@ -49,6 +50,7 @@ public class CrabbersDelight {
 
         // BLOCKS.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+        ModBlocks.BLOCKS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
