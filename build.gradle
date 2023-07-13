@@ -117,7 +117,7 @@ sourceSets.main.resources {
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-    //implementation fg.deobf("curse.maven:fishermans-trap-883029:4618902")
+    implementation fg.deobf("curse.maven:fishermans_trap-883029:${fishermans_trap_version}")
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
