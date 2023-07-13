@@ -1,7 +1,5 @@
 # Crabbers-Delight
-
 <img src="https://raw.githubusercontent.com/AlabasterLeking/Crabbers-Delight/main/src/main/resources/crabbersdelightlogo4x.png" width="50%">
-
 Developed by AlabasterLeking
 
 Special thanks to vectorwing for creating Farmer's Delight
