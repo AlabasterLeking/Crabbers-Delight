@@ -1,6 +1,6 @@
 # Crabbers-Delight
 
-<img src="https://raw.githubusercontent.com/AlabasterLeking/Crabbers-Delight/main/src/main/resources/crabbersdelightlogofinal.png" width="50%">
+<img src="https://raw.githubusercontent.com/AlabasterLeking/Crabbers-Delight/main/src/main/resources/crabbersdelightlogo-final.png" width="50%">
 
 ## Overview
 **Crabber's Delight** is an addon for the popular food mod, **Farmer's Delight** and utilizes the **Fisherman's Trap** mod for a large of its core functions
