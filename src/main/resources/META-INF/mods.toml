@@ -6,14 +6,12 @@ license="MIT License"
 
 modId="crabbersdelight"
 
-version="${file.jarVersion}"
+version="1.0.0}"
 displayName="Crabber's Delight"
-logoFile="examplemod.png"
-credits="Thanks for this example mod goes to Java"
+logoFile="crabbersdelightlogo-final.png"
+credits="Thank you to vectorwing for creating Farmer's Delight!"
 authors="Alabaster Leking"
-description='''
-This is a long form description of the mod. You can write whatever you want here
-'''
+description='''A maritime addon for Farmer's Delight'''
 
 [[dependencies.crabbersdelight]]
 modId="forge"

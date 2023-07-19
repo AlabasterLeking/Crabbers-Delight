@@ -1,8 +1,8 @@
 {
-  "parent": "block/cube_bottom_top",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "top": "crabbersdelight:blocks/crab_crate_top",
-    "side": "crabbersdelight,:blocks/crab_crate_side",
-    "bottom": "crabbersdelight:blocks/crab_crate_top"
+    "bottom": "crabbersdelight:blocks/crab_barrel_bottom",
+    "side": "crabbersdelight:blocks/crab_barrel_side",
+    "top": "crabbersdelight:blocks/crab_barrel_top"
   }
 }

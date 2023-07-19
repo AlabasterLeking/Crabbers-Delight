@@ -5,6 +5,11 @@
   "item.crabbersdelight.cooked_crab": "Cooked Crab",
   "item.crabbersdelight.raw_shrimp": "Raw Shrimp",
   "item.crabbersdelight.cooked_shrimp": "Cooked Shrimp",
+  "item.crabbersdelight.clam": "Clam",
+  "item.crabbersdelight.raw_clam_meat": "Raw Clam",
+  "item.crabbersdelight.cooked_clam_meat": "Cooked Clam",
+  "item.crabbersdelight.pearl": "Pearl",
+  "item.crabbersdelight.kelp_shake": "Kelp Shake",
 
   "block.crabbersdelight.crab_barrel": "Crab Barrel"
 }

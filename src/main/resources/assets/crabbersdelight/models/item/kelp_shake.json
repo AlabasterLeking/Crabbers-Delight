@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crabbersdelight:items/raw_shrimp"
+    "layer0": "crabbersdelight:items/kelp_shake"
   }
 }
