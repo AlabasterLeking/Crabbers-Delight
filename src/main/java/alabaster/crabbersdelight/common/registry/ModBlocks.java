@@ -5,6 +5,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,7 +19,7 @@ public class ModBlocks {
 
     // Food Storage
     public static final RegistryObject<Block> CRAB_BARREL = register("crab_barrel",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)),
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0f, 3.0F).sound(SoundType.WOOD)),
                   new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier, Item.Properties properties) {
