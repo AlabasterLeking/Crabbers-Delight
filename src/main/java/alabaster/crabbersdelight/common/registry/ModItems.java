@@ -20,6 +20,4 @@ public class ModItems {
     public static final RegistryObject<Item> COOKED_CLAM_MEAT = ITEMS.register("cooked_clam_meat", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> PEARL = ITEMS.register("pearl", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
     public static final RegistryObject<Item> KELP_SHAKE = ITEMS.register("kelp_shake", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD)));
-
-    public static final RegistryObject<BlockItem> CRAB_BARREL = ITEMS.register("crab_barrel", () -> new BlockItem(ModBlocks.CRAB_BARREL.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 }
