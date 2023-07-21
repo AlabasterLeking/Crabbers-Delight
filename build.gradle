@@ -21,10 +21,6 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: "org.spongepowered.mixin"
 
-mixin {
-    add sourceSets.main, "nethersdelight.refmap.json"
-}
-
 version = "${mc_version}-${mod_version}"
 group = 'alabaster.crabbersdelight' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'CrabbersDelight'
@@ -37,12 +33,9 @@ minecraft {
     mappings channel: 'official', version: "${mc_version}"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
     runs {
         client {
             workingDirectory project.file('run')
-            arg '-mixin.config=crabbersdelight.mixins.json'
 
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
@@ -51,7 +44,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                nethersdelight {
+                crabbersdelight {
                     source sourceSets.main
                 }
             }
@@ -59,7 +52,6 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-            arg "-mixin.config=crabbersdelight.mixins.json"
 
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
@@ -83,7 +75,7 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'nethersdelight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'crabbersdelight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             environment 'target', 'fmluserdevdata'
 
@@ -116,8 +108,13 @@ sourceSets.main.resources {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
     implementation fg.deobf("curse.maven:fishermans_trap-883029:${fishermans_trap_version}")
+
+    //compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
+    //runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")
+
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
@@ -135,7 +132,6 @@ jar {
                 "Implementation-Version"  : "${version}",
                 "Implementation-Vendor"   : "alabasterleking",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs"            : "crabbersdelight.mixins.json"
         ])
     }
 }

@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "alabaster.crabbersdelight.common.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "crabbersdelight.refmap.json",
+  "mixins": [
+    "SoupItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
