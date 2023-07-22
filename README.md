@@ -8,6 +8,7 @@
 The mod adds a bunch of new dishes surrounding crabbing, including crabs, shrimp, clams, and a new creature called clawsters. All of these creatures can be caught in the fishermans trap and can be prepared into a variety of different food items.
 
 
+Discord: https://discord.gg/zWfH77sXKz
 
 Developed by AlabasterLeking
 
