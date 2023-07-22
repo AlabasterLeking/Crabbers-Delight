@@ -23,6 +23,7 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_CRAB = ITEMS.register("raw_crab", () -> new Item(foodItem(CDFoodValues.RAW_CRAB)));
     public static final RegistryObject<Item> COOKED_CRAB = ITEMS.register("cooked_crab", () -> new Item(foodItem(CDFoodValues.COOKED_CRAB)));
     public static final RegistryObject<Item> RAW_CLAWSTER = ITEMS.register("raw_clawster", () -> new Item(foodItem(CDFoodValues.RAW_CLAWSTER)));
+    public static final RegistryObject<Item> COOKED_CLAWSTER = ITEMS.register("cooked_clawster", () -> new Item(foodItem(CDFoodValues.COOKED_CLAWSTER)));
     public static final RegistryObject<Item> RAW_SHRIMP = ITEMS.register("raw_shrimp", () -> new Item(foodItem(CDFoodValues.RAW_SHRIMP)));
     public static final RegistryObject<Item> COOKED_SHRIMP = ITEMS.register("cooked_shrimp", () -> new Item(foodItem(CDFoodValues.COOKED_SHRIMP)));
     public static final RegistryObject<Item> CLAM = ITEMS.register("clam", () -> new Item(basicItem()));
