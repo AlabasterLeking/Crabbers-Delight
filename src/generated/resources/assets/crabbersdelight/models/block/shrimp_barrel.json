@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "crabbersdelight:block/barrel_bottom",
     "side": "crabbersdelight:block/barrel_side",
-    "top": "crabbersdelight:block/crab_barrel_top"
+    "top": "crabbersdelight:block/shrimp_barrel_top"
   }
 }

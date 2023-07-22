@@ -20,7 +20,19 @@ public class ModBlocks {
     // Food Storage
     public static final RegistryObject<Block> CRAB_BARREL = register("crab_barrel",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0f, 3.0F).sound(SoundType.WOOD)),
-                  new Item.Properties().tab(CrabbersDelight.TAB));
+            new Item.Properties().tab(CrabbersDelight.TAB));
+
+    public static final RegistryObject<Block> CLAM_BARREL = register("clam_barrel",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0f, 3.0F).sound(SoundType.WOOD)),
+            new Item.Properties().tab(CrabbersDelight.TAB));
+
+    public static final RegistryObject<Block> CLAWSTER_BARREL = register("clawster_barrel",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0f, 3.0F).sound(SoundType.WOOD)),
+            new Item.Properties().tab(CrabbersDelight.TAB));
+
+    public static final RegistryObject<Block> SHRIMP_BARREL = register("shrimp_barrel",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0f, 3.0F).sound(SoundType.WOOD)),
+            new Item.Properties().tab(CrabbersDelight.TAB));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier, Item.Properties properties) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);

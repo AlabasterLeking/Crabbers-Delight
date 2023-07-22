@@ -14,7 +14,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CrabbersDelight.MODID);
 
     public static Item.Properties basicItem() {
-        return foodItem(CDFoodValues.RAW_CRAB);
+        return new Item.Properties().tab(CrabbersDelight.TAB);
     }
     public static Item.Properties foodItem(FoodProperties food) {
         return new Item.Properties().food(food).tab(CrabbersDelight.TAB);

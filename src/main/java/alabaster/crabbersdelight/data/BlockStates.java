@@ -36,10 +36,13 @@ public class BlockStates extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         this.crateBlock(ModBlocks.CRAB_BARREL.get(), "crab");
+        this.crateBlock(ModBlocks.CLAM_BARREL.get(), "clam");
+        this.crateBlock(ModBlocks.CLAWSTER_BARREL.get(), "clawster");
+        this.crateBlock(ModBlocks.SHRIMP_BARREL.get(), "shrimp");
     }
 
     public void crateBlock(Block block, String cropName) {
         this.simpleBlock(block,
-                models().cubeBottomTop(blockName(block), resourceBlock(cropName + "_barrel_side"), resourceBlock(cropName + "_barrel_bottom"), resourceBlock(cropName + "_barrel_top")));
+                models().cubeBottomTop(blockName(block), resourceBlock("barrel_side"), resourceBlock("barrel_bottom"), resourceBlock(cropName + "_barrel_top")));
     }
 }
