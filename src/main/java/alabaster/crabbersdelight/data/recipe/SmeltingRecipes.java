@@ -4,7 +4,6 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
@@ -13,13 +12,14 @@ import alabaster.crabbersdelight.common.registry.ModItems;
 
 import java.util.function.Consumer;
 
-public class SmeltingRecipe {
+public class SmeltingRecipes {
 
     public static void register(Consumer<FinishedRecipe> consumer)
     {
-        //foodSmeltingRecipes("cooked_crab", ModItems.RAW_CRAB, ModItems.COOKED_CRAB.get(), 0.35F, consumer);
+
         foodSmeltingRecipes("cooked_shrimp", ModItems.RAW_SHRIMP.get(), ModItems.COOKED_SHRIMP.get(), 0.35F, consumer);
         foodSmeltingRecipes("cooked_clam_meat", ModItems.RAW_CLAM_MEAT.get(), ModItems.COOKED_CLAM_MEAT.get(), 0.35F, consumer);
+        foodSmeltingRecipes("cooked_crab", ModItems.RAW_CRAB.get(), ModItems.COOKED_CRAB.get(), 0.35F, consumer);
     }
 
     private static void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer)
