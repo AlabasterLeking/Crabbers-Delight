@@ -12,7 +12,10 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import alabaster.crabbersdelight.common.registry.ModBlocks;
 import alabaster.crabbersdelight.common.registry.ModItems;
+import net.minecraftforge.fml.common.Mod;
 import vectorwing.farmersdelight.common.registry.ModRecipeSerializers;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import java.util.function.Consumer;
 import java.util.stream.Stream;
@@ -22,7 +25,7 @@ public class CraftingRecipes {
         recipesBlocks(consumer);
         recipesMaterials(consumer);
         //recipesFoodstuffs(consumer);
-        //recipesCraftedMeals(consumer);
+        recipesCraftedMeals(consumer);
         SpecialRecipeBuilder.special(ModRecipeSerializers.FOOD_SERVING.get()).save(consumer, "food_serving");
     }
 
@@ -32,7 +35,7 @@ public class CraftingRecipes {
                 .pattern("###")
                 .pattern("###")
                 .define('#', ModItems.RAW_CRAB.get())
-                .unlockedBy("has_cabbage", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_CRAB.get()))
+                .unlockedBy("has_crab", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_CRAB.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(ModItems.CLAM_BARREL.get(), 1)
@@ -40,7 +43,7 @@ public class CraftingRecipes {
                 .pattern("###")
                 .pattern("###")
                 .define('#', ModItems.CLAM.get())
-                .unlockedBy("has_cabbage", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CLAM.get()))
+                .unlockedBy("has_clam", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CLAM.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(ModItems.CLAWSTER_BARREL.get(), 1)
@@ -48,7 +51,7 @@ public class CraftingRecipes {
                 .pattern("###")
                 .pattern("###")
                 .define('#', ModItems.RAW_CLAWSTER.get())
-                .unlockedBy("has_cabbage", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_CLAWSTER.get()))
+                .unlockedBy("has_clawster", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_CLAWSTER.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(ModItems.SHRIMP_BARREL.get(), 1)
@@ -56,10 +59,9 @@ public class CraftingRecipes {
                 .pattern("###")
                 .pattern("###")
                 .define('#', ModItems.RAW_SHRIMP.get())
-                .unlockedBy("has_cabbage", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_SHRIMP.get()))
+                .unlockedBy("has_shrimp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_SHRIMP.get()))
                 .save(consumer);
     }
-
 
     private static void recipesMaterials(Consumer<FinishedRecipe> consumer) {
         ShapelessRecipeBuilder.shapeless(ModItems.RAW_CRAB.get(), 9)
@@ -81,5 +83,21 @@ public class CraftingRecipes {
                 .requires(ModItems.SHRIMP_BARREL.get())
                 .unlockedBy("has_shrimp_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SHRIMP_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "shrimp_from_barrel"));
+    }
+
+    private static void recipesCraftedMeals(Consumer<FinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(ModItems.SHRIMP_SKEWER.get())
+                .requires(Items.STICK)
+                .requires(ModItems.COOKED_SHRIMP.get())
+                .requires(ModItems.COOKED_SHRIMP.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get())
+                .unlockedBy("has_cooked_shrimp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COOKED_SHRIMP.get()))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.FISH_STICK.get())
+                .requires(Items.STICK)
+                .requires(ForgeTags.COOKED_FISHES)
+                .unlockedBy("has_cooked_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COOKED_COD, Items.COOKED_SALMON, ModItems.COOKED_TROPICAL_FISH.get()))
+                .save(consumer);
     }
 }

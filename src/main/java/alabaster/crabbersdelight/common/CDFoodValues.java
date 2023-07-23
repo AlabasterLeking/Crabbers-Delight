@@ -36,8 +36,14 @@ public class CDFoodValues {
     public static final FoodProperties COOKED_TROPICAL_FISH = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.8f).meat().fast().build();
     public static final FoodProperties CRAB_LEGS = (new FoodProperties.Builder())
-            .nutrition(3).saturationMod(0.8f).meat().build();
-
+            .nutrition(3).saturationMod(0.6f).meat().build();
+    public static final FoodProperties SHRIMP_SKEWER = (new FoodProperties.Builder())
+            .nutrition(8).saturationMod(0.8f).build();
+    public static final FoodProperties SURF_AND_TURF = (new FoodProperties.Builder())
+            .nutrition(14).saturationMod(0.8f)
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), LONG_DURATION, 0), 1.0F).build();
+    public static final FoodProperties FISH_STICK = (new FoodProperties.Builder())
+            .nutrition(5).saturationMod(0.6f).build();
     public static final FoodProperties CRAB_CAKES = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.6f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), SHORT_DURATION, 0), 1.0F).build();

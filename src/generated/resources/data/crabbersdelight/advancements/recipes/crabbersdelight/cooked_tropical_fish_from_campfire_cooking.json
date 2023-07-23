@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_shrimp": {
+    "cooked_tropical_fish": {
       "conditions": {
         "items": [
           {
             "items": [
-              "crabbersdelight:raw_shrimp"
+              "minecraft:tropical_fish"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crabbersdelight:shrimp_barrel"
+        "recipe": "crabbersdelight:cooked_tropical_fish_from_campfire_cooking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_shrimp",
+      "cooked_tropical_fish",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crabbersdelight:shrimp_barrel"
+      "crabbersdelight:cooked_tropical_fish_from_campfire_cooking"
     ]
   }
 }

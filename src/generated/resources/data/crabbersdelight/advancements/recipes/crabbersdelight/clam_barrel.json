@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cabbage": {
+    "has_clam": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_cabbage",
+      "has_clam",
       "has_the_recipe"
     ]
   ],

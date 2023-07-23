@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_shrimp": {
+    "has_cooked_shrimp": {
       "conditions": {
         "items": [
           {
             "items": [
-              "crabbersdelight:raw_shrimp"
+              "crabbersdelight:cooked_shrimp"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crabbersdelight:shrimp_barrel"
+        "recipe": "crabbersdelight:shrimp_skewer"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_shrimp",
+      "has_cooked_shrimp",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crabbersdelight:shrimp_barrel"
+      "crabbersdelight:shrimp_skewer"
     ]
   }
 }
