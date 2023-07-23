@@ -6,8 +6,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.data.event.GatherDataEvent;
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.data.BlockTags;
 
-@SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = CrabbersDelight.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
     @SubscribeEvent
@@ -15,6 +15,9 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper helper = event.getExistingFileHelper();
 
+        BlockTags blockTags = new BlockTags(generator, CrabbersDelight.MODID, helper);
+        generator.addProvider(event.includeServer(), blockTags);
+        generator.addProvider(event.includeServer(), new ItemTags(generator, blockTags, CrabbersDelight.MODID, helper));
         generator.addProvider(event.includeServer(), new Recipes(generator));
 
         BlockStates blockStates = new BlockStates(generator, helper);

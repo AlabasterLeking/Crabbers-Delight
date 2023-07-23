@@ -22,6 +22,7 @@ public class SmeltingRecipes {
         foodSmeltingRecipes("cooked_clam_meat", ModItems.RAW_CLAM_MEAT.get(), ModItems.COOKED_CLAM_MEAT.get(), 0.35F, consumer);
         foodSmeltingRecipes("cooked_clawster", ModItems.RAW_CLAWSTER.get(), ModItems.COOKED_CLAWSTER.get(), 0.35F, consumer);
         foodSmeltingRecipes("cooked_tropical_fish", Items.TROPICAL_FISH, ModItems.COOKED_TROPICAL_FISH.get(), 0.35f, consumer);
+        foodSmeltingRecipes("cooked_tropical_fish_slice", ModItems.TROPICAL_FISH_SLICE.get(), ModItems.COOKED_TROPICAL_FISH_SLICE.get(), 0.35f, consumer);
     }
 
     private static void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer)

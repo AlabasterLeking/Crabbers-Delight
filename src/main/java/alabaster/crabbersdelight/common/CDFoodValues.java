@@ -35,6 +35,10 @@ public class CDFoodValues {
             .alwaysEat().effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0), 1.0F).build();
     public static final FoodProperties COOKED_TROPICAL_FISH = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.8f).meat().fast().build();
+    public static final FoodProperties COOKED_TROPICAL_FISH_SLICE = (new FoodProperties.Builder())
+            .nutrition(3).saturationMod(0.5f).meat().fast().build();
+    public static final FoodProperties TROPICAL_FISH_SLICE = (new FoodProperties.Builder())
+            .nutrition(1).saturationMod(0.1f).meat().fast().build();
     public static final FoodProperties CRAB_LEGS = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.6f).meat().build();
     public static final FoodProperties SHRIMP_SKEWER = (new FoodProperties.Builder())
@@ -42,6 +46,12 @@ public class CDFoodValues {
     public static final FoodProperties SURF_AND_TURF = (new FoodProperties.Builder())
             .nutrition(14).saturationMod(0.8f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), LONG_DURATION, 0), 1.0F).build();
+    public static final FoodProperties CLAM_BAKE = (new FoodProperties.Builder())
+            .nutrition(13).saturationMod(0.9f)
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), LONG_DURATION, 0), 1.0F).build();
+    public static final FoodProperties CLAM_CHOWDER = (new FoodProperties.Builder())
+            .nutrition(8).saturationMod(0.6f)
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
     public static final FoodProperties FISH_STICK = (new FoodProperties.Builder())
             .nutrition(5).saturationMod(0.6f).build();
     public static final FoodProperties CRAB_CAKES = (new FoodProperties.Builder())

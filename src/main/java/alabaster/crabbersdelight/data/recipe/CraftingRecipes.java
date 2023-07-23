@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.data.recipe;
 
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -24,7 +25,6 @@ public class CraftingRecipes {
     public static void register(Consumer<FinishedRecipe> consumer) {
         recipesBlocks(consumer);
         recipesMaterials(consumer);
-        //recipesFoodstuffs(consumer);
         recipesCraftedMeals(consumer);
         SpecialRecipeBuilder.special(ModRecipeSerializers.FOOD_SERVING.get()).save(consumer, "food_serving");
     }
@@ -98,6 +98,23 @@ public class CraftingRecipes {
                 .requires(Items.STICK)
                 .requires(ForgeTags.COOKED_FISHES)
                 .unlockedBy("has_cooked_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COOKED_COD, Items.COOKED_SALMON, ModItems.COOKED_TROPICAL_FISH.get()))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.KELP_SHAKE.get())
+                .requires(Items.GLASS_BOTTLE)
+                .requires(Items.SUGAR)
+                .requires(Items.KELP)
+                .requires(Items.KELP)
+                .requires(Items.KELP)
+                .requires(Items.KELP)
+                .unlockedBy("has_kelp", InventoryChangeTrigger.TriggerInstance.hasItems(Items.KELP))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(ModItems.SURF_AND_TURF.get())
+                .requires(CDModTags.COOKED_SEAFOOD)
+                .requires(Items.BAKED_POTATO)
+                .requires(Items.COOKED_BEEF)
+                .unlockedBy("has_baked_potato", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BAKED_POTATO))
                 .save(consumer);
     }
 }
