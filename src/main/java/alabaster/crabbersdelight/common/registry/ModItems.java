@@ -95,6 +95,11 @@ public class ModItems {
     public static final RegistryObject<Item> COOKED_TROPICAL_FISH_SLICE = ITEMS.register("cooked_tropical_fish_slice",
             () -> new Item(foodItem(CDFoodValues.COOKED_TROPICAL_FISH_SLICE)));
 
+    public static final RegistryObject<Item> BISQUE = ITEMS.register("bisque",
+            () -> new Item(foodItem(CDFoodValues.BISQUE)));
+
+    public static final RegistryObject<Item> SEAFOOD_GUMBO = ITEMS.register("seafood_gumbo",
+            () -> new Item(foodItem(CDFoodValues.SEAFOOD_GUMBO)));
 
     // Barrels
     public static final RegistryObject<Item> CRAB_BARREL = ITEMS.register("crab_barrel",

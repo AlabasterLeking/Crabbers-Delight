@@ -50,8 +50,14 @@ public class CDFoodValues {
             .nutrition(13).saturationMod(0.9f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), LONG_DURATION, 0), 1.0F).build();
     public static final FoodProperties CLAM_CHOWDER = (new FoodProperties.Builder())
-            .nutrition(8).saturationMod(0.6f)
+            .nutrition(7).saturationMod(0.6f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
+    public static final FoodProperties BISQUE = (new FoodProperties.Builder())
+            .nutrition(8).saturationMod(0.75f)
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
+    public static final FoodProperties SEAFOOD_GUMBO = (new FoodProperties.Builder())
+            .nutrition(12).saturationMod(0.9f)
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), LONG_DURATION, 0), 1.0F).build();
     public static final FoodProperties FISH_STICK = (new FoodProperties.Builder())
             .nutrition(5).saturationMod(0.6f).build();
     public static final FoodProperties CRAB_CAKES = (new FoodProperties.Builder())

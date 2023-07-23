@@ -1,5 +1,6 @@
 package alabaster.crabbersdelight.data.recipe;
 
+import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -50,6 +51,29 @@ public class CookingRecipes {
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
                 .addIngredient(Items.POTATO)
                 .addIngredient(ForgeTags.MILK)
+                .unlockedByAnyIngredient(ModItems.COOKED_CLAM_MEAT.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BISQUE.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
+                .addIngredient(Ingredient.fromValues(Stream.of(
+                        new Ingredient.TagValue(CDModTags.COOKED_SEAFOOD),
+                        new Ingredient.TagValue(CDModTags.RAW_SEAFOOD)
+                )))
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
+                .addIngredient(Items.CARROT)
+                .addIngredient(ForgeTags.MILK)
+                .unlockedByAnyIngredient(ModItems.RAW_CLAM_MEAT.get(), ModItems.RAW_CRAB.get(), ModItems.RAW_CLAWSTER.get(), ModItems.RAW_SHRIMP.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SEAFOOD_GUMBO.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
+                .addIngredient(ModItems.RAW_CLAWSTER.get())
+                .addIngredient(ModItems.RAW_SHRIMP.get())
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
+                .addIngredient(Items.PORKCHOP)
                 .unlockedByAnyIngredient(ModItems.COOKED_CLAM_MEAT.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
