@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:shrimp_barrel"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "crabbersdelight:raw_shrimp"
+  }
+}
