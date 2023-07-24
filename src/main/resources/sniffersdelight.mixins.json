@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "alabaster.sniffersdelight.common.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "sniffersdelight.refmap.json",
+  "mixins": [
+    "SoupItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
