@@ -1,35 +1,35 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[47,)"
 license="MIT License"
 
 [[mods]]
 
-modId="crabbersdelight"
+modId="sniffersdelight"
 
-version="1.0.1"
-displayName="Crabber's Delight"
-logoFile="crabbersdelightlogo-final.png"
+version="1.0.0"
+displayName="Sniffer's Delight"
+logoFile="sniffersdelight-final.png"
 credits="Thank you to vectorwing for creating Farmer's Delight!"
 authors="Alabaster Leking"
 description='''A maritime addon for Farmer's Delight'''
 
-[[dependencies.crabbersdelight]]
+[[dependencies.sniffersdelight]]
 modId="forge"
 mandatory=true
-versionRange="[41.1.0,)"
+versionRange="[47.1.0,)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.crabbersdelight]]
+[[dependencies.sniffersdelight]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.19,1.20)"
+versionRange="[1.20, 1.20.1)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.crabbersdelight]]
+[[dependencies.sniffersdelight]]
 modId = "farmersdelight"
 mandatory = true
-versionRange = "[1.2.1,)"
+versionRange = "[1.2.2,)"
 ordering = "NONE"
 side = "BOTH"

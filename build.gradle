@@ -22,8 +22,8 @@ apply plugin: 'maven-publish'
 apply plugin: "org.spongepowered.mixin"
 
 version = "${mc_version}-${mod_version}"
-group = 'alabaster.crabbersdelight' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'CrabbersDelight'
+group = 'alabaster.sniffersdelight' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'SniffersDelight'
 
 //sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -75,7 +75,7 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'crabbersdelight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'sniffersdelight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             environment 'target', 'fmluserdevdata'
 
@@ -110,7 +110,6 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-    implementation fg.deobf("curse.maven:fishermans_trap-883029:${fishermans_trap_version}")
 
     //compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
     //runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")
@@ -125,7 +124,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "crabbersdelight",
+                "Specification-Title"     : "sniffersdelight",
                 "Specification-Vendor"    : "alabasterleking",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
