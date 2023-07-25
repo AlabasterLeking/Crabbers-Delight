@@ -8,7 +8,7 @@ modId="crabbersdelight"
 
 version="1.0.1"
 displayName="Crabber's Delight"
-logoFile="crabbersdelightlogo-final.png"
+logoFile="crabbersdelightbanner.png"
 credits="Thank you to vectorwing for creating Farmer's Delight!"
 authors="Alabaster Leking"
 description='''A maritime addon for Farmer's Delight'''
