@@ -1,21 +1,27 @@
 package alabaster.crabbersdelight.data;
 
+import alabaster.crabbersdelight.CrabbersDelight;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import alabaster.crabbersdelight.common.registry.ModBlocks;
+import alabaster.crabbersdelight.common.tags.CDModTags;
 
 import javax.annotation.Nullable;
+import java.util.concurrent.CompletableFuture;
 
-public class BlockTags extends BlockTagsProvider {
-    public BlockTags(DataGenerator generatorIn, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(generatorIn, modId, existingFileHelper);
+public class BlockTags extends BlockTagsProvider
+{
+    public BlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, CrabbersDelight.MODID, existingFileHelper);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
         this.registerBlockMineables();
     }
 
