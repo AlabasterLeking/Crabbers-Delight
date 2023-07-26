@@ -26,10 +26,14 @@ public class ModItems {
         return block;
     }
 
-
     // Basic Items
     public static Item.Properties basicItem() {
         return new Item.Properties();
+    }
+
+    // Soups & Stews
+    public static Item.Properties bowlFoodItem(FoodProperties food) {
+        return new Item.Properties().food(food).craftRemainder(Items.BOWL).stacksTo(16);
     }
 
     // Foods
@@ -96,7 +100,7 @@ public class ModItems {
             () -> new Item(foodItem(CDFoodValues.CLAM_BAKE)));
 
     public static final RegistryObject<Item> CLAM_CHOWDER = registerWithTab("clam_chowder",
-            () -> new Item(foodItem(CDFoodValues.CLAM_CHOWDER)));
+            () -> new Item(bowlFoodItem(CDFoodValues.CLAM_CHOWDER)));
 
     public static final RegistryObject<Item> COOKED_TROPICAL_FISH = registerWithTab("cooked_tropical_fish",
             () -> new Item(foodItem(CDFoodValues.COOKED_TROPICAL_FISH)));
@@ -108,10 +112,10 @@ public class ModItems {
             () -> new Item(foodItem(CDFoodValues.COOKED_TROPICAL_FISH_SLICE)));
 
     public static final RegistryObject<Item> BISQUE = registerWithTab("bisque",
-            () -> new Item(foodItem(CDFoodValues.BISQUE)));
+            () -> new Item(bowlFoodItem(CDFoodValues.BISQUE)));
 
     public static final RegistryObject<Item> SEAFOOD_GUMBO = registerWithTab("seafood_gumbo",
-            () -> new Item(foodItem(CDFoodValues.SEAFOOD_GUMBO)));
+            () -> new Item(bowlFoodItem(CDFoodValues.SEAFOOD_GUMBO)));
 
     // Barrels
     public static final RegistryObject<Item> CRAB_BARREL = registerWithTab("crab_barrel",

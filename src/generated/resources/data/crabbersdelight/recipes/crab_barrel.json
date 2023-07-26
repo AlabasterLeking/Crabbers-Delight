@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "crabbersdelight:raw_crab"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "crabbersdelight:crab_barrel"
-  }
+  },
+  "show_notification": true
 }

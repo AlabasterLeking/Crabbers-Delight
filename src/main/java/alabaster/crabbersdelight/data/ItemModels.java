@@ -1,7 +1,7 @@
 package alabaster.crabbersdelight.data;
 
 import com.google.common.collect.Sets;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -21,8 +21,8 @@ public class ItemModels extends ItemModelProvider
     public static final String GENERATED = "item/generated";
     public static final String HANDHELD = "item/handheld";
 
-    public ItemModels(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, CrabbersDelight.MODID, existingFileHelper);
+    public ItemModels(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, CrabbersDelight.MODID, existingFileHelper);
     }
 
     @Override

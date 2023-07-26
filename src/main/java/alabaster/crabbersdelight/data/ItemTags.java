@@ -25,7 +25,7 @@ public class ItemTags extends ItemTagsProvider
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
 
         this.registerModTags();
     }
