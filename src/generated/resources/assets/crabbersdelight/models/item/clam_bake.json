@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crabbersdelight:items/clam_bake"
+    "layer0": "crabbersdelight:item/clam_bake"
   }
 }

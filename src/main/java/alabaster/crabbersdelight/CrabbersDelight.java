@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight;
 
 import alabaster.crabbersdelight.common.registry.ModBlocks;
+import alabaster.crabbersdelight.common.registry.ModCreativeTabs;
 import alabaster.crabbersdelight.common.registry.ModItems;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -24,9 +25,10 @@ public class CrabbersDelight {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public CrabbersDelight() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(bus);
         ModBlocks.BLOCKS.register(bus);
+        ModCreativeTabs.CREATIVE_TABS.register(bus);
     }
 }

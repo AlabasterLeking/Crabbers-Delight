@@ -4,7 +4,6 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import com.google.common.collect.Sets;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import alabaster.crabbersdelight.common.CDFoodValues;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -79,7 +79,7 @@ public class ModItems {
             () -> new Item(foodItem(CDFoodValues.COOKED_CLAM_MEAT)));
 
     public static final RegistryObject<Item> KELP_SHAKE = registerWithTab("kelp_shake",
-            () -> new DrinkableItem(drinkItem(CDFoodValues.KELP_SHAKE)));
+            () -> new DrinkableItem(drinkItem(CDFoodValues.KELP_SHAKE), true, false));
 
     public static final RegistryObject<Item> CRAB_CAKES = registerWithTab("crab_cakes",
             () -> new Item(foodItem(CDFoodValues.CRAB_CAKES)));
@@ -100,7 +100,7 @@ public class ModItems {
             () -> new Item(foodItem(CDFoodValues.CLAM_BAKE)));
 
     public static final RegistryObject<Item> CLAM_CHOWDER = registerWithTab("clam_chowder",
-            () -> new Item(bowlFoodItem(CDFoodValues.CLAM_CHOWDER)));
+            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.CLAM_CHOWDER), true));
 
     public static final RegistryObject<Item> COOKED_TROPICAL_FISH = registerWithTab("cooked_tropical_fish",
             () -> new Item(foodItem(CDFoodValues.COOKED_TROPICAL_FISH)));
@@ -112,10 +112,10 @@ public class ModItems {
             () -> new Item(foodItem(CDFoodValues.COOKED_TROPICAL_FISH_SLICE)));
 
     public static final RegistryObject<Item> BISQUE = registerWithTab("bisque",
-            () -> new Item(bowlFoodItem(CDFoodValues.BISQUE)));
+            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.BISQUE), true));
 
     public static final RegistryObject<Item> SEAFOOD_GUMBO = registerWithTab("seafood_gumbo",
-            () -> new Item(bowlFoodItem(CDFoodValues.SEAFOOD_GUMBO)));
+            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.SEAFOOD_GUMBO), true));
 
     // Barrels
     public static final RegistryObject<Item> CRAB_BARREL = registerWithTab("crab_barrel",

@@ -30,15 +30,15 @@ public class ItemModels extends ItemModelProvider
         Set<Item> items = ForgeRegistries.ITEMS.getValues().stream().filter(i -> CrabbersDelight.MODID.equals(ForgeRegistries.ITEMS.getKey(i).getNamespace()))
                 .collect(Collectors.toSet());
 
-        // Blocks whose items look alike
+        // Blocks whose item look alike
         takeAll(items, i -> i instanceof BlockItem).forEach(item -> blockBasedModel(item, ""));
 
-        // Handheld items
+        // Handheld item
         Set<Item> handheldItems = Sets.newHashSet(
         );
         takeAll(items, handheldItems.toArray(new Item[0])).forEach(item -> itemHandheldModel(item, resourceItem(itemName(item))));
 
-        // Generated items
+        // Generated item
         items.forEach(item -> itemGeneratedModel(item, resourceItem(itemName(item))));
     }
 
@@ -63,7 +63,7 @@ public class ItemModels extends ItemModelProvider
     }
 
     public ResourceLocation resourceItem(String path) {
-        return new ResourceLocation(CrabbersDelight.MODID, "items/" + path);
+        return new ResourceLocation(CrabbersDelight.MODID, "item/" + path);
     }
 
     @SafeVarargs

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crabbersdelight:items/bisque"
+    "layer0": "crabbersdelight:item/bisque"
   }
 }

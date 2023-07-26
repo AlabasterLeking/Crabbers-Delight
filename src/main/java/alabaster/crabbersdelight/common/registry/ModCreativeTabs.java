@@ -12,7 +12,7 @@ public class ModCreativeTabs
 {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CrabbersDelight.MODID);
 
-    public static final RegistryObject<CreativeModeTab> TAB_FARMERS_DELIGHT = CREATIVE_TABS.register(CrabbersDelight.MODID,
+    public static final RegistryObject<CreativeModeTab> TAB_CRABBERS_DELIGHT = CREATIVE_TABS.register(CrabbersDelight.MODID,
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.crabbersdelight"))
                     .icon(() -> new ItemStack(ModItems.RAW_CLAWSTER.get()))
