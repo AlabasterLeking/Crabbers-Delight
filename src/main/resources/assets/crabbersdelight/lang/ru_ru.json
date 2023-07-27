@@ -1,0 +1,32 @@
+{
+  "itemGroup.crabbersdelight": "Восторг краболовов",
+
+  "item.crabbersdelight.raw_crab": "Сырой краб",
+  "item.crabbersdelight.cooked_crab": "Жареный краб",
+  "item.crabbersdelight.raw_clawster": "Сырой лобстер",
+  "item.crabbersdelight.cooked_clawster": "Жареный лобстер",
+  "item.crabbersdelight.raw_shrimp": "Сырая креветка",
+  "item.crabbersdelight.cooked_shrimp": "Жаренвя креветка",
+  "item.crabbersdelight.clam": "Моллюск",
+  "item.crabbersdelight.raw_clam_meat": "Сырой моллюск",
+  "item.crabbersdelight.cooked_clam_meat": "Жареный моллюск",
+  "item.crabbersdelight.pearl": "Жемчуг",
+  "item.crabbersdelight.kelp_shake": "Коктейль из ламинарии",
+  "item.crabbersdelight.crab_cakes": "Крабовые котлеты",
+  "item.crabbersdelight.crab_legs": "Крабовые ножки",
+  "item.crabbersdelight.cooked_tropical_fish": "Жареная тропическая рыба",
+  "item.crabbersdelight.shrimp_skewer": "Шашлычок из креветок",
+  "item.crabbersdelight.surf_and_turf": "Сёрф-энд-тёрф",
+  "item.crabbersdelight.fish_stick": "Рыба на палке",
+  "item.crabbersdelight.clam_bake": "Запеканка из моллюсков",
+  "item.crabbersdelight.clam_chowder": "Клэм-чаудер",
+  "item.crabbersdelight.tropical_fish_slice": "Филе тропической рыбы",
+  "item.crabbersdelight.cooked_tropical_fish_slice": "Жареное филе тропической рыбы",
+  "item.crabbersdelight.bisque": "Биск",
+  "item.crabbersdelight.seafood_gumbo": "Гамбо с морепродуктами",
+
+  "block.crabbersdelight.crab_barrel": "Бочка с крабами",
+  "block.crabbersdelight.clam_barrel": "Бочка с моллюсками",
+  "block.crabbersdelight.clawster_barrel": "Бочка с лобстерами",
+  "block.crabbersdelight.shrimp_barrel": "Бочка с креветками"
+}

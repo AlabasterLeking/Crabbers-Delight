@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 2.0,
+  "ingredients": [
+    {
+      "item": "crabbersdelight:raw_crab"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "tag": "forge:milk/milk_bottle"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "farmersdelight:onion"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "crabbersdelight:crab_cakes"
+  }
+}
