@@ -43,6 +43,16 @@ public class CookingRecipes {
                 .unlockedByAnyIngredient(ModItems.COOKED_CLAM_MEAT.get(), ModItems.COOKED_CLAWSTER.get(), ModItems.COOKED_SHRIMP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CRAB_CAKES.get(), 1, NORMAL_COOKING, LARGE_EXP)
+                .addIngredient(ModItems.RAW_CRAB.get())
+                .addIngredient(Items.BREAD)
+                .addIngredient(ForgeTags.MILK_BOTTLE)
+                .addIngredient(Items.EGG)
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .unlockedByAnyIngredient(ModItems.RAW_CRAB.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
     }
 
     private static void cookMinecraftSoups(Consumer<FinishedRecipe> consumer) {
