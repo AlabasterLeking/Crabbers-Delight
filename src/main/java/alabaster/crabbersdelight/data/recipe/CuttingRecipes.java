@@ -36,7 +36,7 @@ public class CuttingRecipes {
                 .build(consumer);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.CLAM.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.RAW_CLAM_MEAT.get(), 1)
-                .addResultWithChance(ModItems.PEARL.get(), 0.1F)
+                .addResultWithChance(ModItems.PEARL.get(), 0.5F)
                 .build(consumer);
     }
 }

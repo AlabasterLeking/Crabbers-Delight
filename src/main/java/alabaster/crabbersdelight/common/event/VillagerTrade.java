@@ -1,5 +1,6 @@
 package alabaster.crabbersdelight.common.event;
 
+import alabaster.crabbersdelight.common.Config;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerProfession;
@@ -27,6 +28,9 @@ public class VillagerTrade
     @SubscribeEvent
     public static void onVillagerTrades(VillagerTradesEvent event) {
 
+        if (!Config.FISHERMAN_BUY_SEAFOOD.get()) return;
+
+
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         VillagerProfession profession = event.getType();
         ResourceLocation professionKey = ForgeRegistries.VILLAGER_PROFESSIONS.getKey(profession);
@@ -36,15 +40,18 @@ public class VillagerTrade
             trades.get(1).add(emeraldForItemsTrade(ModItems.RAW_SHRIMP.get(), 8, 16, 2));
             trades.get(2).add(emeraldForItemsTrade(ModItems.RAW_CLAWSTER.get(), 4, 16, 5));
             trades.get(2).add(emeraldForItemsTrade(ModItems.CLAM.get(), 3, 16, 5));
+            trades.get(4).add(emeraldForItemsTrade(ModItems.PEARL.get(), 1, 16, 5));
         }
     }
 
     @SubscribeEvent
     public static void onWandererTrades(WandererTradesEvent event) {
-        List<VillagerTrades.ItemListing> trades = event.getGenericTrades();
-        trades.add(heartForPearlsTrade(ModItems.PEARL.get(), 32, 4, 12));
-        trades.add(spongeForPearlsTrade(ModItems.PEARL.get(), 8, 4, 12));
-        trades.add(tridentForPearlsTrade(ModItems.PEARL.get(), 64, 1, 12));
+        if (Config.WANDERING_TRADER_PEARLS.get()) {
+            List<VillagerTrades.ItemListing> trades = event.getGenericTrades();
+            trades.add(heartForPearlsTrade(ModItems.PEARL.get(), 32, 4, 12));
+            trades.add(spongeForPearlsTrade(ModItems.PEARL.get(), 8, 4, 12));
+            trades.add(tridentForPearlsTrade(ModItems.PEARL.get(), 64, 1, 12));
+        }
     }
 
     public static BasicItemListing emeraldForItemsTrade(ItemLike item, int count, int maxTrades, int xp) {
