@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.common.block.CrabTrapBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
@@ -10,6 +11,10 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CrabbersDelight.MODID);
+
+    // Crab Trap
+    public static final RegistryObject<Block> CRAB_TRAP = BLOCKS.register("crab_trap",
+            () -> new CrabTrapBlock(Block.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     // Food Storage
     public static final RegistryObject<Block> CRAB_BARREL = BLOCKS.register("crab_barrel",

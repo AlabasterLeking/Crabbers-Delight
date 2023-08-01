@@ -113,4 +113,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> SHRIMP_BARREL = ITEMS.register("shrimp_barrel",
             () -> new BlockItem(ModBlocks.SHRIMP_BARREL.get(), basicItem()));
+
+    // Crab Trap
+    public static final RegistryObject<Item> CRAB_TRAP = ITEMS.register("crab_trap",
+            () -> new BlockItem(ModBlocks.CRAB_TRAP.get(), basicItem()));
 }
