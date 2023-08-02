@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight;
 
 import alabaster.crabbersdelight.common.Config;
+import alabaster.crabbersdelight.common.registry.ModBlockEntity;
 import alabaster.crabbersdelight.common.registry.ModBlocks;
 import alabaster.crabbersdelight.common.registry.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -27,6 +28,7 @@ public class CrabbersDelight {
 
         ModItems.ITEMS.register(bus);
         ModBlocks.BLOCKS.register(bus);
+        ModBlockEntity.BLOCK_ENTITIES.register(bus);
     }
 
     public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
