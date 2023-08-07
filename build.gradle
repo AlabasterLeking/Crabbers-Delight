@@ -110,7 +110,6 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-    implementation fg.deobf("curse.maven:fishermans_trap-883029:${fishermans_trap_version}")
 
     //compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
     //runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")

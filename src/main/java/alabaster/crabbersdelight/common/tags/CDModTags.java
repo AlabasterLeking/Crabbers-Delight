@@ -11,7 +11,7 @@ import alabaster.crabbersdelight.CrabbersDelight;
 public class CDModTags {
     public static final TagKey<Item> RAW_SEAFOOD = modItemTag("raw_seafood");
     public static final TagKey<Item> COOKED_SEAFOOD = modItemTag("cooked_seafood");
-    public static final TagKey<Item> CRAB_TRAP_BAIT = modItemTag("crab_trap_bait")
+    public static final TagKey<Item> CRAB_TRAP_BAIT = modItemTag("crab_trap_bait");
 
     private static TagKey<Item> modItemTag(String path) {
         return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(CrabbersDelight.MODID, path));

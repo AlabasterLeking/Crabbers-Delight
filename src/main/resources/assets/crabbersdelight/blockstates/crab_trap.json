@@ -1,7 +1,64 @@
 {
   "variants": {
-    "": {
+    "facing=east,hanging=false,waterlogged=false": {
+      "model": "crabbersdelight:block/crab_trap",
+      "y": 90
+    },
+    "facing=east,hanging=false,waterlogged=true": {
+      "model": "crabbersdelight:block/crab_trap",
+      "y": 90
+    },
+    "facing=east,hanging=true,waterlogged=false": {
+      "model": "crabbersdelight:block/crab_trap_chain",
+      "y": 90
+    },
+    "facing=east,hanging=true,waterlogged=true": {
+      "model": "crabbersdelight:block/crab_trap_chain",
+      "y": 90
+    },
+    "facing=north,hanging=false,waterlogged=false": {
       "model": "crabbersdelight:block/crab_trap"
+    },
+    "facing=north,hanging=false,waterlogged=true": {
+      "model": "crabbersdelight:block/crab_trap"
+    },
+    "facing=north,hanging=true,waterlogged=false": {
+      "model": "crabbersdelight:block/crab_trap_chain"
+    },
+    "facing=north,hanging=true,waterlogged=true": {
+      "model": "crabbersdelight:block/crab_trap_chain"
+    },
+    "facing=south,hanging=false,waterlogged=false": {
+      "model": "crabbersdelight:block/crab_trap",
+      "y": 180
+    },
+    "facing=south,hanging=false,waterlogged=true": {
+      "model": "crabbersdelight:block/crab_trap",
+      "y": 180
+    },
+    "facing=south,hanging=true,waterlogged=false": {
+      "model": "crabbersdelight:block/crab_trap_chain",
+      "y": 180
+    },
+    "facing=south,hanging=true,waterlogged=true": {
+      "model": "crabbersdelight:block/crab_trap_chain",
+      "y": 180
+    },
+    "facing=west,hanging=false,waterlogged=false": {
+      "model": "crabbersdelight:block/crab_trap",
+      "y": 270
+    },
+    "facing=west,hanging=false,waterlogged=true": {
+      "model": "crabbersdelight:block/crab_trap",
+      "y": 270
+    },
+    "facing=west,hanging=true,waterlogged=false": {
+      "model": "crabbersdelight:block/crab_trap_chain",
+      "y": 270
+    },
+    "facing=west,hanging=true,waterlogged=true": {
+      "model": "crabbersdelight:block/crab_trap_chain",
+      "y": 270
     }
   }
 }

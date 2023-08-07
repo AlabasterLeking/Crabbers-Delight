@@ -24,7 +24,7 @@ public class Config {
                 .define("wanderingTraderDealsPearls", true);
         MIN_TICKS = COMMON_BUILDER.comment("Minimum ticks before seafood can be gathered by the crab trap. Default = 4000")
                 .define("minTicks", 4000);
-        MIN_TICKS = COMMON_BUILDER.comment("Maximum ticks before seafood can be gathered by the crab trap. Default = 8000")
+        MAX_TICKS = COMMON_BUILDER.comment("Maximum ticks before seafood can be gathered by the crab trap. Default = 8000")
                 .define("maxTicks", 8000);
 
         COMMON_BUILDER.pop();
