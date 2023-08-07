@@ -25,7 +25,7 @@ public class CrabTrapMenu extends AbstractContainerMenu {
         super(ModMenus.CRAB_TRAP_MENU.get(), id);
         this.inventory = inventory;
 
-        this.addSlot(new SlotItemHandler(inventory, 7, 80, 8) {
+        this.addSlot(new SlotItemHandler(inventory, 0, 80, 8) {
             public boolean mayPlace(ItemStack stack) {
                 return stack.is(CDModTags.CRAB_TRAP_BAIT);
             }
@@ -36,10 +36,12 @@ public class CrabTrapMenu extends AbstractContainerMenu {
             }
         });
 
-        for (int row = 0; row < 2; ++row) {
-            for (int column = 0; column < 9; ++column) {
-                this.addSlot(new SlotItemHandler(inventory, column + row * 9 + 9, 8 + column * 18, row * 18 + 48));
-            }
+        for(int column = 0; column < 9; ++column) {
+            this.addSlot(new SlotItemHandler(inventory, column + 1, 8 + column * 18, 30));
+        }
+
+        for(int column = 0; column < 9; ++column) {
+            this.addSlot(new SlotItemHandler(inventory, column + 10, 8 + column * 18, 48));
         }
 
         for (int row = 0; row < 3; ++row) {

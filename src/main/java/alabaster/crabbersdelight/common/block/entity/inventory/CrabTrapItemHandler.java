@@ -11,7 +11,7 @@ import java.util.List;
 public class CrabTrapItemHandler extends ItemStackHandler {
 
     public CrabTrapItemHandler() {
-        super(100);
+        super(19);
     }
 
     public void addItemsAndShrinkBait(List<ItemStack> list, ItemStack baitItem) {
