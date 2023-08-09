@@ -1,18 +1,13 @@
 package alabaster.crabbersdelight.data.recipe;
 
+import alabaster.crabbersdelight.common.registry.ModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.fml.common.Mod;
-import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
-import alabaster.crabbersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
-import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
 import java.util.function.Consumer;
 import java.util.stream.Stream;
@@ -52,6 +47,24 @@ public class CookingRecipes {
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
                 .unlockedByAnyIngredient(ModItems.RAW_CRAB.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COOKED_CRAB.get(), 1, NORMAL_COOKING, SMALL_EXP)
+                .addIngredient(ModItems.RAW_CRAB.get())
+                .unlockedByAnyIngredient(ModItems.RAW_CRAB.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(consumer);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COOKED_CLAWSTER.get(), 1, NORMAL_COOKING, SMALL_EXP)
+                .addIngredient(ModItems.RAW_CLAWSTER.get())
+                .unlockedByAnyIngredient(ModItems.RAW_CLAWSTER.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .build(consumer);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.COOKED_SHRIMP.get(), 1, NORMAL_COOKING, SMALL_EXP)
+                .addIngredient(ModItems.RAW_SHRIMP.get())
+                .unlockedByAnyIngredient(ModItems.RAW_SHRIMP.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
                 .build(consumer);
     }
 

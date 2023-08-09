@@ -19,8 +19,8 @@ public class CrabTrapGUI extends AbstractContainerScreen<CrabTrapMenu> {
     public CrabTrapGUI(CrabTrapMenu menu, Inventory playerInv, Component title) {
         super(menu, playerInv, title);
         this.imageWidth = 176;
-        this.imageHeight = 166;
-        this.inventoryLabelY = this.imageHeight - 95;
+        this.imageHeight = 168;
+        this.inventoryLabelY = 75;
     }
 
     @Override
@@ -31,7 +31,7 @@ public class CrabTrapGUI extends AbstractContainerScreen<CrabTrapMenu> {
     }
 
     @Override
-    protected void renderBg(PoseStack poseStack, float partialTick, int mouseX, int mouseY) {
+    protected void renderBg(PoseStack poseStack, float partialTicks, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, CRAB_TRAP_GUI);

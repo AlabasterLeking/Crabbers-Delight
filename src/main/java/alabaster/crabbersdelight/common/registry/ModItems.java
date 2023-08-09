@@ -1,15 +1,14 @@
 package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.common.CDFoodValues;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import alabaster.crabbersdelight.common.CDFoodValues;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 public class ModItems {
@@ -101,7 +100,7 @@ public class ModItems {
     public static final RegistryObject<Item> SEAFOOD_GUMBO = ITEMS.register("seafood_gumbo",
             () -> new Item(foodItem(CDFoodValues.SEAFOOD_GUMBO)));
 
-    // Barrels
+    // Storage Blocks
     public static final RegistryObject<Item> CRAB_BARREL = ITEMS.register("crab_barrel",
             () -> new BlockItem(ModBlocks.CRAB_BARREL.get(), basicItem()));
 
@@ -113,6 +112,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SHRIMP_BARREL = ITEMS.register("shrimp_barrel",
             () -> new BlockItem(ModBlocks.SHRIMP_BARREL.get(), basicItem()));
+
+    public static final RegistryObject<Item> NAUTILUS_SHELL_BLOCK = ITEMS.register("nautilus_shell_block",
+            () -> new BlockItem(ModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem()));
 
     // Crab Trap
     public static final RegistryObject<Item> CRAB_TRAP = ITEMS.register("crab_trap",

@@ -16,7 +16,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CRAB_TRAP = BLOCKS.register("crab_trap",
             () -> new CrabTrapBlock(Block.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
-    // Food Storage
+    // Storage
     public static final RegistryObject<Block> CRAB_BARREL = BLOCKS.register("crab_barrel",
             () -> new Block(Block.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
@@ -28,4 +28,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SHRIMP_BARREL = BLOCKS.register("shrimp_barrel",
             () -> new Block(Block.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> NAUTILUS_SHELL_BLOCK = BLOCKS.register("nautilus_shell_block",
+            () -> new Block(Block.Properties.of(Material.STONE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
 }
