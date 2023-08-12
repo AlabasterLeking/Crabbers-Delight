@@ -14,7 +14,6 @@ buildscript {
         classpath 'org.parchmentmc:librarian:1.+'
     }
 }
-
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
@@ -31,7 +30,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
 
-    mappings channel: 'parchment', version: '1.19.3-2023.03.12-1.20.1'
+    mappings channel: 'official', version: "${mc_version}"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 
     runs {
@@ -111,7 +110,6 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
-    //implementation fg.deobf("curse.maven:fishermans_trap-883029:${fishermans_trap_version}")
 
     //compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
     //runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")

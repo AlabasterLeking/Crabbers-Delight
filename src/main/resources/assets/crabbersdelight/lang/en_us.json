@@ -13,7 +13,7 @@
   "item.crabbersdelight.pearl": "Pearl",
   "item.crabbersdelight.kelp_shake": "Kelp Shake",
   "item.crabbersdelight.crab_cakes": "Crab Cakes",
-  "item.crabbersdelight.crab_legs": "Crab Legs",
+  "item.crabbersdelight.crab_legs": "Crab Leg",
   "item.crabbersdelight.cooked_tropical_fish": "Cooked Tropical Fish",
   "item.crabbersdelight.shrimp_skewer": "Shrimp Skewer",
   "item.crabbersdelight.surf_and_turf": "Surf 'n Turf",
@@ -24,9 +24,12 @@
   "item.crabbersdelight.cooked_tropical_fish_slice": "Cooked Tropical Fish Slice",
   "item.crabbersdelight.bisque": "Bisque",
   "item.crabbersdelight.seafood_gumbo": "Seafood Gumbo",
+  "item.crabbersdelight.stuffed_nautilus_shell": "Stuffed Nautilus Shell",
 
+  "block.crabbersdelight.crab_trap": "Crab Trap",
   "block.crabbersdelight.crab_barrel": "Crab Barrel",
   "block.crabbersdelight.clam_barrel": "Clam Barrel",
   "block.crabbersdelight.clawster_barrel": "Clawster Barrel",
-  "block.crabbersdelight.shrimp_barrel": "Shrimp Barrel"
+  "block.crabbersdelight.shrimp_barrel": "Shrimp Barrel",
+  "block.crabbersdelight.nautilus_shell_block": "Nautilus Shell Block"
 }

@@ -24,9 +24,12 @@
   "item.crabbersdelight.cooked_tropical_fish_slice": "熟热带鱼片",
   "item.crabbersdelight.bisque": "法式浓汤",
   "item.crabbersdelight.seafood_gumbo": "海鲜烩饭",
+  "item.crabbersdelight.stuffed_nautilus_shell": "填馅鹦鹉螺壳",
 
+  "block.crabbersdelight.crab_trap": "捕蟹笼",
   "block.crabbersdelight.crab_barrel": "桶装螃蟹",
   "block.crabbersdelight.clam_barrel": "桶装蛤蜊",
   "block.crabbersdelight.clawster_barrel": "桶装龙虾",
-  "block.crabbersdelight.shrimp_barrel": "桶装虾"
+  "block.crabbersdelight.shrimp_barrel": "桶装虾",
+  "block.crabbersdelight.nautilus_shell_block": "鹦鹉螺壳块"
 }

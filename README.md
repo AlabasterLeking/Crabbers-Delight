@@ -1,5 +1,11 @@
 # Crabbers-Delight
 
+
+<a href="https://www.curseforge.com/minecraft/mc-mods/farmers-delight">
+  <img src="http://cf.way2muchnoise.eu/full_892827_downloads.svg" alt="Curseforge Downloads">
+</a>
+
+
 <img src="https://raw.githubusercontent.com/AlabasterLeking/Crabbers-Delight/main/src/main/resources/crabbersdelightbanner.png" width="50%">
 
 ## Overview
