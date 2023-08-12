@@ -2,6 +2,7 @@ package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.CrabTrapBlock;
+import alabaster.crabbersdelight.common.block.NautilusShellBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
@@ -30,5 +31,5 @@ public class ModBlocks {
             () -> new Block(Block.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     public static final RegistryObject<Block> NAUTILUS_SHELL_BLOCK = BLOCKS.register("nautilus_shell_block",
-            () -> new Block(Block.Properties.of(Material.STONE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
+            () -> new NautilusShellBlock(Block.Properties.of(Material.STONE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
 }

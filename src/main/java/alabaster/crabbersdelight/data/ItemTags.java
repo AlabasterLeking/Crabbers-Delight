@@ -1,17 +1,13 @@
 package alabaster.crabbersdelight.data;
 
+import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import alabaster.crabbersdelight.common.registry.ModItems;
-import net.minecraftforge.fml.common.Mod;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
-import alabaster.crabbersdelight.common.tags.CDModTags;
 
 import javax.annotation.Nullable;
 
@@ -31,6 +27,6 @@ public class ItemTags extends ItemTagsProvider {
         tag(CDModTags.COOKED_SEAFOOD).add(ModItems.COOKED_CLAM_MEAT.get(), ModItems.COOKED_CRAB.get(), ModItems.COOKED_CLAWSTER.get(), ModItems.COOKED_SHRIMP.get());
         tag(ForgeTags.COOKED_FISHES).add(ModItems.COOKED_TROPICAL_FISH_SLICE.get(), ModItems.COOKED_TROPICAL_FISH.get());
         tag(ForgeTags.RAW_FISHES).add(ModItems.TROPICAL_FISH_SLICE.get());
-        tag(CDModTags.CRAB_TRAP_BAIT).add(Items.TROPICAL_FISH, Items.COD, Items.SALMON, Items.SALMON);
+        tag(CDModTags.CRAB_TRAP_BAIT).add(Items.TROPICAL_FISH, Items.COD, Items.SALMON, Items.PUFFERFISH, Items.AIR);
     }
 }

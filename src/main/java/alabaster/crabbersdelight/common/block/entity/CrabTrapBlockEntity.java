@@ -5,7 +5,6 @@ import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.block.container.CrabTrapMenu;
 import alabaster.crabbersdelight.common.block.entity.inventory.CrabTrapItemHandler;
 import alabaster.crabbersdelight.common.registry.ModBlockEntity;
-import alabaster.crabbersdelight.common.tags.CDModTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -23,7 +22,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -34,7 +32,6 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.RangedWrapper;
@@ -100,9 +97,6 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     }
 
     public static Pair<Integer, Integer> getMinMax() {
-        if (!FMLEnvironment.production) {
-            return Pair.of(40, 80);
-        }
         return Pair.of(Config.MIN_TICKS.get(), Config.MAX_TICKS.get());
     }
 
@@ -115,20 +109,15 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                     LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerLevel) level))
                             .withParameter(LootContextParams.ORIGIN, new Vec3(pos.getX(), pos.getY(), pos.getZ()))
                             .withParameter(LootContextParams.TOOL, ItemStack.EMPTY)
-                            .withParameter(LootContextParams.BLOCK_ENTITY, blockEntity )
+                            .withParameter(LootContextParams.BLOCK_ENTITY, blockEntity)
                             .withRandom(random);
                     ItemStack itemInBaitSlot = blockEntity.inventory.getStackInSlot(0);
                     LootTable loottable;
 
-                    if (itemInBaitSlot.is(CDModTags.CRAB_TRAP_BAIT) && !itemInBaitSlot.is(Items.AIR)) {
-                        ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
-                        ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
-                        loottable = level.getServer().getLootTables().get(lootTableLocation);
-                    } else {
-                        ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
-                        ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
-                        loottable = level.getServer().getLootTables().get(lootTableLocation);
-                    }
+                    ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
+                    ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
+                    loottable = level.getServer().getLootTables().get(lootTableLocation);
+
                     List<ItemStack> list = loottable.getRandomItems(lootcontext$builder.create(LootContextParamSets.FISHING));
                     blockEntity.inventory.addItemsAndShrinkBait(list, itemInBaitSlot);
                 }

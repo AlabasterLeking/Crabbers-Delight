@@ -100,6 +100,9 @@ public class ModItems {
     public static final RegistryObject<Item> SEAFOOD_GUMBO = ITEMS.register("seafood_gumbo",
             () -> new Item(foodItem(CDFoodValues.SEAFOOD_GUMBO)));
 
+    public static final RegistryObject<Item> STUFFED_NAUTILUS_SHELL = ITEMS.register("stuffed_nautilus_shell",
+            () -> new Item(foodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL)));
+
     // Storage Blocks
     public static final RegistryObject<Item> CRAB_BARREL = ITEMS.register("crab_barrel",
             () -> new BlockItem(ModBlocks.CRAB_BARREL.get(), basicItem()));

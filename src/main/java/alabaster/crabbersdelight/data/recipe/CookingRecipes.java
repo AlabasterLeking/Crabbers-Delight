@@ -100,6 +100,15 @@ public class CookingRecipes {
                 .unlockedByAnyIngredient(ModItems.COOKED_CLAM_MEAT.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.STUFFED_NAUTILUS_SHELL.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.NAUTILUS_SHELL)
+                .addIngredient(ForgeTags.COOKED_FISHES)
+                .addIngredient(Items.KELP)
+                .addIngredient(Items.KELP)
+                .addIngredient(Items.KELP)
+                .unlockedByAnyIngredient(Items.NAUTILUS_SHELL)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
     }
 }
 

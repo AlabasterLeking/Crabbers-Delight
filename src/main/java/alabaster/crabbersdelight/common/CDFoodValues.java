@@ -1,11 +1,8 @@
 package alabaster.crabbersdelight.common;
 
-import com.google.common.collect.ImmutableMap;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class CDFoodValues {
@@ -63,4 +60,7 @@ public class CDFoodValues {
     public static final FoodProperties CRAB_CAKES = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.6f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), SHORT_DURATION, 0), 1.0F).build();
+    public static final FoodProperties STUFFED_NAUTILUS_SHELL = (new FoodProperties.Builder())
+            .nutrition(8).saturationMod(0.7f)
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
 }

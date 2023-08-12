@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SpecialRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import vectorwing.farmersdelight.common.registry.ModRecipeSerializers;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
@@ -62,6 +63,16 @@ public class CraftingRecipes {
                 .pattern("###")
                 .define('#', Items.NAUTILUS_SHELL)
                 .unlockedBy("has_nautilus_shell", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NAUTILUS_SHELL))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(ModItems.CRAB_TRAP.get(), 1)
+                .pattern("nsn")
+                .pattern("s s")
+                .pattern("www")
+                .define('n', vectorwing.farmersdelight.common.registry.ModItems.SAFETY_NET.get())
+                .define('s', Items.STICK)
+                .define('w', ItemTags.WOODEN_SLABS)
+                .unlockedBy("has_stick", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
                 .save(consumer);
     }
 
