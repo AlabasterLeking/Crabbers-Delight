@@ -30,5 +30,6 @@
     "recipes": [
       "farmersdelight:cooking/cooked_shrimp"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

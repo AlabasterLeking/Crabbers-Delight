@@ -30,5 +30,6 @@
     "recipes": [
       "farmersdelight:cooking/crab_cakes"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

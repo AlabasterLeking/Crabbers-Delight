@@ -25,14 +25,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.RangedWrapper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -106,19 +106,19 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
             if (blockEntity.tickCounter >= random.nextIntBetweenInclusive(getMinMax().getFirst(), getMinMax().getSecond())) {
                 blockEntity.tickCounter = 0;
                 if (isValidFishingLocation(level, pos)) {
-                    LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerLevel) level))
+                    LootParams lootparams = (new LootParams.Builder((ServerLevel)level))
                             .withParameter(LootContextParams.ORIGIN, new Vec3(pos.getX(), pos.getY(), pos.getZ()))
                             .withParameter(LootContextParams.TOOL, ItemStack.EMPTY)
                             .withParameter(LootContextParams.BLOCK_ENTITY, blockEntity)
-                            .withRandom(random);
+                            .create(LootContextParamSets.FISHING);
                     ItemStack itemInBaitSlot = blockEntity.inventory.getStackInSlot(0);
                     LootTable loottable;
 
                     ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
                     ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
-                    loottable = level.getServer().getLootTables().get(lootTableLocation);
+                    loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
 
-                    List<ItemStack> list = loottable.getRandomItems(lootcontext$builder.create(LootContextParamSets.FISHING));
+                    List<ItemStack> list = loottable.getRandomItems(lootparams);
                     blockEntity.inventory.addItemsAndShrinkBait(list, itemInBaitSlot);
                 }
             } else {
@@ -143,7 +143,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     @Override
     @Nonnull
     public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
-        if (cap.equals(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)) {
+        if (cap.equals(ForgeCapabilities.ITEM_HANDLER)) {
             if (side == null || side.equals(Direction.UP)) {
                 return input.cast();
             } else {

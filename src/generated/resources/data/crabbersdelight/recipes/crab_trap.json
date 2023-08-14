@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "n": {
       "item": "farmersdelight:safety_net"
@@ -18,5 +19,6 @@
   ],
   "result": {
     "item": "crabbersdelight:crab_trap"
-  }
+  },
+  "show_notification": true
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crabbersdelight:items/stuffed_nautilus_shell"
+    "layer0": "crabbersdelight:item/stuffed_nautilus_shell"
   }
 }

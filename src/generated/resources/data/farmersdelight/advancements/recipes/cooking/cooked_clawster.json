@@ -30,5 +30,6 @@
     "recipes": [
       "farmersdelight:cooking/cooked_clawster"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

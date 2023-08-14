@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:nautilus_shell"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "crabbersdelight:nautilus_shell_block"
-  }
+  },
+  "show_notification": true
 }

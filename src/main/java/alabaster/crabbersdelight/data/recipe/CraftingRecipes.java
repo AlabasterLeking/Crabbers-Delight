@@ -4,10 +4,7 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.ModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
-import net.minecraft.data.recipes.SpecialRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -25,7 +22,7 @@ public class CraftingRecipes {
     }
 
     private static void recipesBlocks(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(ModItems.CRAB_BARREL.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.CRAB_BARREL.get(), 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -33,7 +30,7 @@ public class CraftingRecipes {
                 .unlockedBy("has_crab", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_CRAB.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(ModItems.CLAM_BARREL.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.CLAM_BARREL.get(), 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -41,7 +38,7 @@ public class CraftingRecipes {
                 .unlockedBy("has_clam", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CLAM.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(ModItems.CLAWSTER_BARREL.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.CLAWSTER_BARREL.get(), 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -49,7 +46,7 @@ public class CraftingRecipes {
                 .unlockedBy("has_clawster", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_CLAWSTER.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(ModItems.SHRIMP_BARREL.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.SHRIMP_BARREL.get(), 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -57,7 +54,7 @@ public class CraftingRecipes {
                 .unlockedBy("has_shrimp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_SHRIMP.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(ModItems.NAUTILUS_SHELL_BLOCK.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.NAUTILUS_SHELL_BLOCK.get(), 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -65,7 +62,7 @@ public class CraftingRecipes {
                 .unlockedBy("has_nautilus_shell", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NAUTILUS_SHELL))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(ModItems.CRAB_TRAP.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModItems.CRAB_TRAP.get(), 1)
                 .pattern("nsn")
                 .pattern("s s")
                 .pattern("www")
@@ -77,34 +74,34 @@ public class CraftingRecipes {
     }
 
     private static void recipesMaterials(Consumer<FinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapeless(ModItems.RAW_CRAB.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAW_CRAB.get(), 9)
                 .requires(ModItems.CRAB_BARREL.get())
                 .unlockedBy("has_crab_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CRAB_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "crab_from_barrel"));
 
-        ShapelessRecipeBuilder.shapeless(ModItems.CLAM.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.CLAM.get(), 9)
                 .requires(ModItems.CLAM_BARREL.get())
                 .unlockedBy("has_clam_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CLAM_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "clam_from_barrel"));
 
-        ShapelessRecipeBuilder.shapeless(ModItems.RAW_CLAWSTER.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAW_CLAWSTER.get(), 9)
                 .requires(ModItems.CLAWSTER_BARREL.get())
                 .unlockedBy("has_clawster_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CLAWSTER_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "clawster_from_barrel"));
 
-        ShapelessRecipeBuilder.shapeless(ModItems.RAW_SHRIMP.get(), 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAW_SHRIMP.get(), 9)
                 .requires(ModItems.SHRIMP_BARREL.get())
                 .unlockedBy("has_shrimp_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SHRIMP_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "shrimp_from_barrel"));
 
-        ShapelessRecipeBuilder.shapeless(Items.NAUTILUS_SHELL, 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.NAUTILUS_SHELL, 9)
                 .requires(ModItems.NAUTILUS_SHELL_BLOCK.get())
                 .unlockedBy("has_nautilus_shell_block", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NAUTILUS_SHELL_BLOCK.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "nautilus_shell_from_block"));
     }
 
     private static void recipesCraftedMeals(Consumer<FinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapeless(ModItems.SHRIMP_SKEWER.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SHRIMP_SKEWER.get())
                 .requires(Items.STICK)
                 .requires(ModItems.COOKED_SHRIMP.get())
                 .requires(ModItems.COOKED_SHRIMP.get())
@@ -112,13 +109,13 @@ public class CraftingRecipes {
                 .unlockedBy("has_cooked_shrimp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COOKED_SHRIMP.get()))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(ModItems.FISH_STICK.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.FISH_STICK.get())
                 .requires(Items.STICK)
                 .requires(ForgeTags.COOKED_FISHES)
                 .unlockedBy("has_cooked_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COOKED_COD, Items.COOKED_SALMON, ModItems.COOKED_TROPICAL_FISH.get()))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(ModItems.KELP_SHAKE.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.KELP_SHAKE.get())
                 .requires(Items.GLASS_BOTTLE)
                 .requires(Items.SUGAR)
                 .requires(Items.KELP)
@@ -128,7 +125,7 @@ public class CraftingRecipes {
                 .unlockedBy("has_kelp", InventoryChangeTrigger.TriggerInstance.hasItems(Items.KELP))
                 .save(consumer);
 
-        ShapelessRecipeBuilder.shapeless(ModItems.SURF_AND_TURF.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SURF_AND_TURF.get())
                 .requires(CDModTags.COOKED_SEAFOOD)
                 .requires(Items.BAKED_POTATO)
                 .requires(Items.COOKED_BEEF)

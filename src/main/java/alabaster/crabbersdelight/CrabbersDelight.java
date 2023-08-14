@@ -2,14 +2,16 @@ package alabaster.crabbersdelight;
 
 import alabaster.crabbersdelight.client.gui.CrabTrapGUI;
 import alabaster.crabbersdelight.common.Config;
-import alabaster.crabbersdelight.common.registry.ModBlockEntity;
-import alabaster.crabbersdelight.common.registry.ModBlocks;
-import alabaster.crabbersdelight.common.registry.ModItems;
-import alabaster.crabbersdelight.common.registry.ModMenus;
+import alabaster.crabbersdelight.common.event.CDSpriteSourceProvider;
+import alabaster.crabbersdelight.common.registry.*;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -18,6 +20,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.concurrent.CompletableFuture;
 
 @Mod(CrabbersDelight.MODID)
 public class CrabbersDelight {
@@ -35,6 +39,9 @@ public class CrabbersDelight {
         ModBlocks.BLOCKS.register(bus);
         ModBlockEntity.BLOCK_ENTITY_TYPE.register(bus);
         ModMenus.MENU.register(bus);
+        ModCreativeTabs.CREATIVE_TAB.register(bus);
+
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
@@ -47,10 +54,13 @@ public class CrabbersDelight {
         return new ResourceLocation(CrabbersDelight.MODID, path);
     }
 
-    public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
-        @Override
-        public ItemStack makeIcon() {
-            return ModItems.RAW_CRAB.get().getDefaultInstance();
-        }
-    };
+    public void gatherData(GatherDataEvent event) {
+        boolean includeClient = event.includeClient();
+        DataGenerator generator = event.getGenerator();
+        PackOutput packOutput = generator.getPackOutput();
+        ExistingFileHelper fileHelper = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
+        generator.addProvider(includeClient, new CDSpriteSourceProvider(packOutput, fileHelper));
+    }
 }

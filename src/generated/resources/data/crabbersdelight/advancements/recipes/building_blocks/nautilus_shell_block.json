@@ -30,5 +30,6 @@
     "recipes": [
       "crabbersdelight:nautilus_shell_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

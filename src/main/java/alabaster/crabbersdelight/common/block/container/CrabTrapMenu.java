@@ -30,8 +30,8 @@ public class CrabTrapMenu extends AbstractContainerMenu {
         // Bait Slot
         this.addSlot(new SlotItemHandler(inventory, 0, 80, 17) {
             @Override
-            public boolean mayPlace(ItemStack pStack) {
-                return pStack.is(CDModTags.CRAB_TRAP_BAIT);
+            public boolean mayPlace(ItemStack stack) {
+                return stack.is(CDModTags.CRAB_TRAP_BAIT);
             }
 
             @Override
