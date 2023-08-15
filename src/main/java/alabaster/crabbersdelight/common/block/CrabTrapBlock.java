@@ -43,7 +43,7 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
 
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        if (!state.is(state.getBlock())) {
+        if (!state.is(newState.getBlock())) {
             BlockEntity blockentity = level.getBlockEntity(pos);
             if (blockentity instanceof CrabTrapBlockEntity crabTrapBlockEntity) {
                 Containers.dropContents(level, pos, crabTrapBlockEntity.getInventory().getItems());
