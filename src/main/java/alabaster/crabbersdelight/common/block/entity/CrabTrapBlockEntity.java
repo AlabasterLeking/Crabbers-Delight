@@ -14,6 +14,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
@@ -114,6 +116,8 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                     ItemStack itemInBaitSlot = blockEntity.inventory.getStackInSlot(0);
                     LootTable loottable;
 
+                    level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
+
                     ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
                     ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
                     loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
@@ -125,7 +129,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                 blockEntity.tickCounter++;
             }
         } else {
-            CrabbersDelight.LOGGER.error("Fish trap ticks: [Min value must be below Max value]");
+            CrabbersDelight.LOGGER.error("Error: Miniumum value is higher than maximum value!");
         }
     }
 
