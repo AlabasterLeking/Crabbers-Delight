@@ -58,6 +58,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     private final LazyOptional<IItemHandler> input = LazyOptional.of(() -> new RangedWrapper(this.inventory, 0, 0));
     private final LazyOptional<IItemHandler> output = LazyOptional.of(() -> new RangedWrapper(this.inventory, 1, 19));
     private int tickCounter = 0;
+    private int temperature;
 
     public CrabTrapBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntity.CRAB_TRAP.get(), pos, state);
@@ -108,7 +109,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
             if (blockEntity.tickCounter >= random.nextIntBetweenInclusive(getMinMax().getFirst(), getMinMax().getSecond())) {
                 blockEntity.tickCounter = 0;
                 if (isValidFishingLocation(level, pos)) {
-                    LootParams lootparams = (new LootParams.Builder((ServerLevel)level))
+                    LootParams lootparams = (new LootParams.Builder((ServerLevel) level))
                             .withParameter(LootContextParams.ORIGIN, new Vec3(pos.getX(), pos.getY(), pos.getZ()))
                             .withParameter(LootContextParams.TOOL, ItemStack.EMPTY)
                             .withParameter(LootContextParams.BLOCK_ENTITY, blockEntity)
@@ -144,7 +145,47 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         return false;
     }
 
-    @Override
+    public class Range
+    {
+        private int low;
+        private int high;
+
+        public Range(int low, int high){
+            this.low = low;
+            this.high = high;
+        }
+
+        public boolean contains(int number){
+            return (number >= low && number <= high);
+        }
+    }
+
+    public Range getTemperature() {
+        int temperature = this.temperature;
+        Range frigid = new Range(-27, -9);
+        Range cold = new Range(-8, -5);
+        Range normal = new Range(-4, 4);
+        Range warm = new Range(5, 8);
+        Range hot = new Range(9, 27);
+        if (temperature == 1) {
+            return frigid;
+        }
+        if (temperature == 2) {
+            return cold;
+        }
+        if (temperature == 3) {
+            return normal;
+        }
+        if (temperature == 4) {
+            return warm;
+        }
+        if (temperature == 5) {
+            return hot;
+        }
+        return normal;
+    }
+
+        @Override
     @Nonnull
     public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
         if (cap.equals(ForgeCapabilities.ITEM_HANDLER)) {
