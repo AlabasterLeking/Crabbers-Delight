@@ -1,0 +1,38 @@
+{
+  "parent": "crabbersdelight:main/craft_crab_trap",
+  "criteria": {
+    "pearl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crabbersdelight:pearl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "crabbersdelight.advancement.get_pearl.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "crabbersdelight:clam"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "crabbersdelight.advancement.get_pearl"
+    }
+  },
+  "requirements": [
+    [
+      "pearl"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,64 @@
+{
+  "parent": "crabbersdelight:main/craft_crab_trap",
+  "criteria": {
+    "clawster": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crabbersdelight:clawster"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "crab": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crabbersdelight:crab"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "shrimp": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crabbersdelight:shrimp"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "crabbersdelight.advancement.cook_crustaceans.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "crabbersdelight:crab"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "crabbersdelight.advancement.cook_crustaceans"
+    }
+  },
+  "requirements": [
+    [
+      "crab",
+      "shrimp",
+      "clawster"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
