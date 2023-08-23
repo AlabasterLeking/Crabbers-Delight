@@ -145,46 +145,6 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         return false;
     }
 
-    public class Range
-    {
-        private int low;
-        private int high;
-
-        public Range(int low, int high){
-            this.low = low;
-            this.high = high;
-        }
-
-        public boolean contains(int number){
-            return (number >= low && number <= high);
-        }
-    }
-
-    public Range getTemperature() {
-        int temperature = this.temperature;
-        Range frigid = new Range(-27, -9);
-        Range cold = new Range(-8, -5);
-        Range normal = new Range(-4, 4);
-        Range warm = new Range(5, 8);
-        Range hot = new Range(9, 27);
-        if (temperature == 1) {
-            return frigid;
-        }
-        if (temperature == 2) {
-            return cold;
-        }
-        if (temperature == 3) {
-            return normal;
-        }
-        if (temperature == 4) {
-            return warm;
-        }
-        if (temperature == 5) {
-            return hot;
-        }
-        return normal;
-    }
-
         @Override
     @Nonnull
     public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
