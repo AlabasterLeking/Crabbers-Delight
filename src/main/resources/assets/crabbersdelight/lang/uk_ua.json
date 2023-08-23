@@ -24,11 +24,12 @@
   "item.crabbersdelight.cooked_tropical_fish_slice": "Смажений шматок тропічної риби",
   "item.crabbersdelight.bisque": "Біск",
   "item.crabbersdelight.seafood_gumbo": "Гамбо з морепродуктів",
+  "item.crabbersdelight.stuffed_nautilus_shell": "Фарширована мушля навтилуса",
 
-  "block.crabbersdelight.crab_trap": "Crab Trap",
+  "block.crabbersdelight.crab_trap": "Пастка для крабів",
   "block.crabbersdelight.crab_barrel": "Бочка крабів",
   "block.crabbersdelight.clam_barrel": "Бочка молюсків",
   "block.crabbersdelight.clawster_barrel": "Бочка клостерів",
   "block.crabbersdelight.shrimp_barrel": "Бочка креветок",
-  "block.crabbersdelight.nautilus_shell_block": "Nautilus Shell Block"
+  "block.crabbersdelight.nautilus_shell_block": "Блок мушлі навтилуса"
 }
