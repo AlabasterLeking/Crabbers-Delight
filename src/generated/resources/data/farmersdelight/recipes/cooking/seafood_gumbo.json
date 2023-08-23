@@ -7,10 +7,10 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "crabbersdelight:raw_clawster"
+      "item": "crabbersdelight:clawster"
     },
     {
-      "item": "crabbersdelight:raw_shrimp"
+      "item": "crabbersdelight:shrimp"
     },
     {
       "item": "farmersdelight:onion"

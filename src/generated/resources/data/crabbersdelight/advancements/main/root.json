@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "seeds": {
+      "conditions": {},
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/sand.png",
+    "description": {
+      "translate": "crabbersdelight.advancement.root.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "crabbersdelight:clawster"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "crabbersdelight.advancement.root"
+    }
+  },
+  "requirements": [
+    [
+      "seeds"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

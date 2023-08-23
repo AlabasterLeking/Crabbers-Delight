@@ -1,11 +1,11 @@
 {
   "itemGroup.crabbersdelight": "Восторг краболовов",
 
-  "item.crabbersdelight.raw_crab": "краб",
+  "item.crabbersdelight.crab": "краб",
   "item.crabbersdelight.cooked_crab": "Жареный краб",
-  "item.crabbersdelight.raw_clawster": "лобстер",
+  "item.crabbersdelight.clawster": "лобстер",
   "item.crabbersdelight.cooked_clawster": "Жареный лобстер",
-  "item.crabbersdelight.raw_shrimp": "креветка",
+  "item.crabbersdelight.shrimp": "креветка",
   "item.crabbersdelight.cooked_shrimp": "Жаренвя креветка",
   "item.crabbersdelight.clam": "Моллюск",
   "item.crabbersdelight.raw_clam_meat": "Сырой моллюск",
@@ -31,5 +31,11 @@
   "block.crabbersdelight.clam_barrel": "Бочка с моллюсками",
   "block.crabbersdelight.clawster_barrel": "Бочка с лобстерами",
   "block.crabbersdelight.shrimp_barrel": "Бочка с креветками",
-  "block.crabbersdelight.nautilus_shell_block": "Nautilus Shell Block"
+  "block.crabbersdelight.nautilus_shell_block": "Nautilus Shell Block",
+
+  "crabbersdelight.advancement.root": "Crabber's Delight",
+  "crabbersdelight.advancement.root.desc": "A seafood adventure awaits you!",
+
+  "crabbersdelight.advancement.craft_crab_trap": "It's a trap!",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "Use rope, slabs, and sticks to make your first crab trap"
 }

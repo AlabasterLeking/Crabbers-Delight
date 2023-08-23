@@ -1,11 +1,11 @@
 {
   "itemGroup.crabbersdelight": "蟹农乐事",
 
-  "item.crabbersdelight.raw_crab": "螃蟹",
+  "item.crabbersdelight.crab": "螃蟹",
   "item.crabbersdelight.cooked_crab": "熟螃蟹",
-  "item.crabbersdelight.raw_clawster": "龙虾",
+  "item.crabbersdelight.clawster": "龙虾",
   "item.crabbersdelight.cooked_clawster": "熟龙虾",
-  "item.crabbersdelight.raw_shrimp": "虾",
+  "item.crabbersdelight.shrimp": "虾",
   "item.crabbersdelight.cooked_shrimp": "熟虾",
   "item.crabbersdelight.clam": "蛤蜊",
   "item.crabbersdelight.raw_clam_meat": "生蛤蜊肉",
@@ -31,5 +31,11 @@
   "block.crabbersdelight.clam_barrel": "桶装蛤蜊",
   "block.crabbersdelight.clawster_barrel": "桶装龙虾",
   "block.crabbersdelight.shrimp_barrel": "桶装虾",
-  "block.crabbersdelight.nautilus_shell_block": "鹦鹉螺壳块"
+  "block.crabbersdelight.nautilus_shell_block": "鹦鹉螺壳块",
+
+  "crabbersdelight.advancement.root": "Crabber's Delight",
+  "crabbersdelight.advancement.root.desc": "A seafood adventure awaits you!",
+
+  "crabbersdelight.advancement.craft_crab_trap": "It's a trap!",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "Use nets, slabs, and sticks to make your first crab trap"
 }

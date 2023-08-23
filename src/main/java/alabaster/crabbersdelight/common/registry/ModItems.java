@@ -36,19 +36,19 @@ public class ModItems {
             () -> new Item(basicItem())));
 
     // Foods
-    public static final RegistryObject<Item> RAW_CRAB = addToTab(ITEMS.register("raw_crab",
+    public static final RegistryObject<Item> RAW_CRAB = addToTab(ITEMS.register("crab",
             () -> new Item(foodItem(CDFoodValues.RAW_CRAB))));
 
     public static final RegistryObject<Item> COOKED_CRAB = addToTab(ITEMS.register("cooked_crab",
             () -> new Item(foodItem(CDFoodValues.COOKED_CRAB))));
 
-    public static final RegistryObject<Item> RAW_CLAWSTER = addToTab(ITEMS.register("raw_clawster",
+    public static final RegistryObject<Item> RAW_CLAWSTER = addToTab(ITEMS.register("clawster",
             () -> new Item(foodItem(CDFoodValues.RAW_CLAWSTER))));
 
     public static final RegistryObject<Item> COOKED_CLAWSTER = addToTab(ITEMS.register("cooked_clawster",
             () -> new Item(foodItem(CDFoodValues.COOKED_CLAWSTER))));
 
-    public static final RegistryObject<Item> RAW_SHRIMP = addToTab(ITEMS.register("raw_shrimp",
+    public static final RegistryObject<Item> RAW_SHRIMP = addToTab(ITEMS.register("shrimp",
             () -> new Item(foodItem(CDFoodValues.RAW_SHRIMP))));
 
     public static final RegistryObject<Item> COOKED_SHRIMP = addToTab(ITEMS.register("cooked_shrimp",

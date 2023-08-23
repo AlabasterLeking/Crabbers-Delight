@@ -4,7 +4,7 @@
   "cookingtime": 600,
   "experience": 0.35,
   "ingredient": {
-    "item": "crabbersdelight:raw_shrimp"
+    "item": "crabbersdelight:shrimp"
   },
   "result": "crabbersdelight:cooked_shrimp"
 }
