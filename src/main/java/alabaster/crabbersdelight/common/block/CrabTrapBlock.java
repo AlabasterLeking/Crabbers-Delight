@@ -2,6 +2,7 @@ package alabaster.crabbersdelight.common.block;
 
 import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
 import alabaster.crabbersdelight.common.registry.ModBlockEntity;
+import alabaster.crabbersdelight.common.utils.TextUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -64,7 +65,12 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
         if (!level.isClientSide) {
             BlockEntity tileEntity = level.getBlockEntity(pos);
             if (tileEntity instanceof CrabTrapBlockEntity crabTrapBlockEntity) {
-                NetworkHooks.openScreen((ServerPlayer)player, crabTrapBlockEntity, pos);
+                if (state.getValue(WATERLOGGED) == Boolean.TRUE || state.getValue(HANGING) == Boolean.TRUE) {
+                    NetworkHooks.openScreen((ServerPlayer) player, crabTrapBlockEntity, pos);
+                }
+                else {
+                    player.displayClientMessage(TextUtil.getTranslation("block.crab_trap.not_waterlogged"), true);
+                }
             }
         }
         return InteractionResult.SUCCESS;

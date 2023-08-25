@@ -43,5 +43,7 @@
   "crabbersdelight.advancement.cook_crustaceans.desc": "Cook crabs, shrimp, and clawster by boiling them in a cooking pot",
 
   "crabbersdelight.advancement.get_pearl": "Sweet Mother of Pearl!",
-  "crabbersdelight.advancement.get_pearl.desc": "Obtain your first pearl by cutting clams on a cutting board. Maybe a mysterious trader will find it valuable..."
+  "crabbersdelight.advancement.get_pearl.desc": "Obtain your first pearl by cutting clams on a cutting board. Maybe a mysterious trader will find it valuable...",
+
+  "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water"
 }
