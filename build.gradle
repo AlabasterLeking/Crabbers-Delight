@@ -14,12 +14,14 @@ buildscript {
         classpath 'org.parchmentmc:librarian:1.+'
     }
 }
+
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: "org.spongepowered.mixin"
+
 
 version = "${mc_version}-${mod_version}"
 group = 'alabaster.crabbersdelight' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -107,9 +109,10 @@ sourceSets.main.resources {
 }
 
 dependencies {
+
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
-    implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
+    implementation fg.deobf("curse.maven:farmer-delight-398521:${farmersdelight_version}")
 
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
