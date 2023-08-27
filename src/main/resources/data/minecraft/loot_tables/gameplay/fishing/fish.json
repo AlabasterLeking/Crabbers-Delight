@@ -33,17 +33,17 @@
         {
           "type": "minecraft:item",
           "weight": 10,
-          "name": "crabbersdelight:raw_crab"
+          "name": "crabbersdelight:crab"
         },
         {
           "type": "minecraft:item",
           "weight": 10,
-          "name": "crabbersdelight:raw_shrimp"
+          "name": "crabbersdelight:shrimp"
         },
         {
           "type": "minecraft:item",
           "weight": 10,
-          "name": "crabbersdelight:raw_clawster"
+          "name": "crabbersdelight:clawster"
         }
       ]
     }

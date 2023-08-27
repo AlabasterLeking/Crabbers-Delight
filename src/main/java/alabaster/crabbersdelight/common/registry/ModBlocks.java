@@ -1,7 +1,6 @@
 package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.block.ClawsterFeast;
 import alabaster.crabbersdelight.common.block.CrabTrapBlock;
 import alabaster.crabbersdelight.common.block.NautilusShellBlock;
 import net.minecraft.world.level.block.Block;
@@ -34,7 +33,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> NAUTILUS_SHELL_BLOCK = BLOCKS.register("nautilus_shell_block",
             () -> new NautilusShellBlock(Block.Properties.copy(Blocks.PRISMARINE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
 
+    public static final RegistryObject<Block> PEARL_BLOCK = BLOCKS.register("pearl_block",
+            () -> new Block(Block.Properties.copy(Blocks.PRISMARINE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
+
     // Feast
-    public static final RegistryObject<Block> CLAWSTER_FEAST_BLOCK = BLOCKS.register("clawster_feast_block",
-            () -> new ClawsterFeast(Block.Properties.copy(Blocks.CAKE), ModItems.CLAWSTER_FEAST, true));
 }

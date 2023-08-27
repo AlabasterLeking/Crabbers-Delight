@@ -9,11 +9,9 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 import static alabaster.crabbersdelight.common.registry.ModCreativeTabs.addToTab;
-import static vectorwing.farmersdelight.common.registry.ModItems.bowlFoodItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CrabbersDelight.MODID);
@@ -123,10 +121,8 @@ public class ModItems {
     public static final RegistryObject<Item> NAUTILUS_SHELL_BLOCK = addToTab(ITEMS.register("nautilus_shell_block",
             () -> new BlockItem(ModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem())));
 
-    public static final RegistryObject<Item> CLAWSTER_FEAST_BLOCK = addToTab(ITEMS.register("clawster_feast_block",
-            () -> new BlockItem(ModBlocks.CLAWSTER_FEAST_BLOCK.get(), basicItem().stacksTo(1))));
-    public static final RegistryObject<Item> CLAWSTER_FEAST = addToTab(ITEMS.register("clawster_feast",
-            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.CLAWSTER_FEAST), true)));
+    public static final RegistryObject<Item> PEARL_BLOCK = addToTab(ITEMS.register("pearl_block",
+            () -> new BlockItem(ModBlocks.PEARL_BLOCK.get(), basicItem())));
 
     // Crab Trap
     public static final RegistryObject<Item> CRAB_TRAP = addToTab(ITEMS.register("crab_trap",
