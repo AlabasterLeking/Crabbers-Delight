@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-22T21:07:05.5966119	Item Models: crabbersdelight
+// 1.20.1	2023-08-29T21:41:28.0147071	Item Models: crabbersdelight
 ccb80f8574a17e2b185a249f1c6b614591861b79 assets/crabbersdelight/models/item/bisque.json
 6fcaba2e4cb788cbe281a5cc5fd1f7988568cf02 assets/crabbersdelight/models/item/clam.json
 24994ded32547cb00a000806c060adaed590491e assets/crabbersdelight/models/item/clam_bake.json
@@ -21,6 +21,7 @@ b5df73257c456c56f05bccf85411346f377953d5 assets/crabbersdelight/models/item/crab
 84800b398cc1bd252d2b2418f8349e8f8179814f assets/crabbersdelight/models/item/kelp_shake.json
 dbbeb8c37cc903c2cc42ecda8dad0cf2bbd90ee0 assets/crabbersdelight/models/item/nautilus_shell_block.json
 12d869215554d8bdbb6bb6e8798ad2f49daa773d assets/crabbersdelight/models/item/pearl.json
+f4733de0684569e119aabd1dee32b9c6d0f7861f assets/crabbersdelight/models/item/pearl_block.json
 6042505cf0b291bff5c9fc616313376d0d9b4cca assets/crabbersdelight/models/item/raw_clam_meat.json
 2e1474d645bb9cf4c36bc97ff7691bd56ec9c1a8 assets/crabbersdelight/models/item/seafood_gumbo.json
 5aa302ce0f5b68d1359e54091afdda03bd949d7e assets/crabbersdelight/models/item/shrimp.json

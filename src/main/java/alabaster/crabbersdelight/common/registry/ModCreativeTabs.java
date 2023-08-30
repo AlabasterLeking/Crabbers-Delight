@@ -25,7 +25,7 @@ public class ModCreativeTabs
     public static final RegistryObject<CreativeModeTab> TAB_CRABBERS_DELIGHT = CREATIVE_TAB.register("test_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.crabbersdelight"))
-                    .icon(ModItems.RAW_CRAB.get()::getDefaultInstance)
+                    .icon(ModItems.RAW_CLAWSTER.get()::getDefaultInstance)
                     .displayItems((parameters, output) ->
                             CREATIVE_TAB_ITEMS.forEach(itemLike -> output.accept(itemLike.get())))
                     .build()

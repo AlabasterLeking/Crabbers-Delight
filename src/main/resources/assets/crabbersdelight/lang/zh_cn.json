@@ -32,10 +32,19 @@
   "block.crabbersdelight.clawster_barrel": "桶装龙虾",
   "block.crabbersdelight.shrimp_barrel": "桶装虾",
   "block.crabbersdelight.nautilus_shell_block": "鹦鹉螺壳块",
+  "block.crabbersdelight.pearl_block": "Pearl Block",
 
   "crabbersdelight.advancement.root": "Crabber's Delight",
   "crabbersdelight.advancement.root.desc": "A seafood adventure awaits you!",
 
   "crabbersdelight.advancement.craft_crab_trap": "It's a trap!",
-  "crabbersdelight.advancement.craft_crab_trap.desc": "Use nets, slabs, and sticks to make your first crab trap"
+  "crabbersdelight.advancement.craft_crab_trap.desc": "Use nets, slabs, and sticks to make your first crab trap",
+
+  "crabbersdelight.advancement.cook_crustaceans": "Crustacean Cooking Station",
+  "crabbersdelight.advancement.cook_crustaceans.desc": "Cook crabs, shrimp, and clawster by boiling them in a cooking pot",
+
+  "crabbersdelight.advancement.get_pearl": "Sweet Mother of Pearl!",
+  "crabbersdelight.advancement.get_pearl.desc": "Obtain your first pearl by cutting clams on a cutting board. Maybe a mysterious trader will find it valuable...",
+
+  "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water"
 }
