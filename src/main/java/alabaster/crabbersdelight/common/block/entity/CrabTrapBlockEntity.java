@@ -5,6 +5,7 @@ import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.block.container.CrabTrapMenu;
 import alabaster.crabbersdelight.common.block.entity.inventory.CrabTrapItemHandler;
 import alabaster.crabbersdelight.common.registry.ModBlockEntity;
+import alabaster.crabbersdelight.common.tags.CDModTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -24,6 +25,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -58,7 +60,6 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     private final LazyOptional<IItemHandler> input = LazyOptional.of(() -> new RangedWrapper(this.inventory, 0, 0));
     private final LazyOptional<IItemHandler> output = LazyOptional.of(() -> new RangedWrapper(this.inventory, 1, 19));
     private int tickCounter = 0;
-    private int temperature;
 
     public CrabTrapBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntity.CRAB_TRAP.get(), pos, state);
@@ -116,16 +117,27 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                             .create(LootContextParamSets.FISHING);
                     ItemStack itemInBaitSlot = blockEntity.inventory.getStackInSlot(0);
                     LootTable loottable;
-
                     level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
 
-                    ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
-                    ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
-                    loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                    if (itemInBaitSlot.is(CDModTags.CRAB_TRAP_BAIT) && !itemInBaitSlot.is(Items.AIR)) {
+                        ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
+                        ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
+                        loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                    } else {
+                        if (isTreasureFishingLocation(level, pos)) {
+                            ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/treasure");
+                            loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                        }
+                        else {
+                            ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/junk");
+                            loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                        }
+                    }
 
                     List<ItemStack> list = loottable.getRandomItems(lootparams);
                     blockEntity.inventory.addItemsAndShrinkBait(list, itemInBaitSlot);
                 }
+
             } else {
                 blockEntity.tickCounter++;
             }
@@ -143,6 +155,15 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
             }
         }
         return false;
+    }
+
+    private static boolean isTreasureFishingLocation(Level level, BlockPos pos) {
+        for (BlockPos nearbyPos : BlockPos.betweenClosed(pos.offset(-2, 0, -2), pos.offset(2, 2, 2))) {
+            if (!level.getFluidState(nearbyPos).is(FluidTags.WATER)) {
+                return false;
+            }
+        }
+        return true;
     }
 
         @Override
