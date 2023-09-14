@@ -57,7 +57,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         }
     };
 
-    private final LazyOptional<IItemHandler> input = LazyOptional.of(() -> new RangedWrapper(this.inventory, 0, 0));
+    private final LazyOptional<IItemHandler> input = LazyOptional.of(() -> new RangedWrapper(this.inventory, 0, 1));
     private final LazyOptional<IItemHandler> output = LazyOptional.of(() -> new RangedWrapper(this.inventory, 1, 19));
     private int tickCounter = 0;
 
