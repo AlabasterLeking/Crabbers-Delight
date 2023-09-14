@@ -166,7 +166,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         return true;
     }
 
-        @Override
+    @Override
     @Nonnull
     public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
         if (cap.equals(ForgeCapabilities.ITEM_HANDLER)) {

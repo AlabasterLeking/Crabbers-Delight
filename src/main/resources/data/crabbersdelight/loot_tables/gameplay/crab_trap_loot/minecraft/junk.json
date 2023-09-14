@@ -44,11 +44,6 @@
           "type": "minecraft:item",
           "weight": 5,
           "name": "minecraft:kelp"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "minecraft:iron_ingot"
         }
       ]
     }
