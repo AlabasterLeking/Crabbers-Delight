@@ -1,11 +1,11 @@
 {
   "itemGroup.crabbersdelight": "Восторг краболовов",
 
-  "item.crabbersdelight.crab": "краб",
+  "item.crabbersdelight.raw_crab": "Сырой краб",
   "item.crabbersdelight.cooked_crab": "Жареный краб",
-  "item.crabbersdelight.clawster": "лобстер",
+  "item.crabbersdelight.raw_clawster": "Сырой лобстер",
   "item.crabbersdelight.cooked_clawster": "Жареный лобстер",
-  "item.crabbersdelight.shrimp": "креветка",
+  "item.crabbersdelight.raw_shrimp": "Сырая креветка",
   "item.crabbersdelight.cooked_shrimp": "Жаренвя креветка",
   "item.crabbersdelight.clam": "Моллюск",
   "item.crabbersdelight.raw_clam_meat": "Сырой моллюск",
@@ -23,28 +23,26 @@
   "item.crabbersdelight.tropical_fish_slice": "Филе тропической рыбы",
   "item.crabbersdelight.cooked_tropical_fish_slice": "Жареное филе тропической рыбы",
   "item.crabbersdelight.bisque": "Биск",
-  "item.crabbersdelight.seafood_gumbo": "Гамбо с морепродуктами",
-  "item.crabbersdelight.stuffed_nautilus_shell": "Stuffed Nautilus Shell",
+  "item.crabbersdelight.seafood_gumbo": "Гамбо с морепродуктами",  "item.crabbersdelight.stuffed_nautilus_shell": "Фаршированная раковина Наутилуса",
 
-  "block.crabbersdelight.crab_trap": "Crab Trap",
+  "block.crabbersdelight.crab_trap": "Ловушка для крабов",
   "block.crabbersdelight.crab_barrel": "Бочка с крабами",
   "block.crabbersdelight.clam_barrel": "Бочка с моллюсками",
   "block.crabbersdelight.clawster_barrel": "Бочка с лобстерами",
   "block.crabbersdelight.shrimp_barrel": "Бочка с креветками",
-  "block.crabbersdelight.nautilus_shell_block": "Nautilus Shell Block",
-  "block.crabbersdelight.pearl_block": "Pearl Block",
+  "block.crabbersdelight.nautilus_shell_block": "Блок раковины наутилуса",
+  "block.crabbersdelight.pearl_block": "Блок жемчугА",
+  "crabbersdelight.advancement.root": "Восторг краболовов",
+  "crabbersdelight.advancement.root.desc": "Вас ждет приключение с морепродуктами!",
 
-  "crabbersdelight.advancement.root": "Crabber's Delight",
-  "crabbersdelight.advancement.root.desc": "A seafood adventure awaits you!",
+  "crabbersdelight.advancement.craft_crab_trap": "Это ловушка!",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "Используйте веревку, плиты и палки, чтобы сделать свою первую ловушку для крабов",
 
-  "crabbersdelight.advancement.craft_crab_trap": "It's a trap!",
-  "crabbersdelight.advancement.craft_crab_trap.desc": "Use rope, slabs, and sticks to make your first crab trap",
+  "crabbersdelight.advancement.cook_crustaceans": "Станция для приготовления ракообразных",
+  "crabbersdelight.advancement.cook_crustaceans.desc": "Приготовьте крабов, креветок и лобстеров, отварив их в кастрюле",
 
-  "crabbersdelight.advancement.cook_crustaceans": "Crustacean Cooking Station",
-  "crabbersdelight.advancement.cook_crustaceans.desc": "Cook crabs, shrimp, and clawster by boiling them in a cooking pot",
+  "crabbersdelight.advancement.get_pearl": "Нежный перламутр!",
+  "crabbersdelight.advancement.get_pearl.desc": "Получите свою первую жемчужину, нарезав моллюсков на разделочной доске. Может быть, таинственный торговец сочтет это ценным...",
 
-  "crabbersdelight.advancement.get_pearl": "Sweet Mother of Pearl!",
-  "crabbersdelight.advancement.get_pearl.desc": "Obtain your first pearl by cutting clams on a cutting board. Maybe a mysterious trader will find it valuable...",
-
-  "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water"
+  "crabbersdelight.block.crab_trap.not_waterlogged": "Ловушка для крабов должна находиться в воде"
 }
