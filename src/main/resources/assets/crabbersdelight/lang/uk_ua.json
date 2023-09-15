@@ -1,11 +1,11 @@
 {
   "itemGroup.crabbersdelight": "Crabber's Delight",
 
-  "item.crabbersdelight.crab": "краб",
+  "item.crabbersdelight.crab": "Краб",
   "item.crabbersdelight.cooked_crab": "Смажений краб",
-  "item.crabbersdelight.clawster": "клостер",
+  "item.crabbersdelight.clawster": "Клостер",
   "item.crabbersdelight.cooked_clawster": "Смажений клостер",
-  "item.crabbersdelight.shrimp": "реветка",
+  "item.crabbersdelight.shrimp": "Креветка",
   "item.crabbersdelight.cooked_shrimp": "Смажена креветка",
   "item.crabbersdelight.clam": "Молюск",
   "item.crabbersdelight.raw_clam_meat": "Сирий молюск",
@@ -26,25 +26,25 @@
   "item.crabbersdelight.seafood_gumbo": "Гамбо з морепродуктів",
   "item.crabbersdelight.stuffed_nautilus_shell": "Фарширована мушля навтилуса",
 
-  "block.crabbersdelight.crab_trap": "Пастка для крабів",
-  "block.crabbersdelight.crab_barrel": "Бочка крабів",
-  "block.crabbersdelight.clam_barrel": "Бочка молюсків",
-  "block.crabbersdelight.clawster_barrel": "Бочка клостерів",
-  "block.crabbersdelight.shrimp_barrel": "Бочка креветок",
+  "block.crabbersdelight.crab_trap": "Крабова пастка",
+  "block.crabbersdelight.crab_barrel": "Бочка з крабами",
+  "block.crabbersdelight.clam_barrel": "Бочка з молюсками",
+  "block.crabbersdelight.clawster_barrel": "Бочка з клостерами",
+  "block.crabbersdelight.shrimp_barrel": "Бочка з креветками",
   "block.crabbersdelight.nautilus_shell_block": "Блок мушлі навтилуса",
-  "block.crabbersdelight.pearl_block": "Pearl Block",
+  "block.crabbersdelight.pearl_block": "Перлинний блок",
 
   "crabbersdelight.advancement.root": "Crabber's Delight",
-  "crabbersdelight.advancement.root.desc": "A seafood adventure awaits you!",
+  "crabbersdelight.advancement.root.desc": "Морська їжа чекає на вас!",
 
-  "crabbersdelight.advancement.craft_crab_trap": "It's a trap!",
-  "crabbersdelight.advancement.craft_crab_trap.desc": "Use rope, slabs, and sticks to make your first crab trap",
+  "crabbersdelight.advancement.craft_crab_trap": "Красті Крабс",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "Використайте мотузку, плити та палиці, щоб зробити вашу першу крабову пастку",
 
-  "crabbersdelight.advancement.cook_crustaceans": "Crustacean Cooking Station",
-  "crabbersdelight.advancement.cook_crustaceans.desc": "Cook crabs, shrimp, and clawster by boiling them in a cooking pot",
+  "crabbersdelight.advancement.cook_crustaceans": "Каструля ракоподібних",
+  "crabbersdelight.advancement.cook_crustaceans.desc": "Приготуйте краби, креветки та клостери зваривши їх у каструлі",
 
-  "crabbersdelight.advancement.get_pearl": "Sweet Mother of Pearl!",
-  "crabbersdelight.advancement.get_pearl.desc": "Obtain your first pearl by cutting clams on a cutting board. Maybe a mysterious trader will find it valuable...",
+  "crabbersdelight.advancement.get_pearl": "Святі перли!",
+  "crabbersdelight.advancement.get_pearl.desc": "Отримайте свою першу перлину розрізавши молюска на нарізній дошці. Можливо таємничий крамар знайде це цінним...",
 
-  "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water"
+  "crabbersdelight.block.crab_trap.not_waterlogged": "Крабова пастка повинна бути у воді"
 }
