@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "crabbersdelight:crab"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "crabbersdelight:clawster"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "crabbersdelight:shrimp"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "crabbersdelight:clam"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 4,
+          "name": "minecraft:stick"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:nautilus_shell"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 3,
+          "name": "farmersdelight:rope"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "minecraft:kelp"
+        }
+      ]
+    }
+  ]
+}

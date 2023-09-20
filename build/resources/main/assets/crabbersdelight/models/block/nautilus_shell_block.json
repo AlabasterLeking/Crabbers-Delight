@@ -1,0 +1,12 @@
+{
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"west": "crabbersdelight:block/nautilus_shell_block_left",
+		"east": "crabbersdelight:block/nautilus_shell_block_right",
+		"up": "crabbersdelight:block/nautilus_shell_block_top",
+		"north": "crabbersdelight:block/nautilus_shell_block_front",
+		"south": "crabbersdelight:block/nautilus_shell_block_rear",
+		"down": "crabbersdelight:block/nautilus_shell_block_bottom",
+		"particle": "minecraft:item/nautilus_shell"
+	}
+}

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.openjdk.nashorn:nashorn-core:15.3" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.openjdk.nashorn" artifactId="nashorn-core" version="15.3" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjdk.nashorn/nashorn-core/15.3/43977e804697048fc8d81d333a36c17d07a5b3dd/nashorn-core-15.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openjdk.nashorn/nashorn-core/15.3/d1b08eaf27fa4468ea714555377d74079b8b9e99/nashorn-core-15.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

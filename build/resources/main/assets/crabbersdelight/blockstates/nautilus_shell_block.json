@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "crabbersdelight:block/nautilus_shell_block",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "crabbersdelight:block/nautilus_shell_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "crabbersdelight:block/nautilus_shell_block"
+    },
+    "facing=south": {
+      "model": "crabbersdelight:block/nautilus_shell_block",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "crabbersdelight:block/nautilus_shell_block",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "crabbersdelight:block/nautilus_shell_block",
+      "y": 270
+    }
+  }
+}

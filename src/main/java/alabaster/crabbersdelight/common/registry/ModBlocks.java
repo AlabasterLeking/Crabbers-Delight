@@ -32,4 +32,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> NAUTILUS_SHELL_BLOCK = BLOCKS.register("nautilus_shell_block",
             () -> new NautilusShellBlock(Block.Properties.of(Material.STONE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
+
+    public static final RegistryObject<Block> PEARL_BLOCK = BLOCKS.register("pearl_block",
+            () -> new NautilusShellBlock(Block.Properties.of(Material.STONE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
 }

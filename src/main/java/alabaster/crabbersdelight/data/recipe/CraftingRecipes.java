@@ -65,6 +65,14 @@ public class CraftingRecipes {
                 .unlockedBy("has_nautilus_shell", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NAUTILUS_SHELL))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(ModItems.PEARL_BLOCK.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.PEARL.get())
+                .unlockedBy("has_pearl", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PEARL.get()))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(ModItems.CRAB_TRAP.get(), 1)
                 .pattern("nsn")
                 .pattern("s s")
@@ -101,6 +109,11 @@ public class CraftingRecipes {
                 .requires(ModItems.NAUTILUS_SHELL_BLOCK.get())
                 .unlockedBy("has_nautilus_shell_block", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NAUTILUS_SHELL_BLOCK.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "nautilus_shell_from_block"));
+
+        ShapelessRecipeBuilder.shapeless(ModItems.PEARL.get(), 9)
+                .requires(ModItems.PEARL_BLOCK.get())
+                .unlockedBy("has_pearl_block", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PEARL_BLOCK.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "pearl_from_block"));
     }
 
     private static void recipesCraftedMeals(Consumer<FinishedRecipe> consumer) {

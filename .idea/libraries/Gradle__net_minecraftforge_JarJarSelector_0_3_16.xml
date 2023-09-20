@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: net.minecraftforge:JarJarSelector:0.3.16" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="net.minecraftforge" artifactId="JarJarSelector" version="0.3.16" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minecraftforge/JarJarSelector/0.3.16/2a31421fb5e267249da103a644f23afb43d158af/JarJarSelector-0.3.16.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.minecraftforge/JarJarSelector/0.3.16/a17c0e45e6fb9eb73cbd7cdd6767baa5125fed07/JarJarSelector-0.3.16-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

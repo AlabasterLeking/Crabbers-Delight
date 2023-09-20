@@ -1,11 +1,9 @@
 package alabaster.crabbersdelight.data;
 
+import alabaster.crabbersdelight.common.registry.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import alabaster.crabbersdelight.common.registry.ModBlocks;
 
 import javax.annotation.Nullable;
 
@@ -24,6 +22,11 @@ public class BlockTags extends BlockTagsProvider {
                 ModBlocks.CRAB_BARREL.get(),
                 ModBlocks.CLAM_BARREL.get(),
                 ModBlocks.CLAWSTER_BARREL.get(),
-                ModBlocks.SHRIMP_BARREL.get());
+                ModBlocks.SHRIMP_BARREL.get(),
+                ModBlocks.CRAB_TRAP.get());
+
+        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(
+                ModBlocks.NAUTILUS_SHELL_BLOCK.get(),
+                ModBlocks.PEARL_BLOCK.get());
     }
 }

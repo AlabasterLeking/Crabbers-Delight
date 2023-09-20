@@ -1,0 +1,50 @@
+{
+  "itemGroup.crabbersdelight": "Crabber's Delight",
+
+  "item.crabbersdelight.crab": "Krabbe",
+  "item.crabbersdelight.cooked_crab": "Tilberedt Krabbe",
+  "item.crabbersdelight.clawster": "Krebsdyr",
+  "item.crabbersdelight.cooked_clawster": "Tilberedt Krebsdyr",
+  "item.crabbersdelight.shrimp": "Reje",
+  "item.crabbersdelight.cooked_shrimp": "Tilberedt Reje",
+  "item.crabbersdelight.clam": "Musling",
+  "item.crabbersdelight.raw_clam_meat": "Rådt Muslingekød",
+  "item.crabbersdelight.cooked_clam_meat": "Tilberedt Muslingekød",
+  "item.crabbersdelight.pearl": "Perle",
+  "item.crabbersdelight.kelp_shake": "Tangshake",
+  "item.crabbersdelight.crab_cakes": "Krabbekager",
+  "item.crabbersdelight.crab_legs": "Krabbeklo",
+  "item.crabbersdelight.cooked_tropical_fish": "Tilberedt Tropisk Fisk",
+  "item.crabbersdelight.shrimp_skewer": "Rejespyd",
+  "item.crabbersdelight.surf_and_turf": "Surf 'n Turf",
+  "item.crabbersdelight.fish_stick": "Fiskepind",
+  "item.crabbersdelight.clam_bake": "Clam Bake",
+  "item.crabbersdelight.clam_chowder": "Muslingesuppe",
+  "item.crabbersdelight.tropical_fish_slice": "Tropisk Fisk Skive",
+  "item.crabbersdelight.cooked_tropical_fish_slice": "Tilberedt Tropisk Fisk Skive",
+  "item.crabbersdelight.bisque": "Bisque",
+  "item.crabbersdelight.seafood_gumbo": "Seafood Gumbo",
+  "item.crabbersdelight.stuffed_nautilus_shell": "Fyldt Nautilus Skal",
+
+  "block.crabbersdelight.crab_trap": "Krabbefælde",
+  "block.crabbersdelight.crab_barrel": "Krabbetønde",
+  "block.crabbersdelight.clam_barrel": "Muslingetønde",
+  "block.crabbersdelight.clawster_barrel": "Skaldyrstønde",
+  "block.crabbersdelight.shrimp_barrel": "Rejetønde",
+  "block.crabbersdelight.nautilus_shell_block": "Nautilus Skal Block",
+  "block.crabbersdelight.pearl_block": "Perle Block",
+
+  "crabbersdelight.advancement.root": "Crabber's Delight",
+  "crabbersdelight.advancement.root.desc": "Alt godt fra havet venter dig!",
+
+  "crabbersdelight.advancement.craft_crab_trap": "Det er en fælde!",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "Brug reb, slabs og pinde for at lave din første krabbefælde",
+
+  "crabbersdelight.advancement.cook_crustaceans": "Krebsdyr på Komfuret",
+  "crabbersdelight.advancement.cook_crustaceans.desc": "Tilbered krabber, rejer og krebsdyr ved at koge dem i en gryde",
+
+  "crabbersdelight.advancement.get_pearl": "Sikke en perlemor!",
+  "crabbersdelight.advancement.get_pearl.desc": "Få din første perler ved at skære en musling på et skærebræt. Måske vil en mystisk handelsmand finde den værdifuld...",
+
+  "crabbersdelight.block.crab_trap.not_waterlogged": "Krabbefælden skal placeres i vand"
+}

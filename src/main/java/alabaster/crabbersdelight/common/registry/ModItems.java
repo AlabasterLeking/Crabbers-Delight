@@ -34,19 +34,19 @@ public class ModItems {
             () -> new Item(basicItem()));
 
     // Foods
-    public static final RegistryObject<Item> RAW_CRAB = ITEMS.register("raw_crab",
+    public static final RegistryObject<Item> RAW_CRAB = ITEMS.register("crab",
             () -> new Item(foodItem(CDFoodValues.RAW_CRAB)));
 
     public static final RegistryObject<Item> COOKED_CRAB = ITEMS.register("cooked_crab",
             () -> new Item(foodItem(CDFoodValues.COOKED_CRAB)));
 
-    public static final RegistryObject<Item> RAW_CLAWSTER = ITEMS.register("raw_clawster",
+    public static final RegistryObject<Item> RAW_CLAWSTER = ITEMS.register("clawster",
             () -> new Item(foodItem(CDFoodValues.RAW_CLAWSTER)));
 
     public static final RegistryObject<Item> COOKED_CLAWSTER = ITEMS.register("cooked_clawster",
             () -> new Item(foodItem(CDFoodValues.COOKED_CLAWSTER)));
 
-    public static final RegistryObject<Item> RAW_SHRIMP = ITEMS.register("raw_shrimp",
+    public static final RegistryObject<Item> RAW_SHRIMP = ITEMS.register("shrimp",
             () -> new Item(foodItem(CDFoodValues.RAW_SHRIMP)));
 
     public static final RegistryObject<Item> COOKED_SHRIMP = ITEMS.register("cooked_shrimp",
@@ -118,6 +118,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> NAUTILUS_SHELL_BLOCK = ITEMS.register("nautilus_shell_block",
             () -> new BlockItem(ModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem()));
+
+    public static final RegistryObject<Item> PEARL_BLOCK = ITEMS.register("pearl_block",
+            () -> new BlockItem(ModBlocks.PEARL_BLOCK.get(), basicItem()));
 
     // Crab Trap
     public static final RegistryObject<Item> CRAB_TRAP = ITEMS.register("crab_trap",

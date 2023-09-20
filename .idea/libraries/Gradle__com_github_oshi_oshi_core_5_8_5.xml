@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.oshi:oshi-core:5.8.5" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.github.oshi" artifactId="oshi-core" version="5.8.5" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.oshi/oshi-core/5.8.5/1d0ec654d820741327f5a9229d513732a4b7ce50/oshi-core-5.8.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.oshi/oshi-core/5.8.5/2b307812731b13ff8b133a96322b0a8cf9b2879a/oshi-core-5.8.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

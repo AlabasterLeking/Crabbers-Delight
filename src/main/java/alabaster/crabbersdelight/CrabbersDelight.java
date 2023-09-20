@@ -50,7 +50,7 @@ public class CrabbersDelight {
     public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
         @Override
         public ItemStack makeIcon() {
-            return ModItems.RAW_CRAB.get().getDefaultInstance();
+            return ModItems.RAW_CLAWSTER.get().getDefaultInstance();
         }
     };
 }
