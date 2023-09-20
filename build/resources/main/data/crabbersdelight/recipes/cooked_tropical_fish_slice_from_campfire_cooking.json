@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:campfire_cooking",
-  "cookingtime": 600,
-  "experience": 0.35,
-  "ingredient": {
-    "item": "crabbersdelight:tropical_fish_slice"
-  },
-  "result": "crabbersdelight:cooked_tropical_fish_slice"
-}
