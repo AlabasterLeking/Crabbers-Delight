@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 200,
-  "experience": 0.35,
-  "ingredient": {
-    "item": "crabbersdelight:raw_clam_meat"
-  },
-  "result": "crabbersdelight:cooked_clam_meat"
-}

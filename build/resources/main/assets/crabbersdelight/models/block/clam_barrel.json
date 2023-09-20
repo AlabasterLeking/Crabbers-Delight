@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "crabbersdelight:block/barrel_bottom",
-    "side": "crabbersdelight:block/barrel_side",
-    "top": "crabbersdelight:block/clam_barrel_top"
-  }
-}
