@@ -26,9 +26,9 @@ public class Config {
         COOK_IN_POTS = COMMON_BUILDER.comment("Should seafood only be able to be cooked through the Farmer's Delight pot?")
                 .define("cookInPot", true);
         MIN_TICKS = COMMON_BUILDER.comment("Minimum ticks before seafood can be gathered by the crab trap. Default = 4000")
-                .define("minTicks", 40);
+                .define("minTicks", 4000);
         MAX_TICKS = COMMON_BUILDER.comment("Maximum ticks before seafood can be gathered by the crab trap. Default = 8000")
-                .define("maxTicks", 80);
+                .define("maxTicks", 8000);
 
         COMMON_BUILDER.pop();
 
