@@ -19,6 +19,7 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(), new ItemTags(generator, blockTags, CrabbersDelight.MODID, helper));
         generator.addProvider(event.includeServer(), new Recipes(generator));
+        generator.addProvider(event.includeServer(), new Advancements(generator));
 
         BlockStates blockStates = new BlockStates(generator, helper);
         generator.addProvider(event.includeClient(), blockStates);
