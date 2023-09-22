@@ -12,13 +12,13 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Nameable;
 import net.minecraft.world.entity.player.Inventory;
@@ -29,6 +29,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.RandomSource;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -45,10 +46,11 @@ import org.jetbrains.annotations.Nullable;
 import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Nameable {
 
-    public static final Component CRAB_TRAP_NAME = Component.translatable("block.crabbersdelight.crab_trap");
+    public static final Component CRAB_TRAP_NAME = (new TranslatableComponent("block.crabbersdelight.crab_trap"));
 
     private final CrabTrapItemHandler inventory = new CrabTrapItemHandler() {
         @Override
@@ -105,9 +107,9 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     }
 
     public static void serverTick(Level level, BlockPos pos, BlockState state, CrabTrapBlockEntity blockEntity) {
-        RandomSource random = level.getRandom();
+        Random random = level.getRandom();
         if (getMinMax().getSecond() > getMinMax().getFirst()) {
-            if (blockEntity.tickCounter >= random.nextIntBetweenInclusive(getMinMax().getFirst(), getMinMax().getSecond())) {
+            if (blockEntity.tickCounter >= random.nextInt(getMinMax().getFirst(), getMinMax().getSecond())) {
                 blockEntity.tickCounter = 0;
                 if (isValidFishingLocation(level, pos)) {
                     LootContext.Builder lootcontext$builder = (new LootContext.Builder((ServerLevel) level))

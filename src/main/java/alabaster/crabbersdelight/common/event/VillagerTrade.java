@@ -33,9 +33,8 @@ public class VillagerTrade
 
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         VillagerProfession profession = event.getType();
-        ResourceLocation professionKey = ForgeRegistries.VILLAGER_PROFESSIONS.getKey(profession);
-        if (professionKey == null) return;
-        if (professionKey.getPath().equals("fisherman")) {
+        if (profession.getRegistryName() == null) return;
+        if (profession.getRegistryName().getPath().equals("fisherman")) {
             trades.get(1).add(emeraldForItemsTrade(ModItems.RAW_CRAB.get(), 6, 16, 2));
             trades.get(1).add(emeraldForItemsTrade(ModItems.RAW_SHRIMP.get(), 8, 16, 2));
             trades.get(2).add(emeraldForItemsTrade(ModItems.RAW_CLAWSTER.get(), 4, 16, 5));

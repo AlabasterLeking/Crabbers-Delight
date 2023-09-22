@@ -4,14 +4,16 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.ModItems;
 import alabaster.crabbersdelight.common.utils.TextUtil;
 import com.google.common.collect.Sets;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
+import net.minecraft.data.HashCache;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
@@ -37,7 +39,7 @@ public class Advancements extends AdvancementProvider
     }
 
     @Override
-    public void run(CachedOutput cache) {
+    public void run(HashCache cache) {
         Set<ResourceLocation> set = Sets.newHashSet();
         Consumer<Advancement> consumer = (advancement) -> {
             if (!set.add(advancement.getId())) {
@@ -46,7 +48,7 @@ public class Advancements extends AdvancementProvider
                 Path path1 = getPath(PATH, advancement);
 
                 try {
-                    DataProvider.saveStable(cache, advancement.deconstruct().serializeToJson(), path1);
+                    DataProvider.save((new GsonBuilder()).setPrettyPrinting().create(), cache, advancement.deconstruct().serializeToJson(), path1);
                 }
                 catch (IOException ioexception) {
                     LOGGER.error("Couldn't save advancement {}", path1, ioexception);

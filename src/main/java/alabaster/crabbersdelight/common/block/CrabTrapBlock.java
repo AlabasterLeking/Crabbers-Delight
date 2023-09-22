@@ -66,7 +66,7 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
             BlockEntity tileEntity = level.getBlockEntity(pos);
             if (tileEntity instanceof CrabTrapBlockEntity crabTrapBlockEntity) {
                 if (state.getValue(WATERLOGGED) == Boolean.TRUE || state.getValue(HANGING) == Boolean.TRUE) {
-                    NetworkHooks.openScreen((ServerPlayer) player, crabTrapBlockEntity, pos);
+                    player.openMenu((CrabTrapBlockEntity) tileEntity);
                 }
                 else {
                     player.displayClientMessage(TextUtil.getTranslation("block.crab_trap.not_waterlogged"), true);
@@ -113,7 +113,6 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
 
         return super.updateShape(state, dir, neighborState, level, currentPos, neighborPos).setValue(HANGING, false);
     }
-
 
     @Override
     public FluidState getFluidState(BlockState pState) {

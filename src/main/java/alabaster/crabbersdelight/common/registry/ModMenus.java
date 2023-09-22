@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public final class ModMenus {
 
-    public static final DeferredRegister<MenuType<?>> MENU = DeferredRegister.create(ForgeRegistries.MENU_TYPES, CrabbersDelight.MODID);
+    public static final DeferredRegister<MenuType<?>> MENU = DeferredRegister.create(ForgeRegistries.CONTAINERS, CrabbersDelight.MODID);
 
     public static final RegistryObject<MenuType<CrabTrapMenu>> CRAB_TRAP_MENU = MENU.register("crab_trap_menu",
             () -> IForgeMenuType.create(CrabTrapMenu::new));

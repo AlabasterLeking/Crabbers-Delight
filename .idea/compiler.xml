@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/forge_gradle/deobf_dependencies/com/blamejared/crafttweaker/CraftTweaker-forge-1.18.2/9.1.192_mapped_official_1.18.2/CraftTweaker-forge-1.18.2-9.1.192_mapped_official_1.18.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.blamejared.crafttweaker/Crafttweaker_Annotation_Processors/3.0.0.8/13357362003175462fd3ccf60dedab93056da38d/Crafttweaker_Annotation_Processors-3.0.0.8.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.reflections/reflections/0.10.2/b638d7ca0e0fe0146b60a0e7ba232ad852a73b31/reflections-0.10.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.9/8a432c1d6825781e21a02db2e2c33c5fde2833b9/gson-2.8.9.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/6d1c8bf4c28e697f472a83bd6add76ec4951734/mixin-0.8.5-processor.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/16.0.2/dab5655eb9abe23f2245c34e66c9813c7daf4563/annotations-16.0.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.openzen.zencode/JavaAnnotations/0.3.8/bd4eaa1fe5763601f7cd3a1f219b208b94b5fc77/JavaAnnotations-0.3.8.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service-annotations/1.0.1/ac86dacc0eb9285ea9d42eee6aad8629ca3a7432/auto-service-annotations-1.0.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.toolisticon.aptk/aptk-tools/0.19.2/2c5c4f689ea83569db6d1547fc930774165915d1/aptk-tools-0.19.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.toolisticon.aptk/annotationwrapper-api/0.17.1/52ceb3b0c8be8750fb87079f1af89f49ac59f874/annotationwrapper-api-0.17.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.12.0/c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e/commons-lang3-3.12.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.28.0-GA/9a958811a88381bb159cc2f5ed79c34a45c4af7a/javassist-3.28.0-GA.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.32/cdcff33940d9f2de763bc41ea05a0be5941176c3/slf4j-api-1.7.32.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.toolisticon.aptk/aptk-common/0.19.2/9a00a04aa2aed0bfb1fa3c5a7b6f835a4b6d0435/aptk-common-0.19.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.toolisticon.aptk/aptk-templating/0.19.2/b8a2e29d01b25656e253c5b626b872e8f4b10e50/aptk-templating-0.19.2.jar" />
+        </processorPath>
+        <module name="Crabbers-Delight.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
+  </component>
+</project>

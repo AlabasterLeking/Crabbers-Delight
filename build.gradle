@@ -111,12 +111,17 @@ dependencies {
 
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
 
-    //compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
-    //runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 
-    compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
-    compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
-    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+    def ctDep = fg.deobf("com.blamejared.crafttweaker:CraftTweaker-forge-${mc_version}:${crafttweaker_version}")
+    compileOnly ctDep
+    //runtimeOnly ctDep
+
+    annotationProcessor ctDep
+    annotationProcessor "com.blamejared.crafttweaker:Crafttweaker_Annotation_Processors:${crafttweaker_ap_version}"
+    annotationProcessor "org.reflections:reflections:0.9.10" // CT dep
+    annotationProcessor "com.google.code.gson:gson:2.8.7" // CT dep
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

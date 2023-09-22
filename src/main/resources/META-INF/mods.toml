@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[40,)"
 license="MIT License"
 
 [[mods]]
@@ -16,14 +16,14 @@ description='''A maritime addon for Farmer's Delight'''
 [[dependencies.crabbersdelight]]
 modId="forge"
 mandatory=true
-versionRange="[41.1.0,)"
+versionRange="[40.1.46,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.crabbersdelight]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.19,1.20)"
+versionRange="[1.18.2]"
 ordering="NONE"
 side="BOTH"
 
