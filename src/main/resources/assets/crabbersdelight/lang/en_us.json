@@ -26,6 +26,8 @@
   "item.crabbersdelight.seafood_gumbo": "Seafood Gumbo",
   "item.crabbersdelight.stuffed_nautilus_shell": "Stuffed Nautilus Shell",
 
+  "item.crabbersdelight.crab_spawn_egg": "Spawn Crab",
+
   "block.crabbersdelight.crab_trap": "Crab Trap",
   "block.crabbersdelight.crab_barrel": "Crab Barrel",
   "block.crabbersdelight.clam_barrel": "Clam Barrel",
@@ -33,6 +35,8 @@
   "block.crabbersdelight.shrimp_barrel": "Shrimp Barrel",
   "block.crabbersdelight.nautilus_shell_block": "Nautilus Shell Block",
   "block.crabbersdelight.pearl_block": "Pearl Block",
+
+  "entity.crabbersdelight.crab": "Crab",
 
   "crabbersdelight.advancement.root": "Crabber's Delight",
   "crabbersdelight.advancement.root.desc": "A seafood adventure awaits you!",

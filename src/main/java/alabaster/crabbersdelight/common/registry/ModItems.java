@@ -6,6 +6,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -127,4 +128,8 @@ public class ModItems {
     // Crab Trap
     public static final RegistryObject<Item> CRAB_TRAP = addToTab(ITEMS.register("crab_trap",
             () -> new BlockItem(ModBlocks.CRAB_TRAP.get(), basicItem())));
+
+    // Spawn Eggs
+    public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = addToTab(ITEMS.register("crab_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0xF0ABD1, 0xAE4C82, new Item.Properties())));
 }

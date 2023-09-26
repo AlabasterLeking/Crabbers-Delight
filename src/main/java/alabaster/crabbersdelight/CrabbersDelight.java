@@ -40,6 +40,7 @@ public class CrabbersDelight {
         ModBlockEntity.BLOCK_ENTITY_TYPE.register(bus);
         ModMenus.MENU.register(bus);
         ModCreativeTabs.CREATIVE_TAB.register(bus);
+        ModEntities.ENTITIES.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
