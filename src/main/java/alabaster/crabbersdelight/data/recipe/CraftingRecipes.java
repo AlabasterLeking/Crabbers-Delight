@@ -54,6 +54,38 @@ public class CraftingRecipes {
                 .unlockedBy("has_shrimp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_SHRIMP.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.COD_BARREL.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.COD)
+                .unlockedBy("has_cod", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COD))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.SALMON_BARREL.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.SALMON)
+                .unlockedBy("has_cod", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SALMON))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.PUFFERFISH_BARREL.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.PUFFERFISH)
+                .unlockedBy("has_cod", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PUFFERFISH))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.TROPICAL_FISH_BARREL.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.TROPICAL_FISH)
+                .unlockedBy("has_cod", InventoryChangeTrigger.TriggerInstance.hasItems(Items.TROPICAL_FISH))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.NAUTILUS_SHELL_BLOCK.get(), 1)
                 .pattern("###")
                 .pattern("###")

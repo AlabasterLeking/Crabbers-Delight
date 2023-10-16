@@ -27,6 +27,10 @@ public class BlockTags extends BlockTagsProvider
                 ModBlocks.CLAM_BARREL.get(),
                 ModBlocks.CLAWSTER_BARREL.get(),
                 ModBlocks.SHRIMP_BARREL.get(),
+                ModBlocks.COD_BARREL.get(),
+                ModBlocks.SALMON_BARREL.get(),
+                ModBlocks.PUFFERFISH_BARREL.get(),
+                ModBlocks.TROPICAL_FISH_BARREL.get(),
                 ModBlocks.CRAB_TRAP.get());
 
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(

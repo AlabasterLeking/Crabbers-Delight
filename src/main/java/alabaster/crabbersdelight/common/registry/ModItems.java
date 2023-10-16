@@ -119,6 +119,18 @@ public class ModItems {
     public static final RegistryObject<Item> SHRIMP_BARREL = addToTab(ITEMS.register("shrimp_barrel",
             () -> new BlockItem(ModBlocks.SHRIMP_BARREL.get(), basicItem())));
 
+    public static final RegistryObject<Item> COD_BARREL = addToTab(ITEMS.register("cod_barrel",
+            () -> new BlockItem(ModBlocks.COD_BARREL.get(), basicItem())));
+
+    public static final RegistryObject<Item> SALMON_BARREL = addToTab(ITEMS.register("salmon_barrel",
+            () -> new BlockItem(ModBlocks.SALMON_BARREL.get(), basicItem())));
+
+    public static final RegistryObject<Item> PUFFERFISH_BARREL = addToTab(ITEMS.register("pufferfish_barrel",
+            () -> new BlockItem(ModBlocks.PUFFERFISH_BARREL.get(), basicItem())));
+
+    public static final RegistryObject<Item> TROPICAL_FISH_BARREL = addToTab(ITEMS.register("tropical_fish_barrel",
+            () -> new BlockItem(ModBlocks.TROPICAL_FISH_BARREL.get(), basicItem())));
+
     public static final RegistryObject<Item> NAUTILUS_SHELL_BLOCK = addToTab(ITEMS.register("nautilus_shell_block",
             () -> new BlockItem(ModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem())));
 
