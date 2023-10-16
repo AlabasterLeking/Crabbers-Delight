@@ -6,7 +6,7 @@
 </a>
 
 
-<p dir="auto"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://raw.githubusercontent.com/AlabasterLeking/Crabbers-Delight/main/src/main/resources/crabbersdelightbanner.png" alt="Crabber's Delight" width="544" height="128" /></p>
+<p dir="auto"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://raw.githubusercontent.com/AlabasterLeking/Crabbers-Delight/1.20.1/src/main/resources/crabbersdelightbanner.png" alt="Crabber's Delight" width="544" height="128" /></p>
 <p style="text-align: left;"><span style="font-size: 14px;"><strong>Crabber's Delight</strong> is a mod that expands upon the cooking system from <strong>Farmer's Delight.</strong></span></p>
 <p><span style="font-size: 14px;">It introduces more seafood into the game, including crabs, shrimps, and clams, that can all be used in a collection of new dishes as well as some other food items to expand upon the existing sealife in Minecraft.</span><span style="font-size: 14px;"><br /></span></p>
 <p><span style="font-size: 14px;">📖 <strong>Getting Started:</strong></span></p>
