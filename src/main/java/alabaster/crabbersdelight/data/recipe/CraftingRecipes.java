@@ -134,6 +134,26 @@ public class CraftingRecipes {
                 .unlockedBy("has_shrimp_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SHRIMP_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "shrimp_from_barrel"));
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.COD, 9)
+                .requires(ModItems.COD_BARREL.get())
+                .unlockedBy("has_cod_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COD_BARREL.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "cod_from_barrel"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SALMON, 9)
+                .requires(ModItems.SALMON_BARREL.get())
+                .unlockedBy("has_salmon_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SALMON_BARREL.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "salmon_from_barrel"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.PUFFERFISH, 9)
+                .requires(ModItems.PUFFERFISH_BARREL.get())
+                .unlockedBy("has_pufferfish_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PUFFERFISH_BARREL.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "pufferfish_from_barrel"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.TROPICAL_FISH, 9)
+                .requires(ModItems.TROPICAL_FISH_BARREL.get())
+                .unlockedBy("has_tropical_fish_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TROPICAL_FISH_BARREL.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "tropical_fish_from_barrel"));
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.NAUTILUS_SHELL, 9)
                 .requires(ModItems.NAUTILUS_SHELL_BLOCK.get())
                 .unlockedBy("has_nautilus_shell_block", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NAUTILUS_SHELL_BLOCK.get()))

@@ -42,6 +42,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> TROPICAL_FISH_BARREL = BLOCKS.register("tropical_fish_barrel",
             () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
+    public static final RegistryObject<Block> LANTERNFISH_BARREL = BLOCKS.register("lanternfish_barrel",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+
     public static final RegistryObject<Block> NAUTILUS_SHELL_BLOCK = BLOCKS.register("nautilus_shell_block",
             () -> new NautilusShellBlock(Block.Properties.copy(Blocks.PRISMARINE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
 

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crabbersdelight:tropical_fish_from_barrel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tropical_fish_barrel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crabbersdelight:tropical_fish_barrel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tropical_fish_barrel",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crabbersdelight:tropical_fish_from_barrel"
+    ]
+  },
+  "sends_telemetry_event": false
+}

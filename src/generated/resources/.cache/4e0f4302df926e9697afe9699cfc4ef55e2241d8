@@ -1,4 +1,4 @@
-// 1.20.1	2023-08-29T21:41:28.0147071	Item Models: crabbersdelight
+// 1.20.1	2023-10-16T21:13:38.7749189	Item Models: crabbersdelight
 ccb80f8574a17e2b185a249f1c6b614591861b79 assets/crabbersdelight/models/item/bisque.json
 6fcaba2e4cb788cbe281a5cc5fd1f7988568cf02 assets/crabbersdelight/models/item/clam.json
 24994ded32547cb00a000806c060adaed590491e assets/crabbersdelight/models/item/clam_bake.json
@@ -6,6 +6,7 @@ ccb80f8574a17e2b185a249f1c6b614591861b79 assets/crabbersdelight/models/item/bisq
 5b9ee1b56c0ae86fa1b7646d6c51b6b76289baa9 assets/crabbersdelight/models/item/clam_chowder.json
 392b12cd79276f3a4406b6319c89c77801d42716 assets/crabbersdelight/models/item/clawster.json
 3dee439610b5ff40d8ed6276f6c293c18a01ed15 assets/crabbersdelight/models/item/clawster_barrel.json
+605a06f73ecc58033684cacb3576caa118b0a116 assets/crabbersdelight/models/item/cod_barrel.json
 a1732dcb9c5efe47b44aa9b8b2feedbc801b84a2 assets/crabbersdelight/models/item/cooked_clam_meat.json
 3a1ed28c6fe8b493eb676ddc4b9c89c3543e00ce assets/crabbersdelight/models/item/cooked_clawster.json
 83d7d083312f8d4084be985d4aedd81aaa6602a0 assets/crabbersdelight/models/item/cooked_crab.json
@@ -19,14 +20,18 @@ b5df73257c456c56f05bccf85411346f377953d5 assets/crabbersdelight/models/item/crab
 1fe46cef438b872fd471179ff8cd7fa8c98d0174 assets/crabbersdelight/models/item/crab_trap.json
 0696c41e1dc72aeb6d98202bc0b76cd1a26d50f6 assets/crabbersdelight/models/item/fish_stick.json
 84800b398cc1bd252d2b2418f8349e8f8179814f assets/crabbersdelight/models/item/kelp_shake.json
+3411d149e60eee896a614a718ea32ce916cf2cef assets/crabbersdelight/models/item/lanternfish_barrel.json
 dbbeb8c37cc903c2cc42ecda8dad0cf2bbd90ee0 assets/crabbersdelight/models/item/nautilus_shell_block.json
 12d869215554d8bdbb6bb6e8798ad2f49daa773d assets/crabbersdelight/models/item/pearl.json
 f4733de0684569e119aabd1dee32b9c6d0f7861f assets/crabbersdelight/models/item/pearl_block.json
+abe6adea1a44b0855c39460c753186f243659bff assets/crabbersdelight/models/item/pufferfish_barrel.json
 6042505cf0b291bff5c9fc616313376d0d9b4cca assets/crabbersdelight/models/item/raw_clam_meat.json
+19de7c57c4708ec55afdd0758862b6b9d643cf50 assets/crabbersdelight/models/item/salmon_barrel.json
 2e1474d645bb9cf4c36bc97ff7691bd56ec9c1a8 assets/crabbersdelight/models/item/seafood_gumbo.json
 5aa302ce0f5b68d1359e54091afdda03bd949d7e assets/crabbersdelight/models/item/shrimp.json
 42edfd1691956bae17946845cd9f0cca0cc9ca72 assets/crabbersdelight/models/item/shrimp_barrel.json
 8f8b848fcc40ff3817133f7856a95064c67bc07e assets/crabbersdelight/models/item/shrimp_skewer.json
 5f7e791f00726cbf1d4f37ac2f8d595a3951b21f assets/crabbersdelight/models/item/stuffed_nautilus_shell.json
 8d744545ad1428381557c879f352bd031a56c8e9 assets/crabbersdelight/models/item/surf_and_turf.json
+731f3a6ee8f2a8f1a1f4c01cdac9fc227aa122fd assets/crabbersdelight/models/item/tropical_fish_barrel.json
 7726e897bf6ccd577fe1ce5384906b9ef8d62a11 assets/crabbersdelight/models/item/tropical_fish_slice.json

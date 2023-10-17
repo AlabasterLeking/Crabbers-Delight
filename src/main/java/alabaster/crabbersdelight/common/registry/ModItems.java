@@ -131,6 +131,9 @@ public class ModItems {
     public static final RegistryObject<Item> TROPICAL_FISH_BARREL = addToTab(ITEMS.register("tropical_fish_barrel",
             () -> new BlockItem(ModBlocks.TROPICAL_FISH_BARREL.get(), basicItem())));
 
+    public static final RegistryObject<Item> LANTERNFISH_BARREL = addToTab(ITEMS.register("lanternfish_barrel",
+            () -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem())));
+
     public static final RegistryObject<Item> NAUTILUS_SHELL_BLOCK = addToTab(ITEMS.register("nautilus_shell_block",
             () -> new BlockItem(ModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem())));
 
@@ -141,7 +144,4 @@ public class ModItems {
     public static final RegistryObject<Item> CRAB_TRAP = addToTab(ITEMS.register("crab_trap",
             () -> new BlockItem(ModBlocks.CRAB_TRAP.get(), basicItem())));
 
-    // Spawn Eggs
-    public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = addToTab(ITEMS.register("crab_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0xF0ABD1, 0xAE4C82, new Item.Properties())));
 }
