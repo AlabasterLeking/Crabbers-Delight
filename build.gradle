@@ -112,7 +112,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
 
-    implementation fg.deobf("curse.maven:geckolib-388172:4770941")
+    implementation fg.deobf("curse.maven:geckolib-388172:4756691")
 
     //compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
     //runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")

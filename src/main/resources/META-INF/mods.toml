@@ -33,3 +33,10 @@ mandatory = true
 versionRange = "[1.2.3,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.crabbersdelight]]
+modId = "geckolib"
+mandatory = true
+versionRange = "[4.2.3,)"
+ordering = "NONE"
+side = "BOTH"

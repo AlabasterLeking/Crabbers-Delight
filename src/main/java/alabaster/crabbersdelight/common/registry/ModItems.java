@@ -36,6 +36,10 @@ public class ModItems {
     public static final RegistryObject<Item> PEARL = addToTab(ITEMS.register("pearl",
             () -> new Item(basicItem())));
 
+    public static final RegistryObject<Item> CRAB_SPAWN_EGG = addToTab(ITEMS.register("crab_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x212b59, 0xfeab4d,
+                    new Item.Properties())));
+
     // Foods
     public static final RegistryObject<Item> RAW_CRAB = addToTab(ITEMS.register("crab",
             () -> new Item(foodItem(CDFoodValues.RAW_CRAB))));

@@ -3,19 +3,25 @@ package alabaster.crabbersdelight.client.renderer;
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.client.model.CrabModel;
 import alabaster.crabbersdelight.common.entity.CrabEntity;
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class CrabRenderer extends MobRenderer<CrabEntity, CrabModel<CrabEntity>> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(CrabbersDelight.MODID, "textures/entity/crab.png");
-
-    public CrabRenderer(EntityRendererProvider.Context ctx) {
-        super(ctx, new CrabModel(ctx.bakeLayer(CrabModel.LAYER_LOCATION)), 1);
+public class CrabRenderer extends GeoEntityRenderer<CrabEntity> {
+    public CrabRenderer(EntityRendererProvider.Context renderManager) {
+        super(renderManager, new CrabModel());
+        this.shadowRadius = 0.3F;
     }
 
     @Override
-    public ResourceLocation getTextureLocation(CrabEntity entity) {
-        return TEXTURE;
+    public void render(CrabEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+        if(entity.isBaby()) {
+            poseStack.scale(0.5f, 0.5f, 0.5f);
+        }
+
+        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }
 }
