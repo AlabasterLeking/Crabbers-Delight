@@ -1,7 +1,7 @@
 package alabaster.crabbersdelight.client.model;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.entity.Crab;
+import alabaster.crabbersdelight.common.entity.CrabEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 
-public class CrabModel<T extends Crab> extends EntityModel<T> {
+public class CrabModel<T extends CrabEntity> extends EntityModel<T> {
 
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(CrabbersDelight.MODID, "crab"), "main");
 	private final ModelPart crab;

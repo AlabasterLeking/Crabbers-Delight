@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CrabbersDelight.MODID);
 
-    // Crab Trap
+    // CrabEntity Trap
     public static final RegistryObject<Block> CRAB_TRAP = BLOCKS.register("crab_trap",
             () -> new CrabTrapBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 

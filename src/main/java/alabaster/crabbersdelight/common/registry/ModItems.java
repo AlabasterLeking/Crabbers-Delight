@@ -140,7 +140,7 @@ public class ModItems {
     public static final RegistryObject<Item> PEARL_BLOCK = addToTab(ITEMS.register("pearl_block",
             () -> new BlockItem(ModBlocks.PEARL_BLOCK.get(), basicItem())));
 
-    // Crab Trap
+    // CrabEntity Trap
     public static final RegistryObject<Item> CRAB_TRAP = addToTab(ITEMS.register("crab_trap",
             () -> new BlockItem(ModBlocks.CRAB_TRAP.get(), basicItem())));
 

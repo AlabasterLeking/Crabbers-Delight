@@ -1,7 +1,7 @@
 package alabaster.crabbersdelight.common.event;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.entity.Crab;
+import alabaster.crabbersdelight.common.entity.CrabEntity;
 import alabaster.crabbersdelight.common.registry.ModEntities;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 public class CommonModEvents {
     @SubscribeEvent
     public static void entityAttributes(EntityAttributeCreationEvent event) {
-        event.put(ModEntities.CRAB.get(), Crab.createCrabAttributes().build());
+        event.put(ModEntities.CRAB.get(), CrabEntity.createCrabAttributes().build());
     }
 
     @SubscribeEvent
@@ -22,7 +22,7 @@ public class CommonModEvents {
         event.register(
                 ModEntities.CRAB.get(),
                 SpawnPlacements.Type.IN_WATER,
-                Heightmap.Types.OCEAN_FLOOR, Crab::canSpawn,
+                Heightmap.Types.OCEAN_FLOOR, CrabEntity::canSpawn,
                 SpawnPlacementRegisterEvent.Operation.OR);
     }
 }

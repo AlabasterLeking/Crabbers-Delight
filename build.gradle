@@ -6,6 +6,7 @@ buildscript {
             url "https://repo.spongepowered.org/repository/maven-public/"
             // content { includeGroup "org.spongepowered" }
         }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
     }
     dependencies {
@@ -110,6 +111,8 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmersdelight_version}")
+
+    implementation fg.deobf("curse.maven:geckolib-388172:4770941")
 
     //compileOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}:api")
     //runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")
