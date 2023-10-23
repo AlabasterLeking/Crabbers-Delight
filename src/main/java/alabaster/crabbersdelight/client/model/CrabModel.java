@@ -31,21 +31,21 @@ public class CrabModel extends GeoModel<CrabEntity> {
 
 	@Override
 	public ResourceLocation getTextureResource(CrabEntity crabEntity) {
-		if (crabEntity.getVariant() == 0) {
+		if (crabEntity.getVariant().getId() == 0) {
 			return new ResourceLocation(CrabbersDelight.MODID, "textures/entity/blue_crab.png");
-		} else if (crabEntity.getVariant() == 1) {
+		} else if (crabEntity.getVariant().getId() == 1) {
 				return new ResourceLocation(CrabbersDelight.MODID, "textures/entity/green_crab.png");
-		} else if (crabEntity.getVariant() == 2) {
+		} else if (crabEntity.getVariant().getId() == 2) {
 			return new ResourceLocation(CrabbersDelight.MODID, "textures/entity/red_crab.png");
-		} else if (crabEntity.getVariant() == 3) {
+		} else if (crabEntity.getVariant().getId() == 3) {
 			return new ResourceLocation(CrabbersDelight.MODID, "textures/entity/orange_crab.png");
-		} else if (crabEntity.getVariant() == 4) {
+		} else if (crabEntity.getVariant().getId() == 4) {
 			return new ResourceLocation(CrabbersDelight.MODID, "textures/entity/yellow_crab.png");
-		} else if (crabEntity.getVariant() == 5) {
+		} else if (crabEntity.getVariant().getId() == 5) {
 			return new ResourceLocation(CrabbersDelight.MODID, "textures/entity/purple_crab.png");
-		} else if (crabEntity.getVariant() == 6) {
+		} else if (crabEntity.getVariant().getId() == 6) {
 			return new ResourceLocation(CrabbersDelight.MODID, "textures/entity/white_crab.png");
-		} else if (crabEntity.getVariant() == 7) {
+		} else if (crabEntity.getVariant().getId() == 7) {
 			return new ResourceLocation(CrabbersDelight.MODID, "textures/entity/gray_crab.png");
 		} else {
 			return new ResourceLocation(CrabbersDelight.MODID, "textures/entity/blue_crab.png");

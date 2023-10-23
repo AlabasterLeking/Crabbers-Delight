@@ -30,22 +30,22 @@ public class ModItems {
         return new Item.Properties();
     }
 
-    // Foods
+    // Food Items
     public static Item.Properties foodItem(FoodProperties food) {
         return new Item.Properties().food(food);
     }
 
-    // Drinks
+    // Drink Items
     public static Item.Properties drinkItem(FoodProperties food) {
         return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
 
-    // Bucketables
+    // Bucket Items
     public static Item createMobBucketItem(Supplier<EntityType<? extends Animal>> entityType) {
         return new MobBucketItem(entityType, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1));
     }
 
-    // Spawn Egg
+    // Spawn Eggs
     public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties()));
 
@@ -53,6 +53,7 @@ public class ModItems {
     public static final RegistryObject<Item> PEARL = addToTab(ITEMS.register("pearl",
             () -> new Item(basicItem())));
 
+    // Mob Buckets
     public static final RegistryObject<Item> CRAB_BUCKET = addToTab(ITEMS.register("crab_bucket",
             () -> ModItems.createMobBucketItem(ModEntities.CRAB::get)));
 
