@@ -2,15 +2,23 @@ package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.CDFoodValues;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Bucketable;
+import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+
+import java.util.function.Supplier;
 
 import static alabaster.crabbersdelight.common.registry.ModCreativeTabs.addToTab;
 
@@ -32,13 +40,21 @@ public class ModItems {
         return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
 
+    // Bucketables
+    public static Item createMobBucketItem(Supplier<EntityType<? extends Animal>> entityType) {
+        return new MobBucketItem(entityType, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1));
+    }
+
+    // Spawn Egg
+    public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties()));
+
     // Materials
     public static final RegistryObject<Item> PEARL = addToTab(ITEMS.register("pearl",
             () -> new Item(basicItem())));
 
-    public static final RegistryObject<Item> CRAB_SPAWN_EGG = addToTab(ITEMS.register("crab_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x212b59, 0xfeab4d,
-                    new Item.Properties())));
+    public static final RegistryObject<Item> CRAB_BUCKET = addToTab(ITEMS.register("crab_bucket",
+            () -> ModItems.createMobBucketItem(ModEntities.CRAB::get)));
 
     // Foods
     public static final RegistryObject<Item> RAW_CRAB = addToTab(ITEMS.register("crab",

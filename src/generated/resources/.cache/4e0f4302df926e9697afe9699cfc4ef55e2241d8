@@ -1,4 +1,4 @@
-// 1.20.1	2023-10-16T21:13:38.7749189	Item Models: crabbersdelight
+// 1.20.1	2023-10-22T22:57:30.7366094	Item Models: crabbersdelight
 ccb80f8574a17e2b185a249f1c6b614591861b79 assets/crabbersdelight/models/item/bisque.json
 6fcaba2e4cb788cbe281a5cc5fd1f7988568cf02 assets/crabbersdelight/models/item/clam.json
 24994ded32547cb00a000806c060adaed590491e assets/crabbersdelight/models/item/clam_bake.json
@@ -15,6 +15,7 @@ bab5e23a62fe484983b5ae84d936bcbdb5105cdb assets/crabbersdelight/models/item/cook
 a39f9b0b3c2344ac1b306883e5a72561002aec66 assets/crabbersdelight/models/item/cooked_tropical_fish_slice.json
 fdbd8082cc88ca421b3c0c58c4eb1da641f3642a assets/crabbersdelight/models/item/crab.json
 b5df73257c456c56f05bccf85411346f377953d5 assets/crabbersdelight/models/item/crab_barrel.json
+341994a1e032f95524e4c53a371f3abf33d3dd22 assets/crabbersdelight/models/item/crab_bucket.json
 93b0a064a96a75cd6450ce35204d19395f6ec8c0 assets/crabbersdelight/models/item/crab_cakes.json
 3fea0e87f8fb32f4a6b80c4eb600fbb801fc46ed assets/crabbersdelight/models/item/crab_legs.json
 1fe46cef438b872fd471179ff8cd7fa8c98d0174 assets/crabbersdelight/models/item/crab_trap.json

@@ -11,6 +11,7 @@ public class CDModTags {
     public static final TagKey<Item> RAW_SEAFOOD = modItemTag("raw_seafood");
     public static final TagKey<Item> COOKED_SEAFOOD = modItemTag("cooked_seafood");
     public static final TagKey<Item> CRAB_TRAP_BAIT = modItemTag("crab_trap_bait");
+    public static final TagKey<Item> CRAB_TEMPT_ITEM = modItemTag("crab_tempt_item");
 
     private static TagKey<Item> modItemTag(String path) {
         return ItemTags.create(new ResourceLocation(CrabbersDelight.MODID, path));

@@ -30,6 +30,9 @@ public class ItemModels extends ItemModelProvider
         Set<Item> items = ForgeRegistries.ITEMS.getValues().stream().filter(i -> CrabbersDelight.MODID.equals(ForgeRegistries.ITEMS.getKey(i).getNamespace()))
                 .collect(Collectors.toSet());
 
+        // Specific cases
+        items.remove(ModItems.CRAB_SPAWN_EGG.get());
+
         // Blocks whose item look alike
         takeAll(items, i -> i instanceof BlockItem).forEach(item -> blockBasedModel(item, ""));
 
