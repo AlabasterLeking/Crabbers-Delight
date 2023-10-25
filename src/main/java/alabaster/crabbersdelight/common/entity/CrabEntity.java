@@ -91,7 +91,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable{
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, getTemptationItems(), false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1D));
-        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.5D));
+        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 0.5D));
     }
 
     @Nullable
@@ -172,7 +172,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable{
     public void saveToBucketTag(@Nonnull ItemStack stack) {
         Bucketable.saveDefaultDataToBucketTag(this, stack);
         CompoundTag tag = stack.getOrCreateTag();
-
+        tag.putInt("Age", this.getAge());
         tag.putInt("Variant", this.getVariant().getId());
     }
 
@@ -181,6 +181,9 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable{
     public void loadFromBucketTag(@Nonnull CompoundTag tag) {
         Bucketable.loadDefaultDataFromBucketTag(this, tag);
 
+        if (tag.contains("Age")) {
+            this.setAge(tag.getInt("Age"));
+        }
         entityData.set(VARIANT_ID, tag.getInt("Variant"));
     }
 

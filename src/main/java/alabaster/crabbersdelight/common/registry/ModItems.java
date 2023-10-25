@@ -35,6 +35,11 @@ public class ModItems {
         return new Item.Properties().food(food);
     }
 
+    // Bowl Items
+    public static Item.Properties bowlFoodItem(FoodProperties food) {
+        return new Item.Properties().food(food).craftRemainder(Items.BOWL).stacksTo(16);
+    }
+
     // Drink Items
     public static Item.Properties drinkItem(FoodProperties food) {
         return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
@@ -106,9 +111,6 @@ public class ModItems {
     public static final RegistryObject<Item> CLAM_BAKE = addToTab(ITEMS.register("clam_bake",
             () -> new Item(foodItem(CDFoodValues.CLAM_BAKE))));
 
-    public static final RegistryObject<Item> CLAM_CHOWDER = addToTab(ITEMS.register("clam_chowder",
-            () -> new Item(foodItem(CDFoodValues.CLAM_CHOWDER))));
-
     public static final RegistryObject<Item> COOKED_TROPICAL_FISH = addToTab(ITEMS.register("cooked_tropical_fish",
             () -> new Item(foodItem(CDFoodValues.COOKED_TROPICAL_FISH))));
 
@@ -118,14 +120,21 @@ public class ModItems {
     public static final RegistryObject<Item> COOKED_TROPICAL_FISH_SLICE = addToTab(ITEMS.register("cooked_tropical_fish_slice",
             () -> new Item(foodItem(CDFoodValues.COOKED_TROPICAL_FISH_SLICE))));
 
-    public static final RegistryObject<Item> BISQUE = addToTab(ITEMS.register("bisque",
-            () -> new Item(foodItem(CDFoodValues.BISQUE))));
-
-    public static final RegistryObject<Item> SEAFOOD_GUMBO = addToTab(ITEMS.register("seafood_gumbo",
-            () -> new Item(foodItem(CDFoodValues.SEAFOOD_GUMBO))));
-
     public static final RegistryObject<Item> STUFFED_NAUTILUS_SHELL = addToTab(ITEMS.register("stuffed_nautilus_shell",
             () -> new Item(foodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL))));
+
+    // Drink Food Items
+
+    // Bowl Food Items
+
+    public static final RegistryObject<Item> BISQUE = addToTab(ITEMS.register("bisque",
+            () -> new Item(bowlFoodItem(CDFoodValues.BISQUE))));
+
+    public static final RegistryObject<Item> SEAFOOD_GUMBO = addToTab(ITEMS.register("seafood_gumbo",
+            () -> new Item(bowlFoodItem(CDFoodValues.SEAFOOD_GUMBO))));
+
+    public static final RegistryObject<Item> CLAM_CHOWDER = addToTab(ITEMS.register("clam_chowder",
+            () -> new Item(bowlFoodItem(CDFoodValues.CLAM_CHOWDER))));
 
     // Storage Blocks
     public static final RegistryObject<Item> CRAB_BARREL = addToTab(ITEMS.register("crab_barrel",
