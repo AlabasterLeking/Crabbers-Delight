@@ -2,13 +2,9 @@ package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.CDFoodValues;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Bucketable;
-import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
@@ -25,44 +21,56 @@ import static alabaster.crabbersdelight.common.registry.ModCreativeTabs.addToTab
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CrabbersDelight.MODID);
 
-    // Basic Items
+    // Basic Items Helper
+
     public static Item.Properties basicItem() {
         return new Item.Properties();
     }
 
-    // Food Items
+    // Food Items Helper
+
     public static Item.Properties foodItem(FoodProperties food) {
         return new Item.Properties().food(food);
     }
 
-    // Bowl Items
+    // Bowl Items Helper
+
     public static Item.Properties bowlFoodItem(FoodProperties food) {
         return new Item.Properties().food(food).craftRemainder(Items.BOWL).stacksTo(16);
     }
 
-    // Drink Items
+    // Drink Items Helper
+
     public static Item.Properties drinkItem(FoodProperties food) {
         return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
 
-    // Bucket Items
+    // Bucket Items Helper
+
     public static Item createMobBucketItem(Supplier<EntityType<? extends Animal>> entityType) {
         return new MobBucketItem(entityType, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1));
     }
 
     // Spawn Eggs
+
     public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties()));
 
     // Materials
+
+    public static final RegistryObject<Item> CLAM = addToTab(ITEMS.register("clam",
+            () -> new Item(basicItem())));
+
     public static final RegistryObject<Item> PEARL = addToTab(ITEMS.register("pearl",
             () -> new Item(basicItem())));
 
     // Mob Buckets
+
     public static final RegistryObject<Item> CRAB_BUCKET = addToTab(ITEMS.register("crab_bucket",
             () -> ModItems.createMobBucketItem(ModEntities.CRAB::get)));
 
     // Foods
+
     public static final RegistryObject<Item> RAW_CRAB = addToTab(ITEMS.register("crab",
             () -> new Item(foodItem(CDFoodValues.RAW_CRAB))));
 
@@ -81,17 +89,11 @@ public class ModItems {
     public static final RegistryObject<Item> COOKED_SHRIMP = addToTab(ITEMS.register("cooked_shrimp",
             () -> new Item(foodItem(CDFoodValues.COOKED_SHRIMP))));
 
-    public static final RegistryObject<Item> CLAM = addToTab(ITEMS.register("clam",
-            () -> new Item(basicItem())));
-
     public static final RegistryObject<Item> RAW_CLAM_MEAT = addToTab(ITEMS.register("raw_clam_meat",
             () -> new Item(foodItem(CDFoodValues.RAW_CLAM_MEAT))));
 
     public static final RegistryObject<Item> COOKED_CLAM_MEAT = addToTab(ITEMS.register("cooked_clam_meat",
             () -> new Item(foodItem(CDFoodValues.COOKED_CLAM_MEAT))));
-
-    public static final RegistryObject<Item> KELP_SHAKE = addToTab(ITEMS.register("kelp_shake",
-            () -> new DrinkableItem(drinkItem(CDFoodValues.KELP_SHAKE))));
 
     public static final RegistryObject<Item> CRAB_CAKES = addToTab(ITEMS.register("crab_cakes",
             () -> new Item(foodItem(CDFoodValues.CRAB_CAKES))));
@@ -124,6 +126,9 @@ public class ModItems {
             () -> new Item(foodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL))));
 
     // Drink Food Items
+
+    public static final RegistryObject<Item> KELP_SHAKE = addToTab(ITEMS.register("kelp_shake",
+            () -> new DrinkableItem(drinkItem(CDFoodValues.KELP_SHAKE))));
 
     // Bowl Food Items
 
@@ -170,7 +175,7 @@ public class ModItems {
     public static final RegistryObject<Item> PEARL_BLOCK = addToTab(ITEMS.register("pearl_block",
             () -> new BlockItem(ModBlocks.PEARL_BLOCK.get(), basicItem())));
 
-    // CrabEntity Trap
+    // Crab Trap
     public static final RegistryObject<Item> CRAB_TRAP = addToTab(ITEMS.register("crab_trap",
             () -> new BlockItem(ModBlocks.CRAB_TRAP.get(), basicItem())));
 
