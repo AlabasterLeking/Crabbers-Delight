@@ -7,26 +7,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "crabbersdelight:crab"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "crabbersdelight:clawster"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "crabbersdelight:shrimp"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "crabbersdelight:clam"
-        },
-        {
-          "type": "minecraft:item",
           "weight": 4,
           "name": "minecraft:stick"
         },

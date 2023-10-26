@@ -1,5 +1,9 @@
-// 1.20.1	2023-10-22T22:57:30.7366094	Item Models: crabbersdelight
+// 1.20.1	2023-10-25T21:21:50.4388342	Item Models: crabbersdelight
 ccb80f8574a17e2b185a249f1c6b614591861b79 assets/crabbersdelight/models/item/bisque.json
+250c5fc543135b3fe631e0ced068929118c1cea5 assets/crabbersdelight/models/item/bucket_of_clam_chum.json
+96fbed9cf2ab33d31ee0a46c273e8b1ec366b922 assets/crabbersdelight/models/item/bucket_of_clawster_chum.json
+83cf56d983d9df996036cdc3bd3cc2dcfb7db812 assets/crabbersdelight/models/item/bucket_of_crab_chum.json
+a3b84200d2b760be0386eefc0875b71234f1bf5b assets/crabbersdelight/models/item/bucket_of_shrimp_chum.json
 6fcaba2e4cb788cbe281a5cc5fd1f7988568cf02 assets/crabbersdelight/models/item/clam.json
 24994ded32547cb00a000806c060adaed590491e assets/crabbersdelight/models/item/clam_bake.json
 14fe8dbaed31924aaef853b1523b4dc5c6b62f85 assets/crabbersdelight/models/item/clam_barrel.json
