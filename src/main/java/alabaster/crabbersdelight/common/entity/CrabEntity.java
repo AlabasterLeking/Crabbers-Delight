@@ -1,19 +1,23 @@
 package alabaster.crabbersdelight.common.entity;
 
-import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.ModEntities;
 import alabaster.crabbersdelight.common.registry.ModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
+import com.mojang.serialization.Codec;
+import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BiomeTags;
-import net.minecraft.util.Mth;
+import net.minecraft.util.ByIdMap;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -26,7 +30,6 @@ import net.minecraft.world.entity.animal.Bucketable;
 import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -43,8 +46,10 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
+import java.util.function.IntFunction;
 
-public class CrabEntity extends Animal implements GeoEntity, Bucketable{
+public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     private static final EntityDataAccessor<Integer> VARIANT_ID = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.INT);
     public static final String VARIANT_TAG = "Variant";
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
@@ -53,6 +58,62 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable{
 
     public CrabEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
+    }
+
+    public static enum Variant implements StringRepresentable {
+        BLUE(0, "blue", true),
+        GREEN(1, "green", true),
+        RED(2, "red", true),
+        YELLOW(3, "yellow", true),
+        ORANGE(4, "orange", true),
+        WHITE(5, "white", true),
+        GRAY(6, "gray", true),
+        PURPLE(7, "purple", false);
+
+        private static final IntFunction<CrabEntity.Variant> BY_ID = ByIdMap.continuous(CrabEntity.Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+        public static final Codec<CrabEntity.Variant> CODEC = StringRepresentable.fromEnum(CrabEntity.Variant::values);
+        private final int id;
+        private final String name;
+        private final boolean common;
+
+        private Variant(int id, String name, boolean common) {
+            this.id = id;
+            this.name = name;
+            this.common = common;
+        }
+
+        public int getId() {
+            return this.id;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+
+        public String getSerializedName() {
+            return this.name;
+        }
+
+        public static CrabEntity.Variant byId(int id) {
+            return BY_ID.apply(id);
+        }
+
+        public static CrabEntity.Variant getCommonSpawnVariant(RandomSource rand) {
+            return getSpawnVariant(rand, true);
+        }
+
+        public static CrabEntity.Variant getRareSpawnVariant(RandomSource rand) {
+            return getSpawnVariant(rand, false);
+        }
+
+        private static CrabEntity.Variant getSpawnVariant(RandomSource random, boolean p_218452_) {
+            CrabEntity.Variant[] crab$variant = Arrays.stream(values()).filter((p_149252_) -> {
+                return p_149252_.common == p_218452_;
+            }).toArray((variant) -> {
+                return new CrabEntity.Variant[variant];
+            });
+            return Util.getRandom(crab$variant, random);
+        }
     }
 
     @Override
@@ -79,7 +140,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable{
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 10)
-                .add(Attributes.MOVEMENT_SPEED, 0.25f)
+                .add(Attributes.MOVEMENT_SPEED, 0.4f)
                 .add(Attributes.ATTACK_KNOCKBACK, 1.5f)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.5D)
                 .add(Attributes.ATTACK_DAMAGE, 3.0f).build();
@@ -88,16 +149,33 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable{
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(3, new TemptGoal(this, 1.0D, getTemptationItems(), false));
-        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1D));
-        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 0.5D));
+        this.goalSelector.addGoal(2, new BreedGoal(this, 1.0));
+        this.goalSelector.addGoal(3, new TemptGoal(this, 0.75, getTemptationItems(), false));
+        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1));
+        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.));
     }
 
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
-        return ModEntities.CRAB.get().create(level);
+        CrabEntity crab = ModEntities.CRAB.create(level);
+        if (crab != null) {
+            CrabEntity.Variant crab$variant;
+            if (useRareVariant(this.random)) {
+                crab$variant = CrabEntity.Variant.getRareSpawnVariant(this.random);
+            } else {
+                crab$variant = this.random.nextBoolean() ? this.getVariant() : ((CrabEntity)ageableMob).getVariant();
+            }
+
+            crab.setVariant(crab$variant);
+            crab.setPersistenceRequired();
+        }
+
+        return crab;
+    }
+
+    private static boolean useRareVariant(RandomSource p_218436_) {
+        return p_218436_.nextInt(1200) == 0;
     }
 
     private Ingredient getTemptationItems() {
@@ -115,11 +193,11 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable{
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
         if (tAnimationState.isMoving()) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.crab.idle", Animation.LoopType.LOOP));
+            tAnimationState.getController().setAnimation(RawAnimation.begin().thenLoop("animation.crab.walk"));
             return PlayState.CONTINUE;
         }
 
-        tAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.crab.idle", Animation.LoopType.LOOP));
+        tAnimationState.getController().setAnimation(RawAnimation.begin().thenLoop("animation.crab.idle"));
         return PlayState.CONTINUE;
     }
 
