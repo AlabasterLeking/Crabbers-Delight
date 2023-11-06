@@ -1,0 +1,50 @@
+{
+  "itemGroup.crabbersdelight": "Crabber's Delight",
+
+  "item.crabbersdelight.crab": "カニ",
+  "item.crabbersdelight.cooked_crab": "調理したカニ",
+  "item.crabbersdelight.clawster": "クロウスター",
+  "item.crabbersdelight.cooked_clawster": "調理したクロウスター",
+  "item.crabbersdelight.shrimp": "エビ",
+  "item.crabbersdelight.cooked_shrimp": "調理したエビ",
+  "item.crabbersdelight.clam": "二枚貝",
+  "item.crabbersdelight.raw_clam_meat": "生の貝肉",
+  "item.crabbersdelight.cooked_clam_meat": "調理した貝肉",
+  "item.crabbersdelight.pearl": "真珠",
+  "item.crabbersdelight.kelp_shake": "コンブシェイク",
+  "item.crabbersdelight.crab_cakes": "クラブケーキ",
+  "item.crabbersdelight.crab_legs": "カニの脚",
+  "item.crabbersdelight.cooked_tropical_fish": "調理した熱帯魚",
+  "item.crabbersdelight.shrimp_skewer": "エビの串焼き",
+  "item.crabbersdelight.surf_and_turf": "サーフ＆ターフ",
+  "item.crabbersdelight.fish_stick": "フィッシュスティック",
+  "item.crabbersdelight.clam_bake": "クラムベイク",
+  "item.crabbersdelight.clam_chowder": "クラムチャウダー",
+  "item.crabbersdelight.tropical_fish_slice": "熱帯魚の切り身",
+  "item.crabbersdelight.cooked_tropical_fish_slice": "調理した熱帯魚の切り身",
+  "item.crabbersdelight.bisque": "ビスク",
+  "item.crabbersdelight.seafood_gumbo": "シーフードガンボ",
+  "item.crabbersdelight.stuffed_nautilus_shell": "オウムガイの海鮮詰め焼き",
+
+  "block.crabbersdelight.crab_trap": "カニ罠",
+  "block.crabbersdelight.crab_barrel": "カニ入りの樽",
+  "block.crabbersdelight.clam_barrel": "二枚貝入りの樽",
+  "block.crabbersdelight.clawster_barrel": "クロウスター入りの樽",
+  "block.crabbersdelight.shrimp_barrel": "エビ入りの樽",
+  "block.crabbersdelight.nautilus_shell_block": "オウムガイの殻ブロック",
+  "block.crabbersdelight.pearl_block": "真珠ブロック",
+
+  "crabbersdelight.advancement.root": "Crabber's Delight",
+  "crabbersdelight.advancement.root.desc": "シーフードアドベンチャーがあなたを待っている！",
+
+  "crabbersdelight.advancement.craft_crab_trap": "罠だ！",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "ロープにハーフブロック、それと棒を使って初めて罠を作る",
+
+  "crabbersdelight.advancement.cook_crustaceans": "甲殻類のクッキングステーション",
+  "crabbersdelight.advancement.cook_crustaceans.desc": "カニ、エビ、クロウスターを調理鍋で茹でる",
+
+  "crabbersdelight.advancement.get_pearl": "スウィート・マザー・オブ・パール！",
+  "crabbersdelight.advancement.get_pearl.desc": "まな板の上で二枚貝を開いて真珠を手に入れる。不思議な商人がその真珠に価値を見出すかもしれない...。",
+
+  "crabbersdelight.block.crab_trap.not_waterlogged": "カニ罠は水中に設置しなければならない"
+}
