@@ -10,7 +10,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
@@ -19,12 +18,18 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
+import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.CraftingContainer;
+import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.inventory.TransientCraftingContainer;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
@@ -148,10 +153,41 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.0));
     }
 
+    //
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob mob) {
-        return ModEntities.CRAB.get().create(level);
+    public CrabEntity getBreedOffspring(ServerLevel level, AgeableMob mob) {
+        CrabEntity crab = ModEntities.CRAB.get().create(level);
+        if (crab != null) {
+            crab.setColor(this.getOffspringColor(this, (CrabEntity)mob));
+        }
+        return crab;
+    }
+
+    private DyeColor getOffspringColor(Animal crab1, Animal crab2) {
+        DyeColor dyecolor = ((CrabEntity)crab1).getColor();
+        DyeColor dyecolor1 = ((CrabEntity)crab2).getColor();
+        CraftingContainer craftingcontainer = makeContainer(dyecolor, dyecolor1);
+        return this.level().getRecipeManager().getRecipeFor(RecipeType.CRAFTING, craftingcontainer, this.level()).map((p_289444_) -> {
+            return p_289444_.assemble(craftingcontainer, this.level().registryAccess());
+        }).map(ItemStack::getItem).filter(DyeItem.class::isInstance).map(DyeItem.class::cast).map(DyeItem::getDyeColor).orElseGet(() -> {
+            return this.level().random.nextBoolean() ? dyecolor : dyecolor1;
+        });
+    }
+
+    private static CraftingContainer makeContainer(DyeColor color1, DyeColor color2) {
+        CraftingContainer craftingcontainer = new TransientCraftingContainer(new AbstractContainerMenu((MenuType)null, -1) {
+            public ItemStack quickMoveStack(Player player, int item) {
+                return ItemStack.EMPTY;
+            }
+
+            public boolean stillValid(Player player) {
+                return false;
+            }
+        }, 2, 1);
+        craftingcontainer.setItem(0, new ItemStack(DyeItem.byColor(color1)));
+        craftingcontainer.setItem(1, new ItemStack(DyeItem.byColor(color2)));
+        return craftingcontainer;
     }
 
     private Ingredient getTemptationItems() {
