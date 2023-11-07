@@ -67,7 +67,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     }
 
     public enum Color {
-        WHITE(0, "white", true),
+        BLUE(0, "blue", true),
         ORANGE(1, "orange", true),
         MAGENTA(2, "magenta", true),
         LIGHT_BLUE(3, "light_blue", true),
@@ -78,7 +78,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         LIGHT_GRAY(8, "light_gray", true),
         CYAN(9, "cyan", true),
         PURPLE(10, "purple", true),
-        BLUE(11, "blue", true),
+        WHITE(11, "white", true),
         BROWN(12, "brown", true),
         GREEN(13, "green", true),
         RED(14, "red", true),
