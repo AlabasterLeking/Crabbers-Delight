@@ -53,8 +53,8 @@ public class ModItems {
 
     // Spawn Eggs
 
-    public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = addToTab(ITEMS.register("crab_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties())));
 
     // Materials
 

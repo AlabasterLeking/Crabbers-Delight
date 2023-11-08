@@ -3,6 +3,7 @@ package alabaster.crabbersdelight.common.entity;
 import alabaster.crabbersdelight.common.registry.ModEntities;
 import alabaster.crabbersdelight.common.registry.ModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -10,6 +11,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
@@ -31,6 +33,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -69,6 +72,10 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
 
     public void setColor(DyeColor color) {
         this.entityData.set(VARIANT_ID, color.getId());
+    }
+
+    public static boolean canSpawn(EntityType<CrabEntity> entityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
+        return Animal.checkAnimalSpawnRules(entityType, serverLevelAccessor, spawnType, blockPos, randomSource);
     }
 
     public enum Color {
