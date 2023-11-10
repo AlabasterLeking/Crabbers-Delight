@@ -3,6 +3,10 @@
     "minecraft:tropical_fish",
     "minecraft:cod",
     "minecraft:salmon",
-    "minecraft:pufferfish"
+    "minecraft:pufferfish",
+    "crabbersdelight:bucket_of_clam_chum",
+    "crabbersdelight:bucket_of_clawster_chum",
+    "crabbersdelight:bucket_of_crab_chum",
+    "crabbersdelight:bucket_of_shrimp_chum"
   ]
 }

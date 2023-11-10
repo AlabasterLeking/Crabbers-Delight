@@ -71,16 +71,16 @@ public class ModItems {
             () -> new Item(basicItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_CRAB_CHUM = addToTab(ITEMS.register("bucket_of_crab_chum",
-            () -> new Item(chumItem())));
+            () -> new Item(basicItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_CLAWSTER_CHUM = addToTab(ITEMS.register("bucket_of_clawster_chum",
-            () -> new Item(chumItem())));
+            () -> new Item(basicItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_CLAM_CHUM = addToTab(ITEMS.register("bucket_of_clam_chum",
-            () -> new Item(chumItem())));
+            () -> new Item(basicItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_SHRIMP_CHUM = addToTab(ITEMS.register("bucket_of_shrimp_chum",
-            () -> new Item(chumItem())));
+            () -> new Item(basicItem())));
 
     // Tools
 
