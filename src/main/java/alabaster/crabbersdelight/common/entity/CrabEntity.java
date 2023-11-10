@@ -20,7 +20,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
-import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.CraftingContainer;
@@ -79,7 +78,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     }
 
     public enum Color {
-        BLUE(0, "blue", true),
+        WHITE(0, "white", true),
         ORANGE(1, "orange", true),
         MAGENTA(2, "magenta", true),
         LIGHT_BLUE(3, "light_blue", true),
@@ -90,7 +89,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         LIGHT_GRAY(8, "light_gray", true),
         CYAN(9, "cyan", true),
         PURPLE(10, "purple", true),
-        WHITE(11, "white", true),
+        BLUE(11, "blue", true),
         BROWN(12, "brown", true),
         GREEN(13, "green", true),
         RED(14, "red", true),
@@ -100,9 +99,9 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         private final int id;
         private final String name;
 
-        private Color(int j, String string2, boolean bool) {
+        private Color(int j, String name, boolean bool) {
             this.id = j;
-            this.name = string2;
+            this.name = name;
         }
 
         public int getId() {
@@ -117,7 +116,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
             for (CrabEntity.Color type : values()) {
                 if (type.id == id) return type;
             }
-            return Color.BLUE;
+            return CrabEntity.Color.BLUE;
         }
     }
 
