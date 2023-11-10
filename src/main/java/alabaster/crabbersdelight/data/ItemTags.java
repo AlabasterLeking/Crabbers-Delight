@@ -10,6 +10,7 @@ import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 import javax.annotation.Nullable;
@@ -31,6 +32,7 @@ public class ItemTags extends ItemTagsProvider {
         tag(CDModTags.COOKED_SEAFOOD).add(ModItems.COOKED_CLAM_MEAT.get(), ModItems.COOKED_CRAB.get(), ModItems.COOKED_CLAWSTER.get(), ModItems.COOKED_SHRIMP.get());
         tag(ForgeTags.COOKED_FISHES).add(ModItems.COOKED_TROPICAL_FISH_SLICE.get(), ModItems.COOKED_TROPICAL_FISH.get());
         tag(ForgeTags.RAW_FISHES).add(ModItems.TROPICAL_FISH_SLICE.get());
-        tag(CDModTags.CRAB_TRAP_BAIT).add(Items.TROPICAL_FISH, Items.COD, Items.SALMON, Items.PUFFERFISH);
+        tag(CDModTags.CRAB_TRAP_BAIT).add(Items.TROPICAL_FISH, Items.COD, Items.SALMON, Items.PUFFERFISH, ModItems.BUCKET_OF_CLAM_CHUM.get(), ModItems.BUCKET_OF_CLAWSTER_CHUM.get(), ModItems.BUCKET_OF_CRAB_CHUM.get(), ModItems.BUCKET_OF_SHRIMP_CHUM.get());
+        tag(CDModTags.CREATURE_CHUMS).add(ModItems.BUCKET_OF_CLAM_CHUM.get(), ModItems.BUCKET_OF_CLAWSTER_CHUM.get(), ModItems.BUCKET_OF_CRAB_CHUM.get(), ModItems.BUCKET_OF_SHRIMP_CHUM.get());
     }
 }

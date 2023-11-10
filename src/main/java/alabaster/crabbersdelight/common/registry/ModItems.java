@@ -51,6 +51,12 @@ public class ModItems {
         return new MobBucketItem(entityType, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1));
     }
 
+    // Chum Helper
+
+    public static Item.Properties chumItem() {
+        return new Item.Properties().stacksTo(1);
+    }
+
     // Spawn Eggs
 
     public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = addToTab(ITEMS.register("crab_spawn_egg",
@@ -65,16 +71,16 @@ public class ModItems {
             () -> new Item(basicItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_CRAB_CHUM = addToTab(ITEMS.register("bucket_of_crab_chum",
-            () -> new Item(basicItem())));
+            () -> new Item(chumItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_CLAWSTER_CHUM = addToTab(ITEMS.register("bucket_of_clawster_chum",
-            () -> new Item(basicItem())));
+            () -> new Item(chumItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_CLAM_CHUM = addToTab(ITEMS.register("bucket_of_clam_chum",
-            () -> new Item(basicItem())));
+            () -> new Item(chumItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_SHRIMP_CHUM = addToTab(ITEMS.register("bucket_of_shrimp_chum",
-            () -> new Item(basicItem())));
+            () -> new Item(chumItem())));
 
     // Tools
 
