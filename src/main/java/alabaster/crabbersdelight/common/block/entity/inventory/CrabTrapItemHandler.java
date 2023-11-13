@@ -40,22 +40,20 @@ public class CrabTrapItemHandler extends ItemStackHandler {
     public void addItemsAndUseChum(Level level, BlockPos pos, BlockState state, List<ItemStack> list, ItemStack baitItem) {
         for (ItemStack itemStack : list) {
             if (!itemStack.isEmpty()) {
-                if (baitItem.getDamageValue() <= 17) {
-                    for (int i = 0; i < getSlots(); i++) {
-                        if (getStackInSlot(i).isEmpty()) {
-                            itemStack = insertItem(i, itemStack, false);
-                            baitItem.hurt(1, level.random, null);
-                            level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
-                            if (itemStack.isEmpty()) {
-                                break;
-                            }
+                for (int i = 0; i < getSlots(); i++) {
+                    if (getStackInSlot(i).isEmpty()) {
+                        itemStack = insertItem(i, itemStack, false);
+                        baitItem.hurt(1, level.random, null);
+                        level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
+                        if (baitItem.getDamageValue() == 18) {
+                            baitItem.shrink(1);
+                            ItemStack bucketStack = new ItemStack(Items.BUCKET);
+                            this.insertItem(0, bucketStack, false);
+                        }
+                        if (itemStack.isEmpty()) {
+                            break;
                         }
                     }
-                }
-                else {
-                    baitItem.shrink(1);
-                    ItemStack bucketStack = new ItemStack(Items.BUCKET);
-                    this.insertItem(0, bucketStack, false);
                 }
             }
         }
