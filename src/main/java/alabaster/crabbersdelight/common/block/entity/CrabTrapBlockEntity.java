@@ -15,8 +15,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
@@ -25,6 +23,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -43,7 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.Objects;
 
 public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Nameable {
 
@@ -125,17 +123,18 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                             List<ItemStack> list = loottable.getRandomItems(lootparams);
                             blockEntity.inventory.addItemsAndUseChum(level, pos, state, list, itemInBaitSlot);
                         } else {
-                            if (isTreasureFishingLocation(level, pos)) {
-                                ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/treasure");
-                                loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
-                                List<ItemStack> list = loottable.getRandomItems(lootparams);
-                                blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
-                            }
-                            else {
-                                ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/junk");
-                                loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
-                                List<ItemStack> list = loottable.getRandomItems(lootparams);
-                                blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
+                            if (!itemInBaitSlot.is(Items.BUCKET)) {
+                                if (isTreasureFishingLocation(level, pos)) {
+                                    ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/treasure");
+                                    loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                                    List<ItemStack> list = loottable.getRandomItems(lootparams);
+                                    blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
+                                } else {
+                                    ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/junk");
+                                    loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                                    List<ItemStack> list = loottable.getRandomItems(lootparams);
+                                    blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
+                                }
                             }
                         }
                     }
