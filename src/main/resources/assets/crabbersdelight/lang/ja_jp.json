@@ -26,13 +26,29 @@
   "item.crabbersdelight.seafood_gumbo": "シーフードガンボ",
   "item.crabbersdelight.stuffed_nautilus_shell": "オウムガイの海鮮壺焼き",
 
+  "item.crabbersdelight.bucket_of_crab_chum": "カニの寄せ餌バケツ",
+  "item.crabbersdelight.bucket_of_clawster_chum": "クロウスターの寄せ餌バケツ",
+  "item.crabbersdelight.bucket_of_clam_chum": "二枚貝の寄せ餌バケツ",
+  "item.crabbersdelight.bucket_of_shrimp_chum": "エビの寄せ餌バケツ",
+
+
+  "item.crabbersdelight.crab_spawn_egg": "カニのスポーンエッグ",
+  "item.crabbersdelight.crab_bucket": "カニ入りバケツ",
+
   "block.crabbersdelight.crab_trap": "カニ罠",
   "block.crabbersdelight.crab_barrel": "カニ入りの樽",
   "block.crabbersdelight.clam_barrel": "二枚貝入りの樽",
   "block.crabbersdelight.clawster_barrel": "クロウスター入りの樽",
   "block.crabbersdelight.shrimp_barrel": "エビ入りの樽",
+  "block.crabbersdelight.cod_barrel": "タラ入りの樽",
+  "block.crabbersdelight.salmon_barrel": "サケ入りの樽",
+  "block.crabbersdelight.pufferfish_barrel": "フグ入りの樽",
+  "block.crabbersdelight.tropical_fish_barrel": "熱帯魚入りの樽",
+  "block.crabbersdelight.lanternfish_barrel": "ランタンフィッシュ入りの樽",
   "block.crabbersdelight.nautilus_shell_block": "オウムガイの殻ブロック",
   "block.crabbersdelight.pearl_block": "真珠ブロック",
+
+  "entity.crabbersdelight.crab": "カニ",
 
   "crabbersdelight.advancement.root": "Crabber's Delight",
   "crabbersdelight.advancement.root.desc": "シーフードアドベンチャーがあなたを待っている！",
