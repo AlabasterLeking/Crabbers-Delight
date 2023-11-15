@@ -1,6 +1,0 @@
-// 1.20.1	2023-10-27T10:27:07.6954701	Tags for minecraft:item mod id crabbersdelight
-01f62fc392de9e6785d6126ed5cf0cfcd1db72c6 data/crabbersdelight/tags/items/cooked_seafood.json
-a4f6956a7e314e465e1649aa243fcc9ccf4c768c data/crabbersdelight/tags/items/crab_trap_bait.json
-f5e234e44f2959ae7658c58d98916f353697c4bb data/crabbersdelight/tags/items/raw_seafood.json
-ebf211911f3759049e5af95d7e27c599b7a74d28 data/forge/tags/items/cooked_fishes.json
-44ddecf2bd817f054d718527b17c0faa8857db28 data/forge/tags/items/raw_fishes.json

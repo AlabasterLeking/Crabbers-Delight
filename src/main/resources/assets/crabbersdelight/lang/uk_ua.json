@@ -26,13 +26,29 @@
   "item.crabbersdelight.seafood_gumbo": "Гамбо з морепродуктів",
   "item.crabbersdelight.stuffed_nautilus_shell": "Фарширована мушля навтилуса",
 
+  "item.crabbersdelight.bucket_of_crab_chum": "Bucket of Crab Chum",
+  "item.crabbersdelight.bucket_of_clawster_chum": "Bucket of Clawster Chum",
+  "item.crabbersdelight.bucket_of_clam_chum": "Bucket of Clam Chum",
+  "item.crabbersdelight.bucket_of_shrimp_chum": "Bucket of Shrimp Chum",
+
+
+  "item.crabbersdelight.crab_spawn_egg": "Spawn Crab",
+  "item.crabbersdelight.crab_bucket": "Crab Bucket",
+
   "block.crabbersdelight.crab_trap": "Крабова пастка",
   "block.crabbersdelight.crab_barrel": "Бочка з крабами",
   "block.crabbersdelight.clam_barrel": "Бочка з молюсками",
   "block.crabbersdelight.clawster_barrel": "Бочка з клостерами",
   "block.crabbersdelight.shrimp_barrel": "Бочка з креветками",
+  "block.crabbersdelight.cod_barrel": "Cod Barrel",
+  "block.crabbersdelight.salmon_barrel": "Salmon Barrel",
+  "block.crabbersdelight.pufferfish_barrel": "Pufferfish Barrel",
+  "block.crabbersdelight.tropical_fish_barrel": "Tropical Fish Barrel",
+  "block.crabbersdelight.lanternfish_barrel": "Lanternfish Barrel",
   "block.crabbersdelight.nautilus_shell_block": "Блок мушлі навтилуса",
   "block.crabbersdelight.pearl_block": "Перлинний блок",
+
+  "entity.crabbersdelight.crab": "Crab",
 
   "crabbersdelight.advancement.root": "Crabber's Delight",
   "crabbersdelight.advancement.root.desc": "Морська їжа чекає на вас!",

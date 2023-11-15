@@ -31,6 +31,11 @@ public class ItemTags extends ItemTagsProvider {
         tag(CDModTags.COOKED_SEAFOOD).add(ModItems.COOKED_CLAM_MEAT.get(), ModItems.COOKED_CRAB.get(), ModItems.COOKED_CLAWSTER.get(), ModItems.COOKED_SHRIMP.get());
         tag(ForgeTags.COOKED_FISHES).add(ModItems.COOKED_TROPICAL_FISH_SLICE.get(), ModItems.COOKED_TROPICAL_FISH.get());
         tag(ForgeTags.RAW_FISHES).add(ModItems.TROPICAL_FISH_SLICE.get());
-        tag(CDModTags.CRAB_TRAP_BAIT).add(Items.TROPICAL_FISH, Items.COD, Items.SALMON, Items.PUFFERFISH, Items.AIR);
+        tag(CDModTags.CRAB_TRAP_BAIT).add(Items.TROPICAL_FISH, Items.COD, Items.SALMON, Items.PUFFERFISH, ModItems.BUCKET_OF_CLAM_CHUM.get(), ModItems.BUCKET_OF_CLAWSTER_CHUM.get(), ModItems.BUCKET_OF_CRAB_CHUM.get(), ModItems.BUCKET_OF_SHRIMP_CHUM.get(), Items.BUCKET);
+        tag(CDModTags.CREATURE_CHUMS).add(ModItems.BUCKET_OF_CLAM_CHUM.get(), ModItems.BUCKET_OF_CLAWSTER_CHUM.get(), ModItems.BUCKET_OF_CRAB_CHUM.get(), ModItems.BUCKET_OF_SHRIMP_CHUM.get());
+        tag(CDModTags.IS_CRAB_CHUM).add(Items.COD);
+        tag(CDModTags.IS_CLAWSTER_CHUM).add(Items.SALMON);
+        tag(CDModTags.IS_CLAM_CHUM).add(Items.TROPICAL_FISH);
+        tag(CDModTags.IS_SHRIMP_CHUM).add(Items.PUFFERFISH);
     }
 }

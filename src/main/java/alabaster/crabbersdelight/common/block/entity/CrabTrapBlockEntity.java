@@ -15,8 +15,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
@@ -44,7 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.Objects;
 
 public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Nameable {
 
@@ -117,25 +114,30 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                             .create(LootContextParamSets.FISHING);
                     ItemStack itemInBaitSlot = blockEntity.inventory.getStackInSlot(0);
                     LootTable loottable;
-                    level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
 
-                    if (itemInBaitSlot.is(CDModTags.CRAB_TRAP_BAIT) && !itemInBaitSlot.is(Items.AIR)) {
-                        ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
-                        ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
-                        loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
-                    } else {
-                        if (isTreasureFishingLocation(level, pos)) {
-                            ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/treasure");
+                    if (itemInBaitSlot.is(CDModTags.CRAB_TRAP_BAIT)) {
+                        if (itemInBaitSlot.is(CDModTags.CREATURE_CHUMS)) {
+                            ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
+                            ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/" + registryName.getPath());
                             loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
-                        }
-                        else {
-                            ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/junk");
-                            loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                            List<ItemStack> list = loottable.getRandomItems(lootparams);
+                            blockEntity.inventory.addItemsAndUseChum(level, pos, state, list, itemInBaitSlot);
+                        } else {
+                            if (!itemInBaitSlot.is(Items.BUCKET)) {
+                                if (isTreasureFishingLocation(level, pos)) {
+                                    ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/treasure");
+                                    loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                                    List<ItemStack> list = loottable.getRandomItems(lootparams);
+                                    blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
+                                } else {
+                                    ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/minecraft/junk");
+                                    loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                                    List<ItemStack> list = loottable.getRandomItems(lootparams);
+                                    blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
+                                }
+                            }
                         }
                     }
-
-                    List<ItemStack> list = loottable.getRandomItems(lootparams);
-                    blockEntity.inventory.addItemsAndShrinkBait(list, itemInBaitSlot);
                 }
 
             } else {

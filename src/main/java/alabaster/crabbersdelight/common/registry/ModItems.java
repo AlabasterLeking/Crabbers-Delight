@@ -2,6 +2,7 @@ package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.CDFoodValues;
+import alabaster.crabbersdelight.common.item.ChumItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Animal;
@@ -53,8 +54,8 @@ public class ModItems {
 
     // Spawn Eggs
 
-    public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = addToTab(ITEMS.register("crab_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties())));
 
     // Materials
 
@@ -64,18 +65,19 @@ public class ModItems {
     public static final RegistryObject<Item> PEARL = addToTab(ITEMS.register("pearl",
             () -> new Item(basicItem())));
 
+    // Tools
+
     public static final RegistryObject<Item> BUCKET_OF_CRAB_CHUM = addToTab(ITEMS.register("bucket_of_crab_chum",
-            () -> new Item(basicItem())));
+            () -> new ChumItem(basicItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_CLAWSTER_CHUM = addToTab(ITEMS.register("bucket_of_clawster_chum",
-            () -> new Item(basicItem())));
+            () -> new ChumItem(basicItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_CLAM_CHUM = addToTab(ITEMS.register("bucket_of_clam_chum",
-            () -> new Item(basicItem())));
+            () -> new ChumItem(basicItem())));
 
     public static final RegistryObject<Item> BUCKET_OF_SHRIMP_CHUM = addToTab(ITEMS.register("bucket_of_shrimp_chum",
-            () -> new Item(basicItem())));
-
+            () -> new ChumItem(basicItem())));
 
     // Mob Buckets
 

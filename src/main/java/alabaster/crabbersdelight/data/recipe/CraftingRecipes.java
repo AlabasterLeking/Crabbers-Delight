@@ -13,6 +13,8 @@ import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 import java.util.function.Consumer;
 
+import static alabaster.crabbersdelight.common.tags.CDModTags.*;
+
 public class CraftingRecipes {
     public static void register(Consumer<FinishedRecipe> consumer) {
         recipesBlocks(consumer);
@@ -163,6 +165,7 @@ public class CraftingRecipes {
                 .requires(ModItems.PEARL_BLOCK.get())
                 .unlockedBy("has_pearl_block", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PEARL_BLOCK.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "pearl_from_block"));
+
     }
 
     private static void recipesCraftedMeals(Consumer<FinishedRecipe> consumer) {
@@ -191,10 +194,44 @@ public class CraftingRecipes {
                 .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SURF_AND_TURF.get())
-                .requires(CDModTags.COOKED_SEAFOOD)
+                .requires(COOKED_SEAFOOD)
                 .requires(Items.BAKED_POTATO)
                 .requires(Items.COOKED_BEEF)
                 .unlockedBy("has_baked_potato", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BAKED_POTATO))
                 .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BUCKET_OF_CRAB_CHUM.get())
+                .requires(IS_CRAB_CHUM)
+                .requires(Items.BUCKET)
+                .requires(Items.BONE_MEAL)
+                .requires(Items.BONE_MEAL)
+                .unlockedBy("has_bone_meal", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BUCKET_OF_CLAWSTER_CHUM.get())
+                .requires(IS_CLAWSTER_CHUM)
+                .requires(Items.BUCKET)
+                .requires(Items.BONE_MEAL)
+                .requires(Items.BONE_MEAL)
+                .unlockedBy("has_bone_meal", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BUCKET_OF_CLAM_CHUM.get())
+                .requires(IS_CLAM_CHUM)
+                .requires(Items.BUCKET)
+                .requires(Items.BONE_MEAL)
+                .requires(Items.BONE_MEAL)
+                .unlockedBy("has_bone_meal", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BUCKET_OF_SHRIMP_CHUM.get())
+                .requires(IS_SHRIMP_CHUM)
+                .requires(Items.BUCKET)
+                .requires(Items.BONE_MEAL)
+                .requires(Items.BONE_MEAL)
+                .unlockedBy("has_bone_meal", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL))
+                .save(consumer);
+
+
     }
 }

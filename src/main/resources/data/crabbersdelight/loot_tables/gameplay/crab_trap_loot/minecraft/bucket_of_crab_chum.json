@@ -7,7 +7,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "crabbersdelight:clawster"
+          "weight": 1,
+          "name": "crabbersdelight:crab"
         }
       ]
     }

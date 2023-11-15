@@ -3,22 +3,15 @@ package alabaster.crabbersdelight.common.entity;
 import alabaster.crabbersdelight.common.registry.ModEntities;
 import alabaster.crabbersdelight.common.registry.ModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
-import com.mojang.serialization.Codec;
-import net.minecraft.Util;
-import net.minecraft.core.Holder;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BiomeTags;
-import net.minecraft.util.ByIdMap;
 import net.minecraft.util.RandomSource;
-import net.minecraft.util.StringRepresentable;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
@@ -27,14 +20,19 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
-import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.CraftingContainer;
+import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.inventory.TransientCraftingContainer;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -47,12 +45,11 @@ import software.bernie.geckolib.core.object.PlayState;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;
-import java.util.function.IntFunction;
+import java.util.Comparator;
 
 public class CrabEntity extends Animal implements GeoEntity, Bucketable {
-    private static final EntityDataAccessor<Integer> VARIANT_ID = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.INT);
-    public static final String VARIANT_TAG = "Variant";
-    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> VARIANT_ID;
+    private static EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private Ingredient temptationItems;
 
@@ -60,26 +57,51 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         super(entityType, level);
     }
 
-    public static enum Variant implements StringRepresentable {
-        BLUE(0, "blue", true),
-        GREEN(1, "green", true),
-        RED(2, "red", true),
-        YELLOW(3, "yellow", true),
-        ORANGE(4, "orange", true),
-        WHITE(5, "white", true),
-        GRAY(6, "gray", true),
-        PURPLE(7, "purple", false);
+    public Color getCrabColor() {
+        return CrabEntity.Color.BY_ID[this.entityData.get(VARIANT_ID)];
+    }
 
-        private static final IntFunction<CrabEntity.Variant> BY_ID = ByIdMap.continuous(CrabEntity.Variant::getId, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
-        public static final Codec<CrabEntity.Variant> CODEC = StringRepresentable.fromEnum(CrabEntity.Variant::values);
+    public void setCrabColor(CrabEntity.Color color) {
+        this.entityData.set(VARIANT_ID, color.getId());
+    }
+
+    public DyeColor getColor() {
+        return DyeColor.byId(this.entityData.get(VARIANT_ID));
+    }
+
+    public void setColor(DyeColor color) {
+        this.entityData.set(VARIANT_ID, color.getId());
+    }
+
+    public static boolean canSpawn(EntityType<CrabEntity> entityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
+        return Animal.checkAnimalSpawnRules(entityType, serverLevelAccessor, spawnType, blockPos, randomSource);
+    }
+
+    public enum Color {
+        WHITE(0, "white", true),
+        ORANGE(1, "orange", true),
+        MAGENTA(2, "magenta", true),
+        LIGHT_BLUE(3, "light_blue", true),
+        YELLOW(4, "yellow", true),
+        LIME(5, "lime", true),
+        PINK(6, "pink", true),
+        GRAY(7, "gray", true),
+        LIGHT_GRAY(8, "light_gray", true),
+        CYAN(9, "cyan", true),
+        PURPLE(10, "purple", true),
+        BLUE(11, "blue", true),
+        BROWN(12, "brown", true),
+        GREEN(13, "green", true),
+        RED(14, "red", true),
+        BLACK(15, "black", true);
+
+        public static final CrabEntity.Color[] BY_ID = Arrays.stream(values()).sorted(Comparator.comparingInt(CrabEntity.Color::getId)).toArray(CrabEntity.Color[]::new);
         private final int id;
         private final String name;
-        private final boolean common;
 
-        private Variant(int id, String name, boolean common) {
-            this.id = id;
+        private Color(int j, String name, boolean bool) {
+            this.id = j;
             this.name = name;
-            this.common = common;
         }
 
         public int getId() {
@@ -90,43 +112,25 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
             return this.name;
         }
 
-        public String getSerializedName() {
-            return this.name;
-        }
-
-        public static CrabEntity.Variant byId(int id) {
-            return BY_ID.apply(id);
-        }
-
-        public static CrabEntity.Variant getCommonSpawnVariant(RandomSource rand) {
-            return getSpawnVariant(rand, true);
-        }
-
-        public static CrabEntity.Variant getRareSpawnVariant(RandomSource rand) {
-            return getSpawnVariant(rand, false);
-        }
-
-        private static CrabEntity.Variant getSpawnVariant(RandomSource random, boolean p_218452_) {
-            CrabEntity.Variant[] crab$variant = Arrays.stream(values()).filter((p_149252_) -> {
-                return p_149252_.common == p_218452_;
-            }).toArray((variant) -> {
-                return new CrabEntity.Variant[variant];
-            });
-            return Util.getRandom(crab$variant, random);
+        public static CrabEntity.Color getTypeById(int id) {
+            for (CrabEntity.Color type : values()) {
+                if (type.id == id) return type;
+            }
+            return CrabEntity.Color.BLUE;
         }
     }
 
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(VARIANT_ID, 0);
+        this.entityData.define(VARIANT_ID, Color.BLUE.getId());
         this.entityData.define(FROM_BUCKET, false);
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putInt("Variant", this.getVariant().getId());
+        compound.putInt("Variant", this.getCrabColor().getId());
         compound.putBoolean("FromBucket", this.fromBucket());
     }
 
@@ -140,7 +144,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 10)
-                .add(Attributes.MOVEMENT_SPEED, 0.4f)
+                .add(Attributes.MOVEMENT_SPEED, 0.2f)
                 .add(Attributes.ATTACK_KNOCKBACK, 1.5f)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.5D)
                 .add(Attributes.ATTACK_DAMAGE, 3.0f).build();
@@ -152,30 +156,44 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0));
         this.goalSelector.addGoal(3, new TemptGoal(this, 0.75, getTemptationItems(), false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1));
-        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.));
+        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.0));
     }
 
+    //
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
-        CrabEntity crab = ModEntities.CRAB.create(level);
+    public CrabEntity getBreedOffspring(ServerLevel level, AgeableMob mob) {
+        CrabEntity crab = ModEntities.CRAB.get().create(level);
         if (crab != null) {
-            CrabEntity.Variant crab$variant;
-            if (useRareVariant(this.random)) {
-                crab$variant = CrabEntity.Variant.getRareSpawnVariant(this.random);
-            } else {
-                crab$variant = this.random.nextBoolean() ? this.getVariant() : ((CrabEntity)ageableMob).getVariant();
-            }
-
-            crab.setVariant(crab$variant);
-            crab.setPersistenceRequired();
+            crab.setColor(this.getOffspringColor(this, (CrabEntity)mob));
         }
-
         return crab;
     }
 
-    private static boolean useRareVariant(RandomSource p_218436_) {
-        return p_218436_.nextInt(1200) == 0;
+    private DyeColor getOffspringColor(Animal crab1, Animal crab2) {
+        DyeColor dyecolor = ((CrabEntity)crab1).getColor();
+        DyeColor dyecolor1 = ((CrabEntity)crab2).getColor();
+        CraftingContainer craftingcontainer = makeContainer(dyecolor, dyecolor1);
+        return this.level().getRecipeManager().getRecipeFor(RecipeType.CRAFTING, craftingcontainer, this.level()).map((p_289444_) -> {
+            return p_289444_.assemble(craftingcontainer, this.level().registryAccess());
+        }).map(ItemStack::getItem).filter(DyeItem.class::isInstance).map(DyeItem.class::cast).map(DyeItem::getDyeColor).orElseGet(() -> {
+            return this.level().random.nextBoolean() ? dyecolor : dyecolor1;
+        });
+    }
+
+    private static CraftingContainer makeContainer(DyeColor color1, DyeColor color2) {
+        CraftingContainer craftingcontainer = new TransientCraftingContainer(new AbstractContainerMenu((MenuType)null, -1) {
+            public ItemStack quickMoveStack(Player player, int item) {
+                return ItemStack.EMPTY;
+            }
+
+            public boolean stillValid(Player player) {
+                return false;
+            }
+        }, 2, 1);
+        craftingcontainer.setItem(0, new ItemStack(DyeItem.byColor(color1)));
+        craftingcontainer.setItem(1, new ItemStack(DyeItem.byColor(color2)));
+        return craftingcontainer;
     }
 
     private Ingredient getTemptationItems() {
@@ -222,10 +240,6 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         return cache;
     }
 
-    public Axolotl.Variant getVariant() {
-        return Axolotl.Variant.byId(this.entityData.get(VARIANT_ID));
-    }
-
     public void setVariant(int variant) {
         this.entityData.set(VARIANT_ID, variant);
     }
@@ -236,7 +250,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     }
 
     @Override
-    public void setFromBucket(boolean p_148834_) {
+    public void setFromBucket(boolean fromBucket) {
         this.entityData.set(FROM_BUCKET, true);
     }
 
@@ -251,7 +265,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         Bucketable.saveDefaultDataToBucketTag(this, stack);
         CompoundTag tag = stack.getOrCreateTag();
         tag.putInt("Age", this.getAge());
-        tag.putInt("Variant", this.getVariant().getId());
+        tag.putInt("Variant", this.getCrabColor().getId());
     }
 
     @Override
@@ -262,7 +276,10 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         if (tag.contains("Age")) {
             this.setAge(tag.getInt("Age"));
         }
-        entityData.set(VARIANT_ID, tag.getInt("Variant"));
+        int i = tag.getInt("Variant");
+        if (i >= 0 && i < CrabEntity.Color.BY_ID.length) {
+            this.setCrabColor(CrabEntity.Color.BY_ID[i]);
+        }
     }
 
     @Override
@@ -281,31 +298,33 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
             return result.get();
         }
 
+        ItemStack itemStack = player.getItemInHand(hand);
+        Item item = itemStack.getItem();
+
+        label90: {
+            if (!(item instanceof DyeItem)) {
+                break label90;
+            }
+
+            DyeItem dyeItem = (DyeItem)item;
+
+            DyeColor dyeColor = dyeItem.getDyeColor();
+            if (dyeColor != this.getColor()) {
+                this.setColor(dyeColor);
+                if (!player.getAbilities().instabuild) {
+                    itemStack.shrink(1);
+                }
+
+                return InteractionResult.SUCCESS;
+            }
+        }
+
         return super.mobInteract(player, hand);
     }
 
-    @Override
-    @Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @javax.annotation.Nullable SpawnGroupData spawnData, @javax.annotation.Nullable CompoundTag dataTag) {
-        Holder<Biome> holder = level.getBiome(this.blockPosition());
-        if (holder.is(BiomeTags.IS_BEACH)) {
-            this.setVariant(2);
-        } else if (holder.is(BiomeTags.IS_JUNGLE)) {
-            this.setVariant(1);
-        } else if (holder.is(Biomes.COLD_OCEAN)) {
-            this.setVariant(6);
-        } else if (holder.is(Biomes.DESERT)) {
-            this.setVariant(4);
-        } else if (holder.is(BiomeTags.IS_DEEP_OCEAN)) {
-            this.setVariant(7);
-        } else if (holder.is(Biomes.WARM_OCEAN)) {
-            this.setVariant(5);
-        } else if (holder.is(Biomes.RIVER)) {
-            this.setVariant(3);
-        } else {
-            this.setVariant(0);
-        }
-        return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
+    static {
+        VARIANT_ID = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.INT);
+        FROM_BUCKET = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
     }
 }
 

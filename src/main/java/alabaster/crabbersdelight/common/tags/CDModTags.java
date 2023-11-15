@@ -13,6 +13,10 @@ public class CDModTags {
     public static final TagKey<Item> CRAB_TRAP_BAIT = modItemTag("crab_trap_bait");
     public static final TagKey<Item> CRAB_TEMPT_ITEM = modItemTag("crab_tempt_item");
     public static final TagKey<Item> CREATURE_CHUMS = modItemTag("creature_chums");
+    public static final TagKey<Item> IS_CRAB_CHUM = modItemTag("is_crab_chum");
+    public static final TagKey<Item> IS_CLAWSTER_CHUM = modItemTag("is_clawster_chum");
+    public static final TagKey<Item> IS_CLAM_CHUM = modItemTag("is_clam_chum");
+    public static final TagKey<Item> IS_SHRIMP_CHUM = modItemTag("is_shrimp_chum");
 
     private static TagKey<Item> modItemTag(String path) {
         return ItemTags.create(new ResourceLocation(CrabbersDelight.MODID, path));

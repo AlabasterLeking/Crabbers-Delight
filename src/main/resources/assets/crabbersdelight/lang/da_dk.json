@@ -26,13 +26,29 @@
   "item.crabbersdelight.seafood_gumbo": "Seafood Gumbo",
   "item.crabbersdelight.stuffed_nautilus_shell": "Fyldt Nautilus Skal",
 
+  "item.crabbersdelight.bucket_of_crab_chum": "Bucket of Crab Chum",
+  "item.crabbersdelight.bucket_of_clawster_chum": "Bucket of Clawster Chum",
+  "item.crabbersdelight.bucket_of_clam_chum": "Bucket of Clam Chum",
+  "item.crabbersdelight.bucket_of_shrimp_chum": "Bucket of Shrimp Chum",
+
+
+  "item.crabbersdelight.crab_spawn_egg": "Spawn Crab",
+  "item.crabbersdelight.crab_bucket": "Crab Bucket",
+
   "block.crabbersdelight.crab_trap": "Krabbefælde",
   "block.crabbersdelight.crab_barrel": "Krabbetønde",
   "block.crabbersdelight.clam_barrel": "Muslingetønde",
   "block.crabbersdelight.clawster_barrel": "Skaldyrstønde",
   "block.crabbersdelight.shrimp_barrel": "Rejetønde",
+  "block.crabbersdelight.cod_barrel": "Cod Barrel",
+  "block.crabbersdelight.salmon_barrel": "Salmon Barrel",
+  "block.crabbersdelight.pufferfish_barrel": "Pufferfish Barrel",
+  "block.crabbersdelight.tropical_fish_barrel": "Tropical Fish Barrel",
+  "block.crabbersdelight.lanternfish_barrel": "Lanternfish Barrel",
   "block.crabbersdelight.nautilus_shell_block": "Nautilus Skal Block",
   "block.crabbersdelight.pearl_block": "Perle Block",
+
+  "entity.crabbersdelight.crab": "Crab",
 
   "crabbersdelight.advancement.root": "Crabber's Delight",
   "crabbersdelight.advancement.root.desc": "Alt godt fra havet venter dig!",
