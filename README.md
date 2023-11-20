@@ -10,7 +10,7 @@
 <p style="text-align: left;"><span style="font-size: 14px;"><strong>Crabber's Delight</strong> is a mod that expands upon the cooking system from <strong>Farmer's Delight.</strong></span></p>
 <p><span style="font-size: 14px;">It introduces more seafood into the game, including crabs, shrimps, and clams, that can all be used in a collection of new dishes as well as some other food items to expand upon the existing sealife in Minecraft.</span><span style="font-size: 14px;"><br /></span></p>
 <p><span style="font-size: 14px;">📖 <strong>Getting Started:</strong></span></p>
-<p><span style="font-size: 14px;">To get started, build a crab trap and put in the water. Over time, you will slowly collect a mix of seafood and junk. You can put fish in the trap to try and lure creatures into to collect.</span><span style="font-size: 14px;"><br /></span></p>
+<p><span style="font-size: 14px;">To get started, build a crab trap and put in the water. You can then place fish or buckets of chum into the bait slot of the trap to collect seafood, junk, and even some treasures!</span><span style="font-size: 14px;"><br /></span></p>
 <p><span style="font-size: 14px;">🎮 <strong>Discord:</strong></span></p>
 <p dir="auto"><span style="font-size: 14px;">Discord: <a href="https://discord.gg/zWfH77sXKz" rel="nofollow">https://discord.gg/zWfH77sXKz</a></span><span style="font-size: 14px;"><br /></span></p>
 <p dir="auto"><span style="font-size: 14px;">📝 <strong>Credits:</strong></span></p>
