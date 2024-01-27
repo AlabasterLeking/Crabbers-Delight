@@ -41,7 +41,7 @@ public class CookingRecipes {
 
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CRAB_CAKES.get(), 1, NORMAL_COOKING, LARGE_EXP)
                 .addIngredient(ModItems.RAW_CRAB.get())
-                .addIngredient(Items.BREAD)
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.WHEAT_DOUGH.get())
                 .addIngredient(ForgeTags.MILK_BOTTLE)
                 .addIngredient(Items.EGG)
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
