@@ -48,6 +48,12 @@ public class CDFoodValues {
     public static final FoodProperties TROPICAL_FISH_SLICE = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.1f).meat().fast().build();
 
+    public static final FoodProperties COOKED_PUFFERFISH_SLICE = (new FoodProperties.Builder())
+            .nutrition(3).saturationMod(0.5f).meat().fast().build();
+
+    public static final FoodProperties PUFFERFISH_SLICE = (new FoodProperties.Builder())
+            .nutrition(1).saturationMod(0.1f).effect(() -> new MobEffectInstance(MobEffects.POISON, 300, 0), 0.3F).meat().fast().build();
+
     public static final FoodProperties CRAB_LEGS = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.6f).meat().build();
 

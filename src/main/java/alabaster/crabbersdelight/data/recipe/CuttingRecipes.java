@@ -32,6 +32,10 @@ public class CuttingRecipes {
                 .addResult(Items.BONE_MEAL)
                 .build(consumer);
 
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.PUFFERFISH), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.PUFFERFISH_SLICE.get(), 2)
+                .addResult(Items.BONE_MEAL)
+                .build(consumer);
+
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.COOKED_CRAB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.CRAB_LEGS.get(), 4)
                 .build(consumer);
 

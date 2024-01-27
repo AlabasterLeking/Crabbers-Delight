@@ -138,6 +138,12 @@ public class ModItems {
     public static final RegistryObject<Item> COOKED_TROPICAL_FISH = addToTab(ITEMS.register("cooked_tropical_fish",
             () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_TROPICAL_FISH))));
 
+    public static final RegistryObject<Item> PUFFERFISH_SLICE = addToTab(ITEMS.register("pufferfish_slice",
+            () -> new ConsumableItem(foodItem(CDFoodValues.PUFFERFISH_SLICE), true)));
+
+    public static final RegistryObject<Item> COOKED_PUFFERFISH_SLICE = addToTab(ITEMS.register("cooked_pufferfish_slice",
+            () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_PUFFERFISH_SLICE))));
+
     public static final RegistryObject<Item> TROPICAL_FISH_SLICE = addToTab(ITEMS.register("tropical_fish_slice",
             () -> new ConsumableItem(foodItem(CDFoodValues.TROPICAL_FISH_SLICE))));
 
