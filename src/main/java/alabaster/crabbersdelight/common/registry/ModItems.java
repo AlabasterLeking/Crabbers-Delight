@@ -106,7 +106,7 @@ public class ModItems {
             () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_CLAWSTER))));
 
     public static final RegistryObject<Item> RAW_SHRIMP = addToTab(ITEMS.register("shrimp",
-            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_SHRIMP))));
+            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_SHRIMP), true)));
 
     public static final RegistryObject<Item> COOKED_SHRIMP = addToTab(ITEMS.register("cooked_shrimp",
             () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_SHRIMP))));
@@ -118,7 +118,7 @@ public class ModItems {
             () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_CLAM_MEAT))));
 
     public static final RegistryObject<Item> CRAB_CAKES = addToTab(ITEMS.register("crab_cakes",
-            () -> new ConsumableItem(foodItem(CDFoodValues.CRAB_CAKES))));
+            () -> new ConsumableItem(foodItem(CDFoodValues.CRAB_CAKES), true)));
 
     public static final RegistryObject<Item> CRAB_LEGS = addToTab(ITEMS.register("crab_legs",
             () -> new ConsumableItem(foodItem(CDFoodValues.CRAB_LEGS))));
@@ -127,13 +127,13 @@ public class ModItems {
             () -> new ConsumableItem(foodItem(CDFoodValues.FISH_STICK))));
 
     public static final RegistryObject<Item> SURF_AND_TURF = addToTab(ITEMS.register("surf_and_turf",
-            () -> new ConsumableItem(foodItem(CDFoodValues.SURF_AND_TURF))));
+            () -> new ConsumableItem(foodItem(CDFoodValues.SURF_AND_TURF), true)));
 
     public static final RegistryObject<Item> SHRIMP_SKEWER = addToTab(ITEMS.register("shrimp_skewer",
             () -> new ConsumableItem(foodItem(CDFoodValues.SHRIMP_SKEWER))));
 
     public static final RegistryObject<Item> CLAM_BAKE = addToTab(ITEMS.register("clam_bake",
-            () -> new ConsumableItem(foodItem(CDFoodValues.CLAM_BAKE))));
+            () -> new ConsumableItem(foodItem(CDFoodValues.CLAM_BAKE), true)));
 
     public static final RegistryObject<Item> COOKED_TROPICAL_FISH = addToTab(ITEMS.register("cooked_tropical_fish",
             () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_TROPICAL_FISH))));
@@ -145,23 +145,23 @@ public class ModItems {
             () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_TROPICAL_FISH_SLICE))));
 
     public static final RegistryObject<Item> STUFFED_NAUTILUS_SHELL = addToTab(ITEMS.register("stuffed_nautilus_shell",
-            () -> new ConsumableItem(shellFoodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL))));
+            () -> new ConsumableItem(shellFoodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL), true)));
 
     // Drink Food Items
 
     public static final RegistryObject<Item> KELP_SHAKE = addToTab(ITEMS.register("kelp_shake",
-            () -> new DrinkableItem(drinkItem(CDFoodValues.KELP_SHAKE))));
+            () -> new DrinkableItem(drinkItem(CDFoodValues.KELP_SHAKE), true)));
 
     // Bowl Food Items
 
     public static final RegistryObject<Item> BISQUE = addToTab(ITEMS.register("bisque",
-            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.BISQUE))));
+            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.BISQUE), true)));
 
     public static final RegistryObject<Item> SEAFOOD_GUMBO = addToTab(ITEMS.register("seafood_gumbo",
-            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.SEAFOOD_GUMBO))));
+            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.SEAFOOD_GUMBO), true)));
 
     public static final RegistryObject<Item> CLAM_CHOWDER = addToTab(ITEMS.register("clam_chowder",
-            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.CLAM_CHOWDER))));
+            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.CLAM_CHOWDER), true)));
 
     // Storage Blocks
     public static final RegistryObject<Item> CRAB_BARREL = addToTab(ITEMS.register("crab_barrel",

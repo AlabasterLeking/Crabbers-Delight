@@ -7,8 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 public class Config {
 
     public static ForgeConfigSpec COMMON_CONFIG;
-
-    public static final String CATEGORY_SETTINGS = "settings";
+    public static final String CATEGORY_SETTINGS = "Settings";
     public static ForgeConfigSpec.BooleanValue FISHERMAN_BUY_SEAFOOD;
     public static ForgeConfigSpec.BooleanValue WANDERING_TRADER_PEARLS;
     public static final ForgeConfigSpec.ConfigValue<Integer> MIN_TICKS;
@@ -16,9 +15,11 @@ public class Config {
     public static ForgeConfigSpec.BooleanValue COOK_IN_POTS;
 
     static {
+
+        // Common settings
         ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
 
-        COMMON_BUILDER.comment("Game settings").push(CATEGORY_SETTINGS);
+        COMMON_BUILDER.comment("Game Settings").push(CATEGORY_SETTINGS);
         FISHERMAN_BUY_SEAFOOD = COMMON_BUILDER.comment("Should fisherman buy/sell items related to this mods items (Seafood and pearls)")
                 .define("fishermanBuyCDItems", true);
         WANDERING_TRADER_PEARLS = COMMON_BUILDER.comment("Should the Wandering Trader sell items in exchange for pearls?")
@@ -33,5 +34,6 @@ public class Config {
         COMMON_BUILDER.pop();
 
         COMMON_CONFIG = COMMON_BUILDER.build();
+
     }
 }
