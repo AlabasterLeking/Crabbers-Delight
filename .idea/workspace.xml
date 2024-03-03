@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Adjust crab cakes recipe" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/.idea/modules">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="1.20.1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AlabasterLeking&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="81e8eb2d-4c3f-41f9-8f42-3e30b3adc524" />
+        <option name="url" value="git@github.com:/AlabasterLeking/Crabbers-Delight.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2Vg1DqKu7Kwd4ubWV0Q9d4aLUVQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;1.20.1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cjtop/Desktop/Crabbers-Delight/src/main/resources/assets/crabbersdelight/textures/item&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.35402298&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\item" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\recipes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common\item" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\assets\crabbersdelight\models" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="alabaster.crabbersdelight.common.entity" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="alabaster.crabbersdelight.client" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle genintellijruns" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [build]">
+    <configuration name="C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/.idea/modules" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [genIntellijRuns]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/.idea/modules" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="genIntellijRuns" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Crabbers-Delight [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Crabbers-Delight [genIntellijRuns]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="genIntellijRuns" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Crabbers-Delight [runData]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runData" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Crabbers-Delight [build]" />
+        <item itemvalue="Gradle.Crabbers-Delight [genIntellijRuns]" />
+        <item itemvalue="Gradle.Crabbers-Delight [runData]" />
+        <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [genIntellijRuns]" />
+        <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Added the warning for when the crab trap is not in water" />
+      <created>1695242794236</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695242794236</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Increment to 1.1.2">
+      <option name="closed" value="true" />
+      <created>1695303404365</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695303404366</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Backported Advancements and fixes to models">
+      <option name="closed" value="true" />
+      <created>1695341916423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695341916423</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix config">
+      <option name="closed" value="true" />
+      <created>1695342055308</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695342055308</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial 1.18.2 fixes">
+      <option name="closed" value="true" />
+      <created>1695348018433</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695348018433</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initial 1.18.2 fixes">
+      <option name="closed" value="true" />
+      <created>1695348256451</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695348256451</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Initial 1.18.2 fixes">
+      <option name="closed" value="true" />
+      <created>1695348674450</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695348674450</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed crab trap - iterated release">
+      <option name="closed" value="true" />
+      <created>1695349241785</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695349241785</updated>
+    </task>
+    <task id="LOCAL-00008" summary="bump gradle properties version">
+      <option name="closed" value="true" />
+      <created>1695349271089</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695349271089</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Beginning work on crab model - blegh">
+      <option name="closed" value="true" />
+      <created>1695690575388</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695690575388</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fish barrels">
+      <option name="closed" value="true" />
+      <created>1697487533161</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697487533161</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Recipes and Sully's Mod compat (Lanternfish barrels)">
+      <option name="closed" value="true" />
+      <created>1697555685417</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697555685417</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Edit build.gradle">
+      <option name="closed" value="true" />
+      <created>1697557774408</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1697557774408</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Lanternfish Resources + GeckoLib integration + Crabs + L + Ratio">
+      <option name="closed" value="true" />
+      <created>1697849272733</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1697849272733</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Lanternfish Resources + GeckoLib integration + Crabs + L + Ratio">
+      <option name="closed" value="true" />
+      <created>1697849307275</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1697849307275</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Crab bucket, proper spawn egg, behavior, breeding/tempting">
+      <option name="closed" value="true" />
+      <created>1698030319662</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1698030319662</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed Crab Bucket, and made Crabs bucketable">
+      <option name="closed" value="true" />
+      <created>1698036415855</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1698036415855</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Cleaned up Item registry">
+      <option name="closed" value="true" />
+      <created>1698245681825</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1698245681825</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Chum">
+      <option name="closed" value="true" />
+      <created>1698352416366</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1698352416367</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Updated animations">
+      <option name="closed" value="true" />
+      <created>1698958220308</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1698958220308</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Dyeable crabs">
+      <option name="closed" value="true" />
+      <created>1699319140138</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699319140138</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Blue crab is default">
+      <option name="closed" value="true" />
+      <created>1699319193080</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1699319193080</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Loot table change + final crab features (for now)">
+      <option name="closed" value="true" />
+      <created>1699323788003</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1699323788004</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Start of Crab Claw (not finished - really tricky)">
+      <option name="closed" value="true" />
+      <created>1699411590313</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1699411590313</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Updated Crab Barrel Texture and added crab drop">
+      <option name="closed" value="true" />
+      <created>1699412549480</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1699412549480</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add spawn egg to creative tab and fix crab spawning event">
+      <option name="closed" value="true" />
+      <created>1699462771371</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1699462771371</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Fix z-fighting on crab trap model &amp; finalized crab spawning">
+      <option name="closed" value="true" />
+      <created>1699584181845</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699584181845</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Chummy">
+      <option name="closed" value="true" />
+      <created>1699586020982</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1699586020982</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Re-wrote crab trap loot handler">
+      <option name="closed" value="true" />
+      <created>1699587775757</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1699587775757</updated>
+    </task>
+    <task id="LOCAL-00029" summary="what">
+      <option name="closed" value="true" />
+      <created>1699587810072</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1699587810072</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Crab Trap methods for chum nearly done">
+      <option name="closed" value="true" />
+      <created>1699675404174</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1699675404174</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fixed Crab Trap chum logic to replace the bucket; Thank you MehVahdJukaar!">
+      <option name="closed" value="true" />
+      <created>1699834425564</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1699834425564</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Created chum bucket recipes and associated tags; re-generated data">
+      <option name="closed" value="true" />
+      <created>1699834473641</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1699834473641</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Increment Version for 1.20.1 release">
+      <option name="closed" value="true" />
+      <created>1699834593954</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1699834593954</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Brain-blast">
+      <option name="closed" value="true" />
+      <created>1699835857793</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1699835857793</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Merged the ja_jp translation - added in the missing items related to items added in this latest update to default to the en_us translation until new translations are received">
+      <option name="closed" value="true" />
+      <created>1699836284542</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1699836284542</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add ru_ru.json - thanks Maxis!">
+      <option name="closed" value="true" />
+      <created>1700148030039</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1700148030039</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Finally fixed the bowl returning issue">
+      <option name="closed" value="true" />
+      <created>1700148684954</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1700148684954</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Incremented version to 1.1.3a for hotfix">
+      <option name="closed" value="true" />
+      <created>1700153857733</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1700153857733</updated>
+    </task>
+    <task id="LOCAL-00039" summary="JEI stubs and Item Tooltips">
+      <option name="closed" value="true" />
+      <created>1706320967400</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1706320967400</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Bump 1.1.4">
+      <option name="closed" value="true" />
+      <created>1706321063023</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1706321063023</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Pufferfish slices">
+      <option name="closed" value="true" />
+      <created>1706324454075</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1706324454075</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Adjust crab cakes recipe">
+      <option name="closed" value="true" />
+      <created>1706325769793</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1706325769793</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Chum" />
+    <MESSAGE value="Updated animations" />
+    <MESSAGE value="Dyeable crabs" />
+    <MESSAGE value="Blue crab is default" />
+    <MESSAGE value="Loot table change + final crab features (for now)" />
+    <MESSAGE value="Start of Crab Claw (not finished - really tricky)" />
+    <MESSAGE value="Updated Crab Barrel Texture and added crab drop" />
+    <MESSAGE value="Add spawn egg to creative tab and fix crab spawning event" />
+    <MESSAGE value="Fix z-fighting on crab trap model &amp; finalized crab spawning" />
+    <MESSAGE value="Chummy" />
+    <MESSAGE value="Re-wrote crab trap loot handler" />
+    <MESSAGE value="what" />
+    <MESSAGE value="Crab Trap methods for chum nearly done" />
+    <MESSAGE value="Fixed Crab Trap chum logic to replace the bucket; Thank you MehVahdJukaar!" />
+    <MESSAGE value="Created chum bucket recipes and associated tags; re-generated data" />
+    <MESSAGE value="Increment Version for 1.20.1 release" />
+    <MESSAGE value="Brain-blast" />
+    <MESSAGE value="Merged the ja_jp translation - added in the missing items related to items added in this latest update to default to the en_us translation until new translations are received" />
+    <MESSAGE value="Add ru_ru.json - thanks Maxis!" />
+    <MESSAGE value="Finally fixed the bowl returning issue" />
+    <MESSAGE value="Incremented version to 1.1.3a for hotfix" />
+    <MESSAGE value="JEI stubs and Item Tooltips" />
+    <MESSAGE value="Bump 1.1.4" />
+    <MESSAGE value="Pufferfish slices" />
+    <MESSAGE value="Adjust crab cakes recipe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjust crab cakes recipe" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
