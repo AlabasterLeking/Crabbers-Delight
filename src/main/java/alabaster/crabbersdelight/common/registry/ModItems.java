@@ -153,6 +153,9 @@ public class ModItems {
     public static final RegistryObject<Item> STUFFED_NAUTILUS_SHELL = addToTab(ITEMS.register("stuffed_nautilus_shell",
             () -> new ConsumableItem(shellFoodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL), true)));
 
+    public static final RegistryObject<Item> SHRIMP_FRIED_RICE = addToTab(ITEMS.register("shrimp_fried_rice",
+            () -> new ConsumableItem(shellFoodItem(CDFoodValues.SHRIMP_FRIED_RICE), true)));
+
     // Drink Food Items
 
     public static final RegistryObject<Item> KELP_SHAKE = addToTab(ITEMS.register("kelp_shake",

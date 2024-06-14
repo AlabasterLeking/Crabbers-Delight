@@ -3,7 +3,7 @@
   "biomes": "minecraft:mangrove_swamp",
   "spawners": {
     "type": "crabbersdelight:crab",
-    "weight": 70,
+    "weight": 30,
     "minCount": 3,
     "maxCount": 6
   }

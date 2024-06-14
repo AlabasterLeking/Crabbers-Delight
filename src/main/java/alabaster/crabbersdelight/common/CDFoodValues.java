@@ -91,6 +91,9 @@ public class CDFoodValues {
             .nutrition(8).saturationMod(0.7f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
 
+    public static final FoodProperties SHRIMP_FRIED_RICE = (new FoodProperties.Builder())
+            .nutrition(7).saturationMod(0.7f).build();
+
     public static final FoodProperties CLAWSTER_FEAST = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.9f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), LONG_DURATION, 0), 1.0F).build();

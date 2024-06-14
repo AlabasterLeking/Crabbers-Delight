@@ -109,6 +109,15 @@ public class CookingRecipes {
                 .unlockedByAnyIngredient(Items.NAUTILUS_SHELL)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.SHRIMP_FRIED_RICE.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
+                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .addIngredient(ModItems.RAW_SHRIMP.get())
+                .addIngredient(Items.CARROT)
+                .unlockedByAnyIngredient(ModItems.RAW_SHRIMP.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
     }
 }
 
