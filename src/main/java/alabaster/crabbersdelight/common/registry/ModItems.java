@@ -3,6 +3,7 @@ package alabaster.crabbersdelight.common.registry;
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.CDFoodValues;
 import alabaster.crabbersdelight.common.item.ChumItem;
+import alabaster.crabbersdelight.common.item.CrabClawItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Animal;
@@ -85,6 +86,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> BUCKET_OF_SHRIMP_CHUM = addToTab(ITEMS.register("bucket_of_shrimp_chum",
             () -> new ChumItem(basicItem())));
+
+    public static final RegistryObject<Item> CRAB_CLAW = addToTab(ITEMS.register("crab_claw",
+            () -> new CrabClawItem(basicItem())));
 
     // Mob Buckets
 

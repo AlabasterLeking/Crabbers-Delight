@@ -1,0 +1,38 @@
+{
+  "parent": "crabbersdelight:main/craft_crab_trap",
+  "criteria": {
+    "shrimp_fried_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crabbersdelight:shrimp_fried_rice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "crabbersdelight:shrimp_fried_rice"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "crabbersdelight.advancement.a_shrimp_fried_this_rice"
+    }
+  },
+  "requirements": [
+    [
+      "shrimp_fried_rice"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

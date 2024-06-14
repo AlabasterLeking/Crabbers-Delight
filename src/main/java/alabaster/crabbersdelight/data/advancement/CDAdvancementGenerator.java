@@ -41,6 +41,10 @@ public class CDAdvancementGenerator implements ForgeAdvancementProvider.Advancem
         Advancement motherOfPearl = getAdvancement(itsATrap, ModItems.CLAM.get(), "get_pearl", FrameType.TASK, true, false, false)
                 .addCriterion("pearl", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PEARL.get()))
                 .save(consumer, getNameId("main/get_pearl"));
+
+        Advancement aShrimpFriedThisRice = getAdvancement(itsATrap, ModItems.SHRIMP_FRIED_RICE.get(), "a_shrimp_fried_this_rice", FrameType.TASK, true, false, false)
+                .addCriterion("shrimp_fried_rice", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SHRIMP_FRIED_RICE.get()))
+                .save(consumer, getNameId("main/a_shrimp_fried_this_rice"));
     }
 
     protected static Advancement.Builder getAdvancement(Advancement parent, ItemLike display, String name, FrameType frame, boolean showToast, boolean announceToChat, boolean hidden) {

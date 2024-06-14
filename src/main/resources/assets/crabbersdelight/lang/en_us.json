@@ -34,6 +34,7 @@
   "item.crabbersdelight.bucket_of_clam_chum": "Bucket of Clam Chum",
   "item.crabbersdelight.bucket_of_shrimp_chum": "Bucket of Shrimp Chum",
 
+  "item.crabbersdelight.crab_claw": "Crab Claw",
 
   "item.crabbersdelight.crab_spawn_egg": "Spawn Crab",
   "item.crabbersdelight.crab_bucket": "Crab Bucket",
@@ -64,6 +65,9 @@
 
   "crabbersdelight.advancement.get_pearl": "Sweet Mother of Pearl!",
   "crabbersdelight.advancement.get_pearl.desc": "Obtain your first pearl by cutting clams on a cutting board. Maybe a mysterious trader will find it valuable...",
+
+  "crabbersdelight.advancement.a_shrimp_fried_this_rice": "A Shrimp Fried This Rice?!",
+  "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "You seriously mean to tell me a SHRIMP fried this rice?! Impossible",
 
   "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water"
 }
