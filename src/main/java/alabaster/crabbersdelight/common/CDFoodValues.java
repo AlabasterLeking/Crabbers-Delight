@@ -60,6 +60,9 @@ public class CDFoodValues {
     public static final FoodProperties SHRIMP_SKEWER = (new FoodProperties.Builder())
             .nutrition(8).saturationMod(0.8f).build();
 
+    public static final FoodProperties SHRIMP_FRIED_RICE = (new FoodProperties.Builder())
+            .nutrition(7).saturationMod(0.7f).build();
+
     public static final FoodProperties SURF_AND_TURF = (new FoodProperties.Builder())
             .nutrition(14).saturationMod(0.8f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), LONG_DURATION, 0), 1.0F).build();
@@ -90,9 +93,6 @@ public class CDFoodValues {
     public static final FoodProperties STUFFED_NAUTILUS_SHELL = (new FoodProperties.Builder())
             .nutrition(8).saturationMod(0.7f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
-
-    public static final FoodProperties SHRIMP_FRIED_RICE = (new FoodProperties.Builder())
-            .nutrition(7).saturationMod(0.7f).build();
 
     public static final FoodProperties CLAWSTER_FEAST = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.9f)

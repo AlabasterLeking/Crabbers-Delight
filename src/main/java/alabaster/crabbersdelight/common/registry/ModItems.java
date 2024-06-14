@@ -153,9 +153,6 @@ public class ModItems {
     public static final RegistryObject<Item> STUFFED_NAUTILUS_SHELL = addToTab(ITEMS.register("stuffed_nautilus_shell",
             () -> new ConsumableItem(shellFoodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL), true)));
 
-    public static final RegistryObject<Item> SHRIMP_FRIED_RICE = addToTab(ITEMS.register("shrimp_fried_rice",
-            () -> new ConsumableItem(shellFoodItem(CDFoodValues.SHRIMP_FRIED_RICE), true)));
-
     // Drink Food Items
 
     public static final RegistryObject<Item> KELP_SHAKE = addToTab(ITEMS.register("kelp_shake",
@@ -171,6 +168,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> CLAM_CHOWDER = addToTab(ITEMS.register("clam_chowder",
             () -> new ConsumableItem(bowlFoodItem(CDFoodValues.CLAM_CHOWDER), true)));
+
+    public static final RegistryObject<Item> SHRIMP_FRIED_RICE = addToTab(ITEMS.register("shrimp_fried_rice",
+            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.SHRIMP_FRIED_RICE), true)));
 
     // Storage Blocks
     public static final RegistryObject<Item> CRAB_BARREL = addToTab(ITEMS.register("crab_barrel",
@@ -197,8 +197,8 @@ public class ModItems {
     public static final RegistryObject<Item> TROPICAL_FISH_BARREL = addToTab(ITEMS.register("tropical_fish_barrel",
             () -> new BlockItem(ModBlocks.TROPICAL_FISH_BARREL.get(), basicItem())));
 
-    public static final RegistryObject<Item> LANTERNFISH_BARREL = addToTab(ITEMS.register("lanternfish_barrel",
-            () -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem())));
+    //public static final RegistryObject<Item> LANTERNFISH_BARREL = addToTab(ITEMS.register("lanternfish_barrel",
+            //() -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> NAUTILUS_SHELL_BLOCK = addToTab(ITEMS.register("nautilus_shell_block",
             () -> new BlockItem(ModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem())));
