@@ -157,6 +157,12 @@ public class ModItems {
     public static final RegistryObject<Item> STUFFED_NAUTILUS_SHELL = addToTab(ITEMS.register("stuffed_nautilus_shell",
             () -> new ConsumableItem(shellFoodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL), true)));
 
+    public static final RegistryObject<Item> SOGGY_FLESH = addToTab(ITEMS.register("soggy_flesh",
+            () -> new ConsumableItem(shellFoodItem(CDFoodValues.SOGGY_FLESH), true)));
+
+    public static final RegistryObject<Item> ARID_FLESH = addToTab(ITEMS.register("arid_flesh",
+            () -> new ConsumableItem(shellFoodItem(CDFoodValues.ARID_FLESH), true)));
+
     // Drink Food Items
 
     public static final RegistryObject<Item> KELP_SHAKE = addToTab(ITEMS.register("kelp_shake",
@@ -177,6 +183,7 @@ public class ModItems {
             () -> new ConsumableItem(bowlFoodItem(CDFoodValues.SHRIMP_FRIED_RICE), true)));
 
     // Storage Blocks
+
     public static final RegistryObject<Item> CRAB_BARREL = addToTab(ITEMS.register("crab_barrel",
             () -> new BlockItem(ModBlocks.CRAB_BARREL.get(), basicItem())));
 
@@ -211,6 +218,7 @@ public class ModItems {
             () -> new BlockItem(ModBlocks.PEARL_BLOCK.get(), basicItem())));
 
     // Crab Trap
+
     public static final RegistryObject<Item> CRAB_TRAP = addToTab(ITEMS.register("crab_trap",
             () -> new BlockItem(ModBlocks.CRAB_TRAP.get(), basicItem())));
 
