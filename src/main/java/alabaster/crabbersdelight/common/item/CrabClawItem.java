@@ -41,10 +41,9 @@ public class CrabClawItem extends Item {
 
     @SubscribeEvent
     public static void extendRange(LivingTickEvent event) {
-        if (!(event.getEntity() instanceof Player))
+        if (!(event.getEntity() instanceof Player player))
             return;
 
-        Player player = (Player) event.getEntity();
         CompoundTag persistentData = player.getPersistentData();
 
         boolean clawMainHand = (player.getMainHandItem().is(ModItems.CRAB_CLAW.get()));
@@ -82,7 +81,16 @@ public class CrabClawItem extends Item {
             return;
         if (player.level().isClientSide)
             return;
+
         InteractionHand hand = InteractionHand.MAIN_HAND;
         ItemStack claw = player.getMainHandItem();
+
+        if (!(player.getMainHandItem().is(ModItems.CRAB_CLAW.get()))) {
+            hand = InteractionHand.OFF_HAND;
+            claw = player.getOffhandItem();
+        }
+
+        final InteractionHand h = hand;
+        claw.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(h));
     }
 }
