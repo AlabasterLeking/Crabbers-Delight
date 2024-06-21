@@ -32,6 +32,7 @@ public class ItemModels extends ItemModelProvider
 
         // Specific cases
         items.remove(ModItems.CRAB_SPAWN_EGG.get());
+        items.remove(ModItems.CRAB_CLAW.get());
 
         // Blocks whose item look alike
         takeAll(items, i -> i instanceof BlockItem).forEach(item -> blockBasedModel(item, ""));

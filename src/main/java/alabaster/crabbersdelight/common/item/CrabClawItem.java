@@ -5,11 +5,16 @@ import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -42,11 +47,13 @@ public class CrabClawItem extends Item {
         Player player = (Player) event.getEntity();
         CompoundTag persistentData = player.getPersistentData();
 
-        boolean clawHeld = (player.getMainHandItem().is(ModItems.CRAB_CLAW.get()) || (player.getOffhandItem().is(ModItems.CRAB_CLAW.get())));
+        boolean clawMainHand = (player.getMainHandItem().is(ModItems.CRAB_CLAW.get()));
+        boolean clawOffHand = (player.getOffhandItem().is(ModItems.CRAB_CLAW.get()));
+        boolean clawHeld = (clawMainHand && clawOffHand);
         boolean hadClaw = persistentData.contains(CLAW_HELD);
 
         if (clawHeld != hadClaw ) {
-            if (!clawHeld) {
+            if (!clawMainHand || !clawOffHand) {
                 player.getAttributes()
                         .removeAttributeModifiers(rangeModifier.get());
                 persistentData.remove(CLAW_HELD);
@@ -56,5 +63,26 @@ public class CrabClawItem extends Item {
                 persistentData.putBoolean(CLAW_HELD, true);
             }
         }
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void consumeOnBreak(BlockEvent.BreakEvent event) {
+        damageClaw(event.getPlayer());
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void consumeOnPlace(BlockEvent.EntityPlaceEvent event) {
+        Entity entity = event.getEntity();
+        if (entity instanceof Player)
+            damageClaw((Player) entity);
+    }
+
+    private static void damageClaw(Player player) {
+        if (player == null)
+            return;
+        if (player.level().isClientSide)
+            return;
+        InteractionHand hand = InteractionHand.MAIN_HAND;
+        ItemStack claw = player.getMainHandItem();
     }
 }
