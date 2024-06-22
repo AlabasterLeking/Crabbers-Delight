@@ -118,6 +118,14 @@ public class CookingRecipes {
                 .unlockedByAnyIngredient(ModItems.RAW_SHRIMP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .build(consumer);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(ModItems.JAR_OF_PICKLES.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
+                .addIngredient(Items.SEA_PICKLE)
+                .addIngredient(Items.SEA_PICKLE)
+                .addIngredient(Items.SEA_PICKLE)
+                .unlockedByAnyIngredient(Items.SEA_PICKLE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
     }
 }
 

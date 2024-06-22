@@ -2,31 +2,30 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "name": "crabbersdelight:raw_crab"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:crab_claw",
+          "conditions": [
             {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1.0,
-                "max": 2.0
-              },
-              "add": false
+              "condition": "minecraft:random_chance",
+              "chance": 0.1
             },
             {
-              "function": "minecraft:looting_enchant",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 0.0,
-                "max": 1.0
-              }
+              "condition": "minecraft:killed_by_player",
+              "inverse": false
+            },
+            {
+              "condition": "minecraft:random_chance_with_looting",
+              "chance": 0.2,
+              "looting_multiplier": 2
             }
-          ],
-          "name": "crabbersdelight:crab"
+          ]
         }
       ]
     }

@@ -158,15 +158,21 @@ public class ModItems {
             () -> new ConsumableItem(shellFoodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL), true)));
 
     public static final RegistryObject<Item> SOGGY_FLESH = addToTab(ITEMS.register("soggy_flesh",
-            () -> new ConsumableItem(shellFoodItem(CDFoodValues.SOGGY_FLESH), true)));
+            () -> new ConsumableItem(foodItem(CDFoodValues.SOGGY_FLESH), true)));
 
     public static final RegistryObject<Item> ARID_FLESH = addToTab(ITEMS.register("arid_flesh",
-            () -> new ConsumableItem(shellFoodItem(CDFoodValues.ARID_FLESH), true)));
+            () -> new ConsumableItem(foodItem(CDFoodValues.ARID_FLESH), true)));
+
+    public static final RegistryObject<Item> JAR_OF_PICKLES = addToTab(ITEMS.register("jar_of_pickles",
+            () -> new ConsumableItem(foodItem(CDFoodValues.JAR_OF_PICKLES).craftRemainder(Items.GLASS_BOTTLE))));
 
     // Drink Food Items
 
     public static final RegistryObject<Item> KELP_SHAKE = addToTab(ITEMS.register("kelp_shake",
             () -> new DrinkableItem(drinkItem(CDFoodValues.KELP_SHAKE), true)));
+
+    public static final RegistryObject<Item> SEA_PICKLE_JUICE = addToTab(ITEMS.register("sea_pickle_juice",
+            () -> new DrinkableItem(drinkItem(CDFoodValues.SEA_PICKLE_JUICE), true)));
 
     // Bowl Food Items
 

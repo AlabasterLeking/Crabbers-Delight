@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crabbersdelight:rotten_flesh_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "rotten_flesh": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crabbersdelight:soggy_flesh"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "rotten_flesh",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crabbersdelight:rotten_flesh_from_smoking"
+    ]
+  },
+  "sends_telemetry_event": false
+}

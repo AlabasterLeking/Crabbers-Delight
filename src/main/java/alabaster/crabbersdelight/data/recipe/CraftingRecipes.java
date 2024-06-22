@@ -200,6 +200,13 @@ public class CraftingRecipes {
                 .unlockedBy("has_baked_potato", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BAKED_POTATO))
                 .save(consumer);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SEA_PICKLE_JUICE.get())
+                .requires(Items.SEA_PICKLE)
+                .requires(Items.SUGAR)
+                .requires(Items.GLASS_BOTTLE)
+                .unlockedBy("has_sea_pickle", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
+                .save(consumer);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BUCKET_OF_CRAB_CHUM.get())
                 .requires(IS_CRAB_CHUM)
                 .requires(Items.BUCKET)

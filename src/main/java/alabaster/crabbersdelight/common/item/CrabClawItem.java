@@ -7,11 +7,12 @@ import com.google.common.collect.Multimap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -34,7 +35,7 @@ public class CrabClawItem extends Item {
             ImmutableMultimap.of(ForgeMod.BLOCK_REACH.get(), rangeAttributeModifier));
 
     public CrabClawItem(Properties properties) {
-        super(properties.defaultDurability(MAX_DAMAGE));
+        super(properties.durability(MAX_DAMAGE));
     }
 
     public static final String CLAW_HELD = "clawHeld";
@@ -76,6 +77,12 @@ public class CrabClawItem extends Item {
             damageClaw((Player) entity);
     }
 
+    @Override
+    public boolean hurtEnemy(ItemStack claw, LivingEntity target, LivingEntity attacker) {
+        claw.hurtAndBreak(1, attacker, (user) -> user.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        return true;
+    }
+
     private static void damageClaw(Player player) {
         if (player == null)
             return;
@@ -91,6 +98,6 @@ public class CrabClawItem extends Item {
         }
 
         final InteractionHand h = hand;
-        claw.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(h));
+        claw.hurtAndBreak(1, player, user -> user.broadcastBreakEvent(h));
     }
 }

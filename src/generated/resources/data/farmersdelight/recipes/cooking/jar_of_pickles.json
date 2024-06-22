@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:sea_pickle"
+    },
+    {
+      "item": "minecraft:sea_pickle"
+    },
+    {
+      "item": "minecraft:sea_pickle"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "crabbersdelight:jar_of_pickles"
+  }
+}

@@ -13,11 +13,11 @@ public class CDFoodValues {
     public static final int LONG_DURATION = 6000;    // 5 minutes
 
     public static final FoodProperties SOGGY_FLESH = (new FoodProperties.Builder())
-            .nutrition(3).saturationMod(0.3f).meat()
+            .nutrition(3).saturationMod(0.3f)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).meat().build();
 
     public static final FoodProperties ARID_FLESH = (new FoodProperties.Builder())
-            .nutrition(3).saturationMod(0.3f).meat()
+            .nutrition(3).saturationMod(0.3f)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).meat().build();
 
     public static final FoodProperties RAW_CRAB = (new FoodProperties.Builder())
@@ -104,6 +104,14 @@ public class CDFoodValues {
     public static final FoodProperties STUFFED_NAUTILUS_SHELL = (new FoodProperties.Builder())
             .nutrition(8).saturationMod(0.7f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), MEDIUM_DURATION, 0), 1.0F).build();
+
+    public static final FoodProperties JAR_OF_PICKLES = (new FoodProperties.Builder())
+            .nutrition(6).saturationMod(0.5f).build();
+
+    public static final FoodProperties SEA_PICKLE_JUICE = (new FoodProperties.Builder())
+            .nutrition(3).saturationMod(0.3f)
+            .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, MEDIUM_DURATION, 1), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, MEDIUM_DURATION, 0), 1.0F).build();
 
     public static final FoodProperties CLAWSTER_FEAST = (new FoodProperties.Builder())
             .nutrition(10).saturationMod(0.9f)

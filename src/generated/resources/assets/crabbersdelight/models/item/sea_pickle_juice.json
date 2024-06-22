@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crabbersdelight:item/crab_claw"
+    "layer0": "crabbersdelight:item/sea_pickle_juice"
   }
 }
