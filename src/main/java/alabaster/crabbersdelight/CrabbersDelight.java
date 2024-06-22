@@ -4,9 +4,7 @@ import alabaster.crabbersdelight.client.gui.CrabTrapGUI;
 import alabaster.crabbersdelight.client.renderer.CrabRenderer;
 import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.event.CDSpriteSourceProvider;
-import alabaster.crabbersdelight.common.event.ModEvents;
 import alabaster.crabbersdelight.common.registry.*;
-import alabaster.crabbersdelight.data.recipe.BrewingRecipes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.HolderLookup;
@@ -14,10 +12,10 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -42,7 +40,7 @@ public class CrabbersDelight {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         bus.addListener(this::clientSetup);
-        bus.addListener(this::commonSetup);
+        bus.addListener(this::setup);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
 
@@ -63,10 +61,8 @@ public class CrabbersDelight {
         });
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            BrewingRecipeRegistry.addRecipe(new BrewingRecipes(Potions.AWKWARD, Items.INK_SAC, ModPotions.INKY_POTION.get()));
-        });
+    private void setup(FMLCommonSetupEvent event) {
+        PotionBrewing.addMix(Potions.AWKWARD, Items.INK_SAC, ModPotions.INKY_POTION.get());
     }
 
     public static ResourceLocation modPrefix(String path) {

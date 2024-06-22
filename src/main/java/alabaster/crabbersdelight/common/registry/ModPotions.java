@@ -10,7 +10,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModPotions {
-    public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(ForgeRegistries.POTIONS, CrabbersDelight.MODID);
+    public static final DeferredRegister<Potion> POTIONS
+            = DeferredRegister.create(ForgeRegistries.POTIONS, CrabbersDelight.MODID);
 
     public static final RegistryObject<Potion> INKY_POTION = POTIONS.register("inky_potion",
             () -> new Potion(new MobEffectInstance(MobEffects.BLINDNESS, 300, 0)));
