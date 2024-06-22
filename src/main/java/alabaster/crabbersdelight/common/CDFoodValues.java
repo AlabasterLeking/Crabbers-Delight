@@ -1,5 +1,7 @@
 package alabaster.crabbersdelight.common;
 
+import net.minecraft.client.renderer.EffectInstance;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -109,8 +111,8 @@ public class CDFoodValues {
             .nutrition(6).saturationMod(0.5f).build();
 
     public static final FoodProperties SEA_PICKLE_JUICE = (new FoodProperties.Builder())
-            .nutrition(3).saturationMod(0.3f)
-            .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, MEDIUM_DURATION, 1), 1.0F)
+            .nutrition(2).saturationMod(0.2f)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, BRIEF_DURATION, 0), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, MEDIUM_DURATION, 0), 1.0F).build();
 
     public static final FoodProperties CLAWSTER_FEAST = (new FoodProperties.Builder())
