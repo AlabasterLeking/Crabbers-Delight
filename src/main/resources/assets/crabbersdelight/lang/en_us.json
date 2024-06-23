@@ -34,9 +34,10 @@
   "item.crabbersdelight.soggy_flesh": "Soggy Flesh",
   "item.crabbersdelight.arid_flesh": "Arid Flesh",
 
-  "item.minecraft.potion.effect.inky_potion": "Inky Potion",
-  "item.minecraft.splash_potion.effect.inky_potion": "Splash Potion of Inky",
-  "item.minecraft.lingering_potion.effect.inky_potion": "Lingering Potion of Inky",
+  "item.minecraft.potion.effect.inky_potion": "Potion of Inkiness",
+  "item.minecraft.splash_potion.effect.inky_potion": "Splash Potion of Inkiness",
+  "item.minecraft.lingering_potion.effect.inky_potion": "Lingering Potion of Inkiness",
+  "item.minecraft.tipped_arrow.effect.inky_potion": "Arrow of Inkiness",
 
   "item.crabbersdelight.bucket_of_crab_chum": "Bucket of Crab Chum",
   "item.crabbersdelight.bucket_of_clawster_chum": "Bucket of Clawster Chum",

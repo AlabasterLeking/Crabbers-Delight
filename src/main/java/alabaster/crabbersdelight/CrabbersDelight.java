@@ -39,9 +39,6 @@ public class CrabbersDelight {
     public CrabbersDelight() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        bus.addListener(this::clientSetup);
-        bus.addListener(this::setup);
-
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
 
         ModItems.ITEMS.register(bus);
@@ -52,17 +49,18 @@ public class CrabbersDelight {
         ModEntities.ENTITIES.register(bus);
         ModPotions.POTIONS.register(bus);
 
+        bus.addListener(this::setup);
+        bus.addListener(this::clientSetup);
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        event.enqueueWork(() -> {
-            MenuScreens.register(ModMenus.CRAB_TRAP_MENU.get(), CrabTrapGUI::new);
-        });
+        event.enqueueWork(() -> MenuScreens.register(ModMenus.CRAB_TRAP_MENU.get(), CrabTrapGUI::new));
     }
 
-    private void setup(FMLCommonSetupEvent event) {
-        PotionBrewing.addMix(Potions.AWKWARD, Items.INK_SAC, ModPotions.INKY_POTION.get());
+    private void setup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> PotionBrewing.addMix(Potions.AWKWARD, Items.INK_SAC, ModPotions.INKY_POTION.get()));
     }
 
     public static ResourceLocation modPrefix(String path) {

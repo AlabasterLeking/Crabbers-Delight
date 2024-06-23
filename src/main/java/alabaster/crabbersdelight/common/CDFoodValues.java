@@ -14,13 +14,13 @@ public class CDFoodValues {
     public static final int MEDIUM_DURATION = 3600;    // 3 minutes
     public static final int LONG_DURATION = 6000;    // 5 minutes
 
-    public static final FoodProperties SOGGY_FLESH = (new FoodProperties.Builder())
-            .nutrition(3).saturationMod(0.3f)
-            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).meat().build();
+    //public static final FoodProperties SOGGY_FLESH = (new FoodProperties.Builder())
+    //        .nutrition(3).saturationMod(0.3f)
+    //        .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).meat().build();
 
-    public static final FoodProperties ARID_FLESH = (new FoodProperties.Builder())
-            .nutrition(3).saturationMod(0.3f)
-            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).meat().build();
+    //public static final FoodProperties ARID_FLESH = (new FoodProperties.Builder())
+    //        .nutrition(3).saturationMod(0.3f)
+    //        .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F).meat().build();
 
     public static final FoodProperties RAW_CRAB = (new FoodProperties.Builder())
             .nutrition(2).saturationMod(0.3f).meat().build();
