@@ -18,6 +18,13 @@ public class CDModTags {
     public static final TagKey<Item> IS_CLAM_CHUM = modItemTag("is_clam_chum");
     public static final TagKey<Item> IS_SHRIMP_CHUM = modItemTag("is_shrimp_chum");
 
+    public static final TagKey<Item> JUNK = modItemTag("jei_display_results/minecraft/junk");
+    public static final TagKey<Item> TREASURE = modItemTag("jei_display_results/minecraft/treasure");
+    public static final TagKey<Item> BUCKET_OF_CLAWSTER_CHUM = modItemTag("jei_display_results/minecraft/bucket_of_clawster_chum");
+    public static final TagKey<Item> BUCKET_OF_CRAB_CHUM = modItemTag("jei_display_results/minecraft/bucket_of_crab_chum");
+    public static final TagKey<Item> BUCKET_OF_CLAM_CHUM = modItemTag("jei_display_results/minecraft/bucket_of_clam_chum");
+    public static final TagKey<Item> BUCKET_OF_SHRIMP_CHUM = modItemTag("jei_display_results/minecraft/bucket_of_shrimp_chum");
+
     private static TagKey<Item> modItemTag(String path) {
         return ItemTags.create(new ResourceLocation(CrabbersDelight.MODID, path));
     }
