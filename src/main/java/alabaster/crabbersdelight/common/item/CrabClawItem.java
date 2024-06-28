@@ -14,6 +14,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -38,7 +39,7 @@ public class CrabClawItem extends Item {
         super(properties.durability(MAX_DAMAGE));
     }
 
-    public static final String CLAW_HELD = "clawHeld";
+    public static final String CLAW_MARKER = "clawMarker";
 
     @SubscribeEvent
     public static void extendRange(LivingTickEvent event) {
@@ -49,20 +50,30 @@ public class CrabClawItem extends Item {
 
         boolean clawMainHand = (player.getMainHandItem().is(ModItems.CRAB_CLAW.get()));
         boolean clawOffHand = (player.getOffhandItem().is(ModItems.CRAB_CLAW.get()));
-        boolean clawHeld = (clawMainHand && clawOffHand);
-        boolean hadClaw = persistentData.contains(CLAW_HELD);
+        boolean clawHeld = clawMainHand ^ clawOffHand;
+        boolean hadClaw = persistentData.contains(CLAW_MARKER);
 
         if (clawHeld != hadClaw ) {
-            if (!clawMainHand || !clawOffHand) {
+            if (!clawHeld) {
                 player.getAttributes()
                         .removeAttributeModifiers(rangeModifier.get());
-                persistentData.remove(CLAW_HELD);
+                persistentData.remove(CLAW_MARKER);
             } else {
                 player.getAttributes()
                         .addTransientAttributeModifiers(rangeModifier.get());
-                persistentData.putBoolean(CLAW_HELD, true);
+                persistentData.putBoolean(CLAW_MARKER, true);
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void adjustReachOnJoin(PlayerEvent.PlayerLoggedInEvent event) {
+        Player player = event.getEntity();
+        CompoundTag persistentData = player.getPersistentData();
+
+        if (persistentData.contains(CLAW_MARKER))
+            player.getAttributes()
+                    .addTransientAttributeModifiers(rangeModifier.get());
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
@@ -89,15 +100,23 @@ public class CrabClawItem extends Item {
         if (player.level().isClientSide)
             return;
 
-        InteractionHand hand = InteractionHand.MAIN_HAND;
-        ItemStack claw = player.getMainHandItem();
+        InteractionHand hand;
+        ItemStack claw;
 
-        if (!(player.getMainHandItem().is(ModItems.CRAB_CLAW.get()))) {
+        if (player.getOffhandItem().is(ModItems.CRAB_CLAW.get())) {
             hand = InteractionHand.OFF_HAND;
             claw = player.getOffhandItem();
+
+            final InteractionHand h = hand;
+            claw.hurtAndBreak(1, player, user -> user.broadcastBreakEvent(h));
         }
 
-        final InteractionHand h = hand;
-        claw.hurtAndBreak(1, player, user -> user.broadcastBreakEvent(h));
+        if (player.getMainHandItem().is(ModItems.CRAB_CLAW.get())) {
+            hand = InteractionHand.MAIN_HAND;
+            claw = player.getMainHandItem();
+
+            final InteractionHand h = hand;
+            claw.hurtAndBreak(1, player, user -> user.broadcastBreakEvent(h));
+        }
     }
 }
