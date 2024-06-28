@@ -22,15 +22,29 @@
   "item.crabbersdelight.clam_chowder": "蛤蜊浓汤",
   "item.crabbersdelight.tropical_fish_slice": "热带鱼片",
   "item.crabbersdelight.cooked_tropical_fish_slice": "熟热带鱼片",
+  "item.crabbersdelight.pufferfish_slice": "河豚片",
+  "item.crabbersdelight.cooked_pufferfish_slice": "熟河豚片",
   "item.crabbersdelight.bisque": "法式贝类浓汤",
   "item.crabbersdelight.seafood_gumbo": "海鲜秋葵浓汤",
   "item.crabbersdelight.stuffed_nautilus_shell": "填馅鹦鹉螺酿",
+  "item.crabbersdelight.shrimp_fried_rice": "虾炒饭",
+  "item.crabbersdelight.jar_of_pickles": "泡菜罐",
+  "item.crabbersdelight.sea_pickle_juice": "海泡菜汁",
+
+  "item.crabbersdelight.soggy_flesh": "Soggy Flesh",
+  "item.crabbersdelight.arid_flesh": "Arid Flesh",
+
+  "item.minecraft.potion.effect.inky_potion": "墨盲药水",
+  "item.minecraft.splash_potion.effect.inky_potion": "喷溅形墨盲药水",
+  "item.minecraft.lingering_potion.effect.inky_potion": "滞留性墨盲药水",
+  "item.minecraft.tipped_arrow.effect.inky_potion": "墨盲之箭",
 
   "item.crabbersdelight.bucket_of_crab_chum": "螃蟹诱饵桶",
   "item.crabbersdelight.bucket_of_clawster_chum": "龙虾诱饵桶",
   "item.crabbersdelight.bucket_of_clam_chum": "蛤蜊诱饵桶",
   "item.crabbersdelight.bucket_of_shrimp_chum": "虾诱饵桶",
 
+  "item.crabbersdelight.crab_claw": "螃蟹钳",
 
   "item.crabbersdelight.crab_spawn_egg": "螃蟹刷怪蛋",
   "item.crabbersdelight.crab_bucket": "螃蟹桶",
@@ -61,6 +75,9 @@
 
   "crabbersdelight.advancement.get_pearl": "美丽的珍珠之母啊！",
   "crabbersdelight.advancement.get_pearl.desc": "可以在砧板上剖开蛤蜊获得第一颗珍珠，或许神秘商人会发现它的价值...",
+
+  "crabbersdelight.advancement.a_shrimp_fried_this_rice": "虾炒饭？！",
+  "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "这饭真的是虾炒的？！不可能！",
 
   "crabbersdelight.block.crab_trap.not_waterlogged": "捕蟹笼必须放置在水中"
 }
