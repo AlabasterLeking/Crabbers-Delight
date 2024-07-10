@@ -54,6 +54,16 @@ public class ItemTags extends ItemTagsProvider {
                 .add(ModItems.COOKED_CLAWSTER.get())
                 .add(ModItems.COOKED_SHRIMP.get());
 
+        // Raw Squid
+        tag(CDModTags.RAW_SQUID)
+                .add(ModItems.RAW_SQUID_TENTACLES.get())
+                .add(ModItems.RAW_GLOW_SQUID_TENTACLES.get());
+
+        // Cooked Squid
+        tag(CDModTags.COOKED_SQUID)
+                .add(ModItems.COOKED_SQUID_TENTACLES.get())
+                .add(ModItems.COOKED_GLOW_SQUID_TENTACLES.get());
+
         // Raw Fishes
         tag(ForgeTags.RAW_FISHES)
                 .add(ModItems.TROPICAL_FISH_SLICE.get())

@@ -121,6 +121,18 @@ public class ModItems {
     public static final RegistryObject<Item> COOKED_CLAM_MEAT = addToTab(ITEMS.register("cooked_clam_meat",
             () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_CLAM_MEAT))));
 
+    public static final RegistryObject<Item> RAW_SQUID_TENTACLES = addToTab(ITEMS.register("raw_squid_tentacles",
+            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CLAM_MEAT))));
+
+    public static final RegistryObject<Item> RAW_GLOW_SQUID_TENTACLES = addToTab(ITEMS.register("raw_glow_squid_tentacles",
+            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CLAM_MEAT))));
+
+    public static final RegistryObject<Item> COOKED_SQUID_TENTACLES = addToTab(ITEMS.register("cooked_squid_tentacles",
+            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CLAM_MEAT))));
+
+    public static final RegistryObject<Item> COOKED_GLOW_SQUID_TENTACLES = addToTab(ITEMS.register("cooked_glow_squid_tentacles",
+            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CLAM_MEAT))));
+
     public static final RegistryObject<Item> CRAB_CAKES = addToTab(ITEMS.register("crab_cakes",
             () -> new ConsumableItem(foodItem(CDFoodValues.CRAB_CAKES), true)));
 

@@ -3,14 +3,24 @@
 
   "item.crabbersdelight.crab": "Crab",
   "item.crabbersdelight.cooked_crab": "Cooked Crab",
+
   "item.crabbersdelight.clawster": "Clawster",
   "item.crabbersdelight.cooked_clawster": "Cooked Clawster",
+
   "item.crabbersdelight.shrimp": "Shrimp",
   "item.crabbersdelight.cooked_shrimp": "Cooked Shrimp",
+
   "item.crabbersdelight.clam": "Clam",
+  "item.crabbersdelight.pearl": "Pearl",
   "item.crabbersdelight.raw_clam_meat": "Raw Clam Meat",
   "item.crabbersdelight.cooked_clam_meat": "Cooked Clam Meat",
-  "item.crabbersdelight.pearl": "Pearl",
+
+  "item.crabbersdelight.raw_squid_tentacles": "Raw Squid Tentacles",
+  "item.crabbersdelight.cooked_squid_tentacles": "Cooked Squid Tentacles",
+
+  "item.crabbersdelight.raw_glow_squid_tentacles": "Raw Glow Squid Tentacles",
+  "item.crabbersdelight.cooked_glow_squid_tentacles": "Cooked Glow Squid Tentacles",
+
   "item.crabbersdelight.kelp_shake": "Kelp Shake",
   "item.crabbersdelight.crab_cakes": "Crab Cakes",
   "item.crabbersdelight.crab_legs": "Crab Leg",

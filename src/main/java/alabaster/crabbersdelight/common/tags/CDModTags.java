@@ -10,6 +10,9 @@ import alabaster.crabbersdelight.CrabbersDelight;
 public class CDModTags {
     public static final TagKey<Item> RAW_SEAFOOD = modItemTag("raw_seafood");
     public static final TagKey<Item> COOKED_SEAFOOD = modItemTag("cooked_seafood");
+    public static final TagKey<Item> RAW_SQUID = modItemTag("raw_squid");
+    public static final TagKey<Item> COOKED_SQUID = modItemTag("cooked_squid");
+
     public static final TagKey<Item> CRAB_TRAP_BAIT = modItemTag("crab_trap_bait");
     public static final TagKey<Item> CRAB_TEMPT_ITEM = modItemTag("crab_tempt_item");
     public static final TagKey<Item> CREATURE_CHUMS = modItemTag("creature_chums");
