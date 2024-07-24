@@ -24,11 +24,11 @@ public class CrabTrapMenu extends AbstractContainerMenu {
         this.inventory = inventory;
 
         int startX = 8;
-        int startY = 18;
+        int startY = 13;
         int borderSlotSize = 18;
 
         // Bait Slot
-        this.addSlot(new SlotItemHandler(inventory, 0, 80, 17) {
+        this.addSlot(new SlotItemHandler(inventory, 0, 80, 14) {
             @Override
             public boolean mayPlace(ItemStack stack) {
                 return stack.is(CDModTags.CRAB_TRAP_BAIT);
@@ -42,16 +42,21 @@ public class CrabTrapMenu extends AbstractContainerMenu {
 
         // Row 1
         for(int column = 0; column < 9; ++column) {
-            this.addSlot(new SlotItemHandler(inventory, column + 1, 8 + column * 18, 37));
+            this.addSlot(new SlotItemHandler(inventory, column + 1, 8 + column * 18, 34));
         }
 
         // Row 2
         for(int column = 0; column < 9; ++column) {
-            this.addSlot(new SlotItemHandler(inventory, column + 10, 8 + column * 18, 55));
+            this.addSlot(new SlotItemHandler(inventory, column + 10, 8 + column * 18, 52));
+        }
+
+        // Row 3
+        for(int column = 0; column < 9; ++column) {
+            this.addSlot(new SlotItemHandler(inventory, column + 19, 8 + column * 18, 70));
         }
 
         // Main Player Inventory
-        int startPlayerInvY = startY * 4 + 14;
+        int startPlayerInvY = 101;
         for (int row = 0; row < 3; ++row) {
             for (int column = 0; column < 9; ++column) {
                 this.addSlot(new Slot(playerInv, 9 + (row * 9) + column, startX + (column * borderSlotSize),
@@ -61,7 +66,7 @@ public class CrabTrapMenu extends AbstractContainerMenu {
 
         // Hotbar
         for (int column = 0; column < 9; ++column) {
-            this.addSlot(new Slot(playerInv, column, startX + (column * borderSlotSize), 144));
+            this.addSlot(new Slot(playerInv, column, startX + (column * borderSlotSize), 159));
         }
 
     }

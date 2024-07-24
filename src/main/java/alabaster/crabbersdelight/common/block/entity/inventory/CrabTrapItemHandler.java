@@ -17,7 +17,7 @@ import java.util.List;
 public class CrabTrapItemHandler extends ItemStackHandler {
 
     public CrabTrapItemHandler() {
-        super(19);
+        super(28);
     }
 
     public void addItemsAndShrinkBait(Level level, BlockPos pos, BlockState state, List<ItemStack> list, ItemStack baitItem) {

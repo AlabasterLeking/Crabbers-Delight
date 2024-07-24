@@ -55,7 +55,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     };
 
     private final LazyOptional<IItemHandler> input = LazyOptional.of(() -> new RangedWrapper(this.inventory, 0, 1));
-    private final LazyOptional<IItemHandler> output = LazyOptional.of(() -> new RangedWrapper(this.inventory, 1, 19));
+    private final LazyOptional<IItemHandler> output = LazyOptional.of(() -> new RangedWrapper(this.inventory, 1, 28));
     private int tickCounter = 0;
 
     public CrabTrapBlockEntity(BlockPos pos, BlockState state) {
@@ -199,5 +199,9 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory playerInv, Player player) {
         return new CrabTrapMenu(id, playerInv, this.inventory);
+    }
+
+    public ItemStack getStoredItem() {
+        return inventory.getStackInSlot(0);
     }
 }
