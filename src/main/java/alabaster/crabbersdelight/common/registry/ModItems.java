@@ -95,7 +95,7 @@ public class ModItems {
     public static final RegistryObject<Item> CRAB_BUCKET = addToTab(ITEMS.register("crab_bucket",
             () -> ModItems.createMobBucketItem(ModEntities.CRAB::get)));
 
-    // Foods
+    // Raw / Cooked Meats
 
     public static final RegistryObject<Item> RAW_CRAB = addToTab(ITEMS.register("crab",
             () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CRAB))));
@@ -122,16 +122,24 @@ public class ModItems {
             () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_CLAM_MEAT))));
 
     public static final RegistryObject<Item> RAW_SQUID_TENTACLES = addToTab(ITEMS.register("raw_squid_tentacles",
-            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CLAM_MEAT))));
+            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_SQUID_TENTACLES))));
 
     public static final RegistryObject<Item> RAW_GLOW_SQUID_TENTACLES = addToTab(ITEMS.register("raw_glow_squid_tentacles",
-            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CLAM_MEAT))));
+            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_SQUID_TENTACLES))));
 
     public static final RegistryObject<Item> COOKED_SQUID_TENTACLES = addToTab(ITEMS.register("cooked_squid_tentacles",
-            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CLAM_MEAT))));
+            () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_SQUID_TENTACLES))));
 
     public static final RegistryObject<Item> COOKED_GLOW_SQUID_TENTACLES = addToTab(ITEMS.register("cooked_glow_squid_tentacles",
-            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CLAM_MEAT))));
+            () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_SQUID_TENTACLES))));
+
+    public static final RegistryObject<Item> RAW_FROG_LEG = addToTab(ITEMS.register("raw_frog_leg",
+            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_FROG_LEG))));
+
+    public static final RegistryObject<Item> COOKED_FROG_LEG = addToTab(ITEMS.register("cooked_frog_leg",
+            () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_FROG_LEG))));
+
+    // Meals
 
     public static final RegistryObject<Item> CRAB_CAKES = addToTab(ITEMS.register("crab_cakes",
             () -> new ConsumableItem(foodItem(CDFoodValues.CRAB_CAKES), true)));

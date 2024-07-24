@@ -25,9 +25,9 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type": "minecraft:squid"
+        "type": "minecraft:frog"
       }
     }
   ],
-  "item": "crabbersdelight:raw_squid_tentacles"
+  "item": "crabbersdelight:raw_frog_leg"
 }

@@ -47,6 +47,18 @@ public class CDFoodValues {
     public static final FoodProperties COOKED_CLAM_MEAT = (new FoodProperties.Builder())
             .nutrition(4).saturationMod(0.8f).meat().fast().build();
 
+    public static final FoodProperties RAW_SQUID_TENTACLES = (new FoodProperties.Builder())
+            .nutrition(3).saturationMod(0.5f).meat().build();
+
+    public static final FoodProperties COOKED_SQUID_TENTACLES = (new FoodProperties.Builder())
+            .nutrition(7).saturationMod(0.8f).meat().build();
+
+    public static final FoodProperties RAW_FROG_LEG = (new FoodProperties.Builder())
+            .nutrition(2).saturationMod(0.3f).meat().build();
+
+    public static final FoodProperties COOKED_FROG_LEG = (new FoodProperties.Builder())
+            .nutrition(4).saturationMod(0.7f).meat().build();
+
     public static final FoodProperties KELP_SHAKE = (new FoodProperties.Builder())
             .alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0), 1.0F).build();
