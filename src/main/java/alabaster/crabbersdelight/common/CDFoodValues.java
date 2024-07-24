@@ -59,9 +59,13 @@ public class CDFoodValues {
     public static final FoodProperties COOKED_FROG_LEG = (new FoodProperties.Builder())
             .nutrition(4).saturationMod(0.7f).meat().build();
 
+    // Drinks
+
     public static final FoodProperties KELP_SHAKE = (new FoodProperties.Builder())
             .alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0), 1.0F).build();
+
+    // Slices
 
     public static final FoodProperties COOKED_TROPICAL_FISH = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.8f).meat().fast().build();
@@ -77,6 +81,8 @@ public class CDFoodValues {
 
     public static final FoodProperties PUFFERFISH_SLICE = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.1f).effect(() -> new MobEffectInstance(MobEffects.POISON, 300, 0), 0.3F).meat().fast().build();
+
+
 
     public static final FoodProperties CRAB_LEGS = (new FoodProperties.Builder())
             .nutrition(3).saturationMod(0.6f).meat().build();
