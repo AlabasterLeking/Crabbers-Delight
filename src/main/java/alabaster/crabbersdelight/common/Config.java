@@ -13,6 +13,7 @@ public class Config {
     public static final ForgeConfigSpec.ConfigValue<Integer> MIN_TICKS;
     public static final ForgeConfigSpec.ConfigValue<Integer> MAX_TICKS;
     public static ForgeConfigSpec.BooleanValue COOK_IN_POTS;
+    public static ForgeConfigSpec.BooleanValue REQUIRE_SURROUNDING_WATER;
 
     static {
 
@@ -30,6 +31,8 @@ public class Config {
                 .define("minTicks", 4000);
         MAX_TICKS = COMMON_BUILDER.comment("Maximum ticks before seafood can be gathered by the crab trap. Default = 8000")
                 .define("maxTicks", 8000);
+        REQUIRE_SURROUNDING_WATER = COMMON_BUILDER.comment("Requires the crab trap to have a 3x3 of open water or waterlogged blocks around it to be able to function. Default = true")
+                .define("require_surrounding_water", true);
 
         COMMON_BUILDER.pop();
 

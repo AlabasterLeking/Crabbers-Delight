@@ -4,7 +4,197 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Adjust crab cakes recipe" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Run Data - Changes to some Tags - Added new config option for surrounding with water - Added Frog Legs">
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_frog_leg.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_glow_squid_tentacles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_squid_tentacles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/raw_frog_leg.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_frog_leg.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_frog_leg_from_campfire_cooking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_frog_leg_from_smoking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_glow_squid_tentacles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_glow_squid_tentacles_from_campfire_cooking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_glow_squid_tentacles_from_smoking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_squid_tentacles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_squid_tentacles_from_campfire_cooking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_squid_tentacles_from_smoking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_frog_leg.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_frog_leg_from_campfire_cooking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_frog_leg_from_smoking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_glow_squid_tentacles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_glow_squid_tentacles_from_campfire_cooking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_glow_squid_tentacles_from_smoking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_squid_tentacles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_squid_tentacles_from_campfire_cooking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_squid_tentacles_from_smoking.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/cooked_squid.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/raw_squid.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/cooked_frog_leg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/cooked_glow_squid_tentacles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/cooked_squid_tentacles.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/raw_frog_leg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_20_2023_4_43_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_9_20_2023_4_43_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/blockstates/cod_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/blockstates/cod_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/blockstates/pufferfish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/blockstates/pufferfish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/blockstates/salmon_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/blockstates/salmon_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/blockstates/tropical_fish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/blockstates/tropical_fish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/block/cod_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/block/cod_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/block/pufferfish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/block/pufferfish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/block/salmon_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/block/salmon_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/block/tropical_fish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/block/tropical_fish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bisque.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bisque.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bucket_of_clam_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bucket_of_clam_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bucket_of_clawster_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bucket_of_clawster_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bucket_of_crab_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bucket_of_crab_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bucket_of_shrimp_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/bucket_of_shrimp_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/clam.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/clam.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/clam_bake.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/clam_bake.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/clam_chowder.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/clam_chowder.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/clawster.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/clawster.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cod_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cod_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_clam_meat.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_clam_meat.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_clawster.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_clawster.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_crab.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_crab.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_pufferfish_slice.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_pufferfish_slice.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_shrimp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_shrimp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_tropical_fish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_tropical_fish.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_tropical_fish_slice.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/cooked_tropical_fish_slice.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/crab.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/crab.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/crab_bucket.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/crab_bucket.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/crab_cakes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/crab_cakes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/crab_legs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/crab_legs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/fish_stick.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/fish_stick.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/kelp_shake.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/kelp_shake.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/pearl.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/pearl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/pufferfish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/pufferfish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/pufferfish_slice.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/pufferfish_slice.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/raw_clam_meat.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/raw_clam_meat.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/salmon_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/salmon_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/seafood_gumbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/seafood_gumbo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/shrimp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/shrimp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/shrimp_skewer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/shrimp_skewer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/stuffed_nautilus_shell.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/stuffed_nautilus_shell.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/surf_and_turf.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/surf_and_turf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/tropical_fish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/tropical_fish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/tropical_fish_slice.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/tropical_fish_slice.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/cook_crustaceans.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/cook_crustaceans.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/craft_crab_trap.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/craft_crab_trap.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/get_pearl.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/get_pearl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/root.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/root.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/clam_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/clam_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/clawster_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/clawster_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/cod_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/cod_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/crab_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/crab_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/nautilus_shell_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/nautilus_shell_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/pearl_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/pearl_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/pufferfish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/pufferfish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/salmon_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/salmon_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/shrimp_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/shrimp_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/tropical_fish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/building_blocks/tropical_fish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/decorations/crab_trap.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/decorations/crab_trap.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/clam_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/clam_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/clawster_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/clawster_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cod_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cod_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_clam_meat.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_clam_meat.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_clam_meat_from_campfire_cooking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_clam_meat_from_campfire_cooking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_clam_meat_from_smoking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_clam_meat_from_smoking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_pufferfish_slice.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_pufferfish_slice.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_pufferfish_slice_from_campfire_cooking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_pufferfish_slice_from_campfire_cooking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_pufferfish_slice_from_smoking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_pufferfish_slice_from_smoking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_from_campfire_cooking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_from_campfire_cooking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_from_smoking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_from_smoking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_slice.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_slice.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_slice_from_campfire_cooking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_slice_from_campfire_cooking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_slice_from_smoking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/cooked_tropical_fish_slice_from_smoking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/crab_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/crab_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/fish_stick.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/fish_stick.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/kelp_shake.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/kelp_shake.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/pufferfish_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/pufferfish_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/salmon_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/salmon_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/shrimp_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/shrimp_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/shrimp_skewer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/shrimp_skewer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/surf_and_turf.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/surf_and_turf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/tropical_fish_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/food/tropical_fish_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_clam_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_clam_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_clawster_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_clawster_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_crab_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_crab_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_shrimp_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_shrimp_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/nautilus_shell_from_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/nautilus_shell_from_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/pearl_from_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/pearl_from_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/clam_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/clam_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/clawster_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/clawster_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/crab_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/crab_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/nautilus_shell_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/nautilus_shell_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/pearl_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/pearl_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/shrimp_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/loot_tables/blocks/shrimp_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_clam_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_clam_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_clawster_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_clawster_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_crab_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_crab_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_shrimp_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_shrimp_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/clam_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/clam_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/clam_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/clam_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/clawster_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/clawster_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/clawster_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/clawster_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cod_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cod_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cod_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cod_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_clam_meat.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_clam_meat.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_clam_meat_from_campfire_cooking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_clam_meat_from_campfire_cooking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_clam_meat_from_smoking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_clam_meat_from_smoking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_pufferfish_slice.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_pufferfish_slice.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_pufferfish_slice_from_campfire_cooking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_pufferfish_slice_from_campfire_cooking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_pufferfish_slice_from_smoking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_pufferfish_slice_from_smoking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_from_campfire_cooking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_from_campfire_cooking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_from_smoking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_from_smoking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_slice.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_slice.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_slice_from_campfire_cooking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_slice_from_campfire_cooking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_slice_from_smoking.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/cooked_tropical_fish_slice_from_smoking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/crab_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/crab_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/crab_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/crab_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/crab_trap.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/crab_trap.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/fish_stick.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/fish_stick.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/kelp_shake.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/kelp_shake.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/nautilus_shell_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/nautilus_shell_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/nautilus_shell_from_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/nautilus_shell_from_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/pearl_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/pearl_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/pearl_from_block.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/pearl_from_block.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/pufferfish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/pufferfish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/pufferfish_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/pufferfish_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/salmon_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/salmon_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/salmon_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/salmon_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/shrimp_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/shrimp_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/shrimp_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/shrimp_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/shrimp_skewer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/shrimp_skewer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/surf_and_turf.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/surf_and_turf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/tropical_fish_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/tropical_fish_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/tropical_fish_from_barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/tropical_fish_from_barrel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/crab_trap_bait.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/crab_trap_bait.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/creature_chums.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/creature_chums.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/is_clam_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/is_clam_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/is_clawster_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/is_clawster_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/is_crab_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/is_crab_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/is_shrimp_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/is_shrimp_chum.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/bisque.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/bisque.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/clam_bake.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/clam_bake.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/clam_chowder.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/clam_chowder.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/cooked_clawster.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/cooked_clawster.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/cooked_crab.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/cooked_crab.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/cooked_shrimp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/cooked_shrimp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/crab_cakes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/crab_cakes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/seafood_gumbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/seafood_gumbo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/stuffed_nautilus_shell.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/advancements/recipes/cooking/stuffed_nautilus_shell.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cooking/crab_cakes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cooking/crab_cakes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cutting/pufferfish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cutting/pufferfish.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/forge/tags/items/cooked_fishes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/forge/tags/items/cooked_fishes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/forge/tags/items/raw_fishes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/forge/tags/items/raw_fishes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/recipes/food_serving.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/minecraft/recipes/food_serving.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/client/renderer/CrabTrapRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/CrabTrapBlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/CrabTrapBlockEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,9 +274,9 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;1.20.1&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/cjtop/Desktop/Crabbers-Delight/src/main/resources/assets/crabbersdelight/textures/item&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;1.20.1-forge&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cjtop/Desktop/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_modifiers&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.35402298&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
@@ -94,17 +284,24 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_modifiers" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\generated\resources\data\crabbersdelight\tags\jei_display_results" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\generated\resources\data\crabbersdelight\loot_tables\blocks" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\item" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\recipes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common\item" />
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\assets\crabbersdelight\models" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\generated\resources\data\forge\" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\generated\resources\data\crabbersdelight\tags\" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot\" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\fishing" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="alabaster.crabbersdelight.common.entity" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="alabaster.crabbersdelight.integration.jei" />
       <recent name="alabaster.crabbersdelight.client" />
     </key>
   </component>
@@ -113,7 +310,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [build]">
+  <component name="RunManager" selected="Application.runClient">
     <configuration name="C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -242,110 +439,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Increment to 1.1.2">
-      <option name="closed" value="true" />
-      <created>1695303404365</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1695303404366</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Backported Advancements and fixes to models">
-      <option name="closed" value="true" />
-      <created>1695341916423</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1695341916423</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Fix config">
-      <option name="closed" value="true" />
-      <created>1695342055308</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1695342055308</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Initial 1.18.2 fixes">
-      <option name="closed" value="true" />
-      <created>1695348018433</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1695348018433</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Initial 1.18.2 fixes">
-      <option name="closed" value="true" />
-      <created>1695348256451</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1695348256451</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Initial 1.18.2 fixes">
-      <option name="closed" value="true" />
-      <created>1695348674450</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1695348674450</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Fixed crab trap - iterated release">
-      <option name="closed" value="true" />
-      <created>1695349241785</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1695349241785</updated>
-    </task>
-    <task id="LOCAL-00008" summary="bump gradle properties version">
-      <option name="closed" value="true" />
-      <created>1695349271089</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1695349271089</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Beginning work on crab model - blegh">
-      <option name="closed" value="true" />
-      <created>1695690575388</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1695690575388</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Fish barrels">
-      <option name="closed" value="true" />
-      <created>1697487533161</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1697487533161</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Recipes and Sully's Mod compat (Lanternfish barrels)">
-      <option name="closed" value="true" />
-      <created>1697555685417</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1697555685417</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Edit build.gradle">
-      <option name="closed" value="true" />
-      <created>1697557774408</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1697557774408</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Lanternfish Resources + GeckoLib integration + Crabs + L + Ratio">
-      <option name="closed" value="true" />
-      <created>1697849272733</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1697849272733</updated>
     </task>
     <task id="LOCAL-00014" summary="Lanternfish Resources + GeckoLib integration + Crabs + L + Ratio">
       <option name="closed" value="true" />
@@ -579,10 +672,172 @@
       <option name="project" value="LOCAL" />
       <updated>1706325769793</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Fix for fish barrels not dropping when broken">
+      <option name="closed" value="true" />
+      <created>1712539257308</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1712539257308</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Fixed fishing loot table to (hopefully) not be overwritten entirely; Refactored loot table structure for crab trap loot; Updated dependency on Farmer's Delight to latest version">
+      <option name="closed" value="true" />
+      <created>1718324109494</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1718324109494</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Reduced crab spawn weight; Added Shrimp Fried Rice; Assets for Arid and Soggy fleshes; Removed JEI plugin until I can figure it out">
+      <option name="closed" value="true" />
+      <created>1718327390593</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1718327390593</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Fixed Shrimp Fried Rice category; Temporarily removed Lanternfish Barrels">
+      <option name="closed" value="true" />
+      <created>1718327947336</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1718327947336</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Temporarily removed Lanternfish Barrels; Added Achievement related to a new dish; THE CLAW">
+      <option name="closed" value="true" />
+      <created>1718332309599</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1718332309599</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Arid and Soggy Flesh">
+      <option name="closed" value="true" />
+      <created>1718333362897</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1718333362897</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Crab Claw 2D and 3D Models">
+      <option name="closed" value="true" />
+      <created>1718998617418</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1718998617418</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Crab claw properly takes damage - verified enchantability and durability work as intended">
+      <option name="closed" value="true" />
+      <created>1719003873551</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1719003873551</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Mild changes to crab claw - added to loot table for crabs - fixed crabs dropping multiple raw crabs on death - added Jar of Pickles and Sea Pickle Juice">
+      <option name="closed" value="true" />
+      <created>1719022048032</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1719022048032</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Fixed crab drop mistake - increment mod version to 1.1.5">
+      <option name="closed" value="true" />
+      <created>1719022325327</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1719022325327</updated>
+    </task>
+    <task id="LOCAL-00053" summary="I think the loot table is finally fixed - proper recipes for pickle dishes - removed weakness and added a brief nausea to sea pickle juice">
+      <option name="closed" value="true" />
+      <created>1719023977091</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1719023977091</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Inky Potion and Sea Pickle Juice recipe change">
+      <option name="closed" value="true" />
+      <created>1719084997913</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1719084997913</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Inky Potion Recipe not working yet :(">
+      <option name="closed" value="true" />
+      <created>1719086834599</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1719086834599</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Inky potion recipe finished with access transformer - temporarily removed arid and soggy flesh">
+      <option name="closed" value="true" />
+      <created>1719175145834</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1719175145835</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Removed the soggy and arid flesh recipes - reworked how tags are added - restarted JEI integration but it no work yet">
+      <option name="closed" value="true" />
+      <created>1719192620735</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1719192620735</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Fixed issues with Crab Claw - updated zh_cn translation - increment mod version">
+      <option name="closed" value="true" />
+      <created>1719597687881</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1719597687881</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Added Squid Tentacles and Frog Legs">
+      <option name="closed" value="true" />
+      <created>1721838275699</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1721838275699</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Remade Crab Leg Texture">
+      <option name="closed" value="true" />
+      <created>1721841322174</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1721841322174</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Increase Chum durability to 48 - Modify Crab Trap to have 27 slots - Stub for Renderer for Items inside of Crab Trap">
+      <option name="closed" value="true" />
+      <created>1721850600446</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1721850600446</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Created .gitignore">
+      <option name="closed" value="true" />
+      <created>1721850682026</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1721850682026</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.spongepowered:mixin" />
+    <option featureType="dependencySupport" implementationName="java:net.minecraftforge:forge" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -597,32 +852,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Chum" />
-    <MESSAGE value="Updated animations" />
-    <MESSAGE value="Dyeable crabs" />
-    <MESSAGE value="Blue crab is default" />
-    <MESSAGE value="Loot table change + final crab features (for now)" />
-    <MESSAGE value="Start of Crab Claw (not finished - really tricky)" />
-    <MESSAGE value="Updated Crab Barrel Texture and added crab drop" />
-    <MESSAGE value="Add spawn egg to creative tab and fix crab spawning event" />
-    <MESSAGE value="Fix z-fighting on crab trap model &amp; finalized crab spawning" />
-    <MESSAGE value="Chummy" />
-    <MESSAGE value="Re-wrote crab trap loot handler" />
-    <MESSAGE value="what" />
-    <MESSAGE value="Crab Trap methods for chum nearly done" />
-    <MESSAGE value="Fixed Crab Trap chum logic to replace the bucket; Thank you MehVahdJukaar!" />
-    <MESSAGE value="Created chum bucket recipes and associated tags; re-generated data" />
-    <MESSAGE value="Increment Version for 1.20.1 release" />
-    <MESSAGE value="Brain-blast" />
-    <MESSAGE value="Merged the ja_jp translation - added in the missing items related to items added in this latest update to default to the en_us translation until new translations are received" />
-    <MESSAGE value="Add ru_ru.json - thanks Maxis!" />
-    <MESSAGE value="Finally fixed the bowl returning issue" />
-    <MESSAGE value="Incremented version to 1.1.3a for hotfix" />
     <MESSAGE value="JEI stubs and Item Tooltips" />
     <MESSAGE value="Bump 1.1.4" />
     <MESSAGE value="Pufferfish slices" />
     <MESSAGE value="Adjust crab cakes recipe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjust crab cakes recipe" />
+    <MESSAGE value="Fix for fish barrels not dropping when broken" />
+    <MESSAGE value="Fixed fishing loot table to (hopefully) not be overwritten entirely; Refactored loot table structure for crab trap loot; Updated dependency on Farmer's Delight to latest version" />
+    <MESSAGE value="Reduced crab spawn weight; Added Shrimp Fried Rice; Assets for Arid and Soggy fleshes; Removed JEI plugin until I can figure it out" />
+    <MESSAGE value="Fixed Shrimp Fried Rice category; Temporarily removed Lanternfish Barrels" />
+    <MESSAGE value="Temporarily removed Lanternfish Barrels; Added Achievement related to a new dish; THE CLAW" />
+    <MESSAGE value="Arid and Soggy Flesh" />
+    <MESSAGE value="Crab Claw 2D and 3D Models" />
+    <MESSAGE value="Crab claw properly takes damage - verified enchantability and durability work as intended" />
+    <MESSAGE value="Mild changes to crab claw - added to loot table for crabs - fixed crabs dropping multiple raw crabs on death - added Jar of Pickles and Sea Pickle Juice" />
+    <MESSAGE value="Fixed crab drop mistake - increment mod version to 1.1.5" />
+    <MESSAGE value="I think the loot table is finally fixed - proper recipes for pickle dishes - removed weakness and added a brief nausea to sea pickle juice" />
+    <MESSAGE value="Inky Potion and Sea Pickle Juice recipe change" />
+    <MESSAGE value="Inky Potion Recipe not working yet :(" />
+    <MESSAGE value="Inky potion recipe finished with access transformer - temporarily removed arid and soggy flesh" />
+    <MESSAGE value="Removed the soggy and arid flesh recipes - reworked how tags are added - restarted JEI integration but it no work yet" />
+    <MESSAGE value="Fixed issues with Crab Claw - updated zh_cn translation - increment mod version" />
+    <MESSAGE value="Added Squid Tentacles and Frog Legs" />
+    <MESSAGE value="Remade Crab Leg Texture" />
+    <MESSAGE value="Increase Chum durability to 48 - Modify Crab Trap to have 27 slots - Stub for Renderer for Items inside of Crab Trap" />
+    <MESSAGE value="Created .gitignore" />
+    <MESSAGE value="Run Data - Changes to some Tags - Added new config option for surrounding with water - Added Frog Legs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Run Data - Changes to some Tags - Added new config option for surrounding with water - Added Frog Legs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

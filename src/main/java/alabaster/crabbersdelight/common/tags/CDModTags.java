@@ -1,11 +1,14 @@
 package alabaster.crabbersdelight.common.tags;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import alabaster.crabbersdelight.CrabbersDelight;
+import net.minecraft.world.level.biome.Biome;
 
 public class CDModTags {
     public static final TagKey<Item> RAW_SEAFOOD = modItemTag("raw_seafood");
