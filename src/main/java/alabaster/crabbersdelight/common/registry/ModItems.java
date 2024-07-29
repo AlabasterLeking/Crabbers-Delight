@@ -73,6 +73,9 @@ public class ModItems {
     public static final RegistryObject<Item> PEARL = addToTab(ITEMS.register("pearl",
             () -> new Item(basicItem())));
 
+    public static final RegistryObject<Item> CAN = addToTab(ITEMS.register("can",
+            () -> new Item(basicItem())));
+
     // Tools
 
     public static final RegistryObject<Item> BUCKET_OF_CRAB_CHUM = addToTab(ITEMS.register("bucket_of_crab_chum",

@@ -30,6 +30,11 @@ public class SmeltingRecipes {
         foodSmeltingRecipes("cooked_frog_leg", ModItems.RAW_FROG_LEG.get(), ModItems.COOKED_FROG_LEG.get(), 0.35f, consumer);
         //foodSmeltingRecipes("arid_flesh", Items.ROTTEN_FLESH, ModItems.ARID_FLESH.get(), 0.35f, consumer);
         //foodSmeltingRecipes("rotten_flesh", ModItems.SOGGY_FLESH.get(), Items.ROTTEN_FLESH, 0.35f, consumer);
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.CAN.get()), RecipeCategory.MISC,
+                        Items.IRON_NUGGET, 0.1F, 200)
+                .unlockedBy("has_can", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CAN.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "iron_nugget_from_smelting_can"));
     }
 
     private static void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer)

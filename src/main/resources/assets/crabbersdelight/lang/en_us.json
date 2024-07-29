@@ -11,7 +11,6 @@
   "item.crabbersdelight.cooked_shrimp": "Cooked Shrimp",
 
   "item.crabbersdelight.clam": "Clam",
-  "item.crabbersdelight.pearl": "Pearl",
   "item.crabbersdelight.raw_clam_meat": "Raw Clam Meat",
   "item.crabbersdelight.cooked_clam_meat": "Cooked Clam Meat",
 
@@ -33,9 +32,9 @@
   "item.crabbersdelight.fish_stick": "Fish Stick",
   "item.crabbersdelight.clam_bake": "Clam Bake",
   "item.crabbersdelight.clam_chowder": "Clam Chowder",
-  "item.crabbersdelight.tropical_fish_slice": "Tropical Fish Slice",
+  "item.crabbersdelight.tropical_fish_slice": "Raw Tropical Fish Slice",
   "item.crabbersdelight.cooked_tropical_fish_slice": "Cooked Tropical Fish Slice",
-  "item.crabbersdelight.pufferfish_slice": "Pufferfish Slice",
+  "item.crabbersdelight.pufferfish_slice": "Raw Pufferfish Slice",
   "item.crabbersdelight.cooked_pufferfish_slice": "Cooked Pufferfish Slice",
   "item.crabbersdelight.bisque": "Bisque",
   "item.crabbersdelight.seafood_gumbo": "Seafood Gumbo",
@@ -46,6 +45,9 @@
 
   "item.crabbersdelight.soggy_flesh": "Soggy Flesh",
   "item.crabbersdelight.arid_flesh": "Arid Flesh",
+
+  "item.crabbersdelight.pearl": "Pearl",
+  "item.crabbersdelight.can": "Can",
 
   "item.minecraft.potion.effect.inky_potion": "Potion of Inkiness",
   "item.minecraft.splash_potion.effect.inky_potion": "Splash Potion of Inkiness",
@@ -91,6 +93,18 @@
 
   "crabbersdelight.advancement.a_shrimp_fried_this_rice": "A Shrimp Fried This Rice?!",
   "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "You seriously mean to tell me a SHRIMP fried this rice?! Impossible",
+
+  "crabbersdelight.advancement.reach_for_the_sea_stars": "Reach For The Sea-Stars!",
+  "crabbersdelight.advancement.reach_for_the_sea_stars.desc": "Obtain a crab claw and extend your reach",
+
+  "crabbersdelight.advancement.frog_killer": "Tastes Like Chicken",
+  "crabbersdelight.advancement.frog_killer.desc": "Use a Knife to retrieve Frog Legs from a Frog",
+
+  "crabbersdelight.advancement.squid_killer": "Deep Sea Slayer",
+  "crabbersdelight.advancement.squid_killer.desc": "Use a Knife to retrieve Squid Tentacles from a Squid",
+
+  "crabbersdelight.advancement.glow_squid_killer": "Deeper Sea Slayer",
+  "crabbersdelight.advancement.glow_squid_killer.desc": "Use a Knife to retrieve Glow Squid Tentacles from a Glow Squid",
 
   "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water"
 }

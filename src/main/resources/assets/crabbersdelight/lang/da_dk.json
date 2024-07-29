@@ -62,5 +62,25 @@
   "crabbersdelight.advancement.get_pearl": "Sikke en perlemor!",
   "crabbersdelight.advancement.get_pearl.desc": "Få din første perler ved at skære en musling på et skærebræt. Måske vil en mystisk handelsmand finde den værdifuld...",
 
-  "crabbersdelight.block.crab_trap.not_waterlogged": "Krabbefælden skal placeres i vand"
+  "crabbersdelight.block.crab_trap.not_waterlogged": "Krabbefælden skal placeres i vand",
+  "item.crabbersdelight.raw_squid_tentacles": "Raw Squid Tentacles",
+  "item.crabbersdelight.cooked_squid_tentacles": "Cooked Squid Tentacles",
+  "item.crabbersdelight.raw_glow_squid_tentacles": "Raw Glow Squid Tentacles",
+  "item.crabbersdelight.cooked_glow_squid_tentacles": "Cooked Glow Squid Tentacles",
+  "item.crabbersdelight.raw_frog_leg": "Raw Frog Leg",
+  "item.crabbersdelight.cooked_frog_leg": "Cooked Frog Leg",
+  "item.crabbersdelight.pufferfish_slice": "Pufferfish Slice",
+  "item.crabbersdelight.cooked_pufferfish_slice": "Cooked Pufferfish Slice",
+  "item.crabbersdelight.shrimp_fried_rice": "Shrimp Fried Rice",
+  "item.crabbersdelight.jar_of_pickles": "Jar of Pickles",
+  "item.crabbersdelight.sea_pickle_juice": "Sea Pickle Juice",
+  "item.crabbersdelight.soggy_flesh": "Soggy Flesh",
+  "item.crabbersdelight.arid_flesh": "Arid Flesh",
+  "item.minecraft.potion.effect.inky_potion": "Potion of Inkiness",
+  "item.minecraft.splash_potion.effect.inky_potion": "Splash Potion of Inkiness",
+  "item.minecraft.lingering_potion.effect.inky_potion": "Lingering Potion of Inkiness",
+  "item.minecraft.tipped_arrow.effect.inky_potion": "Arrow of Inkiness",
+  "item.crabbersdelight.crab_claw": "Crab Claw",
+  "crabbersdelight.advancement.a_shrimp_fried_this_rice": "A Shrimp Fried This Rice?!",
+  "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "You seriously mean to tell me a SHRIMP fried this rice?! Impossible"
 }

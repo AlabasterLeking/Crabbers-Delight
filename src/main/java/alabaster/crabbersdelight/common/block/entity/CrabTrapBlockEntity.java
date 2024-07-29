@@ -122,13 +122,11 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                         LootTable loottable;
 
                         if (itemInBaitSlot.is(CDModTags.CRAB_TRAP_BAIT)) {
-                            if (itemInBaitSlot.is(CDModTags.CREATURE_CHUMS)) {
-                                ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
-                                ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + registryName.getPath());
-                                loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
-                                List<ItemStack> list = loottable.getRandomItems(lootparams);
-                                blockEntity.inventory.addItemsAndUseChum(level, pos, state, list, itemInBaitSlot);
-                            }
+                            ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
+                            ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + registryName.getPath());
+                            loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                            List<ItemStack> list = loottable.getRandomItems(lootparams);
+                            blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
                         }
                     }
                 }

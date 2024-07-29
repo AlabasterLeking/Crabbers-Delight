@@ -8,22 +8,7 @@
         {
           "type": "minecraft:item",
           "weight": 5,
-          "name": "crabbersdelight:crab"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 5,
-          "name": "crabbersdelight:clawster"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 5,
           "name": "crabbersdelight:shrimp"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 5,
-          "name": "crabbersdelight:clam"
         },
         {
           "type": "minecraft:item",

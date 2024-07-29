@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bone_meal": {
+    "has_can": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:bone_meal"
+              "crabbersdelight:can"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crabbersdelight:bucket_of_clawster_chum"
+        "recipe": "crabbersdelight:iron_nugget_from_smelting_can"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_bone_meal",
+      "has_can",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crabbersdelight:bucket_of_clawster_chum"
+      "crabbersdelight:iron_nugget_from_smelting_can"
     ]
   },
   "sends_telemetry_event": false

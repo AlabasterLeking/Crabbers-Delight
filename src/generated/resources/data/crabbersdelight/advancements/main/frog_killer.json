@@ -1,12 +1,12 @@
 {
-  "parent": "crabbersdelight:main/craft_crab_trap",
+  "parent": "crabbersdelight:main/root",
   "criteria": {
-    "pearl": {
+    "raw_frog_legs": {
       "conditions": {
         "items": [
           {
             "items": [
-              "crabbersdelight:pearl"
+              "crabbersdelight:raw_frog_leg"
             ]
           }
         ]
@@ -17,21 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "crabbersdelight.advancement.get_pearl.desc"
+      "translate": "crabbersdelight.advancement.frog_killer.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "crabbersdelight:clam"
+      "item": "crabbersdelight:raw_frog_leg"
     },
     "show_toast": true,
     "title": {
-      "translate": "crabbersdelight.advancement.get_pearl"
+      "translate": "crabbersdelight.advancement.frog_killer"
     }
   },
   "requirements": [
     [
-      "pearl"
+      "raw_frog_legs"
     ]
   ],
   "sends_telemetry_event": true

@@ -15,12 +15,12 @@
     }
   },
   "display": {
-    "announce_to_chat": false,
+    "announce_to_chat": true,
     "description": {
       "translate": "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc"
     },
-    "frame": "task",
-    "hidden": false,
+    "frame": "challenge",
+    "hidden": true,
     "icon": {
       "item": "crabbersdelight:shrimp_fried_rice"
     },

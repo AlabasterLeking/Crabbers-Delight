@@ -1,21 +1,24 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "tag": "crabbersdelight:is_clawster_chum"
-    },
-    {
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": {
       "item": "minecraft:bucket"
     },
-    {
-      "item": "minecraft:bone_meal"
+    "f": {
+      "item": "minecraft:salmon"
     },
-    {
+    "m": {
       "item": "minecraft:bone_meal"
     }
+  },
+  "pattern": [
+    "mfm",
+    "fbf",
+    "mfm"
   ],
   "result": {
     "item": "crabbersdelight:bucket_of_clawster_chum"
-  }
+  },
+  "show_notification": true
 }

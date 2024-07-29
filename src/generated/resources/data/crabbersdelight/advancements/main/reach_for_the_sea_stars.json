@@ -1,12 +1,12 @@
 {
-  "parent": "crabbersdelight:main/craft_crab_trap",
+  "parent": "crabbersdelight:main/root",
   "criteria": {
-    "pearl": {
+    "crab_claw": {
       "conditions": {
         "items": [
           {
             "items": [
-              "crabbersdelight:pearl"
+              "crabbersdelight:crab_claw"
             ]
           }
         ]
@@ -17,21 +17,22 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "crabbersdelight.advancement.get_pearl.desc"
+      "translate": "crabbersdelight.advancement.reach_for_the_sea_stars.desc"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "crabbersdelight:clam"
+      "item": "crabbersdelight:crab_claw",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {
-      "translate": "crabbersdelight.advancement.get_pearl"
+      "translate": "crabbersdelight.advancement.reach_for_the_sea_stars"
     }
   },
   "requirements": [
     [
-      "pearl"
+      "crab_claw"
     ]
   ],
   "sends_telemetry_event": true

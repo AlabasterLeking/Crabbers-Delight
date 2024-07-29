@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bone_meal": {
+    "has_bonemeal": {
       "conditions": {
         "items": [
           {
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crabbersdelight:bucket_of_clam_chum"
+        "recipe": "crabbersdelight:bucket_of_clawster_chum"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_bone_meal",
+      "has_bonemeal",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crabbersdelight:bucket_of_clam_chum"
+      "crabbersdelight:bucket_of_clawster_chum"
     ]
   },
   "sends_telemetry_event": false
