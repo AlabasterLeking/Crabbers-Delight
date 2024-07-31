@@ -23,7 +23,7 @@ public class ModEvents {
                 ModEntities.CRAB.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.OCEAN_FLOOR,
-                CrabEntity::canSpawn,
+                CrabEntity::checkSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.OR
         );
     }

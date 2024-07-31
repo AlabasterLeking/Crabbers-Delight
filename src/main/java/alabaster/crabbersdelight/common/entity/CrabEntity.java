@@ -1,9 +1,11 @@
 package alabaster.crabbersdelight.common.entity;
 
+import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.ModEntities;
 import alabaster.crabbersdelight.common.registry.ModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -11,7 +13,11 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BiomeTags;
+
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
@@ -32,7 +38,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -73,8 +82,8 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         this.entityData.set(VARIANT_ID, color.getId());
     }
 
-    public static boolean canSpawn(EntityType<CrabEntity> entityType, ServerLevelAccessor serverLevelAccessor, MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
-        return Animal.checkAnimalSpawnRules(entityType, serverLevelAccessor, spawnType, blockPos, randomSource);
+    public static boolean checkSpawnRules(EntityType<CrabEntity> entityType, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
+        return level.getBlockState(blockPos.below()).is(CDModTags.CRAB_SPAWN_ON);
     }
 
     public enum Color {
@@ -118,6 +127,26 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
             }
             return CrabEntity.Color.BLUE;
         }
+    }
+
+    @Override
+    @Nullable
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
+        Holder<Biome> holder = level.getBiome(this.blockPosition());
+        if (holder.is(Biomes.MANGROVE_SWAMP)) {
+            this.setVariant(11);
+        } else if (holder.is(BiomeTags.IS_BEACH)) {
+            this.setVariant(14);
+        } else if (holder.is(BiomeTags.IS_DEEP_OCEAN)) {
+            this.setVariant(15);
+        } else if (holder.is(Biomes.SWAMP)) {
+            this.setVariant(13);
+        } else if (holder.is(BiomeTags.IS_RIVER)) {
+            this.setVariant(9);
+        } else {
+            this.setVariant(11);
+        }
+        return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
     }
 
     @Override

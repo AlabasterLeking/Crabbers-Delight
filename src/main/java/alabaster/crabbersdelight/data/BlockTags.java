@@ -2,8 +2,10 @@ package alabaster.crabbersdelight.data;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.ModBlocks;
+import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -19,6 +21,11 @@ public class BlockTags extends BlockTagsProvider
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         this.registerBlockMineables();
+        tag(CDModTags.CRAB_SPAWN_ON).add(
+                Blocks.GRASS_BLOCK,
+                Blocks.SAND,
+                Blocks.GRAVEL,
+                Blocks.MUD);
     }
 
     protected void registerBlockMineables() {
@@ -37,7 +44,6 @@ public class BlockTags extends BlockTagsProvider
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(
                 ModBlocks.NAUTILUS_SHELL_BLOCK.get(),
                 ModBlocks.PEARL_BLOCK.get());
-
     }
 
 
