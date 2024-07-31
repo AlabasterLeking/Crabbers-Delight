@@ -35,6 +35,9 @@ public class CrabTrapItemHandler extends ItemStackHandler {
                                 this.insertItem(0, bucketStack, false);
                             }
                         }
+                        if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !(baitItem.is(CDModTags.CREATURE_CHUMS))) {
+                            baitItem.shrink(1);
+                        }
                         if (itemStack.isEmpty()) {
                             break;
                         }

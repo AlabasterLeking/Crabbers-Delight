@@ -4,48 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Run Data - Changes to some Tags - Added new config option for surrounding with water - Added Frog Legs">
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/can.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/frog_killer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/glow_squid_killer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/reach_for_the_sea_stars.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/squid_killer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/iron_nugget_from_smelting_can.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/tools/bucket_of_clam_chum.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/tools/bucket_of_clawster_chum.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/tools/bucket_of_crab_chum.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/tools/bucket_of_shrimp_chum.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/iron_nugget_from_smelting_can.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/pufferfish.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/salmon.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/tropical_fish.json" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Updated crab spawning mechanics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/a_shrimp_fried_this_rice.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/a_shrimp_fried_this_rice.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/cook_crustaceans.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/cook_crustaceans.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/get_pearl.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/main/get_pearl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_clam_chum.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_clawster_chum.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_crab_chum.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/advancements/recipes/misc/bucket_of_shrimp_chum.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_clam_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_clam_chum.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_clawster_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_clawster_chum.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_crab_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_crab_chum.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_shrimp_chum.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/recipes/bucket_of_shrimp_chum.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/CrabTrapBlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/CrabTrapBlockEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/inventory/CrabTrapItemHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/inventory/CrabTrapItemHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/advancement/CDAdvancementGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/advancement/CDAdvancementGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/SmeltingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/SmeltingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/da_dk.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/da_dk.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ja_jp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ja_jp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ko_kr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ko_kr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/uk_ua.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/uk_ua.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/zh_cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/zh_cn.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/junk.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/air.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/treasure.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/cod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/pufferfish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/pufferfish.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/tropical_fish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/tropical_fish.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,11 +108,11 @@
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\item" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\tags\" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\forge\biome_modifier\" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\forge\biome_modifier\add_spawn" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\generated\resources\data\forge\" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\generated\resources\data\crabbersdelight\tags\" />
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot\" />
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\fishing" />
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="alabaster.crabbersdelight.common.entity" />
@@ -275,8 +240,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [genIntellijRuns]" />
+        <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
         <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [genIntellijRuns]" />
         <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [build]" />
@@ -291,38 +256,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Crab bucket, proper spawn egg, behavior, breeding/tempting">
-      <option name="closed" value="true" />
-      <created>1698030319662</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1698030319662</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Fixed Crab Bucket, and made Crabs bucketable">
-      <option name="closed" value="true" />
-      <created>1698036415855</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1698036415855</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Cleaned up Item registry">
-      <option name="closed" value="true" />
-      <created>1698245681825</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1698245681825</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Chum">
-      <option name="closed" value="true" />
-      <created>1698352416366</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1698352416367</updated>
     </task>
     <task id="LOCAL-00019" summary="Updated animations">
       <option name="closed" value="true" />
@@ -684,7 +617,39 @@
       <option name="project" value="LOCAL" />
       <updated>1722212422203</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Revised chum recipes - Initial revision pass for loot tables - Added 4 new advancements - Modified some existing advancements - Added the &quot;Can&quot;">
+      <option name="closed" value="true" />
+      <created>1722218323916</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1722218323916</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Updated Can texture">
+      <option name="closed" value="true" />
+      <created>1722391293111</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1722391293111</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Updated Clam Texture">
+      <option name="closed" value="true" />
+      <created>1722438446714</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1722438446714</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Updated crab spawning mechanics">
+      <option name="closed" value="true" />
+      <created>1722449312026</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1722449312026</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -704,10 +669,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JEI stubs and Item Tooltips" />
-    <MESSAGE value="Bump 1.1.4" />
-    <MESSAGE value="Pufferfish slices" />
-    <MESSAGE value="Adjust crab cakes recipe" />
     <MESSAGE value="Fix for fish barrels not dropping when broken" />
     <MESSAGE value="Fixed fishing loot table to (hopefully) not be overwritten entirely; Refactored loot table structure for crab trap loot; Updated dependency on Farmer's Delight to latest version" />
     <MESSAGE value="Reduced crab spawn weight; Added Shrimp Fried Rice; Assets for Arid and Soggy fleshes; Removed JEI plugin until I can figure it out" />
@@ -729,7 +690,11 @@
     <MESSAGE value="Increase Chum durability to 48 - Modify Crab Trap to have 27 slots - Stub for Renderer for Items inside of Crab Trap" />
     <MESSAGE value="Created .gitignore" />
     <MESSAGE value="Run Data - Changes to some Tags - Added new config option for surrounding with water - Added Frog Legs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Run Data - Changes to some Tags - Added new config option for surrounding with water - Added Frog Legs" />
+    <MESSAGE value="Revised chum recipes - Initial revision pass for loot tables - Added 4 new advancements - Modified some existing advancements - Added the &quot;Can&quot;" />
+    <MESSAGE value="Updated Can texture" />
+    <MESSAGE value="Updated Clam Texture" />
+    <MESSAGE value="Updated crab spawning mechanics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated crab spawning mechanics" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
