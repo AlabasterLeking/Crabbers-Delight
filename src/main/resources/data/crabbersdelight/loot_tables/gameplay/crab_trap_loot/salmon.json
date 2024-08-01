@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 6,
           "name": "crabbersdelight:clawster"
         },
         {
@@ -37,8 +37,8 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 1,
-          "name": "minecraft:iron_nugget"
+          "weight": 2,
+          "name": "crabbersdelight:can"
         }
       ]
     }

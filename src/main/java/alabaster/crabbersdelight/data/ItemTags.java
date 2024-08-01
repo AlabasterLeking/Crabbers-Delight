@@ -26,6 +26,7 @@ public class ItemTags extends ItemTagsProvider {
 
         // Crab Trap Bait - this tag is required for any item that needs to be able to be placed in the bait slot
         tag(CDModTags.CRAB_TRAP_BAIT)
+                .add(Items.AIR)
                 .add(Items.TROPICAL_FISH)
                 .add(Items.COD)
                 .add(Items.SALMON)

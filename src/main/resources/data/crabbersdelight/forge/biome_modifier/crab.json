@@ -4,12 +4,12 @@
     "minecraft:mangrove_swamp",
     "minecraft:swamp",
     "minecraft:beach",
-    "minecraft:river",
-    "minecraft:deep_ocean"
+    "minecraft:stony_shore",
+    "minecraft:snowy_beach"
   ],
   "spawners": {
     "type": "crabbersdelight:crab",
-    "weight": 15,
+    "weight": 10,
     "minCount": 2,
     "maxCount": 5
   }

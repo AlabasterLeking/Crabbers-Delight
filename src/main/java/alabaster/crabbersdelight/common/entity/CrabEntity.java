@@ -135,14 +135,14 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         Holder<Biome> holder = level.getBiome(this.blockPosition());
         if (holder.is(Biomes.MANGROVE_SWAMP)) {
             this.setVariant(11);
-        } else if (holder.is(BiomeTags.IS_BEACH)) {
+        } else if (holder.is(Biomes.BEACH)) {
             this.setVariant(14);
-        } else if (holder.is(BiomeTags.IS_DEEP_OCEAN)) {
-            this.setVariant(15);
         } else if (holder.is(Biomes.SWAMP)) {
             this.setVariant(13);
-        } else if (holder.is(BiomeTags.IS_RIVER)) {
-            this.setVariant(9);
+        } else if (holder.is(Biomes.STONY_SHORE)) {
+            this.setVariant(8);
+        } else if (holder.is(Biomes.SNOWY_BEACH)) {
+            this.setVariant(0);
         } else {
             this.setVariant(11);
         }

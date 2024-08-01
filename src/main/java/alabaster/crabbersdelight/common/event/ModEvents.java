@@ -21,8 +21,8 @@ public class ModEvents {
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
         event.register(
                 ModEntities.CRAB.get(),
-                SpawnPlacements.Type.ON_GROUND,
-                Heightmap.Types.OCEAN_FLOOR,
+                SpawnPlacements.Type.NO_RESTRICTIONS,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 CrabEntity::checkSpawnRules,
                 SpawnPlacementRegisterEvent.Operation.OR
         );

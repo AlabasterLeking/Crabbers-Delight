@@ -23,8 +23,11 @@ public class BlockTags extends BlockTagsProvider
         this.registerBlockMineables();
         tag(CDModTags.CRAB_SPAWN_ON).add(
                 Blocks.GRASS_BLOCK,
+                Blocks.DIRT,
                 Blocks.SAND,
+                Blocks.STONE,
                 Blocks.GRAVEL,
+                Blocks.SNOW,
                 Blocks.MUD);
     }
 
