@@ -249,6 +249,15 @@ public class ModItems {
     public static final RegistryObject<Item> TROPICAL_FISH_BARREL = addToTab(ITEMS.register("tropical_fish_barrel",
             () -> new BlockItem(ModBlocks.TROPICAL_FISH_BARREL.get(), basicItem())));
 
+    public static final RegistryObject<Item> SQUID_BARREL = addToTab(ITEMS.register("squid_barrel",
+            () -> new BlockItem(ModBlocks.SQUID_BARREL.get(), basicItem())));
+
+    public static final RegistryObject<Item> GLOW_SQUID_BARREL = addToTab(ITEMS.register("glow_squid_barrel",
+            () -> new BlockItem(ModBlocks.GLOW_SQUID_BARREL.get(), basicItem())));
+
+    public static final RegistryObject<Item> FROG_LEG_BARREL = addToTab(ITEMS.register("frog_leg_barrel",
+            () -> new BlockItem(ModBlocks.FROG_LEG_BARREL.get(), basicItem())));
+
     //public static final RegistryObject<Item> LANTERNFISH_BARREL = addToTab(ITEMS.register("lanternfish_barrel",
             //() -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem())));
 

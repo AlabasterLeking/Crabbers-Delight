@@ -41,6 +41,9 @@ public class BlockTags extends BlockTagsProvider
                 ModBlocks.SALMON_BARREL.get(),
                 ModBlocks.PUFFERFISH_BARREL.get(),
                 ModBlocks.TROPICAL_FISH_BARREL.get(),
+                ModBlocks.SQUID_BARREL.get(),
+                ModBlocks.GLOW_SQUID_BARREL.get(),
+                ModBlocks.FROG_LEG_BARREL.get(),
                 //ModBlocks.LANTERNFISH_BARREL.get(),
                 ModBlocks.CRAB_TRAP.get());
 

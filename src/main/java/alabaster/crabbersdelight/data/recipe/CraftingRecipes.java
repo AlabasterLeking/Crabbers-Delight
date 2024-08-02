@@ -70,7 +70,7 @@ public class CraftingRecipes {
                 .pattern("###")
                 .pattern("###")
                 .define('#', Items.SALMON)
-                .unlockedBy("has_cod", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SALMON))
+                .unlockedBy("has_salmon", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SALMON))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.PUFFERFISH_BARREL.get(), 1)
@@ -78,7 +78,7 @@ public class CraftingRecipes {
                 .pattern("###")
                 .pattern("###")
                 .define('#', Items.PUFFERFISH)
-                .unlockedBy("has_cod", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PUFFERFISH))
+                .unlockedBy("has_pufferfish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PUFFERFISH))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.TROPICAL_FISH_BARREL.get(), 1)
@@ -86,7 +86,31 @@ public class CraftingRecipes {
                 .pattern("###")
                 .pattern("###")
                 .define('#', Items.TROPICAL_FISH)
-                .unlockedBy("has_cod", InventoryChangeTrigger.TriggerInstance.hasItems(Items.TROPICAL_FISH))
+                .unlockedBy("has_tropical_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.TROPICAL_FISH))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.SQUID_BARREL.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.RAW_SQUID_TENTACLES.get())
+                .unlockedBy("has_raw_squid_tentacles", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_SQUID_TENTACLES.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.GLOW_SQUID_BARREL.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.RAW_GLOW_SQUID_TENTACLES.get())
+                .unlockedBy("has_raw_glow_squid_tentacles", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_GLOW_SQUID_TENTACLES.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.FROG_LEG_BARREL.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.RAW_FROG_LEG.get())
+                .unlockedBy("has_raw_frog_leg", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_FROG_LEG.get()))
                 .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.NAUTILUS_SHELL_BLOCK.get(), 1)
@@ -156,6 +180,21 @@ public class CraftingRecipes {
                 .requires(ModItems.TROPICAL_FISH_BARREL.get())
                 .unlockedBy("has_tropical_fish_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TROPICAL_FISH_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "tropical_fish_from_barrel"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAW_SQUID_TENTACLES.get(), 9)
+                .requires(ModItems.RAW_SQUID_TENTACLES.get())
+                .unlockedBy("has_squid_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SQUID_BARREL.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "squid_from_barrel"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAW_GLOW_SQUID_TENTACLES.get(), 9)
+                .requires(ModItems.RAW_GLOW_SQUID_TENTACLES.get())
+                .unlockedBy("has_glow_squid_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GLOW_SQUID_BARREL.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "glow_squid_from_barrel"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAW_FROG_LEG.get(), 9)
+                .requires(ModItems.FROG_LEG_BARREL.get())
+                .unlockedBy("has_frog_leg_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.FROG_LEG_BARREL.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "frog_leg_from_barrel"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.NAUTILUS_SHELL, 9)
                 .requires(ModItems.NAUTILUS_SHELL_BLOCK.get())

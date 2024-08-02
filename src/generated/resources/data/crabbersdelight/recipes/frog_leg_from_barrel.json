@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:frog_leg_barrel"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "crabbersdelight:raw_frog_leg"
+  }
+}

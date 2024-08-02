@@ -45,6 +45,9 @@ public class BlockStates extends BlockStateProvider {
         this.crateBlock(ModBlocks.SALMON_BARREL.get(), "salmon");
         this.crateBlock(ModBlocks.PUFFERFISH_BARREL.get(), "pufferfish");
         this.crateBlock(ModBlocks.TROPICAL_FISH_BARREL.get(), "tropical_fish");
+        this.crateBlock(ModBlocks.SQUID_BARREL.get(), "squid");
+        this.crateBlock(ModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
+        this.crateBlock(ModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
         //this.crateBlock(ModBlocks.LANTERNFISH_BARREL.get(), "lanternfish");
     }
 
