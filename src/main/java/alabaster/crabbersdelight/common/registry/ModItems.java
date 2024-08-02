@@ -76,6 +76,9 @@ public class ModItems {
     public static final RegistryObject<Item> CAN = addToTab(ITEMS.register("can",
             () -> new Item(basicItem())));
 
+    public static final RegistryObject<Item> CORAL_FRAGMENTS = addToTab(ITEMS.register("coral_fragments",
+            () -> new Item(basicItem())));
+
     // Tools
 
     public static final RegistryObject<Item> BUCKET_OF_CRAB_CHUM = addToTab(ITEMS.register("bucket_of_crab_chum",
@@ -186,6 +189,12 @@ public class ModItems {
     //public static final RegistryObject<Item> ARID_FLESH = addToTab(ITEMS.register("arid_flesh",
     //        () -> new ConsumableItem(foodItem(CDFoodValues.ARID_FLESH), true)));
 
+    public static final RegistryObject<Item> SQUID_KEBOB = addToTab(ITEMS.register("squid_kebob",
+            () -> new ConsumableItem(foodItem(CDFoodValues.SQUID_KEBOB))));
+
+    public static final RegistryObject<Item> FROG_LEG_KEBOB = addToTab(ITEMS.register("frog_leg_kebob",
+            () -> new ConsumableItem(foodItem(CDFoodValues.FROG_LEG_KEBOB))));
+
     public static final RegistryObject<Item> JAR_OF_PICKLES = addToTab(ITEMS.register("jar_of_pickles",
             () -> new ConsumableItem(foodItem(CDFoodValues.JAR_OF_PICKLES).craftRemainder(Items.GLASS_BOTTLE))));
 
@@ -210,6 +219,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SHRIMP_FRIED_RICE = addToTab(ITEMS.register("shrimp_fried_rice",
             () -> new ConsumableItem(bowlFoodItem(CDFoodValues.SHRIMP_FRIED_RICE), true)));
+
+    public static final RegistryObject<Item> CORAL_CRUNCH = addToTab(ITEMS.register("coral_crunch",
+            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.CORAL_CRUNCH), true)));
 
     // Storage Blocks
 

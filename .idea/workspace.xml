@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Updated crab spawning mechanics">
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Further tweaked Crab spawning to add more valid blocks (now controlled with a tag - Modified Crab Trap to be able to use no bait - Replaced Iron Nugget in loot tables with the Can">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/inventory/CrabTrapItemHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/inventory/CrabTrapItemHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/CDFoodValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/CDFoodValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/cooked_squid_tentacles.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/cooked_squid_tentacles.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/pufferfish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/pufferfish.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/tropical_fish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/tropical_fish.json" afterDir="false" />
     </list>
@@ -256,22 +259,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Updated animations">
-      <option name="closed" value="true" />
-      <created>1698958220308</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1698958220308</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Dyeable crabs">
-      <option name="closed" value="true" />
-      <created>1699319140138</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1699319140138</updated>
     </task>
     <task id="LOCAL-00021" summary="Blue crab is default">
       <option name="closed" value="true" />
@@ -649,7 +636,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722449312026</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Increment to 1.1.6 - Fix reversal issue of pufferfish and tropical fish loot - Fix issue with Crab Trap not consuming bait properly - Fix reversal of clam and shrimp chum recipes">
+      <option name="closed" value="true" />
+      <created>1722451275088</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1722451275088</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Further tweaked Crab spawning to add more valid blocks (now controlled with a tag - Modified Crab Trap to be able to use no bait - Replaced Iron Nugget in loot tables with the Can">
+      <option name="closed" value="true" />
+      <created>1722475877047</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1722475877047</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -669,8 +672,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix for fish barrels not dropping when broken" />
-    <MESSAGE value="Fixed fishing loot table to (hopefully) not be overwritten entirely; Refactored loot table structure for crab trap loot; Updated dependency on Farmer's Delight to latest version" />
     <MESSAGE value="Reduced crab spawn weight; Added Shrimp Fried Rice; Assets for Arid and Soggy fleshes; Removed JEI plugin until I can figure it out" />
     <MESSAGE value="Fixed Shrimp Fried Rice category; Temporarily removed Lanternfish Barrels" />
     <MESSAGE value="Temporarily removed Lanternfish Barrels; Added Achievement related to a new dish; THE CLAW" />
@@ -694,7 +695,9 @@
     <MESSAGE value="Updated Can texture" />
     <MESSAGE value="Updated Clam Texture" />
     <MESSAGE value="Updated crab spawning mechanics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated crab spawning mechanics" />
+    <MESSAGE value="Increment to 1.1.6 - Fix reversal issue of pufferfish and tropical fish loot - Fix issue with Crab Trap not consuming bait properly - Fix reversal of clam and shrimp chum recipes" />
+    <MESSAGE value="Further tweaked Crab spawning to add more valid blocks (now controlled with a tag - Modified Crab Trap to be able to use no bait - Replaced Iron Nugget in loot tables with the Can" />
+    <option name="LAST_COMMIT_MESSAGE" value="Further tweaked Crab spawning to add more valid blocks (now controlled with a tag - Modified Crab Trap to be able to use no bait - Replaced Iron Nugget in loot tables with the Can" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

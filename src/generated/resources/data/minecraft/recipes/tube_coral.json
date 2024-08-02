@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "crabbersdelight:coral_fragments"
+    },
+    "d": {
+      "item": "minecraft:blue_dye"
+    }
+  },
+  "pattern": [
+    "   ",
+    "cdc",
+    "   "
+  ],
+  "result": {
+    "item": "minecraft:tube_coral"
+  },
+  "show_notification": true
+}

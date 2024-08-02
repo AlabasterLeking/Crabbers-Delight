@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:dead_brain_coral"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "crabbersdelight:coral_fragments"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/pickaxes"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "crabbersdelight:coral_fragments"
+    },
+    "d": {
+      "item": "minecraft:yellow_dye"
+    }
+  },
+  "pattern": [
+    " c ",
+    " d ",
+    " c "
+  ],
+  "result": {
+    "item": "minecraft:horn_coral_fan"
+  },
+  "show_notification": true
+}

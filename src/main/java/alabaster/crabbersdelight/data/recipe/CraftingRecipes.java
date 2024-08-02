@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import vectorwing.farmersdelight.common.registry.ModRecipeSerializers;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 
@@ -200,6 +201,34 @@ public class CraftingRecipes {
                 .unlockedBy("has_baked_potato", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BAKED_POTATO))
                 .save(consumer);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SQUID_KEBOB.get())
+                .requires(Items.STICK)
+                .requires(COOKED_SQUID)
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get())
+                .unlockedBy("has_cooked_squid", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COOKED_SQUID_TENTACLES.get(), ModItems.COOKED_GLOW_SQUID_TENTACLES.get()))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.FROG_LEG_KEBOB.get())
+                .requires(Items.STICK)
+                .requires(ModItems.COOKED_FROG_LEG.get())
+                .requires(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .requires(Items.BROWN_MUSHROOM)
+                .requires(Items.CARROT)
+                .unlockedBy("has_cooked_frog_leg", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COOKED_FROG_LEG.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.CORAL_CRUNCH.get(), 1)
+                .pattern(" m ")
+                .pattern("ccc")
+                .pattern(" b ")
+                .define('m', vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get())
+                .define('b', Items.BOWL)
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.SEA_PICKLE_JUICE.get())
                 .requires(Items.SEA_PICKLE)
                 .requires(Items.SUGAR)
@@ -245,6 +274,146 @@ public class CraftingRecipes {
                 .define('b', Items.BUCKET)
                 .define('m', Items.BONE_MEAL)
                 .unlockedBy("has_bonemeal", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BONE_MEAL))
+                .save(consumer);
+
+        // Coral Related Recipes
+
+        // Coral Blocks
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.FIRE_CORAL_BLOCK, 1)
+                .pattern(" c ")
+                .pattern("cdc")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.RED_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.TUBE_CORAL_BLOCK, 1)
+                .pattern(" c ")
+                .pattern("cdc")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.BLUE_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.HORN_CORAL_BLOCK, 1)
+                .pattern(" c ")
+                .pattern("cdc")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.YELLOW_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.BRAIN_CORAL_BLOCK, 1)
+                .pattern(" c ")
+                .pattern("cdc")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.PINK_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.BUBBLE_CORAL_BLOCK, 1)
+                .pattern(" c ")
+                .pattern("cdc")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.MAGENTA_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        // Coral
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.FIRE_CORAL, 1)
+                .pattern("   ")
+                .pattern("cdc")
+                .pattern("   ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.RED_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.TUBE_CORAL, 1)
+                .pattern("   ")
+                .pattern("cdc")
+                .pattern("   ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.BLUE_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.HORN_CORAL, 1)
+                .pattern("   ")
+                .pattern("cdc")
+                .pattern("   ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.YELLOW_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.BRAIN_CORAL, 1)
+                .pattern("   ")
+                .pattern("cdc")
+                .pattern("   ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.PINK_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.BUBBLE_CORAL, 1)
+                .pattern("   ")
+                .pattern("cdc")
+                .pattern("   ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.MAGENTA_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        // Coral Fans
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.FIRE_CORAL_FAN, 1)
+                .pattern(" c ")
+                .pattern(" d ")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.RED_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.TUBE_CORAL_FAN, 1)
+                .pattern(" c ")
+                .pattern(" d ")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.BLUE_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.HORN_CORAL_FAN, 1)
+                .pattern(" c ")
+                .pattern(" d ")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.YELLOW_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.BRAIN_CORAL_FAN, 1)
+                .pattern(" c ")
+                .pattern(" d ")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.PINK_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.BUBBLE_CORAL_FAN, 1)
+                .pattern(" c ")
+                .pattern(" d ")
+                .pattern(" c ")
+                .define('c', ModItems.CORAL_FRAGMENTS.get())
+                .define('d', Items.MAGENTA_DYE)
+                .unlockedBy("has_coral_fragment", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CORAL_FRAGMENTS.get()))
                 .save(consumer);
     }
 }
