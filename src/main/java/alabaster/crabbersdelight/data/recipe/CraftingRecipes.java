@@ -182,12 +182,12 @@ public class CraftingRecipes {
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "tropical_fish_from_barrel"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAW_SQUID_TENTACLES.get(), 9)
-                .requires(ModItems.RAW_SQUID_TENTACLES.get())
+                .requires(ModItems.SQUID_BARREL.get())
                 .unlockedBy("has_squid_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SQUID_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "squid_from_barrel"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAW_GLOW_SQUID_TENTACLES.get(), 9)
-                .requires(ModItems.RAW_GLOW_SQUID_TENTACLES.get())
+                .requires(ModItems.GLOW_SQUID_BARREL.get())
                 .unlockedBy("has_glow_squid_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GLOW_SQUID_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "glow_squid_from_barrel"));
 
