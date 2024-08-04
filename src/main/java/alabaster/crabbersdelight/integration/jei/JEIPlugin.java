@@ -23,7 +23,7 @@ import java.util.List;
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
     private static final ResourceLocation PLUGIN_ID = CrabbersDelight.modPrefix("jei_plugin");
-    public static final RecipeType<CrabTrapRecipeWrapper> CRAB_TRAP_RECIPE = RecipeType.create(CrabbersDelight.MODID, "trapping", CrabTrapRecipeWrapper.class);
+    public static final RecipeType<CrabTrapRecipeWrapper> CRAB_TRAP_RECIPE = RecipeType.create(CrabbersDelight.MODID, "crab_trap_loot", CrabTrapRecipeWrapper.class);
 
     @Override
     public ResourceLocation getPluginUid() {
@@ -50,7 +50,7 @@ public class JEIPlugin implements IModPlugin {
         for (ItemStack item : ForgeRegistries.ITEMS.getValues().stream().map(ItemStack::new).toList()) {
             if (item.is(CDModTags.CRAB_TRAP_BAIT)) {
                 ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(item.getItem());
-                TagKey<Item> outputTag = TagKey.create(Registries.ITEM, CrabbersDelight.modPrefix("jei_display_results/" + registryName.getPath()));
+                TagKey<Item> outputTag = TagKey.create(Registries.ITEM, CrabbersDelight.modPrefix("jei_display_results/" + registryName.getNamespace() + "/" + registryName.getPath()));
                 if (ForgeRegistries.ITEMS.tags().isKnownTagName(outputTag)) {
                     list.add(new CrabTrapRecipeWrapper(item, Ingredient.of(outputTag)));
                 }

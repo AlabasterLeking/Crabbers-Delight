@@ -83,10 +83,49 @@ public class ItemTags extends ItemTagsProvider {
                 .add(ModItems.BUCKET_OF_CRAB_CHUM.get())
                 .add(ModItems.BUCKET_OF_SHRIMP_CHUM.get());
 
-        // Individual Chum Types
-        tag(CDModTags.IS_CRAB_CHUM).add(Items.COD);
-        tag(CDModTags.IS_CLAWSTER_CHUM).add(Items.SALMON);
-        tag(CDModTags.IS_CLAM_CHUM).add(Items.TROPICAL_FISH);
-        tag(CDModTags.IS_SHRIMP_CHUM).add(Items.PUFFERFISH);
+        // JEI Compat Tags
+        tag(CDModTags.COD)
+                .add(ModItems.RAW_CRAB.get())
+                .add(Items.STICK)
+                .add(Items.NAUTILUS_SHELL)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
+                .add(Items.COPPER_INGOT)
+                .add(ModItems.CAN.get());
+
+        tag(CDModTags.SALMON)
+                .add(ModItems.RAW_CLAWSTER.get())
+                .add(Items.STICK)
+                .add(Items.NAUTILUS_SHELL)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
+                .add(Items.COPPER_INGOT)
+                .add(ModItems.CAN.get());
+
+        tag(CDModTags.PUFFERFISH)
+                .add(ModItems.RAW_SHRIMP.get())
+                .add(Items.STICK)
+                .add(Items.NAUTILUS_SHELL)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
+                .add(Items.COPPER_INGOT)
+                .add(ModItems.CAN.get())
+                .add(ModItems.CORAL_FRAGMENTS.get());
+
+        tag(CDModTags.TROPICAL_FISH)
+                .add(ModItems.CLAM.get())
+                .add(Items.STICK)
+                .add(Items.NAUTILUS_SHELL)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
+                .add(Items.COPPER_INGOT)
+                .add(ModItems.CAN.get())
+                .add(ModItems.CORAL_FRAGMENTS.get());
+
+        tag(CDModTags.BUCKET_OF_CRAB_CHUM).add(Items.COD);
+
+        tag(CDModTags.BUCKET_OF_CLAWSTER_CHUM).add(Items.SALMON);
+
+        tag(CDModTags.BUCKET_OF_CLAM_CHUM).add(Items.TROPICAL_FISH);
+
+        tag(CDModTags.BUCKET_OF_SHRIMP_CHUM).add(Items.PUFFERFISH);
+
+        tag(CDModTags.AIR).add(Items.STICK).add(Items.KELP).add(ModItems.CAN.get());
     }
 }

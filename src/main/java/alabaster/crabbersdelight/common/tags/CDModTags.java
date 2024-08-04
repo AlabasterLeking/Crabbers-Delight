@@ -21,17 +21,16 @@ public class CDModTags {
     public static final TagKey<Item> CRAB_TRAP_BAIT = modItemTag("crab_trap_bait");
     public static final TagKey<Item> CRAB_TEMPT_ITEM = modItemTag("crab_tempt_item");
     public static final TagKey<Item> CREATURE_CHUMS = modItemTag("creature_chums");
-    public static final TagKey<Item> IS_CRAB_CHUM = modItemTag("is_crab_chum");
-    public static final TagKey<Item> IS_CLAWSTER_CHUM = modItemTag("is_clawster_chum");
-    public static final TagKey<Item> IS_CLAM_CHUM = modItemTag("is_clam_chum");
-    public static final TagKey<Item> IS_SHRIMP_CHUM = modItemTag("is_shrimp_chum");
 
-    public static final TagKey<Item> JUNK = modItemTag("jei_display_results/minecraft/junk");
-    public static final TagKey<Item> TREASURE = modItemTag("jei_display_results/minecraft/treasure");
-    public static final TagKey<Item> BUCKET_OF_CLAWSTER_CHUM = modItemTag("jei_display_results/minecraft/bucket_of_clawster_chum");
-    public static final TagKey<Item> BUCKET_OF_CRAB_CHUM = modItemTag("jei_display_results/minecraft/bucket_of_crab_chum");
-    public static final TagKey<Item> BUCKET_OF_CLAM_CHUM = modItemTag("jei_display_results/minecraft/bucket_of_clam_chum");
-    public static final TagKey<Item> BUCKET_OF_SHRIMP_CHUM = modItemTag("jei_display_results/minecraft/bucket_of_shrimp_chum");
+    public static final TagKey<Item> AIR = modItemTag("jei_display_results/minecraft/air");
+    public static final TagKey<Item> COD = modItemTag("jei_display_results/minecraft/cod");
+    public static final TagKey<Item> SALMON = modItemTag("jei_display_results/minecraft/salmon");
+    public static final TagKey<Item> PUFFERFISH = modItemTag("jei_display_results/minecraft/pufferfish");
+    public static final TagKey<Item> TROPICAL_FISH = modItemTag("jei_display_results/minecraft/tropical_fish");
+    public static final TagKey<Item> BUCKET_OF_CLAWSTER_CHUM = modItemTag("jei_display_results/crabbersdelight/bucket_of_clawster_chum");
+    public static final TagKey<Item> BUCKET_OF_CRAB_CHUM = modItemTag("jei_display_results/crabbersdelight/bucket_of_crab_chum");
+    public static final TagKey<Item> BUCKET_OF_CLAM_CHUM = modItemTag("jei_display_results/crabbersdelight/bucket_of_clam_chum");
+    public static final TagKey<Item> BUCKET_OF_SHRIMP_CHUM = modItemTag("jei_display_results/crabbersdelight/bucket_of_shrimp_chum");
 
     public static final TagKey<Block> CRAB_SPAWN_ON = modBlockTag("crab_spawn_on");
 

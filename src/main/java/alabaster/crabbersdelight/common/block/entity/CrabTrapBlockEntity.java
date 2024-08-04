@@ -138,7 +138,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                 blockEntity.tickCounter++;
             }
         } else {
-            CrabbersDelight.LOGGER.error("Error: Miniumum value is higher than maximum value!");
+            CrabbersDelight.LOGGER.error("Error: Minimum value is higher than maximum value!");
         }
     }
 

@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 6,
+          "weight": 8,
           "name": "crabbersdelight:clawster"
         },
         {
@@ -24,11 +24,6 @@
           "type": "minecraft:item",
           "weight": 3,
           "name": "farmersdelight:rope"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 1,
-          "name": "minecraft:gold_nugget"
         },
         {
           "type": "minecraft:item",
