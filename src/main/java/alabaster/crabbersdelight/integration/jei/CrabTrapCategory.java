@@ -28,7 +28,7 @@ public class CrabTrapCategory implements IRecipeCategory<CrabTrapRecipeWrapper> 
     private final IDrawable icon;
     private final Component title;
     public CrabTrapCategory(IGuiHelper helper) {
-        this.title = Component.translatable(CrabbersDelight.MODID + ".jei." + getUid().getPath());
+        this.title = Component.translatable("block.crabbersdelight.crab_trap");
         this.background = helper.createDrawable(CRAB_TRAP_LOCATION, 0, 0, 79, 39);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModItems.CRAB_TRAP.get()));
     }
