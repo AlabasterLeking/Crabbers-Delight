@@ -2,6 +2,10 @@
   "values": [
     "minecraft:stick",
     "minecraft:kelp",
-    "crabbersdelight:can"
+    "crabbersdelight:can",
+    "crabbersdelight:shrimp",
+    "crabbersdelight:clam",
+    "crabbersdelight:clawster",
+    "crabbersdelight:crab"
   ]
 }

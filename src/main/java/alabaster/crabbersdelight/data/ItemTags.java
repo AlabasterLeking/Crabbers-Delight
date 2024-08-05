@@ -118,14 +118,25 @@ public class ItemTags extends ItemTagsProvider {
                 .add(ModItems.CAN.get())
                 .add(ModItems.CORAL_FRAGMENTS.get());
 
-        tag(CDModTags.BUCKET_OF_CRAB_CHUM).add(Items.COD);
+        tag(CDModTags.BUCKET_OF_CRAB_CHUM)
+                .add(ModItems.RAW_CRAB.get());
 
-        tag(CDModTags.BUCKET_OF_CLAWSTER_CHUM).add(Items.SALMON);
+        tag(CDModTags.BUCKET_OF_CLAWSTER_CHUM)
+                .add(ModItems.RAW_CLAWSTER.get());
 
-        tag(CDModTags.BUCKET_OF_CLAM_CHUM).add(Items.TROPICAL_FISH);
+        tag(CDModTags.BUCKET_OF_CLAM_CHUM)
+                .add(ModItems.CLAM.get());
 
-        tag(CDModTags.BUCKET_OF_SHRIMP_CHUM).add(Items.PUFFERFISH);
+        tag(CDModTags.BUCKET_OF_SHRIMP_CHUM)
+                .add(ModItems.RAW_SHRIMP.get());
 
-        tag(CDModTags.AIR).add(Items.STICK).add(Items.KELP).add(ModItems.CAN.get());
+        tag(CDModTags.AIR)
+                .add(Items.STICK)
+                .add(Items.KELP)
+                .add(ModItems.CAN.get())
+                .add(ModItems.RAW_SHRIMP.get())
+                .add(ModItems.CLAM.get())
+                .add(ModItems.RAW_CLAWSTER.get())
+                .add(ModItems.RAW_CRAB.get());
     }
 }

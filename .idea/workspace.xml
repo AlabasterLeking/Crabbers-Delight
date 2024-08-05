@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Further tweaked Crab spawning to add more valid blocks (now controlled with a tag - Modified Crab Trap to be able to use no bait - Replaced Iron Nugget in loot tables with the Can">
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Modified loot again - Adjusted JEI header to not need a separate translated component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/CDFoodValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/CDFoodValues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/cooked_squid_tentacles.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/cooked_squid_tentacles.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/pufferfish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/pufferfish.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/tropical_fish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/tropical_fish.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/air.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/air.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,19 +83,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "1.20.1-forge",
-    "last_opened_file_path": "C:/Users/cjtop/Desktop/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.35402298",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;1.20.1-forge&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cjtop/Desktop/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.35402298&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot" />
@@ -111,11 +105,11 @@
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\item" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot" />
+      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot\minecraft" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\tags\" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\forge\biome_modifier\" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\forge\biome_modifier\add_spawn" />
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\generated\resources\data\forge\" />
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\generated\resources\data\crabbersdelight\tags\" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="alabaster.crabbersdelight.common.entity" />
@@ -243,8 +237,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Crabbers-Delight [genIntellijRuns]" />
         <item itemvalue="Gradle.Crabbers-Delight [build]" />
+        <item itemvalue="Gradle.Crabbers-Delight [genIntellijRuns]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
         <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [genIntellijRuns]" />
         <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [build]" />
@@ -259,46 +253,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Blue crab is default">
-      <option name="closed" value="true" />
-      <created>1699319193080</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1699319193080</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Loot table change + final crab features (for now)">
-      <option name="closed" value="true" />
-      <created>1699323788003</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1699323788004</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Start of Crab Claw (not finished - really tricky)">
-      <option name="closed" value="true" />
-      <created>1699411590313</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1699411590313</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Updated Crab Barrel Texture and added crab drop">
-      <option name="closed" value="true" />
-      <created>1699412549480</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1699412549480</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Add spawn egg to creative tab and fix crab spawning event">
-      <option name="closed" value="true" />
-      <created>1699462771371</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1699462771371</updated>
     </task>
     <task id="LOCAL-00026" summary="Fix z-fighting on crab trap model &amp; finalized crab spawning">
       <option name="closed" value="true" />
@@ -652,7 +606,47 @@
       <option name="project" value="LOCAL" />
       <updated>1722475877047</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Add Frog Leg Kebob - Add Squid Kebob - Add Coral Fragments, Coral Crunch, and a TON of utility recipes">
+      <option name="closed" value="true" />
+      <created>1722561586088</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1722561586088</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Added Squid Barrel, Glow Squid Barrel, and Frog Leg Barrel">
+      <option name="closed" value="true" />
+      <created>1722563940494</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1722563940494</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Fix un-crafting recipes for Squid and Glow Squid Barrels">
+      <option name="closed" value="true" />
+      <created>1722564089235</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1722564089235</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Add barrel drops for new barrels - Added JEI plugin and display of results - slightly modified loot tables">
+      <option name="closed" value="true" />
+      <created>1722806358446</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1722806358446</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Modified loot again - Adjusted JEI header to not need a separate translated component">
+      <option name="closed" value="true" />
+      <created>1722819153307</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1722819153308</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -672,11 +666,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reduced crab spawn weight; Added Shrimp Fried Rice; Assets for Arid and Soggy fleshes; Removed JEI plugin until I can figure it out" />
-    <MESSAGE value="Fixed Shrimp Fried Rice category; Temporarily removed Lanternfish Barrels" />
-    <MESSAGE value="Temporarily removed Lanternfish Barrels; Added Achievement related to a new dish; THE CLAW" />
-    <MESSAGE value="Arid and Soggy Flesh" />
-    <MESSAGE value="Crab Claw 2D and 3D Models" />
     <MESSAGE value="Crab claw properly takes damage - verified enchantability and durability work as intended" />
     <MESSAGE value="Mild changes to crab claw - added to loot table for crabs - fixed crabs dropping multiple raw crabs on death - added Jar of Pickles and Sea Pickle Juice" />
     <MESSAGE value="Fixed crab drop mistake - increment mod version to 1.1.5" />
@@ -697,7 +686,12 @@
     <MESSAGE value="Updated crab spawning mechanics" />
     <MESSAGE value="Increment to 1.1.6 - Fix reversal issue of pufferfish and tropical fish loot - Fix issue with Crab Trap not consuming bait properly - Fix reversal of clam and shrimp chum recipes" />
     <MESSAGE value="Further tweaked Crab spawning to add more valid blocks (now controlled with a tag - Modified Crab Trap to be able to use no bait - Replaced Iron Nugget in loot tables with the Can" />
-    <option name="LAST_COMMIT_MESSAGE" value="Further tweaked Crab spawning to add more valid blocks (now controlled with a tag - Modified Crab Trap to be able to use no bait - Replaced Iron Nugget in loot tables with the Can" />
+    <MESSAGE value="Add Frog Leg Kebob - Add Squid Kebob - Add Coral Fragments, Coral Crunch, and a TON of utility recipes" />
+    <MESSAGE value="Added Squid Barrel, Glow Squid Barrel, and Frog Leg Barrel" />
+    <MESSAGE value="Fix un-crafting recipes for Squid and Glow Squid Barrels" />
+    <MESSAGE value="Add barrel drops for new barrels - Added JEI plugin and display of results - slightly modified loot tables" />
+    <MESSAGE value="Modified loot again - Adjusted JEI header to not need a separate translated component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified loot again - Adjusted JEI header to not need a separate translated component" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
