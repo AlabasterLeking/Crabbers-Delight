@@ -1,16 +1,15 @@
 package alabaster.crabbersdelight.data;
 
 import com.google.common.collect.Sets;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.client.model.generators.ItemModelBuilder;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.ModItems;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -27,7 +26,7 @@ public class ItemModels extends ItemModelProvider
 
     @Override
     protected void registerModels() {
-        Set<Item> items = ForgeRegistries.ITEMS.getValues().stream().filter(i -> CrabbersDelight.MODID.equals(ForgeRegistries.ITEMS.getKey(i).getNamespace()))
+        Set<Item> items = BuiltInRegistries.ITEM.stream().filter(i -> CrabbersDelight.MODID.equals(BuiltInRegistries.ITEM.getKey(i).getNamespace()))
                 .collect(Collectors.toSet());
 
         // Specific cases
@@ -59,15 +58,15 @@ public class ItemModels extends ItemModelProvider
     }
 
     private String itemName(Item item) {
-        return ForgeRegistries.ITEMS.getKey(item).getPath();
+        return BuiltInRegistries.ITEM.getKey(item).getPath();
     }
 
     public ResourceLocation resourceBlock(String path) {
-        return new ResourceLocation(CrabbersDelight.MODID, "block/" + path);
+        return ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "block/" + path);
     }
 
     public ResourceLocation resourceItem(String path) {
-        return new ResourceLocation(CrabbersDelight.MODID, "item/" + path);
+        return ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "item/" + path);
     }
 
     @SafeVarargs

@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.items.ItemStackHandler;
+import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -26,7 +26,7 @@ public class CrabTrapItemHandler extends ItemStackHandler {
                 for (int i = 0; i < getSlots(); i++) {
                     if (getStackInSlot(i).isEmpty()) {
                         itemStack = insertItem(i, itemStack, false);
-                        baitItem.hurt(1, level.random, null);
+                        //baitItem.hurtAndBreak(1, level, null);
                         level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
                         if (baitItem.is(CDModTags.CREATURE_CHUMS)) {
                             if (baitItem.getDamageValue() == 48) {

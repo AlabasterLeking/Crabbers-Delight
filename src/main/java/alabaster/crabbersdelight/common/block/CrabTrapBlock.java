@@ -3,6 +3,7 @@ package alabaster.crabbersdelight.common.block;
 import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
 import alabaster.crabbersdelight.common.registry.ModBlockEntity;
 import alabaster.crabbersdelight.common.utils.TextUtil;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -28,11 +29,11 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
 public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
 
+    public static final MapCodec<CrabTrapBlock> CODEC = simpleCodec(CrabTrapBlock::new);
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty HANGING = BlockStateProperties.HANGING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -40,6 +41,11 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
     public CrabTrapBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HANGING, false).setValue(WATERLOGGED, false));
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -61,12 +67,14 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult result) {
         if (!level.isClientSide) {
             BlockEntity tileEntity = level.getBlockEntity(pos);
             if (tileEntity instanceof CrabTrapBlockEntity crabTrapBlockEntity) {
-                if (state.getValue(WATERLOGGED) == Boolean.TRUE || state.getValue(HANGING) == Boolean.TRUE) {
-                    NetworkHooks.openScreen((ServerPlayer) player, crabTrapBlockEntity, pos);
+                if (player instanceof ServerPlayer serverplayer) {
+                    if (state.getValue(WATERLOGGED) == Boolean.TRUE || state.getValue(HANGING) == Boolean.TRUE) {
+                        serverplayer.openMenu(crabTrapBlockEntity, pos);
+                    }
                 }
                 else {
                     player.displayClientMessage(TextUtil.getTranslation("block.crab_trap.not_waterlogged"), true);

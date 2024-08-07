@@ -1,24 +1,23 @@
 package alabaster.crabbersdelight.common;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
-@Mod.EventBusSubscriber
 public class Config {
 
-    public static ForgeConfigSpec COMMON_CONFIG;
+    public static ModConfigSpec COMMON_CONFIG;
+
     public static final String CATEGORY_SETTINGS = "Settings";
-    public static ForgeConfigSpec.BooleanValue FISHERMAN_BUY_SEAFOOD;
-    public static ForgeConfigSpec.BooleanValue WANDERING_TRADER_PEARLS;
-    public static final ForgeConfigSpec.ConfigValue<Integer> MIN_TICKS;
-    public static final ForgeConfigSpec.ConfigValue<Integer> MAX_TICKS;
-    public static ForgeConfigSpec.BooleanValue COOK_IN_POTS;
-    public static ForgeConfigSpec.BooleanValue REQUIRE_SURROUNDING_WATER;
+    public static ModConfigSpec.BooleanValue FISHERMAN_BUY_SEAFOOD;
+    public static ModConfigSpec.BooleanValue WANDERING_TRADER_PEARLS;
+    public static ModConfigSpec.ConfigValue<Integer> MIN_TICKS;
+    public static ModConfigSpec.ConfigValue<Integer> MAX_TICKS;
+    public static ModConfigSpec.BooleanValue COOK_IN_POTS;
+    public static ModConfigSpec.BooleanValue REQUIRE_SURROUNDING_WATER;
 
     static {
 
         // Common settings
-        ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
 
         COMMON_BUILDER.comment("Game Settings").push(CATEGORY_SETTINGS);
         FISHERMAN_BUY_SEAFOOD = COMMON_BUILDER.comment("Should fisherman buy/sell items related to this mods items (Seafood and pearls)")

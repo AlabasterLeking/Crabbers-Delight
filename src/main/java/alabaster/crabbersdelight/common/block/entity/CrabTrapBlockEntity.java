@@ -9,13 +9,15 @@ import alabaster.crabbersdelight.common.tags.CDModTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
@@ -23,8 +25,8 @@ import net.minecraft.world.Nameable;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,15 +35,14 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.data.ForgeBiomeTagsProvider;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.wrapper.RangedWrapper;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.wrapper.RangedWrapper;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -59,8 +60,8 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         }
     };
 
-    private final LazyOptional<IItemHandler> input = LazyOptional.of(() -> new RangedWrapper(this.inventory, 0, 1));
-    private final LazyOptional<IItemHandler> output = LazyOptional.of(() -> new RangedWrapper(this.inventory, 1, 28));
+    private final IItemHandler input = new RangedWrapper(this.inventory, 0, 1);
+    private final IItemHandler output = new RangedWrapper(this.inventory, 1, 28);
     private int tickCounter = 0;
 
     public CrabTrapBlockEntity(BlockPos pos, BlockState state) {
@@ -68,23 +69,18 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag) {
-        super.saveAdditional(tag);
-        tag.put("handler", this.inventory.serializeNBT());
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.saveAdditional(tag, registries);
+        tag.put("inventory", this.inventory.serializeNBT(registries));
         tag.putInt("tickCounter", tickCounter);
     }
 
-    @Override
-    public void load(CompoundTag tag) {
-        super.load(tag);
-        this.inventory.deserializeNBT(tag.getCompound("handler"));
-        this.tickCounter = tag.getInt("tickCounter");
-    }
 
-    private CompoundTag saveItems(CompoundTag compound) {
-        super.saveAdditional(compound);
-        compound.put("handler", this.inventory.serializeNBT());
-        return compound;
+    @Override
+    public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.loadAdditional(tag, registries);
+        this.inventory.deserializeNBT(registries, tag.getCompound("inventory"));
+        this.tickCounter = tag.getInt("tickCounter");
     }
 
     @Nullable
@@ -92,14 +88,15 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
-    public CompoundTag getUpdateTag() {
-        return this.saveItems(new CompoundTag());
+    private CompoundTag saveItems(CompoundTag compound, HolderLookup.Provider pRegistries) {
+        super.saveAdditional(compound, pRegistries);
+        compound.put("handler", this.inventory.serializeNBT(pRegistries));
+        return compound;
     }
 
     @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet) {
-        this.load(packet.getTag());
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        return this.saveItems(new CompoundTag(), registries);
     }
 
     public static Pair<Integer, Integer> getMinMax() {
@@ -122,9 +119,9 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                         LootTable loottable;
 
                         if (itemInBaitSlot.is(CDModTags.CRAB_TRAP_BAIT)) {
-                            ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
+                            ResourceLocation registryName = BuiltInRegistries.ITEM.getKey(itemInBaitSlot.getItem());
                             ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + registryName.getPath());
-                            loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
+                            loottable = level.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, lootTableLocation));
                             List<ItemStack> list = loottable.getRandomItems(lootparams);
                             blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
                         }
@@ -167,7 +164,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
 
 
     private static boolean isWaterBiome(Level level, BlockPos pos) {
-        if (level.getBiome(pos).is(Tags.Biomes.IS_WATER)) {
+        if (level.getBiome(pos).is(Tags.Biomes.IS_AQUATIC)) {
             return true;
         }
         else {
@@ -175,17 +172,16 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         }
     }
 
-    @Override
-    @Nonnull
-    public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
-        if (cap.equals(ForgeCapabilities.ITEM_HANDLER)) {
-            if (side == null || side.equals(Direction.UP)) {
-                return input.cast();
-            } else {
-                return output.cast();
-            }
-        }
-        return super.getCapability(cap, side);
+    @SubscribeEvent
+    public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ModBlockEntity.CRAB_TRAP.get(),
+                (be, context) -> {
+                    if (context == Direction.UP) {
+                        return be.input;
+                    }
+                    return be.output;
+                }
+        );
     }
 
     public CrabTrapItemHandler getInventory() {
@@ -205,6 +201,6 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory playerInv, Player player) {
-        return new CrabTrapMenu(id, playerInv, this.inventory);
+        return new CrabTrapMenu(id, playerInv, this.inventory, ContainerLevelAccess.NULL);
     }
 }

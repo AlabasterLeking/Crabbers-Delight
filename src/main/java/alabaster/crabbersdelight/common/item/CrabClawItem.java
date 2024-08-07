@@ -5,6 +5,7 @@ import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ChunkHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -13,27 +14,26 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.level.BlockEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 import java.util.UUID;
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class CrabClawItem extends Item {
     public static final int MAX_DAMAGE = 128;
 
     public static final AttributeModifier rangeAttributeModifier =
             new AttributeModifier(UUID.fromString("7f7dbdb2-0d0d-458a-aa40-ac7633691f66"), "Range Modifier", 3,
-                    AttributeModifier.Operation.ADDITION);
+                    AttributeModifier.Operation.ADD_VALUE);
 
     private static final Supplier<Multimap<Attribute, AttributeModifier>> rangeModifier = Suppliers.memoize(() ->
-            ImmutableMultimap.of(ForgeMod.BLOCK_REACH.get(), rangeAttributeModifier));
+            ImmutableMultimap.of( rangeAttributeModifier));
 
     public CrabClawItem(Properties properties) {
         super(properties.durability(MAX_DAMAGE));
@@ -42,7 +42,7 @@ public class CrabClawItem extends Item {
     public static final String CLAW_MARKER = "clawMarker";
 
     @SubscribeEvent
-    public static void extendRange(LivingTickEvent event) {
+    public static void extendRange(PlayerTickEvent event) {
         if (!(event.getEntity() instanceof Player player))
             return;
 
@@ -90,7 +90,7 @@ public class CrabClawItem extends Item {
 
     @Override
     public boolean hurtEnemy(ItemStack claw, LivingEntity target, LivingEntity attacker) {
-        claw.hurtAndBreak(1, attacker, (user) -> user.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        claw.hurtAndBreak(1, attacker, (user) -> user(EquipmentSlot.MAINHAND));
         return true;
     }
 

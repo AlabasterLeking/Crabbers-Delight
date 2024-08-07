@@ -1,15 +1,11 @@
 package alabaster.crabbersdelight.common.tags;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import alabaster.crabbersdelight.CrabbersDelight;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class CDModTags {
@@ -35,10 +31,10 @@ public class CDModTags {
     public static final TagKey<Block> CRAB_SPAWN_ON = modBlockTag("crab_spawn_on");
 
     private static TagKey<Item> modItemTag(String path) {
-        return ItemTags.create(new ResourceLocation(CrabbersDelight.MODID, path));
+        return ItemTags.create(ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, path));
     }
 
     private static TagKey<Block> modBlockTag(String path) {
-        return BlockTags.create(new ResourceLocation(CrabbersDelight.MODID, path));
+        return BlockTags.create(ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, path));
     }
 }

@@ -9,13 +9,13 @@ import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.recipe.RecipeType;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,11 +47,11 @@ public class JEIPlugin implements IModPlugin {
 
     public List<CrabTrapRecipeWrapper> addWrappers() {
         List<CrabTrapRecipeWrapper> list = new ArrayList<>();
-        for (ItemStack item : ForgeRegistries.ITEMS.getValues().stream().map(ItemStack::new).toList()) {
+        for (ItemStack item : BuiltInRegistries.ITEM.stream().map(ItemStack::new).toList()) {
             if (item.is(CDModTags.CRAB_TRAP_BAIT)) {
-                ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(item.getItem());
+                ResourceLocation registryName = BuiltInRegistries.ITEM.getKey(item.getItem());
                 TagKey<Item> outputTag = TagKey.create(Registries.ITEM, CrabbersDelight.modPrefix("jei_display_results/" + registryName.getNamespace() + "/" + registryName.getPath()));
-                if (ForgeRegistries.ITEMS.tags().isKnownTagName(outputTag)) {
+                if (BuiltInRegistries.ITEM.getTag(outputTag).isPresent()) {
                     list.add(new CrabTrapRecipeWrapper(item, Ingredient.of(outputTag)));
                 }
 

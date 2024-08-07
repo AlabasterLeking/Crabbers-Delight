@@ -8,20 +8,25 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.ContainerListener;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.SlotItemHandler;
+import net.neoforged.neoforge.items.SlotItemHandler;
+
 
 public class CrabTrapMenu extends AbstractContainerMenu {
     public final CrabTrapItemHandler inventory;
+    private final ContainerLevelAccess access;
     public static final ResourceLocation BAIT_SLOT = CrabbersDelight.modPrefix("gui/bait_slot");
 
-    public CrabTrapMenu(int id, Inventory playerInv, CrabTrapItemHandler inventory) {
+    public CrabTrapMenu(int id, Inventory playerInv, CrabTrapItemHandler inventory, final ContainerLevelAccess access) {
         super(ModMenus.CRAB_TRAP_MENU.get(), id);
         this.inventory = inventory;
+        this.access = access;
 
         int startX = 8;
         int startY = 13;
@@ -72,7 +77,7 @@ public class CrabTrapMenu extends AbstractContainerMenu {
     }
 
     public CrabTrapMenu(int id, Inventory playerInventory, FriendlyByteBuf data) {
-        this(id, playerInventory, new CrabTrapItemHandler());
+        this(id, playerInventory, new CrabTrapItemHandler(), ContainerLevelAccess.NULL);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package alabaster.crabbersdelight.data.loot;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
@@ -14,8 +15,8 @@ public class CDBlockLoot extends BlockLootSubProvider
 {
     private final Set<Block> generatedLootTables = new HashSet<>();
 
-    public CDBlockLoot() {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags());
+    public CDBlockLoot(HolderLookup.Provider holder) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), holder);
     }
 
     @Override

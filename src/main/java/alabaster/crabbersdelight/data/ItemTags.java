@@ -9,16 +9,16 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class ItemTags extends ItemTagsProvider {
 
-    public ItemTags(PackOutput generator, CompletableFuture<HolderLookup.Provider> pProvider, CompletableFuture<TagsProvider.TagLookup<Block>> blockProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(generator, pProvider, blockProvider, CrabbersDelight.MODID, existingFileHelper);
+    public ItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagsProvider.TagLookup<Block>> blockTagProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, provider, blockTagProvider, CrabbersDelight.MODID, existingFileHelper);
     }
 
     @Override
@@ -66,12 +66,12 @@ public class ItemTags extends ItemTagsProvider {
                 .add(ModItems.COOKED_GLOW_SQUID_TENTACLES.get());
 
         // Raw Fishes
-        tag(ForgeTags.RAW_FISHES)
+        tag(Tags.Items.FOODS_RAW_FISH)
                 .add(ModItems.TROPICAL_FISH_SLICE.get())
                 .add(ModItems.PUFFERFISH_SLICE.get());
 
         // Cooked Fishes
-        tag(ForgeTags.COOKED_FISHES)
+        tag(Tags.Items.FOODS_COOKED_FISH)
                 .add(ModItems.COOKED_TROPICAL_FISH_SLICE.get())
                 .add(ModItems.COOKED_TROPICAL_FISH.get())
                 .add(ModItems.COOKED_PUFFERFISH_SLICE.get());

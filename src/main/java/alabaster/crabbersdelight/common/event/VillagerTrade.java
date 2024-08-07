@@ -2,26 +2,25 @@ package alabaster.crabbersdelight.common.event;
 
 import alabaster.crabbersdelight.common.Config;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.common.BasicItemListing;
-import net.minecraftforge.event.village.VillagerTradesEvent;
-import net.minecraftforge.event.village.WandererTradesEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
 import alabaster.crabbersdelight.CrabbersDelight;
-
 import alabaster.crabbersdelight.common.registry.ModItems;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.village.VillagerTradesEvent;
+import net.neoforged.neoforge.event.village.WandererTradesEvent;
+import net.neoforged.neoforge.common.BasicItemListing;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = CrabbersDelight.MODID)
+@EventBusSubscriber(modid = CrabbersDelight.MODID)
 @ParametersAreNonnullByDefault
 public class VillagerTrade
 {
@@ -30,10 +29,9 @@ public class VillagerTrade
 
         if (!Config.FISHERMAN_BUY_SEAFOOD.get()) return;
 
-
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
         VillagerProfession profession = event.getType();
-        ResourceLocation professionKey = ForgeRegistries.VILLAGER_PROFESSIONS.getKey(profession);
+        ResourceLocation professionKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(profession);
         if (professionKey == null) return;
         if (professionKey.getPath().equals("fisherman")) {
             trades.get(1).add(emeraldForItemsTrade(ModItems.RAW_CRAB.get(), 6, 16, 2));
