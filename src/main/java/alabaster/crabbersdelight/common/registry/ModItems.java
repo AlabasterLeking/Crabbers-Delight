@@ -16,6 +16,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.registry.ModEntityTypes;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -62,9 +63,9 @@ public class ModItems {
 
     // Bucket Items Helper
 
-    //public static Item createMobBucketItem(Supplier<EntityType<? extends Animal>> entityType) {
-    //    return new MobBucketItem(ModEntities.ENTITIES, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1));
-    //}
+    public static Item createMobBucketItem(Supplier<EntityType<? extends Animal>> entityType) {
+        return new MobBucketItem(ModEntities.CRAB.get(), Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1));
+    }
 
     // Spawn Eggs
 

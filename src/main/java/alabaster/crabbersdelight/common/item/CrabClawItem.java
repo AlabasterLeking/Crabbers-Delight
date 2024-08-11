@@ -5,7 +5,6 @@ import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ChunkHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -30,10 +29,10 @@ public class CrabClawItem extends Item {
 
     public static final AttributeModifier rangeAttributeModifier =
             new AttributeModifier(UUID.fromString("7f7dbdb2-0d0d-458a-aa40-ac7633691f66"), "Range Modifier", 3,
-                    AttributeModifier.Operation.ADD_VALUE);
+                    AttributeModifier.Operation.ADDITION);
 
     private static final Supplier<Multimap<Attribute, AttributeModifier>> rangeModifier = Suppliers.memoize(() ->
-            ImmutableMultimap.of( rangeAttributeModifier));
+            ImmutableMultimap.of(PlayerTickEvent..get(), rangeAttributeModifier));
 
     public CrabClawItem(Properties properties) {
         super(properties.durability(MAX_DAMAGE));

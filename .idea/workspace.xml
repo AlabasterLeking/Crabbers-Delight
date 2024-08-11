@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Modified loot again - Adjusted JEI header to not need a separate translated component">
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Initial 1.21 port - does not run">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Crabbers-Delight.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Crabbers-Delight.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/air.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/air.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/client/model/CrabModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/client/model/CrabModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/CrabEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/CrabEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/event/ModEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/event/ModEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CrabClawItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CrabClawItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModEntities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModPotions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModPotions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/Recipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/Recipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/BrewingRecipes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/neoforge.mods.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +61,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="1.20.1" />
+        <entry key="$PROJECT_DIR$" value="1.20.1-forge" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,19 +97,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;1.20.1-forge&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/cjtop/Desktop/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.35402298&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "1.21-neoforge",
+    "last_opened_file_path": "C:/Users/cjtop/Desktop/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.35402298",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot" />
@@ -124,7 +138,47 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.runClient">
+  <component name="RunManager" selected="Application.runData">
+    <configuration name="Client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
+      <module name="Crabbers-Delight.main" />
+      <option name="PROGRAM_PARAMETERS" value="@C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\moddev\\clientRunProgramArgs.txt" />
+      <option name="VM_PARAMETERS" value="@C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\moddev\\clientRunVmArgs.txt -Dfml.modFolders=crabbersdelight%%C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\classes\\java\\main;crabbersdelight%%C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\resources\\main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Data" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
+      <module name="Crabbers-Delight.main" />
+      <option name="PROGRAM_PARAMETERS" value="@C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\moddev\\dataRunProgramArgs.txt" />
+      <option name="VM_PARAMETERS" value="@C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\moddev\\dataRunVmArgs.txt -Dfml.modFolders=crabbersdelight%%C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\classes\\java\\main;crabbersdelight%%C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\resources\\main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTestServer" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
+      <module name="Crabbers-Delight.main" />
+      <option name="PROGRAM_PARAMETERS" value="@C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\moddev\\gameTestServerRunProgramArgs.txt" />
+      <option name="VM_PARAMETERS" value="@C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\moddev\\gameTestServerRunVmArgs.txt -Dfml.modFolders=crabbersdelight%%C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\classes\\java\\main;crabbersdelight%%C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\resources\\main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
+      <module name="Crabbers-Delight.main" />
+      <option name="PROGRAM_PARAMETERS" value="@C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\moddev\\serverRunProgramArgs.txt" />
+      <option name="VM_PARAMETERS" value="@C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\moddev\\serverRunVmArgs.txt -Dfml.modFolders=crabbersdelight%%C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\classes\\java\\main;crabbersdelight%%C:\\Users\\cjtop\\Desktop\\Crabbers-Delight\\build\\resources\\main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -191,18 +245,18 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Crabbers-Delight [genIntellijRuns]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Crabbers-Delight [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="genIntellijRuns" />
+            <option value="dependencies" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -237,8 +291,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
         <item itemvalue="Gradle.Crabbers-Delight [build]" />
-        <item itemvalue="Gradle.Crabbers-Delight [genIntellijRuns]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
         <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [genIntellijRuns]" />
         <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [build]" />
@@ -253,30 +307,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Fix z-fighting on crab trap model &amp; finalized crab spawning">
-      <option name="closed" value="true" />
-      <created>1699584181845</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1699584181845</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Chummy">
-      <option name="closed" value="true" />
-      <created>1699586020982</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1699586020982</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Re-wrote crab trap loot handler">
-      <option name="closed" value="true" />
-      <created>1699587775757</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1699587775757</updated>
     </task>
     <task id="LOCAL-00029" summary="what">
       <option name="closed" value="true" />
@@ -646,7 +676,31 @@
       <option name="project" value="LOCAL" />
       <updated>1722819153308</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Modified loot again">
+      <option name="closed" value="true" />
+      <created>1722896589991</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1722896589992</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Increment version for release">
+      <option name="closed" value="true" />
+      <created>1722900040470</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1722900040470</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Initial 1.21 port - does not run">
+      <option name="closed" value="true" />
+      <created>1723040152481</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1723040152482</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -666,9 +720,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Crab claw properly takes damage - verified enchantability and durability work as intended" />
-    <MESSAGE value="Mild changes to crab claw - added to loot table for crabs - fixed crabs dropping multiple raw crabs on death - added Jar of Pickles and Sea Pickle Juice" />
-    <MESSAGE value="Fixed crab drop mistake - increment mod version to 1.1.5" />
     <MESSAGE value="I think the loot table is finally fixed - proper recipes for pickle dishes - removed weakness and added a brief nausea to sea pickle juice" />
     <MESSAGE value="Inky Potion and Sea Pickle Juice recipe change" />
     <MESSAGE value="Inky Potion Recipe not working yet :(" />
@@ -691,7 +742,10 @@
     <MESSAGE value="Fix un-crafting recipes for Squid and Glow Squid Barrels" />
     <MESSAGE value="Add barrel drops for new barrels - Added JEI plugin and display of results - slightly modified loot tables" />
     <MESSAGE value="Modified loot again - Adjusted JEI header to not need a separate translated component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified loot again - Adjusted JEI header to not need a separate translated component" />
+    <MESSAGE value="Modified loot again" />
+    <MESSAGE value="Increment version for release" />
+    <MESSAGE value="Initial 1.21 port - does not run" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial 1.21 port - does not run" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

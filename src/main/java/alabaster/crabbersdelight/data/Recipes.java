@@ -21,7 +21,6 @@ public class Recipes extends RecipeProvider
 
     @Override
     protected void buildRecipes(RecipeOutput output) {
-        //BrewingRecipes.register(output);
         CraftingRecipes.register(output);
         SmeltingRecipes.register(output);
         CookingRecipes.register(output);

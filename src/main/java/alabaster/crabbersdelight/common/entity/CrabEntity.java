@@ -128,7 +128,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
 
     @Override
     @Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData) {
         Holder<Biome> holder = level.getBiome(this.blockPosition());
         if (holder.is(Biomes.MANGROVE_SWAMP)) {
             this.setVariant(11);
@@ -143,14 +143,14 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         } else {
             this.setVariant(11);
         }
-        return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
+        return super.finalizeSpawn(level, difficulty, reason, spawnData);
     }
 
     @Override
     protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(VARIANT_ID, Color.BLUE.getId());
-        this.entityData.define(FROM_BUCKET, false);
+        super(new SynchedEntityData.Builder());
+        entityData.set(VARIANT_ID, Color.BLUE.getId());
+        entityData.set(FROM_BUCKET, false);
     }
 
     @Override
@@ -236,7 +236,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     }
 
     private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
-        if (tAnimationState.isMoving()) {
+        if (eve.isStarted();) {
             tAnimationState.getController().setAnimation(RawAnimation.begin().thenLoop("animation.crab.walk"));
             return PlayState.CONTINUE;
         }

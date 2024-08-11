@@ -17,7 +17,7 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<CrabEntity>> CRAB = ENTITIES.register("crab",
             () -> EntityType.Builder.of(CrabEntity::new, MobCategory.WATER_AMBIENT)
                     .sized(.7f, .7f)
-                    .build(new ResourceLocation(CrabbersDelight.MODID, "crab").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "crab").toString()));
 
     public static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> register(
             String name, EntityType.EntityFactory<T> entity, float width, float height, int primaryEggColor, int secondaryEggColor) {

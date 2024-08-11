@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[46,)"
+loaderVersion="${loader_version_range}"
 license="MIT License"
 
 [[mods]]
@@ -12,31 +12,32 @@ logoFile="crabbersdelightbanner.png"
 credits="Thank you to vectorwing for creating Farmer's Delight!"
 authors="Alabaster Leking"
 description='''A maritime addon for Farmer's Delight'''
+itemIcon = "crabbersdelight:clawster"
 
 [[dependencies.crabbersdelight]]
-modId="forge"
-mandatory=true
-versionRange="[47.1.0,)"
+modId="neoforge"
+type="required"
+versionRange="[21.0.102-beta,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.crabbersdelight]]
 modId="minecraft"
-mandatory=true
-versionRange="[1.20,)"
+type="required"
+versionRange="[1.21,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.crabbersdelight]]
 modId = "farmersdelight"
-mandatory = true
-versionRange = "[1.2.3,)"
+type="required"
+versionRange = "[1.2.4,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.crabbersdelight]]
 modId = "geckolib"
-mandatory = true
+type="required"
 versionRange = "[4.2.3,)"
 ordering = "NONE"
 side = "BOTH"

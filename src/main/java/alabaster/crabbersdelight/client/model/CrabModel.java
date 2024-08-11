@@ -8,6 +8,6 @@ import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 public class CrabModel extends DefaultedEntityGeoModel<CrabEntity> {
 
 	public CrabModel() {
-		super(new ResourceLocation(CrabbersDelight.MODID, "crab"));
+		super(ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "crab"));
 	}
 }
