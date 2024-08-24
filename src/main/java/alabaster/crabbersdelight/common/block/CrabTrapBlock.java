@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.block;
 
 import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
+import alabaster.crabbersdelight.common.block.state.CrabTrapStates;
 import alabaster.crabbersdelight.common.registry.ModBlockEntity;
 import alabaster.crabbersdelight.common.utils.TextUtil;
 import net.minecraft.core.BlockPos;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -31,15 +33,18 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
+import static alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity.isSurroundedByWater;
+
 public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
 
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty HANGING = BlockStateProperties.HANGING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    //public static final BooleanProperty SURROUNDED = BooleanProperty.create("surrounded");
 
     public CrabTrapBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HANGING, false).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HANGING, false).setValue(WATERLOGGED, false));//.setValue(SURROUNDED, false));
     }
 
     @Override
@@ -66,7 +71,12 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
             BlockEntity tileEntity = level.getBlockEntity(pos);
             if (tileEntity instanceof CrabTrapBlockEntity crabTrapBlockEntity) {
                 if (state.getValue(WATERLOGGED) == Boolean.TRUE || state.getValue(HANGING) == Boolean.TRUE) {
-                    NetworkHooks.openScreen((ServerPlayer) player, crabTrapBlockEntity, pos);
+                    if (isSurroundedByWater(level, pos) == Boolean.TRUE) {
+                        NetworkHooks.openScreen((ServerPlayer) player, crabTrapBlockEntity, pos);
+                    }
+                    else {
+                        player.displayClientMessage(TextUtil.getTranslation("block.crab_trap.insufficient_surrounding_water"), true);
+                    }
                 }
                 else {
                     player.displayClientMessage(TextUtil.getTranslation("block.crab_trap.not_waterlogged"), true);

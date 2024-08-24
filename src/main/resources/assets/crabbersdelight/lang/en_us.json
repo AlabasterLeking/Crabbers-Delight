@@ -115,5 +115,6 @@
   "crabbersdelight.advancement.glow_squid_killer": "Deeper Sea Slayer",
   "crabbersdelight.advancement.glow_squid_killer.desc": "Use a Knife to retrieve Glow Squid Tentacles from a Glow Squid",
 
-  "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water"
+  "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water to function!",
+  "crabbersdelight.block.crab_trap.insufficient_surrounding_water": "Crab trap needs a 3x3 of water surrounding it to function!"
 }

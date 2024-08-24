@@ -20,6 +20,10 @@ public class CDBlockLoot extends BlockLootSubProvider
 
     @Override
     protected void generate() {
+        dropSelf(ModBlocks.COD_BARREL.get());
+        dropSelf(ModBlocks.SALMON_BARREL.get());
+        dropSelf(ModBlocks.PUFFERFISH_BARREL.get());
+        dropSelf(ModBlocks.TROPICAL_FISH_BARREL.get());
         dropSelf(ModBlocks.CRAB_BARREL.get());
         dropSelf(ModBlocks.CLAM_BARREL.get());
         dropSelf(ModBlocks.CLAWSTER_BARREL.get());

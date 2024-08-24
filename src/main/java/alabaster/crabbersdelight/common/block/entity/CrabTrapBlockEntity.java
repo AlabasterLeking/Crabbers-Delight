@@ -153,7 +153,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         return false;
     }
 
-    private static boolean isSurroundedByWater(Level level, BlockPos pos) {
+    public static boolean isSurroundedByWater(Level level, BlockPos pos) {
         if (Config.REQUIRE_SURROUNDING_WATER.get()) {
             for (BlockPos nearbyPos : BlockPos.betweenClosed(pos.offset(-1, 0, -1), pos.offset(1, 0, 1))) {
                 if (!level.getFluidState(nearbyPos).is(FluidTags.WATER)) {
