@@ -45,6 +45,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Objects;
 
 import static alabaster.crabbersdelight.common.Config.REQUIRE_SURROUNDING_WATER;
 
@@ -123,7 +124,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
 
                         if (itemInBaitSlot.is(CDModTags.CRAB_TRAP_BAIT)) {
                             ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(itemInBaitSlot.getItem());
-                            ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + registryName.getPath());
+                            ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
                             loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
                             List<ItemStack> list = loottable.getRandomItems(lootparams);
                             blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
