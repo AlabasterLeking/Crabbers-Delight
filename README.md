@@ -18,5 +18,7 @@
 <p><strong>🚀 I've partnered with RocketNode Hosting!</strong></p>
 <p>RocketNode provides top-tier server hosting worldwide, allowing you to set up your server with just a few clicks! Their intuitive dashboard makes server management a breeze, and you can even schedule automatic restarts without needing any coding knowledge.</p>
 <p>Use the code ALABASTER to get 25% off your first month on any of their gaming servers. Get started here: <a href="https://rocketnode.com/alabaster" rel="nofollow">https://rocketnode.com/alabaster</a></p>
-<p><img src="https://i.imgur.com/zPVKh2N.png" alt="" width="1400" height="226"></p>
+<p><a href="https://rocketnode.com/alabaster" >
+  <img src="https://i.imgur.com/zPVKh2N.png" alt="Rocketnode Alabaster">
+</a></p>
 <p>&nbsp;</p>
