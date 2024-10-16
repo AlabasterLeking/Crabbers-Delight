@@ -26,7 +26,7 @@ public class CrabTrapItemHandler extends ItemStackHandler {
                 for (int i = 0; i < getSlots(); i++) {
                     if (getStackInSlot(i).isEmpty()) {
                         itemStack = insertItem(i, itemStack, false);
-                        //baitItem.hurtAndBreak(1, level, null);
+                        baitItem.hurtAndBreak(1, level, null);
                         level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
                         if (baitItem.is(CDModTags.CREATURE_CHUMS)) {
                             if (baitItem.getDamageValue() == 48) {

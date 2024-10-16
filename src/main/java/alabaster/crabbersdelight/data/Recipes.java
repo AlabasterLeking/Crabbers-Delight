@@ -1,6 +1,9 @@
 package alabaster.crabbersdelight.data;
 
-import alabaster.crabbersdelight.data.recipe.*;
+import alabaster.crabbersdelight.data.recipe.CookingRecipes;
+import alabaster.crabbersdelight.data.recipe.CraftingRecipes;
+import alabaster.crabbersdelight.data.recipe.CuttingRecipes;
+import alabaster.crabbersdelight.data.recipe.SmeltingRecipes;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

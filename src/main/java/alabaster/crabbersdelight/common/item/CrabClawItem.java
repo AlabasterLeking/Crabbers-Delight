@@ -16,20 +16,18 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
-import static net.minecraft.world.entity.ai.attributes.Attributes.BLOCK_INTERACTION_RANGE;
-
 @EventBusSubscriber
 public class CrabClawItem extends Item {
 
     public static final int MAX_DAMAGE = 128;
 
-    public static AttributeModifier REACH_MODIFIER = null;
+    public static AttributeModifier REACH_MODIFIER;
 
     public CrabClawItem(Properties properties) {
         super(properties.durability(MAX_DAMAGE));
 
         REACH_MODIFIER = new AttributeModifier(
-            ResourceLocation.parse(String.valueOf(BLOCK_INTERACTION_RANGE)),
+            ResourceLocation.parse("crabbersdelight:reach_modifier"),
             3.0, AttributeModifier.Operation.ADD_VALUE
         );
     }
@@ -37,7 +35,7 @@ public class CrabClawItem extends Item {
     public static final String CLAW_MARKER = "clawMarker";
 
     @SubscribeEvent
-    public static void extendRange(PlayerTickEvent event) {
+    public static void extendRange(PlayerTickEvent.Pre event) {
         if (!(event.getEntity() instanceof Player player))
             return;
 

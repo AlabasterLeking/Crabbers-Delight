@@ -23,7 +23,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
-import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.CraftingContainer;
@@ -42,14 +41,10 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.animation.AnimationController;
-import software.bernie.geckolib.animation.PlayState;
-import software.bernie.geckolib.animation.RawAnimation;
 
 import javax.annotation.Nonnull;
 import java.util.Arrays;
@@ -149,11 +144,10 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         return super.finalizeSpawn(level, difficulty, reason, spawnData);
     }
 
-    @Override
-    protected void defineSynchedData() {
-        super(new SynchedEntityData.Builder());
-        entityData.set(VARIANT_ID, Color.BLUE.getId());
-        entityData.set(FROM_BUCKET, false);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(VARIANT_ID, Color.BLUE.getId());
+        builder.define(FROM_BUCKET, false);
     }
 
     @Override
@@ -241,25 +235,10 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
         return temptationItems;
     }
 
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<GeoAnimatable>(this, "controller", 0, this::predicate));
-    }
-
-    private <T extends GeoAnimatable> PlayState predicate(AnimationState<T> tAnimationState) {
-        if (eve.isStarted();) {
-            tAnimationState.getController().setAnimation(RawAnimation.begin().thenLoop("animation.crab.walk"));
-            return PlayState.CONTINUE;
-        }
-
-        tAnimationState.getController().setAnimation(RawAnimation.begin().thenLoop("animation.crab.idle"));
-        return PlayState.CONTINUE;
-    }
-
-    @Override
-    public boolean canBreatheUnderwater() {
-        return true;
-    }
+    //@Override
+    //public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+    //    controllers.add(new AnimationController<>(this, "controller", 0, state ->));
+    //}
 
     @Override
     public boolean isPushedByFluid(FluidType type) {
@@ -267,9 +246,13 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     }
 
     @Nonnull
-    @Override
     public MobCategory getMobType() {
         return MobCategory.CREATURE;
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+
     }
 
     @Override
@@ -300,7 +283,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     @SuppressWarnings("deprecation")
     public void saveToBucketTag(@Nonnull ItemStack stack) {
         Bucketable.saveDefaultDataToBucketTag(this, stack);
-        CompoundTag tag = stack.getTags();
+        CompoundTag tag = (CompoundTag) stack.getTags();
         tag.putInt("Age", this.getAge());
         tag.putInt("Variant", this.getCrabColor().getId());
     }

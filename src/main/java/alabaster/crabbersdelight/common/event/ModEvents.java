@@ -26,25 +26,14 @@ public class ModEvents {
         event.put(ModEntities.CRAB.get(), CrabEntity.setAttributes());
     }
 
-    @SubscribeEvent
-    public static void registerSpawnPlacements(EntityAttributeCreationEvent event) {
-        entityAttributeEvent (
-                ModEntities.CRAB.get(),
-                SpawnPlacements.Type.NO_RESTRICTIONS,
-                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                CrabEntity::checkSpawnRules,
-                MobSpawnEvent.Operation.OR
-        );
-    }
-
-    @SubscribeEvent
-    public static void registerBrewingRecipes(RegisterBrewingRecipesEvent event) {
-        PotionBrewing.Builder builder = event.getBuilder();
-
-        builder.addMix(
-                Potions.AWKWARD,
-                Ingredient.of(Items.INK_SAC),
-                PotionContents.createItemStack(Items.POTION, ModPotions.INKY_POTION)
-        );
-    }
+    //@SubscribeEvent
+    //public static void registerSpawnPlacements(EntityAttributeCreationEvent event) {
+    //    entityAttributeEvent (
+    //            ModEntities.CRAB.get(),
+    //            SpawnPlacements.getPlacementType()
+    //            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+    //            CrabEntity::checkSpawnRules,
+    //            MobSpawnEvent.SpawnPlacementCheck.Result.
+     //   );
+    //}
 }

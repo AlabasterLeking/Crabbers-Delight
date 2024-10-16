@@ -1,5 +1,6 @@
 package alabaster.crabbersdelight;
 
+import alabaster.crabbersdelight.client.gui.CrabTrapGUI;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -21,6 +22,7 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vectorwing.farmersdelight.client.event.ClientSetupEvents;
@@ -50,6 +52,11 @@ public class CrabbersDelight {
         ModPotions.POTIONS.register(bus);
 
         NeoForge.EVENT_BUS.register(this);
+    }
+
+    @SubscribeEvent
+    public void onServerStarting(ServerStartingEvent event) {
+
     }
 
     public static ResourceLocation modPrefix(String path) {

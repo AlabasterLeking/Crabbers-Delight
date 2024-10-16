@@ -2,13 +2,13 @@ package alabaster.crabbersdelight.common.block.container;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.entity.inventory.CrabTrapItemHandler;
+import alabaster.crabbersdelight.common.registry.ModBlocks;
 import alabaster.crabbersdelight.common.registry.ModMenus;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.ContainerListener;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -17,19 +17,21 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
-
 public class CrabTrapMenu extends AbstractContainerMenu {
     public final CrabTrapItemHandler inventory;
     private final ContainerLevelAccess access;
     public static final ResourceLocation BAIT_SLOT = CrabbersDelight.modPrefix("gui/bait_slot");
 
-    public CrabTrapMenu(int id, Inventory playerInv, CrabTrapItemHandler inventory, final ContainerLevelAccess access) {
+    public CrabTrapMenu(int id, Inventory playerInventory, FriendlyByteBuf data) {
+        this(id, playerInventory, new CrabTrapItemHandler(), ContainerLevelAccess.NULL);
+    }
+
+    public CrabTrapMenu(int id, Inventory playerInv, CrabTrapItemHandler inventory, final ContainerLevelAccess containerLevelAccess) {
         super(ModMenus.CRAB_TRAP_MENU.get(), id);
         this.inventory = inventory;
-        this.access = access;
+        this.access = containerLevelAccess;
 
         int startX = 8;
-        int startY = 13;
         int borderSlotSize = 18;
 
         // Bait Slot
@@ -76,10 +78,6 @@ public class CrabTrapMenu extends AbstractContainerMenu {
 
     }
 
-    public CrabTrapMenu(int id, Inventory playerInventory, FriendlyByteBuf data) {
-        this(id, playerInventory, new CrabTrapItemHandler(), ContainerLevelAccess.NULL);
-    }
-
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
         ItemStack itemstack = ItemStack.EMPTY;
@@ -107,6 +105,6 @@ public class CrabTrapMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return true;
+        return stillValid(this.access, player, ModBlocks.CRAB_TRAP.get());
     }
 }
