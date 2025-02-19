@@ -3,16 +3,21 @@ package alabaster.crabbersdelight.common.block.entity.inventory;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Objects;
 
 public class CrabTrapItemHandler extends ItemStackHandler {
 
@@ -20,13 +25,53 @@ public class CrabTrapItemHandler extends ItemStackHandler {
         super(28);
     }
 
-    public void addItemsAndShrinkBait(Level level, BlockPos pos, BlockState state, List<ItemStack> list, ItemStack baitItem) {
+
+    public void handleItemsInsertion(List<ItemStack> list, ItemStack baitItem, RandomSource random) {
+        for (ItemStack itemStack : list) {
+            if (!itemStack.isEmpty()) {
+                    if (ItemHandlerHelper.insertItemStacked(this, itemStack, false).isEmpty()) {
+                        baitItem.shrink(1);
+                    }
+                    handleNonStackFilling(itemStack, baitItem, random);
+            }
+        }
+    }
+
+    public void handleNonStackFilling(ItemStack itemStack, ItemStack baitItem, RandomSource random) {
+        for (int i = 0; i < getSlots(); i++) {
+            ItemStack stackInSlot = getStackInSlot(i);
+                if (stackInSlot.isEmpty()) {
+
+                    itemStack = insertItem(i, itemStack, false);
+                    baitItem.shrink(1);
+                    if (itemStack.isEmpty()) {
+                        break;
+                    }
+                }
+
+                if (stackInSlot.is(Items.WATER_BUCKET)) {
+                    ResourceLocation regName =  BuiltInRegistries.ITEM.getKey(itemStack.getItem());
+                    ResourceLocation bucketFishLocation = ResourceLocation.fromNamespaceAndPath(Objects.requireNonNull(regName).getNamespace(), regName.getPath() + "_bucket");
+                    if (BuiltInRegistries.ITEM.containsKey(bucketFishLocation)) {
+                        stackInSlot.shrink(1);
+                        itemStack = insertItem(i, Objects.requireNonNull(BuiltInRegistries.ITEM.get(bucketFishLocation)).getDefaultInstance(), false);
+                        baitItem.shrink(1);
+                        if (itemStack.isEmpty()) {
+                            break;
+                        }
+                    }
+
+            }
+        }
+    }
+
+    public void addItemsAndShrinkBait(Level level, BlockPos pos, List<ItemStack> list, ItemStack baitItem) {
         for (ItemStack itemStack : list) {
             if (!itemStack.isEmpty()) {
                 for (int i = 0; i < getSlots(); i++) {
                     if (getStackInSlot(i).isEmpty()) {
                         itemStack = insertItem(i, itemStack, false);
-                        baitItem.hurtAndBreak(1, level, null);
+                        baitItem.hurtAndBreak(1, null , null);
                         level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
                         if (baitItem.is(CDModTags.CREATURE_CHUMS)) {
                             if (baitItem.getDamageValue() == 48) {
@@ -48,11 +93,8 @@ public class CrabTrapItemHandler extends ItemStackHandler {
     }
 
     @Override
-    public int getSlotLimit(int slot) {
-        if (slot != 0) {
-            return 1;
-        }
-        return getStackInSlot(slot).getMaxStackSize();
+    protected int getStackLimit(int slot, ItemStack stack) {
+        return slot != 0 ? 1 : stack.getMaxStackSize();
     }
 
     @Override

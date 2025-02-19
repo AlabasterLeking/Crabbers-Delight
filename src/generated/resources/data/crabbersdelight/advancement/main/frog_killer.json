@@ -1,0 +1,33 @@
+{
+  "parent": "crabbersdelight:main/root",
+  "criteria": {
+    "raw_frog_legs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:raw_frog_leg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "crabbersdelight.advancement.frog_killer.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "crabbersdelight:raw_frog_leg"
+    },
+    "title": {
+      "translate": "crabbersdelight.advancement.frog_killer"
+    }
+  },
+  "requirements": [
+    [
+      "raw_frog_legs"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

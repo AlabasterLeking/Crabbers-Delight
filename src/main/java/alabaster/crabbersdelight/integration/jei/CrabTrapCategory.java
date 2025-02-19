@@ -62,18 +62,13 @@ public class CrabTrapCategory implements IRecipeCategory<CrabTrapRecipeWrapper> 
     }
 
     @Override
-    public List<Component> getTooltipStrings(CrabTrapRecipeWrapper recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
-        if (iconPosition(mouseX, mouseY)) {
+    public List<Component> getTooltipStrings(CrabTrapRecipeWrapper recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {        if (iconPosition(mouseX, mouseY)) {
             if (CrabTrapBlockEntity.getMinMax().getSecond() > CrabTrapBlockEntity.getMinMax().getFirst()) {
                 return ImmutableList.of(Component.literal("Collects every " + CrabTrapBlockEntity.getMinMax().getFirst() + "-" + CrabTrapBlockEntity.getMinMax().getSecond() + " ticks"));
             }
             return ImmutableList.of(Component.literal("Error: Minimum value is higher than maximum value!").withStyle(ChatFormatting.RED));
         }
         return Collections.emptyList();
-    }
-
-    public ResourceLocation getUid() {
-        return this.getRecipeType().getUid();
     }
 
     @Override

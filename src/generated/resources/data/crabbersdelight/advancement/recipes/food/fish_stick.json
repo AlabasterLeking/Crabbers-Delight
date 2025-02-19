@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cooked_fish": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cooked_cod"
+          },
+          {
+            "items": "minecraft:cooked_salmon"
+          },
+          {
+            "items": "crabbersdelight:cooked_tropical_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crabbersdelight:fish_stick"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cooked_fish"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crabbersdelight:fish_stick"
+    ]
+  }
+}

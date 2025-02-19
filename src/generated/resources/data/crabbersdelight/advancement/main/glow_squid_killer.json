@@ -1,0 +1,34 @@
+{
+  "parent": "crabbersdelight:main/squid_killer",
+  "criteria": {
+    "raw_glow_squid_tentacles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:raw_glow_squid_tentacles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "crabbersdelight.advancement.glow_squid_killer.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "crabbersdelight:raw_glow_squid_tentacles"
+    },
+    "title": {
+      "translate": "crabbersdelight.advancement.glow_squid_killer"
+    }
+  },
+  "requirements": [
+    [
+      "raw_glow_squid_tentacles"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

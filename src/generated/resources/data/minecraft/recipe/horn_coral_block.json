@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "crabbersdelight:coral_fragments"
+    },
+    "d": {
+      "item": "minecraft:yellow_dye"
+    }
+  },
+  "pattern": [
+    " c ",
+    "cdc",
+    " c "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:horn_coral_block"
+  }
+}

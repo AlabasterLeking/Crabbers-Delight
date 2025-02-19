@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:crab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crabbersdelight:crab_barrel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crabbersdelight:crab_barrel"
+    ]
+  }
+}

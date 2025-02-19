@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:cooked_tropical_fish"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "crabbersdelight:cooked_tropical_fish_slice"
+      }
+    },
+    {
+      "item": {
+        "count": 1,
+        "id": "minecraft:bone_meal"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

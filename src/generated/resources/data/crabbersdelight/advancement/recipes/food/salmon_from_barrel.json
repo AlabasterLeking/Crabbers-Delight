@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_salmon_barrel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:salmon_barrel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crabbersdelight:salmon_from_barrel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_salmon_barrel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crabbersdelight:salmon_from_barrel"
+    ]
+  }
+}

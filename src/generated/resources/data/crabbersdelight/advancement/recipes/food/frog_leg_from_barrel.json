@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_frog_leg_barrel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:frog_leg_barrel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crabbersdelight:frog_leg_from_barrel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_frog_leg_barrel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crabbersdelight:frog_leg_from_barrel"
+    ]
+  }
+}

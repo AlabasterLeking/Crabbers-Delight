@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:glow_squid_barrel"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "crabbersdelight:raw_glow_squid_tentacles"
+  }
+}

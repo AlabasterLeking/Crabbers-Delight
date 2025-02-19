@@ -2,13 +2,11 @@ package alabaster.crabbersdelight.common.block;
 
 import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
 import alabaster.crabbersdelight.common.registry.ModBlockEntity;
-import alabaster.crabbersdelight.common.utils.TextUtil;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -49,6 +47,21 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
     }
 
     @Override
+    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult result) {
+        if (!level.isClientSide) {
+            BlockEntity tileEntity = level.getBlockEntity(pos);
+            if (tileEntity instanceof CrabTrapBlockEntity crabTrapBlockEntity) {
+                if (player instanceof ServerPlayer serverplayer) {
+                    if (state.getValue(WATERLOGGED) == Boolean.TRUE || state.getValue(HANGING) == Boolean.TRUE) {
+                        serverplayer.openMenu(crabTrapBlockEntity, pos);
+                    }
+                }
+            }
+        }
+        return InteractionResult.SUCCESS;
+    }
+
+    @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!state.is(newState.getBlock())) {
             BlockEntity blockentity = level.getBlockEntity(pos);
@@ -64,24 +77,6 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
     @Override
     public RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
-    }
-
-    @Override
-    public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult result) {
-        if (!level.isClientSide) {
-            BlockEntity tileEntity = level.getBlockEntity(pos);
-            if (tileEntity instanceof CrabTrapBlockEntity crabTrapBlockEntity) {
-                if (player instanceof ServerPlayer serverplayer) {
-                    if (state.getValue(WATERLOGGED) == Boolean.TRUE || state.getValue(HANGING) == Boolean.TRUE) {
-                        serverplayer.openMenu(crabTrapBlockEntity, pos);
-                    }
-                }
-                else {
-                    player.displayClientMessage(TextUtil.getTranslation("block.crab_trap.not_waterlogged"), true);
-                }
-            }
-        }
-        return InteractionResult.SUCCESS;
     }
 
     @Override
@@ -121,7 +116,6 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
 
         return super.updateShape(state, dir, neighborState, level, currentPos, neighborPos).setValue(HANGING, false);
     }
-
 
     @Override
     public FluidState getFluidState(BlockState pState) {

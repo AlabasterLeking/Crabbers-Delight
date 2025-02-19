@@ -1,0 +1,33 @@
+{
+  "parent": "crabbersdelight:main/root",
+  "criteria": {
+    "crab_trap": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:crab_trap"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "crabbersdelight.advancement.craft_crab_trap.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "crabbersdelight:crab_trap"
+    },
+    "title": {
+      "translate": "crabbersdelight.advancement.craft_crab_trap"
+    }
+  },
+  "requirements": [
+    [
+      "crab_trap"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

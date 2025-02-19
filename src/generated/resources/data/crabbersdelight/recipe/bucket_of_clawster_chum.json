@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": {
+      "item": "minecraft:bucket"
+    },
+    "f": {
+      "item": "minecraft:salmon"
+    },
+    "m": {
+      "item": "minecraft:bone_meal"
+    }
+  },
+  "pattern": [
+    "mfm",
+    "fbf",
+    "mfm"
+  ],
+  "result": {
+    "count": 1,
+    "id": "crabbersdelight:bucket_of_clawster_chum"
+  }
+}

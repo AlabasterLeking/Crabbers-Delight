@@ -1,0 +1,55 @@
+{
+  "parent": "crabbersdelight:main/craft_crab_trap",
+  "criteria": {
+    "clawster": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:cooked_clawster"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "crab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:cooked_crab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "shrimp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:cooked_shrimp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "crabbersdelight.advancement.cook_crustaceans.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "crabbersdelight:crab"
+    },
+    "title": {
+      "translate": "crabbersdelight.advancement.cook_crustaceans"
+    }
+  },
+  "requirements": [
+    [
+      "crab",
+      "shrimp",
+      "clawster"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:clam"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "crabbersdelight:raw_clam_meat"
+      }
+    },
+    {
+      "chance": 0.5,
+      "item": {
+        "count": 1,
+        "id": "crabbersdelight:pearl"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

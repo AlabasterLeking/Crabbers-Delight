@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:cooked_crab"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "crabbersdelight:crab_legs"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

@@ -190,12 +190,6 @@ public class ModItems {
     public static final Supplier<Item> STUFFED_NAUTILUS_SHELL = registerWithTab("stuffed_nautilus_shell",
             () -> new ConsumableItem(shellFoodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL), true));
 
-    //public static final Supplier<Item> SOGGY_FLESH = registerWithTab("soggy_flesh",
-    //        () -> new ConsumableItem(foodItem(CDFoodValues.SOGGY_FLESH), true));
-
-    //public static final Supplier<Item> ARID_FLESH = registerWithTab("arid_flesh",
-    //        () -> new ConsumableItem(foodItem(CDFoodValues.ARID_FLESH), true));
-
     public static final Supplier<Item> SQUID_KEBAB = registerWithTab("squid_kebab",
             () -> new ConsumableItem(foodItem(CDFoodValues.SQUID_KEBAB)));
 

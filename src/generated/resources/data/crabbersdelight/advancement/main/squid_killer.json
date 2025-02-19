@@ -1,0 +1,33 @@
+{
+  "parent": "crabbersdelight:main/root",
+  "criteria": {
+    "raw_squid_tentacles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:raw_squid_tentacles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "crabbersdelight.advancement.squid_killer.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "crabbersdelight:raw_squid_tentacles"
+    },
+    "title": {
+      "translate": "crabbersdelight.advancement.squid_killer"
+    }
+  },
+  "requirements": [
+    [
+      "raw_squid_tentacles"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

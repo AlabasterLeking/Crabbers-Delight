@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "crabbersdelight:coral_fragments"
+    },
+    "d": {
+      "item": "minecraft:pink_dye"
+    }
+  },
+  "pattern": [
+    "   ",
+    "cdc",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:brain_coral"
+  }
+}

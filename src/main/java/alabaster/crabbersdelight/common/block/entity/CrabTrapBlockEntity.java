@@ -46,6 +46,7 @@ import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Objects;
 
 import static alabaster.crabbersdelight.common.Config.REQUIRE_SURROUNDING_WATER;
 
@@ -53,15 +54,15 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
 
     public static final Component CRAB_TRAP_NAME = Component.translatable("block.crabbersdelight.crab_trap");
 
-    private final CrabTrapItemHandler inventory = new CrabTrapItemHandler() {
+    private final CrabTrapItemHandler handler = new CrabTrapItemHandler() {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
         }
     };
 
-    private final IItemHandler input = new RangedWrapper(this.inventory, 0, 1);
-    private final IItemHandler output = new RangedWrapper(this.inventory, 1, 28);
+    private final IItemHandler input = new RangedWrapper(this.handler, 0, 1);
+    private final IItemHandler output = new RangedWrapper(this.handler, 1, 28);
     private int tickCounter = 0;
 
     public CrabTrapBlockEntity(BlockPos pos, BlockState state) {
@@ -71,15 +72,14 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
-        tag.put("inventory", this.inventory.serializeNBT(registries));
+        tag.put("handler", this.handler.serializeNBT(registries));
         tag.putInt("tickCounter", tickCounter);
     }
-
 
     @Override
     public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
-        this.inventory.deserializeNBT(registries, tag.getCompound("inventory"));
+        this.handler.deserializeNBT(registries, tag.getCompound("handler"));
         this.tickCounter = tag.getInt("tickCounter");
     }
 
@@ -90,13 +90,18 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
 
     private CompoundTag saveItems(CompoundTag compound, HolderLookup.Provider pRegistries) {
         super.saveAdditional(compound, pRegistries);
-        compound.put("handler", this.inventory.serializeNBT(pRegistries));
+        compound.put("handler", this.handler.serializeNBT(pRegistries));
         return compound;
     }
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         return this.saveItems(new CompoundTag(), registries);
+    }
+
+    @Override
+    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider lookupProvider) {
+        this.loadAdditional(tag, lookupProvider);
     }
 
     public static Pair<Integer, Integer> getMinMax() {
@@ -115,7 +120,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                                 .withParameter(LootContextParams.TOOL, ItemStack.EMPTY)
                                 .withParameter(LootContextParams.BLOCK_ENTITY, blockEntity)
                                 .create(LootContextParamSets.FISHING);
-                        ItemStack itemInBaitSlot = blockEntity.inventory.getStackInSlot(0);
+                        ItemStack itemInBaitSlot = blockEntity.handler.getStackInSlot(0);
                         LootTable loottable;
 
                         if (itemInBaitSlot.is(CDModTags.CRAB_TRAP_BAIT)) {
@@ -123,11 +128,10 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                             ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + registryName.getPath());
                             loottable = level.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, lootTableLocation));
                             List<ItemStack> list = loottable.getRandomItems(lootparams);
-                            blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
+                            blockEntity.handler.handleItemsInsertion(list, itemInBaitSlot, random);
                         }
                     }
                 }
-
             } else {
                 if (isWaterBiome(level, pos)) {
                     blockEntity.tickCounter++;
@@ -162,7 +166,6 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         return true;
     }
 
-
     private static boolean isWaterBiome(Level level, BlockPos pos) {
         if (level.getBiome(pos).is(Tags.Biomes.IS_AQUATIC)) {
             return true;
@@ -185,7 +188,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     }
 
     public CrabTrapItemHandler getInventory() {
-        return this.inventory;
+        return this.handler;
     }
 
     @Override
@@ -201,6 +204,6 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory playerInv, Player player) {
-        return new CrabTrapMenu(id, playerInv, this.inventory, ContainerLevelAccess.NULL);
+        return new CrabTrapMenu(id, playerInv, this.handler, ContainerLevelAccess.NULL);
     }
 }

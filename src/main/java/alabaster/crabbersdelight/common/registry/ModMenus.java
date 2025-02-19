@@ -9,10 +9,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public final class ModMenus {
+public class ModMenus {
 
     public static final DeferredRegister<MenuType<?>> MENU = DeferredRegister.create(BuiltInRegistries.MENU, CrabbersDelight.MODID);
 
-    public static final Supplier<MenuType<CrabTrapMenu>> CRAB_TRAP_MENU = MENU.register("crab_trap_menu",
+    public static final Supplier<MenuType<CrabTrapMenu>> CRAB_TRAP_MENU = MENU.register("crab_trap",
             () -> IMenuTypeExtension.create(CrabTrapMenu::new));
 }

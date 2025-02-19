@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "cooked_pufferfish_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:pufferfish_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crabbersdelight:cooked_pufferfish_slice_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "cooked_pufferfish_slice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crabbersdelight:cooked_pufferfish_slice_from_smoking"
+    ]
+  }
+}

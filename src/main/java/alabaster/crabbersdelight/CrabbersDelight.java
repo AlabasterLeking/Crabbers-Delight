@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight;
 
 import alabaster.crabbersdelight.client.gui.CrabTrapGUI;
+import alabaster.crabbersdelight.common.block.container.CrabTrapMenu;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -19,6 +20,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -39,7 +41,10 @@ public class CrabbersDelight {
 
         if (FMLEnvironment.dist.isClient()) {
             bus.addListener(ClientSetupEvents::init);
+            bus.addListener(this::registerScreens);
         }
+
+        bus.addListener(this::gatherData);
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
 
@@ -79,5 +84,9 @@ public class CrabbersDelight {
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.CRAB.get(), CrabRenderer::new);
         }
+    }
+
+    public void registerScreens(RegisterMenuScreensEvent event) {
+        event.register(ModMenus.CRAB_TRAP_MENU.get(), CrabTrapGUI::new);
     }
 }
