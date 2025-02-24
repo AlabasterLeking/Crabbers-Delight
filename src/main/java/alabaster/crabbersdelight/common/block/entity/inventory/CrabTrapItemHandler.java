@@ -25,63 +25,23 @@ public class CrabTrapItemHandler extends ItemStackHandler {
         super(28);
     }
 
-
-    public void handleItemsInsertion(List<ItemStack> list, ItemStack baitItem, RandomSource random) {
-        for (ItemStack itemStack : list) {
-            if (!itemStack.isEmpty()) {
-                    if (ItemHandlerHelper.insertItemStacked(this, itemStack, false).isEmpty()) {
-                        baitItem.shrink(1);
-                    }
-                    handleNonStackFilling(itemStack, baitItem, random);
-            }
-        }
-    }
-
-    public void handleNonStackFilling(ItemStack itemStack, ItemStack baitItem, RandomSource random) {
-        for (int i = 0; i < getSlots(); i++) {
-            ItemStack stackInSlot = getStackInSlot(i);
-                if (stackInSlot.isEmpty()) {
-
-                    itemStack = insertItem(i, itemStack, false);
-                    baitItem.shrink(1);
-                    if (itemStack.isEmpty()) {
-                        break;
-                    }
-                }
-
-                if (stackInSlot.is(Items.WATER_BUCKET)) {
-                    ResourceLocation regName =  BuiltInRegistries.ITEM.getKey(itemStack.getItem());
-                    ResourceLocation bucketFishLocation = ResourceLocation.fromNamespaceAndPath(Objects.requireNonNull(regName).getNamespace(), regName.getPath() + "_bucket");
-                    if (BuiltInRegistries.ITEM.containsKey(bucketFishLocation)) {
-                        stackInSlot.shrink(1);
-                        itemStack = insertItem(i, Objects.requireNonNull(BuiltInRegistries.ITEM.get(bucketFishLocation)).getDefaultInstance(), false);
-                        baitItem.shrink(1);
-                        if (itemStack.isEmpty()) {
-                            break;
-                        }
-                    }
-
-            }
-        }
-    }
-
-    public void addItemsAndShrinkBait(Level level, BlockPos pos, List<ItemStack> list, ItemStack baitItem) {
+    public void addItemsAndShrinkBait(Level level, BlockPos pos, List<ItemStack> list, ItemStack baitItem, RandomSource random) {
         for (ItemStack itemStack : list) {
             if (!itemStack.isEmpty()) {
                 for (int i = 0; i < getSlots(); i++) {
-                    if (getStackInSlot(i).isEmpty()) {
+                    ItemStack stackInSlot = getStackInSlot(i);
+                    if (stackInSlot.isEmpty()) {
                         itemStack = insertItem(i, itemStack, false);
-                        baitItem.hurtAndBreak(1, null , null);
                         level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
+                        if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !(baitItem.is(CDModTags.CREATURE_CHUMS))) {
+                            baitItem.shrink(1);
+                        }
                         if (baitItem.is(CDModTags.CREATURE_CHUMS)) {
                             if (baitItem.getDamageValue() == 48) {
                                 baitItem.shrink(1);
                                 ItemStack bucketStack = new ItemStack(Items.BUCKET);
                                 this.insertItem(0, bucketStack, false);
                             }
-                        }
-                        if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !(baitItem.is(CDModTags.CREATURE_CHUMS))) {
-                            baitItem.shrink(1);
                         }
                         if (itemStack.isEmpty()) {
                             break;

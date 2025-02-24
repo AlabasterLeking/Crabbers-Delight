@@ -128,7 +128,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                             ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + registryName.getPath());
                             loottable = level.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, lootTableLocation));
                             List<ItemStack> list = loottable.getRandomItems(lootparams);
-                            blockEntity.handler.handleItemsInsertion(list, itemInBaitSlot, random);
+                            blockEntity.handler.addItemsAndShrinkBait(level, pos, list, itemInBaitSlot, random);
                         }
                     }
                 }
