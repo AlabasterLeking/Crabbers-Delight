@@ -25,6 +25,10 @@ public class CDBlockLoot extends BlockLootSubProvider
         dropSelf(ModBlocks.CLAM_BARREL.get());
         dropSelf(ModBlocks.CLAWSTER_BARREL.get());
         dropSelf(ModBlocks.SHRIMP_BARREL.get());
+        dropSelf(ModBlocks.COD_BARREL.get());
+        dropSelf(ModBlocks.SALMON_BARREL.get());
+        dropSelf(ModBlocks.PUFFERFISH_BARREL.get());
+        dropSelf(ModBlocks.TROPICAL_FISH_BARREL.get());
         dropSelf(ModBlocks.SQUID_BARREL.get());
         dropSelf(ModBlocks.GLOW_SQUID_BARREL.get());
         dropSelf(ModBlocks.FROG_LEG_BARREL.get());

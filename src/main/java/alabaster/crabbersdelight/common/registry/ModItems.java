@@ -61,17 +61,6 @@ public class ModItems {
         return new Item.Properties().food(food).craftRemainder(Items.NAUTILUS_SHELL);
     }
 
-    // Bucket Items Helper
-
-    public static Item createMobBucketItem(Supplier<EntityType<? extends Animal>> entityType) {
-        return new MobBucketItem(ModEntities.CRAB.get(), Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1));
-    }
-
-    // Spawn Eggs
-
-    public static final DeferredHolder<Item, DeferredSpawnEggItem> CRAB_SPAWN_EGG = ITEMS.register("crab_spawn_egg",
-            () -> new DeferredSpawnEggItem(ModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties()));
-
     // Materials
 
     public static final Supplier<Item> CLAM = registerWithTab("clam",
@@ -103,10 +92,6 @@ public class ModItems {
     public static final Supplier<Item> CRAB_CLAW = registerWithTab("crab_claw",
             () -> new CrabClawItem(basicItem()));
 
-    // Mob Buckets
-
-    public static final Supplier<Item> CRAB_BUCKET = registerWithTab("crab_bucket",
-            () -> ModItems.createMobBucketItem(ModEntities.CRAB::get));
 
     // Raw / Cooked Meats
 

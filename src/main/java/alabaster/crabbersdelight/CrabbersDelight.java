@@ -1,7 +1,6 @@
 package alabaster.crabbersdelight;
 
 import alabaster.crabbersdelight.client.gui.CrabTrapGUI;
-import alabaster.crabbersdelight.common.block.container.CrabTrapMenu;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -9,7 +8,6 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import alabaster.crabbersdelight.client.renderer.CrabRenderer;
 import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.event.CDSpriteSourceProvider;
 import alabaster.crabbersdelight.common.registry.*;
@@ -53,7 +51,6 @@ public class CrabbersDelight {
         ModBlockEntity.BLOCK_ENTITY_TYPES.register(bus);
         ModMenus.MENU.register(bus);
         ModCreativeTabs.CREATIVE_TAB.register(bus);
-        ModEntities.ENTITIES.register(bus);
         ModPotions.POTIONS.register(bus);
 
         NeoForge.EVENT_BUS.register(this);
@@ -76,14 +73,6 @@ public class CrabbersDelight {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(includeClient, new CDSpriteSourceProvider(packOutput, lookupProvider, fileHelper));
-    }
-
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-            EntityRenderers.register(ModEntities.CRAB.get(), CrabRenderer::new);
-        }
     }
 
     public void registerScreens(RegisterMenuScreensEvent event) {

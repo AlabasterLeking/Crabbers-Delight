@@ -30,7 +30,6 @@ public class ItemModels extends ItemModelProvider
                 .collect(Collectors.toSet());
 
         // Specific cases
-        items.remove(ModItems.CRAB_SPAWN_EGG.get());
         items.remove(ModItems.CRAB_CLAW.get());
 
         // Blocks whose item look alike

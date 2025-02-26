@@ -136,9 +136,6 @@ dependencies {
     // Farmers Delight
     implementation "curse.maven:farmers-delight-398521:${farmersdelight_version}"
 
-    // GeckoLib
-    implementation "curse.maven:geckolib-388172:${geckolib_version}"
-
     // JEI
     compileOnly "mezz.jei:jei-${jei_minecraft}-common-api:${jei_version}"
     compileOnly "mezz.jei:jei-${jei_minecraft}-neoforge-api:${jei_version}"

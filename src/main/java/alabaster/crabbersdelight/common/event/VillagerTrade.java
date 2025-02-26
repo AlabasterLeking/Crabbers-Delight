@@ -46,6 +46,7 @@ public class VillagerTrade
     public static void onWandererTrades(WandererTradesEvent event) {
         if (Config.WANDERING_TRADER_PEARLS.get()) {
             List<VillagerTrades.ItemListing> trades = event.getGenericTrades();
+            trades.add(emeraldForItemsTrade(ModItems.CRAB_CLAW.get(), 8,4,12));
             trades.add(heartForPearlsTrade(ModItems.PEARL.get(), 32, 4, 12));
             trades.add(spongeForPearlsTrade(ModItems.PEARL.get(), 8, 4, 12));
             trades.add(tridentForPearlsTrade(ModItems.PEARL.get(), 64, 1, 12));
