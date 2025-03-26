@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:sea_pickle_crate"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:sea_pickle"
+  }
+}

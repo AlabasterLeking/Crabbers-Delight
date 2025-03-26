@@ -124,7 +124,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.runClient">
+  <component name="RunManager" selected="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [build]">
     <configuration name="C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />

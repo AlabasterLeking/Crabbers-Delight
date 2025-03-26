@@ -258,6 +258,10 @@ public class ModItems {
     public static final RegistryObject<Item> FROG_LEG_BARREL = addToTab(ITEMS.register("frog_leg_barrel",
             () -> new BlockItem(ModBlocks.FROG_LEG_BARREL.get(), basicItem())));
 
+    public static final RegistryObject<Item> SEA_PICKLE_CRATE = addToTab(ITEMS.register("sea_pickle_crate",
+            () -> new BlockItem(ModBlocks.SEA_PICKLE_CRATE.get(), basicItem())));
+
+
     //public static final RegistryObject<Item> LANTERNFISH_BARREL = addToTab(ITEMS.register("lanternfish_barrel",
             //() -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem())));
 

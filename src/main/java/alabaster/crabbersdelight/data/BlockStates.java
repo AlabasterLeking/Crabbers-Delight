@@ -37,22 +37,27 @@ public class BlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        this.crateBlock(ModBlocks.CRAB_BARREL.get(), "crab");
-        this.crateBlock(ModBlocks.CLAM_BARREL.get(), "clam");
-        this.crateBlock(ModBlocks.CLAWSTER_BARREL.get(), "clawster");
-        this.crateBlock(ModBlocks.SHRIMP_BARREL.get(), "shrimp");
-        this.crateBlock(ModBlocks.COD_BARREL.get(), "cod");
-        this.crateBlock(ModBlocks.SALMON_BARREL.get(), "salmon");
-        this.crateBlock(ModBlocks.PUFFERFISH_BARREL.get(), "pufferfish");
-        this.crateBlock(ModBlocks.TROPICAL_FISH_BARREL.get(), "tropical_fish");
-        this.crateBlock(ModBlocks.SQUID_BARREL.get(), "squid");
-        this.crateBlock(ModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
-        this.crateBlock(ModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
-        //this.crateBlock(ModBlocks.LANTERNFISH_BARREL.get(), "lanternfish");
+        this.barrelBlock(ModBlocks.CRAB_BARREL.get(), "crab");
+        this.barrelBlock(ModBlocks.CLAM_BARREL.get(), "clam");
+        this.barrelBlock(ModBlocks.CLAWSTER_BARREL.get(), "clawster");
+        this.barrelBlock(ModBlocks.SHRIMP_BARREL.get(), "shrimp");
+        this.barrelBlock(ModBlocks.COD_BARREL.get(), "cod");
+        this.barrelBlock(ModBlocks.SALMON_BARREL.get(), "salmon");
+        this.barrelBlock(ModBlocks.PUFFERFISH_BARREL.get(), "pufferfish");
+        this.barrelBlock(ModBlocks.TROPICAL_FISH_BARREL.get(), "tropical_fish");
+        this.barrelBlock(ModBlocks.SQUID_BARREL.get(), "squid");
+        this.barrelBlock(ModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
+        this.barrelBlock(ModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
+        this.crateBlock(ModBlocks.SEA_PICKLE_CRATE.get(), "sea_pickle");
+    }
+
+    public void barrelBlock(Block block, String cropName) {
+        this.simpleBlock(block,
+                models().cubeBottomTop(blockName(block), resourceBlock("barrel_side"), resourceBlock("barrel_bottom"), resourceBlock(cropName + "_barrel_top")));
     }
 
     public void crateBlock(Block block, String cropName) {
         this.simpleBlock(block,
-                models().cubeBottomTop(blockName(block), resourceBlock("barrel_side"), resourceBlock("barrel_bottom"), resourceBlock(cropName + "_barrel_top")));
+                models().cubeBottomTop(blockName(block), resourceBlock(cropName + "_crate_side"), resourceBlock("crate_bottom"), resourceBlock(cropName + "_crate_top")));
     }
 }

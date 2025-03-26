@@ -113,6 +113,14 @@ public class CraftingRecipes {
                 .unlockedBy("has_raw_frog_leg", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.RAW_FROG_LEG.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.SEA_PICKLE_CRATE.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.SEA_PICKLE)
+                .unlockedBy("has_sea_pickle", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModItems.NAUTILUS_SHELL_BLOCK.get(), 1)
                 .pattern("###")
                 .pattern("###")
@@ -195,6 +203,11 @@ public class CraftingRecipes {
                 .requires(ModItems.FROG_LEG_BARREL.get())
                 .unlockedBy("has_frog_leg_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.FROG_LEG_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "frog_leg_from_barrel"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SEA_PICKLE, 9)
+                .requires(ModItems.SEA_PICKLE_CRATE.get())
+                .unlockedBy("has_sea_pickle_crate", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEA_PICKLE_CRATE.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "sea_pickle_from_crate"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.NAUTILUS_SHELL, 9)
                 .requires(ModItems.NAUTILUS_SHELL_BLOCK.get())
