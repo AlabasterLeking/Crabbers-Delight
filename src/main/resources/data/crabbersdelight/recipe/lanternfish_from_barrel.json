@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "sullysmod"
+    }
+  ],
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
@@ -8,6 +14,6 @@
   ],
   "result": {
     "count": 9,
-    "item": "sullysmod:lanternfish"
+    "id": "sullysmod:lanternfish"
   }
 }
