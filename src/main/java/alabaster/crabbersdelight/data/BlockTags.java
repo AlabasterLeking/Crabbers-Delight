@@ -1,7 +1,7 @@
 package alabaster.crabbersdelight.data;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.registry.ModBlocks;
+import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -33,23 +33,23 @@ public class BlockTags extends BlockTagsProvider
 
     protected void registerBlockMineables() {
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_AXE).add(
-                ModBlocks.CRAB_BARREL.get(),
-                ModBlocks.CLAM_BARREL.get(),
-                ModBlocks.CLAWSTER_BARREL.get(),
-                ModBlocks.SHRIMP_BARREL.get(),
-                ModBlocks.COD_BARREL.get(),
-                ModBlocks.SALMON_BARREL.get(),
-                ModBlocks.PUFFERFISH_BARREL.get(),
-                ModBlocks.TROPICAL_FISH_BARREL.get(),
-                ModBlocks.SQUID_BARREL.get(),
-                ModBlocks.GLOW_SQUID_BARREL.get(),
-                ModBlocks.FROG_LEG_BARREL.get(),
+                CDModBlocks.CRAB_BARREL.get(),
+                CDModBlocks.CLAM_BARREL.get(),
+                CDModBlocks.CLAWSTER_BARREL.get(),
+                CDModBlocks.SHRIMP_BARREL.get(),
+                CDModBlocks.COD_BARREL.get(),
+                CDModBlocks.SALMON_BARREL.get(),
+                CDModBlocks.PUFFERFISH_BARREL.get(),
+                CDModBlocks.TROPICAL_FISH_BARREL.get(),
+                CDModBlocks.SQUID_BARREL.get(),
+                CDModBlocks.GLOW_SQUID_BARREL.get(),
+                CDModBlocks.FROG_LEG_BARREL.get(),
                 //ModBlocks.LANTERNFISH_BARREL.get(),
-                ModBlocks.CRAB_TRAP.get());
+                CDModBlocks.CRAB_TRAP.get());
 
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(
-                ModBlocks.NAUTILUS_SHELL_BLOCK.get(),
-                ModBlocks.PEARL_BLOCK.get());
+                CDModBlocks.NAUTILUS_SHELL_BLOCK.get(),
+                CDModBlocks.PEARL_BLOCK.get());
     }
 
 

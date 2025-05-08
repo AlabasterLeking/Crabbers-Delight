@@ -1,6 +1,6 @@
 package alabaster.crabbersdelight.common.item;
 
-import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.registry.CDModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -41,8 +41,8 @@ public class CrabClawItem extends Item {
 
         CompoundTag persistentData = player.getPersistentData();
 
-        boolean clawMainHand = (player.getMainHandItem().is(ModItems.CRAB_CLAW.get()));
-        boolean clawOffHand = (player.getOffhandItem().is(ModItems.CRAB_CLAW.get()));
+        boolean clawMainHand = (player.getMainHandItem().is(CDModItems.CRAB_CLAW.get()));
+        boolean clawOffHand = (player.getOffhandItem().is(CDModItems.CRAB_CLAW.get()));
         boolean clawHeld = clawMainHand ^ clawOffHand;
         boolean hadClaw = persistentData.contains(CLAW_MARKER);
 
@@ -86,13 +86,13 @@ public class CrabClawItem extends Item {
         
         ItemStack claw;
 
-        if (player.getOffhandItem().is(ModItems.CRAB_CLAW.get())) {
+        if (player.getOffhandItem().is(CDModItems.CRAB_CLAW.get())) {
             claw = player.getOffhandItem();
             
             claw.hurtAndBreak(1, player, EquipmentSlot.OFFHAND);
         }
 
-        if (player.getMainHandItem().is(ModItems.CRAB_CLAW.get())) {
+        if (player.getMainHandItem().is(CDModItems.CRAB_CLAW.get())) {
             claw = player.getMainHandItem();
             
             claw.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);

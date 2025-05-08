@@ -8,9 +8,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class ModBlockEntity {
+public class CDModBlockEntity {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, CrabbersDelight.MODID);
 
     public static final Supplier<BlockEntityType<CrabTrapBlockEntity>> CRAB_TRAP = BLOCK_ENTITY_TYPES.register("crab_trap",
-            () -> BlockEntityType.Builder.of(CrabTrapBlockEntity::new, ModBlocks.CRAB_TRAP.get()).build(null));
+            () -> BlockEntityType.Builder.of(CrabTrapBlockEntity::new, CDModBlocks.CRAB_TRAP.get()).build(null));
 }

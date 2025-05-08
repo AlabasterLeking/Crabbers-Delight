@@ -5,7 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.registry.ModBlocks;
+import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -35,17 +35,17 @@ public class BlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        this.crateBlock(ModBlocks.CRAB_BARREL.get(), "crab");
-        this.crateBlock(ModBlocks.CLAM_BARREL.get(), "clam");
-        this.crateBlock(ModBlocks.CLAWSTER_BARREL.get(), "clawster");
-        this.crateBlock(ModBlocks.SHRIMP_BARREL.get(), "shrimp");
-        this.crateBlock(ModBlocks.COD_BARREL.get(), "cod");
-        this.crateBlock(ModBlocks.SALMON_BARREL.get(), "salmon");
-        this.crateBlock(ModBlocks.PUFFERFISH_BARREL.get(), "pufferfish");
-        this.crateBlock(ModBlocks.TROPICAL_FISH_BARREL.get(), "tropical_fish");
-        this.crateBlock(ModBlocks.SQUID_BARREL.get(), "squid");
-        this.crateBlock(ModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
-        this.crateBlock(ModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
+        this.crateBlock(CDModBlocks.CRAB_BARREL.get(), "crab");
+        this.crateBlock(CDModBlocks.CLAM_BARREL.get(), "clam");
+        this.crateBlock(CDModBlocks.CLAWSTER_BARREL.get(), "clawster");
+        this.crateBlock(CDModBlocks.SHRIMP_BARREL.get(), "shrimp");
+        this.crateBlock(CDModBlocks.COD_BARREL.get(), "cod");
+        this.crateBlock(CDModBlocks.SALMON_BARREL.get(), "salmon");
+        this.crateBlock(CDModBlocks.PUFFERFISH_BARREL.get(), "pufferfish");
+        this.crateBlock(CDModBlocks.TROPICAL_FISH_BARREL.get(), "tropical_fish");
+        this.crateBlock(CDModBlocks.SQUID_BARREL.get(), "squid");
+        this.crateBlock(CDModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
+        this.crateBlock(CDModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
         //this.crateBlock(ModBlocks.LANTERNFISH_BARREL.get(), "lanternfish");
     }
 

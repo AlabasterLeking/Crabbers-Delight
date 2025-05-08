@@ -1,43 +1,34 @@
+
 modLoader="javafml"
 loaderVersion="${loader_version_range}"
-license="MIT License"
+license="${mod_license}"
 
 [[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+logoFile="logo.png"
+authors="${mod_authors}"
+description='''${mod_description}'''
+enumExtensions="META-INF/enumextensions.json"
 
-modId="crabbersdelight"
-
-version="1.1.7a"
-displayName="Crabber's Delight"
-logoFile="crabbersdelightbanner.png"
-credits="Thank you to vectorwing for creating Farmer's Delight!"
-authors="Alabaster Leking"
-description='''A maritime addon for Farmer's Delight'''
-itemIcon = "crabbersdelight:clawster"
-
-[[dependencies.crabbersdelight]]
+[[dependencies.${mod_id}]]
 modId="neoforge"
 type="required"
-versionRange="[21.0.102-beta,)"
+versionRange="${neo_version_range}"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.crabbersdelight]]
+[[dependencies.${mod_id}]]
 modId="minecraft"
 type="required"
-versionRange="[1.21,)"
+versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.crabbersdelight]]
-modId = "farmersdelight"
+[[dependencies.${mod_id}]]
+modId="farmersdelight"
 type="required"
-versionRange = "[1.2.4,)"
-ordering = "NONE"
-side = "BOTH"
-
-[[dependencies.crabbersdelight]]
-modId = "geckolib"
-type="required"
-versionRange = "[4.2.3,)"
-ordering = "NONE"
-side = "BOTH"
+versionRange="1.21-1.2.4"
+ordering="NONE"
+side="BOTH"

@@ -1,22 +1,18 @@
 package alabaster.crabbersdelight;
 
 import alabaster.crabbersdelight.client.gui.CrabTrapGUI;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.event.CDSpriteSourceProvider;
 import alabaster.crabbersdelight.common.registry.*;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -46,12 +42,12 @@ public class CrabbersDelight {
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
 
-        ModItems.ITEMS.register(bus);
-        ModBlocks.BLOCKS.register(bus);
-        ModBlockEntity.BLOCK_ENTITY_TYPES.register(bus);
-        ModMenus.MENU.register(bus);
-        ModCreativeTabs.CREATIVE_TAB.register(bus);
-        ModPotions.POTIONS.register(bus);
+        CDModItems.ITEMS.register(bus);
+        CDModBlocks.BLOCKS.register(bus);
+        CDModBlockEntity.BLOCK_ENTITY_TYPES.register(bus);
+        CDModMenus.MENU.register(bus);
+        CDModCreativeTabs.CREATIVE_TAB.register(bus);
+        CDModPotions.POTIONS.register(bus);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -76,6 +72,6 @@ public class CrabbersDelight {
     }
 
     public void registerScreens(RegisterMenuScreensEvent event) {
-        event.register(ModMenus.CRAB_TRAP_MENU.get(), CrabTrapGUI::new);
+        event.register(CDModMenus.CRAB_TRAP_MENU.get(), CrabTrapGUI::new);
     }
 }

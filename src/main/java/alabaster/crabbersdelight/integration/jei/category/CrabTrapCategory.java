@@ -1,9 +1,11 @@
-package alabaster.crabbersdelight.integration.jei;
+package alabaster.crabbersdelight.integration.jei.category;
 
+import alabaster.crabbersdelight.integration.jei.CrabTrapRecipeWrapper;
+import alabaster.crabbersdelight.integration.jei.JEIPlugin;
 import com.google.common.collect.ImmutableList;
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
-import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.registry.CDModItems;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -30,7 +32,7 @@ public class CrabTrapCategory implements IRecipeCategory<CrabTrapRecipeWrapper> 
     public CrabTrapCategory(IGuiHelper helper) {
         this.title = Component.translatable("block.crabbersdelight.crab_trap");
         this.background = helper.createDrawable(CRAB_TRAP_LOCATION, 0, 0, 79, 39);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModItems.CRAB_TRAP.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(CDModItems.CRAB_TRAP.get()));
     }
 
     @Override

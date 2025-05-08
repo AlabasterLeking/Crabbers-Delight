@@ -5,23 +5,16 @@ import alabaster.crabbersdelight.common.CDFoodValues;
 import alabaster.crabbersdelight.common.item.*;
 import com.google.common.collect.Sets;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.material.Fluids;
-import net.neoforged.neoforge.common.DeferredSpawnEggItem;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
-import vectorwing.farmersdelight.common.registry.ModEntityTypes;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
 
-public class ModItems {
+public class CDModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, CrabbersDelight.MODID);
     public static LinkedHashSet<Supplier<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
 
@@ -212,50 +205,50 @@ public class ModItems {
     // Storage Blocks
 
     public static final Supplier<Item> CRAB_BARREL = registerWithTab("crab_barrel",
-            () -> new BlockItem(ModBlocks.CRAB_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.CRAB_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> CLAM_BARREL = registerWithTab("clam_barrel",
-            () -> new BlockItem(ModBlocks.CLAM_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.CLAM_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> CLAWSTER_BARREL = registerWithTab("clawster_barrel",
-            () -> new BlockItem(ModBlocks.CLAWSTER_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.CLAWSTER_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> SHRIMP_BARREL = registerWithTab("shrimp_barrel",
-            () -> new BlockItem(ModBlocks.SHRIMP_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.SHRIMP_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> COD_BARREL = registerWithTab("cod_barrel",
-            () -> new BlockItem(ModBlocks.COD_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.COD_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> SALMON_BARREL = registerWithTab("salmon_barrel",
-            () -> new BlockItem(ModBlocks.SALMON_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.SALMON_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> PUFFERFISH_BARREL = registerWithTab("pufferfish_barrel",
-            () -> new BlockItem(ModBlocks.PUFFERFISH_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.PUFFERFISH_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> TROPICAL_FISH_BARREL = registerWithTab("tropical_fish_barrel",
-            () -> new BlockItem(ModBlocks.TROPICAL_FISH_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.TROPICAL_FISH_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> SQUID_BARREL = registerWithTab("squid_barrel",
-            () -> new BlockItem(ModBlocks.SQUID_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.SQUID_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> GLOW_SQUID_BARREL = registerWithTab("glow_squid_barrel",
-            () -> new BlockItem(ModBlocks.GLOW_SQUID_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.GLOW_SQUID_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> FROG_LEG_BARREL = registerWithTab("frog_leg_barrel",
-            () -> new BlockItem(ModBlocks.FROG_LEG_BARREL.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.FROG_LEG_BARREL.get(), basicItem()));
 
     //public static final Supplier<Item> LANTERNFISH_BARREL = registerWithTab("lanternfish_barrel",
             //() -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem()));
 
     public static final Supplier<Item> NAUTILUS_SHELL_BLOCK = registerWithTab("nautilus_shell_block",
-            () -> new BlockItem(ModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem()));
 
     public static final Supplier<Item> PEARL_BLOCK = registerWithTab("pearl_block",
-            () -> new BlockItem(ModBlocks.PEARL_BLOCK.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.PEARL_BLOCK.get(), basicItem()));
 
     // Crab Trap
 
     public static final Supplier<Item> CRAB_TRAP = registerWithTab("crab_trap",
-            () -> new BlockItem(ModBlocks.CRAB_TRAP.get(), basicItem()));
+            () -> new BlockItem(CDModBlocks.CRAB_TRAP.get(), basicItem()));
 
 }

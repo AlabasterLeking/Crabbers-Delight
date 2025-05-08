@@ -1,7 +1,7 @@
 package alabaster.crabbersdelight.data.recipe;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.registry.CDModItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -19,19 +19,19 @@ public class SmeltingRecipes {
         //foodSmeltingRecipes("cooked_shrimp", ModItems.RAW_SHRIMP.get(), ModItems.COOKED_SHRIMP.get(), 0.35F, output);
         //foodSmeltingRecipes("cooked_clawster", ModItems.RAW_CLAWSTER.get(), ModItems.COOKED_CLAWSTER.get(), 0.35F, output);
 
-        foodSmeltingRecipes("cooked_clam_meat", ModItems.RAW_CLAM_MEAT.get(), ModItems.COOKED_CLAM_MEAT.get(), 0.35F, output);
-        foodSmeltingRecipes("cooked_tropical_fish", Items.TROPICAL_FISH, ModItems.COOKED_TROPICAL_FISH.get(), 0.35f, output);
-        foodSmeltingRecipes("cooked_tropical_fish_slice", ModItems.TROPICAL_FISH_SLICE.get(), ModItems.COOKED_TROPICAL_FISH_SLICE.get(), 0.35f, output);
-        foodSmeltingRecipes("cooked_pufferfish_slice", ModItems.PUFFERFISH_SLICE.get(), ModItems.COOKED_PUFFERFISH_SLICE.get(), 0.35f, output);
-        foodSmeltingRecipes("cooked_squid_tentacles", ModItems.RAW_SQUID_TENTACLES.get(), ModItems.COOKED_SQUID_TENTACLES.get(), 0.35f, output);
-        foodSmeltingRecipes("cooked_glow_squid_tentacles", ModItems.RAW_GLOW_SQUID_TENTACLES.get(), ModItems.COOKED_GLOW_SQUID_TENTACLES.get(), 0.35f, output);
-        foodSmeltingRecipes("cooked_frog_leg", ModItems.RAW_FROG_LEG.get(), ModItems.COOKED_FROG_LEG.get(), 0.35f, output);
+        foodSmeltingRecipes("cooked_clam_meat", CDModItems.RAW_CLAM_MEAT.get(), CDModItems.COOKED_CLAM_MEAT.get(), 0.35F, output);
+        foodSmeltingRecipes("cooked_tropical_fish", Items.TROPICAL_FISH, CDModItems.COOKED_TROPICAL_FISH.get(), 0.35f, output);
+        foodSmeltingRecipes("cooked_tropical_fish_slice", CDModItems.TROPICAL_FISH_SLICE.get(), CDModItems.COOKED_TROPICAL_FISH_SLICE.get(), 0.35f, output);
+        foodSmeltingRecipes("cooked_pufferfish_slice", CDModItems.PUFFERFISH_SLICE.get(), CDModItems.COOKED_PUFFERFISH_SLICE.get(), 0.35f, output);
+        foodSmeltingRecipes("cooked_squid_tentacles", CDModItems.RAW_SQUID_TENTACLES.get(), CDModItems.COOKED_SQUID_TENTACLES.get(), 0.35f, output);
+        foodSmeltingRecipes("cooked_glow_squid_tentacles", CDModItems.RAW_GLOW_SQUID_TENTACLES.get(), CDModItems.COOKED_GLOW_SQUID_TENTACLES.get(), 0.35f, output);
+        foodSmeltingRecipes("cooked_frog_leg", CDModItems.RAW_FROG_LEG.get(), CDModItems.COOKED_FROG_LEG.get(), 0.35f, output);
         //foodSmeltingRecipes("arid_flesh", Items.ROTTEN_FLESH, ModItems.ARID_FLESH.get(), 0.35f, output);
         //foodSmeltingRecipes("rotten_flesh", ModItems.SOGGY_FLESH.get(), Items.ROTTEN_FLESH, 0.35f, output);
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.CAN.get()), RecipeCategory.MISC,
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(CDModItems.CAN.get()), RecipeCategory.MISC,
                         Items.IRON_NUGGET, 0.1F, 200)
-                .unlockedBy("has_can", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CAN.get()))
+                .unlockedBy("has_can", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.CAN.get()))
                 .save(output, ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "iron_nugget_from_smelting_can"));
     }
 

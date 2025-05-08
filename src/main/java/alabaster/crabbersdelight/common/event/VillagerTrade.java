@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.registry.CDModItems;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
@@ -34,11 +34,11 @@ public class VillagerTrade
         ResourceLocation professionKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(profession);
         if (professionKey == null) return;
         if (professionKey.getPath().equals("fisherman")) {
-            trades.get(1).add(emeraldForItemsTrade(ModItems.RAW_CRAB.get(), 6, 16, 2));
-            trades.get(1).add(emeraldForItemsTrade(ModItems.RAW_SHRIMP.get(), 8, 16, 2));
-            trades.get(2).add(emeraldForItemsTrade(ModItems.RAW_CLAWSTER.get(), 4, 16, 5));
-            trades.get(2).add(emeraldForItemsTrade(ModItems.CLAM.get(), 3, 16, 5));
-            trades.get(4).add(emeraldForItemsTrade(ModItems.PEARL.get(), 1, 16, 5));
+            trades.get(1).add(emeraldForItemsTrade(CDModItems.RAW_CRAB.get(), 6, 16, 2));
+            trades.get(1).add(emeraldForItemsTrade(CDModItems.RAW_SHRIMP.get(), 8, 16, 2));
+            trades.get(2).add(emeraldForItemsTrade(CDModItems.RAW_CLAWSTER.get(), 4, 16, 5));
+            trades.get(2).add(emeraldForItemsTrade(CDModItems.CLAM.get(), 3, 16, 5));
+            trades.get(4).add(emeraldForItemsTrade(CDModItems.PEARL.get(), 1, 16, 5));
         }
     }
 
@@ -46,10 +46,10 @@ public class VillagerTrade
     public static void onWandererTrades(WandererTradesEvent event) {
         if (Config.WANDERING_TRADER_PEARLS.get()) {
             List<VillagerTrades.ItemListing> trades = event.getGenericTrades();
-            trades.add(emeraldForItemsTrade(ModItems.CRAB_CLAW.get(), 8,4,12));
-            trades.add(heartForPearlsTrade(ModItems.PEARL.get(), 32, 4, 12));
-            trades.add(spongeForPearlsTrade(ModItems.PEARL.get(), 8, 4, 12));
-            trades.add(tridentForPearlsTrade(ModItems.PEARL.get(), 64, 1, 12));
+            trades.add(emeraldForItemsTrade(CDModItems.CRAB_CLAW.get(), 8,4,12));
+            trades.add(heartForPearlsTrade(CDModItems.PEARL.get(), 32, 4, 12));
+            trades.add(spongeForPearlsTrade(CDModItems.PEARL.get(), 8, 4, 12));
+            trades.add(tridentForPearlsTrade(CDModItems.PEARL.get(), 64, 1, 12));
         }
     }
 

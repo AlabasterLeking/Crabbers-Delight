@@ -1,7 +1,7 @@
 package alabaster.crabbersdelight.common.block;
 
 import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
-import alabaster.crabbersdelight.common.registry.ModBlockEntity;
+import alabaster.crabbersdelight.common.registry.CDModBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -136,6 +136,6 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntity) {
-        return level.isClientSide ? null : createTickerHelper(blockEntity, ModBlockEntity.CRAB_TRAP.get(), CrabTrapBlockEntity::serverTick);
+        return level.isClientSide ? null : createTickerHelper(blockEntity, CDModBlockEntity.CRAB_TRAP.get(), CrabTrapBlockEntity::serverTick);
     }
 }

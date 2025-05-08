@@ -25,7 +25,7 @@ import java.util.function.Consumer;
  */
 
 
-public class TextUtil
+public class CDTextUtils
 {
     private static final MutableComponent NO_EFFECTS = Component.translatable("effect.none").withStyle(ChatFormatting.GRAY);
 

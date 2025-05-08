@@ -2,8 +2,8 @@ package alabaster.crabbersdelight.common.block.container;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.entity.inventory.CrabTrapItemHandler;
-import alabaster.crabbersdelight.common.registry.ModBlocks;
-import alabaster.crabbersdelight.common.registry.ModMenus;
+import alabaster.crabbersdelight.common.registry.CDModBlocks;
+import alabaster.crabbersdelight.common.registry.CDModMenus;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.renderer.texture.TextureAtlas;
@@ -27,7 +27,7 @@ public class CrabTrapMenu extends AbstractContainerMenu {
     }
 
     public CrabTrapMenu(int id, Inventory playerInv, CrabTrapItemHandler inventory, final ContainerLevelAccess containerLevelAccess) {
-        super(ModMenus.CRAB_TRAP_MENU.get(), id);
+        super(CDModMenus.CRAB_TRAP_MENU.get(), id);
         this.inventory = inventory;
         this.access = containerLevelAccess;
 
@@ -105,6 +105,6 @@ public class CrabTrapMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return stillValid(this.access, player, ModBlocks.CRAB_TRAP.get());
+        return stillValid(this.access, player, CDModBlocks.CRAB_TRAP.get());
     }
 }

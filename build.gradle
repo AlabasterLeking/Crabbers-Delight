@@ -14,7 +14,7 @@ tasks.named('wrapper', Wrapper).configure {
 }
 
 version = "${minecraft_version}-${mod_version}"
-group = 'alabasterleking.hearthandharvest' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = 'alabasterleking.crabbersdelight' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 
 repositories {
     maven {
@@ -32,11 +32,6 @@ repositories {
     }
     maven {
         url "https://maven.ryanliptak.com/"
-    }
-    maven {
-        // GeckoLib
-        name = 'GeckoLib'
-        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
     }
 }
 

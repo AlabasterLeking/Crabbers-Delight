@@ -6,7 +6,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 
 import net.minecraft.world.level.storage.loot.LootTable;
-import alabaster.crabbersdelight.common.registry.ModBlocks;
+import alabaster.crabbersdelight.common.registry.CDModBlocks;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,19 +21,19 @@ public class CDBlockLoot extends BlockLootSubProvider
 
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.CRAB_BARREL.get());
-        dropSelf(ModBlocks.CLAM_BARREL.get());
-        dropSelf(ModBlocks.CLAWSTER_BARREL.get());
-        dropSelf(ModBlocks.SHRIMP_BARREL.get());
-        dropSelf(ModBlocks.COD_BARREL.get());
-        dropSelf(ModBlocks.SALMON_BARREL.get());
-        dropSelf(ModBlocks.PUFFERFISH_BARREL.get());
-        dropSelf(ModBlocks.TROPICAL_FISH_BARREL.get());
-        dropSelf(ModBlocks.SQUID_BARREL.get());
-        dropSelf(ModBlocks.GLOW_SQUID_BARREL.get());
-        dropSelf(ModBlocks.FROG_LEG_BARREL.get());
-        dropSelf(ModBlocks.NAUTILUS_SHELL_BLOCK.get());
-        dropSelf(ModBlocks.PEARL_BLOCK.get());
+        dropSelf(CDModBlocks.CRAB_BARREL.get());
+        dropSelf(CDModBlocks.CLAM_BARREL.get());
+        dropSelf(CDModBlocks.CLAWSTER_BARREL.get());
+        dropSelf(CDModBlocks.SHRIMP_BARREL.get());
+        dropSelf(CDModBlocks.COD_BARREL.get());
+        dropSelf(CDModBlocks.SALMON_BARREL.get());
+        dropSelf(CDModBlocks.PUFFERFISH_BARREL.get());
+        dropSelf(CDModBlocks.TROPICAL_FISH_BARREL.get());
+        dropSelf(CDModBlocks.SQUID_BARREL.get());
+        dropSelf(CDModBlocks.GLOW_SQUID_BARREL.get());
+        dropSelf(CDModBlocks.FROG_LEG_BARREL.get());
+        dropSelf(CDModBlocks.NAUTILUS_SHELL_BLOCK.get());
+        dropSelf(CDModBlocks.PEARL_BLOCK.get());
     }
 
     @Override

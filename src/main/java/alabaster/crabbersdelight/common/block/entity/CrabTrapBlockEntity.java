@@ -4,7 +4,7 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.block.container.CrabTrapMenu;
 import alabaster.crabbersdelight.common.block.entity.inventory.CrabTrapItemHandler;
-import alabaster.crabbersdelight.common.registry.ModBlockEntity;
+import alabaster.crabbersdelight.common.registry.CDModBlockEntity;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
@@ -42,13 +42,8 @@ import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.wrapper.RangedWrapper;
 import org.jetbrains.annotations.Nullable;
-import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
-import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.Objects;
-
-import static alabaster.crabbersdelight.common.Config.REQUIRE_SURROUNDING_WATER;
 
 public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Nameable {
 
@@ -66,7 +61,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     private int tickCounter = 0;
 
     public CrabTrapBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntity.CRAB_TRAP.get(), pos, state);
+        super(CDModBlockEntity.CRAB_TRAP.get(), pos, state);
     }
 
     @Override
@@ -177,7 +172,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
 
     @SubscribeEvent
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ModBlockEntity.CRAB_TRAP.get(),
+        event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CDModBlockEntity.CRAB_TRAP.get(),
                 (be, context) -> {
                     if (context == Direction.UP) {
                         return be.input;

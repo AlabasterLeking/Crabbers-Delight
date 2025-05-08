@@ -1,7 +1,7 @@
 package alabaster.crabbersdelight.common.event;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.registry.ModPotions;
+import alabaster.crabbersdelight.common.registry.CDModPotions;
 
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
@@ -22,7 +22,7 @@ public class ModEvents {
     public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {
         PotionBrewing.Builder builder = event.getBuilder();
 
-        builder.addMix(Potions.AWKWARD, Items.INK_SAC, ModPotions.INKY_POTION);
+        builder.addMix(Potions.AWKWARD, Items.INK_SAC, CDModPotions.INKY_POTION);
     }
 
     //@SubscribeEvent
