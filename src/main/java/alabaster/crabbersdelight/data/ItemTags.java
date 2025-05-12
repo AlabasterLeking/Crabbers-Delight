@@ -77,7 +77,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(CDModItems.COOKED_PUFFERFISH_SLICE.get());
 
         // Creature Chums - this tag is necessary for any item considered a chum
-        tag(CDModTags.CREATURE_CHUMS)
+        tag(CDModTags.CHUMS)
                 .add(CDModItems.BUCKET_OF_CLAM_CHUM.get())
                 .add(CDModItems.BUCKET_OF_CLAWSTER_CHUM.get())
                 .add(CDModItems.BUCKET_OF_CRAB_CHUM.get())

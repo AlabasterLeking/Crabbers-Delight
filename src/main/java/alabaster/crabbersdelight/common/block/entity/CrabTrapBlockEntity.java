@@ -36,6 +36,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.Tags;
@@ -45,6 +46,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+@EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Nameable {
 
     public static final Component CRAB_TRAP_NAME = Component.translatable("block.crabbersdelight.crab_trap");

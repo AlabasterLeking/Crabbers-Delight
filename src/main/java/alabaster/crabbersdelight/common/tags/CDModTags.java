@@ -16,7 +16,7 @@ public class CDModTags {
 
     public static final TagKey<Item> CRAB_TRAP_BAIT = modItemTag("crab_trap_bait");
     public static final TagKey<Item> CRAB_TEMPT_ITEM = modItemTag("crab_tempt_item");
-    public static final TagKey<Item> CREATURE_CHUMS = modItemTag("creature_chums");
+    public static final TagKey<Item> CHUMS = modItemTag("creature_chums");
 
     public static final TagKey<Item> AIR = modItemTag("jei_display_results/minecraft/air");
     public static final TagKey<Item> COD = modItemTag("jei_display_results/minecraft/cod");

@@ -3,21 +3,17 @@ package alabaster.crabbersdelight.common.block.entity.inventory;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.neoforged.neoforge.common.extensions.IItemExtension;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Objects;
 
 public class CrabTrapItemHandler extends ItemStackHandler {
 
@@ -25,29 +21,40 @@ public class CrabTrapItemHandler extends ItemStackHandler {
         super(28);
     }
 
-    public void addItemsAndShrinkBait(Level level, BlockPos pos, List<ItemStack> list, ItemStack baitItem, RandomSource random) {
-        for (ItemStack itemStack : list) {
-            if (!itemStack.isEmpty()) {
-                for (int i = 0; i < getSlots(); i++) {
-                    ItemStack stackInSlot = getStackInSlot(i);
-                    if (stackInSlot.isEmpty()) {
-                        itemStack = insertItem(i, itemStack, false);
-                        level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
-                        if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !(baitItem.is(CDModTags.CREATURE_CHUMS))) {
-                            baitItem.shrink(1);
-                        }
-                        if (baitItem.is(CDModTags.CREATURE_CHUMS)) {
-                            if (baitItem.getDamageValue() == 48) {
-                                baitItem.shrink(1);
-                                ItemStack bucketStack = new ItemStack(Items.BUCKET);
-                                this.insertItem(0, bucketStack, false);
-                            }
-                        }
-                        if (itemStack.isEmpty()) {
-                            break;
-                        }
+    public void addItemsAndShrinkBait(Level level, BlockPos pos, List<ItemStack> lootList, ItemStack baitItem, RandomSource random) {
+        for (ItemStack lootStack : lootList) {
+            if (lootStack.isEmpty()) continue;
+
+            for (int slot = 0; slot < getSlots(); slot++) {
+                if (!getStackInSlot(slot).isEmpty()) continue;
+
+                // Insert Loot
+                lootStack = insertItem(slot, lootStack, false);
+                level.playSound(null,
+                        pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D,
+                        SoundEvents.FISH_SWIM, SoundSource.BLOCKS,
+                        0.5F, 1.0F);
+
+                // Normal bait: just consume one
+                if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !baitItem.is(CDModTags.CHUMS)) {
+                    baitItem.shrink(1);
+                }
+
+                // Chums: use NeoForge durability API
+                if (baitItem.is(CDModTags.CHUMS)) {
+                    IItemExtension ext = (IItemExtension) baitItem.getItem();
+                    int curr  = ext.getDamage(baitItem);
+                    int max   = ext.getMaxDamage(baitItem);
+                    // apply one point of damage
+                    ext.setDamage(baitItem, curr + 1);
+                    // if it just broke, consume the stack and return bucket
+                    if (curr + 1 >= max) {
+                        baitItem.shrink(1);
+                        this.insertItem(0, new ItemStack(Items.BUCKET), false);
                     }
                 }
+
+                if (lootStack.isEmpty()) break;
             }
         }
     }
