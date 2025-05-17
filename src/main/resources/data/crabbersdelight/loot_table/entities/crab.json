@@ -13,9 +13,10 @@
           "name": "crabbersdelight:crab_claw",
           "conditions": [
             {
-              "condition": "minecraft:random_chance_with_looting",
-              "chance": 0.2,
-              "looting_multiplier": 2
+              "condition": "minecraft:random_chance_with_enchanted_bonus",
+              "unenchanted_chance": 0.2,
+              "enchantment": "minecraft:looting",
+              "enchanted_chance": 0.4
             }
           ]
         }
