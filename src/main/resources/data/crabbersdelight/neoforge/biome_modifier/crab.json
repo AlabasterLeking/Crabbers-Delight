@@ -9,7 +9,7 @@
   ],
   "spawners": {
     "type": "crabbersdelight:crab",
-    "weight": 10,
+    "weight": 20,
     "minCount": 2,
     "maxCount": 5
   }

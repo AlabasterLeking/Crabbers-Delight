@@ -9,9 +9,9 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 
 public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
+
 	public static final ModelLayerLocation LAYER_LOCATION =
 			new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "crab"), "main");
 
@@ -64,7 +64,7 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 		PartDefinition crab = partdefinition.addOrReplaceChild("crab", CubeListBuilder.create(), PartPose.offset(0.0F, 21.0F, 0.5F));
 
 		PartDefinition eye = crab.addOrReplaceChild("eye", CubeListBuilder.create().texOffs(5, 4).addBox(5.5F, -1.5F, 0.0F, 1.0F, 1.0F, 0.01F, new CubeDeformation(0.0F))
-		.texOffs(5, 5).addBox(-0.5F, -1.5F, 0.0F, 1.0F, 1.0F, 0.01F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, -1.5F, -3.5F));
+				.texOffs(5, 5).addBox(-0.5F, -1.5F, 0.0F, 1.0F, 1.0F, 0.01F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, -1.5F, -3.5F));
 
 		PartDefinition bigclaw = crab.addOrReplaceChild("bigclaw", CubeListBuilder.create(), PartPose.offset(5.5165F, -1.4879F, 1.2325F));
 
@@ -84,11 +84,11 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 
 		PartDefinition rantenna = antenna.addOrReplaceChild("rantenna", CubeListBuilder.create(), PartPose.offset(-2.0F, 0.0F, 0.0F));
 
-		PartDefinition rantenna_r1 = rantenna.addOrReplaceChild("rantenna_r1", CubeListBuilder.create().texOffs(5, 2).addBox(-0.5F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.3054F, 0.0F, 0.0F));
+		PartDefinition rantenna_r1 = rantenna.addOrReplaceChild("rantenna_r1", CubeListBuilder.create().texOffs(4, 2).addBox(-0.5F, -1.0F, -0.2F, 1.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0231F, 0.1503F, -0.3054F, 0.0F, 0.0F));
 
 		PartDefinition rantenna2 = antenna.addOrReplaceChild("rantenna2", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition rantenna2_r1 = rantenna2.addOrReplaceChild("rantenna2_r1", CubeListBuilder.create().texOffs(5, 2).addBox(-0.5F, -1.0F, 0.0F, 1.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.3054F, 0.0F, 0.0F));
+		PartDefinition rantenna2_r1 = rantenna2.addOrReplaceChild("rantenna2_r1", CubeListBuilder.create().texOffs(4, 2).addBox(-0.5F, -1.0F, -0.2F, 1.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0231F, 0.1503F, -0.3054F, 0.0F, 0.0F));
 
 		PartDefinition bodybase = crab.addOrReplaceChild("bodybase", CubeListBuilder.create().texOffs(0, 1).mirror().addBox(-4.5F, -2.0F, -3.5F, 9.0F, 4.0F, 7.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 0.0F, 0.0F));
 
@@ -128,27 +128,18 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 	@Override
 	public void setupAnim(CrabEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
-		this.applyHeadRotation(netHeadYaw, headPitch);
 
-		this.animateWalk(CrabAnimations.walk, limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.animateWalk(CrabAnimations.walk, limbSwing, limbSwingAmount, 2f, 5f);
 		this.animate(entity.idleAnimationState, CrabAnimations.idle, ageInTicks, 1f);
-	}
-
-	private void applyHeadRotation(float headYaw, float headPitch) {
-		headYaw = Mth.clamp(headYaw, -30f, 30f);
-		headPitch = Mth.clamp(headPitch, -25f, 45);
-
-		this.crab.yRot = headYaw * ((float)Math.PI / 180f);
-		this.crab.xRot = headPitch *  ((float)Math.PI / 180f);
 	}
 
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
-		bodybase.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+		crab.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
 	}
 
 	@Override
 	public ModelPart root() {
-		return bodybase;
+		return crab;
 	}
 }

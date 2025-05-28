@@ -29,8 +29,7 @@ import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
-import net.minecraft.world.item.crafting.CraftingInput;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
@@ -69,11 +68,8 @@ public class CrabEntity extends Animal implements Bucketable {
                 .add(Attributes.MOVEMENT_SPEED, 0.2f)
                 .add(Attributes.ATTACK_KNOCKBACK, 1.5f)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.5)
-                .add(Attributes.ATTACK_DAMAGE, 3.0f);
-    }
-
-    public static boolean checkSpawnRules(EntityType<CrabEntity> entityType, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos blockPos, RandomSource randomSource) {
-        return level.getBlockState(blockPos.below()).is(CDModTags.CRAB_SPAWN_ON);
+                .add(Attributes.ATTACK_DAMAGE, 3.0f)
+                .add(Attributes.FOLLOW_RANGE, 24D);
     }
 
     @Override
@@ -129,18 +125,56 @@ public class CrabEntity extends Animal implements Bucketable {
         this.entityData.set(FROM_BUCKET, compound.getBoolean("FromBucket"));
     }
 
+    @Override
     @Nullable
-    public CrabEntity getBreedOffspring(ServerLevel level, AgeableMob mob) {
-        CrabEntity crab = CDModEntities.CRAB.get().create(level);
-        if (crab != null) {
-            //crab.setColor(this.getOffspringColor(this, (CrabEntity)mob));
-        }
-        return crab;
+    public CrabEntity getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
+        CrabEntity baby = CDModEntities.CRAB.get().create(level);
+        if (!(otherParent instanceof CrabEntity otherCrab)) return baby;
+
+        DyeColor color1 = this.getVariant().getDyeColor();
+        DyeColor color2 = otherCrab.getVariant().getDyeColor();
+
+        DyeColor mixedColor = getMixedDyeColor(level, color1, color2);
+        baby.setVariant(CrabVariant.fromDyeColor(mixedColor != null ? mixedColor : color1));
+
+        return baby;
     }
 
-    private static CraftingInput makeCraftInput(DyeColor color1, DyeColor color2) {
-        return CraftingInput.of(2, 1, List.of(new ItemStack(DyeItem.byColor(color1)), new ItemStack(DyeItem.byColor(color2))));
+    @Nullable
+    private static DyeColor getMixedDyeColor(ServerLevel level, DyeColor color1, DyeColor color2) {
+        if (color1 == color2) return color1;
+
+        RecipeManager recipeManager = level.getRecipeManager();
+
+        for (RecipeHolder<CraftingRecipe> holder : recipeManager.getAllRecipesFor(RecipeType.CRAFTING)) {
+            CraftingRecipe recipe = holder.value();
+
+            if (recipe instanceof ShapelessRecipe shapeless
+                    && shapeless.getResultItem(level.registryAccess()).getItem() instanceof net.minecraft.world.item.DyeItem resultDye
+                    && shapeless.getIngredients().size() == 2) { // Only allow recipes with 2 ingredients
+
+                List<DyeColor> inputColors = shapeless.getIngredients().stream()
+                        .map(ingredient -> {
+                            ItemStack[] stacks = ingredient.getItems();
+                            if (stacks.length > 0 && stacks[0].getItem() instanceof net.minecraft.world.item.DyeItem dyeItem) {
+                                return dyeItem.getDyeColor();
+                            }
+                            return null;
+                        })
+                        .filter(c -> c != null)
+                        .toList();
+
+                if (inputColors.size() == 2 &&
+                        ((inputColors.get(0) == color1 && inputColors.get(1) == color2) ||
+                                (inputColors.get(0) == color2 && inputColors.get(1) == color1))) {
+                    return resultDye.getDyeColor();
+                }
+            }
+        }
+
+        return null;
     }
+
 
     private Ingredient getTemptationItems() {
         if (temptationItems == null)
@@ -232,7 +266,7 @@ public class CrabEntity extends Animal implements Bucketable {
 
     private void setupAnimationStates() {
         if(this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 80;
+            this.idleAnimationTimeout = 60;
             this.idleAnimationState.start(this.tickCount);
         } else {
             --this.idleAnimationTimeout;

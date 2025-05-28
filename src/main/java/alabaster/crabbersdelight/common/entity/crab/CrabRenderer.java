@@ -49,7 +49,7 @@ public class CrabRenderer extends MobRenderer<CrabEntity, CrabModel<CrabEntity>>
             });
 
     public CrabRenderer(EntityRendererProvider.Context context) {
-        super(context, new CrabModel(context.bakeLayer(CrabModel.LAYER_LOCATION)), 0.25f);
+        super(context, new CrabModel(context.bakeLayer(CrabModel.LAYER_LOCATION)), 0.3f);
     }
 
     @Override

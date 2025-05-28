@@ -59,4 +59,25 @@ public enum CrabVariant {
             case YELLOW -> CrabVariant.YELLOW;
         };
     }
+
+    public DyeColor getDyeColor() {
+        return switch (this) {
+            case BLACK -> DyeColor.BLACK;
+            case BLUE -> DyeColor.BLUE;
+            case BROWN -> DyeColor.BROWN;
+            case CYAN -> DyeColor.CYAN;
+            case GRAY -> DyeColor.GRAY;
+            case GREEN -> DyeColor.GREEN;
+            case LIGHT_BLUE -> DyeColor.LIGHT_BLUE;
+            case LIGHT_GRAY -> DyeColor.LIGHT_GRAY;
+            case LIME -> DyeColor.LIME;
+            case MAGENTA -> DyeColor.MAGENTA;
+            case ORANGE -> DyeColor.ORANGE;
+            case PINK -> DyeColor.PINK;
+            case PURPLE -> DyeColor.PURPLE;
+            case RED -> DyeColor.RED;
+            case WHITE -> DyeColor.WHITE;
+            case YELLOW -> DyeColor.YELLOW;
+        };
+    }
 }
