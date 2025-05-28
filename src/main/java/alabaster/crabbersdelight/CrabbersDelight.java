@@ -105,8 +105,12 @@ public class CrabbersDelight {
 
         @SubscribeEvent
         public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
-            event.register(CDModEntities.CRAB.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Animal::checkAnimalSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+            event.register(
+                    CDModEntities.CRAB.get(),
+                    SpawnPlacementTypes.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    CrabEntity::checkCrabSpawnRules,
+                    RegisterSpawnPlacementsEvent.Operation.REPLACE);
         }
     }
 }

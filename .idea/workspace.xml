@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fixes for crab trap and new datagen">
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModEntities.java" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Spawning fixed, worldgen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/forge/biome_modifier/crab.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/forge/biome_modifier/crab.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/neoforge/biome_modifier/crab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/crab/CrabEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/crab/CrabEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_table/entities/crab.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_table/entities/crab.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +186,7 @@
       <recent name="alabaster.crabbersdelight.common.entity" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="alabaster.crabbersdelight.common.entity.crab" />
       <recent name="alabaster.crabbersdelight.integration.jei" />
       <recent name="alabaster.crabbersdelight.client" />
     </key>
@@ -196,7 +196,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [build]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [runClient]">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -349,9 +349,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
+        <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
         <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [genIntellijRuns]" />
       </list>
@@ -365,30 +365,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Fixed Crab Trap chum logic to replace the bucket; Thank you MehVahdJukaar!">
-      <option name="closed" value="true" />
-      <created>1699834425564</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1699834425564</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Created chum bucket recipes and associated tags; re-generated data">
-      <option name="closed" value="true" />
-      <created>1699834473641</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1699834473641</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Increment Version for 1.20.1 release">
-      <option name="closed" value="true" />
-      <created>1699834593954</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1699834593954</updated>
     </task>
     <task id="LOCAL-00034" summary="Brain-blast">
       <option name="closed" value="true" />
@@ -758,7 +734,31 @@
       <option name="project" value="LOCAL" />
       <updated>1747062320966</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="New crabs, texture changes">
+      <option name="closed" value="true" />
+      <created>1748062193987</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1748062193987</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Fixed most of it - still can't spawn the mob tho">
+      <option name="closed" value="true" />
+      <created>1748395000331</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1748395000331</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Spawning fixed, worldgen">
+      <option name="closed" value="true" />
+      <created>1748452525407</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1748452525407</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -778,9 +778,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inky Potion Recipe not working yet :(" />
-    <MESSAGE value="Inky potion recipe finished with access transformer - temporarily removed arid and soggy flesh" />
-    <MESSAGE value="Removed the soggy and arid flesh recipes - reworked how tags are added - restarted JEI integration but it no work yet" />
     <MESSAGE value="Fixed issues with Crab Claw - updated zh_cn translation - increment mod version" />
     <MESSAGE value="Added Squid Tentacles and Frog Legs" />
     <MESSAGE value="Remade Crab Leg Texture" />
@@ -803,7 +800,25 @@
     <MESSAGE value="Initial 1.21 port - does not run" />
     <MESSAGE value="Beginning of refactoring" />
     <MESSAGE value="Fixes for crab trap and new datagen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes for crab trap and new datagen" />
+    <MESSAGE value="New crabs, texture changes" />
+    <MESSAGE value="Fixed most of it - still can't spawn the mob tho" />
+    <MESSAGE value="Spawning fixed, worldgen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spawning fixed, worldgen" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>jar://$PROJECT_DIR$/build/moddev/artifacts/neoforge-21.1.83-minecraft-merged.jar!/net/minecraft/world/entity/animal/Sheep.class</url>
+          <line>298</line>
+          <properties class="net.minecraft.world.entity.animal.Sheep" method="finalizeSpawn">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

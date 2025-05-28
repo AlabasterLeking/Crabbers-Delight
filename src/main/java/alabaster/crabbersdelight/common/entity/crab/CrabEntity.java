@@ -31,9 +31,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
@@ -90,6 +92,15 @@ public class CrabEntity extends Animal implements Bucketable {
             this.setVariant(CrabVariant.BLUE);
         }
         return super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
+    }
+
+    public static boolean checkCrabSpawnRules(EntityType<CrabEntity> type, ServerLevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+        BlockState stateBelow = level.getBlockState(pos.below());
+        return stateBelow.is(CDModTags.CRAB_SPAWN_ON);
+    }
+
+    public static boolean canCrabSpawn(EntityType<CrabEntity> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+        return level.getBlockState(pos.below()).is(CDModTags.CRAB_SPAWN_ON);
     }
 
     @Override
