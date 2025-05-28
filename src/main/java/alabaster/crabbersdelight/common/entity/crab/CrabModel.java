@@ -1,5 +1,6 @@
-package alabaster.crabbersdelight.common.entity;
+package alabaster.crabbersdelight.common.entity.crab;
 
+import alabaster.crabbersdelight.CrabbersDelight;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HierarchicalModel;
@@ -12,7 +13,7 @@ import net.minecraft.util.Mth;
 
 public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 	public static final ModelLayerLocation LAYER_LOCATION =
-			new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("crabbersdelight", "crab"), "main");
+			new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "crab"), "main");
 
 	private final ModelPart crab;
 	private final ModelPart eye;
@@ -129,7 +130,7 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.applyHeadRotation(netHeadYaw, headPitch);
 
-		this.animateWalk(CrabAnimations, limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.animateWalk(CrabAnimations.walk, limbSwing, limbSwingAmount, 2f, 2.5f);
 		this.animate(entity.idleAnimationState, CrabAnimations.idle, ageInTicks, 1f);
 	}
 

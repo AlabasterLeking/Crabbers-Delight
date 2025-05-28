@@ -1,4 +1,4 @@
-package alabaster.crabbersdelight.common.entity;
+package alabaster.crabbersdelight.common.entity.crab;
 
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;

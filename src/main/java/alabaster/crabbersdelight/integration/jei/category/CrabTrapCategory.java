@@ -63,7 +63,6 @@ public class CrabTrapCategory implements IRecipeCategory<CrabTrapRecipeWrapper> 
         return iconPosX <= mouseX && mouseX < iconPosX + iconWidth && iconPosY <= mouseY && mouseY < iconPosY + iconHeight;
     }
 
-    @Override
     public List<Component> getTooltipStrings(CrabTrapRecipeWrapper recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {        if (iconPosition(mouseX, mouseY)) {
             if (CrabTrapBlockEntity.getMinMax().getSecond() > CrabTrapBlockEntity.getMinMax().getFirst()) {
                 return ImmutableList.of(Component.literal("Collects every " + CrabTrapBlockEntity.getMinMax().getFirst() + "-" + CrabTrapBlockEntity.getMinMax().getSecond() + " ticks"));
