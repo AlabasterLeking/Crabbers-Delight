@@ -9,6 +9,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 
 public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 
@@ -16,6 +17,7 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 			new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "crab"), "main");
 
 	private final ModelPart crab;
+	private final ModelPart fullbody;
 	private final ModelPart eye;
 	private final ModelPart bigclaw;
 	private final ModelPart bigclawbottom;
@@ -37,15 +39,16 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 
 	public CrabModel(ModelPart root) {
 		this.crab = root.getChild("crab");
-		this.eye = this.crab.getChild("eye");
-		this.bigclaw = this.crab.getChild("bigclaw");
+		this.fullbody = this.crab.getChild("fullbody");
+		this.eye = this.fullbody.getChild("eye");
+		this.bigclaw = this.fullbody.getChild("bigclaw");
 		this.bigclawbottom = this.bigclaw.getChild("bigclawbottom");
 		this.bigclawtop = this.bigclaw.getChild("bigclawtop");
-		this.smallclaw = this.crab.getChild("smallclaw");
-		this.antenna = this.crab.getChild("antenna");
+		this.smallclaw = this.fullbody.getChild("smallclaw");
+		this.antenna = this.fullbody.getChild("antenna");
 		this.rantenna = this.antenna.getChild("rantenna");
 		this.rantenna2 = this.antenna.getChild("rantenna2");
-		this.bodybase = this.crab.getChild("bodybase");
+		this.bodybase = this.fullbody.getChild("bodybase");
 		this.legs = this.crab.getChild("legs");
 		this.rlegs = this.legs.getChild("rlegs");
 		this.rleg1 = this.rlegs.getChild("rleg1");
@@ -63,10 +66,12 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 
 		PartDefinition crab = partdefinition.addOrReplaceChild("crab", CubeListBuilder.create(), PartPose.offset(0.0F, 21.0F, 0.5F));
 
-		PartDefinition eye = crab.addOrReplaceChild("eye", CubeListBuilder.create().texOffs(5, 4).addBox(5.5F, -1.5F, 0.0F, 1.0F, 1.0F, 0.01F, new CubeDeformation(0.0F))
-				.texOffs(5, 5).addBox(-0.5F, -1.5F, 0.0F, 1.0F, 1.0F, 0.01F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, -1.5F, -3.5F));
+		PartDefinition fullbody = crab.addOrReplaceChild("fullbody", CubeListBuilder.create(), PartPose.offset(-3.0F, -1.5F, -3.5F));
 
-		PartDefinition bigclaw = crab.addOrReplaceChild("bigclaw", CubeListBuilder.create(), PartPose.offset(5.5165F, -1.4879F, 1.2325F));
+		PartDefinition eye = fullbody.addOrReplaceChild("eye", CubeListBuilder.create().texOffs(5, 4).addBox(5.5F, -1.5F, 0.0F, 1.0F, 1.0F, 0.01F, new CubeDeformation(0.0F))
+				.texOffs(5, 5).addBox(-0.5F, -1.5F, 0.0F, 1.0F, 1.0F, 0.01F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+		PartDefinition bigclaw = fullbody.addOrReplaceChild("bigclaw", CubeListBuilder.create(), PartPose.offset(8.5165F, 0.0121F, 4.7325F));
 
 		PartDefinition bigclawbottom = bigclaw.addOrReplaceChild("bigclawbottom", CubeListBuilder.create(), PartPose.offset(0.2405F, -0.0456F, -0.4621F));
 
@@ -76,11 +81,11 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 
 		PartDefinition bigclawtop_r1 = bigclawtop.addOrReplaceChild("bigclawtop_r1", CubeListBuilder.create().texOffs(0, 22).addBox(-1.9506F, -2.8472F, -7.3965F, 4.0F, 3.0F, 7.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.1835F, -0.5658F, 0.0179F));
 
-		PartDefinition smallclaw = crab.addOrReplaceChild("smallclaw", CubeListBuilder.create(), PartPose.offset(-5.5396F, -0.2816F, 0.7473F));
+		PartDefinition smallclaw = fullbody.addOrReplaceChild("smallclaw", CubeListBuilder.create(), PartPose.offset(-2.5396F, 1.2184F, 4.2473F));
 
 		PartDefinition smallclaw_r1 = smallclaw.addOrReplaceChild("smallclaw_r1", CubeListBuilder.create().texOffs(0, 12).addBox(-1.2717F, -1.1118F, -4.1902F, 3.0F, 3.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.1835F, 0.5658F, -0.0179F));
 
-		PartDefinition antenna = crab.addOrReplaceChild("antenna", CubeListBuilder.create(), PartPose.offset(1.0F, -1.5231F, -3.6503F));
+		PartDefinition antenna = fullbody.addOrReplaceChild("antenna", CubeListBuilder.create(), PartPose.offset(4.0F, -0.0231F, -0.1503F));
 
 		PartDefinition rantenna = antenna.addOrReplaceChild("rantenna", CubeListBuilder.create(), PartPose.offset(-2.0F, 0.0F, 0.0F));
 
@@ -90,7 +95,7 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 
 		PartDefinition rantenna2_r1 = rantenna2.addOrReplaceChild("rantenna2_r1", CubeListBuilder.create().texOffs(4, 2).addBox(-0.5F, -1.0F, -0.2F, 1.0F, 2.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0231F, 0.1503F, -0.3054F, 0.0F, 0.0F));
 
-		PartDefinition bodybase = crab.addOrReplaceChild("bodybase", CubeListBuilder.create().texOffs(0, 1).mirror().addBox(-4.5F, -2.0F, -3.5F, 9.0F, 4.0F, 7.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition bodybase = fullbody.addOrReplaceChild("bodybase", CubeListBuilder.create().texOffs(0, 1).mirror().addBox(-4.5F, -2.0F, -3.5F, 9.0F, 4.0F, 7.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(3.0F, 1.5F, 3.5F));
 
 		PartDefinition legs = crab.addOrReplaceChild("legs", CubeListBuilder.create(), PartPose.offset(-4.9759F, 2.5095F, 0.0F));
 
@@ -128,9 +133,17 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 	@Override
 	public void setupAnim(CrabEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
-
+		this.applyHeadRotation(netHeadYaw, headPitch);
 		this.animateWalk(CrabAnimations.walk, limbSwing, limbSwingAmount, 2f, 5f);
 		this.animate(entity.idleAnimationState, CrabAnimations.idle, ageInTicks, 1f);
+	}
+
+	private void applyHeadRotation(float headYaw, float headPitch) {
+		headYaw = Mth.clamp(headYaw, -30f, 30f);
+		headPitch = Mth.clamp(headPitch, -25f, 45);
+
+		this.crab.yRot = headYaw * ((float)Math.PI / 180f);
+		this.crab.xRot = headPitch *  ((float)Math.PI / 180f);
 	}
 
 	@Override

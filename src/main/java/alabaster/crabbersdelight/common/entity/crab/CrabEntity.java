@@ -57,11 +57,13 @@ public class CrabEntity extends Animal implements Bucketable {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(0, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 2.0));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0));
         this.goalSelector.addGoal(3, new TemptGoal(this, 0.75, getTemptationItems(), false));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.1));
-        this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.0));
+        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1.0));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -71,7 +73,44 @@ public class CrabEntity extends Animal implements Bucketable {
                 .add(Attributes.ATTACK_KNOCKBACK, 1.5f)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.5)
                 .add(Attributes.ATTACK_DAMAGE, 3.0f)
-                .add(Attributes.FOLLOW_RANGE, 24D);
+                .add(Attributes.FOLLOW_RANGE, 24D)
+                .add(Attributes.WATER_MOVEMENT_EFFICIENCY, 1);
+    }
+
+    @Override
+    public int getMaxAirSupply() {
+        return 6000;
+    }
+
+    protected void handleAirSupply(int airSupply) {
+        if (this.isAlive() && !this.isInWaterRainOrBubble()) {
+            this.setAirSupply(airSupply - 1);
+            if (this.getAirSupply() == -20) {
+                this.setAirSupply(0);
+                this.hurt(this.damageSources().dryOut(), 2.0F);
+            }
+        } else {
+            this.setAirSupply(this.getMaxAirSupply());
+        }
+    }
+
+    @Override
+    public void baseTick() {
+        int i = this.getAirSupply();
+        super.baseTick();
+        if (!this.isNoAi()) {
+            this.handleAirSupply(i);
+        }
+    }
+
+    @Override
+    protected boolean isAffectedByFluids() {
+        return false;
+    }
+
+    @Override
+    public boolean isPushedByFluid(FluidType type) {
+        return false;
     }
 
     @Override
@@ -186,18 +225,12 @@ public class CrabEntity extends Animal implements Bucketable {
         return null;
     }
 
-
     private Ingredient getTemptationItems() {
         if (temptationItems == null)
             temptationItems = Ingredient.of(
                     CDModTags.CRAB_TEMPT_ITEM);
 
         return temptationItems;
-    }
-
-    @Override
-    public boolean isPushedByFluid(FluidType type) {
-        return false;
     }
 
     @Override
