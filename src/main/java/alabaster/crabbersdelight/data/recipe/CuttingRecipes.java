@@ -7,6 +7,7 @@ import net.minecraft.world.level.block.Blocks;
 import alabaster.crabbersdelight.common.registry.CDModItems;
 import net.neoforged.neoforge.common.ItemAbilities;
 import vectorwing.farmersdelight.common.crafting.ingredient.ItemAbilityIngredient;
+import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
@@ -20,16 +21,32 @@ public class CuttingRecipes {
     }
 
     private static void cuttingAnimalItems(RecipeOutput output) {
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.COD), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COD_SLICE.get(), 2)
+                .addResult(CDModItems.FISH_BONES.get())
+                .build(output);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.COOKED_COD), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COOKED_COD_SLICE.get(), 2)
+                .addResult(CDModItems.FISH_BONES.get())
+                .build(output);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.SALMON), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.SALMON_SLICE.get(), 2)
+                .addResult(CDModItems.FISH_BONES.get())
+                .build(output);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.COOKED_SALMON), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COOKED_SALMON_SLICE.get(), 2)
+                .addResult(CDModItems.FISH_BONES.get())
+                .build(output);
+
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.TROPICAL_FISH), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.TROPICAL_FISH_SLICE.get(), 2)
-                .addResult(Items.BONE_MEAL)
+                .addResult(CDModItems.FISH_BONES.get())
                 .build(output);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.COOKED_TROPICAL_FISH.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.COOKED_TROPICAL_FISH_SLICE.get(), 2)
-                .addResult(Items.BONE_MEAL)
+                .addResult(CDModItems.FISH_BONES.get())
                 .build(output);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.PUFFERFISH), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.PUFFERFISH_SLICE.get(), 2)
-                .addResult(Items.BONE_MEAL)
+                .addResult(CDModItems.FISH_BONES.get())
                 .build(output);
 
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.COOKED_CRAB.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.CRAB_LEGS.get(), 4)

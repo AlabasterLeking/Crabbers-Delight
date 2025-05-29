@@ -52,6 +52,7 @@
   "item.crabbersdelight.pearl": "Pearl",
   "item.crabbersdelight.can": "Can",
   "item.crabbersdelight.coral_fragments": "Coral Fragments",
+  "item.crabbersdelight.fish_bones": "Fish Bones",
 
   "item.minecraft.potion.effect.inky_potion": "Potion of Inkiness",
   "item.minecraft.splash_potion.effect.inky_potion": "Splash Potion of Inkiness",
@@ -83,6 +84,8 @@
   "block.crabbersdelight.lanternfish_barrel": "Lanternfish Barrel",
   "block.crabbersdelight.nautilus_shell_block": "Nautilus Shell Block",
   "block.crabbersdelight.pearl_block": "Pearl Block",
+  "block.crabbersdelight.scute_block": "Scute Block",
+  "block.crabbersdelight.sea_pickle_crate": "Sea Pickle Crate",
 
   "entity.crabbersdelight.crab": "Crab",
 

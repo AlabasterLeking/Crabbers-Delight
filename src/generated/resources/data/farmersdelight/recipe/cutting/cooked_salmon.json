@@ -2,14 +2,14 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "minecraft:pufferfish"
+      "item": "minecraft:cooked_salmon"
     }
   ],
   "result": [
     {
       "item": {
         "count": 2,
-        "id": "crabbersdelight:pufferfish_slice"
+        "id": "farmersdelight:cooked_salmon_slice"
       }
     },
     {

@@ -126,6 +126,22 @@ public class CraftingRecipes {
                 .unlockedBy("has_pearl", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PEARL.get()))
                 .save(output);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CDModItems.SCUTE_BLOCK.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.TURTLE_SCUTE)
+                .unlockedBy("has_scute", InventoryChangeTrigger.TriggerInstance.hasItems(Items.TURTLE_SCUTE))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CDModItems.SEA_PICKLE_CRATE.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.SEA_PICKLE)
+                .unlockedBy("has_sea_pickle", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
+                .save(output);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CDModItems.CRAB_TRAP.get(), 1)
                 .pattern("nsn")
                 .pattern("s s")
@@ -202,6 +218,21 @@ public class CraftingRecipes {
                 .requires(CDModItems.PEARL_BLOCK.get())
                 .unlockedBy("has_pearl_block", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PEARL_BLOCK.get()))
                 .save(output, ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "pearl_from_block"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.TURTLE_SCUTE, 9)
+                .requires(CDModItems.SCUTE_BLOCK.get())
+                .unlockedBy("has_scute_block", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.SCUTE_BLOCK.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "scute_from_block"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SEA_PICKLE, 9)
+                .requires(CDModItems.SEA_PICKLE_CRATE.get())
+                .unlockedBy("has_sea_pickle_block", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.SEA_PICKLE_CRATE.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "sea_pickle_from_block"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
+                .requires(CDModItems.FISH_BONES.get())
+                .unlockedBy("has_fish_bones", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.FISH_BONES.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "bone_meal_from_fish_bones"));
 
     }
 

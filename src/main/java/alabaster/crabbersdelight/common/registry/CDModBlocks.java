@@ -6,6 +6,7 @@ import alabaster.crabbersdelight.common.block.NautilusShellBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -60,6 +61,13 @@ public class CDModBlocks {
 
     public static final Supplier<Block> PEARL_BLOCK = BLOCKS.register("pearl_block",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.PRISMARINE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
+
+    public static final Supplier<Block> SCUTE_BLOCK = BLOCKS.register("scute_block",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.PRISMARINE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
+
+    public static final Supplier<Block> SEA_PICKLE_CRATE = BLOCKS.register("sea_pickle_crate",
+            () -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+
 
     // Feast
 }

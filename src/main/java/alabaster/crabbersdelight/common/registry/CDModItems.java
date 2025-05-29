@@ -76,6 +76,8 @@ public class CDModItems {
             () -> new Item(basicItem()));
     public static final Supplier<Item> CORAL_FRAGMENTS = registerWithTab("coral_fragments",
             () -> new Item(basicItem()));
+    public static final Supplier<Item> FISH_BONES = registerWithTab("fish_bones",
+            () -> new Item(basicItem()));
 
     // Tools
     public static final Supplier<Item> BUCKET_OF_CRAB_CHUM = registerWithTab("bucket_of_crab_chum",
@@ -206,6 +208,10 @@ public class CDModItems {
             () -> new BlockItem(CDModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem()));
     public static final Supplier<Item> PEARL_BLOCK = registerWithTab("pearl_block",
             () -> new BlockItem(CDModBlocks.PEARL_BLOCK.get(), basicItem()));
+    public static final Supplier<Item> SCUTE_BLOCK = registerWithTab("scute_block",
+            () -> new BlockItem(CDModBlocks.SCUTE_BLOCK.get(), basicItem()));
+    public static final Supplier<Item> SEA_PICKLE_CRATE = registerWithTab("sea_pickle_crate",
+            () -> new BlockItem(CDModBlocks.SEA_PICKLE_CRATE.get(), basicItem()));
 
     // Crab Trap
     public static final Supplier<Item> CRAB_TRAP = registerWithTab("crab_trap",

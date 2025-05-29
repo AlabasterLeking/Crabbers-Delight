@@ -90,7 +90,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(Items.NAUTILUS_SHELL)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
-                .add(CDModItems.CAN.get());
+                .add(CDModItems.CAN.get())
+                .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.SALMON)
                 .add(CDModItems.RAW_CLAWSTER.get())
@@ -98,7 +99,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(Items.NAUTILUS_SHELL)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
-                .add(CDModItems.CAN.get());
+                .add(CDModItems.CAN.get())
+                .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.PUFFERFISH)
                 .add(CDModItems.RAW_SHRIMP.get())
@@ -107,7 +109,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
                 .add(CDModItems.CAN.get())
-                .add(CDModItems.CORAL_FRAGMENTS.get());
+                .add(CDModItems.CORAL_FRAGMENTS.get())
+                .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.TROPICAL_FISH)
                 .add(CDModItems.CLAM.get())
@@ -116,7 +119,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
                 .add(CDModItems.CAN.get())
-                .add(CDModItems.CORAL_FRAGMENTS.get());
+                .add(CDModItems.CORAL_FRAGMENTS.get())
+                .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.BUCKET_OF_CRAB_CHUM)
                 .add(CDModItems.RAW_CRAB.get());
@@ -137,6 +141,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(CDModItems.RAW_SHRIMP.get())
                 .add(CDModItems.CLAM.get())
                 .add(CDModItems.RAW_CLAWSTER.get())
-                .add(CDModItems.RAW_CRAB.get());
+                .add(CDModItems.RAW_CRAB.get())
+                .add(CDModItems.FISH_BONES.get());
     }
 }
