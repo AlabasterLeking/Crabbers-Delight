@@ -6,7 +6,6 @@ import alabaster.crabbersdelight.common.entity.crab.CrabModel;
 import alabaster.crabbersdelight.common.entity.crab.CrabRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.SpawnPlacementTypes;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -94,16 +93,6 @@ public class CrabbersDelight {
         }
 
         @SubscribeEvent
-        public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-            event.registerLayerDefinition(CrabModel.LAYER_LOCATION, CrabModel::createBodyLayer);
-        }
-
-        @SubscribeEvent
-        public static void registerAttributes(EntityAttributeCreationEvent event) {
-            event.put(CDModEntities.CRAB.get(), CrabEntity.createAttributes().build());
-        }
-
-        @SubscribeEvent
         public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
             event.register(
                     CDModEntities.CRAB.get(),
@@ -111,6 +100,20 @@ public class CrabbersDelight {
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     CrabEntity::checkCrabSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        }
+    }
+
+
+    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD)
+    public class ModEventBusEvents {
+        @SubscribeEvent
+        public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(CrabModel.LAYER_LOCATION, CrabModel::createBodyLayer);
+        }
+
+        @SubscribeEvent
+        public static void registerAttributes(EntityAttributeCreationEvent event) {
+            event.put(CDModEntities.CRAB.get(), CrabEntity.createAttributes().build());
         }
     }
 }
