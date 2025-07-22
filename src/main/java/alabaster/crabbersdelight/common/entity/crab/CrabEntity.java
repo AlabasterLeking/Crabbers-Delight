@@ -79,19 +79,11 @@ public class CrabEntity extends Animal implements Bucketable {
 
     @Override
     public int getMaxAirSupply() {
-        return 6000;
+        return 100;
     }
 
     protected void handleAirSupply(int airSupply) {
-        if (this.isAlive() && !this.isInWaterRainOrBubble()) {
-            this.setAirSupply(airSupply - 1);
-            if (this.getAirSupply() == -20) {
-                this.setAirSupply(0);
-                this.hurt(this.damageSources().dryOut(), 2.0F);
-            }
-        } else {
-            this.setAirSupply(this.getMaxAirSupply());
-        }
+        this.setAirSupply(this.getMaxAirSupply());
     }
 
     @Override
