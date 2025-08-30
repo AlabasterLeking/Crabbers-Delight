@@ -6,6 +6,7 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -15,10 +16,22 @@ import static alabaster.crabbersdelight.common.tags.CDModTags.*;
 
 public class CraftingRecipes {
     public static void register(RecipeOutput output) {
+        recipesTools(output);
         recipesBlocks(output);
         recipesMaterials(output);
         recipesCraftedMeals(output);
         SpecialRecipeBuilder.special(FoodServingRecipe::new).save(output, "food_serving");
+    }
+
+    private static void recipesTools(RecipeOutput output) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.PEARL_NECKLACE.get(), 1)
+                .pattern(" P ")
+                .pattern("PSP")
+                .pattern(" P ")
+                .define('P', CDModItems.PEARL.get())
+                .define('S', Items.STRING)
+                .unlockedBy("has_pearl", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PEARL.get()))
+                .save(output);
     }
 
     private static void recipesBlocks(RecipeOutput output) {

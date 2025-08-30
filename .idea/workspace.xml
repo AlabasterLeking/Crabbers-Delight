@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Spawning fixed, worldgen">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Crabbers-Delight.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Crabbers-Delight.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/crab/CrabEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/crab/CrabEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_table/entities/crab.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_table/entities/crab.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/nautilus_shell_block_front.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/nautilus_shell_block_front.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/pearl_block.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/pearl_block.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/shrimp_barrel_top.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/shrimp_barrel_top.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/cooked_shrimp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/cooked_shrimp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/jar_of_pickles.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/jar_of_pickles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/pearl.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/pearl.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/shrimp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/shrimp.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,69 +47,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build setup" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="documentation" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="help" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="jarjar" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="mod development" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="publishing" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Crabbers-Delight" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -196,7 +146,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [runClient]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [runData]">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -349,8 +299,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
+        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
         <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [genIntellijRuns]" />
@@ -811,7 +761,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>jar://$PROJECT_DIR$/build/moddev/artifacts/neoforge-21.1.83-minecraft-merged.jar!/net/minecraft/world/entity/animal/Sheep.class</url>
           <line>298</line>
-          <properties class="net.minecraft.world.entity.animal.Sheep" method="finalizeSpawn">
+          <properties class="net.minecraft.world.entity.animal.Sheep">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
