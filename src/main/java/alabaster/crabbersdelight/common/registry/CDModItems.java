@@ -91,7 +91,7 @@ public class CDModItems {
     public static final Supplier<Item> CRAB_CLAW = registerWithTab("crab_claw",
             () -> new CrabClawItem(basicItem()));
     public static final Supplier<Item> PEARL_NECKLACE = registerWithTab("pearl_necklace",
-            () -> new ArmorItem(ArmorMaterials.TURTLE, ArmorItem.Type.BODY, basicItem()));
+            () -> new PearlNecklaceItem(ArmorMaterials.TURTLE, ArmorItem.Type.HELMET, basicItem().stacksTo(1).durability(100)));
 
     // Raw / Cooked Meats
     public static final Supplier<Item> RAW_CRAB = registerWithTab("crab",
