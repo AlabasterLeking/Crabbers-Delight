@@ -143,5 +143,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(CDModItems.RAW_CLAWSTER.get())
                 .add(CDModItems.RAW_CRAB.get())
                 .add(CDModItems.FISH_BONES.get());
+
+        tag(net.minecraft.tags.ItemTags.TRIM_MATERIALS)
+                .add(CDModItems.PEARL.get());
     }
 }

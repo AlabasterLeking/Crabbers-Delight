@@ -140,5 +140,7 @@
   "tag.item.crabbersdelight.jei_display_results.minecraft.cod": "Cod Bait",
   "tag.item.crabbersdelight.jei_display_results.minecraft.pufferfish": "Pufferfish Bait",
   "tag.item.crabbersdelight.jei_display_results.minecraft.salmon": "Salmon Bait",
-  "tag.item.crabbersdelight.jei_display_results.minecraft.tropical_fish": "Tropical Fish Bait"
+  "tag.item.crabbersdelight.jei_display_results.minecraft.tropical_fish": "Tropical Fish Bait",
+
+  "trim_material.crabbersdelight.pearl": "Pearl Material"
 }
