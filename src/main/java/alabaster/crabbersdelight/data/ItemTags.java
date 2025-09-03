@@ -103,7 +103,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.PUFFERFISH)
-                .add(CDModItems.RAW_SHRIMP.get())
+                .add(CDModItems.CLAM.get())
                 .add(Items.STICK)
                 .add(Items.NAUTILUS_SHELL)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
@@ -113,7 +113,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.TROPICAL_FISH)
-                .add(CDModItems.CLAM.get())
+                .add(CDModItems.RAW_SHRIMP.get())
                 .add(Items.STICK)
                 .add(Items.NAUTILUS_SHELL)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
