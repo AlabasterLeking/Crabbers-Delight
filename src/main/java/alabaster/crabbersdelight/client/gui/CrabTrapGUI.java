@@ -17,8 +17,8 @@ public class CrabTrapGUI extends AbstractContainerScreen<CrabTrapMenu> {
     public CrabTrapGUI(CrabTrapMenu menu, Inventory playerInv, Component title) {
         super(menu, playerInv, title);
         this.imageWidth = 176;
-        this.imageHeight = 182;
-        this.inventoryLabelY = 90;
+        this.imageHeight = 147;
+        this.inventoryLabelY = 54;
     }
 
     @Override
