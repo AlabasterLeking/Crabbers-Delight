@@ -2,6 +2,7 @@ package alabaster.crabbersdelight.common.block;
 
 import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
 import alabaster.crabbersdelight.common.registry.CDModBlockEntity;
+import alabaster.crabbersdelight.common.utils.CDTextUtils;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -30,6 +31,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
+import static alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity.isSurroundedByWater;
+
 public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
 
     public static final MapCodec<CrabTrapBlock> CODEC = simpleCodec(CrabTrapBlock::new);
@@ -54,7 +57,15 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
             if (tileEntity instanceof CrabTrapBlockEntity crabTrapBlockEntity) {
                 if (player instanceof ServerPlayer serverplayer) {
                     if (state.getValue(WATERLOGGED) == Boolean.TRUE || state.getValue(HANGING) == Boolean.TRUE) {
-                        serverplayer.openMenu(crabTrapBlockEntity, pos);
+                        if (isSurroundedByWater(level, pos) == Boolean.TRUE) {
+                            serverplayer.openMenu(crabTrapBlockEntity, pos);
+                        }
+                        else {
+                            player.displayClientMessage(CDTextUtils.getTranslation("block.crab_trap.insufficient_surrounding_water"), true);
+                        }
+                    }
+                    else {
+                        player.displayClientMessage(CDTextUtils.getTranslation("block.crab_trap.not_waterlogged"), true);
                     }
                 }
             }

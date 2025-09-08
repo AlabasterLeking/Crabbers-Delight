@@ -18,50 +18,60 @@ import java.util.List;
 public class CrabTrapItemHandler extends ItemStackHandler {
 
     public CrabTrapItemHandler() {
-        super(28);
+        super(10);
     }
 
     public void addItemsAndShrinkBait(Level level, BlockPos pos, List<ItemStack> lootList, ItemStack baitItem, RandomSource random) {
+        boolean insertedAny = false;
+
         for (ItemStack lootStack : lootList) {
             if (lootStack.isEmpty()) continue;
 
             for (int slot = 0; slot < getSlots(); slot++) {
-                if (!getStackInSlot(slot).isEmpty()) continue;
+                // Try inserting into this slot (stacking OR filling empty slots)
+                ItemStack remainder = insertItem(slot, lootStack, false);
 
-                // Insert Loot
-                lootStack = insertItem(slot, lootStack, false);
-                level.playSound(null,
-                        pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D,
-                        SoundEvents.FISH_SWIM, SoundSource.BLOCKS,
-                        0.5F, 1.0F);
-
-                // Normal bait: just consume one
-                if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !baitItem.is(CDModTags.CHUMS)) {
-                    baitItem.shrink(1);
+                if (remainder.getCount() != lootStack.getCount()) {
+                    // Something was inserted
+                    insertedAny = true;
                 }
 
-                // Chums: use NeoForge durability API
-                if (baitItem.is(CDModTags.CHUMS)) {
-                    IItemExtension ext = (IItemExtension) baitItem.getItem();
-                    int curr  = ext.getDamage(baitItem);
-                    int max   = ext.getMaxDamage(baitItem);
-                    // apply one point of damage
-                    ext.setDamage(baitItem, curr + 1);
-                    // if it just broke, consume the stack and return bucket
-                    if (curr + 1 >= max) {
-                        baitItem.shrink(1);
-                        this.insertItem(0, new ItemStack(Items.BUCKET), false);
-                    }
-                }
-
-                if (lootStack.isEmpty()) break;
+                lootStack = remainder;
+                if (lootStack.isEmpty()) break; // fully inserted
             }
+
+            if (!lootStack.isEmpty()) {
+                // Couldn’t insert this lootStack anywhere -> skip to next
+                continue;
+            }
+
+            // If loot was successfully added, consume/damage bait
+            if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !baitItem.is(CDModTags.CHUMS)) {
+                baitItem.shrink(1);
+            } else if (baitItem.is(CDModTags.CHUMS)) {
+                IItemExtension ext = (IItemExtension) baitItem.getItem();
+                int curr = ext.getDamage(baitItem);
+                int max = ext.getMaxDamage(baitItem);
+                ext.setDamage(baitItem, curr + 1);
+                if (curr + 1 >= max) {
+                    baitItem.shrink(1);
+                    this.insertItem(0, new ItemStack(Items.BUCKET), false);
+                }
+            }
+        }
+
+        // Play sound only if at least one item was inserted
+        if (insertedAny) {
+            level.playSound(null,
+                    pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D,
+                    SoundEvents.FISH_SWIM, SoundSource.BLOCKS,
+                    0.5F, 1.0F);
         }
     }
 
     @Override
     protected int getStackLimit(int slot, ItemStack stack) {
-        return slot != 0 ? 1 : stack.getMaxStackSize();
+        return slot != 0 ? 8 : stack.getMaxStackSize();
     }
 
     @Override

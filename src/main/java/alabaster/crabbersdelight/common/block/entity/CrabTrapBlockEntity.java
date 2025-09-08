@@ -59,7 +59,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     };
 
     private final IItemHandler input = new RangedWrapper(this.handler, 0, 1);
-    private final IItemHandler output = new RangedWrapper(this.handler, 1, 28);
+    private final IItemHandler output = new RangedWrapper(this.handler, 1, 10);
     private int tickCounter = 0;
 
     public CrabTrapBlockEntity(BlockPos pos, BlockState state) {
@@ -151,7 +151,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         return false;
     }
 
-    private static boolean isSurroundedByWater(Level level, BlockPos pos) {
+    public static boolean isSurroundedByWater(Level level, BlockPos pos) {
         if (Config.REQUIRE_SURROUNDING_WATER.get()) {
             for (BlockPos nearbyPos : BlockPos.betweenClosed(pos.offset(-1, 0, -1), pos.offset(1, 0, 1))) {
                 if (!level.getFluidState(nearbyPos).is(FluidTags.WATER)) {
