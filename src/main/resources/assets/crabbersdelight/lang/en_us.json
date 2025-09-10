@@ -42,8 +42,8 @@
   "item.crabbersdelight.shrimp_fried_rice": "Shrimp Fried Rice",
   "item.crabbersdelight.jar_of_pickles": "Jar of Pickles",
   "item.crabbersdelight.sea_pickle_juice": "Sea Pickle Juice",
-  "item.crabbersdelight.squid_kebob": "Squid Kebob",
-  "item.crabbersdelight.frog_leg_kebob": "Frog Leg Kebob",
+  "item.crabbersdelight.squid_kebab": "Squid Kebab",
+  "item.crabbersdelight.frog_leg_kebab": "Frog Leg Kebab",
   "item.crabbersdelight.coral_crunch": "Coral Crunch",
 
   "item.crabbersdelight.soggy_flesh": "Soggy Flesh",
@@ -52,6 +52,7 @@
   "item.crabbersdelight.pearl": "Pearl",
   "item.crabbersdelight.can": "Can",
   "item.crabbersdelight.coral_fragments": "Coral Fragments",
+  "item.crabbersdelight.fish_bones": "Fish Bones",
 
   "item.minecraft.potion.effect.inky_potion": "Potion of Inkiness",
   "item.minecraft.splash_potion.effect.inky_potion": "Splash Potion of Inkiness",
@@ -64,6 +65,7 @@
   "item.crabbersdelight.bucket_of_shrimp_chum": "Bucket of Shrimp Chum",
 
   "item.crabbersdelight.crab_claw": "Crab Claw",
+  "item.crabbersdelight.pearl_necklace": "Pearl Necklace",
 
   "item.crabbersdelight.crab_spawn_egg": "Spawn Crab",
   "item.crabbersdelight.crab_bucket": "Crab Bucket",
@@ -80,10 +82,11 @@
   "block.crabbersdelight.squid_barrel": "Squid Barrel",
   "block.crabbersdelight.glow_squid_barrel": "Glow Squid Barrel",
   "block.crabbersdelight.frog_leg_barrel": "Frog Leg Barrel",
-  "block.crabbersdelight.sea_pickle_crate": "Sea Pickle Crate",
   "block.crabbersdelight.lanternfish_barrel": "Lanternfish Barrel",
   "block.crabbersdelight.nautilus_shell_block": "Nautilus Shell Block",
   "block.crabbersdelight.pearl_block": "Pearl Block",
+  "block.crabbersdelight.scute_block": "Scute Block",
+  "block.crabbersdelight.sea_pickle_crate": "Sea Pickle Crate",
 
   "entity.crabbersdelight.crab": "Crab",
 
@@ -93,19 +96,19 @@
   "crabbersdelight.advancement.root.desc": "A seafood adventure awaits you!",
 
   "crabbersdelight.advancement.craft_crab_trap": "It's a Trap!",
-  "crabbersdelight.advancement.craft_crab_trap.desc": "Use rope, slabs, and sticks to make your first crab trap",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "Use Rope, Slabs, and Sticks to make your first Crab Trap",
 
   "crabbersdelight.advancement.cook_crustaceans": "Crustacean Cooking Station",
-  "crabbersdelight.advancement.cook_crustaceans.desc": "Cook crabs, shrimp, and clawster by boiling them in a cooking pot",
+  "crabbersdelight.advancement.cook_crustaceans.desc": "Cook Crabs, Shrimp, and Clawster by boiling them in a Cooking Pot",
 
   "crabbersdelight.advancement.get_pearl": "Sweet Mother of Pearl!",
-  "crabbersdelight.advancement.get_pearl.desc": "Obtain your first pearl by cutting clams on a cutting board. Maybe a mysterious trader will find it valuable...",
+  "crabbersdelight.advancement.get_pearl.desc": "Obtain your first Pearl by cutting Clams on a Cutting Board. Maybe a mysterious trader will find it valuable...",
 
   "crabbersdelight.advancement.a_shrimp_fried_this_rice": "A Shrimp Fried This Rice?!",
   "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "You seriously mean to tell me a SHRIMP fried this rice?! Impossible",
 
   "crabbersdelight.advancement.reach_for_the_sea_stars": "Reach For The Sea-Stars!",
-  "crabbersdelight.advancement.reach_for_the_sea_stars.desc": "Obtain a crab claw and extend your reach",
+  "crabbersdelight.advancement.reach_for_the_sea_stars.desc": "Obtain a Crab Claw and extend your reach",
 
   "crabbersdelight.advancement.frog_killer": "Tastes Like Chicken",
   "crabbersdelight.advancement.frog_killer.desc": "Use a Knife to retrieve Frog Legs from a Frog",
@@ -117,5 +120,28 @@
   "crabbersdelight.advancement.glow_squid_killer.desc": "Use a Knife to retrieve Glow Squid Tentacles from a Glow Squid",
 
   "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water to function!",
-  "crabbersdelight.block.crab_trap.insufficient_surrounding_water": "Crab trap needs a 3x3 of water surrounding it to function!"
+  "crabbersdelight.block.crab_trap.insufficient_surrounding_water": "Crab trap needs a 3x3 of water surrounding it to function!",
+
+  "tag.item.crabbersdelight.raw_seafood": "Raw Seafood",
+  "tag.item.crabbersdelight.cooked_seafood": "Cooked Seafood",
+
+  "tag.item.crabbersdelight.raw_squid": "Raw Squid",
+  "tag.item.crabbersdelight.cooked_squid": "Cooked Squid",
+
+  "tag.item.crabbersdelight.crab_tempt_item": "Crab Temptables",
+  "tag.item.crabbersdelight.crab_trap_bait": "Crab Trap Bait",
+
+  "tag.item.crabbersdelight.creature_chums": "Creature Chums",
+
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clam_chum": "Bucket Of Clam Chum Bait",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clawster_chum": "Bucket Of Clawster Chum Bait",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_crab_chum": "Bucket Of Crab Chum Bait",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_shrimp_chum": "Bucket Of Shrimp Chum Bait",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.air": "Unbaited",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.cod": "Cod Bait",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.pufferfish": "Pufferfish Bait",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.salmon": "Salmon Bait",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.tropical_fish": "Tropical Fish Bait",
+
+  "trim_material.crabbersdelight.pearl": "Pearl Material"
 }

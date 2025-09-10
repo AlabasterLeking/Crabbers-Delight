@@ -1,122 +1,158 @@
 package alabaster.crabbersdelight.common.item;
 
 import alabaster.crabbersdelight.common.registry.ModItems;
-import com.google.common.base.Suppliers;
-import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.Multimap;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShearsItem;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.UUID;
-import java.util.function.Supplier;
+import net.minecraftforge.event.TickEvent;
 
 @Mod.EventBusSubscriber
-public class CrabClawItem extends Item {
+public class CrabClawItem extends ShearsItem {
+
     public static final int MAX_DAMAGE = 128;
 
-    public static final AttributeModifier rangeAttributeModifier =
-            new AttributeModifier(UUID.fromString("7f7dbdb2-0d0d-458a-aa40-ac7633691f66"), "Range Modifier", 3,
-                    AttributeModifier.Operation.ADDITION);
+    private static final AttributeModifier BLOCK_REACH_MOD =
+            new AttributeModifier("crabbersdelight:claw_block_reach",
+                    3.0, AttributeModifier.Operation.ADDITION);
 
-    private static final Supplier<Multimap<Attribute, AttributeModifier>> rangeModifier = Suppliers.memoize(() ->
-            ImmutableMultimap.of(ForgeMod.BLOCK_REACH.get(), rangeAttributeModifier));
+    private static final AttributeModifier ENTITY_REACH_MOD =
+            new AttributeModifier("crabbersdelight:claw_entity_reach",
+                    3.0, AttributeModifier.Operation.ADDITION);
 
     public CrabClawItem(Properties properties) {
         super(properties.durability(MAX_DAMAGE));
     }
 
-    public static final String CLAW_MARKER = "clawMarker";
-
     @SubscribeEvent
-    public static void extendRange(LivingTickEvent event) {
-        if (!(event.getEntity() instanceof Player player))
-            return;
+    public static void extendRange(TickEvent.PlayerTickEvent event) {
+        if (event.phase != TickEvent.Phase.START) return;
+        Player player = event.player;
 
-        CompoundTag persistentData = player.getPersistentData();
+        boolean main = player.getMainHandItem().is(ModItems.CRAB_CLAW.get());
+        boolean off  = player.getOffhandItem().is(ModItems.CRAB_CLAW.get());
+        boolean holdingExactlyOne = main ^ off;
 
-        boolean clawMainHand = (player.getMainHandItem().is(ModItems.CRAB_CLAW.get()));
-        boolean clawOffHand = (player.getOffhandItem().is(ModItems.CRAB_CLAW.get()));
-        boolean clawHeld = clawMainHand ^ clawOffHand;
-        boolean hadClaw = persistentData.contains(CLAW_MARKER);
+        applyModifier(player.getAttribute(ForgeMod.BLOCK_REACH.get()), BLOCK_REACH_MOD, holdingExactlyOne);
+        applyModifier(player.getAttribute(ForgeMod.ENTITY_REACH.get()), ENTITY_REACH_MOD, holdingExactlyOne);
+    }
 
-        if (clawHeld != hadClaw ) {
-            if (!clawHeld) {
-                player.getAttributes()
-                        .removeAttributeModifiers(rangeModifier.get());
-                persistentData.remove(CLAW_MARKER);
-            } else {
-                player.getAttributes()
-                        .addTransientAttributeModifiers(rangeModifier.get());
-                persistentData.putBoolean(CLAW_MARKER, true);
+    private static void applyModifier(AttributeInstance attr, AttributeModifier mod, boolean active) {
+        if (attr == null) return;
+
+        if (active) {
+            if (attr.getModifier(mod.getId()) == null) { // not present
+                attr.addTransientModifier(mod);
+            }
+        } else {
+            if (attr.getModifier(mod.getId()) != null) { // present
+                attr.removeModifier(mod.getId());
             }
         }
     }
 
-    @SubscribeEvent
-    public static void adjustReachOnJoin(PlayerEvent.PlayerLoggedInEvent event) {
-        Player player = event.getEntity();
-        CompoundTag persistentData = player.getPersistentData();
-
-        if (persistentData.contains(CLAW_MARKER))
-            player.getAttributes()
-                    .addTransientAttributeModifiers(rangeModifier.get());
-    }
-
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void consumeOnBreak(BlockEvent.BreakEvent event) {
-        damageClaw(event.getPlayer());
+        Player player = event.getPlayer();
+        double dist = player.getEyePosition().distanceTo(event.getPos().getCenter());
+        if (dist > getVanillaBlockReach(player)) {
+            damageClaws(player);
+        }
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void consumeOnPlace(BlockEvent.EntityPlaceEvent event) {
-        Entity entity = event.getEntity();
-        if (entity instanceof Player)
-            damageClaw((Player) entity);
+        if (event.getEntity() instanceof Player player) {
+            double dist = player.getEyePosition().distanceTo(event.getPos().getCenter());
+            if (dist > getVanillaBlockReach(player)) {
+                damageClaws(player);
+            }
+        }
+    }
+
+    private static double getVanillaBlockReach(Player player) {
+        AttributeInstance inst = player.getAttribute(ForgeMod.BLOCK_REACH.get());
+        if (inst == null) return 4.5D; // Vanilla default reach distance
+        double val = inst.getValue();
+        if (inst.hasModifier(BLOCK_REACH_MOD)) {
+            val -= BLOCK_REACH_MOD.getAmount();
+        }
+        return val;
+    }
+
+    private static double distanceEyeToAABB(Player player, LivingEntity target) {
+        Vec3 eye = player.getEyePosition();
+        var box = target.getBoundingBox();
+
+        double x = Math.max(box.minX, Math.min(eye.x, box.maxX));
+        double y = Math.max(box.minY, Math.min(eye.y, box.maxY));
+        double z = Math.max(box.minZ, Math.min(eye.z, box.maxZ));
+
+        return eye.distanceTo(new Vec3(x, y, z));
+    }
+
+    private static boolean beyondBaseEntityReach(Player player, LivingEntity target) {
+        double dist = distanceEyeToAABB(player, target);
+        AttributeInstance attr = player.getAttribute(ForgeMod.ENTITY_REACH.get());
+        if (attr == null) return false;
+
+        double reach = attr.getValue();
+        if (attr.hasModifier(ENTITY_REACH_MOD)) reach -= ENTITY_REACH_MOD.getAmount();
+        return dist > reach;
     }
 
     @Override
     public boolean hurtEnemy(ItemStack claw, LivingEntity target, LivingEntity attacker) {
-        claw.hurtAndBreak(1, attacker, (user) -> user.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-        return true;
+        if (attacker instanceof Player) {
+            Player player = (Player) attacker;
+            if (!player.isCreative()) {
+                if (beyondBaseEntityReach(player, target)) {
+                    claw.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+                }
+                return true;
+            }
+        }
+        return super.hurtEnemy(claw, target, attacker);
     }
 
-    private static void damageClaw(Player player) {
-        if (player == null)
-            return;
-        if (player.level().isClientSide)
-            return;
+    @SubscribeEvent
+    public static void handleAttackEntity(AttackEntityEvent event) {
+        Entity attackerEntity = event.getEntity();
+        if (!(attackerEntity instanceof Player player)) return;
+        if (player.level().isClientSide) return;
 
-        InteractionHand hand;
-        ItemStack claw;
+        Entity targetEntity = event.getTarget();
+        if (!(targetEntity instanceof LivingEntity target)) return;
 
-        if (player.getOffhandItem().is(ModItems.CRAB_CLAW.get())) {
-            hand = InteractionHand.OFF_HAND;
-            claw = player.getOffhandItem();
+        ItemStack main = player.getMainHandItem();
+        ItemStack off = player.getOffhandItem();
+        boolean clawMain = main.is(ModItems.CRAB_CLAW.get());
+        boolean clawOff = off.is(ModItems.CRAB_CLAW.get());
 
-            final InteractionHand h = hand;
-            claw.hurtAndBreak(1, player, user -> user.broadcastBreakEvent(h));
+        if (!clawMain && !clawOff) return;
+
+        if (beyondBaseEntityReach(player, target)) {
+            if (clawMain) main.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+            if (clawOff) off.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(EquipmentSlot.OFFHAND));
         }
+    }
 
-        if (player.getMainHandItem().is(ModItems.CRAB_CLAW.get())) {
-            hand = InteractionHand.MAIN_HAND;
-            claw = player.getMainHandItem();
-
-            final InteractionHand h = hand;
-            claw.hurtAndBreak(1, player, user -> user.broadcastBreakEvent(h));
-        }
+    private static void damageClaws(Player player) {
+        if (player == null || player.level().isClientSide) return;
+        ItemStack main = player.getMainHandItem();
+        ItemStack off = player.getOffhandItem();
+        if (main.is(ModItems.CRAB_CLAW.get())) main.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        if (off.is(ModItems.CRAB_CLAW.get())) off.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(EquipmentSlot.OFFHAND));
     }
 }

@@ -10,12 +10,11 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.MenuProvider;
@@ -23,8 +22,8 @@ import net.minecraft.world.Nameable;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -36,18 +35,15 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.data.ForgeBiomeTagsProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.RangedWrapper;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Objects;
-
-import static alabaster.crabbersdelight.common.Config.REQUIRE_SURROUNDING_WATER;
 
 public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Nameable {
 
@@ -60,8 +56,12 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         }
     };
 
-    private final LazyOptional<IItemHandler> input = LazyOptional.of(() -> new RangedWrapper(this.inventory, 0, 1));
-    private final LazyOptional<IItemHandler> output = LazyOptional.of(() -> new RangedWrapper(this.inventory, 1, 28));
+    private final IItemHandler input = new RangedWrapper(this.inventory, 0, 1);
+    private final IItemHandler output = new RangedWrapper(this.inventory, 1, 10);
+
+    private final LazyOptional<IItemHandler> inputCap = LazyOptional.of(() -> input);
+    private final LazyOptional<IItemHandler> outputCap = LazyOptional.of(() -> output);
+
     private int tickCounter = 0;
 
     public CrabTrapBlockEntity(BlockPos pos, BlockState state) {
@@ -69,38 +69,29 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag) {
+    protected void saveAdditional(@NotNull CompoundTag tag) {
         super.saveAdditional(tag);
         tag.put("handler", this.inventory.serializeNBT());
         tag.putInt("tickCounter", tickCounter);
     }
 
     @Override
-    public void load(CompoundTag tag) {
+    public void load(@NotNull CompoundTag tag) {
         super.load(tag);
         this.inventory.deserializeNBT(tag.getCompound("handler"));
         this.tickCounter = tag.getInt("tickCounter");
     }
 
-    private CompoundTag saveItems(CompoundTag compound) {
-        super.saveAdditional(compound);
-        compound.put("handler", this.inventory.serializeNBT());
-        return compound;
-    }
-
     @Nullable
+    @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
+    @NotNull
     @Override
     public CompoundTag getUpdateTag() {
-        return this.saveItems(new CompoundTag());
-    }
-
-    @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket packet) {
-        this.load(packet.getTag());
+        return this.saveWithFullMetadata();
     }
 
     public static Pair<Integer, Integer> getMinMax() {
@@ -114,11 +105,12 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                 blockEntity.tickCounter = 0;
                 if (isSurroundedByWater(level, pos)) {
                     if (isValidFishingLocation(level, pos)) {
-                        LootParams lootparams = (new LootParams.Builder((ServerLevel) level))
+                        LootParams lootparams = new LootParams.Builder((ServerLevel) level)
                                 .withParameter(LootContextParams.ORIGIN, new Vec3(pos.getX(), pos.getY(), pos.getZ()))
                                 .withParameter(LootContextParams.TOOL, ItemStack.EMPTY)
                                 .withParameter(LootContextParams.BLOCK_ENTITY, blockEntity)
                                 .create(LootContextParamSets.FISHING);
+
                         ItemStack itemInBaitSlot = blockEntity.inventory.getStackInSlot(0);
                         LootTable loottable;
 
@@ -127,11 +119,10 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
                             ResourceLocation lootTableLocation = CrabbersDelight.modPrefix("gameplay/crab_trap_loot/" + Objects.requireNonNull(registryName).getNamespace() + "/" + registryName.getPath());
                             loottable = level.getServer().getLootData().getLootTable(lootTableLocation);
                             List<ItemStack> list = loottable.getRandomItems(lootparams);
-                            blockEntity.inventory.addItemsAndShrinkBait(level, pos, state, list, itemInBaitSlot);
+                            blockEntity.inventory.addItemsAndShrinkBait(level, pos, list, itemInBaitSlot, random);
                         }
                     }
                 }
-
             } else {
                 if (isWaterBiome(level, pos)) {
                     blockEntity.tickCounter++;
@@ -166,27 +157,27 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         return true;
     }
 
-
     private static boolean isWaterBiome(Level level, BlockPos pos) {
-        if (level.getBiome(pos).is(Tags.Biomes.IS_WATER)) {
-            return true;
+        return level.getBiome(pos).is(Tags.Biomes.IS_WATER);
+    }
+
+    @NotNull
+    @Override
+    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+        if (cap.equals(ForgeCapabilities.ITEM_HANDLER)) {
+            if (side == Direction.UP) {
+                return inputCap.cast();
+            }
+            return outputCap.cast();
         }
-        else {
-            return false;
-        }
+        return super.getCapability(cap, side);
     }
 
     @Override
-    @Nonnull
-    public <T> LazyOptional<T> getCapability(Capability<T> cap, @Nullable Direction side) {
-        if (cap.equals(ForgeCapabilities.ITEM_HANDLER)) {
-            if (side == null || side.equals(Direction.UP)) {
-                return input.cast();
-            } else {
-                return output.cast();
-            }
-        }
-        return super.getCapability(cap, side);
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        inputCap.invalidate();
+        outputCap.invalidate();
     }
 
     public CrabTrapItemHandler getInventory() {

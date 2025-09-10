@@ -51,9 +51,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> FROG_LEG_BARREL = BLOCKS.register("frog_leg_barrel",
             () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<Block> SEA_PICKLE_CRATE = BLOCKS.register("sea_pickle_crate",
-            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
-
     //public static final RegistryObject<Block> LANTERNFISH_BARREL = BLOCKS.register("lanternfish_barrel",
             //() -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
@@ -63,5 +60,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> PEARL_BLOCK = BLOCKS.register("pearl_block",
             () -> new Block(Block.Properties.copy(Blocks.PRISMARINE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
 
-    // Feast
+    public static final RegistryObject<Block> SCUTE_BLOCK = BLOCKS.register("scute_block",
+            () -> new Block(Block.Properties.copy(Blocks.PRISMARINE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
+
+    public static final RegistryObject<Block> SEA_PICKLE_CRATE = BLOCKS.register("sea_pickle_crate",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 }

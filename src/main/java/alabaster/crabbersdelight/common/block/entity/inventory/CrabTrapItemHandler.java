@@ -5,10 +5,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,42 +17,56 @@ import java.util.List;
 public class CrabTrapItemHandler extends ItemStackHandler {
 
     public CrabTrapItemHandler() {
-        super(28);
+        super(10);
     }
 
-    public void addItemsAndShrinkBait(Level level, BlockPos pos, BlockState state, List<ItemStack> list, ItemStack baitItem) {
-        for (ItemStack itemStack : list) {
-            if (!itemStack.isEmpty()) {
-                for (int i = 0; i < getSlots(); i++) {
-                    if (getStackInSlot(i).isEmpty()) {
-                        itemStack = insertItem(i, itemStack, false);
-                        baitItem.hurt(1, level.random, null);
-                        level.playSound(null, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, SoundEvents.FISH_SWIM, SoundSource.BLOCKS, 0.5F, 1.0F);
-                        if (baitItem.is(CDModTags.CREATURE_CHUMS)) {
-                            if (baitItem.getDamageValue() == 48) {
-                                baitItem.shrink(1);
-                                ItemStack bucketStack = new ItemStack(Items.BUCKET);
-                                this.insertItem(0, bucketStack, false);
-                            }
-                        }
-                        if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !(baitItem.is(CDModTags.CREATURE_CHUMS))) {
-                            baitItem.shrink(1);
-                        }
-                        if (itemStack.isEmpty()) {
-                            break;
-                        }
-                    }
+    public void addItemsAndShrinkBait(Level level, BlockPos pos, List<ItemStack> lootList, ItemStack baitItem, RandomSource random) {
+        boolean insertedAny = false;
+
+        for (ItemStack lootStack : lootList) {
+            if (lootStack.isEmpty()) continue;
+
+            for (int slot = 0; slot < getSlots(); slot++) {
+                // Try inserting into this slot (stacking OR filling empty slots)
+                ItemStack remainder = insertItem(slot, lootStack, false);
+
+                if (remainder.getCount() != lootStack.getCount()) {
+                    // Something was inserted
+                    insertedAny = true;
+                }
+
+                lootStack = remainder;
+                if (lootStack.isEmpty()) break; // fully inserted
+            }
+
+            if (!lootStack.isEmpty()) {
+                // Couldn’t insert this lootStack anywhere -> skip to next
+                continue;
+            }
+
+            // If loot was successfully added, consume/damage bait
+            if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !baitItem.is(CDModTags.CREATURE_CHUMS)) {
+                baitItem.shrink(1);
+            } else if (baitItem.is(CDModTags.CREATURE_CHUMS)) {
+                baitItem.hurt(1, random,null);
+                if (baitItem.isEmpty()) {
+                    this.insertItem(0, new ItemStack(Items.BUCKET), false);
                 }
             }
+        }
+
+        // Play sound only if at least one item was inserted
+        if (insertedAny) {
+            level.playSound(null,
+                    pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D,
+                    SoundEvents.FISH_SWIM, SoundSource.BLOCKS,
+                    0.5F, 1.0F);
         }
     }
 
     @Override
-    public int getSlotLimit(int slot) {
-        if (slot != 0) {
-            return 1;
-        }
-        return getStackInSlot(slot).getMaxStackSize();
+    protected int getStackLimit(int slot, ItemStack stack) {
+        return slot != 0 ? 8 : stack.getMaxStackSize();
     }
 
     @Override
