@@ -42,8 +42,8 @@
   "item.crabbersdelight.shrimp_fried_rice": "Жареный рис с креветками",
   "item.crabbersdelight.jar_of_pickles": "Банка с огурцами",
   "item.crabbersdelight.sea_pickle_juice": "Сок из морских огурцов",
-  "item.crabbersdelight.squid_kebob": "Спрут на палочке",
-  "item.crabbersdelight.frog_leg_kebob": "Лягушачьи ножки на палочке",
+  "item.crabbersdelight.squid_kebab": "Спрут на палочке",
+  "item.crabbersdelight.frog_leg_kebab": "Лягушачьи ножки на палочке",
   "item.crabbersdelight.coral_crunch": "Коралловые сухарики",
 
   "item.crabbersdelight.soggy_flesh": "Сырая плоть",
@@ -120,6 +120,7 @@
   "crabbersdelight.advancement.squid_killer.desc": "Используйте нож, чтобы получить щупальца кальмара из кальмара",
 
   "crabbersdelight.block.crab_trap.not_waterlogged": "Крабовая ловушка должна находиться в воде",
+  "crabbersdelight.block.crab_trap.insufficient_surrounding_water": "Крабовой ловушке нужно пространство 3x3 из воды вокруг для работы",
 
   "tag.item.crabbersdelight.raw_seafood": "Сырые морепродукты",
   "tag.item.crabbersdelight.cooked_seafood": "Жареные морепродукты",
@@ -144,3 +145,4 @@
 
   "trim_material.crabbersdelight.pearl": "Жемчужная"
 }
+
