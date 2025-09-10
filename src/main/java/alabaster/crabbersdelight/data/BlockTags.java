@@ -6,6 +6,7 @@ import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -50,7 +51,27 @@ public class BlockTags extends BlockTagsProvider
 
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(
                 ModBlocks.NAUTILUS_SHELL_BLOCK.get(),
-                ModBlocks.PEARL_BLOCK.get());
+                ModBlocks.PEARL_BLOCK.get(),
+                ModBlocks.SCUTE_BLOCK.get());
+    }
+
+    protected void registerStorageBlocks() {
+        tag(Tags.Blocks.STORAGE_BLOCKS).add(
+                ModBlocks.CRAB_BARREL.get(),
+                ModBlocks.CLAM_BARREL.get(),
+                ModBlocks.CLAWSTER_BARREL.get(),
+                ModBlocks.SHRIMP_BARREL.get(),
+                ModBlocks.COD_BARREL.get(),
+                ModBlocks.SALMON_BARREL.get(),
+                ModBlocks.PUFFERFISH_BARREL.get(),
+                ModBlocks.TROPICAL_FISH_BARREL.get(),
+                ModBlocks.SQUID_BARREL.get(),
+                ModBlocks.GLOW_SQUID_BARREL.get(),
+                ModBlocks.FROG_LEG_BARREL.get(),
+                ModBlocks.NAUTILUS_SHELL_BLOCK.get(),
+                ModBlocks.PEARL_BLOCK.get(),
+                ModBlocks.SCUTE_BLOCK.get(),
+                ModBlocks.SEA_PICKLE_CRATE.get());
     }
 
 

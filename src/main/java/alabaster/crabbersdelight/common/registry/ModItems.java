@@ -4,6 +4,7 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.CDFoodValues;
 import alabaster.crabbersdelight.common.item.ChumItem;
 import alabaster.crabbersdelight.common.item.CrabClawItem;
+import alabaster.crabbersdelight.common.item.PearlNecklaceItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Animal;
@@ -95,6 +96,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> CRAB_CLAW = addToTab(ITEMS.register("crab_claw",
             () -> new CrabClawItem(basicItem())));
+
+    public static final RegistryObject<Item> PEARL_NECKLACE = addToTab(ITEMS.register("pearl_necklace",
+            () -> new PearlNecklaceItem(basicItem().stacksTo(1))));
 
     // Mob Buckets
 
@@ -257,6 +261,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> FROG_LEG_BARREL = addToTab(ITEMS.register("frog_leg_barrel",
             () -> new BlockItem(ModBlocks.FROG_LEG_BARREL.get(), basicItem())));
+
+    public static final RegistryObject<Item> SCUTE_BLOCK = addToTab(ITEMS.register("scute_block",
+            () -> new BlockItem(ModBlocks.SCUTE_BLOCK.get(), basicItem())));
 
     public static final RegistryObject<Item> SEA_PICKLE_CRATE = addToTab(ITEMS.register("sea_pickle_crate",
             () -> new BlockItem(ModBlocks.SEA_PICKLE_CRATE.get(), basicItem())));
