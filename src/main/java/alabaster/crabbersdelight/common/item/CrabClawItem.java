@@ -1,6 +1,6 @@
 package alabaster.crabbersdelight.common.item;
 
-import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.registry.CDModItems;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -40,8 +40,8 @@ public class CrabClawItem extends ShearsItem {
         if (event.phase != TickEvent.Phase.START) return;
         Player player = event.player;
 
-        boolean main = player.getMainHandItem().is(ModItems.CRAB_CLAW.get());
-        boolean off  = player.getOffhandItem().is(ModItems.CRAB_CLAW.get());
+        boolean main = player.getMainHandItem().is(CDModItems.CRAB_CLAW.get());
+        boolean off  = player.getOffhandItem().is(CDModItems.CRAB_CLAW.get());
         boolean holdingExactlyOne = main ^ off;
 
         applyModifier(player.getAttribute(ForgeMod.BLOCK_REACH.get()), BLOCK_REACH_MOD, holdingExactlyOne);
@@ -137,8 +137,8 @@ public class CrabClawItem extends ShearsItem {
 
         ItemStack main = player.getMainHandItem();
         ItemStack off = player.getOffhandItem();
-        boolean clawMain = main.is(ModItems.CRAB_CLAW.get());
-        boolean clawOff = off.is(ModItems.CRAB_CLAW.get());
+        boolean clawMain = main.is(CDModItems.CRAB_CLAW.get());
+        boolean clawOff = off.is(CDModItems.CRAB_CLAW.get());
 
         if (!clawMain && !clawOff) return;
 
@@ -152,7 +152,7 @@ public class CrabClawItem extends ShearsItem {
         if (player == null || player.level().isClientSide) return;
         ItemStack main = player.getMainHandItem();
         ItemStack off = player.getOffhandItem();
-        if (main.is(ModItems.CRAB_CLAW.get())) main.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(EquipmentSlot.MAINHAND));
-        if (off.is(ModItems.CRAB_CLAW.get())) off.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(EquipmentSlot.OFFHAND));
+        if (main.is(CDModItems.CRAB_CLAW.get())) main.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+        if (off.is(CDModItems.CRAB_CLAW.get())) off.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(EquipmentSlot.OFFHAND));
     }
 }

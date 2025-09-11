@@ -2,7 +2,7 @@ package alabaster.crabbersdelight.common.block.container;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.entity.inventory.CrabTrapItemHandler;
-import alabaster.crabbersdelight.common.registry.ModMenus;
+import alabaster.crabbersdelight.common.registry.CDModMenus;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.renderer.texture.TextureAtlas;
@@ -20,7 +20,7 @@ public class CrabTrapMenu extends AbstractContainerMenu {
     public static final ResourceLocation BAIT_SLOT = CrabbersDelight.modPrefix("gui/bait_slot");
 
     public CrabTrapMenu(int id, Inventory playerInv, CrabTrapItemHandler inventory) {
-        super(ModMenus.CRAB_TRAP_MENU.get(), id);
+        super(CDModMenus.CRAB_TRAP_MENU.get(), id);
         this.inventory = inventory;
 
         int startX = 8;

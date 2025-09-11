@@ -5,12 +5,13 @@ import alabaster.crabbersdelight.common.block.CrabTrapBlock;
 import alabaster.crabbersdelight.common.block.NautilusShellBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModBlocks {
+public class CDModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CrabbersDelight.MODID);
 
     // CrabEntity Trap
@@ -64,5 +65,5 @@ public class ModBlocks {
             () -> new Block(Block.Properties.copy(Blocks.PRISMARINE).strength(2.0F, 3.0F).sound(SoundType.CORAL_BLOCK)));
 
     public static final RegistryObject<Block> SEA_PICKLE_CRATE = BLOCKS.register("sea_pickle_crate",
-            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+            () -> new SlabBlock(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "crabbersdelight:block/sea_pickle_crate_bottom" },
+    "type=top": { "model": "crabbersdelight:block/sea_pickle_crate_top" },
+    "type=double": { "model": "crabbersdelight:block/sea_pickle_crate" }
+  }
+}

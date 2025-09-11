@@ -1,6 +1,5 @@
 package alabaster.crabbersdelight.data;
 
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -9,8 +8,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.registry.ModBlocks;
-import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.registry.CDModBlocks;
 
 public class BlockStates extends BlockStateProvider {
     private static final int DEFAULT_ANGLE_OFFSET = 180;
@@ -37,18 +35,17 @@ public class BlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        this.barrelBlock(ModBlocks.CRAB_BARREL.get(), "crab");
-        this.barrelBlock(ModBlocks.CLAM_BARREL.get(), "clam");
-        this.barrelBlock(ModBlocks.CLAWSTER_BARREL.get(), "clawster");
-        this.barrelBlock(ModBlocks.SHRIMP_BARREL.get(), "shrimp");
-        this.barrelBlock(ModBlocks.COD_BARREL.get(), "cod");
-        this.barrelBlock(ModBlocks.SALMON_BARREL.get(), "salmon");
-        this.barrelBlock(ModBlocks.PUFFERFISH_BARREL.get(), "pufferfish");
-        this.barrelBlock(ModBlocks.TROPICAL_FISH_BARREL.get(), "tropical_fish");
-        this.barrelBlock(ModBlocks.SQUID_BARREL.get(), "squid");
-        this.barrelBlock(ModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
-        this.barrelBlock(ModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
-        this.crateBlock(ModBlocks.SEA_PICKLE_CRATE.get(), "sea_pickle");
+        this.barrelBlock(CDModBlocks.CRAB_BARREL.get(), "crab");
+        this.barrelBlock(CDModBlocks.CLAM_BARREL.get(), "clam");
+        this.barrelBlock(CDModBlocks.CLAWSTER_BARREL.get(), "clawster");
+        this.barrelBlock(CDModBlocks.SHRIMP_BARREL.get(), "shrimp");
+        this.barrelBlock(CDModBlocks.COD_BARREL.get(), "cod");
+        this.barrelBlock(CDModBlocks.SALMON_BARREL.get(), "salmon");
+        this.barrelBlock(CDModBlocks.PUFFERFISH_BARREL.get(), "pufferfish");
+        this.barrelBlock(CDModBlocks.TROPICAL_FISH_BARREL.get(), "tropical_fish");
+        this.barrelBlock(CDModBlocks.SQUID_BARREL.get(), "squid");
+        this.barrelBlock(CDModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
+        this.barrelBlock(CDModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
     }
 
     public void barrelBlock(Block block, String cropName) {

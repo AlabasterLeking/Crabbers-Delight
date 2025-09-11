@@ -1,8 +1,7 @@
 package alabaster.crabbersdelight.common.entity;
 
-import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.registry.ModEntities;
-import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.registry.CDModEntities;
+import alabaster.crabbersdelight.common.registry.CDModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -13,9 +12,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BiomeTags;
 
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
@@ -38,7 +35,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
@@ -192,7 +188,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
     @Nullable
     @Override
     public CrabEntity getBreedOffspring(ServerLevel level, AgeableMob mob) {
-        CrabEntity crab = ModEntities.CRAB.get().create(level);
+        CrabEntity crab = CDModEntities.CRAB.get().create(level);
         if (crab != null) {
             crab.setColor(this.getOffspringColor(this, (CrabEntity)mob));
         }
@@ -313,7 +309,7 @@ public class CrabEntity extends Animal implements GeoEntity, Bucketable {
 
     @Override
     public ItemStack getBucketItemStack() {
-        return new ItemStack(ModItems.CRAB_BUCKET.get());
+        return new ItemStack(CDModItems.CRAB_BUCKET.get());
     }
 
     @Override

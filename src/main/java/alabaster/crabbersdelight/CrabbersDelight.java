@@ -41,13 +41,13 @@ public class CrabbersDelight {
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
 
-        ModItems.ITEMS.register(bus);
-        ModBlocks.BLOCKS.register(bus);
-        ModBlockEntity.BLOCK_ENTITY_TYPE.register(bus);
-        ModMenus.MENU.register(bus);
-        ModCreativeTabs.CREATIVE_TAB.register(bus);
-        ModEntities.ENTITIES.register(bus);
-        ModPotions.POTIONS.register(bus);
+        CDModItems.ITEMS.register(bus);
+        CDModBlocks.BLOCKS.register(bus);
+        CDModBlockEntity.BLOCK_ENTITY_TYPE.register(bus);
+        CDModMenus.MENU.register(bus);
+        CDModCreativeTabs.CREATIVE_TAB.register(bus);
+        CDModEntities.ENTITIES.register(bus);
+        CDModPotions.POTIONS.register(bus);
 
         bus.addListener(this::setup);
         bus.addListener(this::clientSetup);
@@ -56,11 +56,11 @@ public class CrabbersDelight {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        event.enqueueWork(() -> MenuScreens.register(ModMenus.CRAB_TRAP_MENU.get(), CrabTrapGUI::new));
+        event.enqueueWork(() -> MenuScreens.register(CDModMenus.CRAB_TRAP_MENU.get(), CrabTrapGUI::new));
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> PotionBrewing.addMix(Potions.AWKWARD, Items.INK_SAC, ModPotions.INKY_POTION.get()));
+        event.enqueueWork(() -> PotionBrewing.addMix(Potions.AWKWARD, Items.INK_SAC, CDModPotions.INKY_POTION.get()));
     }
 
     public static ResourceLocation modPrefix(String path) {
@@ -81,7 +81,7 @@ public class CrabbersDelight {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            EntityRenderers.register(ModEntities.CRAB.get(), CrabRenderer::new);
+            EntityRenderers.register(CDModEntities.CRAB.get(), CrabRenderer::new);
         }
     }
 }

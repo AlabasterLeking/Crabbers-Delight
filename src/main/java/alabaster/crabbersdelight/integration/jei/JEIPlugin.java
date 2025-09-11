@@ -1,7 +1,7 @@
 package alabaster.crabbersdelight.integration.jei;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.registry.CDModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -42,7 +42,7 @@ public class JEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addRecipeCatalyst(new ItemStack(ModItems.CRAB_TRAP.get()), CRAB_TRAP_RECIPE);
+        registration.addRecipeCatalyst(new ItemStack(CDModItems.CRAB_TRAP.get()), CRAB_TRAP_RECIPE);
     }
 
     public List<CrabTrapRecipeWrapper> addWrappers() {

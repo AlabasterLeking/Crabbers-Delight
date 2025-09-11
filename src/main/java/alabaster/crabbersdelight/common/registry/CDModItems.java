@@ -20,9 +20,9 @@ import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 import java.util.function.Supplier;
 
-import static alabaster.crabbersdelight.common.registry.ModCreativeTabs.addToTab;
+import static alabaster.crabbersdelight.common.registry.CDModCreativeTabs.addToTab;
 
-public class ModItems {
+public class CDModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CrabbersDelight.MODID);
 
     // Basic Items Helper
@@ -64,7 +64,7 @@ public class ModItems {
     // Spawn Eggs
 
     public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = addToTab(ITEMS.register("crab_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties())));
+            () -> new ForgeSpawnEggItem(CDModEntities.CRAB, 0x2f437c, 0xf48b45, new Item.Properties())));
 
     // Materials
 
@@ -103,7 +103,7 @@ public class ModItems {
     // Mob Buckets
 
     public static final RegistryObject<Item> CRAB_BUCKET = addToTab(ITEMS.register("crab_bucket",
-            () -> ModItems.createMobBucketItem(ModEntities.CRAB::get)));
+            () -> CDModItems.createMobBucketItem(CDModEntities.CRAB::get)));
 
     // Raw / Cooked Meats
 
@@ -230,57 +230,57 @@ public class ModItems {
     // Storage Blocks
 
     public static final RegistryObject<Item> CRAB_BARREL = addToTab(ITEMS.register("crab_barrel",
-            () -> new BlockItem(ModBlocks.CRAB_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.CRAB_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> CLAM_BARREL = addToTab(ITEMS.register("clam_barrel",
-            () -> new BlockItem(ModBlocks.CLAM_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.CLAM_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> CLAWSTER_BARREL = addToTab(ITEMS.register("clawster_barrel",
-            () -> new BlockItem(ModBlocks.CLAWSTER_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.CLAWSTER_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> SHRIMP_BARREL = addToTab(ITEMS.register("shrimp_barrel",
-            () -> new BlockItem(ModBlocks.SHRIMP_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.SHRIMP_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> COD_BARREL = addToTab(ITEMS.register("cod_barrel",
-            () -> new BlockItem(ModBlocks.COD_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.COD_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> SALMON_BARREL = addToTab(ITEMS.register("salmon_barrel",
-            () -> new BlockItem(ModBlocks.SALMON_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.SALMON_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> PUFFERFISH_BARREL = addToTab(ITEMS.register("pufferfish_barrel",
-            () -> new BlockItem(ModBlocks.PUFFERFISH_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.PUFFERFISH_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> TROPICAL_FISH_BARREL = addToTab(ITEMS.register("tropical_fish_barrel",
-            () -> new BlockItem(ModBlocks.TROPICAL_FISH_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.TROPICAL_FISH_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> SQUID_BARREL = addToTab(ITEMS.register("squid_barrel",
-            () -> new BlockItem(ModBlocks.SQUID_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.SQUID_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> GLOW_SQUID_BARREL = addToTab(ITEMS.register("glow_squid_barrel",
-            () -> new BlockItem(ModBlocks.GLOW_SQUID_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.GLOW_SQUID_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> FROG_LEG_BARREL = addToTab(ITEMS.register("frog_leg_barrel",
-            () -> new BlockItem(ModBlocks.FROG_LEG_BARREL.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.FROG_LEG_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> SCUTE_BLOCK = addToTab(ITEMS.register("scute_block",
-            () -> new BlockItem(ModBlocks.SCUTE_BLOCK.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.SCUTE_BLOCK.get(), basicItem())));
 
     public static final RegistryObject<Item> SEA_PICKLE_CRATE = addToTab(ITEMS.register("sea_pickle_crate",
-            () -> new BlockItem(ModBlocks.SEA_PICKLE_CRATE.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.SEA_PICKLE_CRATE.get(), basicItem())));
 
 
     //public static final RegistryObject<Item> LANTERNFISH_BARREL = addToTab(ITEMS.register("lanternfish_barrel",
             //() -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem())));
 
     public static final RegistryObject<Item> NAUTILUS_SHELL_BLOCK = addToTab(ITEMS.register("nautilus_shell_block",
-            () -> new BlockItem(ModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem())));
 
     public static final RegistryObject<Item> PEARL_BLOCK = addToTab(ITEMS.register("pearl_block",
-            () -> new BlockItem(ModBlocks.PEARL_BLOCK.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.PEARL_BLOCK.get(), basicItem())));
 
     // Crab Trap
 
     public static final RegistryObject<Item> CRAB_TRAP = addToTab(ITEMS.register("crab_trap",
-            () -> new BlockItem(ModBlocks.CRAB_TRAP.get(), basicItem())));
+            () -> new BlockItem(CDModBlocks.CRAB_TRAP.get(), basicItem())));
 
 }

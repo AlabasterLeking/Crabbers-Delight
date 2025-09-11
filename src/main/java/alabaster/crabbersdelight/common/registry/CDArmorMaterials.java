@@ -16,7 +16,7 @@ public enum CDArmorMaterials implements ArmorMaterial {
             new int[]{0, 0, 0, 0}, // protection values: boots, leggings, chestplate, helmet
             0,
             SoundEvents.ARMOR_EQUIP_GENERIC,
-            () -> Ingredient.of(ModItems.PEARL.get()),
+            () -> Ingredient.of(CDModItems.PEARL.get()),
             0.0F,
             0.0F
     );

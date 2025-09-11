@@ -8,9 +8,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModBlockEntity {
+public class CDModBlockEntity {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPE = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, CrabbersDelight.MODID);
 
     public static final RegistryObject<BlockEntityType<CrabTrapBlockEntity>> CRAB_TRAP = BLOCK_ENTITY_TYPE.register("crab_trap",
-            () -> BlockEntityType.Builder.of(CrabTrapBlockEntity::new, new Block[]{ModBlocks.CRAB_TRAP.get()}).build(null));
+            () -> BlockEntityType.Builder.of(CrabTrapBlockEntity::new, new Block[]{CDModBlocks.CRAB_TRAP.get()}).build(null));
 }

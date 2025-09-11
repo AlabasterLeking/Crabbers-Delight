@@ -1,15 +1,13 @@
 package alabaster.crabbersdelight.common.item;
 
 import alabaster.crabbersdelight.common.registry.CDArmorMaterials;
-import alabaster.crabbersdelight.common.registry.ModItems;
+import alabaster.crabbersdelight.common.registry.CDModItems;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorItem.Type;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.Level;
@@ -30,7 +28,7 @@ public class PearlNecklaceItem extends ArmorItem {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repairCandidate) {
-        return repairCandidate.is(ModItems.PEARL.get());
+        return repairCandidate.is(CDModItems.PEARL.get());
     }
 
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {

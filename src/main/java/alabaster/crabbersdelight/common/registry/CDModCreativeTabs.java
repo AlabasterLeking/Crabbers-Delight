@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = CrabbersDelight.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ModCreativeTabs
+public class CDModCreativeTabs
 {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CrabbersDelight.MODID);
 
@@ -25,7 +25,7 @@ public class ModCreativeTabs
     public static final RegistryObject<CreativeModeTab> TAB_CRABBERS_DELIGHT = CREATIVE_TAB.register("test_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.crabbersdelight"))
-                    .icon(ModItems.RAW_CLAWSTER.get()::getDefaultInstance)
+                    .icon(CDModItems.RAW_CLAWSTER.get()::getDefaultInstance)
                     .displayItems((parameters, output) ->
                             CREATIVE_TAB_ITEMS.forEach(itemLike -> output.accept(itemLike.get())))
                     .build()

@@ -4,7 +4,7 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.block.container.CrabTrapMenu;
 import alabaster.crabbersdelight.common.block.entity.inventory.CrabTrapItemHandler;
-import alabaster.crabbersdelight.common.registry.ModBlockEntity;
+import alabaster.crabbersdelight.common.registry.CDModBlockEntity;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.BlockPos;
@@ -12,7 +12,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
@@ -22,7 +21,6 @@ import net.minecraft.world.Nameable;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -65,7 +63,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     private int tickCounter = 0;
 
     public CrabTrapBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntity.CRAB_TRAP.get(), pos, state);
+        super(CDModBlockEntity.CRAB_TRAP.get(), pos, state);
     }
 
     @Override

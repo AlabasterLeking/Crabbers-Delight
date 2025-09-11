@@ -21,7 +21,7 @@ public class CDTrimMaterials {
             ResourceKey.create(Registries.TRIM_MATERIAL, new ResourceLocation(CrabbersDelight.MODID, "pearl"));
 
     public static void bootstrap(BootstapContext<TrimMaterial> context) {
-        register(context, PEARL, ModItems.PEARL.get(), Style.EMPTY.withColor(TextColor.parseColor("#86b5be")), Map.of());
+        register(context, PEARL, CDModItems.PEARL.get(), Style.EMPTY.withColor(TextColor.parseColor("#86b5be")), Map.of());
     }
 
     private static void register(BootstapContext<TrimMaterial> context, ResourceKey<TrimMaterial> key, Item item, Style style, Map<ArmorMaterials, String> overrides) {
