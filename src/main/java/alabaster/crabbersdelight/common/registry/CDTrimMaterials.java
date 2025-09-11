@@ -9,10 +9,8 @@ import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Map;
 
@@ -21,11 +19,13 @@ public class CDTrimMaterials {
             ResourceKey.create(Registries.TRIM_MATERIAL, new ResourceLocation(CrabbersDelight.MODID, "pearl"));
 
     public static void bootstrap(BootstapContext<TrimMaterial> context) {
-        register(context, PEARL, CDModItems.PEARL.get(), Style.EMPTY.withColor(TextColor.parseColor("#86b5be")), Map.of());
+        register(context, PEARL, CDModItems.PEARL.get(), Style.EMPTY.withColor(TextColor.parseColor("#86b5be")), -1.0F);
     }
 
-    private static void register(BootstapContext<TrimMaterial> context, ResourceKey<TrimMaterial> key, Item item, Style style, Map<ArmorMaterials, String> overrides) {
-        ResourceLocation location = key.location();
-        context.register(key, new TrimMaterial(location.getNamespace() + "_" + location.getPath(), ForgeRegistries.ITEMS.getHolder(item).get(), -1.0F, overrides, Component.translatable(Util.makeDescriptionId("trim_material", location)).withStyle(style)));
+    private static void register(BootstapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Item item,
+                                 Style style, float itemModelIndex) {
+        TrimMaterial trimmaterial = TrimMaterial.create(trimKey.location().getPath(), item, itemModelIndex,
+                Component.translatable(Util.makeDescriptionId("trim_material", trimKey.location())).withStyle(style), Map.of());
+        context.register(trimKey, trimmaterial);
     }
 }

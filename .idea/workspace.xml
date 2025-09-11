@@ -4,47 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Bring in 1.21.1 featureset">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/blockstates/sea_pickle_crate.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/block/sea_pickle_crate.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/block/sea_pickle_crate_bottom.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/block/sea_pickle_crate_top.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/blockstates/sea_pickle_crate.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/block/sea_pickle_crate.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/assets/crabbersdelight/models/item/sea_pickle_crate.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CrabTrapBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CrabTrapBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/container/CrabTrapMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/container/CrabTrapMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/CrabTrapBlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/CrabTrapBlockEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/CrabEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/CrabEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/event/ModEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/event/ModEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/event/VillagerTrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/event/VillagerTrade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CrabClawItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CrabClawItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/PearlNecklaceItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/PearlNecklaceItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDArmorMaterials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDArmorMaterials.java" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fix fix fix">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/atlases/armor_trims.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/trim_material/pearl.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/trim_material/pearl.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDTrimMaterials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDTrimMaterials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModBlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlockEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModCreativeTabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModCreativeTabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModEntities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModMenus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModMenus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/ModPotions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModPotions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/advancement/CDAdvancementGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/advancement/CDAdvancementGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CookingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CookingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/SmeltingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/SmeltingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/integration/jei/CrabTrapCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/integration/jei/CrabTrapCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/integration/jei/JEIPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/integration/jei/JEIPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,14 +309,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Chummy">
-      <option name="closed" value="true" />
-      <created>1699586020982</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1699586020982</updated>
     </task>
     <task id="LOCAL-00028" summary="Re-wrote crab trap loot handler">
       <option name="closed" value="true" />
@@ -739,7 +694,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757471672886</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Fix fix fix">
+      <option name="closed" value="true" />
+      <created>1757555796661</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1757555796661</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -759,7 +722,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mild changes to crab claw - added to loot table for crabs - fixed crabs dropping multiple raw crabs on death - added Jar of Pickles and Sea Pickle Juice" />
     <MESSAGE value="Fixed crab drop mistake - increment mod version to 1.1.5" />
     <MESSAGE value="I think the loot table is finally fixed - proper recipes for pickle dishes - removed weakness and added a brief nausea to sea pickle juice" />
     <MESSAGE value="Inky Potion and Sea Pickle Juice recipe change" />
@@ -784,7 +746,8 @@
     <MESSAGE value="Add barrel drops for new barrels - Added JEI plugin and display of results - slightly modified loot tables" />
     <MESSAGE value="Modified loot again - Adjusted JEI header to not need a separate translated component" />
     <MESSAGE value="Bring in 1.21.1 featureset" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bring in 1.21.1 featureset" />
+    <MESSAGE value="Fix fix fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix fix fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
