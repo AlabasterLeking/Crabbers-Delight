@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fix fix fix">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/atlases/armor_trims.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/trim_material/pearl.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/trim_material/pearl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDTrimMaterials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDTrimMaterials.java" afterDir="false" />
-    </list>
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fix fix fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,14 +104,12 @@
     &quot;assignee&quot;: &quot;AlabasterLeking&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="81e8eb2d-4c3f-41f9-8f42-3e30b3adc524" />
-        <option name="url" value="git@github.com:/AlabasterLeking/Crabbers-Delight.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:/AlabasterLeking/Crabbers-Delight.git",
+    "accountId": "3e7c3161-a248-4572-b77e-825ad85e0d03"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -133,25 +127,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.Crabbers-Delight [createMcpToSrg].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Crabbers-Delight [genIntellijRuns].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Crabbers-Delight [init].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Crabbers-Delight [runClient].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Crabbers-Delight [runData].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;I do mind&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;1.20.1-forge&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/cjtop/IdeaProjects/Crabbers-Delight/src/main/resources/assets/crabbersdelight/models/block&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.35402298&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.Crabbers-Delight [createMcpToSrg].executor": "Run",
+    "Gradle.Crabbers-Delight [genIntellijRuns].executor": "Run",
+    "Gradle.Crabbers-Delight [init].executor": "Run",
+    "Gradle.Crabbers-Delight [runClient].executor": "Run",
+    "Gradle.Crabbers-Delight [runData].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "I do mind",
+    "git-widget-placeholder": "Forge-1.20.1",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/cjtop/IdeaProjects/Crabbers-Delight/src/main/resources/assets/crabbersdelight/models/block",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.35402298",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\models\block" />
@@ -180,7 +176,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [build]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [runData]">
     <configuration name="Crabbers-Delight [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />

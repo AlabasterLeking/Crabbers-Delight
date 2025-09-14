@@ -20,6 +20,7 @@ public class CraftingRecipes {
         recipesBlocks(consumer);
         recipesMaterials(consumer);
         recipesCraftedMeals(consumer);
+        recipesTools(consumer);
         SpecialRecipeBuilder.special(ModRecipeSerializers.FOOD_SERVING.get()).save(consumer, "food_serving");
     }
 
