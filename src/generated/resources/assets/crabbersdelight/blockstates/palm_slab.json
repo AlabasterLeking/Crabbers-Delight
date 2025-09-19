@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crabbersdelight:block/palm_slab"
+    },
+    "type=double": {
+      "model": "crabbersdelight:block/palm_planks"
+    },
+    "type=top": {
+      "model": "crabbersdelight:block/palm_slab_top"
+    }
+  }
+}
