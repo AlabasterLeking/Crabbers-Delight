@@ -93,6 +93,36 @@ public class CDModItems {
     public static final Supplier<Item> PEARL_NECKLACE = registerWithTab("pearl_necklace",
             () -> new PearlNecklaceItem(basicItem().stacksTo(1)));
 
+    // Palm
+    public static final Supplier<Item> PALM_LOG = registerWithTab("palm_log",
+            () -> new BlockItem(CDModBlocks.PALM_LOG.get(), basicItem()));
+    public static final Supplier<Item> PALM_WOOD = registerWithTab("palm_wood",
+            () -> new BlockItem(CDModBlocks.PALM_WOOD.get(), basicItem()));
+    public static final Supplier<Item> STRIPPED_PALM_LOG = registerWithTab("stripped_palm_log",
+            () -> new BlockItem(CDModBlocks.STRIPPED_PALM_LOG.get(), basicItem()));
+    public static final Supplier<Item> STRIPPED_PALM_WOOD = registerWithTab("stripped_palm_wood",
+            () -> new BlockItem(CDModBlocks.STRIPPED_PALM_WOOD.get(), basicItem()));
+    public static final Supplier<Item> PALM_PLANKS = registerWithTab("palm_planks",
+            () -> new BlockItem(CDModBlocks.PALM_PLANKS.get(), basicItem()));
+    public static final Supplier<Item> PALM_STAIRS = registerWithTab("palm_stairs",
+            () -> new BlockItem(CDModBlocks.PALM_STAIRS.get(), basicItem()));
+    public static final Supplier<Item> PALM_SLAB = registerWithTab("palm_slab",
+            () -> new BlockItem(CDModBlocks.PALM_SLAB.get(), basicItem()));
+    public static final Supplier<Item> PALM_FENCE = registerWithTab("palm_fence",
+            () -> new BlockItem(CDModBlocks.PALM_FENCE.get(), basicItem()));
+    public static final Supplier<Item> PALM_FENCE_GATE = registerWithTab("palm_fence_gate",
+            () -> new BlockItem(CDModBlocks.PALM_FENCE_GATE.get(), basicItem()));
+    public static final Supplier<Item> PALM_DOOR = registerWithTab("palm_door",
+            () -> new BlockItem(CDModBlocks.PALM_DOOR.get(), basicItem()));
+    public static final Supplier<Item> PALM_TRAPDOOR = registerWithTab("palm_trapdoor_bottom",
+            () -> new BlockItem(CDModBlocks.PALM_TRAPDOOR.get(), basicItem()));
+    public static final Supplier<Item> PALM_PRESSURE_PLATE = registerWithTab("palm_pressure_plate",
+            () -> new BlockItem(CDModBlocks.PALM_PRESSURE_PLATE.get(), basicItem()));
+    public static final Supplier<Item> PALM_BUTTON = registerWithTab("palm_button",
+            () -> new BlockItem(CDModBlocks.PALM_BUTTON.get(), basicItem()));
+    public static final Supplier<Item> PALM_LEAVES = registerWithTab("palm_leaves",
+            () -> new BlockItem(CDModBlocks.PALM_LEAVES.get(), basicItem()));
+
     // Raw / Cooked Meats
     public static final Supplier<Item> RAW_CRAB = registerWithTab("crab",
             () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CRAB)));

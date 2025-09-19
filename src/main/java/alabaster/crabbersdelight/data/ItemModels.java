@@ -1,5 +1,6 @@
 package alabaster.crabbersdelight.data;
 
+import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import com.google.common.collect.Sets;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -8,8 +9,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.CDModItems;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -36,6 +39,17 @@ public class ItemModels extends ItemModelProvider
         blockBasedModel(CDModItems.SEA_PICKLE_CRATE.get(), "_bottom");
         items.remove(CDModItems.SEA_PICKLE_CRATE.get());
 
+        buttonItem(CDModItems.PALM_BUTTON.get(), CDModBlocks.PALM_PLANKS.get());
+        fenceItem(CDModItems.PALM_FENCE.get(), CDModBlocks.PALM_PLANKS.get());
+        items.remove(CDModItems.PALM_FENCE.get());
+        items.remove(CDModItems.PALM_BUTTON.get());
+
+        // Blocks with special item sprites
+        Set<Item> spriteBlockItems = Sets.newHashSet(
+                CDModItems.PALM_DOOR.get()
+        );
+        takeAll(items, spriteBlockItems.toArray(new Item[0])).forEach(item -> withExistingParent(itemName(item), GENERATED).texture("layer0", resourceItem(itemName(item))));
+
         // Blocks whose item look alike
         takeAll(items, i -> i instanceof BlockItem).forEach(item -> blockBasedModel(item, ""));
 
@@ -50,6 +64,16 @@ public class ItemModels extends ItemModelProvider
 
     public void blockBasedModel(Item item, String suffix) {
         withExistingParent(itemName(item), resourceBlock(itemName(item) + suffix));
+    }
+
+    public void buttonItem(Item buttonItem, Block baseBlock) {
+        withExistingParent(itemName(buttonItem), mcLoc("block/button_inventory"))
+                .texture("texture", resourceBlock(itemName(baseBlock.asItem())));
+    }
+
+    public void fenceItem(Item fenceItem, Block baseBlock) {
+        withExistingParent(itemName(fenceItem), mcLoc("block/fence_inventory"))
+                .texture("texture", resourceBlock(itemName(baseBlock.asItem())));
     }
 
     public void itemHandheldModel(Item item, ResourceLocation texture) {
