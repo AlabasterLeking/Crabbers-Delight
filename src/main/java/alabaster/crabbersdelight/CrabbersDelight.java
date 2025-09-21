@@ -4,6 +4,8 @@ import alabaster.crabbersdelight.client.gui.CrabTrapGUI;
 import alabaster.crabbersdelight.common.entity.crab.CrabEntity;
 import alabaster.crabbersdelight.common.entity.crab.CrabModel;
 import alabaster.crabbersdelight.common.entity.crab.CrabRenderer;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -100,6 +102,12 @@ public class CrabbersDelight {
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     CrabEntity::checkCrabSpawnRules,
                     RegisterSpawnPlacementsEvent.Operation.REPLACE);
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(CDModBlockEntity.PALM_SIGN.get(), SignRenderer::new);
+            event.registerBlockEntityRenderer(CDModBlockEntity.HANGING_PALM_SIGN.get(), HangingSignRenderer::new);
         }
     }
 

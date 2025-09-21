@@ -11,6 +11,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -144,7 +145,11 @@ public class ItemTags extends ItemTagsProvider {
                 .add(CDModItems.RAW_CRAB.get())
                 .add(CDModItems.FISH_BONES.get());
 
+        // Trim Materials
         tag(net.minecraft.tags.ItemTags.TRIM_MATERIALS)
                 .add(CDModItems.PEARL.get());
+
+        tag(ModTags.WOODEN_CABINETS)
+                .add(CDModItems.PALM_CABINET.get());
     }
 }

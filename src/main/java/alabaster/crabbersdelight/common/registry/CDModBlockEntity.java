@@ -8,10 +8,17 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.HangingSignBlockEntity;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import vectorwing.farmersdelight.common.block.entity.CabinetBlockEntity;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 import java.util.function.Supplier;
 
+
+@EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class CDModBlockEntity {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, CrabbersDelight.MODID);
 
@@ -29,4 +36,11 @@ public class CDModBlockEntity {
                             CDModBlocks.PALM_HANGING_SIGN.get(),
                             CDModBlocks.PALM_WALL_HANGING_SIGN.get())
                     .build(null));
+
+    @SubscribeEvent
+    public static void addCabinetsBlockEntities(BlockEntityTypeAddBlocksEvent event) {
+        event.modify(ModBlockEntityTypes.CABINET.get(),
+                CDModBlocks.PALM_CABINET.get()
+        );
+    }
 }

@@ -4,24 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="All of the palm stuff added - still need to gen trees">
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDHangingSignBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDStandingSignBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDWallHangingSignBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDWallSignBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/CDHangingSignBlockEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/CDSignBlockEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/entity/signs/hanging/palm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/entity/signs/palm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/gui/hanging_signs/palm.png" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Signs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlockEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/palm_hanging_sign.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/palm_sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -355,14 +345,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Add ru_ru.json - thanks Maxis!">
-      <option name="closed" value="true" />
-      <created>1700148030039</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1700148030039</updated>
     </task>
     <task id="LOCAL-00037" summary="Finally fixed the bowl returning issue">
       <option name="closed" value="true" />
@@ -748,7 +730,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758254632540</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Signs">
+      <option name="closed" value="true" />
+      <created>1758420579316</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1758420579316</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -768,7 +758,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Squid Tentacles and Frog Legs" />
     <MESSAGE value="Remade Crab Leg Texture" />
     <MESSAGE value="Increase Chum durability to 48 - Modify Crab Trap to have 27 slots - Stub for Renderer for Items inside of Crab Trap" />
     <MESSAGE value="Created .gitignore" />
@@ -793,7 +782,8 @@
     <MESSAGE value="Fixed most of it - still can't spawn the mob tho" />
     <MESSAGE value="Spawning fixed, worldgen" />
     <MESSAGE value="All of the palm stuff added - still need to gen trees" />
-    <option name="LAST_COMMIT_MESSAGE" value="All of the palm stuff added - still need to gen trees" />
+    <MESSAGE value="Signs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Signs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

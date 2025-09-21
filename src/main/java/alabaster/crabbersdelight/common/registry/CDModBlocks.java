@@ -1,9 +1,7 @@
 package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.block.CrabTrapBlock;
-import alabaster.crabbersdelight.common.block.LogBlock;
-import alabaster.crabbersdelight.common.block.NautilusShellBlock;
+import alabaster.crabbersdelight.common.block.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -14,6 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 import java.util.Properties;
 import java.util.function.Supplier;
@@ -92,14 +91,17 @@ public class CDModBlocks {
             () -> new ButtonBlock(BlockSetType.OAK, 30, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
 
     public static final Supplier<StandingSignBlock> PALM_SIGN = BLOCKS.register("palm_sign",
-            () -> new StandingSignBlock(CDWoodTypes.PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
+            () -> new CDStandingSignBlock(CDWoodTypes.PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SIGN)));
     public static final Supplier<WallSignBlock> PALM_WALL_SIGN = BLOCKS.register("palm_wall_sign",
-            () -> new WallSignBlock(CDWoodTypes.PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
+            () -> new CDWallSignBlock(CDWoodTypes.PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_SIGN)));
 
     public static final Supplier<CeilingHangingSignBlock> PALM_HANGING_SIGN = BLOCKS.register("palm_hanging_sign",
-            () -> new CeilingHangingSignBlock(CDWoodTypes.PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
+            () -> new CDHangingSignBlock(CDWoodTypes.PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_HANGING_SIGN)));
     public static final Supplier<WallHangingSignBlock> PALM_WALL_HANGING_SIGN = BLOCKS.register("palm_wall_hanging_sign",
-            () -> new WallHangingSignBlock(CDWoodTypes.PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
+            () -> new CDWallHangingSignBlock(CDWoodTypes.PALM, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WALL_HANGING_SIGN)));
+
+    public static final Supplier<Block> PALM_CABINET = BLOCKS.register("palm_cabinet",
+            () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
 
     // Storage
     public static final Supplier<Block> CRAB_BARREL = BLOCKS.register("crab_barrel",

@@ -11,6 +11,7 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 
 public class BlockStates extends BlockStateProvider {
     private static final int DEFAULT_ANGLE_OFFSET = 180;
@@ -66,6 +67,8 @@ public class BlockStates extends BlockStateProvider {
         buttonBlock(CDModBlocks.PALM_BUTTON.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
         leavesBlock(CDModBlocks.PALM_LEAVES.get());
 
+        cabinetBlock(CDModBlocks.PALM_CABINET.get(), "palm");
+
     }
 
     public void crateBlock(Block block, String cropName) {
@@ -77,5 +80,15 @@ public class BlockStates extends BlockStateProvider {
         simpleBlockWithItem(block,
                 models().singleTexture(BuiltInRegistries.BLOCK.getKey(block).getPath(), mcLoc("block/leaves"), "all", blockTexture(block)).renderType("cutout")
         );
+    }
+
+    public void cabinetBlock(Block block, String woodType) {
+        this.horizontalBlock(block, state -> {
+            String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
+            return models().orientable(blockName(block) + suffix,
+                    resourceBlock(woodType + "_cabinet_side"),
+                    resourceBlock(woodType + "_cabinet_front" + suffix),
+                    resourceBlock(woodType + "_cabinet_top"));
+        });
     }
 }
