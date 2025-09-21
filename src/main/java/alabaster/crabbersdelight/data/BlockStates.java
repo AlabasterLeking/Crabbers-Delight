@@ -60,6 +60,8 @@ public class BlockStates extends BlockStateProvider {
         fenceGateBlock(CDModBlocks.PALM_FENCE_GATE.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
         doorBlockWithRenderType(CDModBlocks.PALM_DOOR.get(), modLoc("block/palm_door_bottom"), modLoc("block/palm_door_top"), "cutout");
         trapdoorBlockWithRenderType(CDModBlocks.PALM_TRAPDOOR.get(), modLoc("block/palm_trapdoor"), true, "cutout");
+        signBlock(CDModBlocks.PALM_SIGN.get(), CDModBlocks.PALM_WALL_SIGN.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
+        hangingSignBlock(CDModBlocks.PALM_HANGING_SIGN.get(), CDModBlocks.PALM_WALL_HANGING_SIGN.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
         pressurePlateBlock(CDModBlocks.PALM_PRESSURE_PLATE.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
         buttonBlock(CDModBlocks.PALM_BUTTON.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
         leavesBlock(CDModBlocks.PALM_LEAVES.get());

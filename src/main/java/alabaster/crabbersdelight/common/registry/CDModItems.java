@@ -116,6 +116,10 @@ public class CDModItems {
             () -> new BlockItem(CDModBlocks.PALM_DOOR.get(), basicItem()));
     public static final Supplier<Item> PALM_TRAPDOOR = registerWithTab("palm_trapdoor_bottom",
             () -> new BlockItem(CDModBlocks.PALM_TRAPDOOR.get(), basicItem()));
+    public static final Supplier<Item> PALM_SIGN = registerWithTab("palm_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), CDModBlocks.PALM_SIGN.get(), CDModBlocks.PALM_WALL_SIGN.get()));
+    public static final Supplier<Item> PALM_HANGING_SIGN = registerWithTab("palm_hanging_sign",
+            () -> new HangingSignItem(CDModBlocks.PALM_HANGING_SIGN.get(), CDModBlocks.PALM_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
     public static final Supplier<Item> PALM_PRESSURE_PLATE = registerWithTab("palm_pressure_plate",
             () -> new BlockItem(CDModBlocks.PALM_PRESSURE_PLATE.get(), basicItem()));
     public static final Supplier<Item> PALM_BUTTON = registerWithTab("palm_button",
