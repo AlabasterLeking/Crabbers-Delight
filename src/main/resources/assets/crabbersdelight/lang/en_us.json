@@ -86,6 +86,11 @@
   "block.crabbersdelight.palm_pressure_plate": "Palm Pressure Plate",
   "block.crabbersdelight.palm_button": "Palm Button",
   "block.crabbersdelight.palm_leaves": "Palm Leaves",
+  "block.crabbersdelight.palm_cabinet": "Palm Cabinet",
+
+  "block.crabbersdelight.coconut": "Coconut",
+  "death.attack.crabbersdelight.falling_coconut": "%s was crushed by a falling coconut",
+  "item.crabbersdelight.coconut_halve": "Coconut Halve",
 
   "block.crabbersdelight.crab_trap": "Crab Trap",
   "block.crabbersdelight.crab_barrel": "Crab Barrel",

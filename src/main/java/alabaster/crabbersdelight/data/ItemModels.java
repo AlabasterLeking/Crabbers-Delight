@@ -48,7 +48,8 @@ public class ItemModels extends ItemModelProvider
         Set<Item> spriteBlockItems = Sets.newHashSet(
                 CDModItems.PALM_DOOR.get(),
                 CDModItems.PALM_SIGN.get(),
-                CDModItems.PALM_HANGING_SIGN.get()
+                CDModItems.PALM_HANGING_SIGN.get(),
+                CDModItems.COCONUT.get()
         );
         takeAll(items, spriteBlockItems.toArray(new Item[0])).forEach(item -> withExistingParent(itemName(item), GENERATED).texture("layer0", resourceItem(itemName(item))));
 

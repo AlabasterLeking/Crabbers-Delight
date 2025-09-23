@@ -129,6 +129,10 @@ public class CDModItems {
             () -> new HangingSignItem(CDModBlocks.PALM_HANGING_SIGN.get(), CDModBlocks.PALM_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
     public static final Supplier<Item> PALM_CABINET = registerWithTab("palm_cabinet",
             () -> new BlockItem(CDModBlocks.PALM_CABINET.get(), basicItem()));
+    public static final Supplier<Item> COCONUT = registerWithTab("coconut",
+            () -> new BlockItem(CDModBlocks.COCONUT.get(), basicItem()));
+    public static final Supplier<Item> COCONUT_HALVE = registerWithTab("coconut_halve",
+            () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CRAB)));
 
     // Raw / Cooked Meats
     public static final Supplier<Item> RAW_CRAB = registerWithTab("crab",

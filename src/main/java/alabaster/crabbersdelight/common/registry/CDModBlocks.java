@@ -103,6 +103,9 @@ public class CDModBlocks {
     public static final Supplier<Block> PALM_CABINET = BLOCKS.register("palm_cabinet",
             () -> new CabinetBlock(Block.Properties.ofFullCopy(Blocks.BARREL)));
 
+    public static final Supplier<Block> COCONUT = BLOCKS.register("coconut",
+            () -> new CoconutBlock(Block.Properties.ofFullCopy(Blocks.COCOA)));
+
     // Storage
     public static final Supplier<Block> CRAB_BARREL = BLOCKS.register("crab_barrel",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));

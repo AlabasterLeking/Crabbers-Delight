@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Signs">
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Cabinets">
+      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDDamageSources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/blockstates/coconut.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/damage_type/falling_coconut.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_table/blocks/coconut.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlockEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/coconut_half.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/coconut_halve.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,14 +349,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Finally fixed the bowl returning issue">
-      <option name="closed" value="true" />
-      <created>1700148684954</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1700148684954</updated>
     </task>
     <task id="LOCAL-00038" summary="Incremented version to 1.1.3a for hotfix">
       <option name="closed" value="true" />
@@ -738,7 +734,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758420579316</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Cabinets">
+      <option name="closed" value="true" />
+      <created>1758425445972</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1758425445972</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -758,7 +762,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remade Crab Leg Texture" />
     <MESSAGE value="Increase Chum durability to 48 - Modify Crab Trap to have 27 slots - Stub for Renderer for Items inside of Crab Trap" />
     <MESSAGE value="Created .gitignore" />
     <MESSAGE value="Run Data - Changes to some Tags - Added new config option for surrounding with water - Added Frog Legs" />
@@ -783,7 +786,8 @@
     <MESSAGE value="Spawning fixed, worldgen" />
     <MESSAGE value="All of the palm stuff added - still need to gen trees" />
     <MESSAGE value="Signs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Signs" />
+    <MESSAGE value="Cabinets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cabinets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
