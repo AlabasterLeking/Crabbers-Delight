@@ -4,8 +4,8 @@ import alabaster.crabbersdelight.common.registry.CDDamageSources;
 import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.FallingBlockEntity;
@@ -80,6 +80,16 @@ public class CoconutBlock extends FallingBlock {
                     living.hurt(CDDamageSources.getSimpleDamageSource(level, CDDamageSources.FALLING_COCONUT), 2.0F);
 
                     if (entity instanceof Player) {
+                        level.playSound(
+                                null,
+                                entity.getX(),
+                                entity.getY(),
+                                entity.getZ(),
+                                SoundEvents.GOAT_HORN_BREAK,
+                                SoundSource.PLAYERS,
+                                0.7F,
+                                0.5F
+                        );
                         hitPlayer = true;
                     }
                 }
@@ -93,4 +103,3 @@ public class CoconutBlock extends FallingBlock {
     }
 
 }
-

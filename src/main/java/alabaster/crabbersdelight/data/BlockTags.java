@@ -52,6 +52,11 @@ public class BlockTags extends BlockTagsProvider
                 CDModBlocks.PALM_FENCE_GATE.get(),
                 CDModBlocks.PALM_PRESSURE_PLATE.get(),
                 CDModBlocks.PALM_BUTTON.get(),
+                CDModBlocks.PALM_SIGN.get(),
+                CDModBlocks.PALM_HANGING_SIGN.get(),
+                CDModBlocks.PALM_WALL_SIGN.get(),
+                CDModBlocks.PALM_WALL_HANGING_SIGN.get(),
+                CDModBlocks.PALM_CABINET.get(),
 
                 CDModBlocks.CRAB_BARREL.get(),
                 CDModBlocks.CLAM_BARREL.get(),
@@ -71,6 +76,24 @@ public class BlockTags extends BlockTagsProvider
                 CDModBlocks.NAUTILUS_SHELL_BLOCK.get(),
                 CDModBlocks.PEARL_BLOCK.get(),
                 CDModBlocks.SCUTE_BLOCK.get());
+
+        tag(net.minecraft.tags.BlockTags.LOGS_THAT_BURN).add(
+                CDModBlocks.PALM_LOG.get(),
+                CDModBlocks.STRIPPED_PALM_LOG.get(),
+                CDModBlocks.PALM_WOOD.get(),
+                CDModBlocks.STRIPPED_PALM_WOOD.get());
+
+        tag(net.minecraft.tags.BlockTags.PLANKS).add(
+                CDModBlocks.PALM_PLANKS.get());
+
+        tag(net.minecraft.tags.BlockTags.PLANKS).add(
+                CDModBlocks.PALM_PLANKS.get());
+
+        tag(net.minecraft.tags.BlockTags.LEAVES).add(
+                CDModBlocks.PALM_LEAVES.get());
+
+        tag(net.minecraft.tags.BlockTags.SAPLINGS).add(
+                CDModBlocks.PALM_SAPLING.get());
     }
 
     protected void registerStorageBlocks() {

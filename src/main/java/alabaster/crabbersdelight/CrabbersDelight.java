@@ -60,6 +60,7 @@ public class CrabbersDelight {
         CDModCreativeTabs.CREATIVE_TAB.register(bus);
         CDModPotions.POTIONS.register(bus);
         CDModEntities.ENTITY_TYPES.register(bus);
+        CDTrunkPlacerTypes.TRUNK_PLACERS.register(bus);
 
         NeoForge.EVENT_BUS.register(this);
     }

@@ -2,6 +2,7 @@ package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.*;
+import alabaster.crabbersdelight.common.worldgen.tree.CDTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -10,11 +11,9 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.CabinetBlock;
 
-import java.util.Properties;
 import java.util.function.Supplier;
 
 public class CDModBlocks {
@@ -69,6 +68,9 @@ public class CDModBlocks {
                     return 30;
                 }
             });
+
+    public static final Supplier<Block> PALM_SAPLING = BLOCKS.register("palm_sapling",
+            () -> new SaplingBlock(CDTreeGrowers.PALM, Block.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
     public static final Supplier<SlabBlock> PALM_SLAB = BLOCKS.register("palm_slab",
             () -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.OAK_SLAB)));

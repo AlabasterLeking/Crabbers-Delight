@@ -123,6 +123,8 @@ public class CDModItems {
             () -> new BlockItem(CDModBlocks.PALM_BUTTON.get(), basicItem()));
     public static final Supplier<Item> PALM_LEAVES = registerWithTab("palm_leaves",
             () -> new BlockItem(CDModBlocks.PALM_LEAVES.get(), basicItem()));
+    public static final Supplier<Item> PALM_SAPLING = registerWithTab("palm_sapling",
+            () -> new BlockItem(CDModBlocks.PALM_SAPLING.get(), basicItem()));
     public static final Supplier<Item> PALM_SIGN = registerWithTab("palm_sign",
             () -> new SignItem(new Item.Properties().stacksTo(16), CDModBlocks.PALM_SIGN.get(), CDModBlocks.PALM_WALL_SIGN.get()));
     public static final Supplier<Item> PALM_HANGING_SIGN = registerWithTab("palm_hanging_sign",

@@ -66,6 +66,7 @@ public class BlockStates extends BlockStateProvider {
         pressurePlateBlock(CDModBlocks.PALM_PRESSURE_PLATE.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
         buttonBlock(CDModBlocks.PALM_BUTTON.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
         leavesBlock(CDModBlocks.PALM_LEAVES.get());
+        saplingBlock(CDModBlocks.PALM_SAPLING.get());
 
         cabinetBlock(CDModBlocks.PALM_CABINET.get(), "palm");
 
@@ -80,6 +81,11 @@ public class BlockStates extends BlockStateProvider {
         simpleBlockWithItem(block,
                 models().singleTexture(BuiltInRegistries.BLOCK.getKey(block).getPath(), mcLoc("block/leaves"), "all", blockTexture(block)).renderType("cutout")
         );
+    }
+
+    private void saplingBlock(Block block) {
+        simpleBlock(block,
+                models().cross(BuiltInRegistries.BLOCK.getKey(block).getPath(), blockTexture(block)).renderType("cutout"));
     }
 
     public void cabinetBlock(Block block, String woodType) {

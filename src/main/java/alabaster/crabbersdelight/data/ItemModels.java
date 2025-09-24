@@ -53,6 +53,12 @@ public class ItemModels extends ItemModelProvider
         );
         takeAll(items, spriteBlockItems.toArray(new Item[0])).forEach(item -> withExistingParent(itemName(item), GENERATED).texture("layer0", resourceItem(itemName(item))));
 
+
+        // Blocks with flat block textures for their items
+        Set<Item> flatBlockItems = Sets.newHashSet(
+                CDModItems.PALM_SAPLING.get());
+        takeAll(items, flatBlockItems.toArray(new Item[0])).forEach(item -> itemGeneratedModel(item, resourceBlock(itemName(item))));
+
         // Blocks whose item look alike
         takeAll(items, i -> i instanceof BlockItem).forEach(item -> blockBasedModel(item, ""));
 

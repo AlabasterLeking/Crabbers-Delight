@@ -34,6 +34,24 @@ public class CDBlockLoot extends BlockLootSubProvider
         dropSelf(CDModBlocks.FROG_LEG_BARREL.get());
         dropSelf(CDModBlocks.NAUTILUS_SHELL_BLOCK.get());
         dropSelf(CDModBlocks.PEARL_BLOCK.get());
+
+        dropSelf(CDModBlocks.PALM_LOG.get());
+        dropSelf(CDModBlocks.STRIPPED_PALM_LOG.get());
+        dropSelf(CDModBlocks.PALM_WOOD.get());
+        dropSelf(CDModBlocks.STRIPPED_PALM_WOOD.get());
+        dropSelf(CDModBlocks.PALM_SAPLING.get());
+        dropSelf(CDModBlocks.PALM_PLANKS.get());
+        dropSelf(CDModBlocks.PALM_STAIRS.get());
+        dropSelf(CDModBlocks.PALM_TRAPDOOR.get());
+        dropSelf(CDModBlocks.PALM_FENCE.get());
+        dropSelf(CDModBlocks.PALM_FENCE_GATE.get());
+        dropSelf(CDModBlocks.PALM_BUTTON.get());
+        dropSelf(CDModBlocks.PALM_PRESSURE_PLATE.get());
+        dropSelf(CDModBlocks.PALM_SIGN.get());
+        dropSelf(CDModBlocks.PALM_HANGING_SIGN.get());
+        dropSelf(CDModBlocks.PALM_WALL_SIGN.get());
+        dropSelf(CDModBlocks.PALM_WALL_HANGING_SIGN.get());
+        dropSelf(CDModBlocks.PALM_CABINET.get());
     }
 
     @Override
