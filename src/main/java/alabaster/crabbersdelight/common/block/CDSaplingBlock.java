@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -17,8 +18,13 @@ public class CDSaplingBlock extends SaplingBlock {
         this.blockToSurviveOn = block;
     }
 
+
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        return blockToSurviveOn.get() == state.getBlock();
+        Block block = state.getBlock();
+
+        return blockToSurviveOn.get() == block ||
+                state.is(BlockTags.DIRT) ||   // includes dirt, coarse dirt, podzol, etc.
+                state.is(BlockTags.SAND);    // includes sand and red sand
     }
 }

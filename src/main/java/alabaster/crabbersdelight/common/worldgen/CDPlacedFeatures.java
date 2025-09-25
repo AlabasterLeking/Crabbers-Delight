@@ -22,7 +22,7 @@ public class CDPlacedFeatures {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         
         register(context, PALM_PLACED_KEY, configuredFeatures.getOrThrow(CDConfiguredFeatures.PALM_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1f, 1),
                         CDModBlocks.PALM_SAPLING.get()));
     }
 

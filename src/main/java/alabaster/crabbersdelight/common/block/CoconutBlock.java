@@ -1,7 +1,6 @@
 package alabaster.crabbersdelight.common.block;
 
 import alabaster.crabbersdelight.common.registry.CDDamageSources;
-import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -16,16 +15,20 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class CoconutBlock extends FallingBlock {
-    private static final VoxelShape SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D);
+    public static final BooleanProperty HANGING = BooleanProperty.create("hanging");
+    private static VoxelShape SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D);
 
     public static final MapCodec<CoconutBlock> CODEC = simpleCodec(CoconutBlock::new);
 
     public CoconutBlock(Properties properties) {
         super(properties);
+        this.registerDefaultState(this.defaultBlockState().setValue(HANGING, false));
     }
 
     @Override
@@ -34,30 +37,35 @@ public class CoconutBlock extends FallingBlock {
     }
 
     @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
+        builder.add(HANGING);
+    }
+
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
-    }
-
-    @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
-    }
-
-    @Override
-    public VoxelShape getBlockSupportShape(BlockState state, BlockGetter level, BlockPos pos) {
-        return SHAPE;
+        // Return a new shape based on the HANGING property; do NOT modify the static SHAPE
+        if (state.getValue(HANGING)) {
+            return Block.box(3.0D, 5.0D, 3.0D, 13.0D, 15.0D, 13.0D);
+        } else {
+            return Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D);
+        }
     }
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState();
+        Level level = context.getLevel();
+        BlockPos above = context.getClickedPos().above();
+        BlockState aboveState = level.getBlockState(above);
+
+        // Hanging is true if there is any solid block above (or just any block)
+        boolean hanging = !aboveState.isAir();
+        return this.defaultBlockState().setValue(HANGING, hanging);
     }
 
     @Override
     public void tick(BlockState state, net.minecraft.server.level.ServerLevel level, BlockPos pos, net.minecraft.util.RandomSource random) {
-        BlockPos above = pos.above();
-        BlockState aboveState = level.getBlockState(above);
-        boolean hanging = aboveState.is(CDModBlocks.PALM_LEAVES.get());
+        boolean hanging = state.getValue(HANGING);
         if (!hanging) {
             super.tick(state, level, pos, random);
         }
@@ -101,5 +109,4 @@ public class CoconutBlock extends FallingBlock {
             }
         }
     }
-
 }

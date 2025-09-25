@@ -70,7 +70,7 @@ public class CDModBlocks {
             });
 
     public static final Supplier<Block> PALM_SAPLING = BLOCKS.register("palm_sapling",
-            () -> new SaplingBlock(CDTreeGrowers.PALM, Block.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+            () -> new CDSaplingBlock(CDTreeGrowers.PALM, Block.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.SAND));
 
     public static final Supplier<SlabBlock> PALM_SLAB = BLOCKS.register("palm_slab",
             () -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.OAK_SLAB)));
