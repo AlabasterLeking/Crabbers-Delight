@@ -1,5 +1,6 @@
 package alabaster.crabbersdelight.common.worldgen.tree;
 
+import alabaster.crabbersdelight.common.registry.CDTrunkPlacerTypes;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
@@ -30,7 +31,7 @@ public class PalmTrunkPlacer extends TrunkPlacer {
 
     @Override
     protected TrunkPlacerType<?> type() {
-        return alabaster.crabbersdelight.common.registry.CDTrunkPlacerTypes.PALM.get();
+        return CDTrunkPlacerTypes.PALM.get();
     }
 
     @Override
@@ -59,6 +60,6 @@ public class PalmTrunkPlacer extends TrunkPlacer {
             cursor.move(0, 1, 0);
         }
 
-        return List.of(new FoliagePlacer.FoliageAttachment(cursor.below(), 0, false));
+        return List.of(new FoliagePlacer.FoliageAttachment(cursor, 0, false));
     }
 }

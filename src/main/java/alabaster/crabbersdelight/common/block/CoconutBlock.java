@@ -3,8 +3,13 @@ package alabaster.crabbersdelight.common.block;
 import alabaster.crabbersdelight.common.registry.CDDamageSources;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.FallingBlockEntity;
@@ -12,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -53,6 +59,19 @@ public class CoconutBlock extends FallingBlock {
     }
 
     @Override
+    public BlockState updateShape(BlockState state, Direction facing, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        if (facing == Direction.UP) {
+            boolean hanging = !neighborState.isAir();
+            if (!hanging) {
+                // Schedule a tick to turn into a falling block
+                level.scheduleTick(pos, this, 1);
+            }
+            return state.setValue(HANGING, hanging);
+        }
+        return super.updateShape(state, facing, neighborState, level, pos, neighborPos);
+    }
+
+    @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         Level level = context.getLevel();
         BlockPos above = context.getClickedPos().above();
@@ -64,7 +83,7 @@ public class CoconutBlock extends FallingBlock {
     }
 
     @Override
-    public void tick(BlockState state, net.minecraft.server.level.ServerLevel level, BlockPos pos, net.minecraft.util.RandomSource random) {
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         boolean hanging = state.getValue(HANGING);
         if (!hanging) {
             super.tick(state, level, pos, random);
@@ -85,9 +104,10 @@ public class CoconutBlock extends FallingBlock {
 
             for (Entity entity : level.getEntities(null, SHAPE.bounds().move(pos))) {
                 if (entity instanceof LivingEntity living) {
+
                     living.hurt(CDDamageSources.getSimpleDamageSource(level, CDDamageSources.FALLING_COCONUT), 2.0F);
 
-                    if (entity instanceof Player) {
+                    if (entity instanceof Player player) {
                         level.playSound(
                                 null,
                                 entity.getX(),
@@ -98,13 +118,16 @@ public class CoconutBlock extends FallingBlock {
                                 0.7F,
                                 0.5F
                         );
+
+                        player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
+                        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 2));
+
                         hitPlayer = true;
                     }
                 }
             }
 
             if (hitPlayer) {
-                // Break block and drop loot
                 level.destroyBlock(pos, true);
             }
         }

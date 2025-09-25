@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Can be grown, need to make some custom log and leave placers (also needs to be plantable on sand)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDFoliagePlacerTypes.java" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Generation and coconut blockstates">
+      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDLeavesBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/configured_feature/palm.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/configured_feature/palm.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/palm_placed.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/palm_placed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDSaplingBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDSaplingBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/LogBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDLogBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDConfiguredFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDConfiguredFeatures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDPlacedFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDPlacedFeatures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/CDTrunkPlacers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/PalmFoliagePlacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/blockstates/coconut.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/blockstates/coconut.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/PalmFoliagePlacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/PalmFoliagePlacer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/PalmTrunkPlacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/PalmTrunkPlacer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,14 +347,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Pufferfish slices">
-      <option name="closed" value="true" />
-      <created>1706324454075</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1706324454075</updated>
     </task>
     <task id="LOCAL-00042" summary="Adjust crab cakes recipe">
       <option name="closed" value="true" />
@@ -743,7 +732,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758761633412</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Generation and coconut blockstates">
+      <option name="closed" value="true" />
+      <created>1758767938396</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1758767938396</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -763,7 +760,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Revised chum recipes - Initial revision pass for loot tables - Added 4 new advancements - Modified some existing advancements - Added the &quot;Can&quot;" />
     <MESSAGE value="Updated Can texture" />
     <MESSAGE value="Updated Clam Texture" />
     <MESSAGE value="Updated crab spawning mechanics" />
@@ -788,7 +784,8 @@
     <MESSAGE value="Coconuts" />
     <MESSAGE value="Loot and the start of tree placement" />
     <MESSAGE value="Can be grown, need to make some custom log and leave placers (also needs to be plantable on sand)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Can be grown, need to make some custom log and leave placers (also needs to be plantable on sand)" />
+    <MESSAGE value="Generation and coconut blockstates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generation and coconut blockstates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

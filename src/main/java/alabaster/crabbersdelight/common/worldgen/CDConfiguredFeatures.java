@@ -23,7 +23,7 @@ public class CDConfiguredFeatures {
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         register(context, PALM_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(CDModBlocks.PALM_LOG.get()),
-                new PalmTrunkPlacer(4, 3, 3, ConstantInt.of(3)),
+                new PalmTrunkPlacer(5, 3, 3, ConstantInt.of(3)),
 
                 BlockStateProvider.simple(CDModBlocks.PALM_LEAVES.get()),
                 new PalmFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3)),

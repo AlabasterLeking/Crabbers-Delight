@@ -1,5 +1,6 @@
 package alabaster.crabbersdelight.common.worldgen.tree;
 
+import alabaster.crabbersdelight.common.block.CDLeavesBlock;
 import alabaster.crabbersdelight.common.block.CoconutBlock;
 import alabaster.crabbersdelight.common.registry.CDFoliagePlacerTypes;
 import alabaster.crabbersdelight.common.registry.CDModBlocks;
@@ -83,15 +84,11 @@ public class PalmFoliagePlacer extends FoliagePlacer {
         placeLeafWithCoconut(level, setter, random, config, pos);
     }
 
-    private static void placeLeafWithCoconut(LevelSimulatedReader level,
-                                             FoliageSetter setter,
-                                             RandomSource random,
-                                             TreeConfiguration config,
-                                             BlockPos pos) {
-        // Place persistent leaf
+    private static void placeLeafWithCoconut(LevelSimulatedReader level, FoliageSetter setter, RandomSource random, TreeConfiguration config, BlockPos pos) {
+        // Place leaf
         BlockState leaf = config.foliageProvider.getState(random, pos);
-        if (leaf.hasProperty(LeavesBlock.PERSISTENT)) {
-            leaf = leaf.setValue(LeavesBlock.PERSISTENT, true);
+        if (leaf.hasProperty(CDLeavesBlock.GENERATED)) {
+            leaf = leaf.setValue(CDLeavesBlock.GENERATED, true);
         }
         setter.set(pos, leaf);
 

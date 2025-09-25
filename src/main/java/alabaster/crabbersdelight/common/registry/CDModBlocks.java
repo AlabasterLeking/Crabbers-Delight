@@ -25,14 +25,14 @@ public class CDModBlocks {
 
     // Palm Tree
     public static final Supplier<Block> PALM_LOG = BLOCKS.register("palm_log",
-            () -> new LogBlock(Block.Properties.ofFullCopy(Blocks.OAK_LOG)));
+            () -> new CDLogBlock(Block.Properties.ofFullCopy(Blocks.OAK_LOG)));
     public static final Supplier<Block> PALM_WOOD = BLOCKS.register("palm_wood",
-            () -> new LogBlock(Block.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+            () -> new CDLogBlock(Block.Properties.ofFullCopy(Blocks.OAK_WOOD)));
 
     public static final Supplier<Block> STRIPPED_PALM_LOG = BLOCKS.register("stripped_palm_log",
-            () -> new LogBlock(Block.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+            () -> new CDLogBlock(Block.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
     public static final Supplier<Block> STRIPPED_PALM_WOOD = BLOCKS.register("stripped_palm_wood",
-            () -> new LogBlock(Block.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+            () -> new CDLogBlock(Block.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
 
     public static final Supplier<Block> PALM_PLANKS = BLOCKS.register("palm_planks",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS)) {
@@ -52,7 +52,7 @@ public class CDModBlocks {
                 }
             });
     public static final Supplier<Block> PALM_LEAVES = BLOCKS.register("palm_leaves",
-            () -> new LeavesBlock(Block.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
+            () -> new CDLeavesBlock(Block.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
