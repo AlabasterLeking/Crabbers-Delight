@@ -18,7 +18,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 
 public class CDConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PALM_KEY = registerKey("bloodwood");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PALM_KEY = registerKey("palm");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         register(context, PALM_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
