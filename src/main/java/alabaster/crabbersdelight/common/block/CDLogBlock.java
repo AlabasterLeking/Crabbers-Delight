@@ -49,29 +49,4 @@ public class CDLogBlock extends RotatedPillarBlock {
 
         return super.getToolModifiedState(state, context, itemAbility, simulate);
     }
-
-
-    @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        super.onRemove(state, level, pos, newState, isMoving);
-
-        if (!level.isClientSide) {
-            int rangeX = 5;
-            int rangeY = 10;
-            int rangeZ = 5;
-
-            BlockPos.betweenClosed(pos.offset(-rangeX, 0, -rangeZ), pos.offset(rangeX, rangeY, rangeZ))
-                    .forEach(checkPos -> {
-                        BlockState leafState = level.getBlockState(checkPos);
-                        if (leafState.is(CDModBlocks.PALM_LEAVES.get())) {
-                            if (leafState.hasProperty(LeavesBlock.PERSISTENT)) {
-                                BooleanProperty persistentProp = LeavesBlock.PERSISTENT;
-                                if (leafState.getValue(persistentProp)) {
-                                    level.destroyBlock(checkPos, true);
-                                }
-                            }
-                        }
-                    });
-        }
-    }
 }

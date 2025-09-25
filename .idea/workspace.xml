@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Generation and coconut blockstates">
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDLeavesBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/configured_feature/palm.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/configured_feature/palm.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/LogBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDLogBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDConfiguredFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDConfiguredFeatures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/PalmFoliagePlacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/PalmFoliagePlacer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/PalmTrunkPlacer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/tree/PalmTrunkPlacer.java" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fixed leaves decomposing, coconuts inflict effects and properly fall at leaf decay">
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDLogBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CDLogBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,14 +340,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Adjust crab cakes recipe">
-      <option name="closed" value="true" />
-      <created>1706325769793</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1706325769793</updated>
     </task>
     <task id="LOCAL-00043" summary="Fix for fish barrels not dropping when broken">
       <option name="closed" value="true" />
@@ -740,7 +725,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758767938396</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Fixed leaves decomposing, coconuts inflict effects and properly fall at leaf decay">
+      <option name="closed" value="true" />
+      <created>1758770013087</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1758770013087</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -760,7 +753,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated Can texture" />
     <MESSAGE value="Updated Clam Texture" />
     <MESSAGE value="Updated crab spawning mechanics" />
     <MESSAGE value="Increment to 1.1.6 - Fix reversal issue of pufferfish and tropical fish loot - Fix issue with Crab Trap not consuming bait properly - Fix reversal of clam and shrimp chum recipes" />
@@ -785,7 +777,8 @@
     <MESSAGE value="Loot and the start of tree placement" />
     <MESSAGE value="Can be grown, need to make some custom log and leave placers (also needs to be plantable on sand)" />
     <MESSAGE value="Generation and coconut blockstates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generation and coconut blockstates" />
+    <MESSAGE value="Fixed leaves decomposing, coconuts inflict effects and properly fall at leaf decay" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed leaves decomposing, coconuts inflict effects and properly fall at leaf decay" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
