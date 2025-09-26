@@ -1,9 +1,13 @@
 package alabaster.crabbersdelight;
 
 import alabaster.crabbersdelight.client.gui.CrabTrapGUI;
+import alabaster.crabbersdelight.common.entity.boat.CDBoatModelLayers;
+import alabaster.crabbersdelight.common.entity.boat.CDBoatRenderer;
 import alabaster.crabbersdelight.common.entity.crab.CrabEntity;
 import alabaster.crabbersdelight.common.entity.crab.CrabModel;
 import alabaster.crabbersdelight.common.entity.crab.CrabRenderer;
+import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -94,6 +98,8 @@ public class CrabbersDelight {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(CDModEntities.CRAB.get(), CrabRenderer::new);
+            EntityRenderers.register(CDModEntities.MOD_BOAT.get(), pContext -> new CDBoatRenderer(pContext, false));
+            EntityRenderers.register(CDModEntities.MOD_CHEST_BOAT.get(), pContext -> new CDBoatRenderer(pContext, true));
         }
 
         @SubscribeEvent
@@ -119,6 +125,8 @@ public class CrabbersDelight {
         @SubscribeEvent
         public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
             event.registerLayerDefinition(CrabModel.LAYER_LOCATION, CrabModel::createBodyLayer);
+            event.registerLayerDefinition(CDBoatModelLayers.PALM_BOAT_LAYER, BoatModel::createBodyModel);
+            event.registerLayerDefinition(CDBoatModelLayers.PALM_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
         }
 
         @SubscribeEvent

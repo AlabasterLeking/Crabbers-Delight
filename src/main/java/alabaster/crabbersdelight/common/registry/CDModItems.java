@@ -2,20 +2,17 @@ package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.CDFoodValues;
+import alabaster.crabbersdelight.common.entity.boat.CDBoatEntity;
 import alabaster.crabbersdelight.common.item.*;
 import com.google.common.collect.Sets;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
-import vectorwing.farmersdelight.common.item.FuelBlockItem;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -131,6 +128,12 @@ public class CDModItems {
             () -> new HangingSignItem(CDModBlocks.PALM_HANGING_SIGN.get(), CDModBlocks.PALM_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
     public static final Supplier<Item> PALM_CABINET = registerWithTab("palm_cabinet",
             () -> new BlockItem(CDModBlocks.PALM_CABINET.get(), basicItem()));
+    public static final Supplier<Item> PALM_BOAT = registerWithTab("palm_boat",
+            () -> new CDBoatItem(false, CDBoatEntity.Type.PALM, new Item.Properties()));
+    public static final Supplier<Item> PALM_CHEST_BOAT = registerWithTab("palm_chest_boat",
+            () -> new CDBoatItem(true, CDBoatEntity.Type.PALM, new Item.Properties()));
+
+    // Coconut
     public static final Supplier<Item> COCONUT = registerWithTab("coconut",
             () -> new BlockItem(CDModBlocks.COCONUT.get(), basicItem()));
     public static final Supplier<Item> COCONUT_HALVE = registerWithTab("coconut_halve",

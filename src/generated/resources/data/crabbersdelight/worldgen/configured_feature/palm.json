@@ -19,6 +19,7 @@
         "Name": "crabbersdelight:palm_leaves",
         "Properties": {
           "distance": "7",
+          "generated": "false",
           "persistent": "false",
           "waterlogged": "false"
         }

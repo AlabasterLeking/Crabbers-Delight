@@ -1,6 +1,8 @@
 package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.common.entity.boat.CDBoatEntity;
+import alabaster.crabbersdelight.common.entity.boat.CDChestBoatEntity;
 import alabaster.crabbersdelight.common.entity.crab.CrabEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
@@ -16,4 +18,10 @@ public class CDModEntities {
             ENTITY_TYPES.register("crab",
                     () -> EntityType.Builder.of(CrabEntity::new, MobCategory.WATER_AMBIENT).sized(0.7f, 0.7f).build("crab"));
 
+    public static final Supplier<EntityType<CDBoatEntity>> MOD_BOAT =
+            ENTITY_TYPES.register("mod_boat", () -> EntityType.Builder.<CDBoatEntity>of(CDBoatEntity::new, MobCategory.MISC)
+                    .sized(1.375f, 0.5625f).build("palm_boat"));
+    public static final Supplier<EntityType<CDChestBoatEntity>> MOD_CHEST_BOAT =
+            ENTITY_TYPES.register("mod_chest_boat", () -> EntityType.Builder.<CDChestBoatEntity>of(CDChestBoatEntity::new, MobCategory.MISC)
+                    .sized(1.375f, 0.5625f).build("palm_chest_boat"));
 }
