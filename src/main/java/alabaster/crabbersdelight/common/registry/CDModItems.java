@@ -13,6 +13,7 @@ import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 import java.util.LinkedHashSet;
 import java.util.function.Supplier;
@@ -139,7 +140,7 @@ public class CDModItems {
     public static final Supplier<Item> COCONUT_HALVE = registerWithTab("coconut_halve",
             () -> new ConsumableItem(foodItem(CDFoodValues.COCONUT_HALVE)));
     public static final Supplier<Item> COCONUT_MILK = registerWithTab("coconut_milk",
-            () -> new DrinkableItem(drinkItem(CDFoodValues.COCONUT_MILK), false));
+            () -> new MilkBottleItem(drinkItem(CDFoodValues.COCONUT_MILK)));
     public static final Supplier<Item> COCONUT_PUDDING = registerWithTab("coconut_pudding",
             () -> new ConsumableItem(foodItem(CDFoodValues.COCONUT_PUDDING).craftRemainder(Items.GLASS_BOTTLE)));
 
