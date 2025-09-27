@@ -66,6 +66,12 @@ public class CDFoodValues {
             .alwaysEdible()
             .effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0), 1.0F).build();
 
+    public static final FoodProperties COCONUT_MILK = (new FoodProperties.Builder())
+            .alwaysEdible().nutrition(1).saturationModifier(0.5f).build();
+
+    public static final FoodProperties COCONUT_PUDDING = (new FoodProperties.Builder())
+            .nutrition(6).saturationModifier(0.5f).build();
+
     // Slices
 
     public static final FoodProperties COOKED_TROPICAL_FISH = (new FoodProperties.Builder())
@@ -82,6 +88,9 @@ public class CDFoodValues {
 
     public static final FoodProperties PUFFERFISH_SLICE = (new FoodProperties.Builder())
             .nutrition(1).saturationModifier(0.1f).effect(() -> new MobEffectInstance(MobEffects.POISON, 300, 0), 0.3F).fast().build();
+
+    public static final FoodProperties COCONUT_HALVE = (new FoodProperties.Builder())
+            .nutrition(2).saturationModifier(0.4f).build();
 
     // Food
 

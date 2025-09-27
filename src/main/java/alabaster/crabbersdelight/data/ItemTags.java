@@ -11,6 +11,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import javax.annotation.Nullable;
@@ -158,5 +159,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(CDModItems.STRIPPED_PALM_LOG.get())
                 .add(CDModItems.PALM_WOOD.get())
                 .add(CDModItems.STRIPPED_PALM_WOOD.get());
+
+        tag(CommonTags.FOODS_MILK)
+                .add(CDModItems.COCONUT_MILK.get());
     }
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "crabbersdelight:coconut"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "crabbersdelight:coconut_milk"
+  }
+}

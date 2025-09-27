@@ -399,6 +399,12 @@ public class CraftingRecipes {
                 .unlockedBy("has_cooked_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COOKED_COD, Items.COOKED_SALMON, CDModItems.COOKED_TROPICAL_FISH.get()))
                 .save(output);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.COCONUT_MILK.get())
+                .requires(Items.GLASS_BOTTLE)
+                .requires(CDModItems.COCONUT.get())
+                .unlockedBy("has_cooked_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COOKED_COD, Items.COOKED_SALMON, CDModItems.COOKED_TROPICAL_FISH.get()))
+                .save(output);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.KELP_SHAKE.get())
                 .requires(Items.GLASS_BOTTLE)
                 .requires(Items.SUGAR)
@@ -450,6 +456,8 @@ public class CraftingRecipes {
                 .requires(Items.GLASS_BOTTLE)
                 .unlockedBy("has_sea_pickle", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
                 .save(output);
+
+        // Chum
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.BUCKET_OF_CRAB_CHUM.get(), 1)
                 .pattern("mfm")

@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="finished lang">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_table/blocks/palm_leaves.json" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Buncha recipes and tags and more">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/CDFoodValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/CDFoodValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CookingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CookingRecipes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_table/blocks/coconut.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_table/blocks/coconut.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -349,14 +347,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Temporarily removed Lanternfish Barrels; Added Achievement related to a new dish; THE CLAW">
-      <option name="closed" value="true" />
-      <created>1718332309599</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1718332309599</updated>
     </task>
     <task id="LOCAL-00048" summary="Arid and Soggy Flesh">
       <option name="closed" value="true" />
@@ -742,7 +732,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758938988288</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Buncha recipes and tags and more">
+      <option name="closed" value="true" />
+      <created>1758943049365</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1758943049365</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -762,7 +760,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Frog Leg Kebob - Add Squid Kebob - Add Coral Fragments, Coral Crunch, and a TON of utility recipes" />
     <MESSAGE value="Added Squid Barrel, Glow Squid Barrel, and Frog Leg Barrel" />
     <MESSAGE value="Fix un-crafting recipes for Squid and Glow Squid Barrels" />
     <MESSAGE value="Add barrel drops for new barrels - Added JEI plugin and display of results - slightly modified loot tables" />
@@ -787,7 +784,8 @@
     <MESSAGE value="Boats (Chest Boat crashes)" />
     <MESSAGE value="finished boats" />
     <MESSAGE value="finished lang" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished lang" />
+    <MESSAGE value="Buncha recipes and tags and more" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buncha recipes and tags and more" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
