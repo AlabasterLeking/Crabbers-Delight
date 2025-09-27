@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fix issue with log block destroying the palm logs killed player placed leaf blocks">
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/boat/CDBoatEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/boat/CDBoatModelLayers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/boat/CDBoatRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/boat/CDChestBoatEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CDBoatItem.java" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Boats (Chest Boat crashes)">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Crabbers-Delight.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Crabbers-Delight.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/configured_feature/palm.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/configured_feature/palm.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModEntities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/boat/CDBoatEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/boat/CDBoatEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/boat/CDChestBoatEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/entity/boat/CDChestBoatEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/entity/chestboat/palm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/entity/chest_boat/palm.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +132,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Gradle.Crabbers-Delight [build].executor": "Run",
+    "Gradle.Crabbers-Delight [clean].executor": "Run",
     "Gradle.Crabbers-Delight [runClient].executor": "Run",
     "Gradle.Crabbers-Delight [runData].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -223,28 +220,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [genIntellijRuns]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/.idea/modules" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="genIntellijRuns" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="Crabbers-Delight [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -257,6 +232,28 @@
         <option name="taskNames">
           <list>
             <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Crabbers-Delight [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -336,10 +333,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
+        <item itemvalue="Gradle.Crabbers-Delight [clean]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
         <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
-        <item itemvalue="Gradle.C:/Users/cjtop/Desktop/Crabbers-Delight/.idea/modules [genIntellijRuns]" />
       </list>
     </recent_temporary>
   </component>
@@ -351,14 +348,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Fixed fishing loot table to (hopefully) not be overwritten entirely; Refactored loot table structure for crab trap loot; Updated dependency on Farmer's Delight to latest version">
-      <option name="closed" value="true" />
-      <created>1718324109494</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1718324109494</updated>
     </task>
     <task id="LOCAL-00045" summary="Reduced crab spawn weight; Added Shrimp Fried Rice; Assets for Arid and Soggy fleshes; Removed JEI plugin until I can figure it out">
       <option name="closed" value="true" />
@@ -744,7 +733,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758770448546</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Boats (Chest Boat crashes)">
+      <option name="closed" value="true" />
+      <created>1758857840703</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1758857840703</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -764,7 +761,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated crab spawning mechanics" />
     <MESSAGE value="Increment to 1.1.6 - Fix reversal issue of pufferfish and tropical fish loot - Fix issue with Crab Trap not consuming bait properly - Fix reversal of clam and shrimp chum recipes" />
     <MESSAGE value="Further tweaked Crab spawning to add more valid blocks (now controlled with a tag - Modified Crab Trap to be able to use no bait - Replaced Iron Nugget in loot tables with the Can" />
     <MESSAGE value="Add Frog Leg Kebob - Add Squid Kebob - Add Coral Fragments, Coral Crunch, and a TON of utility recipes" />
@@ -789,7 +785,8 @@
     <MESSAGE value="Generation and coconut blockstates" />
     <MESSAGE value="Fixed leaves decomposing, coconuts inflict effects and properly fall at leaf decay" />
     <MESSAGE value="Fix issue with log block destroying the palm logs killed player placed leaf blocks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix issue with log block destroying the palm logs killed player placed leaf blocks" />
+    <MESSAGE value="Boats (Chest Boat crashes)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boats (Chest Boat crashes)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

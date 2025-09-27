@@ -52,15 +52,13 @@ public class CDChestBoatEntity extends ChestBoat {
         builder.define(DATA_ID_TYPE, CDBoatEntity.Type.PALM.ordinal());
     }
 
-    @Override
-    protected void addAdditionalSaveData(CompoundTag pCompound) {
-        pCompound.putString("Type", this.getModVariant().getSerializedName());
+    protected void addAdditionalSaveData(CompoundTag compoundTag) {
+        compoundTag.putString("Type", this.getModVariant().getSerializedName());
     }
 
-    @Override
-    protected void readAdditionalSaveData(CompoundTag pCompound) {
-        if (pCompound.contains("Type", 8)) {
-            this.setVariant(CDBoatEntity.Type.byName(pCompound.getString("Type")));
+    protected void readAdditionalSaveData(CompoundTag compoundTag) {
+        if (compoundTag.contains("Type", 8)) {
+            this.setVariant(CDBoatEntity.Type.byName(compoundTag.getString("Type")));
         }
     }
 

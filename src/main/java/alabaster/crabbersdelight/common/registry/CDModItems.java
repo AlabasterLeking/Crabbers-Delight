@@ -126,12 +126,12 @@ public class CDModItems {
             () -> new SignItem(new Item.Properties().stacksTo(16), CDModBlocks.PALM_SIGN.get(), CDModBlocks.PALM_WALL_SIGN.get()));
     public static final Supplier<Item> PALM_HANGING_SIGN = registerWithTab("palm_hanging_sign",
             () -> new HangingSignItem(CDModBlocks.PALM_HANGING_SIGN.get(), CDModBlocks.PALM_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
-    public static final Supplier<Item> PALM_CABINET = registerWithTab("palm_cabinet",
-            () -> new BlockItem(CDModBlocks.PALM_CABINET.get(), basicItem()));
     public static final Supplier<Item> PALM_BOAT = registerWithTab("palm_boat",
             () -> new CDBoatItem(false, CDBoatEntity.Type.PALM, new Item.Properties()));
     public static final Supplier<Item> PALM_CHEST_BOAT = registerWithTab("palm_chest_boat",
             () -> new CDBoatItem(true, CDBoatEntity.Type.PALM, new Item.Properties()));
+    public static final Supplier<Item> PALM_CABINET = registerWithTab("palm_cabinet",
+            () -> new BlockItem(CDModBlocks.PALM_CABINET.get(), basicItem()));
 
     // Coconut
     public static final Supplier<Item> COCONUT = registerWithTab("coconut",
