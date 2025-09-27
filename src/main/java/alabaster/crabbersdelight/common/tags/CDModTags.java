@@ -30,6 +30,8 @@ public class CDModTags {
 
     public static final TagKey<Block> CRAB_SPAWN_ON = modBlockTag("crab_spawn_on");
 
+    public static final TagKey<Item> PALM_LOGS = modItemTag("palm_logs");
+
     private static TagKey<Item> modItemTag(String path) {
         return ItemTags.create(ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, path));
     }

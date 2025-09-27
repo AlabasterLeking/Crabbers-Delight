@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:coconut"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "crabbersdelight:coconut_halve"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

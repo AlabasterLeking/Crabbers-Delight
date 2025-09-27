@@ -1,8 +1,10 @@
 package alabaster.crabbersdelight.data.recipe;
 
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import alabaster.crabbersdelight.common.registry.CDModItems;
 import net.neoforged.neoforge.common.ItemAbilities;
@@ -18,6 +20,10 @@ public class CuttingRecipes {
 
         // Pickaxe
         breakingCoral(output);
+
+        // Axe
+        strippingWood(output);
+        salvagingWoodenFurniture(output);
     }
 
     private static void cuttingAnimalItems(RecipeOutput output) {
@@ -55,6 +61,17 @@ public class CuttingRecipes {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.CLAM.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.RAW_CLAM_MEAT.get(), 1)
                 .addResultWithChance(CDModItems.PEARL.get(), 0.5F)
                 .build(output);
+
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.COCONUT.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.COCONUT_HALVE.get(), 2)
+                .build(output);
+    }
+    
+    private static void strippingWood(RecipeOutput output) {
+        stripLogForBark(output, CDModItems.PALM_LOG.get(), CDModItems.STRIPPED_PALM_LOG.get());
+    }
+
+    private static void salvagingWoodenFurniture(RecipeOutput output) {
+        salvagePlankFromFurniture(output, CDModItems.PALM_PLANKS.get(), CDModItems.PALM_DOOR.get(), CDModItems.PALM_TRAPDOOR.get(), CDModItems.PALM_SIGN.get(), CDModItems.PALM_HANGING_SIGN.get());
     }
 
     private static void breakingCoral(RecipeOutput output) {
@@ -130,5 +147,18 @@ public class CuttingRecipes {
                 .build(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_TUBE_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
                 .build(output);
+    }
+
+    private static void stripLogForBark(RecipeOutput output, ItemLike log, ItemLike strippedLog) {
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), strippedLog)
+                .addResult(ModItems.TREE_BARK.get())
+                .addSound(SoundEvents.AXE_STRIP).build(output);
+    }
+
+    private static void salvagePlankFromFurniture(RecipeOutput output, ItemLike plank, ItemLike door, ItemLike trapdoor, ItemLike sign, ItemLike hangingSign) {
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(door), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).build(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(trapdoor), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).build(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(sign), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).build(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(hangingSign), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).build(output);
     }
 }

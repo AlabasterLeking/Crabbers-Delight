@@ -151,5 +151,12 @@ public class ItemTags extends ItemTagsProvider {
 
         tag(ModTags.WOODEN_CABINETS)
                 .add(CDModItems.PALM_CABINET.get());
+
+        // Palm
+        tag(CDModTags.PALM_LOGS)
+                .add(CDModItems.PALM_LOG.get())
+                .add(CDModItems.STRIPPED_PALM_LOG.get())
+                .add(CDModItems.PALM_WOOD.get())
+                .add(CDModItems.STRIPPED_PALM_WOOD.get());
     }
 }
