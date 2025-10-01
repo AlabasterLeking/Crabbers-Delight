@@ -4,9 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Added Coconut Milk and Coconut Pudding">
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Change coconut milk to have the FD effect removal and tooltip">
+      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/SeashellBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/utils/CDStateProviders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/RandomSeashellStateProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/blockstates/seashells.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/block/seashell_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/block/seashell_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/block/seashell_3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDBiomeModifiers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDBiomeModifiers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDConfiguredFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDConfiguredFeatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDPlacedFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDPlacedFeatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +155,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "NeoForge-1.21.1",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/cjtop/IdeaProjects/Crabbers-Delight/src/main/resources/assets/crabbersdelight/textures/entity/signs/hanging",
+    "last_opened_file_path": "C:/Users/cjtop/IdeaProjects/Crabbers-Delight/src/main/resources/assets/crabbersdelight/models/block",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.35402298",
@@ -145,11 +164,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\models\block" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\entity\signs\hanging" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\gui\hanging_signs" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\entity\signs" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot" />
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_modifiers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\entity\signs\hanging" />
@@ -330,8 +349,8 @@
       <list>
         <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
-        <item itemvalue="Gradle.Crabbers-Delight [clean]" />
         <item itemvalue="Gradle.Crabbers-Delight [build]" />
+        <item itemvalue="Gradle.Crabbers-Delight [clean]" />
         <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
       </list>
     </recent_temporary>
@@ -344,14 +363,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Crab Claw 2D and 3D Models">
-      <option name="closed" value="true" />
-      <created>1718998617418</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1718998617418</updated>
     </task>
     <task id="LOCAL-00050" summary="Crab claw properly takes damage - verified enchantability and durability work as intended">
       <option name="closed" value="true" />
@@ -737,7 +748,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758944064972</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Change coconut milk to have the FD effect removal and tooltip">
+      <option name="closed" value="true" />
+      <created>1758944530305</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1758944530305</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -757,7 +776,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix un-crafting recipes for Squid and Glow Squid Barrels" />
     <MESSAGE value="Add barrel drops for new barrels - Added JEI plugin and display of results - slightly modified loot tables" />
     <MESSAGE value="Modified loot again - Adjusted JEI header to not need a separate translated component" />
     <MESSAGE value="Modified loot again" />
@@ -782,7 +800,8 @@
     <MESSAGE value="finished lang" />
     <MESSAGE value="Buncha recipes and tags and more" />
     <MESSAGE value="Added Coconut Milk and Coconut Pudding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Coconut Milk and Coconut Pudding" />
+    <MESSAGE value="Change coconut milk to have the FD effect removal and tooltip" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change coconut milk to have the FD effect removal and tooltip" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -790,7 +809,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>jar://$PROJECT_DIR$/build/moddev/artifacts/neoforge-21.1.83-minecraft-merged.jar!/net/minecraft/world/entity/animal/Sheep.class</url>
           <line>298</line>
-          <properties class="net.minecraft.world.entity.animal.Sheep" method="finalizeSpawn">
+          <properties class="net.minecraft.world.entity.animal.Sheep">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

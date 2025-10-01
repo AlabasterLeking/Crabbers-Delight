@@ -6,6 +6,7 @@ import alabaster.crabbersdelight.common.entity.boat.CDBoatRenderer;
 import alabaster.crabbersdelight.common.entity.crab.CrabEntity;
 import alabaster.crabbersdelight.common.entity.crab.CrabModel;
 import alabaster.crabbersdelight.common.entity.crab.CrabRenderer;
+import alabaster.crabbersdelight.common.utils.CDStateProviders;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
@@ -66,6 +67,7 @@ public class CrabbersDelight {
         CDModEntities.ENTITY_TYPES.register(bus);
         CDTrunkPlacerTypes.TRUNK_PLACERS.register(bus);
         CDFoliagePlacerTypes.FOLIAGE_PLACERS.register(bus);
+        CDStateProviders.PROVIDERS.register(bus);
 
         NeoForge.EVENT_BUS.register(this);
     }

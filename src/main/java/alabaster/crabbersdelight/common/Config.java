@@ -13,6 +13,7 @@ public class Config {
     public static ModConfigSpec.ConfigValue<Integer> MAX_TICKS;
     public static ModConfigSpec.BooleanValue COOK_IN_POTS;
     public static ModConfigSpec.BooleanValue REQUIRE_SURROUNDING_WATER;
+    public static ModConfigSpec.ConfigValue<Integer> SEASHELL_VARIANT_COUNT;
 
     static {
 
@@ -32,6 +33,8 @@ public class Config {
                 .define("maxTicks", 8000);
         REQUIRE_SURROUNDING_WATER = COMMON_BUILDER.comment("Requires the crab trap to have a 3x3 of open water or waterlogged blocks around it to be able to function. Default = true")
                 .define("require_surrounding_water", true);
+        SEASHELL_VARIANT_COUNT = COMMON_BUILDER.comment("Number of seashell variants available (must match textures/models/blockstates files)")
+                .defineInRange("seashellVariantCount", 4, 1, 64);
 
         COMMON_BUILDER.pop();
 

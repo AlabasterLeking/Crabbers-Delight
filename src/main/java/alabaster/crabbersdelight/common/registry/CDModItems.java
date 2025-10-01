@@ -144,6 +144,9 @@ public class CDModItems {
     public static final Supplier<Item> COCONUT_PUDDING = registerWithTab("coconut_pudding",
             () -> new ConsumableItem(foodItem(CDFoodValues.COCONUT_PUDDING).craftRemainder(Items.GLASS_BOTTLE)));
 
+    public static final Supplier<Item> SEASHELLS = registerWithTab("seashells",
+            () -> new BlockItem(CDModBlocks.SEASHELLS.get(), basicItem()));
+
     // Raw / Cooked Meats
     public static final Supplier<Item> RAW_CRAB = registerWithTab("crab",
             () -> new ConsumableItem(foodItem(CDFoodValues.RAW_CRAB)));

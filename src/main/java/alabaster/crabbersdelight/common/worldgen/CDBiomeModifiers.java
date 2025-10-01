@@ -14,6 +14,9 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class CDBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_TREE_PALM = registerKey("add_tree_palm");
+    public static final ResourceKey<BiomeModifier> ADD_SEASHELLS = registerKey("add_seashells");
+    public static final ResourceKey<BiomeModifier> ADD_SEASHELLS_UNDERWATER = registerKey("add_seashells_underwater");
+
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -22,6 +25,23 @@ public class CDBiomeModifiers {
         context.register(ADD_TREE_PALM, new BiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.BEACH)),
                 HolderSet.direct(placedFeatures.getOrThrow(CDPlacedFeatures.PALM_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_SEASHELLS, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(
+                        biomes.getOrThrow(Biomes.BEACH)
+                ),
+                HolderSet.direct(placedFeatures.getOrThrow(CDPlacedFeatures.SEASHELLS_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_SEASHELLS_UNDERWATER, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(
+                        biomes.getOrThrow(Biomes.OCEAN),
+                        biomes.getOrThrow(Biomes.WARM_OCEAN),
+                        biomes.getOrThrow(Biomes.LUKEWARM_OCEAN),
+                        biomes.getOrThrow(Biomes.DEEP_LUKEWARM_OCEAN)
+                ),
+                HolderSet.direct(placedFeatures.getOrThrow(CDPlacedFeatures.SEASHELLS_PLACED_KEY_UNDERWATER)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 

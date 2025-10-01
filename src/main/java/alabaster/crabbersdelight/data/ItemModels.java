@@ -49,7 +49,8 @@ public class ItemModels extends ItemModelProvider
                 CDModItems.PALM_DOOR.get(),
                 CDModItems.PALM_SIGN.get(),
                 CDModItems.PALM_HANGING_SIGN.get(),
-                CDModItems.COCONUT.get()
+                CDModItems.COCONUT.get(),
+                CDModItems.SEASHELLS.get()
         );
         takeAll(items, spriteBlockItems.toArray(new Item[0])).forEach(item -> withExistingParent(itemName(item), GENERATED).texture("layer0", resourceItem(itemName(item))));
 

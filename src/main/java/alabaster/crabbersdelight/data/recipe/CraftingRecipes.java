@@ -382,6 +382,15 @@ public class CraftingRecipes {
                 .unlockedBy("has_fish_bones", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.FISH_BONES.get()))
                 .save(output, ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "bone_meal_from_fish_bones"));
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CDModItems.SEASHELLS.get(), 8)
+                .requires(CDModItems.CORAL_FRAGMENTS.get())
+                .requires(CDModItems.CLAM.get())
+                .requires(Items.NAUTILUS_SHELL)
+                .unlockedBy("has_clam", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.CLAM.get()))
+                .unlockedBy("has_coral_fragments", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.CORAL_FRAGMENTS.get()))
+                .unlockedBy("has_nautilus_shell", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NAUTILUS_SHELL))
+                .save(output);
+
     }
 
     private static void recipesCraftedMeals(RecipeOutput output) {

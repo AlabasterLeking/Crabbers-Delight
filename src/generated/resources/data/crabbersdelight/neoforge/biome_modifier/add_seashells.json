@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:beach",
+  "features": "crabbersdelight:seashells_placed",
+  "step": "vegetal_decoration"
+}
