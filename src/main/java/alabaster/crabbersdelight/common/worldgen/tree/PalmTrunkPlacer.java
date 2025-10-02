@@ -1,5 +1,7 @@
 package alabaster.crabbersdelight.common.worldgen.tree;
 
+import alabaster.crabbersdelight.common.block.CoconutBlock;
+import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import alabaster.crabbersdelight.common.registry.CDTrunkPlacerTypes;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -7,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
@@ -55,9 +58,38 @@ public class PalmTrunkPlacer extends TrunkPlacer {
                     bend--;
                 }
             }
-
             placeLog(level, blockSetter, random, cursor, config);
             cursor.move(0, 1, 0);
+        }
+
+        // Very rare ground coconuts
+        final int CHANCE = 100;        // 1 in CHANCE chance per tree (100 -> ~1%)
+        final int RADIUS = 3;          // Search radius around trunk base
+        final int MAX_COCONUTS = 3;    // Coconuts to try place if the roll succeeds
+        final int MAX_ATTEMPTS = 10;   // Attempts per coconut to find a valid spot
+        final int MAX_DESCEND = 6;     // How many blocks down to search for surface (to handle uneven ground)
+
+        if (random.nextInt(CHANCE) == 0) {
+            int coconutCount = 1 + random.nextInt(MAX_COCONUTS); // 1..MAX_COCONUTS
+            for (int i = 0; i < coconutCount; i++) {
+                for (int attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+                    int rx = pos.getX() + random.nextInt(RADIUS * 2 + 1) - RADIUS;
+                    int rz = pos.getZ() + random.nextInt(RADIUS * 2 + 1) - RADIUS;
+                    BlockPos candidate = new BlockPos(rx, pos.getY(), rz);
+                    boolean placed = false;
+                    for (int dy = 0; dy >= -MAX_DESCEND; dy--) {
+                        BlockPos target = candidate.offset(0, dy, 0);
+                        if (level.isStateAtPosition(target, BlockBehaviour.BlockStateBase::isAir)
+                                && !level.isStateAtPosition(target.below(), BlockBehaviour.BlockStateBase::isAir)) {
+                            blockSetter.accept(target, CDModBlocks.COCONUT.get().defaultBlockState()
+                                    .setValue(CoconutBlock.HANGING, false));
+                            placed = true;
+                            break;
+                        }
+                    }
+                    if (placed) break;
+                }
+            }
         }
 
         return List.of(new FoliagePlacer.FoliageAttachment(cursor, 0, false));

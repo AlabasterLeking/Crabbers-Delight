@@ -4,20 +4,32 @@
     "variant=1,facing=north": { "model": "crabbersdelight:block/seashell_1" },
     "variant=2,facing=north": { "model": "crabbersdelight:block/seashell_2" },
     "variant=3,facing=north": { "model": "crabbersdelight:block/seashell_3" },
+    "variant=4,facing=north": { "model": "crabbersdelight:block/seashell_4" },
+    "variant=5,facing=north": { "model": "crabbersdelight:block/seashell_5" },
+    "variant=6,facing=north": { "model": "crabbersdelight:block/seashell_6" },
 
     "variant=0,facing=east": { "model": "crabbersdelight:block/seashell_0", "y": 90 },
     "variant=1,facing=east": { "model": "crabbersdelight:block/seashell_1", "y": 90 },
     "variant=2,facing=east": { "model": "crabbersdelight:block/seashell_2", "y": 90 },
     "variant=3,facing=east": { "model": "crabbersdelight:block/seashell_3", "y": 90 },
+    "variant=4,facing=east": { "model": "crabbersdelight:block/seashell_4", "y": 90 },
+    "variant=5,facing=east": { "model": "crabbersdelight:block/seashell_5", "y": 90 },
+    "variant=6,facing=east": { "model": "crabbersdelight:block/seashell_6", "y": 90 },
 
     "variant=0,facing=south": { "model": "crabbersdelight:block/seashell_0", "y": 180 },
     "variant=1,facing=south": { "model": "crabbersdelight:block/seashell_1", "y": 180 },
     "variant=2,facing=south": { "model": "crabbersdelight:block/seashell_2", "y": 180 },
     "variant=3,facing=south": { "model": "crabbersdelight:block/seashell_3", "y": 180 },
+    "variant=4,facing=south": { "model": "crabbersdelight:block/seashell_4", "y": 180 },
+    "variant=5,facing=south": { "model": "crabbersdelight:block/seashell_5", "y": 180 },
+    "variant=6,facing=south": { "model": "crabbersdelight:block/seashell_6", "y": 180 },
 
     "variant=0,facing=west": { "model": "crabbersdelight:block/seashell_0", "y": 270 },
     "variant=1,facing=west": { "model": "crabbersdelight:block/seashell_1", "y": 270 },
     "variant=2,facing=west": { "model": "crabbersdelight:block/seashell_2", "y": 270 },
-    "variant=3,facing=west": { "model": "crabbersdelight:block/seashell_3", "y": 270 }
+    "variant=3,facing=west": { "model": "crabbersdelight:block/seashell_3", "y": 270 },
+    "variant=4,facing=west": { "model": "crabbersdelight:block/seashell_4", "y": 270 },
+    "variant=5,facing=west": { "model": "crabbersdelight:block/seashell_5", "y": 270 },
+    "variant=6,facing=west": { "model": "crabbersdelight:block/seashell_6", "y": 270 }
   }
 }

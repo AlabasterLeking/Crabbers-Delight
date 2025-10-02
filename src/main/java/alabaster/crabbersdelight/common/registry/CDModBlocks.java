@@ -109,7 +109,7 @@ public class CDModBlocks {
             () -> new CoconutBlock(Block.Properties.ofFullCopy(Blocks.COCOA)));
 
     public static final Supplier<Block> SEASHELLS = BLOCKS.register("seashells",
-            () -> new SeashellBlock(Block.Properties.ofFullCopy(Blocks.HORN_CORAL)));
+            () -> new SeashellBlock(Block.Properties.ofFullCopy(Blocks.HORN_CORAL).offsetType(BlockBehaviour.OffsetType.XZ)));
 
     // Storage
     public static final Supplier<Block> CRAB_BARREL = BLOCKS.register("crab_barrel",
