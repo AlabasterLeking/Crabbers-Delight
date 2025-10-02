@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Seashells">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/block/seashell_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/block/seashell_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/block/seashell_6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/SeashellBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/SeashellBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/blockstates/seashells.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/blockstates/seashells.json" afterDir="false" />
-    </list>
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="More seashell variants, random offsets, and rare coconuts on ground around palm trees" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -350,14 +341,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Mild changes to crab claw - added to loot table for crabs - fixed crabs dropping multiple raw crabs on death - added Jar of Pickles and Sea Pickle Juice">
-      <option name="closed" value="true" />
-      <created>1719022048032</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1719022048032</updated>
     </task>
     <task id="LOCAL-00052" summary="Fixed crab drop mistake - increment mod version to 1.1.5">
       <option name="closed" value="true" />
@@ -743,7 +726,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759289260622</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="More seashell variants, random offsets, and rare coconuts on ground around palm trees">
+      <option name="closed" value="true" />
+      <created>1759373777442</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1759373777442</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -763,7 +754,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modified loot again - Adjusted JEI header to not need a separate translated component" />
     <MESSAGE value="Modified loot again" />
     <MESSAGE value="Increment version for release" />
     <MESSAGE value="Initial 1.21 port - does not run" />
@@ -788,7 +778,8 @@
     <MESSAGE value="Added Coconut Milk and Coconut Pudding" />
     <MESSAGE value="Change coconut milk to have the FD effect removal and tooltip" />
     <MESSAGE value="Seashells" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seashells" />
+    <MESSAGE value="More seashell variants, random offsets, and rare coconuts on ground around palm trees" />
+    <option name="LAST_COMMIT_MESSAGE" value="More seashell variants, random offsets, and rare coconuts on ground around palm trees" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

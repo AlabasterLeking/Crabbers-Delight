@@ -62,8 +62,8 @@ public class PalmTrunkPlacer extends TrunkPlacer {
             cursor.move(0, 1, 0);
         }
 
-        // Very rare ground coconuts
-        final int CHANCE = 100;        // 1 in CHANCE chance per tree (100 -> ~1%)
+        // Rare ground coconuts
+        final int CHANCE = 20;        // 1 in CHANCE chance per tree (100 -> ~1%)
         final int RADIUS = 3;          // Search radius around trunk base
         final int MAX_COCONUTS = 3;    // Coconuts to try place if the roll succeeds
         final int MAX_ATTEMPTS = 10;   // Attempts per coconut to find a valid spot
