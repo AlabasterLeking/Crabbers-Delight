@@ -20,7 +20,13 @@ public class RandomSeashellStateProvider extends BlockStateProvider {
     }
 
     public static final MapCodec<RandomSeashellStateProvider> CODEC =
-            MapCodec.unit(() -> new RandomSeashellStateProvider(false));
+            com.mojang.serialization.codecs.RecordCodecBuilder.mapCodec(instance ->
+                    instance.group(
+                            com.mojang.serialization.Codec.BOOL
+                                    .optionalFieldOf("waterlogged", false)
+                                    .forGetter(p -> p.waterlogged)
+                    ).apply(instance, RandomSeashellStateProvider::new)
+            );
 
     @Override
     protected BlockStateProviderType<?> type() {

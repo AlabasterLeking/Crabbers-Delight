@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="More seashell variants, random offsets, and rare coconuts on ground around palm trees" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tweaked the rarity to be a lot more common for ground coconuts">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/configured_feature/seashells.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/seashells_placed.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/seashells_placed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/seashells_placed_underwater.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/seashells_placed_underwater.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/SeashellBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/SeashellBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDPlacedFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDPlacedFeatures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/RandomSeashellStateProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/RandomSeashellStateProvider.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -341,14 +350,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Fixed crab drop mistake - increment mod version to 1.1.5">
-      <option name="closed" value="true" />
-      <created>1719022325327</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1719022325327</updated>
     </task>
     <task id="LOCAL-00053" summary="I think the loot table is finally fixed - proper recipes for pickle dishes - removed weakness and added a brief nausea to sea pickle juice">
       <option name="closed" value="true" />
@@ -734,7 +735,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759373777442</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Tweaked the rarity to be a lot more common for ground coconuts">
+      <option name="closed" value="true" />
+      <created>1759374081973</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1759374081973</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -754,7 +763,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modified loot again" />
     <MESSAGE value="Increment version for release" />
     <MESSAGE value="Initial 1.21 port - does not run" />
     <MESSAGE value="Beginning of refactoring" />
@@ -779,7 +787,8 @@
     <MESSAGE value="Change coconut milk to have the FD effect removal and tooltip" />
     <MESSAGE value="Seashells" />
     <MESSAGE value="More seashell variants, random offsets, and rare coconuts on ground around palm trees" />
-    <option name="LAST_COMMIT_MESSAGE" value="More seashell variants, random offsets, and rare coconuts on ground around palm trees" />
+    <MESSAGE value="Tweaked the rarity to be a lot more common for ground coconuts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tweaked the rarity to be a lot more common for ground coconuts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

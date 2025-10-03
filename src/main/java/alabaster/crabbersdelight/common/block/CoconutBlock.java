@@ -14,6 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -129,6 +131,21 @@ public class CoconutBlock extends FallingBlock {
 
             if (hitPlayer) {
                 level.destroyBlock(pos, true);
+            }
+        }
+    }
+
+    @Override
+    public void onProjectileHit(Level level, BlockState state, BlockHitResult hit, Projectile projectile) {
+        super.onProjectileHit(level, state, hit, projectile);
+
+        if (!level.isClientSide) {
+            BlockPos pos = hit.getBlockPos();
+
+            // Turn off hanging and schedule tick to fall
+            if (state.getValue(HANGING)) {
+                level.setBlock(pos, state.setValue(HANGING, false), Block.UPDATE_ALL);
+                level.scheduleTick(pos, this, 1);
             }
         }
     }

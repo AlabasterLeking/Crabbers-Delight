@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "crabbersdelight:random_seashell"
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:sand",
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ]
+              },
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:air"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "tries": 10,
+    "xz_spread": 4,
+    "y_spread": 1
+  }
+}

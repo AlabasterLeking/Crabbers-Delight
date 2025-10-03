@@ -11,6 +11,7 @@ import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
@@ -43,7 +44,7 @@ public class CDPlacedFeatures {
                 ));
 
         // Underwater floor placement
-        register(context, SEASHELLS_PLACED_KEY_UNDERWATER, configuredFeatures.getOrThrow(CDConfiguredFeatures.SEASHELLS_KEY),
+        register(context, SEASHELLS_PLACED_KEY_UNDERWATER, configuredFeatures.getOrThrow(CDConfiguredFeatures.SEASHELLS_KEY_UNDERWATER),
                 List.of(
                         RarityFilter.onAverageOnceEvery(2),
                         InSquarePlacement.spread(),

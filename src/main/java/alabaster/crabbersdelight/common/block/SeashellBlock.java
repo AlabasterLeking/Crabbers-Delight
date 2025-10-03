@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -60,6 +61,15 @@ public class SeashellBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
+        super.onPlace(state, level, pos, oldState, isMoving);
+        if (level.getFluidState(pos).getType() == Fluids.WATER) {
+            level.setBlock(pos, state.setValue(WATERLOGGED, true), 2);
+            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+        }
+    }
+
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext ctx) {
         var offset = state.getOffset(world, pos);
         return SHAPE.move(offset.x, offset.y, offset.z);
@@ -78,11 +88,16 @@ public class SeashellBlock extends Block implements SimpleWaterloggedBlock {
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState,
-                                  LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        if (state.getValue(WATERLOGGED)) {
+    public BlockState updateShape(BlockState state, Direction dir, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        if (level.getFluidState(pos).getType() == Fluids.WATER) {
+            if (!state.getValue(WATERLOGGED)) {
+                state = state.setValue(WATERLOGGED, true);
+            }
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+        } else if (state.getValue(WATERLOGGED)) {
+            state = state.setValue(WATERLOGGED, false);
         }
-        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+
+        return super.updateShape(state, dir, neighborState, level, pos, neighborPos);
     }
 }

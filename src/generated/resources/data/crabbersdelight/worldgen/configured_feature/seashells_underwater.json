@@ -6,7 +6,8 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "crabbersdelight:random_seashell"
+            "type": "crabbersdelight:random_seashell",
+            "waterlogged": true
           }
         }
       },
@@ -27,10 +28,7 @@
               },
               {
                 "type": "minecraft:matching_blocks",
-                "blocks": [
-                  "minecraft:air",
-                  "minecraft:water"
-                ]
+                "blocks": "minecraft:water"
               }
             ]
           }
