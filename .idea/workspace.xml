@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tweaked the rarity to be a lot more common for ground coconuts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/configured_feature/seashells.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/seashells_placed.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/seashells_placed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/seashells_placed_underwater.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/worldgen/placed_feature/seashells_placed_underwater.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/SeashellBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/SeashellBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDPlacedFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/CDPlacedFeatures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/RandomSeashellStateProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/worldgen/RandomSeashellStateProvider.java" afterDir="false" />
-    </list>
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="A bunch of final tweaks and fixes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,7 +172,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [runClient]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [build]">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -334,9 +325,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
-        <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [clean]" />
         <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
       </list>
@@ -350,14 +341,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00053" summary="I think the loot table is finally fixed - proper recipes for pickle dishes - removed weakness and added a brief nausea to sea pickle juice">
-      <option name="closed" value="true" />
-      <created>1719023977091</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1719023977091</updated>
     </task>
     <task id="LOCAL-00054" summary="Inky Potion and Sea Pickle Juice recipe change">
       <option name="closed" value="true" />
@@ -743,7 +726,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759374081973</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="A bunch of final tweaks and fixes">
+      <option name="closed" value="true" />
+      <created>1759458217756</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1759458217756</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -763,7 +754,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Increment version for release" />
     <MESSAGE value="Initial 1.21 port - does not run" />
     <MESSAGE value="Beginning of refactoring" />
     <MESSAGE value="Fixes for crab trap and new datagen" />
@@ -788,7 +778,8 @@
     <MESSAGE value="Seashells" />
     <MESSAGE value="More seashell variants, random offsets, and rare coconuts on ground around palm trees" />
     <MESSAGE value="Tweaked the rarity to be a lot more common for ground coconuts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tweaked the rarity to be a lot more common for ground coconuts" />
+    <MESSAGE value="A bunch of final tweaks and fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="A bunch of final tweaks and fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
