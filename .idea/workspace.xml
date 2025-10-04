@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fixes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cutting/cooked_tropical_fish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cutting/cooked_tropical_fish.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cutting/pufferfish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cutting/pufferfish.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cutting/tropical_fish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/farmersdelight/recipes/cutting/tropical_fish.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CuttingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/crab_claw.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/crab_claw.json" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="More fixes">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/geo/crab.geo.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -358,14 +352,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Fixed Crab Trap chum logic to replace the bucket; Thank you MehVahdJukaar!">
-      <option name="closed" value="true" />
-      <created>1699834425564</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1699834425564</updated>
     </task>
     <task id="LOCAL-00032" summary="Created chum bucket recipes and associated tags; re-generated data">
       <option name="closed" value="true" />
@@ -751,7 +737,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759583516822</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="More fixes">
+      <option name="closed" value="true" />
+      <created>1759584899452</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1759584899452</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -771,7 +765,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inky Potion Recipe not working yet :(" />
     <MESSAGE value="Inky potion recipe finished with access transformer - temporarily removed arid and soggy flesh" />
     <MESSAGE value="Removed the soggy and arid flesh recipes - reworked how tags are added - restarted JEI integration but it no work yet" />
     <MESSAGE value="Fixed issues with Crab Claw - updated zh_cn translation - increment mod version" />
@@ -796,7 +789,8 @@
     <MESSAGE value="1.2.1 port" />
     <MESSAGE value="update gitignore" />
     <MESSAGE value="Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes" />
+    <MESSAGE value="More fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="More fixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

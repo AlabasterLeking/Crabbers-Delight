@@ -39,6 +39,11 @@
           "type": "minecraft:item",
           "weight": 3,
           "name": "crabbersdelight:coral_fragments"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "name": "crabbersdelight:fish_bones"
         }
       ]
     }
