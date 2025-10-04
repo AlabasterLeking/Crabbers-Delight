@@ -2,7 +2,7 @@ package alabaster.crabbersdelight.data.advancement;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.CDModItems;
-import alabaster.crabbersdelight.common.utils.TextUtil;
+import alabaster.crabbersdelight.common.utils.CDTextUtils;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.RequirementsStrategy;
@@ -20,8 +20,8 @@ public class CDAdvancementGenerator implements ForgeAdvancementProvider.Advancem
     public void generate(HolderLookup.Provider registries, Consumer<Advancement> consumer, ExistingFileHelper existingFileHelper) {
         Advancement crabbersDelight = Advancement.Builder.advancement()
                 .display(CDModItems.RAW_CLAWSTER.get(),
-                        TextUtil.getTranslation("advancement.root"),
-                        TextUtil.getTranslation("advancement.root.desc"),
+                        CDTextUtils.getTranslation("advancement.root"),
+                        CDTextUtils.getTranslation("advancement.root.desc"),
                         new ResourceLocation("minecraft:textures/block/sand.png"),
                         FrameType.TASK, false, false, false)
                 .addCriterion("seeds", InventoryChangeTrigger.TriggerInstance.hasItems(new ItemLike[]{}))
@@ -65,8 +65,8 @@ public class CDAdvancementGenerator implements ForgeAdvancementProvider.Advancem
 
     protected static Advancement.Builder getAdvancement(Advancement parent, ItemLike display, String name, FrameType frame, boolean showToast, boolean announceToChat, boolean hidden) {
         return Advancement.Builder.advancement().parent(parent).display(display,
-                TextUtil.getTranslation("advancement." + name),
-                TextUtil.getTranslation("advancement." + name + ".desc"),
+                CDTextUtils.getTranslation("advancement." + name),
+                CDTextUtils.getTranslation("advancement." + name + ".desc"),
                 null, frame, showToast, announceToChat, hidden);
     }
 

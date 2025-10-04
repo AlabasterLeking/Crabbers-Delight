@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="4">
-  <component name="AdditionalModuleElements">
-    <content url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../src/generated" dumb="true">
-      <excludeFolder url="file://$MODULE_DIR$/../../src/generated/resources/.cache" />
-    </content>
-  </component>
   <component name="FacetManager">
     <facet type="minecraft" name="Minecraft">
       <configuration>
         <autoDetectTypes>
-          <platformType>FORGE</platformType>
           <platformType>MIXIN</platformType>
+          <platformType>NEOFORGE</platformType>
           <platformType>MCP</platformType>
         </autoDetectTypes>
         <projectReimportVersion>1</projectReimportVersion>
@@ -21,7 +13,7 @@
     </facet>
   </component>
   <component name="McpModuleSettings">
-    <option name="mappingFile" value="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\build\createMcpToSrg\output.tsrg" />
+    <option name="mappingFile" value="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\build\createMcpToSrg\output.tsrg" />
     <option name="mcpVersion" value="official_1.20.1" />
     <option name="minecraftVersion" value="1.20.1" />
     <option name="platformVersion" value="47.1.0" />

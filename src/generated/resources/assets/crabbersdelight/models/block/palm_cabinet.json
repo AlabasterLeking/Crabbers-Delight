@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "crabbersdelight:block/palm_cabinet_front",
+    "side": "crabbersdelight:block/palm_cabinet_side",
+    "top": "crabbersdelight:block/palm_cabinet_top"
+  }
+}

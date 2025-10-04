@@ -1,10 +1,12 @@
 package alabaster.crabbersdelight.data;
 
+import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import com.google.common.collect.Sets;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -36,6 +38,26 @@ public class ItemModels extends ItemModelProvider
         blockBasedModel(CDModItems.SEA_PICKLE_CRATE.get(), "_bottom");
         items.remove(CDModItems.SEA_PICKLE_CRATE.get());
 
+        buttonItem(CDModItems.PALM_BUTTON.get(), CDModBlocks.PALM_PLANKS.get());
+        fenceItem(CDModItems.PALM_FENCE.get(), CDModBlocks.PALM_PLANKS.get());
+        items.remove(CDModItems.PALM_FENCE.get());
+        items.remove(CDModItems.PALM_BUTTON.get());
+
+        // Blocks with special item sprites
+        Set<Item> spriteBlockItems = Sets.newHashSet(
+                CDModItems.PALM_DOOR.get(),
+                CDModItems.PALM_SIGN.get(),
+                CDModItems.PALM_HANGING_SIGN.get(),
+                CDModItems.COCONUT.get(),
+                CDModItems.SEASHELLS.get()
+        );
+        takeAll(items, spriteBlockItems.toArray(new Item[0])).forEach(item -> withExistingParent(itemName(item), GENERATED).texture("layer0", resourceItem(itemName(item))));
+
+        // Blocks with flat block textures for their items
+        Set<Item> flatBlockItems = Sets.newHashSet(
+                CDModItems.PALM_SAPLING.get());
+        takeAll(items, flatBlockItems.toArray(new Item[0])).forEach(item -> itemGeneratedModel(item, resourceBlock(itemName(item))));
+
         // Blocks whose item look alike
         takeAll(items, i -> i instanceof BlockItem).forEach(item -> blockBasedModel(item, ""));
 
@@ -50,6 +72,16 @@ public class ItemModels extends ItemModelProvider
 
     public void blockBasedModel(Item item, String suffix) {
         withExistingParent(itemName(item), resourceBlock(itemName(item) + suffix));
+    }
+
+    public void buttonItem(Item buttonItem, Block baseBlock) {
+        withExistingParent(itemName(buttonItem), mcLoc("block/button_inventory"))
+                .texture("texture", resourceBlock(itemName(baseBlock.asItem())));
+    }
+
+    public void fenceItem(Item fenceItem, Block baseBlock) {
+        withExistingParent(itemName(fenceItem), mcLoc("block/fence_inventory"))
+                .texture("texture", resourceBlock(itemName(baseBlock.asItem())));
     }
 
     public void itemHandheldModel(Item item, ResourceLocation texture) {

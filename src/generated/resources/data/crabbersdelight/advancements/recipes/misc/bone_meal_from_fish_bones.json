@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fish_bones": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "crabbersdelight:fish_bones"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crabbersdelight:bone_meal_from_fish_bones"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_fish_bones",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crabbersdelight:bone_meal_from_fish_bones"
+    ]
+  },
+  "sends_telemetry_event": false
+}

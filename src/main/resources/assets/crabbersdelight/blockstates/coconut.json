@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "hanging=true": { "model": "crabbersdelight:block/hanging_coconut"},
+    "hanging=false": { "model": "crabbersdelight:block/coconut"}
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:fish_bones"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "minecraft:bone_meal"
+  }
+}

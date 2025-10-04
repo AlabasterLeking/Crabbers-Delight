@@ -28,6 +28,15 @@ public class CookingRecipes {
     }
 
     private static void cookMeals(Consumer<FinishedRecipe> consumer) {
+        CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.COCONUT_PUDDING.get(), 1, NORMAL_COOKING, SMALL_EXP)
+                .addIngredient(CDModItems.COCONUT_MILK.get())
+                .addIngredient(CDModItems.COCONUT_HALVE.get())
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.EGG)
+                .unlockedByAnyIngredient(CDModItems.COCONUT_MILK.get(),CDModItems.COCONUT_HALVE.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .build(consumer);
+
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.CLAM_BAKE.get(), 1, NORMAL_COOKING, LARGE_EXP)
                 .addIngredient(CDModItems.COOKED_CLAM_MEAT.get())
                 .addIngredient(CDModItems.COOKED_CLAWSTER.get())

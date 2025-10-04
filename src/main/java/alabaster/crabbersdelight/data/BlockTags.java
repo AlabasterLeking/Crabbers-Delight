@@ -30,10 +30,32 @@ public class BlockTags extends BlockTagsProvider
                 Blocks.GRAVEL,
                 Blocks.SNOW,
                 Blocks.MUD);
+
+        tag(net.minecraft.tags.BlockTags.FENCES).add(CDModBlocks.PALM_FENCE.get());
+        tag(net.minecraft.tags.BlockTags.FENCE_GATES).add(CDModBlocks.PALM_FENCE_GATE.get());
     }
 
     protected void registerBlockMineables() {
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_AXE).add(
+                CDModBlocks.PALM_LOG.get(),
+                CDModBlocks.STRIPPED_PALM_LOG.get(),
+                CDModBlocks.PALM_WOOD.get(),
+                CDModBlocks.STRIPPED_PALM_WOOD.get(),
+                CDModBlocks.PALM_PLANKS.get(),
+                CDModBlocks.PALM_STAIRS.get(),
+                CDModBlocks.PALM_SLAB.get(),
+                CDModBlocks.PALM_DOOR.get(),
+                CDModBlocks.PALM_TRAPDOOR.get(),
+                CDModBlocks.PALM_FENCE.get(),
+                CDModBlocks.PALM_FENCE_GATE.get(),
+                CDModBlocks.PALM_PRESSURE_PLATE.get(),
+                CDModBlocks.PALM_BUTTON.get(),
+                CDModBlocks.PALM_SIGN.get(),
+                CDModBlocks.PALM_HANGING_SIGN.get(),
+                CDModBlocks.PALM_WALL_SIGN.get(),
+                CDModBlocks.PALM_WALL_HANGING_SIGN.get(),
+                CDModBlocks.PALM_CABINET.get(),
+
                 CDModBlocks.CRAB_BARREL.get(),
                 CDModBlocks.CLAM_BARREL.get(),
                 CDModBlocks.CLAWSTER_BARREL.get(),
@@ -46,13 +68,30 @@ public class BlockTags extends BlockTagsProvider
                 CDModBlocks.GLOW_SQUID_BARREL.get(),
                 CDModBlocks.FROG_LEG_BARREL.get(),
                 CDModBlocks.SEA_PICKLE_CRATE.get(),
-                //ModBlocks.LANTERNFISH_BARREL.get(),
                 CDModBlocks.CRAB_TRAP.get());
 
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(
                 CDModBlocks.NAUTILUS_SHELL_BLOCK.get(),
                 CDModBlocks.PEARL_BLOCK.get(),
                 CDModBlocks.SCUTE_BLOCK.get());
+
+        tag(net.minecraft.tags.BlockTags.LOGS_THAT_BURN).add(
+                CDModBlocks.PALM_LOG.get(),
+                CDModBlocks.STRIPPED_PALM_LOG.get(),
+                CDModBlocks.PALM_WOOD.get(),
+                CDModBlocks.STRIPPED_PALM_WOOD.get());
+
+        tag(net.minecraft.tags.BlockTags.PLANKS).add(
+                CDModBlocks.PALM_PLANKS.get());
+
+        tag(net.minecraft.tags.BlockTags.PLANKS).add(
+                CDModBlocks.PALM_PLANKS.get());
+
+        tag(net.minecraft.tags.BlockTags.LEAVES).add(
+                CDModBlocks.PALM_LEAVES.get());
+
+        tag(net.minecraft.tags.BlockTags.SAPLINGS).add(
+                CDModBlocks.PALM_SAPLING.get());
     }
 
     protected void registerStorageBlocks() {

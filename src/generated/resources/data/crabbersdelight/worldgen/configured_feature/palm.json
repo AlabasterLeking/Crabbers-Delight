@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "decorators": [],
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:sand"
+      }
+    },
+    "foliage_placer": {
+      "type": "crabbersdelight:palm_foliage_placer",
+      "offset": 3,
+      "radius": 2
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "crabbersdelight:palm_leaves",
+        "Properties": {
+          "distance": "7",
+          "generated": "false",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
+      }
+    },
+    "force_dirt": false,
+    "ignore_vines": false,
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 1,
+      "lower_size": 0,
+      "upper_size": 2
+    },
+    "trunk_placer": {
+      "type": "crabbersdelight:palm_trunk_placer",
+      "base_height": 5,
+      "bend_length": 3,
+      "height_rand_a": 3,
+      "height_rand_b": 3
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "crabbersdelight:palm_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    }
+  }
+}

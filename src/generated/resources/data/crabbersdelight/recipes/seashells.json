@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:coral_fragments"
+    },
+    {
+      "item": "crabbersdelight:clam"
+    },
+    {
+      "item": "minecraft:nautilus_shell"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "crabbersdelight:seashells"
+  }
+}

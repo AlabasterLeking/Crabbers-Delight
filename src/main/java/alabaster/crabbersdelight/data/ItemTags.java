@@ -11,6 +11,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -141,5 +142,21 @@ public class ItemTags extends ItemTagsProvider {
 
         tag(net.minecraft.tags.ItemTags.TRIM_MATERIALS)
                 .add(CDModItems.PEARL.get());
+
+        tag(ModTags.WOODEN_CABINETS)
+                .add(CDModItems.PALM_CABINET.get());
+
+        // Palm
+        tag(CDModTags.PALM_LOGS)
+                .add(CDModItems.PALM_LOG.get())
+                .add(CDModItems.STRIPPED_PALM_LOG.get())
+                .add(CDModItems.PALM_WOOD.get())
+                .add(CDModItems.STRIPPED_PALM_WOOD.get());
+
+        tag(ForgeTags.MILK)
+                .add(CDModItems.COCONUT_MILK.get());
+
+        tag(ForgeTags.MILK_BOTTLE)
+                .add(CDModItems.COCONUT_MILK.get());
     }
 }

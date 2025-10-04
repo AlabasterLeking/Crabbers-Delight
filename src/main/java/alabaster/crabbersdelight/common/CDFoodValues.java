@@ -1,13 +1,12 @@
 package alabaster.crabbersdelight.common;
 
-import net.minecraft.client.renderer.EffectInstance;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class CDFoodValues {
+
     // Helper Value Map
     public static final int BRIEF_DURATION = 600;    // 30 seconds
     public static final int SHORT_DURATION = 1200;    // 1 minute
@@ -65,6 +64,12 @@ public class CDFoodValues {
             .alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 300, 0), 1.0F).build();
 
+    public static final FoodProperties COCONUT_MILK = (new FoodProperties.Builder())
+            .alwaysEat().nutrition(1).saturationMod(0.5f).build();
+
+    public static final FoodProperties COCONUT_PUDDING = (new FoodProperties.Builder())
+            .nutrition(6).saturationMod(0.5f).build();
+
     // Slices
 
     public static final FoodProperties COOKED_TROPICAL_FISH = (new FoodProperties.Builder())
@@ -81,6 +86,9 @@ public class CDFoodValues {
 
     public static final FoodProperties PUFFERFISH_SLICE = (new FoodProperties.Builder())
             .nutrition(1).saturationMod(0.1f).effect(() -> new MobEffectInstance(MobEffects.POISON, 300, 0), 0.3F).meat().fast().build();
+
+    public static final FoodProperties COCONUT_HALVE = (new FoodProperties.Builder())
+            .nutrition(2).saturationMod(0.4f).build();
 
     // Food
 

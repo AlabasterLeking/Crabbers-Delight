@@ -6,7 +6,7 @@ license="MIT License"
 
 modId="crabbersdelight"
 
-version="1.2.0"
+version="1.2.1"
 displayName="Crabber's Delight"
 logoFile="crabbersdelightbanner.png"
 credits="Thank you to vectorwing for creating Farmer's Delight!"
@@ -31,12 +31,5 @@ side="BOTH"
 modId = "farmersdelight"
 mandatory = true
 versionRange = "[1.2.3,)"
-ordering = "NONE"
-side = "BOTH"
-
-[[dependencies.crabbersdelight]]
-modId = "geckolib"
-mandatory = true
-versionRange = "[4.2.3,)"
 ordering = "NONE"
 side = "BOTH"

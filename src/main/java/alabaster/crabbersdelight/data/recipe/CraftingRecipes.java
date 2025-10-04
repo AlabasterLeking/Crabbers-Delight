@@ -243,6 +243,31 @@ public class CraftingRecipes {
                 .unlockedBy("has_pearl_block", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PEARL_BLOCK.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "pearl_from_block"));
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SCUTE, 9)
+                .requires(CDModItems.SCUTE_BLOCK.get())
+                .unlockedBy("has_scute_block", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.SCUTE_BLOCK.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "scute_from_block"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SEA_PICKLE, 9)
+                .requires(CDModItems.SEA_PICKLE_CRATE.get())
+                .unlockedBy("has_sea_pickle_block", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.SEA_PICKLE_CRATE.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "sea_pickle_from_block"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.BONE_MEAL, 3)
+                .requires(CDModItems.FISH_BONES.get())
+                .unlockedBy("has_fish_bones", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.FISH_BONES.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "bone_meal_from_fish_bones"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CDModItems.SEASHELLS.get(), 8)
+                .requires(CDModItems.CORAL_FRAGMENTS.get())
+                .requires(CDModItems.CLAM.get())
+                .requires(Items.NAUTILUS_SHELL)
+                .unlockedBy("has_clam", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.CLAM.get()))
+                .unlockedBy("has_coral_fragments", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.CORAL_FRAGMENTS.get()))
+                .unlockedBy("has_nautilus_shell", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NAUTILUS_SHELL))
+                .save(consumer);
+
+
     }
 
     private static void recipesCraftedMeals(Consumer<FinishedRecipe> consumer) {
@@ -259,6 +284,13 @@ public class CraftingRecipes {
                 .requires(ForgeTags.COOKED_FISHES)
                 .unlockedBy("has_cooked_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COOKED_COD, Items.COOKED_SALMON, CDModItems.COOKED_TROPICAL_FISH.get()))
                 .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.COCONUT_MILK.get())
+                .requires(Items.GLASS_BOTTLE)
+                .requires(CDModItems.COCONUT.get())
+                .unlockedBy("has_cooked_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COOKED_COD, Items.COOKED_SALMON, CDModItems.COOKED_TROPICAL_FISH.get()))
+                .save(consumer);
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.KELP_SHAKE.get())
                 .requires(Items.GLASS_BOTTLE)

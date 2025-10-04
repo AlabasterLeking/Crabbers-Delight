@@ -2,7 +2,7 @@ package alabaster.crabbersdelight.common.block;
 
 import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
 import alabaster.crabbersdelight.common.registry.CDModBlockEntity;
-import alabaster.crabbersdelight.common.utils.TextUtil;
+import alabaster.crabbersdelight.common.utils.CDTextUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -73,11 +73,11 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
                         NetworkHooks.openScreen((ServerPlayer) player, crabTrapBlockEntity, pos);
                     }
                     else {
-                        player.displayClientMessage(TextUtil.getTranslation("block.crab_trap.insufficient_surrounding_water"), true);
+                        player.displayClientMessage(CDTextUtils.getTranslation("block.crab_trap.insufficient_surrounding_water"), true);
                     }
                 }
                 else {
-                    player.displayClientMessage(TextUtil.getTranslation("block.crab_trap.not_waterlogged"), true);
+                    player.displayClientMessage(CDTextUtils.getTranslation("block.crab_trap.not_waterlogged"), true);
                 }
             }
         }
