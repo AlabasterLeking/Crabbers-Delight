@@ -18,6 +18,7 @@ import static alabaster.crabbersdelight.common.tags.CDModTags.*;
 public class CraftingRecipes {
     public static void register(Consumer<FinishedRecipe> consumer) {
         recipesBlocks(consumer);
+        recipesPalmWood(consumer);
         recipesMaterials(consumer);
         recipesCraftedMeals(consumer);
         recipesTools(consumer);
@@ -32,6 +33,138 @@ public class CraftingRecipes {
                 .define('P', CDModItems.PEARL.get())
                 .define('S', Items.STRING)
                 .unlockedBy("has_pearl", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PEARL.get()))
+                .save(consumer);
+    }
+
+    private static void recipesPalmWood(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CDModItems.PALM_WOOD.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', CDModItems.PALM_LOG.get())
+                .unlockedBy("has_palm_log", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_LOG.get()))
+                .group("bark")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CDModItems.STRIPPED_PALM_WOOD.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .define('#', CDModItems.STRIPPED_PALM_LOG.get())
+                .unlockedBy("has_stripped_palm_log", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.STRIPPED_PALM_LOG.get()))
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, CDModItems.PALM_PLANKS.get(), 4)
+                .requires(PALM_LOGS)
+                .unlockedBy("has_palm_logs", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_LOG.get()))
+                .group("planks")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CDModItems.PALM_STAIRS.get(), 4)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .define('#', CDModItems.PALM_PLANKS.get())
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("wooden_stairs")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CDModItems.PALM_SLAB.get(), 6)
+                .pattern("###")
+                .define('#', CDModItems.PALM_PLANKS.get())
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("wooden_slab")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CDModItems.PALM_FENCE.get(), 3)
+                .pattern("W#W")
+                .pattern("W#W")
+                .define('W', CDModItems.PALM_PLANKS.get())
+                .define('#', Items.STICK)
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("wooden_fence")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, CDModItems.PALM_FENCE_GATE.get(), 1)
+                .pattern("#W#")
+                .pattern("#W#")
+                .define('W', CDModItems.PALM_PLANKS.get())
+                .define('#', Items.STICK)
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("wooden_fence_gate")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, CDModItems.PALM_DOOR.get(), 3)
+                .pattern("##")
+                .pattern("##")
+                .pattern("##")
+                .define('#', CDModItems.PALM_PLANKS.get())
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("wooden_door")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, CDModItems.PALM_TRAPDOOR.get(), 2)
+                .pattern("###")
+                .pattern("###")
+                .define('#', CDModItems.PALM_PLANKS.get())
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("wooden_trapdoor")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, CDModItems.PALM_PRESSURE_PLATE.get(), 1)
+                .pattern("##")
+                .define('#', CDModItems.PALM_PLANKS.get())
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("wooden_pressure_plate")
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, CDModItems.PALM_BUTTON.get(), 1)
+                .requires(CDModItems.PALM_PLANKS.get())
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("wooden_button")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CDModItems.PALM_SIGN.get(), 3)
+                .pattern("WWW")
+                .pattern("WWW")
+                .pattern(" # ")
+                .define('W', CDModItems.PALM_PLANKS.get())
+                .define('#', Items.STICK)
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("wooden_sign")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CDModItems.PALM_HANGING_SIGN.get(), 6)
+                .pattern("# #")
+                .pattern("WWW")
+                .pattern("WWW")
+                .define('W', CDModItems.STRIPPED_PALM_LOG.get())
+                .define('#', Items.CHAIN)
+                .unlockedBy("has_stripped_palm_log", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.STRIPPED_PALM_LOG.get()))
+                .group("hanging_sign")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CDModItems.PALM_BOAT.get(), 1)
+                .pattern("# #")
+                .pattern("###")
+                .define('#', CDModItems.PALM_PLANKS.get())
+                .unlockedBy("has_palm_planks", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_PLANKS.get()))
+                .group("boat")
+                .save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CDModItems.PALM_CHEST_BOAT.get(), 1)
+                .requires(CDModItems.PALM_BOAT.get())
+                .requires(Items.CHEST)
+                .unlockedBy("has_palm_boat", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_BOAT.get()))
+                .group("chest_boat")
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CDModItems.PALM_CABINET.get())
+                .pattern("___")
+                .pattern("D D")
+                .pattern("___")
+                .define('_', CDModItems.PALM_SLAB.get())
+                .define('D', CDModItems.PALM_TRAPDOOR.get())
+                .unlockedBy("has_palm_trapdoor", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PALM_TRAPDOOR.get()))
+                .group("fd_cabinet")
                 .save(consumer);
     }
 

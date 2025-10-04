@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "hanging_sign",
+  "key": {
+    "#": {
+      "item": "minecraft:chain"
+    },
+    "W": {
+      "item": "crabbersdelight:stripped_palm_log"
+    }
+  },
+  "pattern": [
+    "# #",
+    "WWW",
+    "WWW"
+  ],
+  "result": {
+    "count": 6,
+    "item": "crabbersdelight:palm_hanging_sign"
+  },
+  "show_notification": true
+}

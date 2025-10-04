@@ -2,16 +2,13 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "minecraft:pufferfish"
+      "item": "crabbersdelight:coconut"
     }
   ],
   "result": [
     {
       "count": 2,
-      "item": "crabbersdelight:pufferfish_slice"
-    },
-    {
-      "item": "crabbersdelight:fish_bones"
+      "item": "crabbersdelight:coconut_halve"
     }
   ],
   "tool": {

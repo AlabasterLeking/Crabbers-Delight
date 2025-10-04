@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_sign",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "crabbersdelight:palm_planks"
+    }
+  },
+  "pattern": [
+    "WWW",
+    "WWW",
+    " # "
+  ],
+  "result": {
+    "count": 3,
+    "item": "crabbersdelight:palm_sign"
+  },
+  "show_notification": true
+}
