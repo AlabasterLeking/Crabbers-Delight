@@ -48,9 +48,11 @@ public class CrabTrapItemHandler extends ItemStackHandler {
             if (baitItem.is(CDModTags.CRAB_TRAP_BAIT) && !baitItem.is(CDModTags.CREATURE_CHUMS)) {
                 baitItem.shrink(1);
             } else if (baitItem.is(CDModTags.CREATURE_CHUMS)) {
-                baitItem.hurt(1, random,null);
-                if (baitItem.isEmpty()) {
-                    this.insertItem(0, new ItemStack(Items.BUCKET), false);
+                baitItem.hurt(1, level.random, null);
+                if (baitItem.getDamageValue() == 48) {
+                    baitItem.shrink(1);
+                    ItemStack bucketStack = new ItemStack(Items.BUCKET);
+                    this.insertItem(0, bucketStack, false);
                 }
             }
         }

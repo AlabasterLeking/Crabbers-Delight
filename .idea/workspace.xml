@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fishbone">
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tags">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/blocks/planks.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/blocks/planks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/DataGenerators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/DataGenerators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDItemTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/inventory/CrabTrapItemHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/inventory/CrabTrapItemHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +185,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [runData]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [runClient]">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -342,9 +338,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
         <item itemvalue="Gradle.Crabbers-Delight [build]" />
-        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [genIntellijRuns]" />
         <item itemvalue="Gradle.Crabbers-Delight [init]" />
       </list>
@@ -358,14 +354,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Increment Version for 1.20.1 release">
-      <option name="closed" value="true" />
-      <created>1699834593954</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1699834593954</updated>
     </task>
     <task id="LOCAL-00034" summary="Brain-blast">
       <option name="closed" value="true" />
@@ -751,7 +739,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759585118532</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Tags">
+      <option name="closed" value="true" />
+      <created>1759629338345</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1759629338345</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -771,7 +767,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed the soggy and arid flesh recipes - reworked how tags are added - restarted JEI integration but it no work yet" />
     <MESSAGE value="Fixed issues with Crab Claw - updated zh_cn translation - increment mod version" />
     <MESSAGE value="Added Squid Tentacles and Frog Legs" />
     <MESSAGE value="Remade Crab Leg Texture" />
@@ -796,7 +791,8 @@
     <MESSAGE value="Fixes" />
     <MESSAGE value="More fixes" />
     <MESSAGE value="Fishbone" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fishbone" />
+    <MESSAGE value="Tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tags" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
