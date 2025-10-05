@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="A bunch of final tweaks and fixes" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Update ru_ru.json">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +136,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "NeoForge-1.21.1",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/cjtop/IdeaProjects/Crabbers-Delight/src/main/resources/assets/crabbersdelight/models/block",
+    "last_opened_file_path": "C:/Users/cjtop/IdeaProjects/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_table/gameplay/crab_trap_loot",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.35402298",
@@ -142,11 +145,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_table\gameplay\crab_trap_loot" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\models\block" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\entity\signs\hanging" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\gui\hanging_signs" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\entity\signs" />
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\entity\signs\hanging" />
@@ -341,14 +344,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Inky Potion and Sea Pickle Juice recipe change">
-      <option name="closed" value="true" />
-      <created>1719084997913</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1719084997913</updated>
     </task>
     <task id="LOCAL-00055" summary="Inky Potion Recipe not working yet :(">
       <option name="closed" value="true" />
@@ -734,7 +729,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759458217756</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Update ru_ru.json">
+      <option name="closed" value="true" />
+      <created>1759458776510</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1759458776510</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -754,7 +757,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial 1.21 port - does not run" />
     <MESSAGE value="Beginning of refactoring" />
     <MESSAGE value="Fixes for crab trap and new datagen" />
     <MESSAGE value="New crabs, texture changes" />
@@ -779,7 +781,8 @@
     <MESSAGE value="More seashell variants, random offsets, and rare coconuts on ground around palm trees" />
     <MESSAGE value="Tweaked the rarity to be a lot more common for ground coconuts" />
     <MESSAGE value="A bunch of final tweaks and fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="A bunch of final tweaks and fixes" />
+    <MESSAGE value="Update ru_ru.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update ru_ru.json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
