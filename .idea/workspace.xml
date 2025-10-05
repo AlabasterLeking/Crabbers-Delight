@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Update ru_ru.json">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" afterDir="false" />
-    </list>
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tags" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +172,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [build]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [runData]">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -328,9 +325,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Crabbers-Delight [runData]" />
         <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
-        <item itemvalue="Gradle.Crabbers-Delight [runData]" />
         <item itemvalue="Gradle.Crabbers-Delight [clean]" />
         <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
       </list>
@@ -344,14 +341,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Inky Potion Recipe not working yet :(">
-      <option name="closed" value="true" />
-      <created>1719086834599</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1719086834599</updated>
     </task>
     <task id="LOCAL-00056" summary="Inky potion recipe finished with access transformer - temporarily removed arid and soggy flesh">
       <option name="closed" value="true" />
@@ -737,7 +726,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759458776510</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Tags">
+      <option name="closed" value="true" />
+      <created>1759629289342</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1759629289342</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -757,7 +754,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Beginning of refactoring" />
     <MESSAGE value="Fixes for crab trap and new datagen" />
     <MESSAGE value="New crabs, texture changes" />
     <MESSAGE value="Fixed most of it - still can't spawn the mob tho" />
@@ -782,7 +778,8 @@
     <MESSAGE value="Tweaked the rarity to be a lot more common for ground coconuts" />
     <MESSAGE value="A bunch of final tweaks and fixes" />
     <MESSAGE value="Update ru_ru.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update ru_ru.json" />
+    <MESSAGE value="Tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tags" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
