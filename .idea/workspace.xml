@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="More fixes">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/geo/crab.geo.json" beforeDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fishbone">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/blocks/planks.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/blocks/planks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/DataGenerators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/DataGenerators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDItemTags.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +137,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.Crabbers-Delight [build].executor": "Run",
     "Gradle.Crabbers-Delight [createMcpToSrg].executor": "Run",
     "Gradle.Crabbers-Delight [genIntellijRuns].executor": "Run",
     "Gradle.Crabbers-Delight [init].executor": "Run",
@@ -144,7 +150,7 @@
     "SHELLCHECK.PATH": "I do mind",
     "git-widget-placeholder": "Forge-1.20.1",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/cjtop/Desktop/Mods/Crabbers-Delight/src/main/java/alabaster/crabbersdelight/common",
+    "last_opened_file_path": "C:/Users/cjtop/Desktop/Mods/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/minecraft",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.35402298",
@@ -153,18 +159,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot\minecraft" />
       <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common" />
       <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common\registry" />
       <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common\entity" />
       <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common\block" />
-      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common\block\entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot\crabbersdelight" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot\minecraft" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\tags\" />
       <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\forge\biome_modifier\" />
-      <recent name="C:\Users\cjtop\Desktop\Crabbers-Delight\src\main\resources\data\crabbersdelight\forge\biome_modifier\add_spawn" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="alabaster.crabbersdelight.common.entity" />
@@ -183,7 +189,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [runClient]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [runData]">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -336,11 +342,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
+        <item itemvalue="Gradle.Crabbers-Delight [build]" />
+        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [genIntellijRuns]" />
         <item itemvalue="Gradle.Crabbers-Delight [init]" />
-        <item itemvalue="Gradle.Crabbers-Delight [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -352,14 +358,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Created chum bucket recipes and associated tags; re-generated data">
-      <option name="closed" value="true" />
-      <created>1699834473641</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1699834473641</updated>
     </task>
     <task id="LOCAL-00033" summary="Increment Version for 1.20.1 release">
       <option name="closed" value="true" />
@@ -745,7 +743,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759584899452</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Fishbone">
+      <option name="closed" value="true" />
+      <created>1759585118532</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1759585118532</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -765,7 +771,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inky potion recipe finished with access transformer - temporarily removed arid and soggy flesh" />
     <MESSAGE value="Removed the soggy and arid flesh recipes - reworked how tags are added - restarted JEI integration but it no work yet" />
     <MESSAGE value="Fixed issues with Crab Claw - updated zh_cn translation - increment mod version" />
     <MESSAGE value="Added Squid Tentacles and Frog Legs" />
@@ -790,7 +795,8 @@
     <MESSAGE value="update gitignore" />
     <MESSAGE value="Fixes" />
     <MESSAGE value="More fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="More fixes" />
+    <MESSAGE value="Fishbone" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fishbone" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

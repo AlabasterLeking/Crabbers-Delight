@@ -27,9 +27,9 @@ public class DataGenerators
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
 
-        BlockTags blockTags = new BlockTags(output, lookupProvider, helper);
+        CDBlockTags blockTags = new CDBlockTags(output, lookupProvider, helper);
         generator.addProvider(event.includeServer(), blockTags);
-        generator.addProvider(event.includeServer(), new ItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
+        generator.addProvider(event.includeServer(), new CDItemTags(output, lookupProvider, blockTags.contentsGetter(), helper));
         generator.addProvider(event.includeServer(), new Recipes(output));
         generator.addProvider(event.includeServer(), new Advancements(output, lookupProvider, helper));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Collections.emptySet(), List.of(

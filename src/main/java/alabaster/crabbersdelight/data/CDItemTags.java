@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -16,9 +17,9 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
-public class ItemTags extends ItemTagsProvider {
+public class CDItemTags extends ItemTagsProvider {
 
-    public ItemTags(PackOutput generator, CompletableFuture<HolderLookup.Provider> pProvider, CompletableFuture<TagsProvider.TagLookup<Block>> blockProvider, @Nullable ExistingFileHelper existingFileHelper) {
+    public CDItemTags(PackOutput generator, CompletableFuture<HolderLookup.Provider> pProvider, CompletableFuture<TagsProvider.TagLookup<Block>> blockProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(generator, pProvider, blockProvider, CrabbersDelight.MODID, existingFileHelper);
     }
 
@@ -91,7 +92,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(Items.NAUTILUS_SHELL)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
-                .add(CDModItems.CAN.get());
+                .add(CDModItems.CAN.get())
+                .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.SALMON)
                 .add(CDModItems.RAW_CLAWSTER.get())
@@ -99,7 +101,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(Items.NAUTILUS_SHELL)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
-                .add(CDModItems.CAN.get());
+                .add(CDModItems.CAN.get())
+                .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.PUFFERFISH)
                 .add(CDModItems.RAW_SHRIMP.get())
@@ -108,7 +111,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
                 .add(CDModItems.CAN.get())
-                .add(CDModItems.CORAL_FRAGMENTS.get());
+                .add(CDModItems.CORAL_FRAGMENTS.get())
+                .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.TROPICAL_FISH)
                 .add(CDModItems.CLAM.get())
@@ -117,7 +121,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
                 .add(CDModItems.CAN.get())
-                .add(CDModItems.CORAL_FRAGMENTS.get());
+                .add(CDModItems.CORAL_FRAGMENTS.get())
+                .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.BUCKET_OF_CRAB_CHUM)
                 .add(CDModItems.RAW_CRAB.get());
@@ -138,7 +143,8 @@ public class ItemTags extends ItemTagsProvider {
                 .add(CDModItems.RAW_SHRIMP.get())
                 .add(CDModItems.CLAM.get())
                 .add(CDModItems.RAW_CLAWSTER.get())
-                .add(CDModItems.RAW_CRAB.get());
+                .add(CDModItems.RAW_CRAB.get())
+                .add(CDModItems.FISH_BONES.get());
 
         tag(net.minecraft.tags.ItemTags.TRIM_MATERIALS)
                 .add(CDModItems.PEARL.get());
@@ -152,6 +158,17 @@ public class ItemTags extends ItemTagsProvider {
                 .add(CDModItems.STRIPPED_PALM_LOG.get())
                 .add(CDModItems.PALM_WOOD.get())
                 .add(CDModItems.STRIPPED_PALM_WOOD.get());
+        tag(ItemTags.PLANKS).add(CDModItems.PALM_PLANKS.get());
+        tag(ItemTags.WOODEN_BUTTONS).add(CDModItems.PALM_BUTTON.get());
+        tag(ItemTags.WOODEN_PRESSURE_PLATES).add(CDModItems.PALM_PRESSURE_PLATE.get());
+        tag(ItemTags.WOODEN_TRAPDOORS).add(CDModItems.PALM_TRAPDOOR.get());
+        tag(ItemTags.WOODEN_DOORS).add(CDModItems.PALM_DOOR.get());
+        tag(ItemTags.WOODEN_SLABS).add(CDModItems.PALM_SLAB.get());
+        tag(ItemTags.WOODEN_STAIRS).add(CDModItems.PALM_STAIRS.get());
+        tag(ItemTags.WOODEN_FENCES).add(CDModItems.PALM_FENCE.get());
+        tag(ItemTags.SIGNS).add(CDModItems.PALM_SIGN.get());
+        tag(ItemTags.HANGING_SIGNS).add(CDModItems.PALM_HANGING_SIGN.get());
+
 
         tag(ForgeTags.MILK)
                 .add(CDModItems.COCONUT_MILK.get());
