@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tags" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tags">
+      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CoconutHelmetItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/coconut_helmet.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/coconut_helmet_2d.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +142,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "NeoForge-1.21.1",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/cjtop/IdeaProjects/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_table/gameplay/crab_trap_loot",
+    "last_opened_file_path": "C:/Users/cjtop/IdeaProjects/Crabbers-Delight/src/main/resources/assets/crabbersdelight/models/item",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.35402298",
@@ -142,11 +151,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\models\item" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_table\gameplay\crab_trap_loot" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\models\block" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\entity\signs\hanging" />
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\gui\hanging_signs" />
-      <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\entity\signs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\cjtop\IdeaProjects\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\entity\signs\hanging" />
@@ -172,7 +181,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [runData]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [runClient]">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -325,9 +334,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Crabbers-Delight [runData]" />
-        <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
+        <item itemvalue="Gradle.Crabbers-Delight [build]" />
+        <item itemvalue="Gradle.Crabbers-Delight [runData]" />
         <item itemvalue="Gradle.Crabbers-Delight [clean]" />
         <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
       </list>
@@ -341,14 +350,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Inky potion recipe finished with access transformer - temporarily removed arid and soggy flesh">
-      <option name="closed" value="true" />
-      <created>1719175145834</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1719175145835</updated>
     </task>
     <task id="LOCAL-00057" summary="Removed the soggy and arid flesh recipes - reworked how tags are added - restarted JEI integration but it no work yet">
       <option name="closed" value="true" />
@@ -734,7 +735,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759629289342</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Tags">
+      <option name="closed" value="true" />
+      <created>1759629369326</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1759629369326</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="UnknownFeatures">

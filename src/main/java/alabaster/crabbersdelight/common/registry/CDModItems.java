@@ -91,6 +91,8 @@ public class CDModItems {
             () -> new CrabClawItem(basicItem()));
     public static final Supplier<Item> PEARL_NECKLACE = registerWithTab("pearl_necklace",
             () -> new PearlNecklaceItem(basicItem().stacksTo(1)));
+    public static final Supplier<Item> COCONUT_HELMET = registerWithTab("coconut_helmet",
+            () -> new CoconutHelmetItem(basicItem().stacksTo(1)));
 
     // Palm
     public static final Supplier<Item> PALM_LOG = registerWithTab("palm_log",

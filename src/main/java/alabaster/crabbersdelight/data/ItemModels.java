@@ -34,6 +34,7 @@ public class ItemModels extends ItemModelProvider
 
         // Specific cases
         items.remove(CDModItems.CRAB_CLAW.get());
+        items.remove(CDModItems.COCONUT_HELMET.get());
         items.remove(CDModItems.CRAB_SPAWN_EGG.get());
 
         blockBasedModel(CDModItems.SEA_PICKLE_CRATE.get(), "_bottom");

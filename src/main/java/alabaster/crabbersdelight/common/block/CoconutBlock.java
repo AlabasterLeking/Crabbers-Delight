@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.block;
 
 import alabaster.crabbersdelight.common.registry.CDDamageSources;
+import alabaster.crabbersdelight.common.registry.CDModItems;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -11,10 +12,12 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -110,19 +113,20 @@ public class CoconutBlock extends FallingBlock {
                     living.hurt(CDDamageSources.getSimpleDamageSource(level, CDDamageSources.FALLING_COCONUT), 2.0F);
 
                     if (entity instanceof Player player) {
-                        level.playSound(
-                                null,
-                                entity.getX(),
-                                entity.getY(),
-                                entity.getZ(),
-                                SoundEvents.GOAT_HORN_BREAK,
-                                SoundSource.PLAYERS,
-                                0.7F,
-                                0.5F
+                        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.GOAT_HORN_BREAK, SoundSource.PLAYERS, 0.7F, 0.5F
                         );
 
                         player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
                         player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 2));
+
+                        ItemStack headSlot = player.getItemBySlot(EquipmentSlot.HEAD);
+                        if (headSlot.isEmpty()) {
+                            ItemStack coconutHelmet = new ItemStack(CDModItems.COCONUT_HELMET.get());
+                            player.setItemSlot(EquipmentSlot.HEAD, coconutHelmet);
+
+                            level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARMOR_EQUIP_LEATHER, SoundSource.PLAYERS, 1.0F, 1.0F);
+                            level.destroyBlock(pos, false);
+                        }
 
                         hitPlayer = true;
                     }
