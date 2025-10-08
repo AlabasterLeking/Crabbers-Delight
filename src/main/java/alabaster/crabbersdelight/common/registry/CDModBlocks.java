@@ -145,6 +145,9 @@ public class CDModBlocks {
     public static final Supplier<Block> FROG_LEG_BARREL = BLOCKS.register("frog_leg_barrel",
             () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
+    public static final Supplier<Block> COCONUT_CRATE = BLOCKS.register("coconut_crate",
+            () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+
     //public static final RegistryObject<Block> LANTERNFISH_BARREL = BLOCKS.register("lanternfish_barrel",
             //() -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 

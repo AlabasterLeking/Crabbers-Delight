@@ -257,6 +257,14 @@ public class CraftingRecipes {
                 .unlockedBy("has_raw_frog_leg", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.RAW_FROG_LEG.get()))
                 .save(consumer);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CDModItems.COCONUT_CRATE.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', CDModItems.COCONUT.get())
+                .unlockedBy("has_coconut", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.COCONUT.get()))
+                .save(consumer);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CDModItems.SEA_PICKLE_CRATE.get(), 1)
                 .pattern("###")
                 .pattern("###")
@@ -355,6 +363,11 @@ public class CraftingRecipes {
                 .requires(CDModItems.FROG_LEG_BARREL.get())
                 .unlockedBy("has_frog_leg_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.FROG_LEG_BARREL.get()))
                 .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "frog_leg_from_barrel"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.COCONUT.get(), 9)
+                .requires(CDModItems.COCONUT_CRATE.get())
+                .unlockedBy("has_coconut_crate", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.COCONUT_CRATE.get()))
+                .save(consumer, new ResourceLocation(CrabbersDelight.MODID, "coconut_from_barrel"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SEA_PICKLE, 9)
                 .requires(CDModItems.SEA_PICKLE_CRATE.get())

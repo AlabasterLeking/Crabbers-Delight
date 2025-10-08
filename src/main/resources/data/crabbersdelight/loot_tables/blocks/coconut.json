@@ -11,30 +11,29 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:any_of",
-                  "terms": [
-                    {
-                      "condition": "minecraft:match_tool",
-                      "predicate": {
-                        "items": "#minecraft:axes"
-                      }
-                    },
-                    {
-                      "condition": "minecraft:match_tool",
-                      "predicate": {
-                        "predicates": {
-                          "minecraft:enchantments": [
-                            {
-                              "enchantments": "minecraft:silk_touch",
-                              "levels": {
-                                "min": 1
-                              }
-                            }
-                          ]
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "tag": "minecraft:axes"
+                  }
+                }
+              ],
+              "name": "crabbersdelight:coconut"
+            },
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "levels": {
+                          "min": 1
                         }
                       }
-                    }
-                  ]
+                    ]
+                  }
                 }
               ],
               "name": "crabbersdelight:coconut"
@@ -59,6 +58,5 @@
       ],
       "rolls": 1.0
     }
-  ],
-  "random_sequence": "crabbersdelight:blocks/coconut"
+  ]
 }

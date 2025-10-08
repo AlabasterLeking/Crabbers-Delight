@@ -4,9 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tags">
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fix bait consumption">
+      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CoconutHelmetItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/coconut_helmet.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/coconut_helmet_2d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/coconut_helmet_3d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/coconut_crate_side.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/coconut_crate_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/coconut_helmet.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/inventory/CrabTrapItemHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/inventory/CrabTrapItemHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/air.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/air.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/cod.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/cod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/pufferfish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/pufferfish.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/salmon.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/salmon.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/tropical_fish.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/crabbersdelight/tags/items/jei_display_results/minecraft/tropical_fish.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/forge/tags/blocks/storage_blocks.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/forge/tags/blocks/storage_blocks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/blocks/fences.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/blocks/mineable/axe.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/blocks/mineable/axe.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDItemTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/mods.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/crate_bottom.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/block/crate_bottom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/crab_cakes.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/crab_cakes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/blocks/coconut.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/blocks/coconut.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/blocks/palm_leaves.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/crabbersdelight/loot_tables/blocks/palm_leaves.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +170,7 @@
     "Gradle.Crabbers-Delight [init].executor": "Run",
     "Gradle.Crabbers-Delight [runClient].executor": "Run",
     "Gradle.Crabbers-Delight [runData].executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -146,7 +178,7 @@
     "SHELLCHECK.PATH": "I do mind",
     "git-widget-placeholder": "Forge-1.20.1",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/cjtop/Desktop/Mods/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_tables/gameplay/crab_trap_loot/minecraft",
+    "last_opened_file_path": "C:/Users/cjtop/Desktop/Mods/Crabbers-Delight/src/main/resources/data/crabbersdelight/loot_tables/blocks",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.35402298",
@@ -155,11 +187,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\blocks" />
+      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\item" />
+      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\resources\assets\crabbersdelight\textures\block" />
+      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\resources\assets\crabbersdelight\models\item" />
       <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot\minecraft" />
-      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common" />
-      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common\registry" />
-      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common\entity" />
-      <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\java\alabaster\crabbersdelight\common\block" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\cjtop\Desktop\Mods\Crabbers-Delight\src\main\resources\data\crabbersdelight\loot_tables\gameplay\crab_trap_loot\crabbersdelight" />
@@ -185,7 +217,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [runClient]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [runData]">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -338,8 +370,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
+        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [genIntellijRuns]" />
         <item itemvalue="Gradle.Crabbers-Delight [init]" />
@@ -354,14 +386,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Brain-blast">
-      <option name="closed" value="true" />
-      <created>1699835857793</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1699835857793</updated>
     </task>
     <task id="LOCAL-00035" summary="Merged the ja_jp translation - added in the missing items related to items added in this latest update to default to the en_us translation until new translations are received">
       <option name="closed" value="true" />
@@ -747,7 +771,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759629338345</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Fix bait consumption">
+      <option name="closed" value="true" />
+      <created>1759630732433</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1759630732433</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -767,7 +799,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed issues with Crab Claw - updated zh_cn translation - increment mod version" />
     <MESSAGE value="Added Squid Tentacles and Frog Legs" />
     <MESSAGE value="Remade Crab Leg Texture" />
     <MESSAGE value="Increase Chum durability to 48 - Modify Crab Trap to have 27 slots - Stub for Renderer for Items inside of Crab Trap" />
@@ -792,7 +823,8 @@
     <MESSAGE value="More fixes" />
     <MESSAGE value="Fishbone" />
     <MESSAGE value="Tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tags" />
+    <MESSAGE value="Fix bait consumption" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bait consumption" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

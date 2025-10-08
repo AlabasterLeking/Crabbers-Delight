@@ -49,6 +49,7 @@ public class BlockStates extends BlockStateProvider {
         barrelBlock(CDModBlocks.SQUID_BARREL.get(), "squid");
         barrelBlock(CDModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
         barrelBlock(CDModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
+        crateBlock(CDModBlocks.COCONUT_CRATE.get(), "coconut");
 
         logBlock(((RotatedPillarBlock) CDModBlocks.PALM_LOG.get()));
         axisBlock(((RotatedPillarBlock) CDModBlocks.PALM_WOOD.get()), blockTexture(CDModBlocks.PALM_LOG.get()), blockTexture(CDModBlocks.PALM_LOG.get()));
@@ -69,6 +70,11 @@ public class BlockStates extends BlockStateProvider {
         saplingBlock(CDModBlocks.PALM_SAPLING.get());
 
         cabinetBlock(CDModBlocks.PALM_CABINET.get(), "palm");
+    }
+
+    public void crateBlock(Block block, String cropName) {
+        this.simpleBlock(block,
+                models().cubeBottomTop(blockName(block), resourceBlock(cropName + "_crate_side"), resourceBlock("crate_bottom"), resourceBlock(cropName + "_crate_top")));
     }
 
     public void barrelBlock(Block block, String cropName) {

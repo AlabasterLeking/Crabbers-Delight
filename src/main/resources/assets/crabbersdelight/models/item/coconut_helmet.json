@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "crabbersdelight:item/coconut_helmet_2d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "crabbersdelight:item/coconut_helmet_2d"
+    },
+    "ground": {
+      "parent": "crabbersdelight:item/coconut_helmet_2d"
+    },
+    "fixed": {
+      "parent": "crabbersdelight:item/coconut_helmet_2d"
+    },
+    "head": {
+      "parent": "crabbersdelight:item/coconut_helmet_3d"
+    }
+  }
+}

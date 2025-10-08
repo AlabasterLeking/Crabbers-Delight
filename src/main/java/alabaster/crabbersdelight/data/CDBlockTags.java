@@ -66,6 +66,7 @@ public class CDBlockTags extends BlockTagsProvider
                 CDModBlocks.SQUID_BARREL.get(),
                 CDModBlocks.GLOW_SQUID_BARREL.get(),
                 CDModBlocks.FROG_LEG_BARREL.get(),
+                CDModBlocks.COCONUT_CRATE.get(),
                 CDModBlocks.SEA_PICKLE_CRATE.get(),
                 CDModBlocks.CRAB_TRAP.get());
 
@@ -79,11 +80,36 @@ public class CDBlockTags extends BlockTagsProvider
                 CDModBlocks.STRIPPED_PALM_LOG.get(),
                 CDModBlocks.PALM_WOOD.get(),
                 CDModBlocks.STRIPPED_PALM_WOOD.get());
+        tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(
+                CDModBlocks.PALM_LOG.get());
+        tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(
+                CDModBlocks.PALM_LOG.get(),
+                CDModBlocks.PALM_WOOD.get());
+        tag(CDModTags.PALM_LOG_BLOCKS).add(
+                CDModBlocks.PALM_LOG.get(),
+                CDModBlocks.STRIPPED_PALM_LOG.get(),
+                CDModBlocks.PALM_WOOD.get(),
+                CDModBlocks.STRIPPED_PALM_WOOD.get());
         tag(BlockTags.PLANKS).add(CDModBlocks.PALM_PLANKS.get());
+        tag(BlockTags.WOODEN_STAIRS).add(CDModBlocks.PALM_STAIRS.get());
+        tag(BlockTags.WOODEN_SLABS).add(CDModBlocks.PALM_SLAB.get());
         tag(BlockTags.LEAVES).add(CDModBlocks.PALM_LEAVES.get());
         tag(BlockTags.SAPLINGS).add(CDModBlocks.PALM_SAPLING.get());
-        tag(BlockTags.FENCES).add(CDModBlocks.PALM_FENCE.get());
+        tag(BlockTags.WOODEN_FENCES).add(CDModBlocks.PALM_FENCE.get());
+        tag(Tags.Blocks.FENCES_WOODEN).add(CDModBlocks.PALM_FENCE.get());
         tag(BlockTags.FENCE_GATES).add(CDModBlocks.PALM_FENCE_GATE.get());
+        tag(Tags.Blocks.FENCE_GATES_WOODEN).add(CDModBlocks.PALM_FENCE_GATE.get());
+        tag(BlockTags.WOODEN_BUTTONS).add(CDModBlocks.PALM_BUTTON.get());
+        tag(BlockTags.WOODEN_PRESSURE_PLATES).add(CDModBlocks.PALM_PRESSURE_PLATE.get());
+        tag(BlockTags.WOODEN_DOORS).add(CDModBlocks.PALM_DOOR.get());
+        tag(BlockTags.WOODEN_TRAPDOORS).add(CDModBlocks.PALM_TRAPDOOR.get());
+        tag(BlockTags.SIGNS).add(CDModBlocks.PALM_SIGN.get());
+        tag(BlockTags.CEILING_HANGING_SIGNS).add(CDModBlocks.PALM_HANGING_SIGN.get());
+        tag(BlockTags.ALL_HANGING_SIGNS)
+                .add(CDModBlocks.PALM_HANGING_SIGN.get())
+                .add(CDModBlocks.PALM_WALL_HANGING_SIGN.get());
+        tag(BlockTags.WALL_SIGNS).add(CDModBlocks.PALM_WALL_SIGN.get());
+        tag(BlockTags.WALL_HANGING_SIGNS).add(CDModBlocks.PALM_WALL_HANGING_SIGN.get());
     }
 
     protected void registerStorageBlocks() {
@@ -99,6 +125,7 @@ public class CDBlockTags extends BlockTagsProvider
                 CDModBlocks.SQUID_BARREL.get(),
                 CDModBlocks.GLOW_SQUID_BARREL.get(),
                 CDModBlocks.FROG_LEG_BARREL.get(),
+                CDModBlocks.COCONUT_CRATE.get(),
                 CDModBlocks.NAUTILUS_SHELL_BLOCK.get(),
                 CDModBlocks.PEARL_BLOCK.get(),
                 CDModBlocks.SCUTE_BLOCK.get(),

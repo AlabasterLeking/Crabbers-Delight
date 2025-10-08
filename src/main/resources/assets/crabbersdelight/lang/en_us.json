@@ -89,11 +89,11 @@
   "block.crabbersdelight.palm_hanging_sign": "Palm Hanging Sign",
   "item.crabbersdelight.palm_boat": "Palm Boat",
   "item.crabbersdelight.palm_chest_boat": "Palm Boat with Chest",
-  "entity.crabbersdelight.mod_boat": "Palm Boat",
-  "entity.crabbersdelight.mod_chest_boat": "Palm Boat with Chest",
   "block.crabbersdelight.palm_cabinet": "Palm Cabinet",
 
   "block.crabbersdelight.coconut": "Coconut",
+  "item.crabbersdelight.coconut_helmet": "Coconut Helmet",
+  "block.crabbersdelight.coconut_crate": "Coconut Crate",
   "death.attack.crabbersdelight.falling_coconut": "%s was crushed by a falling coconut",
   "item.crabbersdelight.coconut_halve": "Coconut Halve",
   "item.crabbersdelight.coconut_milk": "Coconut Milk",

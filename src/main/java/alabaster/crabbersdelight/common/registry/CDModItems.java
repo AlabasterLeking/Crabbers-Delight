@@ -90,6 +90,8 @@ public class CDModItems {
             () -> new CrabClawItem(basicItem()));
     public static final Supplier<Item> PEARL_NECKLACE = registerWithTab("pearl_necklace",
             () -> new PearlNecklaceItem(basicItem().stacksTo(1)));
+    public static final Supplier<Item> COCONUT_HELMET = registerWithTab("coconut_helmet",
+            () -> new CoconutHelmetItem(basicItem().stacksTo(1)));
 
     // Palm
     public static final Supplier<Item> PALM_LOG = registerWithTab("palm_log",
@@ -232,12 +234,6 @@ public class CDModItems {
     public static final Supplier<Item> STUFFED_NAUTILUS_SHELL = registerWithTab("stuffed_nautilus_shell",
             () -> new ConsumableItem(shellFoodItem(CDFoodValues.STUFFED_NAUTILUS_SHELL), true));
 
-    //public static final Supplier<Item> SOGGY_FLESH = registerWithTab("soggy_flesh",
-    //        () -> new ConsumableItem(foodItem(CDFoodValues.SOGGY_FLESH), true));
-
-    //public static final Supplier<Item> ARID_FLESH = registerWithTab("arid_flesh",
-    //        () -> new ConsumableItem(foodItem(CDFoodValues.ARID_FLESH), true));
-
     public static final Supplier<Item> SQUID_KEBOB = registerWithTab("squid_kebob",
             () -> new ConsumableItem(foodItem(CDFoodValues.SQUID_KEBOB)));
 
@@ -306,6 +302,9 @@ public class CDModItems {
 
     public static final Supplier<Item> FROG_LEG_BARREL = registerWithTab("frog_leg_barrel",
             () -> new BlockItem(CDModBlocks.FROG_LEG_BARREL.get(), basicItem()));
+
+    public static final Supplier<Item> COCONUT_CRATE = registerWithTab("coconut_crate",
+            () -> new BlockItem(CDModBlocks.COCONUT_CRATE.get(), basicItem()));
 
     public static final Supplier<Item> SCUTE_BLOCK = registerWithTab("scute_block",
             () -> new BlockItem(CDModBlocks.SCUTE_BLOCK.get(), basicItem()));
