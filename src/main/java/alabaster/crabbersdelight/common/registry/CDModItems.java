@@ -260,6 +260,8 @@ public class CDModItems {
             () -> new BlockItem(CDModBlocks.GLOW_SQUID_BARREL.get(), basicItem()));
     public static final Supplier<Item> FROG_LEG_BARREL = registerWithTab("frog_leg_barrel",
             () -> new BlockItem(CDModBlocks.FROG_LEG_BARREL.get(), basicItem()));
+    public static final Supplier<Item> COCONUT_CRATE = registerWithTab("coconut_crate",
+            () -> new BlockItem(CDModBlocks.COCONUT_CRATE.get(), basicItem()));
     //public static final Supplier<Item> LANTERNFISH_BARREL = registerWithTab("lanternfish_barrel",
             //() -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem()));
     public static final Supplier<Item> NAUTILUS_SHELL_BLOCK = registerWithTab("nautilus_shell_block",

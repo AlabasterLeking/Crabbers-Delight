@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.data;
 
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import alabaster.crabbersdelight.common.registry.CDModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.HolderLookup;
@@ -161,16 +162,30 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.STRIPPED_PALM_LOG.get())
                 .add(CDModItems.PALM_WOOD.get())
                 .add(CDModItems.STRIPPED_PALM_WOOD.get());
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(CDModItems.PALM_LOG.get())
+                .add(CDModItems.STRIPPED_PALM_LOG.get())
+                .add(CDModItems.PALM_WOOD.get())
+                .add(CDModItems.STRIPPED_PALM_WOOD.get());
+        tag(Tags.Items.STRIPPED_LOGS).add(CDModItems.STRIPPED_PALM_LOG.get());
+        tag(Tags.Items.STRIPPED_WOODS).add(CDModItems.STRIPPED_PALM_WOOD.get());
         tag(ItemTags.PLANKS).add(CDModItems.PALM_PLANKS.get());
-        tag(ItemTags.WOODEN_BUTTONS).add(CDModItems.PALM_BUTTON.get());
-        tag(ItemTags.WOODEN_PRESSURE_PLATES).add(CDModItems.PALM_PRESSURE_PLATE.get());
+        tag(ItemTags.SAPLINGS).add(CDModItems.PALM_SAPLING.get());
+        tag(ItemTags.LEAVES).add(CDModItems.PALM_LEAVES.get());
         tag(ItemTags.WOODEN_TRAPDOORS).add(CDModItems.PALM_TRAPDOOR.get());
         tag(ItemTags.WOODEN_DOORS).add(CDModItems.PALM_DOOR.get());
         tag(ItemTags.WOODEN_SLABS).add(CDModItems.PALM_SLAB.get());
         tag(ItemTags.WOODEN_STAIRS).add(CDModItems.PALM_STAIRS.get());
         tag(ItemTags.WOODEN_FENCES).add(CDModItems.PALM_FENCE.get());
+        tag(Tags.Items.FENCES_WOODEN).add(CDModItems.PALM_FENCE.get());
+        tag(ItemTags.FENCE_GATES).add(CDModItems.PALM_FENCE_GATE.get());
+        tag(Tags.Items.FENCE_GATES_WOODEN).add(CDModItems.PALM_FENCE_GATE.get());
+        tag(ItemTags.WOODEN_BUTTONS).add(CDModItems.PALM_BUTTON.get());
+        tag(ItemTags.WOODEN_PRESSURE_PLATES).add(CDModItems.PALM_PRESSURE_PLATE.get());
         tag(ItemTags.SIGNS).add(CDModItems.PALM_SIGN.get());
         tag(ItemTags.HANGING_SIGNS).add(CDModItems.PALM_HANGING_SIGN.get());
+        tag(ItemTags.BOATS).add(CDModItems.PALM_BOAT.get());
+        tag(ItemTags.CHEST_BOATS).add(CDModItems.PALM_CHEST_BOAT.get());
 
         tag(CommonTags.FOODS_MILK)
                 .add(CDModItems.COCONUT_MILK.get());

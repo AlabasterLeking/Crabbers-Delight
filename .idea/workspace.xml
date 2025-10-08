@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tags">
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CoconutHelmetItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/coconut_helmet.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/coconut_helmet_2d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Increment version">
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/c/tags/block/storage_blocks.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/c/tags/block/storage_blocks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/fences.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/mineable/axe.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/mineable/axe.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/CoconutBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CoconutHelmetItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CoconutHelmetItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/ItemModels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDItemTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/crab_cakes.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/crab_cakes.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,8 +342,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
-        <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
+        <item itemvalue="Gradle.Crabbers-Delight [build]" />
         <item itemvalue="Gradle.Crabbers-Delight [clean]" />
         <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
       </list>
@@ -350,22 +357,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Removed the soggy and arid flesh recipes - reworked how tags are added - restarted JEI integration but it no work yet">
-      <option name="closed" value="true" />
-      <created>1719192620735</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1719192620735</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Fixed issues with Crab Claw - updated zh_cn translation - increment mod version">
-      <option name="closed" value="true" />
-      <created>1719597687881</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1719597687881</updated>
     </task>
     <task id="LOCAL-00059" summary="Added Squid Tentacles and Frog Legs">
       <option name="closed" value="true" />
@@ -743,7 +734,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759629369326</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Coconut Helmet">
+      <option name="closed" value="true" />
+      <created>1759719831404</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1759719831404</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Increment version">
+      <option name="closed" value="true" />
+      <created>1759719863813</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1759719863813</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -763,8 +770,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixes for crab trap and new datagen" />
-    <MESSAGE value="New crabs, texture changes" />
     <MESSAGE value="Fixed most of it - still can't spawn the mob tho" />
     <MESSAGE value="Spawning fixed, worldgen" />
     <MESSAGE value="All of the palm stuff added - still need to gen trees" />
@@ -788,7 +793,9 @@
     <MESSAGE value="A bunch of final tweaks and fixes" />
     <MESSAGE value="Update ru_ru.json" />
     <MESSAGE value="Tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tags" />
+    <MESSAGE value="Coconut Helmet" />
+    <MESSAGE value="Increment version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Increment version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
