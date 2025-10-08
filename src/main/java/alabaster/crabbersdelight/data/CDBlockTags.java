@@ -80,6 +80,8 @@ public class CDBlockTags extends BlockTagsProvider
                 CDModBlocks.STRIPPED_PALM_LOG.get(),
                 CDModBlocks.PALM_WOOD.get(),
                 CDModBlocks.STRIPPED_PALM_WOOD.get());
+        tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(
+                CDModBlocks.PALM_LOG.get());
         tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(
                 CDModBlocks.PALM_LOG.get(),
                 CDModBlocks.PALM_WOOD.get());

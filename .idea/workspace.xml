@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Increment version">
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/c/tags/block/storage_blocks.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/c/tags/block/storage_blocks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/fences.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/mineable/axe.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/mineable/axe.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/CrabbersDelight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CoconutHelmetItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/item/CoconutHelmetItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/tags/CDModTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/BlockStates.java" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tons of tags, coconut helmet finished, and coconut crates">
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDItemTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDItemTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/crab_cakes.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/textures/item/crab_cakes.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +174,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [runClient]">
+  <component name="RunManager" selected="Gradle.Crabbers-Delight [runData]">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -341,9 +327,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [runData]" />
         <item itemvalue="Gradle.Crabbers-Delight [build]" />
+        <item itemvalue="Gradle.Crabbers-Delight [runClient]" />
         <item itemvalue="Gradle.Crabbers-Delight [clean]" />
         <item itemvalue="Gradle.Crabbers-Delight [dependencies]" />
       </list>
@@ -357,14 +343,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Added Squid Tentacles and Frog Legs">
-      <option name="closed" value="true" />
-      <created>1721838275699</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1721838275699</updated>
     </task>
     <task id="LOCAL-00060" summary="Remade Crab Leg Texture">
       <option name="closed" value="true" />
@@ -750,7 +728,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759719863813</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Tons of tags, coconut helmet finished, and coconut crates">
+      <option name="closed" value="true" />
+      <created>1759886509793</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1759886509793</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -770,7 +756,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed most of it - still can't spawn the mob tho" />
     <MESSAGE value="Spawning fixed, worldgen" />
     <MESSAGE value="All of the palm stuff added - still need to gen trees" />
     <MESSAGE value="Signs" />
@@ -795,7 +780,8 @@
     <MESSAGE value="Tags" />
     <MESSAGE value="Coconut Helmet" />
     <MESSAGE value="Increment version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Increment version" />
+    <MESSAGE value="Tons of tags, coconut helmet finished, and coconut crates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tons of tags, coconut helmet finished, and coconut crates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
