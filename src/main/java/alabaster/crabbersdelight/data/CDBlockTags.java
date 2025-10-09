@@ -83,8 +83,7 @@ public class CDBlockTags extends BlockTagsProvider
         tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(
                 CDModBlocks.PALM_LOG.get());
         tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(
-                CDModBlocks.PALM_LOG.get(),
-                CDModBlocks.PALM_WOOD.get());
+                CDModBlocks.PALM_LOG.get());
         tag(CDModTags.PALM_LOG_BLOCKS).add(
                 CDModBlocks.PALM_LOG.get(),
                 CDModBlocks.STRIPPED_PALM_LOG.get(),
@@ -106,6 +105,7 @@ public class CDBlockTags extends BlockTagsProvider
         tag(BlockTags.WOODEN_DOORS).add(CDModBlocks.PALM_DOOR.get());
         tag(BlockTags.WOODEN_TRAPDOORS).add(CDModBlocks.PALM_TRAPDOOR.get());
         tag(BlockTags.SIGNS).add(CDModBlocks.PALM_SIGN.get());
+        tag(BlockTags.STANDING_SIGNS).add(CDModBlocks.PALM_SIGN.get());
         tag(BlockTags.CEILING_HANGING_SIGNS).add(CDModBlocks.PALM_HANGING_SIGN.get());
         tag(BlockTags.ALL_HANGING_SIGNS)
                 .add(CDModBlocks.PALM_HANGING_SIGN.get())

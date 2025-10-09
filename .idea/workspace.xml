@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Tons of tags, coconut helmet finished, and coconut crates">
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="nother tag">
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/overworld_natural_logs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/overworld_natural_logs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/lang/ru_ru.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,14 +346,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Remade Crab Leg Texture">
-      <option name="closed" value="true" />
-      <created>1721841322174</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1721841322174</updated>
     </task>
     <task id="LOCAL-00061" summary="Increase Chum durability to 48 - Modify Crab Trap to have 27 slots - Stub for Renderer for Items inside of Crab Trap">
       <option name="closed" value="true" />
@@ -736,7 +731,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759886509793</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="nother tag">
+      <option name="closed" value="true" />
+      <created>1759891969196</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1759891969196</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -756,7 +759,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Spawning fixed, worldgen" />
     <MESSAGE value="All of the palm stuff added - still need to gen trees" />
     <MESSAGE value="Signs" />
     <MESSAGE value="Cabinets" />
@@ -781,7 +783,8 @@
     <MESSAGE value="Coconut Helmet" />
     <MESSAGE value="Increment version" />
     <MESSAGE value="Tons of tags, coconut helmet finished, and coconut crates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tons of tags, coconut helmet finished, and coconut crates" />
+    <MESSAGE value="nother tag" />
+    <option name="LAST_COMMIT_MESSAGE" value="nother tag" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -92,6 +92,8 @@
   "block.crabbersdelight.palm_cabinet": "Пальмовая кладовая",
 
   "block.crabbersdelight.coconut": "Кокос",
+  "item.crabbersdelight.coconut_helmet": "Кокосовый шлем",
+  "block.crabbersdelight.coconut_crate": "Ящик с кокосоми",
   "death.attack.crabbersdelight.falling_coconut": "%s раздавлен упавшим кокосом",
   "item.crabbersdelight.coconut_halve": "Половина кокоса",
   "item.crabbersdelight.coconut_milk": "Кокосовое молоко",
