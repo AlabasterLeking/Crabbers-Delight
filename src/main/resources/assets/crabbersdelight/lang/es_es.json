@@ -1,0 +1,178 @@
+{
+  "itemGroup.crabbersdelight": "Crabber's Delight",
+
+  "item.crabbersdelight.crab": "Cangrejo",
+  "item.crabbersdelight.cooked_crab": "Cangrejo cocinado",
+
+  "item.crabbersdelight.clawster": "Cangrejo de río",
+  "item.crabbersdelight.cooked_clawster": "Cangrejo de río cocinado",
+
+  "item.crabbersdelight.shrimp": "Gamba",
+  "item.crabbersdelight.cooked_shrimp": "Gamba cocinada",
+
+  "item.crabbersdelight.clam": "Almeja",
+  "item.crabbersdelight.raw_clam_meat": "Carne de almeja cruda",
+  "item.crabbersdelight.cooked_clam_meat": "Carne de almeja cocinada",
+
+  "item.crabbersdelight.raw_squid_tentacles": "Tentáculos de calamar crudos",
+  "item.crabbersdelight.cooked_squid_tentacles": "Tentáculos de calamar cocinados",
+
+  "item.crabbersdelight.raw_glow_squid_tentacles": "Tentáculos de calamar luminoso crudos",
+  "item.crabbersdelight.cooked_glow_squid_tentacles": "Tentáculos de calamar luminoso cocinados",
+
+  "item.crabbersdelight.raw_frog_leg": "Anca de rana cruda",
+  "item.crabbersdelight.cooked_frog_leg": "Anca de rana cocinada",
+
+  "item.crabbersdelight.kelp_shake": "Batido de algas",
+  "item.crabbersdelight.crab_cakes": "Tarta de cangrejo",
+  "item.crabbersdelight.crab_legs": "Pata de cangrejo",
+  "item.crabbersdelight.cooked_tropical_fish": "Pez tropical cocinado",
+  "item.crabbersdelight.shrimp_skewer": "Brocheta de gamba",
+  "item.crabbersdelight.surf_and_turf": "Mar y tierra",
+  "item.crabbersdelight.fish_stick": "Pescado en un palo",
+  "item.crabbersdelight.clam_bake": "Asado de almejas",
+  "item.crabbersdelight.clam_chowder": "Crema de almejas",
+  "item.crabbersdelight.tropical_fish_slice": "Rebanada de pez tropical cruda",
+  "item.crabbersdelight.cooked_tropical_fish_slice": "Rebanada de pez tropical cocinada",
+  "item.crabbersdelight.pufferfish_slice": "Rebanada de pez globo cruda",
+  "item.crabbersdelight.cooked_pufferfish_slice": "Rebanada de pez globo cocinada",
+  "item.crabbersdelight.bisque": "Sopa de mariscos",
+  "item.crabbersdelight.seafood_gumbo": "Gumbo de marisco",
+  "item.crabbersdelight.stuffed_nautilus_shell": "Caparazón de nautilo relleno",
+  "item.crabbersdelight.shrimp_fried_rice": "Arroz frito con gamba",
+  "item.crabbersdelight.jar_of_pickles": "Tarro con pepinillos",
+  "item.crabbersdelight.sea_pickle_juice": "Jugo de pepino de mar",
+  "item.crabbersdelight.squid_kebab": "Kebab de calamar",
+  "item.crabbersdelight.frog_leg_kebab": "Kebab de anca de rana",
+  "item.crabbersdelight.coral_crunch": "Crunch coral",
+
+  "item.crabbersdelight.soggy_flesh": "Carne pastosa",
+  "item.crabbersdelight.arid_flesh": "Carne árida",
+
+  "item.crabbersdelight.pearl": "Perla",
+  "item.crabbersdelight.can": "Lata",
+  "item.crabbersdelight.coral_fragments": "Fragmentos de coral",
+  "item.crabbersdelight.fish_bones": "Huesos de pez",
+
+  "item.minecraft.potion.effect.inky_potion": "Poción de entintado",
+  "item.minecraft.splash_potion.effect.inky_potion": "Poción de entintado arrojadiza",
+  "item.minecraft.lingering_potion.effect.inky_potion": "Poción de entintado persistente",
+  "item.minecraft.tipped_arrow.effect.inky_potion": "Flecha de entintado",
+
+  "item.crabbersdelight.bucket_of_crab_chum": "Cubo de cebo de cangrejo",
+  "item.crabbersdelight.bucket_of_clawster_chum": "Cubo de cebo de cangrejo de río",
+  "item.crabbersdelight.bucket_of_clam_chum": "Cubo de cebo de almeja",
+  "item.crabbersdelight.bucket_of_shrimp_chum": "Cubo de cebo de gamba",
+
+  "item.crabbersdelight.crab_claw": "Tenaza de cangrejo",
+  "item.crabbersdelight.pearl_necklace": "Collar de perlas",
+
+  "item.crabbersdelight.crab_spawn_egg": "Generar cangrejo",
+  "item.crabbersdelight.crab_bucket": "Cubo con cangrejo",
+
+  "block.crabbersdelight.palm_log": "Tronco de palmera",
+  "block.crabbersdelight.stripped_palm_log": "Tronco de palmera sin corteza",
+  "block.crabbersdelight.palm_wood": "Leño de palmera",
+  "block.crabbersdelight.stripped_palm_wood": "Leño de palmera sin corteza",
+  "block.crabbersdelight.palm_planks": "Tablones de palmera",
+  "block.crabbersdelight.palm_slab": "Losa de palmera",
+  "block.crabbersdelight.palm_stairs": "Escaleras de palmera",
+  "block.crabbersdelight.palm_fence": "Valla de palmera",
+  "block.crabbersdelight.palm_fence_gate": "Puerta de valla de palmera",
+  "block.crabbersdelight.palm_door": "Puerta de palmera",
+  "block.crabbersdelight.palm_trapdoor": "Trampilla de palmera",
+  "block.crabbersdelight.palm_pressure_plate": "Placa de presión de palmera",
+  "block.crabbersdelight.palm_button": "Botón de palmera",
+  "block.crabbersdelight.palm_leaves": "Hojas de palmera",
+  "block.crabbersdelight.palm_sapling": "Retoño de palmera",
+  "block.crabbersdelight.palm_sign": "Cartel de palmera",
+  "block.crabbersdelight.palm_hanging_sign": "Cartel colgante de palmera",
+  "item.crabbersdelight.palm_boat": "Barca de palmera",
+  "item.crabbersdelight.palm_chest_boat": "Barca de palmera con cofre",
+  "block.crabbersdelight.palm_cabinet": "Gabinete de palmera",
+
+  "block.crabbersdelight.coconut": "Coco",
+  "item.crabbersdelight.coconut_helmet": "Casco de coco",
+  "block.crabbersdelight.coconut_crate": "Cajón de coco",
+  "death.attack.crabbersdelight.falling_coconut": "%s fue aplastado/a por un coco",
+  "item.crabbersdelight.coconut_halve": "Mitad de coco",
+  "item.crabbersdelight.coconut_milk": "Leche de coco",
+  "farmersdelight.tooltip.coconut_milk": "Elimina 1 efecto",
+  "item.crabbersdelight.coconut_pudding": "Pudin de coco",
+
+  "block.crabbersdelight.crab_trap": "Trampa de cangrejo",
+  "block.crabbersdelight.crab_barrel": "Barril de cangrejo",
+  "block.crabbersdelight.clam_barrel": "Barril de almeja",
+  "block.crabbersdelight.clawster_barrel": "Barril de cangrejo de río",
+  "block.crabbersdelight.shrimp_barrel": "Barril de gamba",
+  "block.crabbersdelight.cod_barrel": "Barril de bacalao",
+  "block.crabbersdelight.salmon_barrel": "Barril de salmón",
+  "block.crabbersdelight.pufferfish_barrel": "Barril de pez globo",
+  "block.crabbersdelight.tropical_fish_barrel": "Barril de pez tropical",
+  "block.crabbersdelight.squid_barrel": "Barril de calamar",
+  "block.crabbersdelight.glow_squid_barrel": "Barril de calamar luminoso",
+  "block.crabbersdelight.frog_leg_barrel": "Barril de ancas de rana",
+  "block.crabbersdelight.lanternfish_barrel": "Barril de pez linterna",
+  "block.crabbersdelight.nautilus_shell_block": "Bloque de caparazón de nautilo",
+  "block.crabbersdelight.pearl_block": "Bloque de perlas",
+  "block.crabbersdelight.scute_block": "Bloque de escama de tortuga",
+  "block.crabbersdelight.sea_pickle_crate": "Cajón de pepino de mar",
+  "block.crabbersdelight.seashells": "Caracolas",
+
+  "entity.crabbersdelight.crab": "Cangrejo",
+
+  "crabbersdelight.jei.crab_trap_loot": "Trampa de cangrejo",
+
+  "crabbersdelight.advancement.root": "Crabber's Delight",
+  "crabbersdelight.advancement.root.desc": "¡Una aventura de mariscos de espera!",
+
+  "crabbersdelight.advancement.craft_crab_trap": "¡Es una trampa!",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "Usa una cuerda, losas y palos para hacer tu primera trampa de cangrejo",
+
+  "crabbersdelight.advancement.cook_crustaceans": "Crustáceo Cascarudo",
+  "crabbersdelight.advancement.cook_crustaceans.desc": "Cocina cangrejos, gambas y cangrejos de río hirviéndolos en una olla",
+
+  "crabbersdelight.advancement.get_pearl": "¡La perla madre!",
+  "crabbersdelight.advancement.get_pearl.desc": "Obtén tu primera perla cortando almejas en una tabla de picar. Quizá un misterioso vendedor puede encontrarla valiosa...",
+
+  "crabbersdelight.advancement.a_shrimp_fried_this_rice": "¡¿Una gamba ayudó a freir este arroz?!",
+  "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "¡¿De verdad me estás diciendo que una GAMBA ayudó a freir esto?! Imposible",
+
+  "crabbersdelight.advancement.reach_for_the_sea_stars": "¡Apunta a las estrellas!",
+  "crabbersdelight.advancement.reach_for_the_sea_stars.desc": "Obtén una pinza de cangrejo para extender tu alcance",
+
+  "crabbersdelight.advancement.frog_killer": "Sabe a pollo",
+  "crabbersdelight.advancement.frog_killer.desc": "Usa un cuchillo para extraer las ancas de una rana",
+
+  "crabbersdelight.advancement.squid_killer": "Asesino del mar profundo",
+  "crabbersdelight.advancement.squid_killer.desc": "Usa un cuchillo para extraer los tentáculos de un calamar",
+
+  "crabbersdelight.advancement.glow_squid_killer": "Asesino del más profundo",
+  "crabbersdelight.advancement.glow_squid_killer.desc": "Usa un cuchillo para extraer los tentáculos luminosos de un calamar luminoso",
+
+  "crabbersdelight.block.crab_trap.not_waterlogged": "¡La trampa de cangrejos debe estar sumergida en agua para funcionar!",
+  "crabbersdelight.block.crab_trap.insufficient_surrounding_water": "¡La trampa de cangrejos necesita un 3x3 de agua a su alrededor para funcionar!",
+
+  "tag.item.crabbersdelight.raw_seafood": "Mariscos crudos",
+  "tag.item.crabbersdelight.cooked_seafood": "Mariscos cocinados",
+
+  "tag.item.crabbersdelight.raw_squid": "Calamar crudo",
+  "tag.item.crabbersdelight.cooked_squid": "Calamar cocinado",
+
+  "tag.item.crabbersdelight.crab_tempt_item": "Tentadores de cangrejo",
+  "tag.item.crabbersdelight.crab_trap_bait": "Cebo de trampa de cangrejo",
+
+  "tag.item.crabbersdelight.creature_chums": "Cebos de criaturas",
+
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clam_chum": "Cubo de cebo de almeja",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clawster_chum": "Cubo de cebo de cangrejo de río",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_crab_chum": "Cubo de cebo de cangrejo",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_shrimp_chum": "Cubo de cebo de gamba",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.air": "Sin cebo",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.cod": "Cebo de bacalao",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.pufferfish": "Cebo de pez globo",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.salmon": "Cebo de salmón",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.tropical_fish": "Cebo de pez tropical",
+
+  "trim_material.crabbersdelight.pearl": "Material de perla"
+}
