@@ -16,7 +16,7 @@ public class CDModEntities {
 
     public static final Supplier<EntityType<CrabEntity>> CRAB =
             ENTITY_TYPES.register("crab",
-                    () -> EntityType.Builder.of(CrabEntity::new, MobCategory.WATER_AMBIENT).sized(0.7f, 0.7f).build("crab"));
+                    () -> EntityType.Builder.of(CrabEntity::new, MobCategory.CREATURE).sized(0.7f, 0.7f).build("crab"));
 
     public static final Supplier<EntityType<CDBoatEntity>> MOD_BOAT =
             ENTITY_TYPES.register("mod_boat", () -> EntityType.Builder.<CDBoatEntity>of(CDBoatEntity::new, MobCategory.MISC)
