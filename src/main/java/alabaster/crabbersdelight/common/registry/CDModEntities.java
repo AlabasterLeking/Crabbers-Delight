@@ -19,7 +19,7 @@ public class CDModEntities {
             CrabbersDelight.MODID);
 
     public static final RegistryObject<EntityType<CrabEntity>> CRAB = ENTITIES.register("crab",
-            () -> EntityType.Builder.of(CrabEntity::new, MobCategory.WATER_AMBIENT)
+            () -> EntityType.Builder.of(CrabEntity::new, MobCategory.CREATURE)
                     .sized(.7f, .7f)
                     .build(new ResourceLocation(CrabbersDelight.MODID, "crab").toString()));
 
