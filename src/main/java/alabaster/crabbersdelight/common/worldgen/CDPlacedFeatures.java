@@ -28,7 +28,7 @@ public class CDPlacedFeatures {
 
         // Tree placement
         register(context, PALM_PLACED_KEY, configuredFeatures.getOrThrow(CDConfiguredFeatures.PALM_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1f, 1),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1),
                         CDModBlocks.PALM_SAPLING.get()));
 
         // Beach placement
