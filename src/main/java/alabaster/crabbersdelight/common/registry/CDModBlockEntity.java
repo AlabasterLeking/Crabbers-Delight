@@ -4,6 +4,7 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.entity.CDHangingSignBlockEntity;
 import alabaster.crabbersdelight.common.block.entity.CDSignBlockEntity;
 import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
+import alabaster.crabbersdelight.common.block.entity.FishPlaqueBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.HangingSignBlockEntity;
@@ -24,6 +25,9 @@ public class CDModBlockEntity {
 
     public static final Supplier<BlockEntityType<CrabTrapBlockEntity>> CRAB_TRAP = BLOCK_ENTITY_TYPES.register("crab_trap",
             () -> BlockEntityType.Builder.of(CrabTrapBlockEntity::new, CDModBlocks.CRAB_TRAP.get()).build(null));
+
+    public static final Supplier<BlockEntityType<FishPlaqueBlockEntity>> FISH_PLAQUE = BLOCK_ENTITY_TYPES.register("fish_plaque",
+            () -> BlockEntityType.Builder.of(FishPlaqueBlockEntity::new, CDModBlocks.FISH_PLAQUE.get()).build(null));
 
     public static final Supplier<BlockEntityType<CDSignBlockEntity>> PALM_SIGN = BLOCK_ENTITY_TYPES.register("palm_sign",
             () -> BlockEntityType.Builder.of(CDSignBlockEntity::new,

@@ -1,0 +1,64 @@
+{
+	"format_version": "1.21.11",
+	"render_type": "minecraft:cutout",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "crabbersdelight:block/fish_plaque",
+		"particle": "crabbersdelight:block/fish_plaque"
+	},
+	"elements": [
+		{
+			"from": [0, 3, 0],
+			"to": [16, 13, 1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 0.5]},
+			"faces": {
+				"north": {"uv": [0, 3, 16, 13], "texture": "#0"},
+				"east": {"uv": [15, 3, 16, 13], "texture": "#0"},
+				"south": {"uv": [0, 3, 16, 13], "texture": "#0"},
+				"west": {"uv": [0, 3, 1, 13], "texture": "#0"},
+				"up": {"uv": [0, 3, 16, 4], "texture": "#0"},
+				"down": {"uv": [0, 12, 16, 13], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3, 4.5],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3, 4.5],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"translation": [-3.25, 1.5, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"head": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 13, 7]
+		},
+		"fixed": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 0, -7]
+		},
+		"on_shelf": {
+			"rotation": [0, -180, 0]
+		}
+	}
+}

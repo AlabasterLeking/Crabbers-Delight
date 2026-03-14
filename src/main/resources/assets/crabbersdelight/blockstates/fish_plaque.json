@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=south": { "model": "crabbersdelight:block/fish_plaque" },
+    "facing=north": { "model": "crabbersdelight:block/fish_plaque", "y": 180 },
+    "facing=west":  { "model": "crabbersdelight:block/fish_plaque", "y": 90 },
+    "facing=east":  { "model": "crabbersdelight:block/fish_plaque", "y": 270 }
+  }
+}

@@ -23,6 +23,9 @@ public class CDModBlocks {
     public static final Supplier<Block> CRAB_TRAP = BLOCKS.register("crab_trap",
             () -> new CrabTrapBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
+    public static final Supplier<Block> FISH_PLAQUE = BLOCKS.register("fish_plaque",
+            () -> new FishPlaqueBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).noOcclusion()));
+
     // Palm Tree
     public static final Supplier<Block> PALM_LOG = BLOCKS.register("palm_log",
             () -> new CDLogBlock(Block.Properties.ofFullCopy(Blocks.OAK_LOG)));

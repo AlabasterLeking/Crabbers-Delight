@@ -277,4 +277,7 @@ public class CDModItems {
     public static final Supplier<Item> CRAB_TRAP = registerWithTab("crab_trap",
             () -> new BlockItem(CDModBlocks.CRAB_TRAP.get(), basicItem()));
 
+    public static final Supplier<Item> FISH_PLAQUE = registerWithTab("fish_plaque",
+            () -> new BlockItem(CDModBlocks.FISH_PLAQUE.get(), basicItem()));
+
 }
