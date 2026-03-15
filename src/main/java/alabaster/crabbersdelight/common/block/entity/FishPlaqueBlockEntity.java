@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -19,14 +20,11 @@ public class FishPlaqueBlockEntity extends BlockEntity {
     @Nullable private EntityType<?> entityType = null;
     private CompoundTag entityData = new CompoundTag();
 
-    // Incremented each time data changes so the renderer knows to recreate the cached entity
     private int dataVersion = 0;
 
     public FishPlaqueBlockEntity(BlockPos pos, BlockState state) {
         super(CDModBlockEntity.FISH_PLAQUE.get(), pos, state);
     }
-
-    // ── Data accessors ─────────────────────────────────────────────────────────
 
     public boolean hasFish() {
         return entityType != null;
@@ -59,8 +57,6 @@ public class FishPlaqueBlockEntity extends BlockEntity {
         setChanged();
     }
 
-    // ── NBT save/load ──────────────────────────────────────────────────────────
-
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
@@ -75,24 +71,41 @@ public class FishPlaqueBlockEntity extends BlockEntity {
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
+        this.dataVersion++;
+
         if (tag.contains("EntityType")) {
             ResourceLocation rl = ResourceLocation.parse(tag.getString("EntityType"));
             this.entityType = BuiltInRegistries.ENTITY_TYPE.getOptional(rl).orElse(null);
             this.entityData = tag.contains("EntityData") ? tag.getCompound("EntityData").copy() : new CompoundTag();
-            this.dataVersion++;
         } else {
             this.entityType = null;
             this.entityData = new CompoundTag();
         }
     }
 
-    // ── Client sync ────────────────────────────────────────────────────────────
-
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         CompoundTag tag = new CompoundTag();
-        saveAdditional(tag, registries);
+        if (entityType != null) {
+            tag.putString("EntityType", BuiltInRegistries.ENTITY_TYPE.getKey(entityType).toString());
+            if (!entityData.isEmpty()) {
+                tag.put("EntityData", entityData.copy());
+            }
+        }
         return tag;
+    }
+
+    @Override
+    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider lookupProvider) {
+        CompoundTag tag = pkt.getTag();
+        if (tag != null) {
+            loadAdditional(tag, lookupProvider);
+        }
+    }
+
+    @Override
+    public void handleUpdateTag(CompoundTag tag, HolderLookup.Provider registries) {
+        loadAdditional(tag, registries);
     }
 
     @Override

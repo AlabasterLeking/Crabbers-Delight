@@ -5,7 +5,11 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -30,26 +34,14 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
-
 public class FishPlaqueBlock extends BaseEntityBlock {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     private static final VoxelShape SHAPE_NORTH = Block.box(0, 3, 15, 16, 13, 16);
     private static final VoxelShape SHAPE_SOUTH = Block.box(0, 3,  0, 16, 13,  1);
-    private static final VoxelShape SHAPE_WEST = Block.box(15, 3, 0, 16, 13, 16);
-    private static final VoxelShape SHAPE_EAST = Block.box(0,  3, 0,  1, 13, 16);
-
-    // Maps each fish bucket item to its corresponding entity type
-    public static final Map<Item, EntityType<?>> BUCKET_TO_ENTITY = Map.of(
-            Items.COD_BUCKET,          EntityType.COD,
-            Items.SALMON_BUCKET,       EntityType.SALMON,
-            Items.TROPICAL_FISH_BUCKET,EntityType.TROPICAL_FISH,
-            Items.PUFFERFISH_BUCKET,   EntityType.PUFFERFISH,
-            Items.AXOLOTL_BUCKET,      EntityType.AXOLOTL,
-            Items.TADPOLE_BUCKET,      EntityType.TADPOLE
-    );
+    private static final VoxelShape SHAPE_WEST  = Block.box(15, 3, 0, 16, 13, 16);
+    private static final VoxelShape SHAPE_EAST  = Block.box(0,  3, 0,  1, 13, 16);
 
     public FishPlaqueBlock(Properties props) {
         super(props);
@@ -66,9 +58,9 @@ public class FishPlaqueBlock extends BaseEntityBlock {
         return switch (state.getValue(FACING)) {
             case NORTH -> SHAPE_NORTH;
             case SOUTH -> SHAPE_SOUTH;
-            case WEST -> SHAPE_WEST;
-            case EAST -> SHAPE_EAST;
-            default -> Shapes.block();
+            case WEST  -> SHAPE_WEST;
+            case EAST  -> SHAPE_EAST;
+            default    -> Shapes.block();
         };
     }
 
@@ -87,19 +79,48 @@ public class FishPlaqueBlock extends BaseEntityBlock {
         return new FishPlaqueBlockEntity(pos, state);
     }
 
+    @Nullable
+    private static EntityType<?> getEntityTypeFromBucket(MobBucketItem bucket) {
+        try {
+            var field = MobBucketItem.class.getDeclaredField("type");
+            field.setAccessible(true);
+            return (EntityType<?>) field.get(bucket);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            return null;
+        }
+    }
+
+    private static void sync(FishPlaqueBlockEntity be, Level level, BlockPos pos, BlockState state) {
+        // setChanged() marks the BE dirty so it gets saved
+        be.setChanged();
+        // ServerLevel.sendBlockUpdated internally calls getChunkSource().blockChanged(pos)
+        // which queues the ClientboundBlockEntityDataPacket for all tracking players.
+        // This is the only call needed — additional manual blockChanged() calls are redundant.
+        level.sendBlockUpdated(pos, state, state, Block.UPDATE_ALL);
+    }
+
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (level.isClientSide) return ItemInteractionResult.SUCCESS;
         if (!(level.getBlockEntity(pos) instanceof FishPlaqueBlockEntity be)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 
-        EntityType<?> type = BUCKET_TO_ENTITY.get(stack.getItem());
-        if (type != null) {
+        if (stack.getItem() instanceof MobBucketItem mobBucket) {
+            EntityType<?> entityType = getEntityTypeFromBucket(mobBucket);
+            if (entityType == null) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+            if (be.hasFish()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+
             CompoundTag extraData = new CompoundTag();
             CustomData bucketData = stack.get(DataComponents.BUCKET_ENTITY_DATA);
             if (bucketData != null) extraData = bucketData.copyTag();
 
-            be.setFishData(type, extraData);
-            level.sendBlockUpdated(pos, state, state, 3);
+            be.setFishData(entityType, extraData);
+            sync(be, level, pos, state);
+            level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0f, 1.0f);
+
+            if (!player.getAbilities().instabuild) {
+                stack.shrink(1);
+            }
+
             return ItemInteractionResult.SUCCESS;
         }
 
@@ -112,8 +133,23 @@ public class FishPlaqueBlock extends BaseEntityBlock {
         if (!(level.getBlockEntity(pos) instanceof FishPlaqueBlockEntity be)) return InteractionResult.PASS;
 
         if (be.hasFish()) {
+            Item bucketItem = BuiltInRegistries.ITEM.stream()
+                    .filter(item -> item instanceof MobBucketItem mob && getEntityTypeFromBucket(mob) == be.getEntityType())
+                    .findFirst()
+                    .orElse(Items.WATER_BUCKET);
+
+            ItemStack bucket = new ItemStack(bucketItem);
+            if (!be.getEntityData().isEmpty()) {
+                bucket.set(DataComponents.BUCKET_ENTITY_DATA, CustomData.of(be.getEntityData()));
+            }
+            if (!player.getInventory().add(bucket)) {
+                player.drop(bucket, false);
+            }
+
             be.clearFish();
-            level.sendBlockUpdated(pos, state, state, 3);
+            sync(be, level, pos, state);
+            level.playSound(null, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1.0f, 1.0f);
+
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
