@@ -2,6 +2,8 @@ package alabaster.crabbersdelight.client.renderer;
 
 import alabaster.crabbersdelight.common.block.FishPlaqueBlock;
 import alabaster.crabbersdelight.common.block.entity.FishPlaqueBlockEntity;
+import alabaster.crabbersdelight.common.entity.crab.CrabEntity;
+import alabaster.crabbersdelight.common.registry.CDModEntities;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.model.AxolotlModel;
@@ -38,7 +40,8 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
 
     private static final Set<EntityType<?>> SPECIAL_RENDER = Set.of(
             EntityType.PUFFERFISH,
-            EntityType.AXOLOTL
+            EntityType.AXOLOTL,
+            CDModEntities.CRAB.get()
     );
 
     public FishPlaqueRenderer(BlockEntityRendererProvider.Context context) {
@@ -117,8 +120,7 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
 
             this.entityRenderer.render(entity, 0.0, 0.0, 0.0, yRot, 0f, poseStack, bufferSource, packedLight);
             poseStack.popPose();
-        }
-        else if (entity instanceof Axolotl axolotl) {
+        } else if (entity instanceof Axolotl axolotl) {
             var facing = be.getBlockState().getValue(FishPlaqueBlock.FACING);
             float yRot = facing.toYRot() + 180f;
             float scale = 0.53125f * 1.5f;
@@ -155,6 +157,35 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
             var consumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(texture));
             headPart.render(poseStack, consumer, packedLight, packedOverlay);
 
+            poseStack.popPose();
+        } else if (entity instanceof CrabEntity crab) {
+            var facing = be.getBlockState().getValue(FishPlaqueBlock.FACING);
+            float scale = 0.53125f * 1.5f;
+            float yDegree = -facing.toYRot() + 90f + 180f;
+
+            poseStack.pushPose();
+            poseStack.translate(0.5, 0.0, 0.5);
+
+            var vec3 = new Vec3(
+                    facing.getStepX() * 0.25f,
+                    -scale + 0.1875f,   // shift down 5px
+                    facing.getStepZ() * 0.25f
+            );
+            poseStack.translate(-vec3.x(), -vec3.y(), -vec3.z());
+
+            poseStack.mulPose(Axis.YP.rotationDegrees(yDegree));
+            poseStack.translate(0, -0.06f, 0);
+
+            poseStack.mulPose(Axis.XP.rotationDegrees(-90f));
+            poseStack.mulPose(Axis.ZP.rotationDegrees(-90f));
+
+            poseStack.translate(0, -0.2f, 0);
+            poseStack.scale(scale, scale, scale);
+
+            entity.setYHeadRot(0);
+            entity.setYBodyRot(0);
+
+            this.entityRenderer.render(entity, 0.0, 0.0, 0.0, 0.0f, 0f, poseStack, bufferSource, packedLight);
             poseStack.popPose();
         }
     }

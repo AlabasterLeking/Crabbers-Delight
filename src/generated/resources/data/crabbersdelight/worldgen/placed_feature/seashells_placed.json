@@ -2,8 +2,8 @@
   "feature": "crabbersdelight:seashells_beach",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 2
+      "type": "crabbersdelight:config_filter",
+      "config_key": "seashell"
     },
     {
       "type": "minecraft:in_square"

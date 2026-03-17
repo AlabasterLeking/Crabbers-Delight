@@ -13,11 +13,16 @@ public class Config {
     public static ModConfigSpec.ConfigValue<Integer> MAX_TICKS;
     public static ModConfigSpec.BooleanValue COOK_IN_POTS;
     public static ModConfigSpec.BooleanValue REQUIRE_SURROUNDING_WATER;
+
+    public static final String CATEGORY_WORLD = "world";
+    public static ModConfigSpec.BooleanValue GENERATE_PALM_TREES;
+    public static ModConfigSpec.IntValue CHANCE_PALM_TREES;
+    public static ModConfigSpec.BooleanValue GENERATE_SEASHELLS;
+    public static ModConfigSpec.IntValue CHANCE_SEASHELLS;
+    public static ModConfigSpec.IntValue CHANCE_SEASHELLS_UNDERWATER;
     public static ModConfigSpec.ConfigValue<Integer> SEASHELL_VARIANT_COUNT;
 
     static {
-
-        // Common settings
         ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
 
         COMMON_BUILDER.comment("Game Settings").push(CATEGORY_SETTINGS);
@@ -33,12 +38,30 @@ public class Config {
                 .define("maxTicks", 8000);
         REQUIRE_SURROUNDING_WATER = COMMON_BUILDER.comment("Requires the crab trap to have a 3x3 of open water or waterlogged blocks around it to be able to function. Default = true")
                 .define("require_surrounding_water", true);
+        COMMON_BUILDER.pop();
+
+        COMMON_BUILDER.comment("World generation").push(CATEGORY_WORLD);
+
+        COMMON_BUILDER.comment("Palm Tree generation").push("palm_trees");
+        GENERATE_PALM_TREES = COMMON_BUILDER.comment("Should palm trees generate on beaches?")
+                .define("generatePalmTrees", true);
+        CHANCE_PALM_TREES = COMMON_BUILDER.comment("Chance of generating. Smaller value = more frequent.")
+                .defineInRange("chance", 10, 0, Integer.MAX_VALUE);
+        COMMON_BUILDER.pop();
+
+        COMMON_BUILDER.comment("Seashell generation").push("seashells");
+        GENERATE_SEASHELLS = COMMON_BUILDER.comment("Should seashells generate on beaches and ocean floors?")
+                .define("generateSeashells", true);
+        CHANCE_SEASHELLS = COMMON_BUILDER.comment("Chance of generating on beaches. Smaller value = more frequent.")
+                .defineInRange("chanceBeach", 2, 0, Integer.MAX_VALUE);
+        CHANCE_SEASHELLS_UNDERWATER = COMMON_BUILDER.comment("Chance of generating on ocean floors. Smaller value = more frequent.")
+                .defineInRange("chanceUnderwater", 2, 0, Integer.MAX_VALUE);
         SEASHELL_VARIANT_COUNT = COMMON_BUILDER.comment("Number of seashell variants available (must match textures/models/blockstates files)")
                 .defineInRange("seashellVariantCount", 7, 1, 64);
+        COMMON_BUILDER.pop();
 
         COMMON_BUILDER.pop();
 
         COMMON_CONFIG = COMMON_BUILDER.build();
-
     }
 }

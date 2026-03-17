@@ -251,16 +251,15 @@ public class CrabEntity extends Animal implements Bucketable {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     public void loadFromBucketTag(@Nonnull CompoundTag tag) {
         Bucketable.loadDefaultDataFromBucketTag(this, tag);
 
         if (tag.contains("Age")) {
             this.setAge(tag.getInt("Age"));
         }
-        int i = tag.getInt("Variant");
-        if (i >= 0 && i < this.getTypeVariant()) {
-            this.setVariant(this.getVariant());
+
+        if (tag.contains("Variant")) {
+            this.entityData.set(VARIANT, tag.getInt("Variant"));
         }
     }
 

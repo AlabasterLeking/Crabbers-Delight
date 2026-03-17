@@ -8,6 +8,7 @@ import alabaster.crabbersdelight.common.entity.crab.CrabModel;
 import alabaster.crabbersdelight.common.entity.crab.CrabRenderer;
 import alabaster.crabbersdelight.common.item.CoconutHelmetItem;
 import alabaster.crabbersdelight.common.utils.CDStateProviders;
+import alabaster.crabbersdelight.common.worldgen.placement.CDPlacementModifiers;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
@@ -66,6 +67,7 @@ public class CrabbersDelight {
         CDModCreativeTabs.CREATIVE_TAB.register(bus);
         CDModPotions.POTIONS.register(bus);
         CDModEntities.ENTITY_TYPES.register(bus);
+        CDPlacementModifiers.PLACEMENT_MODIFIERS.register(bus);
         CDTrunkPlacerTypes.TRUNK_PLACERS.register(bus);
         CDFoliagePlacerTypes.FOLIAGE_PLACERS.register(bus);
         CDStateProviders.PROVIDERS.register(bus);

@@ -2,8 +2,8 @@
   "feature": "crabbersdelight:seashells_underwater",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 2
+      "type": "crabbersdelight:config_filter",
+      "config_key": "seashell_underwater"
     },
     {
       "type": "minecraft:in_square"

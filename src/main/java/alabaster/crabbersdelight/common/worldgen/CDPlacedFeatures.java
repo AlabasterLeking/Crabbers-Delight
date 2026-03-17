@@ -2,6 +2,7 @@ package alabaster.crabbersdelight.common.worldgen;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.CDModBlocks;
+import alabaster.crabbersdelight.common.worldgen.placement.CDConfigPlacementModifier;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -11,7 +12,6 @@ import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
@@ -26,15 +26,18 @@ public class CDPlacedFeatures {
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        // Tree placement
+        // Palm tree — CDConfigPlacementModifier replaces countExtra + RarityFilter,
+        // handling both the enable flag and the chance value from config at generation time
         register(context, PALM_PLACED_KEY, configuredFeatures.getOrThrow(CDConfiguredFeatures.PALM_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 1),
+                VegetationPlacements.treePlacement(
+                        CDConfigPlacementModifier.PALM,
                         CDModBlocks.PALM_SAPLING.get()));
 
-        // Beach placement
+        // Beach seashells — config modifier first so disabled check short-circuits
+        // before any other placement work is done
         register(context, SEASHELLS_PLACED_KEY, configuredFeatures.getOrThrow(CDConfiguredFeatures.SEASHELLS_KEY),
                 List.of(
-                        RarityFilter.onAverageOnceEvery(2),
+                        CDConfigPlacementModifier.SEASHELL,
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BlockPredicateFilter.forPredicate(
@@ -43,10 +46,10 @@ public class CDPlacedFeatures {
                         BiomeFilter.biome()
                 ));
 
-        // Underwater floor placement
+        // Underwater seashells
         register(context, SEASHELLS_PLACED_KEY_UNDERWATER, configuredFeatures.getOrThrow(CDConfiguredFeatures.SEASHELLS_KEY_UNDERWATER),
                 List.of(
-                        RarityFilter.onAverageOnceEvery(2),
+                        CDConfigPlacementModifier.SEASHELL_UNDERWATER,
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
                         BlockPredicateFilter.forPredicate(
@@ -60,7 +63,8 @@ public class CDPlacedFeatures {
         return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, name));
     }
 
-    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key,
+                                 Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 }

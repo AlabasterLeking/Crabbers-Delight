@@ -68,7 +68,7 @@
   "item.crabbersdelight.pearl_necklace": "Pearl Necklace",
 
   "item.crabbersdelight.crab_spawn_egg": "Crab Spawn Egg",
-  "item.crabbersdelight.crab_bucket": "Crab Bucket",
+  "item.crabbersdelight.crab_bucket": "Bucket of Crab",
 
   "block.crabbersdelight.palm_log": "Palm Log",
   "block.crabbersdelight.stripped_palm_log": "Stripped Palm Log",
@@ -118,6 +118,7 @@
   "block.crabbersdelight.scute_block": "Scute Block",
   "block.crabbersdelight.sea_pickle_crate": "Sea Pickle Crate",
   "block.crabbersdelight.seashells": "Seashells",
+  "block.crabbersdelight.fish_plaque": "Fish Plaque",
 
   "entity.crabbersdelight.crab": "Crab",
 
