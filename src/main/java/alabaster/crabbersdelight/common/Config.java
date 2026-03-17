@@ -46,16 +46,16 @@ public class Config {
         GENERATE_PALM_TREES = COMMON_BUILDER.comment("Should palm trees generate on beaches?")
                 .define("generatePalmTrees", true);
         CHANCE_PALM_TREES = COMMON_BUILDER.comment("Chance of generating. Smaller value = more frequent.")
-                .defineInRange("chance", 10, 0, Integer.MAX_VALUE);
+                .defineInRange("chance", 1, 1, Integer.MAX_VALUE);
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.comment("Seashell generation").push("seashells");
         GENERATE_SEASHELLS = COMMON_BUILDER.comment("Should seashells generate on beaches and ocean floors?")
                 .define("generateSeashells", true);
         CHANCE_SEASHELLS = COMMON_BUILDER.comment("Chance of generating on beaches. Smaller value = more frequent.")
-                .defineInRange("chanceBeach", 2, 0, Integer.MAX_VALUE);
+                .defineInRange("chanceBeach", 2, 1, Integer.MAX_VALUE);
         CHANCE_SEASHELLS_UNDERWATER = COMMON_BUILDER.comment("Chance of generating on ocean floors. Smaller value = more frequent.")
-                .defineInRange("chanceUnderwater", 2, 0, Integer.MAX_VALUE);
+                .defineInRange("chanceUnderwater", 2, 1, Integer.MAX_VALUE);
         SEASHELL_VARIANT_COUNT = COMMON_BUILDER.comment("Number of seashell variants available (must match textures/models/blockstates files)")
                 .defineInRange("seashellVariantCount", 7, 1, 64);
         COMMON_BUILDER.pop();
