@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="poop">
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/client/event/ClientEventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/client/renderer/FishPlaqueRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/FishPlaqueBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/entity/FishPlaqueBlockEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/blockstates/fish_plaque.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/crabbersdelight/models/item/fish_plaque.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Crabbers-Delight.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Crabbers-Delight.main.iml" afterDir="false" />
+    <list default="true" id="d8c5f898-66da-42fd-85e3-23ae5228f1a2" name="Changes" comment="Fixed the default config values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlockEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/registry/CDModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/mineable/axe.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/resources/data/minecraft/tags/block/mineable/axe.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/FishPlaqueBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/block/FishPlaqueBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/event/VillagerTrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/common/event/VillagerTrade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/CDBlockTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/loot/CDBlockLoot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alabaster/crabbersdelight/data/recipe/CraftingRecipes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +136,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.Crabbers-Delight [:net.neoforged.devlaunch.Main.main()].executor": "Run",
     "Gradle.Crabbers-Delight [build].executor": "Run",
     "Gradle.Crabbers-Delight [clean].executor": "Run",
     "Gradle.Crabbers-Delight [runClient].executor": "Run",
@@ -190,7 +186,7 @@
       <command value="gradle genintellijruns" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Crabbers-Delight [runClient]">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.neoforged.devlaunch.Main" />
       <module name="Crabbers-Delight.main" />
@@ -366,38 +362,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695242794236</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Created .gitignore">
-      <option name="closed" value="true" />
-      <created>1721850682026</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1721850682026</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Run Data - Changes to some Tags - Added new config option for surrounding with water - Added Frog Legs">
-      <option name="closed" value="true" />
-      <created>1722212422203</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1722212422203</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Revised chum recipes - Initial revision pass for loot tables - Added 4 new advancements - Modified some existing advancements - Added the &quot;Can&quot;">
-      <option name="closed" value="true" />
-      <created>1722218323916</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1722218323916</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Updated Can texture">
-      <option name="closed" value="true" />
-      <created>1722391293111</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1722391293111</updated>
     </task>
     <task id="LOCAL-00066" summary="Updated Clam Texture">
       <option name="closed" value="true" />
@@ -759,7 +723,39 @@
       <option name="project" value="LOCAL" />
       <updated>1769571980177</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Fish Plaques started">
+      <option name="closed" value="true" />
+      <created>1773454663128</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1773454663128</updated>
+    </task>
+    <task id="LOCAL-00112" summary="Fish Plaques nearly done">
+      <option name="closed" value="true" />
+      <created>1773598612094</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1773598612094</updated>
+    </task>
+    <task id="LOCAL-00113" summary="Finished Fish Plaques, added configs for palm trees and seashells">
+      <option name="closed" value="true" />
+      <created>1773769829063</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1773769829063</updated>
+    </task>
+    <task id="LOCAL-00114" summary="Fixed the default config values">
+      <option name="closed" value="true" />
+      <created>1773770301512</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1773770301512</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -779,10 +775,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Signs" />
-    <MESSAGE value="Cabinets" />
-    <MESSAGE value="Coconuts" />
-    <MESSAGE value="Loot and the start of tree placement" />
     <MESSAGE value="Can be grown, need to make some custom log and leave placers (also needs to be plantable on sand)" />
     <MESSAGE value="Generation and coconut blockstates" />
     <MESSAGE value="Fixed leaves decomposing, coconuts inflict effects and properly fall at leaf decay" />
@@ -804,7 +796,11 @@
     <MESSAGE value="Tons of tags, coconut helmet finished, and coconut crates" />
     <MESSAGE value="nother tag" />
     <MESSAGE value="poop" />
-    <option name="LAST_COMMIT_MESSAGE" value="poop" />
+    <MESSAGE value="Fish Plaques started" />
+    <MESSAGE value="Fish Plaques nearly done" />
+    <MESSAGE value="Finished Fish Plaques, added configs for palm trees and seashells" />
+    <MESSAGE value="Fixed the default config values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the default config values" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

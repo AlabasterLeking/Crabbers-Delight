@@ -54,6 +54,8 @@ public class CDBlockLoot extends BlockLootSubProvider
         dropSelf(CDModBlocks.PALM_WALL_SIGN.get());
         dropSelf(CDModBlocks.PALM_WALL_HANGING_SIGN.get());
         dropSelf(CDModBlocks.PALM_CABINET.get());
+
+        dropSelf(CDModBlocks.FISH_PLAQUE.get());
     }
 
     @Override

@@ -14,14 +14,18 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -90,12 +94,31 @@ public class FishPlaqueBlock extends BaseEntityBlock {
         }
     }
 
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            if (!level.isClientSide && level.getBlockEntity(pos) instanceof FishPlaqueBlockEntity be && be.hasFish()) {
+                Item bucketItem = BuiltInRegistries.ITEM.stream()
+                        .filter(item -> item instanceof MobBucketItem mob && getEntityTypeFromBucket(mob) == be.getEntityType())
+                        .findFirst()
+                        .orElse(Items.WATER_BUCKET);
+
+                ItemStack bucket = new ItemStack(bucketItem);
+                if (!be.getEntityData().isEmpty()) {
+                    bucket.set(DataComponents.BUCKET_ENTITY_DATA, CustomData.of(be.getEntityData()));
+                }
+
+                double x = pos.getX() + 0.5;
+                double y = pos.getY() + 0.5;
+                double z = pos.getZ() + 0.5;
+                level.addFreshEntity(new ItemEntity(level, x, y, z, bucket));
+            }
+        }
+        super.onRemove(state, level, pos, newState, movedByPiston);
+    }
+
     private static void sync(FishPlaqueBlockEntity be, Level level, BlockPos pos, BlockState state) {
-        // setChanged() marks the BE dirty so it gets saved
         be.setChanged();
-        // ServerLevel.sendBlockUpdated internally calls getChunkSource().blockChanged(pos)
-        // which queues the ClientboundBlockEntityDataPacket for all tracking players.
-        // This is the only call needed — additional manual blockChanged() calls are redundant.
         level.sendBlockUpdated(pos, state, state, Block.UPDATE_ALL);
     }
 
@@ -158,5 +181,20 @@ public class FishPlaqueBlock extends BaseEntityBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
         return this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        Direction facing = state.getValue(FACING);
+        BlockPos supportPos = pos.relative(facing.getOpposite());
+        return level.getBlockState(supportPos).isFaceSturdy(level, supportPos, facing);
+    }
+
+    @Override
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+        if (direction == state.getValue(FACING).getOpposite() && !state.canSurvive(level, pos)) {
+            return Blocks.AIR.defaultBlockState();
+        }
+        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
     }
 }

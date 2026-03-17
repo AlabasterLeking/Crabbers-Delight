@@ -68,7 +68,8 @@ public class CDBlockTags extends BlockTagsProvider
                 CDModBlocks.FROG_LEG_BARREL.get(),
                 CDModBlocks.COCONUT_CRATE.get(),
                 CDModBlocks.SEA_PICKLE_CRATE.get(),
-                CDModBlocks.CRAB_TRAP.get());
+                CDModBlocks.CRAB_TRAP.get(),
+                CDModBlocks.FISH_PLAQUE.get());
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 CDModBlocks.NAUTILUS_SHELL_BLOCK.get(),

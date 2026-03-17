@@ -13,6 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import vectorwing.farmersdelight.common.crafting.FoodServingRecipe;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import static alabaster.crabbersdelight.common.tags.CDModTags.*;
 
@@ -302,9 +303,19 @@ public class CraftingRecipes {
                 .pattern("nsn")
                 .pattern("s s")
                 .pattern("www")
-                .define('n', vectorwing.farmersdelight.common.registry.ModItems.SAFETY_NET.get())
+                .define('n', ModItems.SAFETY_NET.get())
                 .define('s', Items.STICK)
                 .define('w', ItemTags.WOODEN_SLABS)
+                .unlockedBy("has_stick", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CDModItems.FISH_PLAQUE.get(), 2)
+                .pattern(" s ")
+                .pattern("sps")
+                .pattern(" g ")
+                .define('p', ItemTags.PLANKS)
+                .define('s', Items.STICK)
+                .define('g', Items.GOLD_NUGGET)
                 .unlockedBy("has_stick", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
                 .save(output);
     }
