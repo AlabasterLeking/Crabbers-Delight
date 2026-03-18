@@ -118,7 +118,7 @@ public class CrabTrapBlock extends BaseEntityBlock implements SimpleWaterloggedB
 
     @Override
     public PushReaction getPistonPushReaction(BlockState pState) {
-        return PushReaction.DESTROY;
+        return PushReaction.NORMAL;
     }
 
     @Override
