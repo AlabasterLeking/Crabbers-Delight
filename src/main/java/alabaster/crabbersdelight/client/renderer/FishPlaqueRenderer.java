@@ -50,7 +50,11 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
 
     @Override
     public void render(FishPlaqueBlockEntity be, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
-        if (!be.hasFish() || be.getLevel() == null) return;
+        if (!be.hasFish()) {
+            entityCache.remove(be.getBlockPos().asLong());
+            return;
+        }
+        if (be.getLevel() == null) return;
 
         Entity entity = getOrCreateEntity(be, be.getLevel());
         if (entity == null) return;
@@ -195,7 +199,7 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
         long posKey = be.getBlockPos().asLong();
         CachedFishEntity cached = entityCache.get(posKey);
 
-        if (cached == null || cached.version != be.getDataVersion()) {
+        if (cached == null || cached.version != be.getDataVersion() || cached.entityType != be.getEntityType()) {
             EntityType<?> type = be.getEntityType();
             if (type == null) {
                 entityCache.remove(posKey);
@@ -213,12 +217,12 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
                 }
             }
 
-            entityCache.put(posKey, new CachedFishEntity(be.getDataVersion(), entity));
+            entityCache.put(posKey, new CachedFishEntity(be.getDataVersion(), type, entity));
             return entity;
         }
 
         return cached.entity;
     }
 
-    private record CachedFishEntity(int version, Entity entity) {}
+    private record CachedFishEntity(int version, EntityType<?> entityType, Entity entity) {}
 }

@@ -22,6 +22,11 @@ public class Config {
     public static ModConfigSpec.IntValue CHANCE_SEASHELLS_UNDERWATER;
     public static ModConfigSpec.ConfigValue<Integer> SEASHELL_VARIANT_COUNT;
 
+    public static ModConfigSpec.BooleanValue GENERATE_CRAB_SPAWNS;
+    public static ModConfigSpec.IntValue CRAB_SPAWN_WEIGHT;
+    public static ModConfigSpec.IntValue CRAB_SPAWN_MIN;
+    public static ModConfigSpec.IntValue CRAB_SPAWN_MAX;
+
     static {
         ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
 
@@ -58,6 +63,17 @@ public class Config {
                 .defineInRange("chanceUnderwater", 2, 1, Integer.MAX_VALUE);
         SEASHELL_VARIANT_COUNT = COMMON_BUILDER.comment("Number of seashell variants available (must match textures/models/blockstates files)")
                 .defineInRange("seashellVariantCount", 7, 1, 64);
+        COMMON_BUILDER.pop();
+
+        COMMON_BUILDER.comment("Crab spawning").push("crab_spawns");
+        GENERATE_CRAB_SPAWNS = COMMON_BUILDER.comment("Should crabs spawn naturally in the world?")
+                .define("generateCrabSpawns", true);
+        CRAB_SPAWN_WEIGHT = COMMON_BUILDER.comment("Spawn weight. Higher value = more frequent relative to other mobs.")
+                .defineInRange("spawnWeight", 10, 1, Integer.MAX_VALUE);
+        CRAB_SPAWN_MIN = COMMON_BUILDER.comment("Minimum crabs per spawn attempt.")
+                .defineInRange("minCount", 2, 1, Integer.MAX_VALUE);
+        CRAB_SPAWN_MAX = COMMON_BUILDER.comment("Maximum crabs per spawn attempt.")
+                .defineInRange("maxCount", 3, 1, Integer.MAX_VALUE);
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.pop();

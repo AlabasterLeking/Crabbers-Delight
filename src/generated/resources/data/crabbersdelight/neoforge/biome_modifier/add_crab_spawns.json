@@ -1,5 +1,5 @@
 {
-  "type": "neoforge:add_spawns",
+  "type": "crabbersdelight:conditional_spawn",
   "biomes": [
     "minecraft:mangrove_swamp",
     "minecraft:swamp",
@@ -7,10 +7,7 @@
     "minecraft:stony_shore",
     "minecraft:snowy_beach"
   ],
-  "spawners": {
-    "type": "crabbersdelight:crab",
-    "weight": 10,
-    "minCount": 2,
-    "maxCount": 3
-  }
+  "category": "creature",
+  "config_key": "crab_spawns",
+  "entity_type": "crabbersdelight:crab"
 }
