@@ -4,6 +4,7 @@ import alabaster.crabbersdelight.common.registry.CDModItems;
 import alabaster.crabbersdelight.common.registry.CDModEntities;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
@@ -17,6 +18,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -31,7 +33,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
@@ -44,12 +45,12 @@ import java.util.List;
 
 public class CrabEntity extends Animal implements Bucketable {
     private static EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BYTE);
     private Ingredient temptationItems;
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
-    private static final EntityDataAccessor<Integer> VARIANT =
-            SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.INT);
 
     public CrabEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
@@ -96,6 +97,64 @@ public class CrabEntity extends Animal implements Bucketable {
     }
 
     @Override
+    public void tick() {
+        super.tick();
+
+        if (this.level().isClientSide()) {
+            this.setupAnimationStates();
+        }
+    }
+
+    @Override
+    protected void doPush(Entity entity) {
+        super.doPush(entity);
+        if (entity instanceof CrabEntity) {
+            this.setClimbing(this.horizontalCollision);
+        }
+    }
+
+    @Override
+    public void aiStep() {
+        super.aiStep();
+        if (!this.level().isClientSide) {
+            boolean nextToWall = false;
+            BlockPos pos = this.blockPosition();
+            for (Direction dir : Direction.Plane.HORIZONTAL) {
+                BlockPos neighbour = pos.relative(dir);
+                if (this.level().getBlockState(neighbour).isSolid()) {
+                    nextToWall = true;
+                    break;
+                }
+            }
+            this.setClimbing(nextToWall);
+        }
+    }
+
+    @Override
+    public boolean onClimbable() {
+        return this.isClimbing();
+    }
+
+    public boolean isClimbing() {
+        return (this.entityData.get(DATA_FLAGS_ID) & 1) != 0;
+    }
+
+    public void setClimbing(boolean climbing) {
+        byte b = this.entityData.get(DATA_FLAGS_ID);
+        if (climbing) {
+            b = (byte)(b | 1);
+        } else {
+            b = (byte)(b & -2);
+        }
+        this.entityData.set(DATA_FLAGS_ID, b);
+    }
+
+    @Override
+    public boolean causeFallDamage(float fallDistance, float multiplier, DamageSource source) {
+        return false;
+    }
+
+    @Override
     protected boolean isAffectedByFluids() {
         return false;
     }
@@ -130,15 +189,14 @@ public class CrabEntity extends Animal implements Bucketable {
         return stateBelow.is(CDModTags.CRAB_SPAWN_ON);
     }
 
-    public static boolean canCrabSpawn(EntityType<CrabEntity> type, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
-        return level.getBlockState(pos.below()).is(CDModTags.CRAB_SPAWN_ON);
-    }
+
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(VARIANT, 0);
         builder.define(FROM_BUCKET, false);
+        builder.define(DATA_FLAGS_ID, (byte) 0);
     }
 
     private int getTypeVariant() {
@@ -305,15 +363,6 @@ public class CrabEntity extends Animal implements Bucketable {
             this.idleAnimationState.start(this.tickCount);
         } else {
             --this.idleAnimationTimeout;
-        }
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-
-        if(this.level().isClientSide()) {
-            this.setupAnimationStates();
         }
     }
 }
