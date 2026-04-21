@@ -87,7 +87,8 @@ public class CDFoodValues {
             .nutrition(3).saturationModifier(0.5f).fast().build();
 
     public static final FoodProperties PUFFERFISH_SLICE = (new FoodProperties.Builder())
-            .nutrition(1).saturationModifier(0.1f).effect(() -> new MobEffectInstance(MobEffects.POISON, 300, 0), 0.3F).fast().build();
+            .nutrition(1).saturationModifier(0.1f)
+            .effect(() -> new MobEffectInstance(MobEffects.POISON, 300, 0), 0.3F).fast().build();
 
     public static final FoodProperties COCONUT_HALVE = (new FoodProperties.Builder())
             .nutrition(2).saturationModifier(0.4f).build();
@@ -102,7 +103,7 @@ public class CDFoodValues {
 
     public static final FoodProperties SHRIMP_FRIED_RICE = (new FoodProperties.Builder())
             .nutrition(7).saturationModifier(0.7f)
-            .effect(() -> comfort(BRIEF_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, BRIEF_DURATION, 0), 1.0F).build();
 
     public static final FoodProperties SURF_AND_TURF = (new FoodProperties.Builder())
             .nutrition(14).saturationModifier(0.8f)
@@ -110,11 +111,11 @@ public class CDFoodValues {
 
     public static final FoodProperties CLAM_BAKE = (new FoodProperties.Builder())
             .nutrition(13).saturationModifier(0.9f)
-            .effect(() -> nourishment(LONG_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, LONG_DURATION, 0), 1.0F).build();
 
     public static final FoodProperties CLAM_CHOWDER = (new FoodProperties.Builder())
             .nutrition(7).saturationModifier(0.6f)
-            .effect(() -> comfort(MEDIUM_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, MEDIUM_DURATION, 0), 1.0F).build();
 
     public static final FoodProperties BISQUE = (new FoodProperties.Builder())
             .nutrition(8).saturationModifier(0.75f)
@@ -122,18 +123,18 @@ public class CDFoodValues {
 
     public static final FoodProperties SEAFOOD_GUMBO = (new FoodProperties.Builder())
             .nutrition(12).saturationModifier(0.9f)
-            .effect(() -> comfort(LONG_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, MEDIUM_DURATION, 0), 1.0F).build();
 
     public static final FoodProperties FISH_STICK = (new FoodProperties.Builder())
             .nutrition(5).saturationModifier(0.6f).build();
 
     public static final FoodProperties CRAB_CAKES = (new FoodProperties.Builder())
             .nutrition(10).saturationModifier(0.6f)
-            .effect(() -> nourishment(SHORT_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, SHORT_DURATION, 0), 1.0F).build();
 
     public static final FoodProperties STUFFED_NAUTILUS_SHELL = (new FoodProperties.Builder())
             .nutrition(8).saturationModifier(0.7f)
-            .effect(() -> nourishment(MEDIUM_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, MEDIUM_DURATION, 0), 1.0F).build();
 
     public static final FoodProperties JAR_OF_PICKLES = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.4f).build();
@@ -151,9 +152,9 @@ public class CDFoodValues {
 
     public static final FoodProperties CORAL_CRUNCH = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.2f).fast()
-            .effect(() -> comfort(SHORT_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, SHORT_DURATION, 0), 1.0F).build();
 
     public static final FoodProperties CLAWSTER_FEAST = (new FoodProperties.Builder())
             .nutrition(10).saturationModifier(0.9f)
-            .effect(() -> nourishment(LONG_DURATION), 1.0F).build();
+            .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, LONG_DURATION, 0), 1.0F).build();
 }

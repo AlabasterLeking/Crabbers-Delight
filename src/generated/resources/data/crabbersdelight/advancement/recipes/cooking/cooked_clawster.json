@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "crabbersdelight:cooked_clam_meat"
+            "items": "crabbersdelight:clawster"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/seafood_gumbo"
+        "recipe": "crabbersdelight:cooking/cooked_clawster"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/seafood_gumbo"
+      "crabbersdelight:cooking/cooked_clawster"
     ]
   }
 }

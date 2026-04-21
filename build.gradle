@@ -33,6 +33,10 @@ repositories {
     maven {
         url "https://maven.ryanliptak.com/"
     }
+    maven {
+        name = "Greenhouse"
+        url = "https://maven.greenhouse.lgbt/snapshots"
+    }
 }
 
 base {
@@ -129,7 +133,8 @@ configurations {
 dependencies {
 
     // Farmers Delight
-    implementation "curse.maven:farmers-delight-398521:${farmersdelight_version}"
+    implementation "vectorwing.farmersdelight:FarmersDelight:1.21.1-1.3.0-rc1"
+    //implementation "curse.maven:farmers-delight-398521:${farmersdelight_version}"
 
     // JEI
     compileOnly "mezz.jei:jei-${jei_minecraft}-common-api:${jei_version}"
@@ -139,6 +144,9 @@ dependencies {
     // Appleskin
     compileOnly "squeek.appleskin:appleskin-neoforge:${appleskin_version}:api"
     runtimeOnly "squeek.appleskin:appleskin-neoforge:${appleskin_version}"
+
+    // Thirst Was Taken
+    compileOnly "curse.maven:thirst-was-taken-679270:${twt_version}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

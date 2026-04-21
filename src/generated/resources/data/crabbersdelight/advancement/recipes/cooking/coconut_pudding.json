@@ -6,9 +6,8 @@
         "items": [
           {
             "items": [
-              "crabbersdelight:cooked_clam_meat",
-              "crabbersdelight:cooked_clawster",
-              "crabbersdelight:cooked_shrimp"
+              "crabbersdelight:coconut_milk",
+              "crabbersdelight:coconut_halve"
             ]
           }
         ]
@@ -17,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/clam_bake"
+        "recipe": "crabbersdelight:cooking/coconut_pudding"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/clam_bake"
+      "crabbersdelight:cooking/coconut_pudding"
     ]
   }
 }

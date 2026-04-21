@@ -5,7 +5,12 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:sea_pickle"
+            "items": [
+              "crabbersdelight:raw_clam_meat",
+              "crabbersdelight:crab",
+              "crabbersdelight:clawster",
+              "crabbersdelight:shrimp"
+            ]
           }
         ]
       },
@@ -13,7 +18,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/jar_of_pickles"
+        "recipe": "crabbersdelight:cooking/bisque"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +31,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/jar_of_pickles"
+      "crabbersdelight:cooking/bisque"
     ]
   }
 }

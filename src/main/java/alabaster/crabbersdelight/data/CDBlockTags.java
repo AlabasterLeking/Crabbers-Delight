@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -113,6 +114,7 @@ public class CDBlockTags extends BlockTagsProvider
                 .add(CDModBlocks.PALM_WALL_HANGING_SIGN.get());
         tag(BlockTags.WALL_SIGNS).add(CDModBlocks.PALM_WALL_SIGN.get());
         tag(BlockTags.WALL_HANGING_SIGNS).add(CDModBlocks.PALM_WALL_HANGING_SIGN.get());
+        tag(ModTags.Blocks.CABINETS_WOODEN).add(CDModBlocks.PALM_CABINET.get());
     }
 
     protected void registerStorageBlocks() {

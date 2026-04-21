@@ -3,12 +3,11 @@
   "experience": 0.35,
   "ingredients": [
     {
-      "item": "crabbersdelight:clawster"
+      "item": "crabbersdelight:shrimp"
     }
   ],
-  "recipe_book_tab": "misc",
   "result": {
     "count": 1,
-    "id": "crabbersdelight:cooked_clawster"
+    "id": "crabbersdelight:cooked_shrimp"
   }
 }

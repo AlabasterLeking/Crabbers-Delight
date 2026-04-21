@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "crabbersdelight:cooked_clam_meat"
+            "items": "crabbersdelight:shrimp"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/clam_chowder"
+        "recipe": "crabbersdelight:cooking/shrimp_fried_rice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/clam_chowder"
+      "crabbersdelight:cooking/shrimp_fried_rice"
     ]
   }
 }

@@ -149,10 +149,10 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.FISH_BONES.get());
 
         // Trim Materials
-        tag(net.minecraft.tags.ItemTags.TRIM_MATERIALS)
+        tag(ItemTags.TRIM_MATERIALS)
                 .add(CDModItems.PEARL.get());
 
-        tag(ModTags.WOODEN_CABINETS)
+        tag(ModTags.Items.CABINETS_WOODEN)
                 .add(CDModItems.PALM_CABINET.get());
 
 
@@ -187,7 +187,7 @@ public class CDItemTags extends ItemTagsProvider {
         tag(ItemTags.BOATS).add(CDModItems.PALM_BOAT.get());
         tag(ItemTags.CHEST_BOATS).add(CDModItems.PALM_CHEST_BOAT.get());
 
-        tag(CommonTags.FOODS_MILK)
+        tag(Tags.Items.DRINKS_MILK)
                 .add(CDModItems.COCONUT_MILK.get());
     }
 }

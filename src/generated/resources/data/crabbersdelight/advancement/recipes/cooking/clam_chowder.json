@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "crabbersdelight:crab"
+            "items": "crabbersdelight:cooked_clam_meat"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/crab_cakes"
+        "recipe": "crabbersdelight:cooking/clam_chowder"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/crab_cakes"
+      "crabbersdelight:cooking/clam_chowder"
     ]
   }
 }

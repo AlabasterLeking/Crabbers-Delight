@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/stuffed_nautilus_shell"
+        "recipe": "crabbersdelight:cooking/stuffed_nautilus_shell"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/stuffed_nautilus_shell"
+      "crabbersdelight:cooking/stuffed_nautilus_shell"
     ]
   }
 }

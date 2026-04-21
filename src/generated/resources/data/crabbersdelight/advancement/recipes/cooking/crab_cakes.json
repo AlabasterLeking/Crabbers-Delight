@@ -5,12 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "crabbersdelight:raw_clam_meat",
-              "crabbersdelight:crab",
-              "crabbersdelight:clawster",
-              "crabbersdelight:shrimp"
-            ]
+            "items": "crabbersdelight:crab"
           }
         ]
       },
@@ -18,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "farmersdelight:cooking/bisque"
+        "recipe": "crabbersdelight:cooking/crab_cakes"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "farmersdelight:cooking/bisque"
+      "crabbersdelight:cooking/crab_cakes"
     ]
   }
 }

@@ -27,43 +27,43 @@ public class CuttingRecipes {
     }
 
     private static void cuttingAnimalItems(RecipeOutput output) {
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.COD), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COD_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.COD), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), ModItems.COD_SLICE.get(), 2)
                 .addResult(CDModItems.FISH_BONES.get())
-                .build(output);
+                .save(output);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.COOKED_COD), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COOKED_COD_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.COOKED_COD), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), ModItems.COOKED_COD_SLICE.get(), 2)
                 .addResult(CDModItems.FISH_BONES.get())
-                .build(output);
+                .save(output);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.SALMON), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.SALMON_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.SALMON), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), ModItems.SALMON_SLICE.get(), 2)
                 .addResult(CDModItems.FISH_BONES.get())
-                .build(output);
+                .save(output);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.COOKED_SALMON), Ingredient.of(CommonTags.TOOLS_KNIFE), ModItems.COOKED_SALMON_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.COOKED_SALMON), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), ModItems.COOKED_SALMON_SLICE.get(), 2)
                 .addResult(CDModItems.FISH_BONES.get())
-                .build(output);
+                .save(output);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.TROPICAL_FISH), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.TROPICAL_FISH_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.TROPICAL_FISH), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), CDModItems.TROPICAL_FISH_SLICE.get(), 2)
                 .addResult(CDModItems.FISH_BONES.get())
-                .build(output);
+                .save(output);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.COOKED_TROPICAL_FISH.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.COOKED_TROPICAL_FISH_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.COOKED_TROPICAL_FISH.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), CDModItems.COOKED_TROPICAL_FISH_SLICE.get(), 2)
                 .addResult(CDModItems.FISH_BONES.get())
-                .build(output);
+                .save(output);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.PUFFERFISH), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.PUFFERFISH_SLICE.get(), 2)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.PUFFERFISH), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), CDModItems.PUFFERFISH_SLICE.get(), 2)
                 .addResult(CDModItems.FISH_BONES.get())
-                .build(output);
+                .save(output);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.COOKED_CRAB.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.CRAB_LEGS.get(), 4)
-                .build(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.COOKED_CRAB.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), CDModItems.CRAB_LEGS.get(), 4)
+                .save(output);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.CLAM.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.RAW_CLAM_MEAT.get(), 1)
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.CLAM.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), CDModItems.RAW_CLAM_MEAT.get(), 1)
                 .addResultWithChance(CDModItems.PEARL.get(), 0.5F)
-                .build(output);
+                .save(output);
 
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.COCONUT.get()), Ingredient.of(CommonTags.TOOLS_KNIFE), CDModItems.COCONUT_HALVE.get(), 2)
-                .build(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CDModItems.COCONUT.get()), Ingredient.of(CommonTags.Items.TOOLS_KNIFE), CDModItems.COCONUT_HALVE.get(), 2)
+                .save(output);
     }
     
     private static void strippingWood(RecipeOutput output) {
@@ -78,87 +78,87 @@ public class CuttingRecipes {
 
         // Coral Blocks
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.BRAIN_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.BUBBLE_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.HORN_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.FIRE_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.TUBE_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
 
         // Dead Coral Blocks
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.DEAD_BRAIN_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.DEAD_BUBBLE_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.DEAD_HORN_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.DEAD_FIRE_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Blocks.DEAD_TUBE_CORAL_BLOCK), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 4)
-                .build(output);
+                .save(output);
 
         // Coral
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BRAIN_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BUBBLE_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.HORN_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.FIRE_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.TUBE_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
 
         // Dead Coral
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_BRAIN_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_BUBBLE_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_HORN_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_FIRE_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_TUBE_CORAL), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
 
         // Coral Fan
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BRAIN_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BUBBLE_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.HORN_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.FIRE_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.TUBE_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
 
         // Dead Coral Fan
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_BRAIN_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_BUBBLE_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_HORN_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_FIRE_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.DEAD_TUBE_CORAL_FAN), new ItemAbilityIngredient(ItemAbilities.PICKAXE_DIG).toVanilla(), CDModItems.CORAL_FRAGMENTS.get(), 2)
-                .build(output);
+                .save(output);
     }
 
     private static void stripLogForBark(RecipeOutput output, ItemLike log, ItemLike strippedLog) {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(log), new ItemAbilityIngredient(ItemAbilities.AXE_STRIP).toVanilla(), strippedLog)
                 .addResult(ModItems.TREE_BARK.get())
-                .addSound(SoundEvents.AXE_STRIP).build(output);
+                .addSound(SoundEvents.AXE_STRIP).save(output);
     }
 
     private static void salvagePlankFromFurniture(RecipeOutput output, ItemLike plank, ItemLike door, ItemLike trapdoor, ItemLike sign, ItemLike hangingSign) {
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(door), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).build(output);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(trapdoor), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).build(output);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(sign), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).build(output);
-        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(hangingSign), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).build(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(door), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).save(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(trapdoor), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).save(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(sign), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).save(output);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(hangingSign), new ItemAbilityIngredient(ItemAbilities.AXE_DIG).toVanilla(), plank).save(output);
     }
 }
