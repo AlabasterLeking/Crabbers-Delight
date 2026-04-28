@@ -12,7 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import javax.annotation.Nullable;
@@ -69,12 +69,12 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.COOKED_GLOW_SQUID_TENTACLES.get());
 
         // Raw Fishes
-        tag(ForgeTags.RAW_FISHES)
+        tag(CommonTags.Items.RAW_FISHES)
                 .add(CDModItems.TROPICAL_FISH_SLICE.get())
                 .add(CDModItems.PUFFERFISH_SLICE.get());
 
         // Cooked Fishes
-        tag(ForgeTags.COOKED_FISHES)
+        tag(CommonTags.Items.COOKED_FISHES)
                 .add(CDModItems.COOKED_TROPICAL_FISH_SLICE.get())
                 .add(CDModItems.COOKED_TROPICAL_FISH.get())
                 .add(CDModItems.COOKED_PUFFERFISH_SLICE.get());
@@ -150,7 +150,7 @@ public class CDItemTags extends ItemTagsProvider {
         tag(net.minecraft.tags.ItemTags.TRIM_MATERIALS)
                 .add(CDModItems.PEARL.get());
 
-        tag(ModTags.WOODEN_CABINETS)
+        tag(ModTags.Items.CABINETS_WOODEN)
                 .add(CDModItems.PALM_CABINET.get());
 
         // Palm
@@ -183,10 +183,10 @@ public class CDItemTags extends ItemTagsProvider {
         tag(ItemTags.CHEST_BOATS).add(CDModItems.PALM_CHEST_BOAT.get());
 
 
-        tag(ForgeTags.MILK)
+        tag(CommonTags.Items.MILK)
                 .add(CDModItems.COCONUT_MILK.get());
 
-        tag(ForgeTags.MILK_BOTTLE)
+        tag(CommonTags.Items.MILK_BOTTLE)
                 .add(CDModItems.COCONUT_MILK.get());
     }
 }

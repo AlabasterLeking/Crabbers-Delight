@@ -16,12 +16,14 @@
 
   "item.crabbersdelight.raw_squid_tentacles": "Raw Squid Tentacles",
   "item.crabbersdelight.cooked_squid_tentacles": "Cooked Squid Tentacles",
+  "item.crabbersdelight.squid_kebob": "Squid Kebab",
 
   "item.crabbersdelight.raw_glow_squid_tentacles": "Raw Glow Squid Tentacles",
   "item.crabbersdelight.cooked_glow_squid_tentacles": "Cooked Glow Squid Tentacles",
 
   "item.crabbersdelight.raw_frog_leg": "Raw Frog Leg",
   "item.crabbersdelight.cooked_frog_leg": "Cooked Frog Leg",
+  "item.crabbersdelight.frog_leg_kebob": "Frog Leg Kebab",
 
   "item.crabbersdelight.kelp_shake": "Kelp Shake",
   "item.crabbersdelight.crab_cakes": "Crab Cakes",
@@ -97,7 +99,7 @@
   "death.attack.crabbersdelight.falling_coconut": "%s was crushed by a falling coconut",
   "item.crabbersdelight.coconut_halve": "Coconut Halve",
   "item.crabbersdelight.coconut_milk": "Coconut Milk",
-  "farmersdelight.tooltip.coconut_milk": "Clears 1 Effect",
+  "tooltip.farmersdelight.coconut_milk": "Clears 1 Effect",
   "item.crabbersdelight.coconut_pudding": "Coconut Pudding",
 
   "block.crabbersdelight.crab_trap": "Crab Trap",

@@ -9,7 +9,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import vectorwing.farmersdelight.common.registry.ModRecipeSerializers;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 
 import java.util.function.Consumer;
 
@@ -427,7 +427,7 @@ public class CraftingRecipes {
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.FISH_STICK.get())
                 .requires(Items.STICK)
-                .requires(ForgeTags.COOKED_FISHES)
+                .requires(CommonTags.Items.COOKED_FISHES)
                 .unlockedBy("has_cooked_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COOKED_COD, Items.COOKED_SALMON, CDModItems.COOKED_TROPICAL_FISH.get()))
                 .save(consumer);
 

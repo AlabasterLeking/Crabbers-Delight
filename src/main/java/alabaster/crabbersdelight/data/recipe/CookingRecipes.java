@@ -6,7 +6,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
-import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
 import java.util.function.Consumer;
@@ -35,7 +35,7 @@ public class CookingRecipes {
                 .addIngredient(Items.EGG)
                 .unlockedByAnyIngredient(CDModItems.COCONUT_MILK.get(),CDModItems.COCONUT_HALVE.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.CLAM_BAKE.get(), 1, NORMAL_COOKING, LARGE_EXP)
                 .addIngredient(CDModItems.COOKED_CLAM_MEAT.get())
@@ -46,35 +46,35 @@ public class CookingRecipes {
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
                 .unlockedByAnyIngredient(CDModItems.COOKED_CLAM_MEAT.get(), CDModItems.COOKED_CLAWSTER.get(), CDModItems.COOKED_SHRIMP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.CRAB_CAKES.get(), 1, NORMAL_COOKING, LARGE_EXP)
                 .addIngredient(CDModItems.RAW_CRAB.get())
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.WHEAT_DOUGH.get())
-                .addIngredient(ForgeTags.MILK_BOTTLE)
+                .addIngredient(CommonTags.Items.MILK_BOTTLE)
                 .addIngredient(Items.EGG)
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
                 .unlockedByAnyIngredient(CDModItems.RAW_CRAB.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.COOKED_CRAB.get(), 1, NORMAL_COOKING, SMALL_EXP)
                 .addIngredient(CDModItems.RAW_CRAB.get())
                 .unlockedByAnyIngredient(CDModItems.RAW_CRAB.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.COOKED_CLAWSTER.get(), 1, NORMAL_COOKING, SMALL_EXP)
                 .addIngredient(CDModItems.RAW_CLAWSTER.get())
                 .unlockedByAnyIngredient(CDModItems.RAW_CLAWSTER.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.COOKED_SHRIMP.get(), 1, NORMAL_COOKING, SMALL_EXP)
                 .addIngredient(CDModItems.RAW_SHRIMP.get())
                 .unlockedByAnyIngredient(CDModItems.RAW_SHRIMP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                .build(consumer);
+                .save(consumer);
     }
 
     private static void cookMinecraftSoups(Consumer<FinishedRecipe> consumer) {
@@ -82,10 +82,10 @@ public class CookingRecipes {
                 .addIngredient(CDModItems.COOKED_CLAM_MEAT.get())
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
                 .addIngredient(Items.POTATO)
-                .addIngredient(ForgeTags.MILK)
+                .addIngredient(CommonTags.Items.MILK)
                 .unlockedByAnyIngredient(CDModItems.COOKED_CLAM_MEAT.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.BISQUE.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(Ingredient.fromValues(Stream.of(
@@ -95,10 +95,10 @@ public class CookingRecipes {
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
                 .addIngredient(Items.CARROT)
-                .addIngredient(ForgeTags.MILK)
+                .addIngredient(CommonTags.Items.MILK)
                 .unlockedByAnyIngredient(CDModItems.RAW_CLAM_MEAT.get(), CDModItems.RAW_CRAB.get(), CDModItems.RAW_CLAWSTER.get(), CDModItems.RAW_SHRIMP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.SEAFOOD_GUMBO.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(CDModItems.RAW_CLAWSTER.get())
@@ -108,16 +108,16 @@ public class CookingRecipes {
                 .addIngredient(Items.PORKCHOP)
                 .unlockedByAnyIngredient(CDModItems.COOKED_CLAM_MEAT.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.STUFFED_NAUTILUS_SHELL.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.NAUTILUS_SHELL)
-                .addIngredient(ForgeTags.COOKED_FISHES)
+                .addIngredient(CommonTags.Items.COOKED_FISHES)
                 .addIngredient(Items.KELP)
                 .addIngredient(Items.KELP)
                 .addIngredient(Items.KELP)
                 .unlockedByAnyIngredient(Items.NAUTILUS_SHELL)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.SHRIMP_FRIED_RICE.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
@@ -126,7 +126,7 @@ public class CookingRecipes {
                 .addIngredient(Items.CARROT)
                 .unlockedByAnyIngredient(CDModItems.RAW_SHRIMP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(consumer);
+                .save(consumer);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.JAR_OF_PICKLES.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.GLASS_BOTTLE)
                 .addIngredient(Items.SEA_PICKLE)
@@ -134,7 +134,7 @@ public class CookingRecipes {
                 .addIngredient(Items.SEA_PICKLE)
                 .unlockedByAnyIngredient(Items.SEA_PICKLE)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
-                .build(consumer);
+                .save(consumer);
     }
 }
 

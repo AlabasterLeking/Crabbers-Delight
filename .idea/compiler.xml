@@ -5,6 +5,7 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.llamalad7/mixinextras-common/0.3.6/8d992e7a746af47abb59c8232aff5a3f8f0c9f17/mixinextras-common-0.3.6.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/6d1c8bf4c28e697f472a83bd6add76ec4951734/mixin-0.8.5-processor.jar" />
         </processorPath>
         <module name="Crabbers-Delight.main" />
