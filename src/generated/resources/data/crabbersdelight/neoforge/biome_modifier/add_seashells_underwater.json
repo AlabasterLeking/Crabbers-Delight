@@ -7,6 +7,5 @@
     "minecraft:deep_lukewarm_ocean"
   ],
   "features": "crabbersdelight:seashells_placed_underwater",
-  "step": "vegetal_decoration",
-  "config_key": "seashells"
+  "step": "vegetal_decoration"
 }

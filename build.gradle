@@ -133,8 +133,7 @@ configurations {
 dependencies {
 
     // Farmers Delight
-    implementation "vectorwing.farmersdelight:FarmersDelight:1.21.1-1.3.0-rc1"
-    //implementation "curse.maven:farmers-delight-398521:${farmersdelight_version}"
+    implementation "curse.maven:farmers-delight-398521:${farmersdelight_version}"
 
     // JEI
     compileOnly "mezz.jei:jei-${jei_minecraft}-common-api:${jei_version}"
