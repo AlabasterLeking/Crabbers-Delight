@@ -52,7 +52,7 @@
   "item.crabbersdelight.pearl": "Perla",
   "item.crabbersdelight.can": "Lata",
   "item.crabbersdelight.coral_fragments": "Fragmentos de coral",
-  "item.crabbersdelight.fish_bones": "Huesos de pez",
+  "item.crabbersdelight.fish_bones": "Raspa de pescado",
 
   "item.minecraft.potion.effect.inky_potion": "Poción de entintado",
   "item.minecraft.splash_potion.effect.inky_potion": "Poción de entintado arrojadiza",
@@ -97,7 +97,7 @@
   "death.attack.crabbersdelight.falling_coconut": "%s fue aplastado/a por un coco",
   "item.crabbersdelight.coconut_halve": "Mitad de coco",
   "item.crabbersdelight.coconut_milk": "Leche de coco",
-  "farmersdelight.tooltip.coconut_milk": "Elimina 1 efecto",
+  "tooltip.farmersdelight.coconut_milk": "Quita un efecto",
   "item.crabbersdelight.coconut_pudding": "Pudin de coco",
 
   "block.crabbersdelight.crab_trap": "Trampa de cangrejo",
@@ -118,6 +118,7 @@
   "block.crabbersdelight.scute_block": "Bloque de escama de tortuga",
   "block.crabbersdelight.sea_pickle_crate": "Cajón de pepino de mar",
   "block.crabbersdelight.seashells": "Caracolas",
+  "block.crabbersdelight.fish_plaque": "Placa para peces",
 
   "entity.crabbersdelight.crab": "Cangrejo",
 
