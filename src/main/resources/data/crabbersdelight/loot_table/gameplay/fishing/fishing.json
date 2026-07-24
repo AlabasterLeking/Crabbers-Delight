@@ -23,6 +23,11 @@
           "type": "minecraft:item",
           "weight": 25,
           "name": "crabbersdelight:clawster"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "crabbersdelight:message_bottle"
         }
       ]
     }

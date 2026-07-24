@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "crabbersdelight:block/note",
+		"1": "crabbersdelight:block/signed_note",
+		"particle": "crabbersdelight:block/note"
+	},
+	"elements": [
+		{
+			"from": [3, 2, 0.5],
+			"to": [13, 14, 0.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 2, 0]},
+			"faces": {
+				"north": {"uv": [13, 2, 3, 14], "texture": "#0"},
+				"east": {"uv": [2, 0, 2, 12], "texture": "#missing"},
+				"south": {"uv": [3, 2, 13, 14], "texture": "#1"},
+				"west": {"uv": [0, 0, 0, 12], "texture": "#missing"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#missing"},
+				"down": {"uv": [0, 2, 10, 2], "texture": "#missing"}
+			}
+		}
+	]
+}

@@ -119,6 +119,24 @@
   "block.crabbersdelight.sea_pickle_crate": "Sea Pickle Crate",
   "block.crabbersdelight.seashells": "Seashells",
   "block.crabbersdelight.fish_plaque": "Fish Plaque",
+  "block.crabbersdelight.note_block": "Note",
+
+  "item.crabbersdelight.note": "Note",
+  "item.crabbersdelight.signed_note": "Signed Note",
+  "item.crabbersdelight.signed_note.author": "by %s",
+  "item.crabbersdelight.message_bottle": "Message in a Bottle",
+  "item.crabbersdelight.bottled_note": "Bottled Note",
+
+  "gui.crabbersdelight.note.edit": "Write Note",
+  "gui.crabbersdelight.note.placeholder": "Write your message...",
+  "gui.crabbersdelight.note.sign": "Sign",
+  "gui.crabbersdelight.note.read": "Note",
+  "gui.crabbersdelight.note.editTitle": "Enter Note Name",
+  "gui.crabbersdelight.note.finalizeWarning": "Once you sign this note, it can no longer be edited.",
+  "gui.crabbersdelight.note.generation.original": "Original",
+  "gui.crabbersdelight.note.generation.copy": "Copy of original",
+  "gui.crabbersdelight.note.generation.copy_of_copy": "Copy of a copy",
+  "gui.crabbersdelight.note.generation.tattered": "Tattered",
 
   "entity.crabbersdelight.crab": "Crab",
 

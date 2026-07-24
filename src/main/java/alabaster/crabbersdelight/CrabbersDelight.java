@@ -64,6 +64,8 @@ public class CrabbersDelight {
         CDModItems.ITEMS.register(bus);
         CDModBlocks.BLOCKS.register(bus);
         CDModBlockEntity.BLOCK_ENTITY_TYPES.register(bus);
+        CDModDataComponents.DATA_COMPONENTS.register(bus);
+        CDModRecipeSerializers.RECIPE_SERIALIZERS.register(bus);
         CDModMenus.MENU.register(bus);
         CDModCreativeTabs.CREATIVE_TAB.register(bus);
         CDModPotions.POTIONS.register(bus);

@@ -2,6 +2,7 @@ package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.*;
+import alabaster.crabbersdelight.common.block.NoteBlock;
 import alabaster.crabbersdelight.common.worldgen.tree.CDTreeGrowers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -25,6 +26,9 @@ public class CDModBlocks {
 
     public static final Supplier<Block> FISH_PLAQUE = BLOCKS.register("fish_plaque",
             () -> new FishPlaqueBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).noOcclusion()));
+
+    public static final Supplier<Block> NOTE_BLOCK = BLOCKS.register("note_block",
+            () -> new NoteBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).sound(SoundType.WOOD).noOcclusion().strength(0.1F).noLootTable()));
 
     // Palm Tree
     public static final Supplier<Block> PALM_LOG = BLOCKS.register("palm_log",

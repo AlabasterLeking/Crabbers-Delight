@@ -3,6 +3,8 @@ package alabaster.crabbersdelight.data.recipe;
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import alabaster.crabbersdelight.common.registry.CDModItems;
+import alabaster.crabbersdelight.common.recipe.BottledNoteRecipe;
+import alabaster.crabbersdelight.common.recipe.NoteCloningRecipe;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.*;
@@ -24,6 +26,7 @@ public class CraftingRecipes {
         recipesBlocks(output);
         recipesMaterials(output);
         recipesCraftedMeals(output);
+        recipesNotes(output);
         SpecialRecipeBuilder.special(FoodServingRecipe::new).save(output, "food_serving");
     }
 
@@ -415,6 +418,19 @@ public class CraftingRecipes {
                 .unlockedBy("has_nautilus_shell", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NAUTILUS_SHELL))
                 .save(output);
 
+    }
+
+    private static void recipesNotes(RecipeOutput output) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CDModItems.NOTE.get(), 2)
+                .requires(Items.PAPER)
+                .requires(Items.INK_SAC)
+                .requires(Items.FEATHER)
+                .unlockedBy("has_paper", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PAPER))
+                .save(output, ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "note"));
+
+        SpecialRecipeBuilder.special(BottledNoteRecipe::new).save(output, "bottled_note");
+
+        SpecialRecipeBuilder.special(NoteCloningRecipe::new).save(output, "note_cloning");
     }
 
     private static void recipesCraftedMeals(RecipeOutput output) {

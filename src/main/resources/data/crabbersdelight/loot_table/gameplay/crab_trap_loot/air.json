@@ -44,6 +44,11 @@
           "type": "minecraft:item",
           "weight": 4,
           "name": "crabbersdelight:fish_bones"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "crabbersdelight:message_bottle"
         }
       ]
     }

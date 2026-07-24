@@ -52,7 +52,9 @@ public class ItemModels extends ItemModelProvider
                 CDModItems.PALM_HANGING_SIGN.get(),
                 CDModItems.COCONUT.get(),
                 CDModItems.SEASHELLS.get(),
-                CDModItems.FISH_PLAQUE.get()
+                CDModItems.FISH_PLAQUE.get(),
+                CDModItems.NOTE.get(),
+                CDModItems.SIGNED_NOTE.get()
         );
         takeAll(items, spriteBlockItems.toArray(new Item[0])).forEach(item -> withExistingParent(itemName(item), GENERATED).texture("layer0", resourceItem(itemName(item))));
 

@@ -27,6 +27,9 @@ public class Config {
     public static ModConfigSpec.IntValue CRAB_SPAWN_MIN;
     public static ModConfigSpec.IntValue CRAB_SPAWN_MAX;
 
+    public static final String CATEGORY_NOTES = "notes";
+    public static ModConfigSpec.BooleanValue THROWN_NOTES_PERSIST;
+
     static {
         ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
 
@@ -76,6 +79,14 @@ public class Config {
                 .defineInRange("maxCount", 3, 1, Integer.MAX_VALUE);
         COMMON_BUILDER.pop();
 
+        COMMON_BUILDER.pop();
+
+        COMMON_BUILDER.comment("Notes and Messages in a Bottle").push(CATEGORY_NOTES);
+        THROWN_NOTES_PERSIST = COMMON_BUILDER.comment(
+                        "If true, notes thrown into the water in a bottle stay in the world's loot pool",
+                        "forever and can be fished up by multiple players. If false (default), each thrown",
+                        "note is single-use - once someone finds it, it's gone.")
+                .define("thrownNotesPersist", false);
         COMMON_BUILDER.pop();
 
         COMMON_CONFIG = COMMON_BUILDER.build();

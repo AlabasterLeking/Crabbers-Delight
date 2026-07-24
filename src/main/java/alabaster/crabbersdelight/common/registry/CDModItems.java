@@ -263,7 +263,7 @@ public class CDModItems {
     public static final Supplier<Item> COCONUT_CRATE = registerWithTab("coconut_crate",
             () -> new BlockItem(CDModBlocks.COCONUT_CRATE.get(), basicItem()));
     //public static final Supplier<Item> LANTERNFISH_BARREL = registerWithTab("lanternfish_barrel",
-            //() -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem()));
+    //() -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem()));
     public static final Supplier<Item> NAUTILUS_SHELL_BLOCK = registerWithTab("nautilus_shell_block",
             () -> new BlockItem(CDModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem()));
     public static final Supplier<Item> PEARL_BLOCK = registerWithTab("pearl_block",
@@ -279,5 +279,15 @@ public class CDModItems {
 
     public static final Supplier<Item> FISH_PLAQUE = registerWithTab("fish_plaque",
             () -> new BlockItem(CDModBlocks.FISH_PLAQUE.get(), basicItem()));
+
+    // Notes + Messages in a Bottle
+    public static final Supplier<Item> NOTE = registerWithTab("note",
+            () -> new NoteItem(basicItem().stacksTo(16)));
+    public static final Supplier<Item> SIGNED_NOTE = registerWithTab("signed_note",
+            () -> new SignedNoteItem(basicItem().stacksTo(16)));
+    public static final Supplier<Item> MESSAGE_BOTTLE = registerWithTab("message_bottle",
+            () -> new MessageBottleItem(basicItem()));
+    public static final Supplier<Item> BOTTLED_NOTE = registerWithTab("bottled_note",
+            () -> new BottledNoteItem(basicItem().stacksTo(16)));
 
 }

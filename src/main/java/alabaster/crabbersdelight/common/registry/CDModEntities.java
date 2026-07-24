@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.common.entity.ThrownBottledNote;
 import alabaster.crabbersdelight.common.entity.boat.CDBoatEntity;
 import alabaster.crabbersdelight.common.entity.boat.CDChestBoatEntity;
 import alabaster.crabbersdelight.common.entity.crab.CrabEntity;
@@ -24,4 +25,8 @@ public class CDModEntities {
     public static final Supplier<EntityType<CDChestBoatEntity>> MOD_CHEST_BOAT =
             ENTITY_TYPES.register("mod_chest_boat", () -> EntityType.Builder.<CDChestBoatEntity>of(CDChestBoatEntity::new, MobCategory.MISC)
                     .sized(1.375f, 0.5625f).build("palm_chest_boat"));
+
+    public static final Supplier<EntityType<ThrownBottledNote>> THROWN_BOTTLED_NOTE =
+            ENTITY_TYPES.register("thrown_bottled_note", () -> EntityType.Builder.<ThrownBottledNote>of(ThrownBottledNote::new, MobCategory.MISC)
+                    .sized(0.25f, 0.25f).clientTrackingRange(4).updateInterval(10).build("thrown_bottled_note"));
 }
