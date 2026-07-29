@@ -290,4 +290,14 @@ public class CDModItems {
     public static final Supplier<Item> BOTTLED_NOTE = registerWithTab("bottled_note",
             () -> new BottledNoteItem(basicItem().stacksTo(16)));
 
+    public static final Supplier<Item> TACKLE_BOX = registerWithTab("tackle_box",
+            () -> new TackleBoxItem(basicItem().stacksTo(1)));
+
+    public static final Supplier<Item> BARBED_LURE = registerWithTab("barbed_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.BARBED));
+    public static final Supplier<Item> DOUBLE_LURE = registerWithTab("double_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.DOUBLE));
+    public static final Supplier<Item> SHINY_LURE = registerWithTab("shiny_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.SHINY));
+
 }

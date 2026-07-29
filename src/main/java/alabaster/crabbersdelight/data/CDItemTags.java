@@ -5,10 +5,13 @@ import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import alabaster.crabbersdelight.common.registry.CDModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
@@ -147,6 +150,26 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.RAW_CLAWSTER.get())
                 .add(CDModItems.RAW_CRAB.get())
                 .add(CDModItems.FISH_BONES.get());
+
+        tag(CDModTags.FISHING_BAIT)
+                .add(Items.COD)
+                .add(Items.SALMON)
+                .add(Items.PUFFERFISH)
+                .add(Items.TROPICAL_FISH)
+                .add(CDModItems.BUCKET_OF_CRAB_CHUM.get())
+                .add(CDModItems.BUCKET_OF_CLAWSTER_CHUM.get())
+                .add(CDModItems.BUCKET_OF_CLAM_CHUM.get())
+                .add(CDModItems.BUCKET_OF_SHRIMP_CHUM.get());
+
+        tag(CDModTags.FISHING_LURE)
+                .add(CDModItems.BARBED_LURE.get())
+                .add(CDModItems.DOUBLE_LURE.get())
+                .add(CDModItems.SHINY_LURE.get());
+
+        tag(TagKey.create(Registries.ITEM, ResourceLocation.withDefaultNamespace("enchantable/durability")))
+                .add(CDModItems.BARBED_LURE.get())
+                .add(CDModItems.DOUBLE_LURE.get())
+                .add(CDModItems.SHINY_LURE.get());
 
         // Trim Materials
         tag(ItemTags.TRIM_MATERIALS)

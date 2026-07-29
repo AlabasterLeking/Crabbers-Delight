@@ -22,14 +22,16 @@ public class NoteReadScreen extends Screen {
     private final String title;
     private final String text;
     private final String author;
+    private final boolean showMetadata;
     private List<FormattedCharSequence> wrappedLines;
     private int imageLeft;
 
-    public NoteReadScreen(String title, String text, String author) {
+    public NoteReadScreen(String title, String text, String author, boolean showMetadata) {
         super(Component.translatable("gui.crabbersdelight.note.read"));
         this.title = title;
         this.text = text;
         this.author = author;
+        this.showMetadata = showMetadata;
     }
 
     @Override
@@ -59,8 +61,8 @@ public class NoteReadScreen extends Screen {
 
         int left = imageLeft + 36;
         int top = IMAGE_TOP + 30;
-        boolean hasTitle = title != null && !title.isBlank();
-        boolean hasAuthor = author != null && !author.isBlank();
+        boolean hasTitle = showMetadata && title != null && !title.isBlank();
+        boolean hasAuthor = showMetadata && author != null && !author.isBlank();
 
         if (hasTitle) {
             Component titleComponent = Component.literal(title);

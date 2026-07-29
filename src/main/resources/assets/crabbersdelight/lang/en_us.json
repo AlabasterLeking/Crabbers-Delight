@@ -120,12 +120,18 @@
   "block.crabbersdelight.seashells": "Seashells",
   "block.crabbersdelight.fish_plaque": "Fish Plaque",
   "block.crabbersdelight.note_block": "Note",
+  "block.crabbersdelight.tackle_box": "Tackle Box",
 
   "item.crabbersdelight.note": "Note",
   "item.crabbersdelight.signed_note": "Signed Note",
   "item.crabbersdelight.signed_note.author": "by %s",
   "item.crabbersdelight.message_bottle": "Message in a Bottle",
   "item.crabbersdelight.bottled_note": "Bottled Note",
+  "item.crabbersdelight.tackle_box": "Tackle Box",
+  "item.crabbersdelight.tackle_box.contents": "%s/%s slots filled",
+  "item.crabbersdelight.barbed_lure": "Barbed Lure",
+  "item.crabbersdelight.double_lure": "Double Lure",
+  "item.crabbersdelight.shiny_lure": "Shiny Lure",
 
   "gui.crabbersdelight.note.edit": "Write Note",
   "gui.crabbersdelight.note.placeholder": "Write your message...",
@@ -141,6 +147,8 @@
   "entity.crabbersdelight.crab": "Crab",
 
   "crabbersdelight.jei.crab_trap_loot": "Crab Trap",
+  "gui.crabbersdelight.jei.note_cloning": "Note Duplication",
+  "gui.crabbersdelight.jei.bottled_note": "Bottling a Note",
 
   "crabbersdelight.advancement.root": "Crabber's Delight",
   "crabbersdelight.advancement.root.desc": "A seafood adventure awaits you!",

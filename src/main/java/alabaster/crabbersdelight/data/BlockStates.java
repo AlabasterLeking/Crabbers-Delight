@@ -71,6 +71,8 @@ public class BlockStates extends BlockStateProvider {
 
         cabinetBlock(CDModBlocks.PALM_CABINET.get(), "palm");
 
+        this.horizontalBlock(CDModBlocks.TACKLE_BOX.get(), existingModel("tackle_box"));
+
     }
 
     public void crateBlock(Block block, String cropName) {

@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight;
 
 import alabaster.crabbersdelight.client.gui.CrabTrapGUI;
+import alabaster.crabbersdelight.client.gui.TackleBoxGUI;
 import alabaster.crabbersdelight.common.entity.boat.CDBoatModelLayers;
 import alabaster.crabbersdelight.common.entity.boat.CDBoatRenderer;
 import alabaster.crabbersdelight.common.entity.crab.CrabEntity;
@@ -100,6 +101,7 @@ public class CrabbersDelight {
 
     public void registerScreens(RegisterMenuScreensEvent event) {
         event.register(CDModMenus.CRAB_TRAP_MENU.get(), CrabTrapGUI::new);
+        event.register(CDModMenus.TACKLE_BOX_MENU.get(), TackleBoxGUI::new);
     }
 
     @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

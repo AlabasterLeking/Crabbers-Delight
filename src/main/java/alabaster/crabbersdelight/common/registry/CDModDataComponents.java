@@ -3,6 +3,7 @@ package alabaster.crabbersdelight.common.registry;
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.item.component.NoteContent;
 import alabaster.crabbersdelight.common.item.component.SignedNoteContent;
+import alabaster.crabbersdelight.common.item.component.TackleBoxContents;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -25,5 +26,11 @@ public class CDModDataComponents {
             DATA_COMPONENTS.register("signed_note_content", () -> DataComponentType.<SignedNoteContent>builder()
                     .persistent(SignedNoteContent.CODEC)
                     .networkSynchronized(SignedNoteContent.STREAM_CODEC)
+                    .build());
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<TackleBoxContents>> TACKLE_BOX_CONTENTS =
+            DATA_COMPONENTS.register("tackle_box_contents", () -> DataComponentType.<TackleBoxContents>builder()
+                    .persistent(TackleBoxContents.CODEC)
+                    .networkSynchronized(TackleBoxContents.STREAM_CODEC)
                     .build());
 }

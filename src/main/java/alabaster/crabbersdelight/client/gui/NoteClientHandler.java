@@ -10,12 +10,12 @@ public class NoteClientHandler {
     }
 
     public static void openReadScreen(String title, String text, String author) {
-        Minecraft.getInstance().setScreen(new NoteReadScreen(title, text, author));
+        Minecraft.getInstance().setScreen(new NoteReadScreen(title, text, author, false));
     }
 
     public static void openBlockScreen(BlockPos pos, boolean signed, String title, String text, String author) {
         if (signed) {
-            Minecraft.getInstance().setScreen(new NoteReadScreen(title, text, author));
+            Minecraft.getInstance().setScreen(new NoteReadScreen(title, text, author, true));
         } else {
             Minecraft.getInstance().setScreen(new NoteBlockEditScreen(pos, text));
         }
