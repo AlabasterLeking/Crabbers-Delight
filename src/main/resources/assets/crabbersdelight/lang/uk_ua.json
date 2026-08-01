@@ -120,12 +120,18 @@
   "block.crabbersdelight.seashells": "Мушлі",
   "block.crabbersdelight.fish_plaque": "Рибальський трофей",
   "block.crabbersdelight.note_block": "Записка",
+  "block.crabbersdelight.tackle_box": "Коробка зі снастями",
 
   "item.crabbersdelight.note": "Записка",
   "item.crabbersdelight.signed_note": "Підписана записка",
   "item.crabbersdelight.signed_note.author": "автор: %s",
   "item.crabbersdelight.message_bottle": "Пляшка із запискою",
   "item.crabbersdelight.bottled_note": "Записка з пляшки",
+  "item.crabbersdelight.tackle_box": "Коробка зі снастями",
+  "item.crabbersdelight.tackle_box.contents": "%s/%s комірок використано",
+  "item.crabbersdelight.barbed_lure": "Зазубрена приманка",
+  "item.crabbersdelight.double_lure": "Подвійна приманка",
+  "item.crabbersdelight.shiny_lure": "Блискуча приманка",
 
   "gui.crabbersdelight.note.edit": "Написати записку",
   "gui.crabbersdelight.note.placeholder": "Напишіть повідомлення...",
@@ -141,6 +147,8 @@
   "entity.crabbersdelight.crab": "Краб",
 
   "crabbersdelight.jei.crab_trap_loot": "Крабова пастка",
+  "gui.crabbersdelight.jei.note_cloning": "Копіювання записки",
+  "gui.crabbersdelight.jei.bottled_note": "Закорковування записки в пляшці",
 
   "crabbersdelight.advancement.root": "Crabber's Delight",
   "crabbersdelight.advancement.root.desc": "На вас чекає пригода з морепродуктами!",
