@@ -17,8 +17,8 @@ public class TackleBoxGUI extends AbstractContainerScreen<TackleBoxMenu> {
     public TackleBoxGUI(TackleBoxMenu menu, Inventory playerInv, Component title) {
         super(menu, playerInv, title);
         this.imageWidth = 176;
-        this.imageHeight = 133;
-        this.inventoryLabelY = 37;
+        this.imageHeight = 177;
+        this.inventoryLabelY = 74;
     }
 
     @Override

@@ -299,5 +299,10 @@ public class CDModItems {
             () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.DOUBLE));
     public static final Supplier<Item> SHINY_LURE = registerWithTab("shiny_lure",
             () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.SHINY));
+    public static final Supplier<Item> AUTOMATIC_LURE = registerWithTab("automatic_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.AUTOMATIC));
+
+    public static final Supplier<Item> FISHING_LINE = registerWithTab("fishing_line",
+            () -> new Item(new Item.Properties().stacksTo(1).durability(64)));
 
 }

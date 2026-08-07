@@ -164,12 +164,17 @@ public class CDItemTags extends ItemTagsProvider {
         tag(CDModTags.FISHING_LURE)
                 .add(CDModItems.BARBED_LURE.get())
                 .add(CDModItems.DOUBLE_LURE.get())
-                .add(CDModItems.SHINY_LURE.get());
+                .add(CDModItems.SHINY_LURE.get())
+                .add(CDModItems.AUTOMATIC_LURE.get());
+
+        tag(CDModTags.FISHING_LINE)
+                .add(CDModItems.FISHING_LINE.get());
 
         tag(TagKey.create(Registries.ITEM, ResourceLocation.withDefaultNamespace("enchantable/durability")))
                 .add(CDModItems.BARBED_LURE.get())
                 .add(CDModItems.DOUBLE_LURE.get())
-                .add(CDModItems.SHINY_LURE.get());
+                .add(CDModItems.SHINY_LURE.get())
+                .add(CDModItems.AUTOMATIC_LURE.get());
 
         // Trim Materials
         tag(ItemTags.TRIM_MATERIALS)

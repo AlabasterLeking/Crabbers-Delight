@@ -1,8 +1,8 @@
 package alabaster.crabbersdelight.common.event;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.tags.CDModTags;
-import alabaster.crabbersdelight.common.utils.FishingGearUtil;
+import alabaster.crabbersdelight.common.block.entity.inventory.TackleBoxItemHandler;
+import alabaster.crabbersdelight.common.utils.TackleBoxProximity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -29,12 +29,22 @@ public class FishingBaitEvents {
             return;
         }
 
-        FishingGearUtil.FoundStack bait = FishingGearUtil.findFirstMatching(player, CDModTags.FISHING_BAIT);
-        if (bait == null) {
+        TackleBoxProximity.TackleBoxAccess tackleBox = TackleBoxProximity.find(player);
+        if (tackleBox == null) {
             return;
         }
 
-        ResourceLocation baitId = BuiltInRegistries.ITEM.getKey(bait.stack().getItem());
+        int baitSlot = TackleBoxItemHandler.BAIT_SLOT_1;
+        ItemStack bait = tackleBox.getSlot(baitSlot);
+        if (bait.isEmpty()) {
+            baitSlot = TackleBoxItemHandler.BAIT_SLOT_2;
+            bait = tackleBox.getSlot(baitSlot);
+        }
+        if (bait.isEmpty()) {
+            return;
+        }
+
+        ResourceLocation baitId = BuiltInRegistries.ITEM.getKey(bait.getItem());
         ResourceLocation tableId = CrabbersDelight.modPrefix("gameplay/fishing_bait_loot/" + baitId.getPath());
 
         LootTable table = serverLevel.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, tableId));
@@ -52,6 +62,8 @@ public class FishingBaitEvents {
         event.getDrops().clear();
         event.getDrops().addAll(rolled);
 
-        FishingGearUtil.shrinkFound(player, bait);
+        ItemStack shrunk = bait.copy();
+        shrunk.shrink(1);
+        tackleBox.setSlot(baitSlot, shrunk);
     }
 }

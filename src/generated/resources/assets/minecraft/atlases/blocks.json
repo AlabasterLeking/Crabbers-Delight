@@ -3,6 +3,18 @@
     {
       "type": "minecraft:single",
       "resource": "crabbersdelight:gui/bait_slot"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "crabbersdelight:gui/bait_slot"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "crabbersdelight:gui/line_slot"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "crabbersdelight:gui/lure_slot"
     }
   ]
 }
