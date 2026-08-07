@@ -7,7 +7,9 @@ import alabaster.crabbersdelight.common.registry.CDModBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -25,7 +27,16 @@ import org.jetbrains.annotations.Nullable;
 public class TackleBoxBlockEntity extends BlockEntity implements MenuProvider {
     private static final Component TACKLE_BOX_NAME = Component.translatable("block.crabbersdelight.tackle_box");
 
-    public final TackleBoxItemHandler handler = new TackleBoxItemHandler();
+    public final TackleBoxItemHandler handler = new TackleBoxItemHandler() {
+        @Override
+        protected void onContentsChanged(int slot) {
+            super.onContentsChanged(slot);
+            setChanged();
+            if (level != null && !level.isClientSide) {
+                level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+            }
+        }
+    };
 
     public TackleBoxBlockEntity(BlockPos pos, BlockState state) {
         super(CDModBlockEntity.TACKLE_BOX.get(), pos, state);
@@ -41,6 +52,25 @@ public class TackleBoxBlockEntity extends BlockEntity implements MenuProvider {
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
         this.handler.deserializeNBT(registries, tag.getCompound("handler"));
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        CompoundTag tag = new CompoundTag();
+        saveAdditional(tag, registries);
+        return tag;
+    }
+
+    @Override
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider lookupProvider) {
+        if (pkt.getTag() != null) {
+            loadAdditional(pkt.getTag(), lookupProvider);
+        }
     }
 
     @SubscribeEvent

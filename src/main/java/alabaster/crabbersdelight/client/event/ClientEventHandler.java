@@ -1,9 +1,11 @@
 package alabaster.crabbersdelight.client.event;
 
 import alabaster.crabbersdelight.client.renderer.FishPlaqueRenderer;
+import alabaster.crabbersdelight.client.renderer.LureAwareFishingHookRenderer;
 import alabaster.crabbersdelight.common.registry.CDModBlockEntity;
 import alabaster.crabbersdelight.common.registry.CDModEntities;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.entity.EntityType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -25,6 +27,10 @@ public class ClientEventHandler {
         event.registerEntityRenderer(
                 CDModEntities.THROWN_BOTTLED_NOTE.get(),
                 ThrownItemRenderer::new
+        );
+        event.registerEntityRenderer(
+                EntityType.FISHING_BOBBER,
+                LureAwareFishingHookRenderer::new
         );
     }
 }
