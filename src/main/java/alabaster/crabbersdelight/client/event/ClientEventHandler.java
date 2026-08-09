@@ -1,6 +1,8 @@
 package alabaster.crabbersdelight.client.event;
 
+import alabaster.crabbersdelight.client.renderer.CrabTrapRenderer;
 import alabaster.crabbersdelight.client.renderer.FishPlaqueRenderer;
+import alabaster.crabbersdelight.client.renderer.FishingSpotRenderer;
 import alabaster.crabbersdelight.client.renderer.LureAwareFishingHookRenderer;
 import alabaster.crabbersdelight.common.registry.CDModBlockEntity;
 import alabaster.crabbersdelight.common.registry.CDModEntities;
@@ -20,6 +22,10 @@ public class ClientEventHandler {
                 CDModBlockEntity.FISH_PLAQUE.get(),
                 FishPlaqueRenderer::new
         );
+        event.registerBlockEntityRenderer(
+                CDModBlockEntity.CRAB_TRAP.get(),
+                CrabTrapRenderer::new
+        );
     }
 
     @SubscribeEvent
@@ -31,6 +37,10 @@ public class ClientEventHandler {
         event.registerEntityRenderer(
                 EntityType.FISHING_BOBBER,
                 LureAwareFishingHookRenderer::new
+        );
+        event.registerEntityRenderer(
+                CDModEntities.FISHING_SPOT.get(),
+                FishingSpotRenderer::new
         );
     }
 }

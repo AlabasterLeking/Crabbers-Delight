@@ -6,7 +6,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.storage.DimensionDataStorage;
 
@@ -19,7 +19,7 @@ public class BottledNoteSavedData extends SavedData {
     private static final String DATA_NAME = "crabbersdelight_bottled_notes";
     private static final int MAX_QUEUED_NOTES = 500;
 
-    public record Entry(String title, String text, String author, int generation) {}
+    public record Entry(String title, String text, String author, int generation, ItemStack reward) {}
 
     private final Deque<Entry> queue = new ArrayDeque<>();
 
@@ -36,7 +36,10 @@ public class BottledNoteSavedData extends SavedData {
         ListTag list = tag.getList("Notes", Tag.TAG_COMPOUND);
         for (int i = 0; i < list.size(); i++) {
             CompoundTag entryTag = list.getCompound(i);
-            data.queue.addLast(new Entry(entryTag.getString("Title"), entryTag.getString("Text"), entryTag.getString("Author"), entryTag.getInt("Generation")));
+            ItemStack reward = entryTag.contains("Reward")
+                    ? ItemStack.parseOptional(registries, entryTag.getCompound("Reward"))
+                    : ItemStack.EMPTY;
+            data.queue.addLast(new Entry(entryTag.getString("Title"), entryTag.getString("Text"), entryTag.getString("Author"), entryTag.getInt("Generation"), reward));
         }
         return data;
     }
@@ -50,31 +53,31 @@ public class BottledNoteSavedData extends SavedData {
             entryTag.putString("Text", entry.text());
             entryTag.putString("Author", entry.author());
             entryTag.putInt("Generation", entry.generation());
+            if (!entry.reward().isEmpty()) {
+                entryTag.put("Reward", entry.reward().save(registries));
+            }
             list.add(entryTag);
         }
         tag.put("Notes", list);
         return tag;
     }
 
-    public void addNote(String title, String text, String author, int generation) {
-        queue.addLast(new Entry(title, text, author, generation));
+    public void addNote(String title, String text, String author, int generation, ItemStack reward) {
+        queue.addLast(new Entry(title, text, author, generation, reward));
         while (queue.size() > MAX_QUEUED_NOTES) {
             queue.pollFirst();
         }
         setDirty();
     }
 
-    public Entry pollWeighted(RandomSource random) {
-        if (queue.isEmpty()) {
-            return null;
-        }
-        List<Entry> asList = new ArrayList<>(queue);
-        Entry chosen = asList.get(random.nextInt(asList.size()));
+    public List<Entry> asList() {
+        return new ArrayList<>(queue);
+    }
 
+    public void remove(Entry entry) {
         if (!Config.THROWN_NOTES_PERSIST.get()) {
-            queue.remove(chosen);
+            queue.remove(entry);
             setDirty();
         }
-        return chosen;
     }
 }

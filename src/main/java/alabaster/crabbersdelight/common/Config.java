@@ -65,7 +65,7 @@ public class Config {
         CHANCE_SEASHELLS_UNDERWATER = COMMON_BUILDER.comment("Chance of generating on ocean floors. Smaller value = more frequent.")
                 .defineInRange("chanceUnderwater", 2, 1, Integer.MAX_VALUE);
         SEASHELL_VARIANT_COUNT = COMMON_BUILDER.comment("Number of seashell variants available (must match textures/models/blockstates files)")
-                .defineInRange("seashellVariantCount", 7, 1, 64);
+                .defineInRange("seashellVariantCount", 7, 1, 7);
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.comment("Crab spawning").push("crab_spawns");

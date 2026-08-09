@@ -4,6 +4,8 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.item.component.NoteContent;
 import alabaster.crabbersdelight.common.item.component.SignedNoteContent;
 import alabaster.crabbersdelight.common.item.component.TackleBoxContents;
+import alabaster.crabbersdelight.common.item.component.CrabTrapContents;
+import alabaster.crabbersdelight.common.item.component.BottledNoteReward;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -32,5 +34,17 @@ public class CDModDataComponents {
             DATA_COMPONENTS.register("tackle_box_contents", () -> DataComponentType.<TackleBoxContents>builder()
                     .persistent(TackleBoxContents.CODEC)
                     .networkSynchronized(TackleBoxContents.STREAM_CODEC)
+                    .build());
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<CrabTrapContents>> CRAB_TRAP_CONTENTS =
+            DATA_COMPONENTS.register("crab_trap_contents", () -> DataComponentType.<CrabTrapContents>builder()
+                    .persistent(CrabTrapContents.CODEC)
+                    .networkSynchronized(CrabTrapContents.STREAM_CODEC)
+                    .build());
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<BottledNoteReward>> BOTTLED_NOTE_REWARD =
+            DATA_COMPONENTS.register("bottled_note_reward", () -> DataComponentType.<BottledNoteReward>builder()
+                    .persistent(BottledNoteReward.CODEC)
+                    .networkSynchronized(BottledNoteReward.STREAM_CODEC)
                     .build());
 }

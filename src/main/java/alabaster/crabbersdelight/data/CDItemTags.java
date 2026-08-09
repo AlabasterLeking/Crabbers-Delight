@@ -159,13 +159,15 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.BUCKET_OF_CRAB_CHUM.get())
                 .add(CDModItems.BUCKET_OF_CLAWSTER_CHUM.get())
                 .add(CDModItems.BUCKET_OF_CLAM_CHUM.get())
-                .add(CDModItems.BUCKET_OF_SHRIMP_CHUM.get());
+                .add(CDModItems.BUCKET_OF_SHRIMP_CHUM.get())
+                .add(CDModItems.WORM.get());
 
         tag(CDModTags.FISHING_LURE)
                 .add(CDModItems.BARBED_LURE.get())
                 .add(CDModItems.DOUBLE_LURE.get())
                 .add(CDModItems.SHINY_LURE.get())
-                .add(CDModItems.AUTOMATIC_LURE.get());
+                .add(CDModItems.AUTOMATIC_LURE.get())
+                .add(CDModItems.STORM_LURE.get());
 
         tag(CDModTags.FISHING_LINE)
                 .add(CDModItems.FISHING_LINE.get());
@@ -174,7 +176,8 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.BARBED_LURE.get())
                 .add(CDModItems.DOUBLE_LURE.get())
                 .add(CDModItems.SHINY_LURE.get())
-                .add(CDModItems.AUTOMATIC_LURE.get());
+                .add(CDModItems.AUTOMATIC_LURE.get())
+                .add(CDModItems.STORM_LURE.get());
 
         // Trim Materials
         tag(ItemTags.TRIM_MATERIALS)

@@ -275,7 +275,7 @@ public class CDModItems {
 
     // Crab Trap
     public static final Supplier<Item> CRAB_TRAP = registerWithTab("crab_trap",
-            () -> new BlockItem(CDModBlocks.CRAB_TRAP.get(), basicItem()));
+            () -> new alabaster.crabbersdelight.common.item.CrabTrapItem(basicItem()));
 
     public static final Supplier<Item> FISH_PLAQUE = registerWithTab("fish_plaque",
             () -> new BlockItem(CDModBlocks.FISH_PLAQUE.get(), basicItem()));
@@ -301,8 +301,16 @@ public class CDModItems {
             () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.SHINY));
     public static final Supplier<Item> AUTOMATIC_LURE = registerWithTab("automatic_lure",
             () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.AUTOMATIC));
+    public static final Supplier<Item> STORM_LURE = registerWithTab("storm_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.STORM));
 
     public static final Supplier<Item> FISHING_LINE = registerWithTab("fishing_line",
-            () -> new Item(new Item.Properties().stacksTo(1).durability(64)));
+            () -> new FishingLineItem(new Item.Properties().stacksTo(1).durability(64)));
+
+    public static final Supplier<Item> WORM = registerWithTab("worm",
+            () -> new Item(basicItem()));
+
+    public static final Supplier<Item> WORM_BIN = registerWithTab("worm_bin",
+            () -> new BlockItem(CDModBlocks.WORM_BIN.get(), basicItem()));
 
 }

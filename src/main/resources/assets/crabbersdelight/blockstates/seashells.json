@@ -1,35 +1,214 @@
 {
   "variants": {
-    "variant=0,facing=north": { "model": "crabbersdelight:block/seashell_0" },
-    "variant=1,facing=north": { "model": "crabbersdelight:block/seashell_1" },
-    "variant=2,facing=north": { "model": "crabbersdelight:block/seashell_2" },
-    "variant=3,facing=north": { "model": "crabbersdelight:block/seashell_3" },
-    "variant=4,facing=north": { "model": "crabbersdelight:block/seashell_4" },
-    "variant=5,facing=north": { "model": "crabbersdelight:block/seashell_5" },
-    "variant=6,facing=north": { "model": "crabbersdelight:block/seashell_6" },
-
-    "variant=0,facing=east": { "model": "crabbersdelight:block/seashell_0", "y": 90 },
-    "variant=1,facing=east": { "model": "crabbersdelight:block/seashell_1", "y": 90 },
-    "variant=2,facing=east": { "model": "crabbersdelight:block/seashell_2", "y": 90 },
-    "variant=3,facing=east": { "model": "crabbersdelight:block/seashell_3", "y": 90 },
-    "variant=4,facing=east": { "model": "crabbersdelight:block/seashell_4", "y": 90 },
-    "variant=5,facing=east": { "model": "crabbersdelight:block/seashell_5", "y": 90 },
-    "variant=6,facing=east": { "model": "crabbersdelight:block/seashell_6", "y": 90 },
-
-    "variant=0,facing=south": { "model": "crabbersdelight:block/seashell_0", "y": 180 },
-    "variant=1,facing=south": { "model": "crabbersdelight:block/seashell_1", "y": 180 },
-    "variant=2,facing=south": { "model": "crabbersdelight:block/seashell_2", "y": 180 },
-    "variant=3,facing=south": { "model": "crabbersdelight:block/seashell_3", "y": 180 },
-    "variant=4,facing=south": { "model": "crabbersdelight:block/seashell_4", "y": 180 },
-    "variant=5,facing=south": { "model": "crabbersdelight:block/seashell_5", "y": 180 },
-    "variant=6,facing=south": { "model": "crabbersdelight:block/seashell_6", "y": 180 },
-
-    "variant=0,facing=west": { "model": "crabbersdelight:block/seashell_0", "y": 270 },
-    "variant=1,facing=west": { "model": "crabbersdelight:block/seashell_1", "y": 270 },
-    "variant=2,facing=west": { "model": "crabbersdelight:block/seashell_2", "y": 270 },
-    "variant=3,facing=west": { "model": "crabbersdelight:block/seashell_3", "y": 270 },
-    "variant=4,facing=west": { "model": "crabbersdelight:block/seashell_4", "y": 270 },
-    "variant=5,facing=west": { "model": "crabbersdelight:block/seashell_5", "y": 270 },
-    "variant=6,facing=west": { "model": "crabbersdelight:block/seashell_6", "y": 270 }
+    "facing=south,variant=0,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_0"
+    },
+    "facing=south,variant=0,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_0"
+    },
+    "facing=south,variant=1,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_1"
+    },
+    "facing=south,variant=1,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_1"
+    },
+    "facing=south,variant=2,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_2"
+    },
+    "facing=south,variant=2,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_2"
+    },
+    "facing=south,variant=3,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_3"
+    },
+    "facing=south,variant=3,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_3"
+    },
+    "facing=south,variant=4,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_4"
+    },
+    "facing=south,variant=4,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_4"
+    },
+    "facing=south,variant=5,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_5"
+    },
+    "facing=south,variant=5,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_5"
+    },
+    "facing=south,variant=6,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_6"
+    },
+    "facing=south,variant=6,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_6"
+    },
+    "facing=north,variant=0,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_0",
+      "y": 180
+    },
+    "facing=north,variant=0,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_0",
+      "y": 180
+    },
+    "facing=north,variant=1,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_1",
+      "y": 180
+    },
+    "facing=north,variant=1,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_1",
+      "y": 180
+    },
+    "facing=north,variant=2,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_2",
+      "y": 180
+    },
+    "facing=north,variant=2,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_2",
+      "y": 180
+    },
+    "facing=north,variant=3,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_3",
+      "y": 180
+    },
+    "facing=north,variant=3,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_3",
+      "y": 180
+    },
+    "facing=north,variant=4,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_4",
+      "y": 180
+    },
+    "facing=north,variant=4,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_4",
+      "y": 180
+    },
+    "facing=north,variant=5,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_5",
+      "y": 180
+    },
+    "facing=north,variant=5,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_5",
+      "y": 180
+    },
+    "facing=north,variant=6,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_6",
+      "y": 180
+    },
+    "facing=north,variant=6,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_6",
+      "y": 180
+    },
+    "facing=west,variant=0,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_0",
+      "y": 90
+    },
+    "facing=west,variant=0,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_0",
+      "y": 90
+    },
+    "facing=west,variant=1,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_1",
+      "y": 90
+    },
+    "facing=west,variant=1,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_1",
+      "y": 90
+    },
+    "facing=west,variant=2,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_2",
+      "y": 90
+    },
+    "facing=west,variant=2,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_2",
+      "y": 90
+    },
+    "facing=west,variant=3,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_3",
+      "y": 90
+    },
+    "facing=west,variant=3,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_3",
+      "y": 90
+    },
+    "facing=west,variant=4,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_4",
+      "y": 90
+    },
+    "facing=west,variant=4,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_4",
+      "y": 90
+    },
+    "facing=west,variant=5,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_5",
+      "y": 90
+    },
+    "facing=west,variant=5,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_5",
+      "y": 90
+    },
+    "facing=west,variant=6,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_6",
+      "y": 90
+    },
+    "facing=west,variant=6,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_6",
+      "y": 90
+    },
+    "facing=east,variant=0,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_0",
+      "y": 270
+    },
+    "facing=east,variant=0,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_0",
+      "y": 270
+    },
+    "facing=east,variant=1,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_1",
+      "y": 270
+    },
+    "facing=east,variant=1,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_1",
+      "y": 270
+    },
+    "facing=east,variant=2,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_2",
+      "y": 270
+    },
+    "facing=east,variant=2,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_2",
+      "y": 270
+    },
+    "facing=east,variant=3,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_3",
+      "y": 270
+    },
+    "facing=east,variant=3,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_3",
+      "y": 270
+    },
+    "facing=east,variant=4,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_4",
+      "y": 270
+    },
+    "facing=east,variant=4,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_4",
+      "y": 270
+    },
+    "facing=east,variant=5,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_5",
+      "y": 270
+    },
+    "facing=east,variant=5,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_5",
+      "y": 270
+    },
+    "facing=east,variant=6,waterlogged=true": {
+      "model": "crabbersdelight:block/seashell_6",
+      "y": 270
+    },
+    "facing=east,variant=6,waterlogged=false": {
+      "model": "crabbersdelight:block/seashell_6",
+      "y": 270
+    }
   }
 }

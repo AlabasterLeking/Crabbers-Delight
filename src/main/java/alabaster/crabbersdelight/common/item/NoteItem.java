@@ -35,9 +35,11 @@ public class NoteItem extends BlockItem {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
-        Direction face = context.getClickedFace();
 
-        if (!canAttachToWall(context)) {
+        boolean canWall = canAttachToWall(context);
+        boolean canFlat = canAttachFlat(context);
+
+        if (!canWall && !canFlat) {
             if (level.isClientSide) {
                 NoteClientHandler.openEditScreen(context.getHand(), currentText(context.getItemInHand()));
             }
@@ -71,8 +73,17 @@ public class NoteItem extends BlockItem {
             return false;
         }
         Level level = context.getLevel();
-        BlockPos wallPos = context.getClickedPos().relative(face.getOpposite());
-        return level.getBlockState(wallPos).isFaceSturdy(level, wallPos, face);
+        BlockPos wallPos = context.getClickedPos();
+        return level.getBlockState(wallPos).isCollisionShapeFullBlock(level, wallPos);
+    }
+
+    private boolean canAttachFlat(UseOnContext context) {
+        if (context.getClickedFace() != Direction.UP) {
+            return false;
+        }
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        return level.getBlockState(pos).isCollisionShapeFullBlock(level, pos);
     }
 
     private String currentText(ItemStack stack) {

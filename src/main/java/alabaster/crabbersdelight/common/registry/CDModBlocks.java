@@ -169,4 +169,7 @@ public class CDModBlocks {
 
     public static final Supplier<Block> SEA_PICKLE_CRATE = BLOCKS.register("sea_pickle_crate",
             () -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+
+    public static final Supplier<Block> WORM_BIN = BLOCKS.register("worm_bin",
+            () -> new alabaster.crabbersdelight.common.block.WormBinBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F).sound(SoundType.WOOD)));
 }

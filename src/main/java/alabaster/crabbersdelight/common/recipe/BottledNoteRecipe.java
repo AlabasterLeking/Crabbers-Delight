@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.recipe;
 
 import alabaster.crabbersdelight.common.item.SignedNoteItem;
+import alabaster.crabbersdelight.common.item.component.BottledNoteReward;
 import alabaster.crabbersdelight.common.item.component.SignedNoteContent;
 import alabaster.crabbersdelight.common.registry.CDModDataComponents;
 import alabaster.crabbersdelight.common.registry.CDModItems;
@@ -23,6 +24,7 @@ public class BottledNoteRecipe extends CustomRecipe {
     public boolean matches(CraftingInput input, Level level) {
         int bottleCount = 0;
         ItemStack signedNote = ItemStack.EMPTY;
+        ItemStack rewardStack = ItemStack.EMPTY;
 
         for (int i = 0; i < input.size(); i++) {
             ItemStack stack = input.getItem(i);
@@ -36,7 +38,9 @@ public class BottledNoteRecipe extends CustomRecipe {
                 signedNote = stack;
             } else if (stack.is(Items.GLASS_BOTTLE)) {
                 bottleCount++;
-            } else {
+            } else if (rewardStack.isEmpty()) {
+                rewardStack = stack;
+            } else if (!rewardStack.is(stack.getItem())) {
                 return false;
             }
         }
@@ -48,6 +52,7 @@ public class BottledNoteRecipe extends CustomRecipe {
     public ItemStack assemble(CraftingInput input, HolderLookup.Provider registries) {
         ItemStack signedNote = ItemStack.EMPTY;
         int bottleCount = 0;
+        ItemStack rewardStack = ItemStack.EMPTY;
 
         for (int i = 0; i < input.size(); i++) {
             ItemStack stack = input.getItem(i);
@@ -61,6 +66,10 @@ public class BottledNoteRecipe extends CustomRecipe {
                 signedNote = stack;
             } else if (stack.is(Items.GLASS_BOTTLE)) {
                 bottleCount++;
+            } else if (rewardStack.isEmpty()) {
+                rewardStack = stack.copy();
+            } else if (rewardStack.is(stack.getItem())) {
+                rewardStack.grow(stack.getCount());
             } else {
                 return ItemStack.EMPTY;
             }
@@ -73,6 +82,9 @@ public class BottledNoteRecipe extends CustomRecipe {
 
         ItemStack result = new ItemStack(CDModItems.BOTTLED_NOTE.get());
         result.set(CDModDataComponents.SIGNED_NOTE_CONTENT.get(), content);
+        if (!rewardStack.isEmpty()) {
+            result.set(CDModDataComponents.BOTTLED_NOTE_REWARD.get(), new BottledNoteReward(rewardStack));
+        }
         return result;
     }
 

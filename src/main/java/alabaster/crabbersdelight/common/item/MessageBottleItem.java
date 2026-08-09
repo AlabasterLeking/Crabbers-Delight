@@ -2,8 +2,15 @@ package alabaster.crabbersdelight.common.item;
 
 import alabaster.crabbersdelight.common.item.component.SignedNoteContent;
 import alabaster.crabbersdelight.common.registry.CDModDataComponents;
+import alabaster.crabbersdelight.common.registry.CDModDatapackRegistries;
 import alabaster.crabbersdelight.common.registry.CDModItems;
+import alabaster.crabbersdelight.common.world.BottleMessageEntry;
 import alabaster.crabbersdelight.common.world.BottledNoteSavedData;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -14,6 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -26,29 +34,15 @@ import java.util.List;
 import java.util.Optional;
 
 public class MessageBottleItem extends Item {
-    private static final List<String> FLAVOR_TEXTS = List.of(
-            "If you're reading this, the crabs got to me first.",
-            "Day 47 stranded. The seagulls are starting to look friendly.",
-            "Whoever finds this - the good fishing spot is not a secret anymore.",
-            "I told them building a raft out of driftwood was a bad idea.",
-            "Day 12: still no rescue. Day 13: taught a crab to play chess. I'm losing.",
-            "I traded my boots for a coconut. Worst trade of my life. Second worst: the boots.",
-            "The ocean took my ship, my supplies, and my dignity. It can keep the dignity.",
-            "My last words: at least it wasn't a creeper.",
-            "Note to self: 'unsinkable' is not a raft feature, it's a raft opinion.",
-            "I've named all the local seagulls. Gerald is a jerk.",
-            "If you found this bottle before finding me, I've made my peace with that.",
-            "Day 30. The tan is incredible. The circumstances are less so.",
-            "Whoever you are, you're doing better than me, and that's not a high bar.",
-            "I built a sundial out of driftwood. It's always 'send help o'clock.'",
-            "The good news: I found treasure. The bad news: it's just more sand.",
-            "I've started rating waves out of ten. This one's a two. Rude."
-    );
-
     private static final float TREASURE_MAP_CHANCE = 0.1f;
 
     public MessageBottleItem(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.translatable("item.crabbersdelight.message_bottle.desc").withStyle(ChatFormatting.GRAY));
     }
 
     @Override
@@ -66,23 +60,66 @@ public class MessageBottleItem extends Item {
     private void openBottle(ServerLevel level, Player player, ItemStack bottleStack) {
         RandomSource random = level.getRandom();
         ItemStack result;
+        ItemStack bonusItem = ItemStack.EMPTY;
 
-        BottledNoteSavedData.Entry playerNote = BottledNoteSavedData.get(level).pollWeighted(random);
+        BottledNoteSavedData savedData = BottledNoteSavedData.get(level);
 
-        if (playerNote != null) {
-            result = signedNote(playerNote.title(), playerNote.text(), playerNote.author(), playerNote.generation());
-        } else if (random.nextFloat() < TREASURE_MAP_CHANCE) {
+        if (random.nextFloat() < TREASURE_MAP_CHANCE) {
             result = createTreasureMap(level, player);
         } else {
-            String text = FLAVOR_TEXTS.get(random.nextInt(FLAVOR_TEXTS.size()));
-            result = signedNote("", text, "Unknown", SignedNoteContent.GENERATION_ORIGINAL);
+            Registry<BottleMessageEntry> registry = level.registryAccess().registryOrThrow(CDModDatapackRegistries.BOTTLE_MESSAGE_REGISTRY_KEY);
+            List<BottleMessageEntry> flavorEntries = registry.stream().toList();
+            List<BottledNoteSavedData.Entry> playerEntries = savedData.asList();
+            int totalCount = flavorEntries.size() + playerEntries.size();
+
+            if (totalCount == 0) {
+                result = signedNote("", "...", "Unknown", SignedNoteContent.GENERATION_ORIGINAL);
+            } else {
+                int index = random.nextInt(totalCount);
+                if (index < playerEntries.size()) {
+                    BottledNoteSavedData.Entry playerNote = playerEntries.get(index);
+                    result = signedNote(playerNote.title(), playerNote.text(), playerNote.author(), playerNote.generation());
+                    if (!playerNote.reward().isEmpty()) {
+                        bonusItem = playerNote.reward().copy();
+                    }
+                    savedData.remove(playerNote);
+                } else {
+                    BottleMessageEntry message = flavorEntries.get(index - playerEntries.size());
+                    String personalizedText = message.text().replace("%player%", player.getName().getString());
+                    result = signedNote(message.title().orElse(""), personalizedText, message.author(), SignedNoteContent.GENERATION_ORIGINAL);
+                    bonusItem = resolveRewardItem(message);
+                }
+            }
         }
 
         bottleStack.shrink(1);
+        ItemStack emptyBottle = new ItemStack(Items.GLASS_BOTTLE);
+        if (!player.getInventory().add(emptyBottle)) {
+            player.drop(emptyBottle, false);
+        }
         if (!player.getInventory().add(result)) {
             player.drop(result, false);
         }
+        if (!bonusItem.isEmpty() && !player.getInventory().add(bonusItem)) {
+            player.drop(bonusItem, false);
+        }
         level.playSound(null, player.blockPosition(), SoundEvents.BOTTLE_EMPTY, SoundSource.PLAYERS, 1f, 1f);
+    }
+
+    private ItemStack resolveRewardItem(BottleMessageEntry message) {
+        Optional<String> rewardId = message.rewardItem();
+        if (rewardId.isEmpty()) {
+            return ItemStack.EMPTY;
+        }
+        ResourceLocation loc = ResourceLocation.tryParse(rewardId.get());
+        if (loc == null) {
+            return ItemStack.EMPTY;
+        }
+        Item item = BuiltInRegistries.ITEM.getOptional(loc).orElse(null);
+        if (item == null) {
+            return ItemStack.EMPTY;
+        }
+        return new ItemStack(item, Math.max(1, message.rewardCount()));
     }
 
     private ItemStack signedNote(String title, String text, String author, int generation) {

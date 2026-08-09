@@ -4,5 +4,6 @@ public enum LureEffect {
     BARBED,
     DOUBLE,
     SHINY,
-    AUTOMATIC
+    AUTOMATIC,
+    STORM
 }

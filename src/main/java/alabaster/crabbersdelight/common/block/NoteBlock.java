@@ -38,15 +38,21 @@ public class NoteBlock extends BaseEntityBlock {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty SIGNED = BooleanProperty.create("signed");
+    public static final BooleanProperty FLAT = BooleanProperty.create("flat");
 
-    private static final VoxelShape SHAPE_NORTH = Block.box(1, 1, 15, 15, 15, 16);
-    private static final VoxelShape SHAPE_SOUTH = Block.box(1, 1, 0, 15, 15, 1);
-    private static final VoxelShape SHAPE_WEST = Block.box(15, 1, 1, 16, 15, 15);
-    private static final VoxelShape SHAPE_EAST = Block.box(0, 1, 1, 1, 15, 15);
+    private static final VoxelShape SHAPE_NORTH = Block.box(3, 2, 15, 13, 14, 16);
+    private static final VoxelShape SHAPE_SOUTH = Block.box(3, 2, 0, 13, 14, 1);
+    private static final VoxelShape SHAPE_WEST = Block.box(15, 2, 3, 16, 14, 13);
+    private static final VoxelShape SHAPE_EAST = Block.box(0, 2, 3, 1, 14, 13);
+    private static final VoxelShape SHAPE_FLAT_NORTH_SOUTH = Block.box(3, 0, 2, 13, 1, 14);
+    private static final VoxelShape SHAPE_FLAT_EAST_WEST = Block.box(2, 0, 3, 14, 1, 13);
 
     public NoteBlock(Properties props) {
         super(props);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(SIGNED, false));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(FACING, Direction.NORTH)
+                .setValue(SIGNED, false)
+                .setValue(FLAT, false));
     }
 
     @Override
@@ -56,6 +62,12 @@ public class NoteBlock extends BaseEntityBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        if (state.getValue(FLAT)) {
+            return switch (state.getValue(FACING)) {
+                case WEST, EAST -> SHAPE_FLAT_EAST_WEST;
+                default -> SHAPE_FLAT_NORTH_SOUTH;
+            };
+        }
         return switch (state.getValue(FACING)) {
             case NORTH -> SHAPE_NORTH;
             case SOUTH -> SHAPE_SOUTH;
@@ -67,7 +79,7 @@ public class NoteBlock extends BaseEntityBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, SIGNED);
+        builder.add(FACING, SIGNED, FLAT);
     }
 
     @Override
@@ -82,19 +94,30 @@ public class NoteBlock extends BaseEntityBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        return this.defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
+        boolean flat = ctx.getClickedFace() == Direction.UP;
+        return this.defaultBlockState()
+                .setValue(FACING, ctx.getHorizontalDirection().getOpposite())
+                .setValue(FLAT, flat);
     }
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        if (state.getValue(FLAT)) {
+            BlockPos below = pos.below();
+            return level.getBlockState(below).isCollisionShapeFullBlock(level, below);
+        }
         Direction facing = state.getValue(FACING);
         BlockPos supportPos = pos.relative(facing.getOpposite());
-        return level.getBlockState(supportPos).isFaceSturdy(level, supportPos, facing);
+        return level.getBlockState(supportPos).isCollisionShapeFullBlock(level, supportPos);
     }
 
     @Override
     public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        if (direction == state.getValue(FACING).getOpposite() && !state.canSurvive(level, pos)) {
+        if (state.getValue(FLAT)) {
+            if (direction == Direction.DOWN && !state.canSurvive(level, pos)) {
+                return Blocks.AIR.defaultBlockState();
+            }
+        } else if (direction == state.getValue(FACING).getOpposite() && !state.canSurvive(level, pos)) {
             return Blocks.AIR.defaultBlockState();
         }
         return super.updateShape(state, direction, neighborState, level, pos, neighborPos);

@@ -23,7 +23,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SeashellBlock extends Block implements SimpleWaterloggedBlock {
-    public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 0, 63);
+    public static final IntegerProperty VARIANT = IntegerProperty.create("variant", 0, 6);
     public static final DirectionProperty FACING = DirectionProperty.create("facing", Direction.Plane.HORIZONTAL);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
@@ -63,8 +63,7 @@ public class SeashellBlock extends Block implements SimpleWaterloggedBlock {
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         super.onPlace(state, level, pos, oldState, isMoving);
-        if (level.getFluidState(pos).getType() == Fluids.WATER) {
-            level.setBlock(pos, state.setValue(WATERLOGGED, true), 2);
+        if (state.getValue(WATERLOGGED)) {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
     }
@@ -89,12 +88,12 @@ public class SeashellBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     public BlockState updateShape(BlockState state, Direction dir, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        if (level.getFluidState(pos).getType() == Fluids.WATER) {
-            if (!state.getValue(WATERLOGGED)) {
-                state = state.setValue(WATERLOGGED, true);
-            }
+        boolean inWater = level.getFluidState(pos).getType() == Fluids.WATER;
+
+        if (inWater && !state.getValue(WATERLOGGED)) {
+            state = state.setValue(WATERLOGGED, true);
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
-        } else if (state.getValue(WATERLOGGED)) {
+        } else if (!inWater && state.getValue(WATERLOGGED)) {
             state = state.setValue(WATERLOGGED, false);
         }
 

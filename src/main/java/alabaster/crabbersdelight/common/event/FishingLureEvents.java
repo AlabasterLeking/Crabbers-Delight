@@ -40,6 +40,9 @@ import java.util.List;
 public class FishingLureEvents {
     private static final ResourceLocation SHINY_LUCK_ID = CrabbersDelight.modPrefix("shiny_lure_luck");
     private static final double SHINY_LUCK_BONUS = 2.0;
+    private static final ResourceLocation STORM_LUCK_ID = CrabbersDelight.modPrefix("storm_lure_luck");
+    private static final double STORM_LUCK_BONUS_RAIN = 3.0;
+    private static final double STORM_LUCK_BONUS_THUNDER = 6.0;
 
     private static LureEffect activeEffect(Player player) {
         TackleBoxProximity.TackleBoxAccess tackleBox = TackleBoxProximity.find(player);
@@ -138,6 +141,7 @@ public class FishingLureEvents {
         LureEffect effect = activeEffect(player);
 
         updateShinyLuck(player, effect == LureEffect.SHINY);
+        updateStormLuck(player, effect == LureEffect.STORM);
 
         if (effect == LureEffect.AUTOMATIC && player.fishing != null && FishingHookReflection.isBiting(player.fishing)) {
             tryAutoRetrieve(player);
@@ -174,6 +178,29 @@ public class FishingLureEvents {
             luck.addTransientModifier(new AttributeModifier(SHINY_LUCK_ID, SHINY_LUCK_BONUS, AttributeModifier.Operation.ADD_VALUE));
         } else if (!hasShiny && hasModifier) {
             luck.removeModifier(SHINY_LUCK_ID);
+        }
+    }
+
+    private static void updateStormLuck(Player player, boolean hasStorm) {
+        AttributeInstance luck = player.getAttribute(Attributes.LUCK);
+        if (luck == null) {
+            return;
+        }
+
+        boolean raining = hasStorm && player.level().isRainingAt(player.blockPosition());
+        boolean thundering = raining && player.level().isThundering();
+        double desiredBonus = thundering ? STORM_LUCK_BONUS_THUNDER : (raining ? STORM_LUCK_BONUS_RAIN : 0);
+
+        AttributeModifier existing = luck.getModifier(STORM_LUCK_ID);
+        double currentBonus = existing != null ? existing.amount() : 0;
+
+        if (desiredBonus != currentBonus) {
+            if (existing != null) {
+                luck.removeModifier(STORM_LUCK_ID);
+            }
+            if (desiredBonus > 0) {
+                luck.addTransientModifier(new AttributeModifier(STORM_LUCK_ID, desiredBonus, AttributeModifier.Operation.ADD_VALUE));
+            }
         }
     }
 }

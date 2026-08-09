@@ -98,6 +98,7 @@ public class LureAwareFishingHookRenderer extends EntityRenderer<FishingHook> {
             case DOUBLE -> DOUBLE_RENDER_TYPE;
             case SHINY -> SHINY_RENDER_TYPE;
             case AUTOMATIC -> AUTOMATIC_RENDER_TYPE;
+            case STORM -> STORM_RENDER_TYPE;
         };
     }
 

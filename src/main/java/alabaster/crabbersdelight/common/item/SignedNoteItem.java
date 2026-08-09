@@ -52,7 +52,10 @@ public class SignedNoteItem extends BlockItem {
         Level level = context.getLevel();
         SignedNoteContent content = context.getItemInHand().get(CDModDataComponents.SIGNED_NOTE_CONTENT.get());
 
-        if (!canAttachToWall(context)) {
+        boolean canWall = canAttachToWall(context);
+        boolean canFlat = canAttachFlat(context);
+
+        if (!canWall && !canFlat) {
             if (level.isClientSide && content != null) {
                 NoteClientHandler.openReadScreen(content.title(), content.text(), content.author());
             }
@@ -111,7 +114,16 @@ public class SignedNoteItem extends BlockItem {
             return false;
         }
         Level level = context.getLevel();
-        BlockPos wallPos = context.getClickedPos().relative(face.getOpposite());
-        return level.getBlockState(wallPos).isFaceSturdy(level, wallPos, face);
+        BlockPos wallPos = context.getClickedPos();
+        return level.getBlockState(wallPos).isCollisionShapeFullBlock(level, wallPos);
+    }
+
+    private boolean canAttachFlat(UseOnContext context) {
+        if (context.getClickedFace() != Direction.UP) {
+            return false;
+        }
+        Level level = context.getLevel();
+        BlockPos pos = context.getClickedPos();
+        return level.getBlockState(pos).isCollisionShapeFullBlock(level, pos);
     }
 }

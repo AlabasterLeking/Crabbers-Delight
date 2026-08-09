@@ -7,6 +7,7 @@ import alabaster.crabbersdelight.common.block.entity.CrabTrapBlockEntity;
 import alabaster.crabbersdelight.common.block.entity.FishPlaqueBlockEntity;
 import alabaster.crabbersdelight.common.block.entity.NoteBlockEntity;
 import alabaster.crabbersdelight.common.block.entity.TackleBoxBlockEntity;
+import alabaster.crabbersdelight.common.block.entity.WormBinBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.HangingSignBlockEntity;
@@ -36,6 +37,9 @@ public class CDModBlockEntity {
 
     public static final Supplier<BlockEntityType<TackleBoxBlockEntity>> TACKLE_BOX = BLOCK_ENTITY_TYPES.register("tackle_box",
             () -> BlockEntityType.Builder.of(TackleBoxBlockEntity::new, CDModBlocks.TACKLE_BOX.get()).build(null));
+
+    public static final Supplier<BlockEntityType<WormBinBlockEntity>> WORM_BIN = BLOCK_ENTITY_TYPES.register("worm_bin",
+            () -> BlockEntityType.Builder.of(WormBinBlockEntity::new, CDModBlocks.WORM_BIN.get()).build(null));
 
     public static final Supplier<BlockEntityType<CDSignBlockEntity>> PALM_SIGN = BLOCK_ENTITY_TYPES.register("palm_sign",
             () -> BlockEntityType.Builder.of(CDSignBlockEntity::new,

@@ -23,6 +23,7 @@ public class ThrownBottledNote extends ThrowableItemProjectile {
     private String text = "";
     private String author = "";
     private int generation = 0;
+    private ItemStack reward = ItemStack.EMPTY;
     private boolean resolved = false;
 
     public ThrownBottledNote(EntityType<? extends ThrownBottledNote> type, Level level) {
@@ -36,6 +37,10 @@ public class ThrownBottledNote extends ThrowableItemProjectile {
         this.author = author;
         this.generation = generation;
         CrabbersDelight.LOGGER.info("ThrownBottledNote spawned by {} at {}", author, position());
+    }
+
+    public void setReward(ItemStack reward) {
+        this.reward = reward;
     }
 
     @Override
@@ -70,12 +75,15 @@ public class ThrownBottledNote extends ThrowableItemProjectile {
             ItemStack fallback = new ItemStack(CDModItems.SIGNED_NOTE.get());
             fallback.set(CDModDataComponents.SIGNED_NOTE_CONTENT.get(), new SignedNoteContent(title, text, author, generation));
             serverLevel.addFreshEntity(new ItemEntity(serverLevel, position().x, position().y, position().z, fallback));
+            if (!reward.isEmpty()) {
+                serverLevel.addFreshEntity(new ItemEntity(serverLevel, position().x, position().y, position().z, reward.copy()));
+            }
             discard();
         }
     }
 
     private void landInWater(ServerLevel serverLevel) {
-        BottledNoteSavedData.get(serverLevel).addNote(title, text, author, generation);
+        BottledNoteSavedData.get(serverLevel).addNote(title, text, author, generation, reward.copy());
         serverLevel.sendParticles(ParticleTypes.SPLASH, position().x, position().y, position().z, 8, 0.2, 0.1, 0.2, 0.05);
         discard();
     }
@@ -87,6 +95,9 @@ public class ThrownBottledNote extends ThrowableItemProjectile {
         tag.putString("NoteText", text);
         tag.putString("NoteAuthor", author);
         tag.putInt("NoteGeneration", generation);
+        if (!reward.isEmpty() && level() != null) {
+            tag.put("NoteReward", reward.save(level().registryAccess()));
+        }
     }
 
     @Override
@@ -96,5 +107,8 @@ public class ThrownBottledNote extends ThrowableItemProjectile {
         text = tag.getString("NoteText");
         author = tag.getString("NoteAuthor");
         generation = tag.getInt("NoteGeneration");
+        if (tag.contains("NoteReward") && level() != null) {
+            reward = ItemStack.parseOptional(level().registryAccess(), tag.getCompound("NoteReward"));
+        }
     }
 }

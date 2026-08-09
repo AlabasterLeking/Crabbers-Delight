@@ -1,12 +1,20 @@
 {
   "variants": {
-    "facing=south,signed=false": { "model": "crabbersdelight:block/note_block" },
-    "facing=north,signed=false": { "model": "crabbersdelight:block/note_block", "y": 180 },
-    "facing=west,signed=false":  { "model": "crabbersdelight:block/note_block", "y": 90 },
-    "facing=east,signed=false":  { "model": "crabbersdelight:block/note_block", "y": 270 },
-    "facing=south,signed=true": { "model": "crabbersdelight:block/signed_note_block" },
-    "facing=north,signed=true": { "model": "crabbersdelight:block/signed_note_block", "y": 180 },
-    "facing=west,signed=true":  { "model": "crabbersdelight:block/signed_note_block", "y": 90 },
-    "facing=east,signed=true":  { "model": "crabbersdelight:block/signed_note_block", "y": 270 }
+    "facing=south,signed=false,flat=false": { "model": "crabbersdelight:block/note_block" },
+    "facing=north,signed=false,flat=false": { "model": "crabbersdelight:block/note_block", "y": 180 },
+    "facing=west,signed=false,flat=false":  { "model": "crabbersdelight:block/note_block", "y": 90 },
+    "facing=east,signed=false,flat=false":  { "model": "crabbersdelight:block/note_block", "y": 270 },
+    "facing=south,signed=true,flat=false": { "model": "crabbersdelight:block/signed_note_block" },
+    "facing=north,signed=true,flat=false": { "model": "crabbersdelight:block/signed_note_block", "y": 180 },
+    "facing=west,signed=true,flat=false":  { "model": "crabbersdelight:block/signed_note_block", "y": 90 },
+    "facing=east,signed=true,flat=false":  { "model": "crabbersdelight:block/signed_note_block", "y": 270 },
+    "facing=south,signed=false,flat=true": { "model": "crabbersdelight:block/note_block_flat" },
+    "facing=north,signed=false,flat=true": { "model": "crabbersdelight:block/note_block_flat", "y": 180 },
+    "facing=west,signed=false,flat=true":  { "model": "crabbersdelight:block/note_block_flat", "y": 90 },
+    "facing=east,signed=false,flat=true":  { "model": "crabbersdelight:block/note_block_flat", "y": 270 },
+    "facing=south,signed=true,flat=true": { "model": "crabbersdelight:block/signed_note_block_flat" },
+    "facing=north,signed=true,flat=true": { "model": "crabbersdelight:block/signed_note_block_flat", "y": 180 },
+    "facing=west,signed=true,flat=true":  { "model": "crabbersdelight:block/signed_note_block_flat", "y": 90 },
+    "facing=east,signed=true,flat=true":  { "model": "crabbersdelight:block/signed_note_block_flat", "y": 270 }
   }
 }

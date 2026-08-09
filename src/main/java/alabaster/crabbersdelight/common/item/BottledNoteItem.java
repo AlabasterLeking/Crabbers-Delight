@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.item;
 
 import alabaster.crabbersdelight.common.entity.ThrownBottledNote;
+import alabaster.crabbersdelight.common.item.component.BottledNoteReward;
 import alabaster.crabbersdelight.common.item.component.SignedNoteContent;
 import alabaster.crabbersdelight.common.registry.CDModDataComponents;
 import net.minecraft.sounds.SoundEvents;
@@ -24,8 +25,13 @@ public class BottledNoteItem extends Item {
         SignedNoteContent content = stack.get(CDModDataComponents.SIGNED_NOTE_CONTENT.get());
 
         if (!level.isClientSide && content != null) {
+            BottledNoteReward rewardWrapper = stack.get(CDModDataComponents.BOTTLED_NOTE_REWARD.get());
+            ItemStack reward = rewardWrapper != null ? rewardWrapper.item() : ItemStack.EMPTY;
             ThrownBottledNote projectile = new ThrownBottledNote(level, player, content.title(), content.text(), content.author(), content.generation());
             projectile.setItem(stack);
+            if (!reward.isEmpty()) {
+                projectile.setReward(reward.copy());
+            }
             projectile.shootFromRotation(player, player.getXRot(), player.getYRot(), -20f, 0.5f, 1f);
             level.addFreshEntity(projectile);
         }

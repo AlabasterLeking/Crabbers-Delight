@@ -55,6 +55,9 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
+            if (level != null && !level.isClientSide) {
+                level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+            }
         }
     };
 
@@ -85,15 +88,11 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    private CompoundTag saveItems(CompoundTag compound, HolderLookup.Provider pRegistries) {
-        super.saveAdditional(compound, pRegistries);
-        compound.put("handler", this.handler.serializeNBT(pRegistries));
-        return compound;
-    }
-
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-        return this.saveItems(new CompoundTag(), registries);
+        CompoundTag tag = new CompoundTag();
+        saveAdditional(tag, registries);
+        return tag;
     }
 
     @Override
@@ -164,12 +163,7 @@ public class CrabTrapBlockEntity extends BlockEntity implements MenuProvider, Na
     }
 
     private static boolean isWaterBiome(Level level, BlockPos pos) {
-        if (level.getBiome(pos).is(Tags.Biomes.IS_AQUATIC)) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return level.getBiome(pos).is(Tags.Biomes.IS_AQUATIC);
     }
 
     @SubscribeEvent

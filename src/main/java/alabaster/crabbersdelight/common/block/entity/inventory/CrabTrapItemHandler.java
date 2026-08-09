@@ -27,7 +27,7 @@ public class CrabTrapItemHandler extends ItemStackHandler {
         for (ItemStack lootStack : lootList) {
             if (lootStack.isEmpty()) continue;
 
-            for (int slot = 0; slot < getSlots(); slot++) {
+            for (int slot = 1; slot < getSlots(); slot++) {
                 // Try inserting into this slot (stacking OR filling empty slots)
                 ItemStack remainder = insertItem(slot, lootStack, false);
 

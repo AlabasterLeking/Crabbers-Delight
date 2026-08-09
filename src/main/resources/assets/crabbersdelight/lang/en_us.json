@@ -121,22 +121,14 @@
   "block.crabbersdelight.fish_plaque": "Fish Plaque",
   "block.crabbersdelight.note_block": "Note",
   "block.crabbersdelight.tackle_box": "Tackle Box",
+  "block.crabbersdelight.worm_bin": "Worm Bin",
 
   "item.crabbersdelight.note": "Note",
   "item.crabbersdelight.signed_note": "Signed Note",
   "item.crabbersdelight.signed_note.author": "by %s",
   "item.crabbersdelight.message_bottle": "Message in a Bottle",
   "item.crabbersdelight.bottled_note": "Bottled Note",
-  "item.crabbersdelight.tackle_box": "Tackle Box",
-  "item.crabbersdelight.tackle_box.lure": "Lure: %s",
-  "item.crabbersdelight.tackle_box.line": "Line: %s",
-  "item.crabbersdelight.tackle_box.bait": "Bait: %s",
-  "item.crabbersdelight.barbed_lure": "Barbed Lure",
-  "item.crabbersdelight.double_lure": "Double Lure",
-  "item.crabbersdelight.shiny_lure": "Shiny Lure",
-  "item.crabbersdelight.automatic_lure": "Automatic Lure",
-  "item.crabbersdelight.fishing_line": "Fishing Line",
-
+  "item.crabbersdelight.message_bottle.desc": "Shift-click to open",
   "gui.crabbersdelight.note.edit": "Write Note",
   "gui.crabbersdelight.note.placeholder": "Write your message...",
   "gui.crabbersdelight.note.sign": "Sign",
@@ -147,6 +139,33 @@
   "gui.crabbersdelight.note.generation.copy": "Copy of original",
   "gui.crabbersdelight.note.generation.copy_of_copy": "Copy of a copy",
   "gui.crabbersdelight.note.generation.tattered": "Tattered",
+
+  "item.crabbersdelight.tackle_box": "Tackle Box",
+  "item.crabbersdelight.tackle_box.lure": "Lure: %s",
+  "item.crabbersdelight.tackle_box.line": "Line: %s",
+  "item.crabbersdelight.tackle_box.bait": "Bait: %s",
+  "item.crabbersdelight.crab_trap.bait": "Bait: %s",
+
+  "item.crabbersdelight.barbed_lure": "Barbed Lure",
+  "tooltip.crabbersdelight.barbed_lure.desc": "Gives a longer grace period to reel in a bite",
+
+  "item.crabbersdelight.double_lure": "Double Lure",
+  "tooltip.crabbersdelight.double_lure.desc": "Doubles the items you fish up",
+
+  "item.crabbersdelight.shiny_lure": "Shiny Lure",
+  "tooltip.crabbersdelight.shiny_lure.desc": "Increases the chance of treasure items",
+
+  "item.crabbersdelight.automatic_lure": "Automatic Lure",
+  "tooltip.crabbersdelight.automatic_lure.desc": "Automatically reels in as soon as you get a bite",
+
+  "item.crabbersdelight.storm_lure": "Storm Lure",
+  "tooltip.crabbersdelight.storm_lure.desc": "Increases luck in rain, even more during a thunderstorm",
+
+  "item.crabbersdelight.fishing_line": "Fishing Line",
+  "tooltip.crabbersdelight.fishing_line.desc": "Increases your maximum casting distance",
+
+  "item.crabbersdelight.worm": "Worm",
+  "item.crabbersdelight.worm_bin": "Worm Bin",
 
   "entity.crabbersdelight.crab": "Crab",
 
@@ -181,8 +200,6 @@
   "crabbersdelight.advancement.glow_squid_killer": "Deeper Sea Slayer",
   "crabbersdelight.advancement.glow_squid_killer.desc": "Use a Knife to retrieve Glow Squid Tentacles from a Glow Squid",
 
-  "crabbersdelight.block.crab_trap.not_waterlogged": "Crab trap must be in water to function!",
-  "crabbersdelight.block.crab_trap.insufficient_surrounding_water": "Crab trap needs a 3x3 of water surrounding it to function!",
 
   "tag.item.crabbersdelight.raw_seafood": "Raw Seafood",
   "tag.item.crabbersdelight.cooked_seafood": "Cooked Seafood",
