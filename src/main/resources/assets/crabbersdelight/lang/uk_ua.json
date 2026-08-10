@@ -121,18 +121,14 @@
   "block.crabbersdelight.fish_plaque": "Рибальський трофей",
   "block.crabbersdelight.note_block": "Записка",
   "block.crabbersdelight.tackle_box": "Коробка зі снастями",
+  "block.crabbersdelight.worm_bin": "Відро з хробаками",
 
   "item.crabbersdelight.note": "Записка",
   "item.crabbersdelight.signed_note": "Підписана записка",
   "item.crabbersdelight.signed_note.author": "автор: %s",
   "item.crabbersdelight.message_bottle": "Пляшка із запискою",
   "item.crabbersdelight.bottled_note": "Записка з пляшки",
-  "item.crabbersdelight.tackle_box": "Коробка зі снастями",
-  "item.crabbersdelight.tackle_box.contents": "%s/%s комірок використано",
-  "item.crabbersdelight.barbed_lure": "Зазубрена приманка",
-  "item.crabbersdelight.double_lure": "Подвійна приманка",
-  "item.crabbersdelight.shiny_lure": "Блискуча приманка",
-
+  "item.crabbersdelight.message_bottle.desc": "ЛКМ+Shift для відкриття",
   "gui.crabbersdelight.note.edit": "Написати записку",
   "gui.crabbersdelight.note.placeholder": "Напишіть повідомлення...",
   "gui.crabbersdelight.note.sign": "Підписати",
@@ -143,6 +139,33 @@
   "gui.crabbersdelight.note.generation.copy": "Копія оригіналу",
   "gui.crabbersdelight.note.generation.copy_of_copy": "Копія копії",
   "gui.crabbersdelight.note.generation.tattered": "Потріпана",
+
+  "item.crabbersdelight.tackle_box": "Ящик для снастей",
+  "item.crabbersdelight.tackle_box.lure": "Приманка: %s",
+  "item.crabbersdelight.tackle_box.line": "Волосінь: %s",
+  "item.crabbersdelight.tackle_box.bait": "Наживка: %s",
+  "item.crabbersdelight.crab_trap.bait": "Наживка: %s",
+
+  "item.crabbersdelight.barbed_lure": "Зубчата приманка",
+  "tooltip.crabbersdelight.barbed_lure.desc": "Дає більше часу на те, щоб витягнути рибу",
+
+  "item.crabbersdelight.double_lure": "Подвійна приманка",
+  "tooltip.crabbersdelight.double_lure.desc": "Подвоює кількість виловлених предметів",
+
+  "item.crabbersdelight.shiny_lure": "Блискуча приманка",
+  "tooltip.crabbersdelight.shiny_lure.desc": "Збільшує ймовірність отримання скарбів",
+
+  "item.crabbersdelight.automatic_lure": "Автоматична приманка",
+  "tooltip.crabbersdelight.automatic_lure.desc": "Автоматично намотує волосінь, щойно клює риба",
+
+  "item.crabbersdelight.storm_lure": "Грозова приманка",
+  "tooltip.crabbersdelight.storm_lure.desc": "Збільшує удачу під час дощу, та ще більше — під час грози",
+
+  "item.crabbersdelight.fishing_line": "Рибальська волосінь",
+  "tooltip.crabbersdelight.fishing_line.desc": "Збільшує максимальну дальність закидання",
+
+  "item.crabbersdelight.worm": "Хробак",
+  "item.crabbersdelight.worm_bin": "Відро з хробаками",
 
   "entity.crabbersdelight.crab": "Краб",
 
@@ -177,8 +200,6 @@
   "crabbersdelight.advancement.glow_squid_killer": "Глибоководніший вбивця",
   "crabbersdelight.advancement.glow_squid_killer.desc": "Зріжте мацаки сяйного кальмара ножем",
 
-  "crabbersdelight.block.crab_trap.not_waterlogged": "Крабова пастка у воді!",
-  "crabbersdelight.block.crab_trap.insufficient_surrounding_water": "Крабова пастка потребує 3x3 води навколо себе!",
 
   "tag.item.crabbersdelight.raw_seafood": "Сирі морепродукти",
   "tag.item.crabbersdelight.cooked_seafood": "Зварені морепродукти",
