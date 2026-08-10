@@ -1,10 +1,10 @@
-package alabaster.crabbersdelight.common.event;
+package alabaster.crabbersdelight.common.fishingspot;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.entity.FishingSpotEntity;
-import alabaster.crabbersdelight.common.fishingspot.FishingSpotManager;
 import alabaster.crabbersdelight.common.utils.FishingHookReflection;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -14,11 +14,19 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class FishingSpotHookEvents {
     private static final ResourceLocation FISHING_SPOT_LUCK_ID = CrabbersDelight.modPrefix("fishing_spot_luck");
     private static final double FISHING_SPOT_LUCK_BONUS = 6.0; // raised from 2.0
-    private static final int LURE_SPEEDUP = 15; // raised from 2
+    private static final int MAX_LURE_TICKS = 60; // ~3 seconds
+    private static final int TWINKLE_COUNT = 8;
+    private static final double TWINKLE_HEIGHT_OFFSET = 0.5;
+    private static final double TWINKLE_SPREAD = 0.3;
+
+    private static final Set<Integer> hooksInSpot = new HashSet<>();
 
     @SubscribeEvent
     public static void onPlayerTick(PlayerTickEvent.Post event) {
@@ -34,8 +42,23 @@ public class FishingSpotHookEvents {
         updateLuck(player, inSpot);
 
         if (inSpot) {
-            FishingHookReflection.speedUpLure(hook, LURE_SPEEDUP);
+            FishingHookReflection.capLureTime(hook, MAX_LURE_TICKS);
+
+            if (hook.isInWater() && hooksInSpot.add(hook.getId())) {
+                spawnTwinkle(hook);
+            }
+        } else if (hook != null) {
+            hooksInSpot.remove(hook.getId());
         }
+    }
+
+    private static void spawnTwinkle(FishingHook hook) {
+        if (!(hook.level() instanceof ServerLevel serverLevel)) {
+            return;
+        }
+        serverLevel.sendParticles(ParticleTypes.WAX_OFF,
+                hook.getX(), hook.getY() + TWINKLE_HEIGHT_OFFSET, hook.getZ(),
+                TWINKLE_COUNT, TWINKLE_SPREAD, TWINKLE_SPREAD, TWINKLE_SPREAD, 0.0);
     }
 
     private static void updateLuck(Player player, boolean inSpot) {

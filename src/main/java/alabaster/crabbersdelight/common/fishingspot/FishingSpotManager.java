@@ -1,7 +1,7 @@
 package alabaster.crabbersdelight.common.fishingspot;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.entity.FishingSpotEntity;
+import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.registry.CDModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -26,9 +26,10 @@ import java.util.List;
 
 @EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class FishingSpotManager {
-    private static final int SPAWN_ATTEMPT_INTERVAL = 200;
     private static final int SPAWN_SEARCH_RADIUS = 32;
-    private static final int MIN_POINTS_TO_SPAWN = 3;
+    private static final int CANDIDATE_COUNT = 5;
+    private static final float POINTS_FOR_CERTAIN_SPAWN = 10f;
+    private static final float RAIN_SPAWN_MULTIPLIER = 1.75f;
     private static final int SCORE_SCAN_RADIUS = 4;
     private static final double SPOT_QUERY_PADDING = 8;
     private static final double DISTURBANCE_SCAN_RADIUS = 48;
@@ -57,7 +58,7 @@ public class FishingSpotManager {
 
         checkDisturbance(level);
 
-        if (level.getGameTime() % SPAWN_ATTEMPT_INTERVAL == 0) {
+        if (level.getGameTime() % Config.FISHING_SPOT_SPAWN_INTERVAL.get() == 0) {
             for (Player player : level.players()) {
                 trySpawnNearPlayer(level, player);
             }
@@ -67,30 +68,49 @@ public class FishingSpotManager {
     private static void trySpawnNearPlayer(ServerLevel level, Player player) {
         RandomSource random = level.getRandom();
         BlockPos playerPos = player.blockPosition();
-        int x = playerPos.getX() + random.nextInt(SPAWN_SEARCH_RADIUS * 2) - SPAWN_SEARCH_RADIUS;
-        int z = playerPos.getZ() + random.nextInt(SPAWN_SEARCH_RADIUS * 2) - SPAWN_SEARCH_RADIUS;
-        BlockPos surfacePos = findWaterSurface(level, x, z);
-        if (surfacePos == null || findSpotAt(level, surfacePos) != null) {
+
+        BlockPos bestSurfacePos = null;
+        int bestPoints = -1;
+
+        for (int i = 0; i < CANDIDATE_COUNT; i++) {
+            int x = playerPos.getX() + random.nextInt(SPAWN_SEARCH_RADIUS * 2) - SPAWN_SEARCH_RADIUS;
+            int z = playerPos.getZ() + random.nextInt(SPAWN_SEARCH_RADIUS * 2) - SPAWN_SEARCH_RADIUS;
+            BlockPos surfacePos = findWaterSurface(level, x, z);
+            if (surfacePos == null || findSpotAt(level, surfacePos) != null) {
+                continue;
+            }
+
+            int points = computePoints(level, surfacePos);
+            if (points > bestPoints) {
+                bestPoints = points;
+                bestSurfacePos = surfacePos;
+            }
+        }
+
+        if (bestSurfacePos == null || bestPoints <= 0) {
             return;
         }
 
-        int points = computePoints(level, surfacePos);
-        if (points < MIN_POINTS_TO_SPAWN) {
+        float spawnChance = Math.min(1f, bestPoints / POINTS_FOR_CERTAIN_SPAWN);
+        if (level.isRainingAt(bestSurfacePos)) {
+            spawnChance = Math.min(1f, spawnChance * RAIN_SPAWN_MULTIPLIER);
+        }
+        if (random.nextFloat() >= spawnChance) {
             return;
         }
 
-        if (countNearbySpots(level, surfacePos) >= MAX_SPOTS_PER_AREA) {
+        if (countNearbySpots(level, bestSurfacePos) >= MAX_SPOTS_PER_AREA) {
             return;
         }
 
-        int radius = Math.min(2 + points / 3, 6);
-        int lifespanTicks = 2400 + points * 400;
+        int radius = Math.min(2 + bestPoints / 4, 5);
+        int lifespanTicks = 2400 + bestPoints * 400;
 
         FishingSpotEntity spot = CDModEntities.FISHING_SPOT.get().create(level);
         if (spot == null) {
             return;
         }
-        spot.moveTo(surfacePos.getX() + 0.5, surfacePos.getY() + 1, surfacePos.getZ() + 0.5, 0f, 0f);
+        spot.moveTo(bestSurfacePos.getX() + 0.5, bestSurfacePos.getY() + 1, bestSurfacePos.getZ() + 0.5, 0f, 0f);
         spot.setRadius(radius);
         spot.setLifetimeTicks(lifespanTicks);
         level.addFreshEntity(spot);
@@ -158,7 +178,7 @@ public class FishingSpotManager {
                         spot.expireNow();
                         break;
                     }
-                    if (entity instanceof Player p && p.isInWater() && p.getDeltaMovement().y > 0.1) {
+                    if (entity instanceof Player p && p.isInWater()) {
                         spot.expireNow();
                         break;
                     }
@@ -166,6 +186,7 @@ public class FishingSpotManager {
                             && living.isInWater() && !(entity instanceof AbstractFish)) {
                         spot.expireNow();
                         break;
+
                     }
                 }
             }

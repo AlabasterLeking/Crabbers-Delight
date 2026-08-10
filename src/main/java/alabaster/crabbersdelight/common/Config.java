@@ -30,6 +30,9 @@ public class Config {
     public static final String CATEGORY_NOTES = "notes";
     public static ModConfigSpec.BooleanValue THROWN_NOTES_PERSIST;
 
+    public static final String CATEGORY_FISHING_SPOTS = "fishing_spots";
+    public static ModConfigSpec.ConfigValue<Integer> FISHING_SPOT_SPAWN_INTERVAL;
+
     static {
         ModConfigSpec.Builder COMMON_BUILDER = new ModConfigSpec.Builder();
 
@@ -87,6 +90,12 @@ public class Config {
                         "forever and can be fished up by multiple players. If false (default), each thrown",
                         "note is single-use - once someone finds it, it's gone.")
                 .define("thrownNotesPersist", false);
+        COMMON_BUILDER.pop();
+
+        COMMON_BUILDER.comment("Fishing Spots").push(CATEGORY_FISHING_SPOTS);
+        FISHING_SPOT_SPAWN_INTERVAL = COMMON_BUILDER.comment(
+                        "Ticks between fishing spot spawn attempts per player. Lower value = more common/frequent fishing spots. Default = 200")
+                .defineInRange("spawnAttemptInterval", 200, 20, Integer.MAX_VALUE);
         COMMON_BUILDER.pop();
 
         COMMON_CONFIG = COMMON_BUILDER.build();

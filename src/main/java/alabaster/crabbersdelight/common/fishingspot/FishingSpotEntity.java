@@ -1,4 +1,4 @@
-package alabaster.crabbersdelight.common.entity;
+package alabaster.crabbersdelight.common.fishingspot;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -15,6 +15,9 @@ public class FishingSpotEntity extends Entity {
     private static final EntityDataAccessor<Integer> LIFETIME_TICKS =
             SynchedEntityData.defineId(FishingSpotEntity.class, EntityDataSerializers.INT);
 
+    public static final int EXPIRE_FADE_TICKS = 20;
+    public static final int FADE_IN_TICKS = 20;
+
     private int age = 0;
 
     public FishingSpotEntity(EntityType<?> type, Level level) {
@@ -27,12 +30,12 @@ public class FishingSpotEntity extends Entity {
         super.tick();
         age++;
 
-        if (random.nextFloat() < 0.5f) {
-            spawnSplashes(1 + random.nextInt(2));
+        if (random.nextFloat() < 0.16f) {
+            spawnBubbles(3 + random.nextInt(3));
         }
 
-        if (random.nextFloat() < 0.03f) {
-            spawnSplashes(5 + random.nextInt(4));
+        if (random.nextFloat() < 0.05f) {
+            spawnFishingParticles(1 + random.nextInt(2));
         }
 
         if (age >= getLifetimeTicks()) {
@@ -40,13 +43,23 @@ public class FishingSpotEntity extends Entity {
         }
     }
 
-    private void spawnSplashes(int count) {
+    private void spawnBubbles(int count) {
         for (int i = 0; i < count; i++) {
             double angle = random.nextDouble() * Math.PI * 2;
-            double dist = random.nextDouble() * getRadius();
+            double dist = Math.sqrt(random.nextDouble()) * getRadius();
             double x = getX() + Math.cos(angle) * dist;
             double z = getZ() + Math.sin(angle) * dist;
-            level().addParticle(ParticleTypes.SPLASH, x, getY() + 0.1, z, 0, 0, 0);
+            level().addParticle(ParticleTypes.BUBBLE_POP, x, getY() + 0.1, z, 0, 0.05, 0);
+        }
+    }
+
+    private void spawnFishingParticles(int count) {
+        for (int i = 0; i < count; i++) {
+            double angle = random.nextDouble() * Math.PI * 2;
+            double dist = Math.sqrt(random.nextDouble()) * getRadius();
+            double x = getX() + Math.cos(angle) * dist;
+            double z = getZ() + Math.sin(angle) * dist;
+            level().addParticle(ParticleTypes.FISHING, x, getY() + 0.1, z, 0, 0.05, 0);
         }
     }
 
@@ -57,7 +70,7 @@ public class FishingSpotEntity extends Entity {
     }
 
     public void expireNow() {
-        discard();
+        setLifetimeTicks(Math.min(getLifetimeTicks(), age + EXPIRE_FADE_TICKS));
     }
 
     public int getRadius() {

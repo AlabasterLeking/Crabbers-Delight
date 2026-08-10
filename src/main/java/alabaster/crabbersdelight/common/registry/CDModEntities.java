@@ -2,7 +2,7 @@ package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.entity.ThrownBottledNote;
-import alabaster.crabbersdelight.common.entity.FishingSpotEntity;
+import alabaster.crabbersdelight.common.fishingspot.FishingSpotEntity;
 import alabaster.crabbersdelight.common.entity.boat.CDBoatEntity;
 import alabaster.crabbersdelight.common.entity.boat.CDChestBoatEntity;
 import alabaster.crabbersdelight.common.entity.crab.CrabEntity;

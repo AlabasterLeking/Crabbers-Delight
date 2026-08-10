@@ -1,5 +1,6 @@
 package alabaster.crabbersdelight.common.utils;
 
+import alabaster.crabbersdelight.CrabbersDelight;
 import net.minecraft.world.entity.projectile.FishingHook;
 
 import java.lang.reflect.Field;
@@ -35,14 +36,14 @@ public class FishingHookReflection {
         }
     }
 
-    public static void speedUpLure(FishingHook hook, int amount) {
+    public static void capLureTime(FishingHook hook, int maxTicks) {
         if (timeUntilLuredField == null) {
             return;
         }
         try {
             int current = timeUntilLuredField.getInt(hook);
-            if (current > 0) {
-                timeUntilLuredField.setInt(hook, Math.max(0, current - amount));
+            if (current > maxTicks) {
+                timeUntilLuredField.setInt(hook, maxTicks);
             }
         } catch (IllegalAccessException ignored) {
         }
