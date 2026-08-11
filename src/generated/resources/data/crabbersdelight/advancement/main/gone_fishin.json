@@ -1,0 +1,33 @@
+{
+  "parent": "crabbersdelight:main/root",
+  "criteria": {
+    "tackle_box": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:tackle_box"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "crabbersdelight.advancement.gone_fishin.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "crabbersdelight:tackle_box"
+    },
+    "title": {
+      "translate": "crabbersdelight.advancement.gone_fishin"
+    }
+  },
+  "requirements": [
+    [
+      "tackle_box"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -8,6 +8,8 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.critereon.ImpossibleTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceLocation;
@@ -44,6 +46,10 @@ public class CDAdvancementGenerator implements AdvancementProvider.AdvancementGe
                 .addCriterion("pearl", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PEARL.get()))
                 .save(consumer, getNameId("main/get_pearl"));
 
+        AdvancementHolder necklaceOfPeal = getAdvancement(motherOfPearl, CDModItems.PEARL_NECKLACE.get(), "get_pearl_necklace", AdvancementType.GOAL, true, true, false)
+                .addCriterion("pearl_necklace", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PEARL_NECKLACE.get()))
+                .save(consumer, getNameId("main/get_pearl_necklace"));
+
         AdvancementHolder aShrimpFriedThisRice = getAdvancement(itsATrap, CDModItems.SHRIMP_FRIED_RICE.get(), "a_shrimp_fried_this_rice", AdvancementType.CHALLENGE, true, true, true)
                 .addCriterion("shrimp_fried_rice", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.SHRIMP_FRIED_RICE.get()))
                 .save(consumer, getNameId("main/a_shrimp_fried_this_rice"));
@@ -63,6 +69,22 @@ public class CDAdvancementGenerator implements AdvancementProvider.AdvancementGe
         AdvancementHolder glowSquidKiller = getAdvancement(squidKiller, CDModItems.RAW_GLOW_SQUID_TENTACLES.get(), "glow_squid_killer", AdvancementType.GOAL, true, true, false)
                 .addCriterion("raw_glow_squid_tentacles", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.RAW_GLOW_SQUID_TENTACLES.get()))
                 .save(consumer, getNameId("main/glow_squid_killer"));
+
+        AdvancementHolder goneFishin = getAdvancement(crabbersDelight, CDModItems.TACKLE_BOX.get(), "gone_fishin", AdvancementType.TASK, true, true, false)
+                .addCriterion("tackle_box", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.TACKLE_BOX.get()))
+                .save(consumer, getNameId("main/gone_fishin"));
+
+        AdvancementHolder masterBaiter = getAdvancement(goneFishin, CDModItems.WORM.get(), "master_baiter", AdvancementType.TASK, true, true, false)
+                .addCriterion("bait_catch", CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance()))
+                .save(consumer, getNameId("main/master_baiter"));
+
+        AdvancementHolder theyPayMeInWoims = getAdvancement(masterBaiter, CDModItems.WORM_BIN.get(), "they_pay_me_in_woims", AdvancementType.GOAL, true, true, false)
+                .addCriterion("worm_bin", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.WORM_BIN.get()))
+                .save(consumer, getNameId("main/they_pay_me_in_woims"));
+
+        AdvancementHolder castawayCouture = getAdvancement(crabbersDelight, CDModItems.COCONUT_HELMET.get(), "castaway_couture", AdvancementType.CHALLENGE, true, true, false)
+                .addCriterion("equip_coconut_helmet", CriteriaTriggers.IMPOSSIBLE.createCriterion(new ImpossibleTrigger.TriggerInstance()))
+                .save(consumer, getNameId("main/castaway_couture"));
     }
 
     protected static Advancement.Builder getAdvancement(AdvancementHolder  parent, ItemLike display, String name, AdvancementType frame, boolean showToast, boolean announceToChat, boolean hidden) {

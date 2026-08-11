@@ -39,6 +39,56 @@ public class CraftingRecipes {
                 .define('S', Items.STRING)
                 .unlockedBy("has_pearl", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.PEARL.get()))
                 .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.DOUBLE_LURE.get(), 1)
+                .pattern(" i ")
+                .pattern(" i ")
+                .pattern("iii")
+                .define('i', Items.IRON_NUGGET)
+                .unlockedBy("has_iron_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_NUGGET))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.BARBED_LURE.get(), 1)
+                .pattern("  i")
+                .pattern("i i")
+                .pattern("iii")
+                .define('i', Items.IRON_NUGGET)
+                .unlockedBy("has_iron_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_NUGGET))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.MAGNETIC_LURE.get(), 1)
+                .pattern(" i ")
+                .pattern(" I ")
+                .pattern("rib")
+                .define('i', Items.IRON_NUGGET)
+                .define('I', Items.IRON_INGOT)
+                .define('r', Items.RED_DYE)
+                .define('b', Items.BLUE_DYE)
+                .unlockedBy("has_iron_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_NUGGET))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.AUTOMATIC_LURE.get(), 1)
+                .pattern(" i ")
+                .pattern(" i ")
+                .pattern("rot")
+                .define('i', Items.IRON_NUGGET)
+                .define('t', Items.TRIPWIRE_HOOK)
+                .define('r', Items.REDSTONE)
+                .define('o', Items.OBSERVER)
+                .unlockedBy("has_iron_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_NUGGET))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.STORM_LURE.get(), 1)
+                .pattern("  i")
+                .pattern("l i")
+                .pattern(" i ")
+                .define('i', Items.IRON_NUGGET)
+                .define('l', Items.LIGHTNING_ROD)
+                .unlockedBy("has_iron_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_NUGGET))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.FISHING_LINE.get(), 1)
+                .pattern("sss")
+                .pattern("sSs")
+                .pattern("sss")
+                .define('s', Items.STRING)
+                .define('S', Items.STICK)
+                .unlockedBy("has_string", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STRING))
+                .save(output);
     }
 
     private static void recipesPalmWood(RecipeOutput output) {
@@ -320,6 +370,24 @@ public class CraftingRecipes {
                 .define('s', Items.STICK)
                 .define('g', Items.GOLD_NUGGET)
                 .unlockedBy("has_stick", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CDModItems.TACKLE_BOX.get(), 1)
+                .pattern("iii")
+                .pattern("ici")
+                .define('c', Items.CHEST)
+                .define('i', Items.IRON_INGOT)
+                .unlockedBy("has_chest", InventoryChangeTrigger.TriggerInstance.hasItems(Items.CHEST))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CDModItems.WORM_BIN.get(), 1)
+                .pattern("iwi")
+                .pattern("ici")
+                .define('i', Items.IRON_INGOT)
+                .define('c', Items.COMPOSTER)
+                .define('w', CDModItems.WORM.get())
+                .unlockedBy("has_worm", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.WORM.get()))
+                .unlockedBy("has_composter", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COMPOSTER))
                 .save(output);
     }
 

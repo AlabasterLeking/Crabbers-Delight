@@ -30,7 +30,7 @@ public class LureItem extends Item {
         return switch (effect) {
             case BARBED -> "tooltip.crabbersdelight.barbed_lure.desc";
             case DOUBLE -> "tooltip.crabbersdelight.double_lure.desc";
-            case SHINY -> "tooltip.crabbersdelight.shiny_lure.desc";
+            case MAGNETIC -> "tooltip.crabbersdelight.magnetic_lure.desc";
             case AUTOMATIC -> "tooltip.crabbersdelight.automatic_lure.desc";
             case STORM -> "tooltip.crabbersdelight.storm_lure.desc";
         };

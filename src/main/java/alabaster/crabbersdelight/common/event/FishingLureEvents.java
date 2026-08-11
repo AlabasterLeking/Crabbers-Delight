@@ -38,7 +38,7 @@ import java.util.List;
 
 @EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class FishingLureEvents {
-    private static final ResourceLocation SHINY_LUCK_ID = CrabbersDelight.modPrefix("shiny_lure_luck");
+    private static final ResourceLocation SHINY_LUCK_ID = CrabbersDelight.modPrefix("magnetic_lure_luck");
     private static final double SHINY_LUCK_BONUS = 2.0;
     private static final ResourceLocation STORM_LUCK_ID = CrabbersDelight.modPrefix("storm_lure_luck");
     private static final double STORM_LUCK_BONUS_RAIN = 3.0;
@@ -140,7 +140,7 @@ public class FishingLureEvents {
 
         LureEffect effect = activeEffect(player);
 
-        updateShinyLuck(player, effect == LureEffect.SHINY);
+        updateShinyLuck(player, effect == LureEffect.MAGNETIC);
         updateStormLuck(player, effect == LureEffect.STORM);
 
         if (effect == LureEffect.AUTOMATIC && player.fishing != null && FishingHookReflection.isBiting(player.fishing)) {

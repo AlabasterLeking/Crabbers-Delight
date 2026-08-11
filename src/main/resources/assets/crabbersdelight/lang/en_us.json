@@ -152,8 +152,8 @@
   "item.crabbersdelight.double_lure": "Double Lure",
   "tooltip.crabbersdelight.double_lure.desc": "Doubles the items you fish up",
 
-  "item.crabbersdelight.shiny_lure": "Shiny Lure",
-  "tooltip.crabbersdelight.shiny_lure.desc": "Increases the chance of treasure items",
+  "item.crabbersdelight.magnetic_lure": "Magnetic Lure",
+  "tooltip.crabbersdelight.magnetic_lure.desc": "Increases the chance of treasure items",
 
   "item.crabbersdelight.automatic_lure": "Automatic Lure",
   "tooltip.crabbersdelight.automatic_lure.desc": "Automatically reels in as soon as you get a bite",
@@ -185,6 +185,9 @@
   "crabbersdelight.advancement.get_pearl": "Sweet Mother of Pearl!",
   "crabbersdelight.advancement.get_pearl.desc": "Obtain your first Pearl by cutting Clams on a Cutting Board. Maybe a mysterious trader will find it valuable...",
 
+  "crabbersdelight.advancement.get_pearl_necklace": "Pearly Whites",
+  "crabbersdelight.advancement.get_pearl_necklace.desc": "Craft a pearl necklace. Very useful for underwater adventuring!",
+
   "crabbersdelight.advancement.a_shrimp_fried_this_rice": "A Shrimp Fried This Rice?!",
   "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "You seriously mean to tell me a SHRIMP fried this rice?! Impossible",
 
@@ -200,6 +203,17 @@
   "crabbersdelight.advancement.glow_squid_killer": "Deeper Sea Slayer",
   "crabbersdelight.advancement.glow_squid_killer.desc": "Use a Knife to retrieve Glow Squid Tentacles from a Glow Squid",
 
+  "crabbersdelight.advancement.gone_fishin": "Gone Fishin'",
+  "crabbersdelight.advancement.gone_fishin.desc": "Craft a tackle box to be able to use different lures and bait",
+
+  "crabbersdelight.advancement.master_baiter": "Master Baiter",
+  "crabbersdelight.advancement.master_baiter.desc": "Use bait while fishing",
+
+  "crabbersdelight.advancement.they_pay_me_in_woims": "They Pay Me In Woims",
+  "crabbersdelight.advancement.they_pay_me_in_woims.desc": "Craft a worm bin to generate more worms",
+
+  "crabbersdelight.advancement.castaway_couture": "Castaway Couture",
+  "crabbersdelight.advancement.castaway_couture.desc": "Figure out how to get a coconut on your head",
 
   "tag.item.crabbersdelight.raw_seafood": "Raw Seafood",
   "tag.item.crabbersdelight.cooked_seafood": "Cooked Seafood",

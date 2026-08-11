@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "minecraft:blue_dye"
+    },
+    "i": {
+      "item": "minecraft:iron_nugget"
+    },
+    "r": {
+      "item": "minecraft:red_dye"
+    }
+  },
+  "pattern": [
+    " i ",
+    " I ",
+    "rib"
+  ],
+  "result": {
+    "count": 1,
+    "id": "crabbersdelight:magnetic_lure"
+  }
+}

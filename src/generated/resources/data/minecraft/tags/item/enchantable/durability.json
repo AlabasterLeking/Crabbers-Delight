@@ -1,8 +1,11 @@
 {
   "values": [
+    "crabbersdelight:coconut_helmet",
+    "crabbersdelight:crab_claw",
+    "crabbersdelight:pearl_necklace",
     "crabbersdelight:barbed_lure",
     "crabbersdelight:double_lure",
-    "crabbersdelight:shiny_lure",
+    "crabbersdelight:magnetic_lure",
     "crabbersdelight:automatic_lure",
     "crabbersdelight:storm_lure"
   ]

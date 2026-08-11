@@ -165,7 +165,7 @@ public class CDItemTags extends ItemTagsProvider {
         tag(CDModTags.FISHING_LURE)
                 .add(CDModItems.BARBED_LURE.get())
                 .add(CDModItems.DOUBLE_LURE.get())
-                .add(CDModItems.SHINY_LURE.get())
+                .add(CDModItems.MAGNETIC_LURE.get())
                 .add(CDModItems.AUTOMATIC_LURE.get())
                 .add(CDModItems.STORM_LURE.get());
 
@@ -173,9 +173,12 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.FISHING_LINE.get());
 
         tag(TagKey.create(Registries.ITEM, ResourceLocation.withDefaultNamespace("enchantable/durability")))
+                .add(CDModItems.COCONUT_HELMET.get())
+                .add(CDModItems.CRAB_CLAW.get())
+                .add(CDModItems.PEARL_NECKLACE.get())
                 .add(CDModItems.BARBED_LURE.get())
                 .add(CDModItems.DOUBLE_LURE.get())
-                .add(CDModItems.SHINY_LURE.get())
+                .add(CDModItems.MAGNETIC_LURE.get())
                 .add(CDModItems.AUTOMATIC_LURE.get())
                 .add(CDModItems.STORM_LURE.get());
 

@@ -25,19 +25,16 @@ public class LureAwareFishingHookRenderer extends EntityRenderer<FishingHook> {
     private static final ResourceLocation DEFAULT_TEXTURE = ResourceLocation.withDefaultNamespace("textures/entity/fishing_hook.png");
     private static final ResourceLocation BARBED_TEXTURE = CrabbersDelight.modPrefix("textures/entity/fishing_hook_barbed.png");
     private static final ResourceLocation DOUBLE_TEXTURE = CrabbersDelight.modPrefix("textures/entity/fishing_hook_double.png");
-    private static final ResourceLocation SHINY_TEXTURE = CrabbersDelight.modPrefix("textures/entity/fishing_hook_shiny.png");
+    private static final ResourceLocation MAGNETIC_TEXTURE = CrabbersDelight.modPrefix("textures/entity/fishing_hook_magnetic.png");
     private static final ResourceLocation AUTOMATIC_TEXTURE = CrabbersDelight.modPrefix("textures/entity/fishing_hook_automatic.png");
     private static final ResourceLocation STORM_TEXTURE = CrabbersDelight.modPrefix("textures/entity/fishing_hook_storm.png");
-    private static final ResourceLocation DIAGNOSTIC_TEXTURE = ResourceLocation.withDefaultNamespace("textures/entity/creeper/creeper.png");
-    private static final boolean DIAGNOSTIC_MODE = false;
 
     private static final RenderType DEFAULT_RENDER_TYPE = RenderType.entityCutout(DEFAULT_TEXTURE);
     private static final RenderType BARBED_RENDER_TYPE = RenderType.entityCutout(BARBED_TEXTURE);
     private static final RenderType DOUBLE_RENDER_TYPE = RenderType.entityCutout(DOUBLE_TEXTURE);
-    private static final RenderType SHINY_RENDER_TYPE = RenderType.entityCutout(SHINY_TEXTURE);
+    private static final RenderType MAGNETIC_RENDER_TYPE = RenderType.entityCutout(MAGNETIC_TEXTURE);
     private static final RenderType AUTOMATIC_RENDER_TYPE = RenderType.entityCutout(AUTOMATIC_TEXTURE);
     private static final RenderType STORM_RENDER_TYPE = RenderType.entityCutout(STORM_TEXTURE);
-    private static final RenderType DIAGNOSTIC_RENDER_TYPE = RenderType.entityCutout(DIAGNOSTIC_TEXTURE);
 
     public LureAwareFishingHookRenderer(EntityRendererProvider.Context context) {
         super(context);
@@ -79,10 +76,6 @@ public class LureAwareFishingHookRenderer extends EntityRenderer<FishingHook> {
     }
 
     private RenderType resolveRenderType(Player player) {
-        if (DIAGNOSTIC_MODE) {
-            return DIAGNOSTIC_RENDER_TYPE;
-        }
-
         TackleBoxProximity.TackleBoxAccess tackleBox = TackleBoxProximity.find(player);
         if (tackleBox == null) {
             return DEFAULT_RENDER_TYPE;
@@ -96,7 +89,7 @@ public class LureAwareFishingHookRenderer extends EntityRenderer<FishingHook> {
         return switch (lureItem.getEffect()) {
             case BARBED -> BARBED_RENDER_TYPE;
             case DOUBLE -> DOUBLE_RENDER_TYPE;
-            case SHINY -> SHINY_RENDER_TYPE;
+            case MAGNETIC -> MAGNETIC_RENDER_TYPE;
             case AUTOMATIC -> AUTOMATIC_RENDER_TYPE;
             case STORM -> STORM_RENDER_TYPE;
         };

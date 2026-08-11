@@ -3,11 +3,13 @@ package alabaster.crabbersdelight.common.event;
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.entity.inventory.TackleBoxItemHandler;
 import alabaster.crabbersdelight.common.utils.TackleBoxProximity;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootParams;
@@ -61,6 +63,14 @@ public class FishingBaitEvents {
         List<ItemStack> rolled = table.getRandomItems(params);
         event.getDrops().clear();
         event.getDrops().addAll(rolled);
+
+        if (player instanceof ServerPlayer serverPlayer) {
+            ResourceLocation advancementId = ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "main/master_baiter");
+            AdvancementHolder masterBaiter = serverPlayer.server.getAdvancements().get(advancementId);
+            if (masterBaiter != null) {
+                serverPlayer.getAdvancements().award(masterBaiter, "bait_catch");
+            }
+        }
 
         ItemStack shrunk = bait.copy();
         shrunk.shrink(1);

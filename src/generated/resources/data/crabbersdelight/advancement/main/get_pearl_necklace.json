@@ -1,0 +1,34 @@
+{
+  "parent": "crabbersdelight:main/get_pearl",
+  "criteria": {
+    "pearl_necklace": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crabbersdelight:pearl_necklace"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "crabbersdelight.advancement.get_pearl_necklace.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "crabbersdelight:pearl_necklace"
+    },
+    "title": {
+      "translate": "crabbersdelight.advancement.get_pearl_necklace"
+    }
+  },
+  "requirements": [
+    [
+      "pearl_necklace"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

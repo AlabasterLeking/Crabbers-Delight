@@ -4,6 +4,7 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.CDFoodValues;
 import alabaster.crabbersdelight.common.entity.boat.CDBoatEntity;
 import alabaster.crabbersdelight.common.item.*;
+import alabaster.crabbersdelight.common.item.fishing.LureEffect;
 import com.google.common.collect.Sets;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
@@ -294,21 +295,21 @@ public class CDModItems {
             () -> new TackleBoxItem(basicItem().stacksTo(1)));
 
     public static final Supplier<Item> BARBED_LURE = registerWithTab("barbed_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.BARBED));
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.BARBED));
     public static final Supplier<Item> DOUBLE_LURE = registerWithTab("double_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.DOUBLE));
-    public static final Supplier<Item> SHINY_LURE = registerWithTab("shiny_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.SHINY));
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.DOUBLE));
+    public static final Supplier<Item> MAGNETIC_LURE = registerWithTab("magnetic_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.MAGNETIC));
     public static final Supplier<Item> AUTOMATIC_LURE = registerWithTab("automatic_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.AUTOMATIC));
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.AUTOMATIC));
     public static final Supplier<Item> STORM_LURE = registerWithTab("storm_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), alabaster.crabbersdelight.common.item.fishing.LureEffect.STORM));
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.STORM));
 
     public static final Supplier<Item> FISHING_LINE = registerWithTab("fishing_line",
             () -> new FishingLineItem(new Item.Properties().stacksTo(1).durability(64)));
 
     public static final Supplier<Item> WORM = registerWithTab("worm",
-            () -> new Item(basicItem()));
+            () -> new WormItem(basicItem()));
 
     public static final Supplier<Item> WORM_BIN = registerWithTab("worm_bin",
             () -> new BlockItem(CDModBlocks.WORM_BIN.get(), basicItem()));
