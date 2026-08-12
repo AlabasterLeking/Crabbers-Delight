@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "upgrade_aquatic:pillow_coral_block"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "crabbersdelight:coral_fragments"
+      }
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:item_ability",
+    "action": "pickaxe_dig"
+  }
+}

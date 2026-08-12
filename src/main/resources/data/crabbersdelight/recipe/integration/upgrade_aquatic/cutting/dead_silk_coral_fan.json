@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "upgrade_aquatic"
+    }
+  ],
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "upgrade_aquatic:dead_silk_coral_fan"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "crabbersdelight:coral_fragments"
+      }
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:item_ability",
+    "action": "pickaxe_dig"
+  }
+}
