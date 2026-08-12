@@ -383,7 +383,7 @@ public class CraftingRecipes {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CDModItems.WORM_BIN.get(), 1)
                 .pattern("iwi")
                 .pattern("ici")
-                .define('i', Items.IRON_INGOT)
+                .define('i', Items.COPPER_INGOT)
                 .define('c', Items.COMPOSTER)
                 .define('w', CDModItems.WORM.get())
                 .unlockedBy("has_worm", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.WORM.get()))

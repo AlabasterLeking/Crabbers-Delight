@@ -2,6 +2,8 @@
   "values": [
     "crabbersdelight:nautilus_shell_block",
     "crabbersdelight:pearl_block",
-    "crabbersdelight:scute_block"
+    "crabbersdelight:scute_block",
+    "crabbersdelight:worm_bin",
+    "crabbersdelight:tackle_box"
   ]
 }

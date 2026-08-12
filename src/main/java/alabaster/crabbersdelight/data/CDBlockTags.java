@@ -75,7 +75,9 @@ public class CDBlockTags extends BlockTagsProvider
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 CDModBlocks.NAUTILUS_SHELL_BLOCK.get(),
                 CDModBlocks.PEARL_BLOCK.get(),
-                CDModBlocks.SCUTE_BLOCK.get());
+                CDModBlocks.SCUTE_BLOCK.get(),
+                CDModBlocks.WORM_BIN.get(),
+                CDModBlocks.TACKLE_BOX.get());
 
         tag(BlockTags.LOGS_THAT_BURN).add(
                 CDModBlocks.PALM_LOG.get(),

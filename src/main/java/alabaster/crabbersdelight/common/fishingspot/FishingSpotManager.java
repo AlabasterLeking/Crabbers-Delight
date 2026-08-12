@@ -31,6 +31,7 @@ public class FishingSpotManager {
     private static final float POINTS_FOR_CERTAIN_SPAWN = 10f;
     private static final float RAIN_SPAWN_MULTIPLIER = 1.75f;
     private static final int SCORE_SCAN_RADIUS = 4;
+    private static final int SHORE_CLEARANCE_RADIUS = 5;
     private static final double SPOT_QUERY_PADDING = 8;
     private static final double DISTURBANCE_SCAN_RADIUS = 48;
     private static final double AREA_DENSITY_RADIUS = 64;
@@ -77,6 +78,9 @@ public class FishingSpotManager {
             int z = playerPos.getZ() + random.nextInt(SPAWN_SEARCH_RADIUS * 2) - SPAWN_SEARCH_RADIUS;
             BlockPos surfacePos = findWaterSurface(level, x, z);
             if (surfacePos == null || findSpotAt(level, surfacePos) != null) {
+                continue;
+            }
+            if (!hasShoreClearance(level, surfacePos)) {
                 continue;
             }
 
@@ -132,6 +136,22 @@ public class FishingSpotManager {
             }
         }
         return null;
+    }
+
+    private static boolean hasShoreClearance(ServerLevel level, BlockPos surfacePos) {
+        int radiusSquared = SHORE_CLEARANCE_RADIUS * SHORE_CLEARANCE_RADIUS;
+        for (int dx = -SHORE_CLEARANCE_RADIUS; dx <= SHORE_CLEARANCE_RADIUS; dx++) {
+            for (int dz = -SHORE_CLEARANCE_RADIUS; dz <= SHORE_CLEARANCE_RADIUS; dz++) {
+                if (dx * dx + dz * dz > radiusSquared) {
+                    continue;
+                }
+                BlockPos checkPos = surfacePos.offset(dx, 0, dz);
+                if (!level.getFluidState(checkPos).is(Fluids.WATER)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     private static int computePoints(ServerLevel level, BlockPos surfacePos) {
