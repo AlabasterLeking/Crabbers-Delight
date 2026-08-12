@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:clam",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nautilus_shell",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:rope",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:can",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:fish_bones",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:message_bottle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:coral_fragments",
+          "weight": 3
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "crabbersdelight:gameplay/crab_trap_loot/pufferfish"
+}

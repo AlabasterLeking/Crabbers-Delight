@@ -1,0 +1,52 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:crab"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:clawster"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:shrimp"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:clam"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stick",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:kelp",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:can",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:fish_bones",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:message_bottle"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "crabbersdelight:gameplay/crab_trap_loot/air"
+}

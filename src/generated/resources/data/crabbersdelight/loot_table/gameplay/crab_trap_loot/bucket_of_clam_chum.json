@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:clam"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "crabbersdelight:gameplay/crab_trap_loot/bucket_of_clam_chum"
+}

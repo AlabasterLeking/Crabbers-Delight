@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tropical_fish",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:seashells",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nautilus_shell",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:crab_claw"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "crabbersdelight:gameplay/fishing_bait_loot/pufferfish"
+}

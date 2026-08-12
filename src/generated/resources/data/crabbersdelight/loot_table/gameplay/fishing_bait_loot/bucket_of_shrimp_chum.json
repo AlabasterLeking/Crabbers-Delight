@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:shrimp"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "crabbersdelight:gameplay/fishing_bait_loot/bucket_of_shrimp_chum"
+}

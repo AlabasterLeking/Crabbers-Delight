@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cod",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:kelp",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "crabbersdelight:fish_bones",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:rope"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "crabbersdelight:gameplay/fishing_bait_loot/salmon"
+}
