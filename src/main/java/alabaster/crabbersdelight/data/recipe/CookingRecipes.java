@@ -9,6 +9,7 @@ import net.neoforged.neoforge.common.Tags;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
 import java.util.stream.Stream;
@@ -75,6 +76,15 @@ public class CookingRecipes {
                 .addIngredient(CDModItems.RAW_SHRIMP.get())
                 .unlockedByAnyIngredient(CDModItems.RAW_SHRIMP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
+                .save(output);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.FRIED_FISH.get(), 3, FAST_COOKING, SMALL_EXP)
+                .addIngredient(Tags.Items.FOODS_RAW_FISH)
+                .addIngredient(Tags.Items.FOODS_RAW_FISH)
+                .addIngredient(Tags.Items.FOODS_RAW_FISH)
+                .addIngredient(ModItems.WHEAT_DOUGH.get())
+                .unlockedByAnyIngredient(ModItems.WHEAT_DOUGH.get())
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output);
     }
 

@@ -190,6 +190,9 @@ public class CDModItems {
     public static final Supplier<Item> COOKED_FROG_LEG = registerWithTab("cooked_frog_leg",
             () -> new ConsumableItem(foodItem(CDFoodValues.COOKED_FROG_LEG)));
 
+    public static final Supplier<Item> FRIED_FISH = registerWithTab("fried_fish",
+            () -> new ConsumableItem(foodItem(CDFoodValues.FRIED_FISH)));
+
     // Meals
     public static final Supplier<Item> CRAB_CAKES = registerWithTab("crab_cakes",
             () -> new ConsumableItem(foodItem(CDFoodValues.CRAB_CAKES), true));
@@ -243,7 +246,7 @@ public class CDModItems {
     public static final Supplier<Item> CORAL_CRUNCH = registerWithTab("coral_crunch",
             () -> new ConsumableItem(bowlFoodItem(CDFoodValues.CORAL_CRUNCH), true));
     public static final Supplier<Item> TURTLE_STEW = registerWithTab("turtle_stew",
-            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.TURTLE_STEW), true));
+            () -> new ConsumableItem(scuteFoodItem(CDFoodValues.TURTLE_STEW), true));
 
     // Storage Blocks
     public static final Supplier<Item> CRAB_BARREL = registerWithTab("crab_barrel",

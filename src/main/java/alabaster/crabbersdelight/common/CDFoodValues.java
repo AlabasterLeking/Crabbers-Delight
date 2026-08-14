@@ -60,6 +60,9 @@ public class CDFoodValues {
     public static final FoodProperties COOKED_FROG_LEG = (new FoodProperties.Builder())
             .nutrition(4).saturationModifier(0.7f).build();
 
+    public static final FoodProperties FRIED_FISH = (new FoodProperties.Builder())
+            .nutrition(5).saturationModifier(0.6f).build();
+
     // Drinks
 
     public static final FoodProperties KELP_SHAKE = (new FoodProperties.Builder())
