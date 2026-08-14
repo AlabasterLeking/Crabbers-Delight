@@ -4,7 +4,8 @@
     "count": 1,
     "id": "minecraft:bowl"
   },
-  "experience": 1.0,
+  "cookingtime": 400,
+  "experience": 2.0,
   "ingredients": [
     {
       "item": "crabbersdelight:cooked_clam_meat"

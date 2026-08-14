@@ -154,6 +154,10 @@ public class CDFoodValues {
             .nutrition(4).saturationModifier(0.2f).fast()
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, SHORT_DURATION, 0), 1.0F).build();
 
+    public static final FoodProperties TURTLE_STEW = (new FoodProperties.Builder())
+            .nutrition(7).saturationModifier(0.6f).fast()
+            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, SHORT_DURATION, 0), 1.0F).build();
+
     public static final FoodProperties CLAWSTER_FEAST = (new FoodProperties.Builder())
             .nutrition(10).saturationModifier(0.9f)
             .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, LONG_DURATION, 0), 1.0F).build();

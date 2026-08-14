@@ -14,6 +14,10 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Bucketable;
@@ -29,6 +33,49 @@ import java.util.Set;
 
 public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEntity> {
 
+    private record MobOverride(float yaw, float roll, float pitch, float upDown, float leftRight, float frontBack) {
+        static final MobOverride NONE = new MobOverride(0f, 0f, 0f, 0f, 0f, 0f);
+    }
+
+    private static final Set<EntityType<?>> SPECIAL_RENDER = Set.of(
+            EntityType.PUFFERFISH,
+            EntityType.AXOLOTL
+    );
+
+    private record MobKey(ResourceLocation type, String variant) {}
+
+    private static final String VARIANT_NBT_KEY = "Variant";
+
+    private static final Map<MobKey, MobOverride> MOB_OVERRIDES = Map.ofEntries(
+
+            // Vanilla
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("minecraft", "cod"), ""), new MobOverride(0f, 0f, 0f, 0.0625f, -0.0625f, -0.25f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("minecraft", "salmon"), ""), new MobOverride(0f, 0f, 0f, 0.0625f, 0f, -0.1875f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("minecraft", "tropical_fish"), ""), new MobOverride(0f, 0f, 0f, 0.0625f, -0.0625f, -0.25f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("minecraft", "squid"), ""), new MobOverride(90f, -90f, 0f, 0.125f, -0.125f, -0.125f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("minecraft", "glow_squid"), ""), new MobOverride(90f, -90f, 0f, 0.125f, -0.125f, -0.125f)),
+
+            // Crabber's Delight
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("crabbersdelight", "crab"), ""), new MobOverride(-90f, -90f, -90f, -0.125f, 0.125f, -0.125f)),
+
+            // Naturalist
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("naturalist", "bass"), ""), new MobOverride(0f, -90f, 0f, 0f, -0.125f, 0f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("naturalist", "catfish"), ""), new MobOverride(0f, -90f, 0f, 0f, -0.0625f, 0.125f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("naturalist", "ray"), ""), new MobOverride(90f, 90f, 90f, 0.0625f, 0.125f, -0.0625f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("naturalist", "starfish"), ""), new MobOverride(90f, 90f, 90f, -0.0625f, 0.125f, -0.0625f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("naturalist", "giant_isopod"), ""), new MobOverride(90f, 90f, 90f, -0.0625f, 0.125f, -0.0625f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("naturalist", "jellyfish"), ""), new MobOverride(0f, -90f, 0f, -0.25f, -0.125f, 0f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("naturalist", "piranha"), ""), new MobOverride(0f, -90f, 0f, 0f, -0.125f, 0f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("naturalist", "blobfish"), ""), new MobOverride(0f, -90f, 0f, 0f, -0.125f, 0f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("naturalist", "anglerfish"), ""), new MobOverride(0f, -90f, 0f, 0f, -0.125f, 0f)),
+
+            // Upgrade Aquatic
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("upgrade_aquatic", "perch"), ""), new MobOverride(0f, 0f, 0f, 0f, -0.125f, -0.1875f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("upgrade_aquatic", "lionfish"), ""), new MobOverride(0f, 0f, 0f, 0f, -0.125f, -0.1875f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("upgrade_aquatic", "pike"), ""), new MobOverride(0f, 0f, 0f, 0f, 0f, -0.1875f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("upgrade_aquatic", "nautilus"), ""), new MobOverride(0f, 0f, 0f, 0.125f, -0.125f, -0.125f))
+    );
+
     private final EntityRenderDispatcher entityRenderer;
 
     private final Map<Long, CachedFishEntity> entityCache = new LinkedHashMap<>(256, 0.75f, true) {
@@ -37,12 +84,6 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
             return size() > 256;
         }
     };
-
-    private static final Set<EntityType<?>> SPECIAL_RENDER = Set.of(
-            EntityType.PUFFERFISH,
-            EntityType.AXOLOTL,
-            CDModEntities.CRAB.get()
-    );
 
     public FishPlaqueRenderer(BlockEntityRendererProvider.Context context) {
         this.entityRenderer = context.getEntityRenderer();
@@ -61,11 +102,13 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
 
         var facing = be.getBlockState().getValue(FishPlaqueBlock.FACING);
 
-        // Branch here — special types get their own render path
         if (SPECIAL_RENDER.contains(entity.getType())) {
             renderSpecial(entity, be, poseStack, bufferSource, packedLight, packedOverlay, partialTick);
             return;
         }
+
+        ResourceLocation entityKey = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType());
+        MobOverride override = findOverride(entityKey, be.getEntityData());
 
         float scale = 0.53125f;
         float maxDim = Math.max(entity.getBbWidth(), entity.getBbHeight());
@@ -80,15 +123,29 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
                 facing.getStepZ() * stepMultiplier
         );
 
-        float yDegree = -facing.toYRot() + 90f + 180f;
+        float yDegree = -facing.toYRot() + 90f + 180f + override.yaw();
+        Direction right = facing.getClockWise();
 
         poseStack.pushPose();
         poseStack.translate(0.5, 0.0, 0.5);
         poseStack.translate(-vec3.x(), -vec3.y(), -vec3.z());
+
+        if (override.upDown() != 0f) {
+            poseStack.translate(0, override.upDown(), 0);
+        }
+        if (override.leftRight() != 0f) {
+            poseStack.translate(right.getStepX() * override.leftRight(), 0, right.getStepZ() * override.leftRight());
+        }
+        if (override.frontBack() != 0f) {
+            poseStack.translate(facing.getStepX() * override.frontBack(), 0, facing.getStepZ() * override.frontBack());
+        }
         poseStack.mulPose(Axis.YP.rotationDegrees(yDegree));
+        poseStack.mulPose(Axis.ZP.rotationDegrees(90f + override.roll()));
+        if (override.pitch() != 0f) {
+            poseStack.mulPose(Axis.XP.rotationDegrees(override.pitch()));
+        }
         poseStack.translate(-0.125f, 0, 0.125f);
         poseStack.translate(0, -0.06f, 0);
-        poseStack.mulPose(Axis.ZP.rotationDegrees(90f));
         poseStack.translate(0, -0.10f, 0);
         poseStack.scale(scale * 1.5f, scale * 1.5f, scale * 1.5f);
 
@@ -99,12 +156,28 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
         poseStack.popPose();
     }
 
+    private static MobOverride findOverride(@Nullable ResourceLocation entityKey, CompoundTag entityData) {
+        if (entityKey == null) {
+            return MobOverride.NONE;
+        }
+        String variant = getVariant(entityData);
+        MobOverride exact = MOB_OVERRIDES.get(new MobKey(entityKey, variant));
+        if (exact != null) {
+            return exact;
+        }
+        return MOB_OVERRIDES.getOrDefault(new MobKey(entityKey, ""), MobOverride.NONE);
+    }
+
+    private static String getVariant(CompoundTag entityData) {
+        return entityData.getString(VARIANT_NBT_KEY);
+    }
+
     private void renderSpecial(Entity entity, FishPlaqueBlockEntity be, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay, float partialTick) {
         if (entity instanceof Pufferfish puffer) {
             puffer.setPuffState(2);
 
             var facing = be.getBlockState().getValue(FishPlaqueBlock.FACING);
-            float yRot = facing.toYRot();
+            float yRot = facing.toYRot() + 180f;
             float scale = 0.53125f * 1.5f;
 
             poseStack.pushPose();
@@ -126,7 +199,7 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
             poseStack.popPose();
         } else if (entity instanceof Axolotl axolotl) {
             var facing = be.getBlockState().getValue(FishPlaqueBlock.FACING);
-            float yRot = facing.toYRot() + 180f;
+            float yRot = facing.toYRot();
             float scale = 0.53125f * 1.5f;
 
             if (!(entityRenderer.getRenderer(axolotl) instanceof LivingEntityRenderer<?, ?> livingRenderer)) return;
@@ -161,35 +234,6 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
             var consumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(texture));
             headPart.render(poseStack, consumer, packedLight, packedOverlay);
 
-            poseStack.popPose();
-        } else if (entity instanceof CrabEntity crab) {
-            var facing = be.getBlockState().getValue(FishPlaqueBlock.FACING);
-            float scale = 0.53125f * 1.5f;
-            float yDegree = -facing.toYRot() + 90f + 180f;
-
-            poseStack.pushPose();
-            poseStack.translate(0.5, 0.0, 0.5);
-
-            var vec3 = new Vec3(
-                    facing.getStepX() * 0.25f,
-                    -scale + 0.1875f,   // shift down 5px
-                    facing.getStepZ() * 0.25f
-            );
-            poseStack.translate(-vec3.x(), -vec3.y(), -vec3.z());
-
-            poseStack.mulPose(Axis.YP.rotationDegrees(yDegree));
-            poseStack.translate(0, -0.06f, 0);
-
-            poseStack.mulPose(Axis.XP.rotationDegrees(-90f));
-            poseStack.mulPose(Axis.ZP.rotationDegrees(-90f));
-
-            poseStack.translate(0, -0.2f, 0);
-            poseStack.scale(scale, scale, scale);
-
-            entity.setYHeadRot(0);
-            entity.setYBodyRot(0);
-
-            this.entityRenderer.render(entity, 0.0, 0.0, 0.0, 0.0f, 0f, poseStack, bufferSource, packedLight);
             poseStack.popPose();
         }
     }

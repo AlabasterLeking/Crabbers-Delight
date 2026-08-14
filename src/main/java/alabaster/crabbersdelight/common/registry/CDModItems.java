@@ -54,6 +54,11 @@ public class CDModItems {
         return new Item.Properties().food(food).craftRemainder(Items.NAUTILUS_SHELL);
     }
 
+    // Scute Items Helper
+    public static Item.Properties scuteFoodItem(FoodProperties food) {
+        return new Item.Properties().food(food).craftRemainder(Items.TURTLE_SCUTE);
+    }
+
     // Spawn Eggs
     public static final Supplier<Item> CRAB_SPAWN_EGG = registerWithTab("crab_spawn_egg",
             () -> new DeferredSpawnEggItem(CDModEntities.CRAB, 0x2f437c, 0xf48b45,
@@ -237,6 +242,8 @@ public class CDModItems {
             () -> new ConsumableItem(bowlFoodItem(CDFoodValues.SHRIMP_FRIED_RICE), true));
     public static final Supplier<Item> CORAL_CRUNCH = registerWithTab("coral_crunch",
             () -> new ConsumableItem(bowlFoodItem(CDFoodValues.CORAL_CRUNCH), true));
+    public static final Supplier<Item> TURTLE_STEW = registerWithTab("turtle_stew",
+            () -> new ConsumableItem(bowlFoodItem(CDFoodValues.TURTLE_STEW), true));
 
     // Storage Blocks
     public static final Supplier<Item> CRAB_BARREL = registerWithTab("crab_barrel",

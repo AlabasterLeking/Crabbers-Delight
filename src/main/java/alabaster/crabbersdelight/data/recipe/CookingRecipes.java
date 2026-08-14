@@ -7,6 +7,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.Tags;
 import vectorwing.farmersdelight.client.recipebook.CookingPotRecipeBookTab;
+import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 
@@ -43,17 +44,17 @@ public class CookingRecipes {
                 .addIngredient(CDModItems.COOKED_SHRIMP.get())
                 .addIngredient(Items.SEAGRASS)
                 .addIngredient(Items.CARROT)
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .addIngredient(ModItems.ONION.get())
                 .unlockedByAnyIngredient(CDModItems.COOKED_CLAM_MEAT.get(), CDModItems.COOKED_CLAWSTER.get(), CDModItems.COOKED_SHRIMP.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.CRAB_CAKES.get(), 1, NORMAL_COOKING, LARGE_EXP)
                 .addIngredient(CDModItems.RAW_CRAB.get())
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.WHEAT_DOUGH.get())
+                .addIngredient(ModItems.WHEAT_DOUGH.get())
                 .addIngredient(Tags.Items.DRINKS_MILK)
                 .addIngredient(Items.EGG)
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .addIngredient(ModItems.ONION.get())
                 .unlockedByAnyIngredient(CDModItems.RAW_CRAB.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output);
@@ -78,9 +79,9 @@ public class CookingRecipes {
     }
 
     private static void cookMinecraftSoups(RecipeOutput output) {
-        CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.CLAM_CHOWDER.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
+        CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.CLAM_CHOWDER.get(), 1, SLOW_COOKING, LARGE_EXP, Items.BOWL)
                 .addIngredient(CDModItems.COOKED_CLAM_MEAT.get())
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .addIngredient(ModItems.ONION.get())
                 .addIngredient(Items.POTATO)
                 .addIngredient(Tags.Items.DRINKS_MILK)
                 .unlockedByAnyIngredient(CDModItems.COOKED_CLAM_MEAT.get())
@@ -92,8 +93,8 @@ public class CookingRecipes {
                         new Ingredient.TagValue(CDModTags.COOKED_SEAFOOD),
                         new Ingredient.TagValue(CDModTags.RAW_SEAFOOD)
                 )))
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
+                .addIngredient(ModItems.ONION.get())
+                .addIngredient(ModItems.RICE.get())
                 .addIngredient(Items.CARROT)
                 .addIngredient(Tags.Items.DRINKS_MILK)
                 .unlockedByAnyIngredient(CDModItems.RAW_CLAM_MEAT.get(), CDModItems.RAW_CRAB.get(), CDModItems.RAW_CLAWSTER.get(), CDModItems.RAW_SHRIMP.get())
@@ -103,8 +104,8 @@ public class CookingRecipes {
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.SEAFOOD_GUMBO.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
                 .addIngredient(CDModItems.RAW_CLAWSTER.get())
                 .addIngredient(CDModItems.RAW_SHRIMP.get())
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.RICE.get())
+                .addIngredient(ModItems.ONION.get())
+                .addIngredient(ModItems.RICE.get())
                 .addIngredient(Items.PORKCHOP)
                 .unlockedByAnyIngredient(CDModItems.COOKED_CLAM_MEAT.get())
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
@@ -120,8 +121,8 @@ public class CookingRecipes {
                 .save(output);
 
         CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.SHRIMP_FRIED_RICE.get(), 1, NORMAL_COOKING, MEDIUM_EXP, Items.BOWL)
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
-                .addIngredient(vectorwing.farmersdelight.common.registry.ModItems.ONION.get())
+                .addIngredient(ModItems.COOKED_RICE.get())
+                .addIngredient(ModItems.ONION.get())
                 .addIngredient(CDModItems.RAW_SHRIMP.get())
                 .addIngredient(Items.CARROT)
                 .unlockedByAnyIngredient(CDModItems.RAW_SHRIMP.get())
@@ -133,6 +134,13 @@ public class CookingRecipes {
                 .addIngredient(Items.SEA_PICKLE)
                 .addIngredient(Items.SEA_PICKLE)
                 .unlockedByAnyIngredient(Items.SEA_PICKLE)
+                .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(output);
+
+        CookingPotRecipeBuilder.cookingPotRecipe(CDModItems.TURTLE_STEW.get(), 1, SLOW_COOKING, LARGE_EXP, Items.TURTLE_SCUTE)
+                .addIngredient(Items.SEAGRASS)
+                .addIngredient(Items.TROPICAL_FISH)
+                .unlockedByAnyIngredient(Items.TROPICAL_FISH)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
                 .save(output);
     }

@@ -1,5 +1,6 @@
 package alabaster.crabbersdelight.common.block;
 
+import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.entity.FishPlaqueBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
@@ -43,9 +44,9 @@ public class FishPlaqueBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     private static final VoxelShape SHAPE_NORTH = Block.box(0, 3, 15, 16, 13, 16);
-    private static final VoxelShape SHAPE_SOUTH = Block.box(0, 3,  0, 16, 13,  1);
-    private static final VoxelShape SHAPE_WEST  = Block.box(15, 3, 0, 16, 13, 16);
-    private static final VoxelShape SHAPE_EAST  = Block.box(0,  3, 0,  1, 13, 16);
+    private static final VoxelShape SHAPE_SOUTH = Block.box(0, 3, 0, 16, 13, 1);
+    private static final VoxelShape SHAPE_WEST = Block.box(15, 3, 0, 16, 13, 16);
+    private static final VoxelShape SHAPE_EAST = Block.box(0, 3, 0, 1, 13, 16);
 
     public FishPlaqueBlock(Properties props) {
         super(props);
@@ -62,9 +63,9 @@ public class FishPlaqueBlock extends BaseEntityBlock {
         return switch (state.getValue(FACING)) {
             case NORTH -> SHAPE_NORTH;
             case SOUTH -> SHAPE_SOUTH;
-            case WEST  -> SHAPE_WEST;
-            case EAST  -> SHAPE_EAST;
-            default    -> Shapes.block();
+            case WEST -> SHAPE_WEST;
+            case EAST -> SHAPE_EAST;
+            default -> Shapes.block();
         };
     }
 
@@ -98,16 +99,7 @@ public class FishPlaqueBlock extends BaseEntityBlock {
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
         if (!state.is(newState.getBlock())) {
             if (!level.isClientSide && level.getBlockEntity(pos) instanceof FishPlaqueBlockEntity be && be.hasFish()) {
-                Item bucketItem = BuiltInRegistries.ITEM.stream()
-                        .filter(item -> item instanceof MobBucketItem mob && getEntityTypeFromBucket(mob) == be.getEntityType())
-                        .findFirst()
-                        .orElse(Items.WATER_BUCKET);
-
-                ItemStack bucket = new ItemStack(bucketItem);
-                if (!be.getEntityData().isEmpty()) {
-                    bucket.set(DataComponents.BUCKET_ENTITY_DATA, CustomData.of(be.getEntityData()));
-                }
-
+                ItemStack bucket = buildReturnBucket(be);
                 double x = pos.getX() + 0.5;
                 double y = pos.getY() + 0.5;
                 double z = pos.getZ() + 0.5;
@@ -115,6 +107,23 @@ public class FishPlaqueBlock extends BaseEntityBlock {
             }
         }
         super.onRemove(state, level, pos, newState, movedByPiston);
+    }
+
+    private static ItemStack buildReturnBucket(FishPlaqueBlockEntity be) {
+        if (!be.getSourceBucket().isEmpty()) {
+            return be.getSourceBucket().copy();
+        }
+
+        Item bucketItem = BuiltInRegistries.ITEM.stream()
+                .filter(item -> item instanceof MobBucketItem mob && getEntityTypeFromBucket(mob) == be.getEntityType())
+                .findFirst()
+                .orElse(Items.WATER_BUCKET);
+
+        ItemStack bucket = new ItemStack(bucketItem);
+        if (!be.getEntityData().isEmpty()) {
+            bucket.set(DataComponents.BUCKET_ENTITY_DATA, CustomData.of(be.getEntityData()));
+        }
+        return bucket;
     }
 
     private static void sync(FishPlaqueBlockEntity be, Level level, BlockPos pos, BlockState state) {
@@ -136,7 +145,7 @@ public class FishPlaqueBlock extends BaseEntityBlock {
             CustomData bucketData = stack.get(DataComponents.BUCKET_ENTITY_DATA);
             if (bucketData != null) extraData = bucketData.copyTag();
 
-            be.setFishData(entityType, extraData);
+            be.setFishData(entityType, extraData, stack.copyWithCount(1));
             sync(be, level, pos, state);
             level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0f, 1.0f);
 
@@ -156,15 +165,7 @@ public class FishPlaqueBlock extends BaseEntityBlock {
         if (!(level.getBlockEntity(pos) instanceof FishPlaqueBlockEntity be)) return InteractionResult.PASS;
 
         if (be.hasFish()) {
-            Item bucketItem = BuiltInRegistries.ITEM.stream()
-                    .filter(item -> item instanceof MobBucketItem mob && getEntityTypeFromBucket(mob) == be.getEntityType())
-                    .findFirst()
-                    .orElse(Items.WATER_BUCKET);
-
-            ItemStack bucket = new ItemStack(bucketItem);
-            if (!be.getEntityData().isEmpty()) {
-                bucket.set(DataComponents.BUCKET_ENTITY_DATA, CustomData.of(be.getEntityData()));
-            }
+            ItemStack bucket = buildReturnBucket(be);
             if (!player.getInventory().add(bucket)) {
                 player.drop(bucket, false);
             }

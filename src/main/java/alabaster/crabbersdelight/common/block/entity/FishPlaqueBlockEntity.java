@@ -11,6 +11,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
@@ -19,7 +20,7 @@ public class FishPlaqueBlockEntity extends BlockEntity {
 
     @Nullable private EntityType<?> entityType = null;
     private CompoundTag entityData = new CompoundTag();
-
+    private ItemStack sourceBucket = ItemStack.EMPTY;
     private int dataVersion = 0;
 
     public FishPlaqueBlockEntity(BlockPos pos, BlockState state) {
@@ -39,13 +40,18 @@ public class FishPlaqueBlockEntity extends BlockEntity {
         return entityData;
     }
 
+    public ItemStack getSourceBucket() {
+        return sourceBucket;
+    }
+
     public int getDataVersion() {
         return dataVersion;
     }
 
-    public void setFishData(EntityType<?> type, CompoundTag data) {
+    public void setFishData(EntityType<?> type, CompoundTag data, ItemStack sourceBucket) {
         this.entityType = type;
         this.entityData = data != null ? data : new CompoundTag();
+        this.sourceBucket = sourceBucket != null ? sourceBucket.copy() : ItemStack.EMPTY;
         this.dataVersion++;
         setChanged();
     }
@@ -53,6 +59,7 @@ public class FishPlaqueBlockEntity extends BlockEntity {
     public void clearFish() {
         this.entityType = null;
         this.entityData = new CompoundTag();
+        this.sourceBucket = ItemStack.EMPTY;
         this.dataVersion++;
         setChanged();
     }
@@ -64,6 +71,9 @@ public class FishPlaqueBlockEntity extends BlockEntity {
             tag.putString("EntityType", BuiltInRegistries.ENTITY_TYPE.getKey(entityType).toString());
             if (!entityData.isEmpty()) {
                 tag.put("EntityData", entityData.copy());
+            }
+            if (!sourceBucket.isEmpty()) {
+                tag.put("SourceBucket", sourceBucket.save(registries));
             }
         }
     }
@@ -77,9 +87,13 @@ public class FishPlaqueBlockEntity extends BlockEntity {
             ResourceLocation rl = ResourceLocation.parse(tag.getString("EntityType"));
             this.entityType = BuiltInRegistries.ENTITY_TYPE.getOptional(rl).orElse(null);
             this.entityData = tag.contains("EntityData") ? tag.getCompound("EntityData").copy() : new CompoundTag();
+            this.sourceBucket = tag.contains("SourceBucket")
+                    ? ItemStack.parseOptional(registries, tag.getCompound("SourceBucket"))
+                    : ItemStack.EMPTY;
         } else {
             this.entityType = null;
             this.entityData = new CompoundTag();
+            this.sourceBucket = ItemStack.EMPTY;
         }
     }
 
