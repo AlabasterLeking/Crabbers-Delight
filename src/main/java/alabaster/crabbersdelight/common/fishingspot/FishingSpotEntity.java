@@ -14,6 +14,8 @@ public class FishingSpotEntity extends Entity {
             SynchedEntityData.defineId(FishingSpotEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> LIFETIME_TICKS =
             SynchedEntityData.defineId(FishingSpotEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Boolean> DISTURBED =
+            SynchedEntityData.defineId(FishingSpotEntity.class, EntityDataSerializers.BOOLEAN);
 
     public static final int EXPIRE_FADE_TICKS = 20;
     public static final int FADE_IN_TICKS = 20;
@@ -73,6 +75,15 @@ public class FishingSpotEntity extends Entity {
         setLifetimeTicks(Math.min(getLifetimeTicks(), age + EXPIRE_FADE_TICKS));
     }
 
+    public void disturb() {
+        this.entityData.set(DISTURBED, true);
+        expireNow();
+    }
+
+    public boolean isDisturbed() {
+        return this.entityData.get(DISTURBED);
+    }
+
     public int getRadius() {
         return this.entityData.get(RADIUS);
     }
@@ -93,6 +104,7 @@ public class FishingSpotEntity extends Entity {
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         builder.define(RADIUS, 4);
         builder.define(LIFETIME_TICKS, 2400);
+        builder.define(DISTURBED, false);
     }
 
     @Override

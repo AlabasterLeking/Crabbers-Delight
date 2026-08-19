@@ -24,6 +24,32 @@ public class FishingSpotRenderer extends EntityRenderer<FishingSpotEntity> {
     private static final float MAX_THICKNESS = 0.15f;
     private static final float BAND_ALPHA = 0.7f;
 
+    private static final int FISH_COUNT = 12;
+    private static final int FISH_CYCLE_TICKS = 240;
+    private static final int FISH_VISIBLE_TICKS = 140;
+    private static final int FISH_FADE_TICKS = 20;
+    private static final boolean[][] FISH_SHAPE = {
+            {false, false, true, false, false},
+            {false, true, true, true, false},
+            {true, true, true, true, true},
+            {true, true, true, true, true},
+            {false, false, true, false, false},
+            {true, true, false, true, true},
+            {true, false, false, false, true},
+    };
+    private static final int FISH_COLS = FISH_SHAPE.length;
+    private static final int FISH_ROWS = FISH_SHAPE[0].length;
+
+    private static final float FISH_ORBIT_SPEED = 0.09f;
+    private static final float FISH_SPEED_WOBBLE_AMOUNT = 0.9f;
+    private static final float FISH_RADIUS_WOBBLE_AMOUNT = 0.35f;
+    private static final float FISH_VERTICAL_RANGE = 0.1f;
+    private static final float FISH_MIN_DEPTH = 0.3f;
+    private static final float FISH_MAX_DEPTH = 3.0f;
+    private static final float FISH_ALPHA = 0.85f;
+    private static final float FISH_DART_DISTANCE_MULTIPLIER = 4f;
+    private static final int FISH_DART_TICKS = 12;
+
     private static final RenderType WAVE_BAND = RenderType.create(
             "crabbersdelight_wave_band",
             DefaultVertexFormat.POSITION_COLOR,
@@ -56,6 +82,9 @@ public class FishingSpotRenderer extends EntityRenderer<FishingSpotEntity> {
         long entitySeed = entity.getId();
 
         float ticksRemaining = entity.getLifetimeTicks() - age;
+        float ticksSinceDisturbance = entity.isDisturbed()
+                ? Math.max(0f, FishingSpotEntity.EXPIRE_FADE_TICKS - ticksRemaining)
+                : 0f;
         float shrinkFactor = ticksRemaining < FishingSpotEntity.EXPIRE_FADE_TICKS
                 ? smoothstep(Math.max(0f, ticksRemaining) / FishingSpotEntity.EXPIRE_FADE_TICKS)
                 : 1f;
@@ -63,6 +92,57 @@ public class FishingSpotRenderer extends EntityRenderer<FishingSpotEntity> {
                 ? smoothstep(age / FishingSpotEntity.FADE_IN_TICKS)
                 : 1f;
         spotRadius *= shrinkFactor * growFactor;
+
+        for (int fish = 0; fish < FISH_COUNT; fish++) {
+            float fishOffset = (FISH_CYCLE_TICKS / (float) FISH_COUNT) * fish;
+            float fishShiftedAge = age + fishOffset;
+            float fishCycleAge = fishShiftedAge % FISH_CYCLE_TICKS;
+            long fishCycleIteration = (long) (fishShiftedAge / FISH_CYCLE_TICKS);
+            long fishSeed = entitySeed * 1000003L + fish * 613L + fishCycleIteration * 2862933555777941757L;
+
+            if (fishCycleAge >= FISH_VISIBLE_TICKS) {
+                continue;
+            }
+
+            float fishAlpha = FISH_ALPHA;
+            if (fishCycleAge < FISH_FADE_TICKS) {
+                fishAlpha *= smoothstep(fishCycleAge / FISH_FADE_TICKS);
+            } else if (fishCycleAge > FISH_VISIBLE_TICKS - FISH_FADE_TICKS) {
+                fishAlpha *= smoothstep((FISH_VISIBLE_TICKS - fishCycleAge) / FISH_FADE_TICKS);
+            }
+            if (entity.isDisturbed()) {
+                fishAlpha *= 1f - smoothstep(ticksSinceDisturbance / FishingSpotEntity.EXPIRE_FADE_TICKS);
+            }
+
+            float orbitAngleOffset = randomFloat(fishSeed, 3) * 2f * (float) Math.PI;
+            float orbitRadius = spotRadius * (0.25f + randomFloat(fishSeed, 4) * 0.5f);
+            float orbitDirection = randomFloat(fishSeed, 5) > 0.5f ? 1f : -1f;
+            float speedWobbleFreq = 0.03f + randomFloat(fishSeed, 6) * 0.05f;
+            float speedWobblePhase = randomFloat(fishSeed, 7) * 2f * (float) Math.PI;
+            float radiusWobbleFreq = 0.02f + randomFloat(fishSeed, 8) * 0.04f;
+            float radiusWobblePhase = randomFloat(fishSeed, 9) * 2f * (float) Math.PI;
+            float verticalFreq = 0.015f + randomFloat(fishSeed, 10) * 0.025f;
+            float verticalPhase = randomFloat(fishSeed, 11) * 2f * (float) Math.PI;
+            float baseDepth = -(FISH_MIN_DEPTH + randomFloat(fishSeed, 12) * (FISH_MAX_DEPTH - FISH_MIN_DEPTH));
+
+            float[] herePos = fishOrbitPosition(fishCycleAge, orbitAngleOffset, orbitRadius, orbitDirection,
+                    speedWobbleFreq, speedWobblePhase, radiusWobbleFreq, radiusWobblePhase, verticalFreq, verticalPhase);
+            float[] aheadPos = fishOrbitPosition(fishCycleAge + 1f, orbitAngleOffset, orbitRadius, orbitDirection,
+                    speedWobbleFreq, speedWobblePhase, radiusWobbleFreq, radiusWobblePhase, verticalFreq, verticalPhase);
+
+            if (entity.isDisturbed()) {
+                float dartBoostHere = 1f + smoothstep(ticksSinceDisturbance / FISH_DART_TICKS) * FISH_DART_DISTANCE_MULTIPLIER;
+                float dartBoostAhead = 1f + smoothstep((ticksSinceDisturbance + 1f) / FISH_DART_TICKS) * FISH_DART_DISTANCE_MULTIPLIER;
+                herePos[0] *= dartBoostHere;
+                herePos[2] *= dartBoostHere;
+                aheadPos[0] *= dartBoostAhead;
+                aheadPos[2] *= dartBoostAhead;
+            }
+
+            float facingAngle = (float) Math.atan2(aheadPos[2] - herePos[2], aheadPos[0] - herePos[0]);
+
+            drawFish(consumer, matrix, herePos[0], baseDepth + herePos[1], herePos[2], facingAngle, fishAlpha);
+        }
 
         for (int center = 0; center < CENTER_COUNT; center++) {
             float centerOffset = (CENTER_LIFETIME_TICKS / (float) CENTER_COUNT) * center;
@@ -123,6 +203,59 @@ public class FishingSpotRenderer extends EntityRenderer<FishingSpotEntity> {
         long combined = seed * 2862933555777941757L + salt * 3935559000370003845L;
         int hash = (int) ((combined ^ (combined >>> 33)) & 0x7FFFFFFFL);
         return (hash % 10000) / 10000f;
+    }
+
+    private static float[] fishOrbitPosition(float time, float angleOffset, float baseRadius, float direction, float speedWobbleFreq, float speedWobblePhase, float radiusWobbleFreq, float radiusWobblePhase, float verticalFreq, float verticalPhase) {
+        float speedWobble = FISH_SPEED_WOBBLE_AMOUNT * (float) Math.sin(time * speedWobbleFreq + speedWobblePhase);
+        float angle = angleOffset + (time * FISH_ORBIT_SPEED + speedWobble) * direction;
+
+        float radiusWobble = 1f + FISH_RADIUS_WOBBLE_AMOUNT * (float) Math.sin(time * radiusWobbleFreq + radiusWobblePhase);
+        float radius = baseRadius * radiusWobble;
+
+        float verticalOffset = FISH_VERTICAL_RANGE * (float) Math.sin(time * verticalFreq + verticalPhase);
+
+        return new float[]{(float) Math.cos(angle) * radius, verticalOffset, (float) Math.sin(angle) * radius};
+    }
+
+    private static void drawFish(VertexConsumer consumer, Matrix4f matrix, float centerX, float centerY, float centerZ, float facingAngle, float alpha) {
+        float cos = (float) Math.cos(facingAngle);
+        float sin = (float) Math.sin(facingAngle);
+
+        float colCenterOffset = (FISH_COLS - 1) / 2f;
+        float rowCenterOffset = (FISH_ROWS - 1) / 2f;
+
+        for (int col = 0; col < FISH_COLS; col++) {
+            for (int row = 0; row < FISH_ROWS; row++) {
+                if (!FISH_SHAPE[col][row]) continue;
+
+                float localX = (colCenterOffset - col) * CELL_SIZE;
+                float localY = (rowCenterOffset - row) * CELL_SIZE;
+                drawFishCell(consumer, matrix, centerX, centerY, centerZ, cos, sin, localX, localY, alpha);
+            }
+        }
+    }
+
+    private static void drawFishCell(VertexConsumer consumer, Matrix4f matrix, float centerX, float centerY, float centerZ, float cos, float sin, float localX, float localY, float alpha) {
+        float half = CELL_SIZE / 2f;
+        float x0 = localX - half;
+        float x1 = localX + half;
+        float y0 = localY - half;
+        float y1 = localY + half;
+
+        addFishVertex(consumer, matrix, centerX, centerY, centerZ, cos, sin, x0, y0, alpha);
+        addFishVertex(consumer, matrix, centerX, centerY, centerZ, cos, sin, x1, y0, alpha);
+        addFishVertex(consumer, matrix, centerX, centerY, centerZ, cos, sin, x1, y1, alpha);
+
+        addFishVertex(consumer, matrix, centerX, centerY, centerZ, cos, sin, x0, y0, alpha);
+        addFishVertex(consumer, matrix, centerX, centerY, centerZ, cos, sin, x1, y1, alpha);
+        addFishVertex(consumer, matrix, centerX, centerY, centerZ, cos, sin, x0, y1, alpha);
+    }
+
+    private static void addFishVertex(VertexConsumer consumer, Matrix4f matrix, float centerX, float centerY, float centerZ, float cos, float sin, float localX, float localY, float alpha) {
+        float rotatedX = localX * cos;
+        float rotatedZ = localX * sin;
+        consumer.addVertex(matrix, centerX + rotatedX, centerY + localY, centerZ + rotatedZ)
+                .setColor(0f, 0f, 0f, alpha);
     }
 
     private static void drawSquare(VertexConsumer consumer, Matrix4f matrix, float centerX, float centerZ, float brightness) {

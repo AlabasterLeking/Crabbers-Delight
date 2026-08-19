@@ -195,16 +195,16 @@ public class FishingSpotManager {
                 List<Entity> nearby = level.getEntitiesOfClass(Entity.class, box, entity -> true);
                 for (Entity entity : nearby) {
                     if (entity instanceof Boat) {
-                        spot.expireNow();
+                        spot.disturb();
                         break;
                     }
                     if (entity instanceof Player p && p.isInWater()) {
-                        spot.expireNow();
+                        spot.disturb();
                         break;
                     }
                     if (entity instanceof LivingEntity living && !(entity instanceof Player)
                             && living.isInWater() && !(entity instanceof AbstractFish)) {
-                        spot.expireNow();
+                        spot.disturb();
                         break;
 
                     }
