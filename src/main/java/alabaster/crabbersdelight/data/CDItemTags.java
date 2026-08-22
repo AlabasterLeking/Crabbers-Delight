@@ -270,6 +270,7 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.SQUID_KEBAB.get())
                 .add(CDModItems.FROG_LEG_KEBAB.get())
                 .add(CDModItems.CORAL_CRUNCH.get())
-                .add(CDModItems.TURTLE_STEW.get());
+                .add(CDModItems.TURTLE_STEW.get())
+                .add(CDModItems.FRIED_FISH.get());
     }
 }
