@@ -8,6 +8,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.level.BlockEvent;
@@ -18,24 +19,15 @@ public class WormDropEvents {
 
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
-        if (event.isCanceled()) {
-            return;
-        }
-        if (!(event.getLevel() instanceof ServerLevel serverLevel)) {
-            return;
-        }
-        if (!event.getState().is(BlockTags.DIRT)) {
-            return;
-        }
-        if (serverLevel.getRandom().nextDouble() >= WORM_CHANCE) {
-            return;
-        }
+        if (event.isCanceled()) return;
 
-        Player player = event.getPlayer();
-        ItemStack worm = new ItemStack(CDModItems.WORM.get());
-        if (!player.getInventory().add(worm)) {
-            BlockPos pos = event.getPos();
-            serverLevel.addFreshEntity(new ItemEntity(serverLevel, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, worm));
-        }
+        if (!(event.getLevel() instanceof ServerLevel serverLevel)) return;
+
+        if (!event.getState().is(BlockTags.DIRT)) return;
+
+        if (serverLevel.getRandom().nextDouble() >= WORM_CHANCE) return;
+
+        Block.popResource(serverLevel, event.getPos(), new ItemStack(CDModItems.WORM.get())
+        );
     }
 }

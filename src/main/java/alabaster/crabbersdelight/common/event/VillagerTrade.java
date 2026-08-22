@@ -39,6 +39,15 @@ public class VillagerTrade
             trades.get(2).add(emeraldForItemsTrade(CDModItems.RAW_CLAWSTER.get(), 4, 16, 5));
             trades.get(2).add(emeraldForItemsTrade(CDModItems.CLAM.get(), 3, 16, 5));
             trades.get(4).add(emeraldForItemsTrade(CDModItems.PEARL.get(), 1, 16, 5));
+            trades.get(2).add(itemForEmeraldTrade(2, CDModItems.WORM.get(), 8, 16, 3));
+            trades.get(3).add(itemForEmeraldTrade(4, CDModItems.FISHING_LINE.get(), 3, 8));
+            trades.get(3).add(itemForEmeraldTrade(6, CDModItems.DOUBLE_LURE.get(), 3, 8));
+            trades.get(3).add(itemForEmeraldTrade(6, CDModItems.BARBED_LURE.get(), 3, 8));
+            trades.get(4).add(itemForEmeraldTrade(8, CDModItems.AUTOMATIC_LURE.get(), 3, 12));
+            trades.get(4).add(itemForEmeraldTrade(8, CDModItems.STORM_LURE.get(), 3, 12));
+            trades.get(4).add(itemForEmeraldTrade(8, CDModItems.MAGNETIC_LURE.get(), 3, 12));
+            trades.get(4).add(itemForEmeraldTrade(8, CDModItems.WORM_BIN.get(), 4, 24));
+            trades.get(4).add(itemForEmeraldTrade(8, CDModItems.TACKLE_BOX.get(), 4, 24));
         }
     }
 
@@ -68,5 +77,13 @@ public class VillagerTrade
 
     public static BasicItemListing tridentForPearlsTrade(ItemLike item, int count, int maxTrades, int xp) {
         return new BasicItemListing(new ItemStack(item, count), new ItemStack(Items.TRIDENT), maxTrades, xp, 0.05F);
+    }
+
+    public static BasicItemListing itemForEmeraldTrade(int price, ItemLike item, int maxTrades, int xp) {
+        return itemForEmeraldTrade(price, item, 1, maxTrades, xp);
+    }
+
+    public static BasicItemListing itemForEmeraldTrade(int price, ItemLike item, int count, int maxTrades, int xp) {
+        return new BasicItemListing(price, new ItemStack(item, count), maxTrades, xp, 0.05F);
     }
 }
