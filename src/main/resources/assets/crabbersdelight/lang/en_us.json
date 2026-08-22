@@ -141,6 +141,12 @@
   "gui.crabbersdelight.note.generation.copy_of_copy": "Copy of a copy",
   "gui.crabbersdelight.note.generation.tattered": "Tattered",
 
+  "tooltip.crabbersdelight.fish_size.tiny": "Tiny",
+  "tooltip.crabbersdelight.fish_size.small": "Small",
+  "tooltip.crabbersdelight.fish_size.regular": "Regular",
+  "tooltip.crabbersdelight.fish_size.large": "Large",
+  "tooltip.crabbersdelight.fish_size.huge": "Huge",
+
   "item.crabbersdelight.tackle_box": "Tackle Box",
   "item.crabbersdelight.tackle_box.lure": "Lure: %s",
   "item.crabbersdelight.tackle_box.line": "Line: %s",

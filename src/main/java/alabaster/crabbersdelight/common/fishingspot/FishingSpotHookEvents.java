@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.fishingspot;
 
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.utils.FishingHookReflection;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
@@ -19,9 +20,10 @@ import java.util.Set;
 
 @EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class FishingSpotHookEvents {
-    private static final ResourceLocation FISHING_SPOT_LUCK_ID = CrabbersDelight.modPrefix("fishing_spot_luck");
-    private static final double FISHING_SPOT_LUCK_BONUS = 6.0; // raised from 2.0
-    private static final int MAX_LURE_TICKS = 60; // ~3 seconds
+    private static final ResourceLocation FISHING_SPOT_LUCK = CrabbersDelight.modPrefix("fishing_spot_luck");
+    private static final double FISHING_SPOT_LUCK_BONUS = 6.0;
+    private static final ResourceLocation OUTSIDE_SPOT_LUCK_PENALTY = CrabbersDelight.modPrefix("outside_fishing_spot_luck_penalty");
+    private static final int MAX_LURE_TICKS = 60;
     private static final int TWINKLE_COUNT = 8;
     private static final double TWINKLE_HEIGHT_OFFSET = 0.5;
     private static final double TWINKLE_SPREAD = 0.3;
@@ -39,7 +41,7 @@ public class FishingSpotHookEvents {
         FishingSpotEntity spot = hook == null ? null : FishingSpotManager.findSpotAt(player.level(), hook.blockPosition());
         boolean inSpot = spot != null;
 
-        updateLuck(player, inSpot);
+        updateLuck(player, hook != null, inSpot);
 
         if (inSpot) {
             FishingHookReflection.capLureTime(hook, MAX_LURE_TICKS);
@@ -61,17 +63,27 @@ public class FishingSpotHookEvents {
                 TWINKLE_COUNT, TWINKLE_SPREAD, TWINKLE_SPREAD, TWINKLE_SPREAD, 0.0);
     }
 
-    private static void updateLuck(Player player, boolean inSpot) {
+    private static void updateLuck(Player player, boolean isFishing, boolean inSpot) {
         AttributeInstance luck = player.getAttribute(Attributes.LUCK);
         if (luck == null) {
             return;
         }
-        boolean hasModifier = luck.getModifier(FISHING_SPOT_LUCK_ID) != null;
 
-        if (inSpot && !hasModifier) {
-            luck.addTransientModifier(new AttributeModifier(FISHING_SPOT_LUCK_ID, FISHING_SPOT_LUCK_BONUS, AttributeModifier.Operation.ADD_VALUE));
-        } else if (!inSpot && hasModifier) {
-            luck.removeModifier(FISHING_SPOT_LUCK_ID);
+        boolean hasBonus = luck.getModifier(FISHING_SPOT_LUCK) != null;
+        if (inSpot && !hasBonus) {
+            luck.addTransientModifier(new AttributeModifier(FISHING_SPOT_LUCK, FISHING_SPOT_LUCK_BONUS, AttributeModifier.Operation.ADD_VALUE));
+        } else if (!inSpot && hasBonus) {
+            luck.removeModifier(FISHING_SPOT_LUCK);
+        }
+
+        boolean penaltyEnabled = Config.OUTSIDE_FISHING_SPOT_LUCK_PENALTY_ENABLED.get();
+        boolean hasPenalty = luck.getModifier(OUTSIDE_SPOT_LUCK_PENALTY) != null;
+        boolean wantsPenalty = isFishing && !inSpot && penaltyEnabled;
+        if (wantsPenalty && !hasPenalty) {
+            double amount = -Config.OUTSIDE_FISHING_SPOT_LUCK_PENALTY_AMOUNT.get();
+            luck.addTransientModifier(new AttributeModifier(OUTSIDE_SPOT_LUCK_PENALTY, amount, AttributeModifier.Operation.ADD_VALUE));
+        } else if (!wantsPenalty && hasPenalty) {
+            luck.removeModifier(OUTSIDE_SPOT_LUCK_PENALTY);
         }
     }
 }

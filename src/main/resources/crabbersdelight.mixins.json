@@ -4,6 +4,9 @@
   "package": "alabaster.crabbersdelight.common.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AbstractCookingRecipeMixin",
+    "AbstractFurnaceBlockEntityMixin",
+    "CuttingBoardRecipeMixin"
   ],
   "client": [
   ],

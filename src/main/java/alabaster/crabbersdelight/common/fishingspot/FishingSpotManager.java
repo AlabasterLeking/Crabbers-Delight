@@ -35,7 +35,6 @@ public class FishingSpotManager {
     private static final double SPOT_QUERY_PADDING = 8;
     private static final double DISTURBANCE_SCAN_RADIUS = 48;
     private static final double AREA_DENSITY_RADIUS = 64;
-    private static final int MAX_SPOTS_PER_AREA = 3;
 
     public static FishingSpotEntity findSpotAt(Level level, BlockPos pos) {
         AABB box = new AABB(pos).inflate(SPOT_QUERY_PADDING);
@@ -103,7 +102,7 @@ public class FishingSpotManager {
             return;
         }
 
-        if (countNearbySpots(level, bestSurfacePos) >= MAX_SPOTS_PER_AREA) {
+        if (countNearbySpots(level, bestSurfacePos) >= Config.FISHING_SPOT_MAX_PER_AREA.get()) {
             return;
         }
 

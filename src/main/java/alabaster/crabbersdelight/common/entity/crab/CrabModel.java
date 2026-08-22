@@ -3,6 +3,7 @@ package alabaster.crabbersdelight.common.entity.crab;
 import alabaster.crabbersdelight.CrabbersDelight;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -15,6 +16,8 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 
 	public static final ModelLayerLocation LAYER_LOCATION =
 			new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "crab"), "main");
+
+	private static final float SIDEWAYS_ROTATION_DEGREES = 90f;
 
 	private final ModelPart crab;
 	private final ModelPart fullbody;
@@ -148,7 +151,10 @@ public class CrabModel<T extends CrabEntity> extends HierarchicalModel<T> {
 
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {
+		poseStack.pushPose();
+		poseStack.mulPose(Axis.YP.rotationDegrees(SIDEWAYS_ROTATION_DEGREES));
 		crab.render(poseStack, vertexConsumer, packedLight, packedOverlay, color);
+		poseStack.popPose();
 	}
 
 	@Override
