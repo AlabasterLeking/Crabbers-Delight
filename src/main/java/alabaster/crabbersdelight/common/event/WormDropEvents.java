@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.event;
 
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.common.Config;
 import alabaster.crabbersdelight.common.registry.CDModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -15,10 +16,14 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 
 @EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class WormDropEvents {
-    private static final double WORM_CHANCE = 0.05;
+    private static final double WORM_CHANCE = 0.01;
 
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
+        if (!Config.DIRT_DROPS_WORMS.get()) {
+            return;
+        }
+
         if (event.isCanceled()) return;
 
         if (!(event.getLevel() instanceof ServerLevel serverLevel)) return;

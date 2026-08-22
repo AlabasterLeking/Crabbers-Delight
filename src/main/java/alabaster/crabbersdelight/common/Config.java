@@ -13,6 +13,7 @@ public class Config {
     public static ModConfigSpec.ConfigValue<Integer> MAX_TICKS;
     public static ModConfigSpec.BooleanValue COOK_IN_POTS;
     public static ModConfigSpec.BooleanValue REQUIRE_SURROUNDING_WATER;
+    public static ModConfigSpec.BooleanValue DIRT_DROPS_WORMS;
 
     public static final String CATEGORY_WORLD = "world";
     public static ModConfigSpec.BooleanValue GENERATE_PALM_TREES;
@@ -55,6 +56,8 @@ public class Config {
                 .define("maxTicks", 8000);
         REQUIRE_SURROUNDING_WATER = COMMON_BUILDER.comment("Requires the crab trap to have a 3x3 of open water or waterlogged blocks around it to be able to function. Default = true")
                 .define("require_surrounding_water", true);
+        DIRT_DROPS_WORMS = COMMON_BUILDER.comment("Allows any block in the 'dirt' block tag to drop worms at a 1% chance when broken. Default = true")
+                .define("dirt_drops_worms", true);
         COMMON_BUILDER.pop();
 
         COMMON_BUILDER.comment("World generation").push(CATEGORY_WORLD);
