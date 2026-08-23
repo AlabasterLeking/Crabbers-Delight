@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:sea_pickle"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "crabbersdelight:fried_fish"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "crabbersdelight:fish_sandwich"
+  }
+}

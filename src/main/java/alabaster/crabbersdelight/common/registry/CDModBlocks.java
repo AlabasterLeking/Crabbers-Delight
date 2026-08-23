@@ -171,5 +171,8 @@ public class CDModBlocks {
             () -> new SlabBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     public static final Supplier<Block> WORM_BIN = BLOCKS.register("worm_bin",
-            () -> new alabaster.crabbersdelight.common.block.WormBinBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F).sound(SoundType.WOOD)));
+            () -> new WormBinBlock(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F).sound(SoundType.WOOD)));
+
+    public static final Supplier<Block> WORMY_DIRT = BLOCKS.register("wormy_dirt",
+            () -> new Block(Block.Properties.ofFullCopy(Blocks.DIRT)));
 }

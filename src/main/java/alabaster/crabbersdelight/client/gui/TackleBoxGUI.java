@@ -2,6 +2,7 @@ package alabaster.crabbersdelight.client.gui;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.block.container.TackleBoxMenu;
+import alabaster.crabbersdelight.common.block.entity.inventory.TackleBoxItemHandler;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
@@ -33,5 +34,30 @@ public class TackleBoxGUI extends AbstractContainerScreen<TackleBoxMenu> {
         int i = (this.width - this.imageWidth) / 2;
         int j = (this.height - this.imageHeight) / 2;
         guiGraphics.blit(TACKLE_BOX_GUI, i, j, 0, 0, this.imageWidth, this.imageHeight);
+    }
+
+    @Override
+    protected void renderTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+        super.renderTooltip(guiGraphics, mouseX, mouseY);
+
+        if (this.hoveredSlot != null && this.hoveredSlot.getItem().isEmpty()) {
+            Component label = slotLabel(this.hoveredSlot.getSlotIndex());
+            if (label != null) {
+                guiGraphics.renderTooltip(this.font, label, mouseX, mouseY);
+            }
+        }
+    }
+
+    private static Component slotLabel(int slotIndex) {
+        if (slotIndex == TackleBoxItemHandler.LURE_SLOT) {
+            return Component.translatable("gui.crabbersdelight.tackle_box.lure_slot");
+        }
+        if (slotIndex == TackleBoxItemHandler.LINE_SLOT) {
+            return Component.translatable("gui.crabbersdelight.tackle_box.line_slot");
+        }
+        if (slotIndex == TackleBoxItemHandler.BAIT_SLOT_1 || slotIndex == TackleBoxItemHandler.BAIT_SLOT_2) {
+            return Component.translatable("gui.crabbersdelight.tackle_box.bait_slot");
+        }
+        return null;
     }
 }

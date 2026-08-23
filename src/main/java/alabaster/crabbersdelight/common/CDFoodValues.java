@@ -63,6 +63,9 @@ public class CDFoodValues {
     public static final FoodProperties FRIED_FISH = (new FoodProperties.Builder())
             .nutrition(5).saturationModifier(0.6f).build();
 
+    public static final FoodProperties FISH_SANDWICH = (new FoodProperties.Builder())
+            .nutrition(10).saturationModifier(0.8f).build();
+
     // Drinks
 
     public static final FoodProperties KELP_SHAKE = (new FoodProperties.Builder())

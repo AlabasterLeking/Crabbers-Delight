@@ -7,11 +7,13 @@ import alabaster.crabbersdelight.common.item.fishing.LureEffect;
 import alabaster.crabbersdelight.common.utils.FishingGearUtil;
 import alabaster.crabbersdelight.common.utils.FishingHookReflection;
 import alabaster.crabbersdelight.common.utils.TackleBoxProximity;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -23,18 +25,22 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.EventHooks;
 import net.neoforged.neoforge.event.entity.player.ItemFishedEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class FishingLureEvents {
@@ -43,6 +49,9 @@ public class FishingLureEvents {
     private static final ResourceLocation STORM_LUCK_ID = CrabbersDelight.modPrefix("storm_lure_luck");
     private static final double STORM_LUCK_BONUS_RAIN = 3.0;
     private static final double STORM_LUCK_BONUS_THUNDER = 6.0;
+    private static final int BARBED_MIN_NIBBLE_TICKS = 60;
+    private static final double BARBED_SUBMERGED_DEPTH = 0.15;
+    private static final Set<Integer> extendedBites = new HashSet<>();
 
     private static LureEffect activeEffect(Player player) {
         TackleBoxProximity.TackleBoxAccess tackleBox = TackleBoxProximity.find(player);
@@ -146,6 +155,18 @@ public class FishingLureEvents {
         if (effect == LureEffect.AUTOMATIC && player.fishing != null && FishingHookReflection.isBiting(player.fishing)) {
             tryAutoRetrieve(player);
         }
+
+        if (effect == LureEffect.BARBED && player.fishing != null) {
+            FishingHook hook = player.fishing;
+            if (FishingHookReflection.isBiting(hook)) {
+                if (extendedBites.add(hook.getId())) {
+                    FishingHookReflection.extendNibbleTime(hook, BARBED_MIN_NIBBLE_TICKS);
+                }
+                keepBobberSubmerged(hook);
+            } else {
+                extendedBites.remove(hook.getId());
+            }
+        }
     }
 
     private static void tryAutoRetrieve(Player player) {
@@ -201,6 +222,21 @@ public class FishingLureEvents {
             if (desiredBonus > 0) {
                 luck.addTransientModifier(new AttributeModifier(STORM_LUCK_ID, desiredBonus, AttributeModifier.Operation.ADD_VALUE));
             }
+        }
+    }
+
+    private static void keepBobberSubmerged(FishingHook hook) {
+        BlockPos pos = hook.blockPosition();
+        FluidState fluid = hook.level().getFluidState(pos);
+        if (!fluid.is(FluidTags.WATER)) {
+            return;
+        }
+        double surfaceY = pos.getY() + fluid.getHeight(hook.level(), pos);
+        double targetY = surfaceY - BARBED_SUBMERGED_DEPTH;
+        if (hook.getY() > targetY) {
+            hook.setPos(hook.getX(), targetY, hook.getZ());
+            Vec3 motion = hook.getDeltaMovement();
+            hook.setDeltaMovement(motion.x, Math.min(motion.y, 0), motion.z);
         }
     }
 }

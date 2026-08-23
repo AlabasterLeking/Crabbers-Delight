@@ -36,6 +36,8 @@
   "item.crabbersdelight.cooked_tropical_fish_slice": "Cooked Tropical Fish Slice",
   "item.crabbersdelight.pufferfish_slice": "Raw Pufferfish Slice",
   "item.crabbersdelight.cooked_pufferfish_slice": "Cooked Pufferfish Slice",
+  "item.crabbersdelight.fried_fish": "Fried Fish",
+  "item.crabbersdelight.fish_sandwich": "Fish Sandwich",
   "item.crabbersdelight.bisque": "Bisque",
   "item.crabbersdelight.seafood_gumbo": "Seafood Gumbo",
   "item.crabbersdelight.stuffed_nautilus_shell": "Stuffed Nautilus Shell",
@@ -123,6 +125,7 @@
   "block.crabbersdelight.note_block": "Note",
   "block.crabbersdelight.tackle_box": "Tackle Box",
   "block.crabbersdelight.worm_bin": "Worm Bin",
+  "block.crabbersdelight.wormy_dirt": "Wormy Dirt",
 
   "item.crabbersdelight.note": "Note",
   "item.crabbersdelight.signed_note": "Signed Note",
@@ -152,6 +155,9 @@
   "item.crabbersdelight.tackle_box.line": "Line: %s",
   "item.crabbersdelight.tackle_box.bait": "Bait: %s",
   "item.crabbersdelight.crab_trap.bait": "Bait: %s",
+  "gui.crabbersdelight.tackle_box.lure_slot": "Lure",
+  "gui.crabbersdelight.tackle_box.line_slot": "Line",
+  "gui.crabbersdelight.tackle_box.bait_slot": "Bait",
 
   "item.crabbersdelight.barbed_lure": "Barbed Lure",
   "tooltip.crabbersdelight.barbed_lure.desc": "Gives a longer grace period to reel in a bite",

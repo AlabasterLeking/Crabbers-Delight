@@ -1,11 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_composter": {
+    "has_fried_fish": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:composter"
+            "items": "crabbersdelight:fried_fish"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sea_pickle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sea_pickle"
           }
         ]
       },
@@ -13,31 +23,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crabbersdelight:worm_bin"
+        "recipe": "crabbersdelight:fish_sandwich"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_wormy_dirt": {
-      "conditions": {
-        "items": [
-          {
-            "items": "crabbersdelight:wormy_dirt"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_wormy_dirt",
-      "has_composter"
+      "has_sea_pickle",
+      "has_fried_fish"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crabbersdelight:worm_bin"
+      "crabbersdelight:fish_sandwich"
     ]
   }
 }

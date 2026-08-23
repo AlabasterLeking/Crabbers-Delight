@@ -385,8 +385,8 @@ public class CraftingRecipes {
                 .pattern("ici")
                 .define('i', Items.COPPER_INGOT)
                 .define('c', Items.COMPOSTER)
-                .define('w', CDModItems.WORM.get())
-                .unlockedBy("has_worm", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.WORM.get()))
+                .define('w', CDModItems.WORMY_DIRT.get())
+                .unlockedBy("has_wormy_dirt", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.WORMY_DIRT.get()))
                 .unlockedBy("has_composter", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COMPOSTER))
                 .save(output);
     }
@@ -486,6 +486,14 @@ public class CraftingRecipes {
                 .unlockedBy("has_nautilus_shell", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NAUTILUS_SHELL))
                 .save(output);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CDModItems.WORMY_DIRT.get(), 1)
+                .requires(CDModItems.WORM.get())
+                .requires(CDModItems.WORM.get())
+                .requires(CDModItems.WORM.get())
+                .requires(Items.DIRT)
+                .unlockedBy("has_worm", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.WORM.get()))
+                .save(output);
+
     }
 
     private static void recipesNotes(RecipeOutput output) {
@@ -574,8 +582,15 @@ public class CraftingRecipes {
                 .unlockedBy("has_sea_pickle", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
                 .save(output);
 
-        // Chum
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.FISH_SANDWICH.get())
+                .requires(Items.SEA_PICKLE)
+                .requires(Items.BREAD)
+                .requires(CDModItems.FRIED_FISH.get())
+                .unlockedBy("has_sea_pickle", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
+                .unlockedBy("has_fried_fish", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.FRIED_FISH.get()))
+                .save(output);
 
+        // Chum
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.BUCKET_OF_CRAB_CHUM.get(), 1)
                 .pattern("mfm")
                 .pattern("fbf")

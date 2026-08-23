@@ -11,6 +11,7 @@
 		"6": "crabbersdelight:block/tackle_box_inside",
 		"particle": "crabbersdelight:block/tackle_box_back"
 	},
+	"render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"from": [0, 0, 4],

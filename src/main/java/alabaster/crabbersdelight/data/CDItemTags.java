@@ -188,7 +188,8 @@ public class CDItemTags extends ItemTagsProvider {
 
         tag(ModTags.Items.CABINETS_WOODEN)
                 .add(CDModItems.PALM_CABINET.get());
-
+        tag(ItemTags.DIRT)
+                .add(CDModItems.WORMY_DIRT.get());
 
         // Palm
         tag(CDModTags.PALM_LOGS)
@@ -271,6 +272,7 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.FROG_LEG_KEBAB.get())
                 .add(CDModItems.CORAL_CRUNCH.get())
                 .add(CDModItems.TURTLE_STEW.get())
-                .add(CDModItems.FRIED_FISH.get());
+                .add(CDModItems.FRIED_FISH.get())
+                .add(CDModItems.FISH_SANDWICH.get());
     }
 }

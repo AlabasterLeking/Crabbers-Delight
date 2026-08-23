@@ -192,6 +192,8 @@ public class CDModItems {
 
     public static final Supplier<Item> FRIED_FISH = registerWithTab("fried_fish",
             () -> new ConsumableItem(foodItem(CDFoodValues.FRIED_FISH)));
+    public static final Supplier<Item> FISH_SANDWICH = registerWithTab("fish_sandwich",
+            () -> new ConsumableItem(foodItem(CDFoodValues.FISH_SANDWICH)));
 
     // Meals
     public static final Supplier<Item> CRAB_CAKES = registerWithTab("crab_cakes",
@@ -320,7 +322,8 @@ public class CDModItems {
 
     public static final Supplier<Item> WORM = registerWithTab("worm",
             () -> new WormItem(basicItem()));
-
+    public static final Supplier<Item> WORMY_DIRT = registerWithTab("wormy_dirt",
+            () -> new BlockItem(CDModBlocks.WORMY_DIRT.get(), basicItem()));
     public static final Supplier<Item> WORM_BIN = registerWithTab("worm_bin",
             () -> new BlockItem(CDModBlocks.WORM_BIN.get(), basicItem()));
 

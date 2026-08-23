@@ -38,41 +38,39 @@ public class BlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        barrelBlock(CDModBlocks.CRAB_BARREL.get(), "crab");
-        barrelBlock(CDModBlocks.CLAM_BARREL.get(), "clam");
-        barrelBlock(CDModBlocks.CLAWSTER_BARREL.get(), "clawster");
-        barrelBlock(CDModBlocks.SHRIMP_BARREL.get(), "shrimp");
-        barrelBlock(CDModBlocks.COD_BARREL.get(), "cod");
-        barrelBlock(CDModBlocks.SALMON_BARREL.get(), "salmon");
-        barrelBlock(CDModBlocks.PUFFERFISH_BARREL.get(), "pufferfish");
-        barrelBlock(CDModBlocks.TROPICAL_FISH_BARREL.get(), "tropical_fish");
-        barrelBlock(CDModBlocks.SQUID_BARREL.get(), "squid");
-        barrelBlock(CDModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
-        barrelBlock(CDModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
-        crateBlock(CDModBlocks.COCONUT_CRATE.get(), "coconut");
+        this.barrelBlock(CDModBlocks.CRAB_BARREL.get(), "crab");
+        this.barrelBlock(CDModBlocks.CLAM_BARREL.get(), "clam");
+        this.barrelBlock(CDModBlocks.CLAWSTER_BARREL.get(), "clawster");
+        this.barrelBlock(CDModBlocks.SHRIMP_BARREL.get(), "shrimp");
+        this.barrelBlock(CDModBlocks.COD_BARREL.get(), "cod");
+        this.barrelBlock(CDModBlocks.SALMON_BARREL.get(), "salmon");
+        this.barrelBlock(CDModBlocks.PUFFERFISH_BARREL.get(), "pufferfish");
+        this.barrelBlock(CDModBlocks.TROPICAL_FISH_BARREL.get(), "tropical_fish");
+        this.barrelBlock(CDModBlocks.SQUID_BARREL.get(), "squid");
+        this.barrelBlock(CDModBlocks.GLOW_SQUID_BARREL.get(), "glow_squid");
+        this.barrelBlock(CDModBlocks.FROG_LEG_BARREL.get(), "frog_leg");
+        this.crateBlock(CDModBlocks.COCONUT_CRATE.get(), "coconut");
 
-        logBlock(((RotatedPillarBlock) CDModBlocks.PALM_LOG.get()));
-        axisBlock(((RotatedPillarBlock) CDModBlocks.PALM_WOOD.get()), blockTexture(CDModBlocks.PALM_LOG.get()), blockTexture(CDModBlocks.PALM_LOG.get()));
-        logBlock(((RotatedPillarBlock) CDModBlocks.STRIPPED_PALM_LOG.get()));
-        axisBlock(((RotatedPillarBlock) CDModBlocks.STRIPPED_PALM_WOOD.get()), blockTexture(CDModBlocks.STRIPPED_PALM_LOG.get()), blockTexture(CDModBlocks.STRIPPED_PALM_LOG.get()));
-        simpleBlockWithItem(CDModBlocks.PALM_PLANKS.get(), models().cubeAll("palm_planks", blockTexture(CDModBlocks.PALM_PLANKS.get())));
-        stairsBlock(CDModBlocks.PALM_STAIRS.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
-        slabBlock(CDModBlocks.PALM_SLAB.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()), blockTexture(CDModBlocks.PALM_PLANKS.get()));
-        fenceBlock(CDModBlocks.PALM_FENCE.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
-        fenceGateBlock(CDModBlocks.PALM_FENCE_GATE.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
-        doorBlockWithRenderType(CDModBlocks.PALM_DOOR.get(), modLoc("block/palm_door_bottom"), modLoc("block/palm_door_top"), "cutout");
-        trapdoorBlockWithRenderType(CDModBlocks.PALM_TRAPDOOR.get(), modLoc("block/palm_trapdoor"), true, "cutout");
-        signBlock(CDModBlocks.PALM_SIGN.get(), CDModBlocks.PALM_WALL_SIGN.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
-        hangingSignBlock(CDModBlocks.PALM_HANGING_SIGN.get(), CDModBlocks.PALM_WALL_HANGING_SIGN.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
-        pressurePlateBlock(CDModBlocks.PALM_PRESSURE_PLATE.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
-        buttonBlock(CDModBlocks.PALM_BUTTON.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
-        leavesBlock(CDModBlocks.PALM_LEAVES.get());
-        saplingBlock(CDModBlocks.PALM_SAPLING.get());
-
-        cabinetBlock(CDModBlocks.PALM_CABINET.get(), "palm");
-
+        this.logBlock(((RotatedPillarBlock) CDModBlocks.PALM_LOG.get()));
+        this.axisBlock(((RotatedPillarBlock) CDModBlocks.PALM_WOOD.get()), blockTexture(CDModBlocks.PALM_LOG.get()), blockTexture(CDModBlocks.PALM_LOG.get()));
+        this.logBlock(((RotatedPillarBlock) CDModBlocks.STRIPPED_PALM_LOG.get()));
+        this.axisBlock(((RotatedPillarBlock) CDModBlocks.STRIPPED_PALM_WOOD.get()), blockTexture(CDModBlocks.STRIPPED_PALM_LOG.get()), blockTexture(CDModBlocks.STRIPPED_PALM_LOG.get()));
+        this.simpleBlockWithItem(CDModBlocks.PALM_PLANKS.get(), models().cubeAll("palm_planks", blockTexture(CDModBlocks.PALM_PLANKS.get())));
+        this.stairsBlock(CDModBlocks.PALM_STAIRS.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
+        this.slabBlock(CDModBlocks.PALM_SLAB.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()), blockTexture(CDModBlocks.PALM_PLANKS.get()));
+        this.fenceBlock(CDModBlocks.PALM_FENCE.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
+        this.fenceGateBlock(CDModBlocks.PALM_FENCE_GATE.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
+        this.doorBlockWithRenderType(CDModBlocks.PALM_DOOR.get(), modLoc("block/palm_door_bottom"), modLoc("block/palm_door_top"), "cutout");
+        this.trapdoorBlockWithRenderType(CDModBlocks.PALM_TRAPDOOR.get(), modLoc("block/palm_trapdoor"), true, "cutout");
+        this.signBlock(CDModBlocks.PALM_SIGN.get(), CDModBlocks.PALM_WALL_SIGN.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
+        this.hangingSignBlock(CDModBlocks.PALM_HANGING_SIGN.get(), CDModBlocks.PALM_WALL_HANGING_SIGN.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
+        this.pressurePlateBlock(CDModBlocks.PALM_PRESSURE_PLATE.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
+        this.buttonBlock(CDModBlocks.PALM_BUTTON.get(), blockTexture(CDModBlocks.PALM_PLANKS.get()));
+        this.leavesBlock(CDModBlocks.PALM_LEAVES.get());
+        this.saplingBlock(CDModBlocks.PALM_SAPLING.get());
+        this.cabinetBlock(CDModBlocks.PALM_CABINET.get(), "palm");
         this.horizontalBlock(CDModBlocks.TACKLE_BOX.get(), existingModel("tackle_box"));
-
+        this.simpleBlock(CDModBlocks.WORMY_DIRT.get());
     }
 
     public void crateBlock(Block block, String cropName) {

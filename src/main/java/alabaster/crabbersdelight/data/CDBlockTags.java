@@ -79,6 +79,12 @@ public class CDBlockTags extends BlockTagsProvider
                 CDModBlocks.WORM_BIN.get(),
                 CDModBlocks.TACKLE_BOX.get());
 
+        tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
+                CDModBlocks.WORMY_DIRT.get());
+
+        tag(BlockTags.DIRT).add(
+                CDModBlocks.WORMY_DIRT.get());
+
         tag(BlockTags.LOGS_THAT_BURN).add(
                 CDModBlocks.PALM_LOG.get(),
                 CDModBlocks.STRIPPED_PALM_LOG.get(),
