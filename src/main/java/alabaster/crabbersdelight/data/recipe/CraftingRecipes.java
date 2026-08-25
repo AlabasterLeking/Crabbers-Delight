@@ -89,6 +89,14 @@ public class CraftingRecipes {
                 .define('S', Items.STICK)
                 .unlockedBy("has_string", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STRING))
                 .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.LIFE_PRESERVER.get(), 1)
+                .pattern("www")
+                .pattern("wrw")
+                .pattern("www")
+                .define('w', ItemTags.WOOL)
+                .define('r', ModItems.ROPE.get())
+                .unlockedBy("has_wool_or_rope", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL, ModItems.ROPE.get()))
+                .save(output);
     }
 
     private static void recipesPalmWood(RecipeOutput output) {

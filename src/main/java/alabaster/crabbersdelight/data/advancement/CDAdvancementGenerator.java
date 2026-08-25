@@ -23,7 +23,7 @@ public class CDAdvancementGenerator implements AdvancementProvider.AdvancementGe
     @Override
     public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
         AdvancementHolder crabbersDelight = Advancement.Builder.advancement()
-                .display(CDModItems.RAW_CLAWSTER.get(),
+                .display(CDModItems.RAW_CRAB.get(),
                         CDTextUtils.getTranslation("advancement.root"),
                         CDTextUtils.getTranslation("advancement.root.desc"),
                         ResourceLocation.parse("minecraft:textures/block/sand.png"),

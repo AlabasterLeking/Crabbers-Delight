@@ -99,6 +99,8 @@ public class CDModItems {
             () -> new PearlNecklaceItem(basicItem().stacksTo(1)));
     public static final Supplier<Item> COCONUT_HELMET = registerWithTab("coconut_helmet",
             () -> new CoconutHelmetItem(basicItem().stacksTo(1)));
+    public static final Supplier<Item> LIFE_PRESERVER = registerWithTab("life_preserver",
+            () -> new LifePreserverItem(basicItem()));
 
     // Palm
     public static final Supplier<Item> PALM_LOG = registerWithTab("palm_log",
@@ -275,8 +277,6 @@ public class CDModItems {
             () -> new BlockItem(CDModBlocks.FROG_LEG_BARREL.get(), basicItem()));
     public static final Supplier<Item> COCONUT_CRATE = registerWithTab("coconut_crate",
             () -> new BlockItem(CDModBlocks.COCONUT_CRATE.get(), basicItem()));
-    //public static final Supplier<Item> LANTERNFISH_BARREL = registerWithTab("lanternfish_barrel",
-    //() -> new BlockItem(ModBlocks.LANTERNFISH_BARREL.get(), basicItem()));
     public static final Supplier<Item> NAUTILUS_SHELL_BLOCK = registerWithTab("nautilus_shell_block",
             () -> new BlockItem(CDModBlocks.NAUTILUS_SHELL_BLOCK.get(), basicItem()));
     public static final Supplier<Item> PEARL_BLOCK = registerWithTab("pearl_block",

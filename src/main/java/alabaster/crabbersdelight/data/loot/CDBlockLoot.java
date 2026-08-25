@@ -57,6 +57,8 @@ public class CDBlockLoot extends BlockLootSubProvider
 
         dropSelf(CDModBlocks.FISH_PLAQUE.get());
         dropSelf(CDModBlocks.WORM_BIN.get());
+
+        dropSelf(CDModBlocks.LIFE_PRESERVER.get());
     }
 
     @Override

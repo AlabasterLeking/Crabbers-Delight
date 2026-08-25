@@ -175,4 +175,8 @@ public class CDModBlocks {
 
     public static final Supplier<Block> WORMY_DIRT = BLOCKS.register("wormy_dirt",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.DIRT)));
+
+    // Life Preserver
+    public static final Supplier<Block> LIFE_PRESERVER = BLOCKS.register("life_preserver",
+            () -> new LifePreserverBlock(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL).noOcclusion()));
 }

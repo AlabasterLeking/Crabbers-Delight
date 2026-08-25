@@ -127,6 +127,9 @@
   "block.crabbersdelight.worm_bin": "Worm Bin",
   "block.crabbersdelight.wormy_dirt": "Wormy Dirt",
 
+  "block.crabbersdelight.life_preserver": "Life Preserver",
+  "tooltip.crabbersdelight.life_preserver.desc": "Equip to stay afloat in water",
+
   "item.crabbersdelight.note": "Note",
   "item.crabbersdelight.signed_note": "Signed Note",
   "item.crabbersdelight.signed_note.author": "by %s",

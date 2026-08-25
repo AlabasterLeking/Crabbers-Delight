@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "face=floor,facing=north": { "model": "crabbersdelight:block/life_preserver" },
+    "face=floor,facing=south": { "model": "crabbersdelight:block/life_preserver" },
+    "face=floor,facing=west": { "model": "crabbersdelight:block/life_preserver" },
+    "face=floor,facing=east": { "model": "crabbersdelight:block/life_preserver" },
+    "face=ceiling,facing=south": { "model": "crabbersdelight:block/life_preserver_middle" },
+    "face=ceiling,facing=west": { "model": "crabbersdelight:block/life_preserver_middle", "y": 90 },
+    "face=ceiling,facing=north": { "model": "crabbersdelight:block/life_preserver_middle", "y": 180 },
+    "face=ceiling,facing=east": { "model": "crabbersdelight:block/life_preserver_middle", "y": 270 },
+    "face=wall,facing=south": { "model": "crabbersdelight:block/life_preserver_wall" },
+    "face=wall,facing=west": { "model": "crabbersdelight:block/life_preserver_wall", "y": 90 },
+    "face=wall,facing=north": { "model": "crabbersdelight:block/life_preserver_wall", "y": 180 },
+    "face=wall,facing=east": { "model": "crabbersdelight:block/life_preserver_wall", "y": 270 }
+  }
+}

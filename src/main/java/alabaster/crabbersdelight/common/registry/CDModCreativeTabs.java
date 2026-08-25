@@ -17,7 +17,7 @@ public class CDModCreativeTabs
     public static final Supplier<CreativeModeTab> TAB_CRABBERS_DELIGHT = CREATIVE_TAB.register(FarmersDelight.MODID,
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.crabbersdelight"))
-                    .icon(() -> new ItemStack(CDModItems.RAW_CLAWSTER.get()))
+                    .icon(() -> new ItemStack(CDModItems.RAW_CRAB.get()))
                     .displayItems((parameters, output) -> CDModItems.CREATIVE_TAB_ITEMS.forEach(itemLike -> output.accept(itemLike.get())))
                     .build()
             );
