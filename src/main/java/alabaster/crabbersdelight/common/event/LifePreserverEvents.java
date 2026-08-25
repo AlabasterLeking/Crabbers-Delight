@@ -14,6 +14,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 @EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class LifePreserverEvents {
@@ -24,12 +25,17 @@ public class LifePreserverEvents {
 
     @SubscribeEvent
     public static void onEntityTick(EntityTickEvent.Post event) {
-        if (!(event.getEntity() instanceof LivingEntity entity)) {
-            return;
+        if (event.getEntity() instanceof LivingEntity entity) {
+            applyBuoyancy(entity);
         }
-        if (entity.level().isClientSide) {
-            return;
-        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerTick(PlayerTickEvent.Post event) {
+        applyBuoyancy(event.getEntity());
+    }
+
+    private static void applyBuoyancy(LivingEntity entity) {
         if (!entity.getItemBySlot(EquipmentSlot.LEGS).is(CDModItems.LIFE_PRESERVER.get())) {
             return;
         }

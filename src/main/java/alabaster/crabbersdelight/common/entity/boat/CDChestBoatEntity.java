@@ -53,10 +53,12 @@ public class CDChestBoatEntity extends ChestBoat {
     }
 
     protected void addAdditionalSaveData(CompoundTag compoundTag) {
+        super.addAdditionalSaveData(compoundTag);
         compoundTag.putString("Type", this.getModVariant().getSerializedName());
     }
 
     protected void readAdditionalSaveData(CompoundTag compoundTag) {
+        super.readAdditionalSaveData(compoundTag);
         if (compoundTag.contains("Type", 8)) {
             this.setVariant(CDBoatEntity.Type.byName(compoundTag.getString("Type")));
         }
