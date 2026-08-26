@@ -1,14 +1,13 @@
 package alabaster.crabbersdelight.common.block;
 
+import alabaster.crabbersdelight.common.entity.LifePreserverSeat;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Equipable;
 import net.minecraft.world.item.ItemStack;
@@ -38,9 +37,6 @@ import java.util.List;
 public class LifePreserverBlock extends Block implements Equipable {
 
     public static final double WAIST_HEIGHT = 0.7;
-    public static final String SEAT_KEY = "crabbersdelight_life_preserver_seat";
-    private static final String SEAT_POS_KEY = "crabbersdelight_life_preserver_seat_pos";
-    private static final double SEAT_Y_OFFSET = 3.0 / 16.0;
     public static final EnumProperty<AttachFace> FACE = BlockStateProperties.ATTACH_FACE;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -188,20 +184,12 @@ public class LifePreserverBlock extends Block implements Equipable {
             return InteractionResult.SUCCESS;
         }
 
-        ArmorStand seat = getSeat(level, pos);
+        LifePreserverSeat seat = getSeat(level, pos);
         if (seat != null && !seat.getPassengers().isEmpty()) {
             return InteractionResult.PASS;
         }
         if (seat == null) {
-            seat = new ArmorStand(level, pos.getX() + 0.5, pos.getY() + SEAT_Y_OFFSET, pos.getZ() + 0.5);
-            seat.setInvisible(true);
-            seat.setNoGravity(true);
-            seat.setInvulnerable(true);
-            seat.setSilent(true);
-            seat.setNoBasePlate(true);
-            applyMarkerFlag(seat);
-            seat.getPersistentData().putBoolean(SEAT_KEY, true);
-            seat.getPersistentData().putLong(SEAT_POS_KEY, pos.asLong());
+            seat = new LifePreserverSeat(level, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
             level.addFreshEntity(seat);
         }
 
@@ -209,24 +197,15 @@ public class LifePreserverBlock extends Block implements Equipable {
         return InteractionResult.SUCCESS;
     }
 
-    private void applyMarkerFlag(ArmorStand seat) {
-        CompoundTag data = new CompoundTag();
-        seat.saveWithoutId(data);
-        data.putBoolean("Marker", true);
-        seat.load(data);
-    }
-
     @Nullable
-    private ArmorStand getSeat(Level level, BlockPos pos) {
+    private LifePreserverSeat getSeat(Level level, BlockPos pos) {
         AABB box = new AABB(pos).inflate(0.3, 0.5, 0.3);
-        List<ArmorStand> seats = level.getEntitiesOfClass(ArmorStand.class, box, entity ->
-                entity.getPersistentData().getBoolean(SEAT_KEY)
-                        && entity.getPersistentData().getLong(SEAT_POS_KEY) == pos.asLong());
+        List<LifePreserverSeat> seats = level.getEntitiesOfClass(LifePreserverSeat.class, box);
         return seats.isEmpty() ? null : seats.get(0);
     }
 
     private void clearSeat(Level level, BlockPos pos) {
-        ArmorStand seat = getSeat(level, pos);
+        LifePreserverSeat seat = getSeat(level, pos);
         if (seat != null) {
             for (Entity passenger : seat.getPassengers()) {
                 passenger.stopRiding();

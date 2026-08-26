@@ -70,6 +70,8 @@ public class CrabbersDelight {
         CDModMenus.MENU.register(bus);
         CDModCreativeTabs.CREATIVE_TAB.register(bus);
         CDModPotions.POTIONS.register(bus);
+        CDModFluids.FLUIDS.register(bus);
+        CDModFluids.FLUID_TYPES.register(bus);
         CDModEntities.ENTITY_TYPES.register(bus);
         CDBiomeModifiers.BIOME_MODIFIER_SERIALIZERS.register(bus);
         CDPlacementModifiers.PLACEMENT_MODIFIERS.register(bus);

@@ -1,17 +1,20 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "hearthandharvest"
+      }
+    }
+  ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cooked_fish": {
+    "has_coconut": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:cooked_cod"
-          },
-          {
-            "items": "minecraft:cooked_salmon"
-          },
-          {
-            "items": "crabbersdelight:cooked_tropical_fish"
+            "items": "crabbersdelight:coconut"
           }
         ]
       },
@@ -27,7 +30,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cooked_fish"
+      "has_coconut"
     ]
   ],
   "rewards": {

@@ -1,6 +1,7 @@
 package alabaster.crabbersdelight.common.registry;
 
 import alabaster.crabbersdelight.CrabbersDelight;
+import alabaster.crabbersdelight.common.entity.LifePreserverSeat;
 import alabaster.crabbersdelight.common.entity.ThrownBottledNote;
 import alabaster.crabbersdelight.common.fishingspot.FishingSpotEntity;
 import alabaster.crabbersdelight.common.entity.boat.CDBoatEntity;
@@ -34,4 +35,8 @@ public class CDModEntities {
     public static final Supplier<EntityType<FishingSpotEntity>> FISHING_SPOT =
             ENTITY_TYPES.register("fishing_spot", () -> EntityType.Builder.<FishingSpotEntity>of(FishingSpotEntity::new, MobCategory.MISC)
                     .sized(0.1f, 0.1f).noSave().clientTrackingRange(6).updateInterval(40).build("fishing_spot"));
+
+    public static final Supplier<EntityType<LifePreserverSeat>> LIFE_PRESERVER_SEAT =
+            ENTITY_TYPES.register("life_preserver_seat", () -> EntityType.Builder.<LifePreserverSeat>of(LifePreserverSeat::new, MobCategory.MISC)
+                    .sized(0.1f, 0.1f).noSave().clientTrackingRange(6).updateInterval(40).build("life_preserver_seat"));
 }

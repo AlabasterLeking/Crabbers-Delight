@@ -4,6 +4,7 @@ import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.client.renderer.CrabTrapRenderer;
 import alabaster.crabbersdelight.client.renderer.FishPlaqueRenderer;
 import alabaster.crabbersdelight.client.renderer.FishingSpotRenderer;
+import alabaster.crabbersdelight.client.renderer.LifePreserverSeatRenderer;
 import alabaster.crabbersdelight.client.renderer.LureAwareFishingHookRenderer;
 import alabaster.crabbersdelight.common.registry.CDModBlockEntity;
 import alabaster.crabbersdelight.common.registry.CDModEntities;
@@ -47,6 +48,10 @@ public class ClientEventHandler {
         event.registerEntityRenderer(
                 CDModEntities.FISHING_SPOT.get(),
                 FishingSpotRenderer::new
+        );
+        event.registerEntityRenderer(
+                CDModEntities.LIFE_PRESERVER_SEAT.get(),
+                LifePreserverSeatRenderer::new
         );
     }
 

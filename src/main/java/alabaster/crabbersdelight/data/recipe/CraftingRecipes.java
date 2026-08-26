@@ -14,6 +14,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
+import net.neoforged.neoforge.common.conditions.NotCondition;
 import vectorwing.farmersdelight.common.crafting.FoodServingRecipe;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -535,8 +537,8 @@ public class CraftingRecipes {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.COCONUT_MILK.get())
                 .requires(Items.GLASS_BOTTLE)
                 .requires(CDModItems.COCONUT.get())
-                .unlockedBy("has_cooked_fish", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COOKED_COD, Items.COOKED_SALMON, CDModItems.COOKED_TROPICAL_FISH.get()))
-                .save(output);
+                .unlockedBy("has_coconut", InventoryChangeTrigger.TriggerInstance.hasItems(CDModItems.COCONUT.get()))
+                .save(output.withConditions(new NotCondition(new ModLoadedCondition("hearthandharvest"))));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.KELP_SHAKE.get())
                 .requires(Items.GLASS_BOTTLE)
@@ -588,7 +590,7 @@ public class CraftingRecipes {
                 .requires(Items.SUGAR)
                 .requires(Items.GLASS_BOTTLE)
                 .unlockedBy("has_sea_pickle", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SEA_PICKLE))
-                .save(output);
+                .save(output.withConditions(new NotCondition(new ModLoadedCondition("hearthandharvest"))));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CDModItems.FISH_SANDWICH.get())
                 .requires(Items.SEA_PICKLE)
