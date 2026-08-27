@@ -183,6 +183,29 @@
   "item.crabbersdelight.worm": "Worm",
   "item.crabbersdelight.worm_bin": "Worm Bin",
 
+  "item.crabbersdelight.conch": "Conch",
+  "tooltip.crabbersdelight.conch.desc": "Hold it to your ear and listen to what the sea has to say",
+
+  "message.crabbersdelight.conch.very_bad.1": "The tides are not in your favor",
+  "message.crabbersdelight.conch.very_bad.2": "A storm gathers on the horizon",
+  "message.crabbersdelight.conch.very_bad.3": "The depths whisper of misfortune",
+
+  "message.crabbersdelight.conch.bad.1": "The currents seem restless",
+  "message.crabbersdelight.conch.bad.2": "The shell hums with unease",
+  "message.crabbersdelight.conch.bad.3": "The waters murmur a quiet warning",
+
+  "message.crabbersdelight.conch.neutral.1": "The sea gives nothing away",
+  "message.crabbersdelight.conch.neutral.2": "The waves rise and fall as they always do",
+  "message.crabbersdelight.conch.neutral.3": "The shell offers only silence",
+
+  "message.crabbersdelight.conch.good.1": "The waters seem calm and welcoming",
+  "message.crabbersdelight.conch.good.2": "A gentle current carries good tidings",
+  "message.crabbersdelight.conch.good.3": "The shell hums with quiet favor",
+
+  "message.crabbersdelight.conch.very_good.1": "The ocean waves echo good fortune",
+  "message.crabbersdelight.conch.very_good.2": "The tides sing brightly in your favor",
+  "message.crabbersdelight.conch.very_good.3": "The depths shimmer with promise",
+
   "entity.crabbersdelight.crab": "Crab",
 
   "crabbersdelight.jei.crab_trap_loot": "Crab Trap",

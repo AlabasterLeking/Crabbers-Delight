@@ -84,7 +84,7 @@ public class CDModItems {
     public static final Supplier<Item> FISH_BONES = registerWithTab("fish_bones",
             () -> new Item(basicItem()));
 
-    // Tools
+    // Tools & Equipment
     public static final Supplier<Item> BUCKET_OF_CRAB_CHUM = registerWithTab("bucket_of_crab_chum",
             () -> new ChumItem(basicItem()));
     public static final Supplier<Item> BUCKET_OF_CLAWSTER_CHUM = registerWithTab("bucket_of_clawster_chum",
@@ -101,6 +101,34 @@ public class CDModItems {
             () -> new CoconutHelmetItem(basicItem().stacksTo(1)));
     public static final Supplier<Item> LIFE_PRESERVER = registerWithTab("life_preserver",
             () -> new LifePreserverItem(basicItem()));
+    public static final Supplier<Item> CONCH = registerWithTab("conch",
+            () -> new ConchItem(basicItem().stacksTo(1)));
+
+    // Fishing & Crabbing
+    public static final Supplier<Item> CRAB_TRAP = registerWithTab("crab_trap",
+            () -> new CrabTrapItem(basicItem()));
+    public static final Supplier<Item> FISH_PLAQUE = registerWithTab("fish_plaque",
+            () -> new BlockItem(CDModBlocks.FISH_PLAQUE.get(), basicItem()));
+    public static final Supplier<Item> TACKLE_BOX = registerWithTab("tackle_box",
+            () -> new TackleBoxItem(basicItem().stacksTo(1)));
+    public static final Supplier<Item> BARBED_LURE = registerWithTab("barbed_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.BARBED));
+    public static final Supplier<Item> DOUBLE_LURE = registerWithTab("double_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.DOUBLE));
+    public static final Supplier<Item> MAGNETIC_LURE = registerWithTab("magnetic_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.MAGNETIC));
+    public static final Supplier<Item> AUTOMATIC_LURE = registerWithTab("automatic_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.AUTOMATIC));
+    public static final Supplier<Item> STORM_LURE = registerWithTab("storm_lure",
+            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.STORM));
+    public static final Supplier<Item> FISHING_LINE = registerWithTab("fishing_line",
+            () -> new FishingLineItem(new Item.Properties().stacksTo(1).durability(64)));
+    public static final Supplier<Item> WORM = registerWithTab("worm",
+            () -> new WormItem(basicItem()));
+    public static final Supplier<Item> WORMY_DIRT = registerWithTab("wormy_dirt",
+            () -> new BlockItem(CDModBlocks.WORMY_DIRT.get(), basicItem()));
+    public static final Supplier<Item> WORM_BIN = registerWithTab("worm_bin",
+            () -> new BlockItem(CDModBlocks.WORM_BIN.get(), basicItem()));
 
     // Palm
     public static final Supplier<Item> PALM_LOG = registerWithTab("palm_log",
@@ -154,6 +182,7 @@ public class CDModItems {
     public static final Supplier<Item> COCONUT_PUDDING = registerWithTab("coconut_pudding",
             () -> new ConsumableItem(foodItem(CDFoodValues.COCONUT_PUDDING).craftRemainder(Items.GLASS_BOTTLE)));
 
+    // Seashells
     public static final Supplier<Item> SEASHELLS = registerWithTab("seashells",
             () -> new BlockItem(CDModBlocks.SEASHELLS.get(), basicItem()));
 
@@ -286,13 +315,6 @@ public class CDModItems {
     public static final Supplier<Item> SEA_PICKLE_CRATE = registerWithTab("sea_pickle_crate",
             () -> new BlockItem(CDModBlocks.SEA_PICKLE_CRATE.get(), basicItem()));
 
-    // Crab Trap
-    public static final Supplier<Item> CRAB_TRAP = registerWithTab("crab_trap",
-            () -> new alabaster.crabbersdelight.common.item.CrabTrapItem(basicItem()));
-
-    public static final Supplier<Item> FISH_PLAQUE = registerWithTab("fish_plaque",
-            () -> new BlockItem(CDModBlocks.FISH_PLAQUE.get(), basicItem()));
-
     // Notes + Messages in a Bottle
     public static final Supplier<Item> NOTE = registerWithTab("note",
             () -> new NoteItem(basicItem().stacksTo(16)));
@@ -302,29 +324,5 @@ public class CDModItems {
             () -> new MessageBottleItem(basicItem()));
     public static final Supplier<Item> BOTTLED_NOTE = registerWithTab("bottled_note",
             () -> new BottledNoteItem(basicItem().stacksTo(16)));
-
-    public static final Supplier<Item> TACKLE_BOX = registerWithTab("tackle_box",
-            () -> new TackleBoxItem(basicItem().stacksTo(1)));
-
-    public static final Supplier<Item> BARBED_LURE = registerWithTab("barbed_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.BARBED));
-    public static final Supplier<Item> DOUBLE_LURE = registerWithTab("double_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.DOUBLE));
-    public static final Supplier<Item> MAGNETIC_LURE = registerWithTab("magnetic_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.MAGNETIC));
-    public static final Supplier<Item> AUTOMATIC_LURE = registerWithTab("automatic_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.AUTOMATIC));
-    public static final Supplier<Item> STORM_LURE = registerWithTab("storm_lure",
-            () -> new LureItem(new Item.Properties().stacksTo(1).durability(64), LureEffect.STORM));
-
-    public static final Supplier<Item> FISHING_LINE = registerWithTab("fishing_line",
-            () -> new FishingLineItem(new Item.Properties().stacksTo(1).durability(64)));
-
-    public static final Supplier<Item> WORM = registerWithTab("worm",
-            () -> new WormItem(basicItem()));
-    public static final Supplier<Item> WORMY_DIRT = registerWithTab("wormy_dirt",
-            () -> new BlockItem(CDModBlocks.WORMY_DIRT.get(), basicItem()));
-    public static final Supplier<Item> WORM_BIN = registerWithTab("worm_bin",
-            () -> new BlockItem(CDModBlocks.WORM_BIN.get(), basicItem()));
 
 }
