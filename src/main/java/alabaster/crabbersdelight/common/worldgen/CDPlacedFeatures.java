@@ -22,6 +22,7 @@ public class CDPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PALM_PLACED_KEY = registerKey("palm_placed");
     public static final ResourceKey<PlacedFeature> SEASHELLS_PLACED_KEY = registerKey("seashells_placed");
     public static final ResourceKey<PlacedFeature> SEASHELLS_PLACED_KEY_UNDERWATER = registerKey("seashells_placed_underwater");
+    public static final ResourceKey<PlacedFeature> WORMY_DIRT_PLACED_KEY = registerKey("wormy_dirt_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -55,6 +56,15 @@ public class CDPlacedFeatures {
                         BlockPredicateFilter.forPredicate(
                                 BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.SAND)
                         ),
+                        BiomeFilter.biome()
+                ));
+
+        // Wormy dirt
+        register(context, WORMY_DIRT_PLACED_KEY, configuredFeatures.getOrThrow(CDConfiguredFeatures.WORMY_DIRT_KEY),
+                List.of(
+                        CDConfigPlacementModifier.WORMY_DIRT,
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome()
                 ));
     }

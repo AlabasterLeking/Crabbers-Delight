@@ -177,7 +177,7 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
             puffer.setPuffState(2);
 
             var facing = be.getBlockState().getValue(FishPlaqueBlock.FACING);
-            float yRot = facing.toYRot() + 180f;
+            float yRot = -facing.toYRot();
             float scale = 0.53125f * 1.5f;
 
             poseStack.pushPose();
@@ -192,15 +192,17 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
             poseStack.translate(0, -0.02f, 0);
             poseStack.scale(scale, scale, scale);
 
-            entity.setYHeadRot(yRot);
-            entity.setYBodyRot(yRot);
+            entity.setYHeadRot(0);
+            entity.setYBodyRot(0);
 
-            this.entityRenderer.render(entity, 0.0, 0.0, 0.0, yRot, 0f, poseStack, bufferSource, packedLight);
+            this.entityRenderer.render(entity, 0.0, 0.0, 0.0, 0.0f, 0f, poseStack, bufferSource, packedLight);
             poseStack.popPose();
         } else if (entity instanceof Axolotl axolotl) {
             var facing = be.getBlockState().getValue(FishPlaqueBlock.FACING);
-            float yRot = facing.toYRot();
+            float yRot = -facing.toYRot() + 180f;
             float scale = 0.53125f * 1.5f;
+
+            float forwardOffset = -0.9f;
 
             if (!(entityRenderer.getRenderer(axolotl) instanceof LivingEntityRenderer<?, ?> livingRenderer)) return;
             if (!(livingRenderer.getModel() instanceof AxolotlModel axolotlModel)) return;
@@ -223,9 +225,9 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
             poseStack.pushPose();
             poseStack.translate(0.5, 0.5, 0.5);
             poseStack.translate(
-                    facing.getStepX() * -0.9f,
+                    facing.getStepX() * forwardOffset,
                     0,
-                    facing.getStepZ() * -0.9f);
+                    facing.getStepZ() * forwardOffset);
             poseStack.mulPose(Axis.YP.rotationDegrees(yRot));
             poseStack.translate(0, -0.02f, 0);
             poseStack.mulPose(Axis.ZP.rotationDegrees(180f));

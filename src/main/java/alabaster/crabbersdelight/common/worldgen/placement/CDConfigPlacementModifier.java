@@ -17,6 +17,7 @@ public class CDConfigPlacementModifier extends PlacementModifier {
     public static final CDConfigPlacementModifier PALM = new CDConfigPlacementModifier("palm");
     public static final CDConfigPlacementModifier SEASHELL = new CDConfigPlacementModifier("seashell");
     public static final CDConfigPlacementModifier SEASHELL_UNDERWATER = new CDConfigPlacementModifier("seashell_underwater");
+    public static final CDConfigPlacementModifier WORMY_DIRT = new CDConfigPlacementModifier("wormy_dirt");
 
     public static final MapCodec<CDConfigPlacementModifier> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
             Codec.STRING.fieldOf("config_key").forGetter(m -> m.configKey)
@@ -44,6 +45,11 @@ public class CDConfigPlacementModifier extends PlacementModifier {
             case "seashell_underwater" -> {
                 if (!Config.GENERATE_SEASHELLS.get()) yield Stream.empty();
                 int chance = Config.CHANCE_SEASHELLS_UNDERWATER.get();
+                yield chance > 0 && random.nextInt(chance) == 0 ? Stream.of(pos) : Stream.empty();
+            }
+            case "wormy_dirt" -> {
+                if (!Config.GENERATE_WORMY_DIRT.get()) yield Stream.empty();
+                int chance = Config.CHANCE_WORMY_DIRT.get();
                 yield chance > 0 && random.nextInt(chance) == 0 ? Stream.of(pos) : Stream.empty();
             }
             default -> Stream.of(pos);

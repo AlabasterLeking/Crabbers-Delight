@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -22,6 +23,7 @@ public class CDBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_SEASHELLS = registerKey("add_seashells");
     public static final ResourceKey<BiomeModifier> ADD_SEASHELLS_UNDERWATER = registerKey("add_seashells_underwater");
     public static final ResourceKey<BiomeModifier> ADD_CRAB_SPAWNS = registerKey("add_crab_spawns");
+    public static final ResourceKey<BiomeModifier> ADD_WORMY_DIRT = registerKey("add_wormy_dirt");
 
     public static final DeferredRegister<MapCodec<? extends BiomeModifier>> BIOME_MODIFIER_SERIALIZERS =
             DeferredRegister.create(NeoForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, CrabbersDelight.MODID);
@@ -67,6 +69,11 @@ public class CDBiomeModifiers {
                 CDModEntities.CRAB.get(),
                 "crab_spawns"
         ));
+
+        context.register(ADD_WORMY_DIRT, new BiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(CDPlacedFeatures.WORMY_DIRT_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {

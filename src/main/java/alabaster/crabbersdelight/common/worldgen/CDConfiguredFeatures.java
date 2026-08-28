@@ -2,6 +2,7 @@ package alabaster.crabbersdelight.common.worldgen;
 
 import alabaster.crabbersdelight.CrabbersDelight;
 import alabaster.crabbersdelight.common.registry.CDModBlocks;
+import alabaster.crabbersdelight.common.registry.CDModFeatures;
 import alabaster.crabbersdelight.common.worldgen.tree.PalmFoliagePlacer;
 import alabaster.crabbersdelight.common.worldgen.tree.PalmTrunkPlacer;
 import net.minecraft.core.BlockPos;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -28,8 +30,10 @@ public class CDConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PALM_KEY = registerKey("palm");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEASHELLS_KEY = registerKey("seashells_beach");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEASHELLS_KEY_UNDERWATER = registerKey("seashells_underwater");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> WORMY_DIRT_KEY = registerKey("wormy_dirt");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+
         // Palm tree registration
         register(context, PALM_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(CDModBlocks.PALM_LOG.get()),
@@ -73,6 +77,9 @@ public class CDConfiguredFeatures {
                 )
         );
         register(context, SEASHELLS_KEY_UNDERWATER, Feature.RANDOM_PATCH, underwaterPatch);
+
+        // Wormy dirt
+        register(context, WORMY_DIRT_KEY, CDModFeatures.WORMY_DIRT_FEATURE.get(), NoneFeatureConfiguration.INSTANCE);
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
