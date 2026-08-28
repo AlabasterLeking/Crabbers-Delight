@@ -54,6 +54,7 @@ public class FishPlaqueRenderer implements BlockEntityRenderer<FishPlaqueBlockEn
             Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("minecraft", "tropical_fish"), ""), new MobOverride(0f, 0f, 0f, 0.0625f, -0.0625f, -0.25f)),
             Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("minecraft", "squid"), ""), new MobOverride(90f, -90f, 0f, 0.125f, -0.125f, -0.125f)),
             Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("minecraft", "glow_squid"), ""), new MobOverride(90f, -90f, 0f, 0.125f, -0.125f, -0.125f)),
+            Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("minecraft", "tadpole"), ""), new MobOverride(0f, 180f, 0f, -0.125f, -0.0625f, -0.08f)),
 
             // Crabber's Delight
             Map.entry(new MobKey(ResourceLocation.fromNamespaceAndPath("crabbersdelight", "crab"), ""), new MobOverride(-90f, 180f, -90f, -0.125f, -0.125f, -0.125f)),
