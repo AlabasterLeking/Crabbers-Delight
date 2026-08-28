@@ -44,9 +44,10 @@ public class CraftingRecipes {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.DOUBLE_LURE.get(), 1)
                 .pattern(" i ")
                 .pattern(" i ")
-                .pattern("iii")
-                .define('i', Items.IRON_NUGGET)
-                .unlockedBy("has_iron_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_NUGGET))
+                .pattern("idi")
+                .define('d', Items.DIAMOND)
+                .define('i', Items.IRON_INGOT)
+                .unlockedBy("has_iron_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
                 .save(output);
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, CDModItems.BARBED_LURE.get(), 1)
                 .pattern("  i")

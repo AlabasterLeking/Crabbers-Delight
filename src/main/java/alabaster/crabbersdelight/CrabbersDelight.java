@@ -73,6 +73,7 @@ public class CrabbersDelight {
         CDModFluids.FLUIDS.register(bus);
         CDModFluids.FLUID_TYPES.register(bus);
         CDModEntities.ENTITY_TYPES.register(bus);
+        CDModFeatures.FEATURES.register(bus);
         CDBiomeModifiers.BIOME_MODIFIER_SERIALIZERS.register(bus);
         CDPlacementModifiers.PLACEMENT_MODIFIERS.register(bus);
         CDTrunkPlacerTypes.TRUNK_PLACERS.register(bus);

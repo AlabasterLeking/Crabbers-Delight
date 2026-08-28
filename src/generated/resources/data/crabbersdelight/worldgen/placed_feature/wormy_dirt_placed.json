@@ -1,0 +1,19 @@
+{
+  "feature": "crabbersdelight:wormy_dirt",
+  "placement": [
+    {
+      "type": "crabbersdelight:config_filter",
+      "config_key": "wormy_dirt"
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}
