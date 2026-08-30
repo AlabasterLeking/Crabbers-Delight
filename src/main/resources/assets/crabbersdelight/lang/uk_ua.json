@@ -36,6 +36,8 @@
   "item.crabbersdelight.cooked_tropical_fish_slice": "Варена нарізка з тропічної риби",
   "item.crabbersdelight.pufferfish_slice": "Нарізка зі скелезуба",
   "item.crabbersdelight.cooked_pufferfish_slice": "Варена нарізка зі скелезуба",
+  "item.crabbersdelight.fried_fish": "Смажена риба",
+  "item.crabbersdelight.fish_sandwich": "Сендвіч з риби",
   "item.crabbersdelight.bisque": "Вершковий суп",
   "item.crabbersdelight.seafood_gumbo": "Морський суп",
   "item.crabbersdelight.stuffed_nautilus_shell": "Фарширована мушля навтилуса",
@@ -45,6 +47,7 @@
   "item.crabbersdelight.squid_kebab": "Кебаб з кальмаром",
   "item.crabbersdelight.frog_leg_kebab": "Кебаб із жаб'ячою лапкою",
   "item.crabbersdelight.coral_crunch": "Коралові снеки",
+  "item.crabbersdelight.turtle_stew": "Черепаховий суп",
 
   "item.crabbersdelight.soggy_flesh": "Розмокла плоть",
   "item.crabbersdelight.arid_flesh": "Суха плоть",
@@ -122,6 +125,10 @@
   "block.crabbersdelight.note_block": "Записка",
   "block.crabbersdelight.tackle_box": "Коробка зі снастями",
   "block.crabbersdelight.worm_bin": "Відро з хробаками",
+  "block.crabbersdelight.wormy_dirt": "Земля з хробаками",
+
+  "block.crabbersdelight.life_preserver": "Рятівне коло",
+  "tooltip.crabbersdelight.life_preserver.desc": "Спорядіть, щоб тримати на плаву у воді",
 
   "item.crabbersdelight.note": "Записка",
   "item.crabbersdelight.signed_note": "Підписана записка",
@@ -140,11 +147,20 @@
   "gui.crabbersdelight.note.generation.copy_of_copy": "Копія копії",
   "gui.crabbersdelight.note.generation.tattered": "Потріпана",
 
+  "tooltip.crabbersdelight.fish_size.tiny": "Крихітна",
+  "tooltip.crabbersdelight.fish_size.small": "Мала",
+  "tooltip.crabbersdelight.fish_size.regular": "Звичайна",
+  "tooltip.crabbersdelight.fish_size.large": "Велика",
+  "tooltip.crabbersdelight.fish_size.huge": "Величезна",
+
   "item.crabbersdelight.tackle_box": "Ящик для снастей",
   "item.crabbersdelight.tackle_box.lure": "Приманка: %s",
   "item.crabbersdelight.tackle_box.line": "Волосінь: %s",
   "item.crabbersdelight.tackle_box.bait": "Наживка: %s",
   "item.crabbersdelight.crab_trap.bait": "Наживка: %s",
+  "gui.crabbersdelight.tackle_box.lure_slot": "Приманка",
+  "gui.crabbersdelight.tackle_box.line_slot": "Волосінь",
+  "gui.crabbersdelight.tackle_box.bait_slot": "Наживка",
 
   "item.crabbersdelight.barbed_lure": "Зубчата приманка",
   "tooltip.crabbersdelight.barbed_lure.desc": "Дає більше часу на те, щоб витягнути рибу",
@@ -152,8 +168,8 @@
   "item.crabbersdelight.double_lure": "Подвійна приманка",
   "tooltip.crabbersdelight.double_lure.desc": "Подвоює кількість виловлених предметів",
 
-  "item.crabbersdelight.shiny_lure": "Блискуча приманка",
-  "tooltip.crabbersdelight.shiny_lure.desc": "Збільшує ймовірність отримання скарбів",
+  "item.crabbersdelight.magnetic_lure": "Магнітна приманка",
+  "tooltip.crabbersdelight.magnetic_lure.desc": "Збільшує ймовірність отримання скарбів",
 
   "item.crabbersdelight.automatic_lure": "Автоматична приманка",
   "tooltip.crabbersdelight.automatic_lure.desc": "Автоматично намотує волосінь, щойно клює риба",
@@ -166,6 +182,29 @@
 
   "item.crabbersdelight.worm": "Хробак",
   "item.crabbersdelight.worm_bin": "Відро з хробаками",
+
+  "item.crabbersdelight.conch": "Мушля",
+  "tooltip.crabbersdelight.conch.desc": "Піднесіть до вуха й послухайте море",
+
+  "message.crabbersdelight.conch.very_bad.1": "Прилив віщує біду",
+  "message.crabbersdelight.conch.very_bad.2": "На обрії збирається буря",
+  "message.crabbersdelight.conch.very_bad.3": "Глибини шепочуть про лихо",
+
+  "message.crabbersdelight.conch.bad.1": "Течії неспокійні",
+  "message.crabbersdelight.conch.bad.2": "Мушля гуде тривогою",
+  "message.crabbersdelight.conch.bad.3": "Води бурмочуть тихе застереження",
+
+  "message.crabbersdelight.conch.neutral.1": "Море тримає таємницю",
+  "message.crabbersdelight.conch.neutral.2": "Хвилі здіймаються й падають, як завжди",
+  "message.crabbersdelight.conch.neutral.3": "Мушля відповідає лише тишею",
+
+  "message.crabbersdelight.conch.good.1": "Води здаються спокійними та привітними",
+  "message.crabbersdelight.conch.good.2": "Лагідна течія несе добрі звістки",
+  "message.crabbersdelight.conch.good.3": "Мушля гуде тихою прихильністю",
+
+  "message.crabbersdelight.conch.very_good.1": "Океанські хвилі відлунюють удачею",
+  "message.crabbersdelight.conch.very_good.2": "Припливи яскраво співають на вашу користь",
+  "message.crabbersdelight.conch.very_good.3": "Глибини мерехтять обіцянкою",
 
   "entity.crabbersdelight.crab": "Краб",
 
@@ -185,6 +224,9 @@
   "crabbersdelight.advancement.get_pearl": "Солодка перлина!",
   "crabbersdelight.advancement.get_pearl.desc": "Здобудьте свою першу перлину, нарізавши молюсків на нарізній дошці. Можливо, таємничий торговець визнає її цінною...",
 
+  "crabbersdelight.advancement.get_pearl_necklace": "Білосніжні зубки",
+  "crabbersdelight.advancement.get_pearl_necklace.desc": "Змайструйте перлинне намисто. Дуже корисне для підводних пригод!",
+
   "crabbersdelight.advancement.a_shrimp_fried_this_rice": "Креветка зварила рис?!",
   "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "Ти серйозно хочеш сказати, що цей рис зварила КРЕВЕТКА?! Неможливо.",
 
@@ -200,6 +242,17 @@
   "crabbersdelight.advancement.glow_squid_killer": "Глибоководніший вбивця",
   "crabbersdelight.advancement.glow_squid_killer.desc": "Зріжте мацаки сяйного кальмара ножем",
 
+  "crabbersdelight.advancement.gone_fishin": "На риболовлю!",
+  "crabbersdelight.advancement.gone_fishin.desc": "Змайструйте ящик для снастей, щоб використовувати різні приманки й наживку",
+
+  "crabbersdelight.advancement.master_baiter": "Майстер наживки",
+  "crabbersdelight.advancement.master_baiter.desc": "Використайте наживку під час риболовлі",
+
+  "crabbersdelight.advancement.they_pay_me_in_woims": "Мені платять хробачками",
+  "crabbersdelight.advancement.they_pay_me_in_woims.desc": "Змайструйте хробачник, щоб отримувати більше хробаків",
+
+  "crabbersdelight.advancement.castaway_couture": "Майже як Робінзон",
+  "crabbersdelight.advancement.castaway_couture.desc": "З'ясуйте, як надіти кокос на голову",
 
   "tag.item.crabbersdelight.raw_seafood": "Сирі морепродукти",
   "tag.item.crabbersdelight.cooked_seafood": "Зварені морепродукти",
@@ -212,6 +265,8 @@
 
   "tag.item.crabbersdelight.creature_chums": "Потрухи",
 
+  "tag.item.crabbersdelight.palm_logs": "Пальмові колоди",
+
   "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clam_chum": "Приманка: відро молюскових потрухів",
   "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clawster_chum": "Приманка: відро потрухів раків",
   "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_crab_chum": "Приманка: відро крабових потрухів",
@@ -221,6 +276,9 @@
   "tag.item.crabbersdelight.jei_display_results.minecraft.pufferfish": "Приманка: скелезуб",
   "tag.item.crabbersdelight.jei_display_results.minecraft.salmon": "Приманка: лосось",
   "tag.item.crabbersdelight.jei_display_results.minecraft.tropical_fish": "Приманка: тропічна риба",
+
+  "fluid_type.crabbersdelight.sea_pickle_juice": "Сік морського огірка",
+  "fluid_type.crabbersdelight.coconut_milk": "Кокосове молоко",
 
   "trim_material.crabbersdelight.pearl": "Перловий матеріал"
 }
