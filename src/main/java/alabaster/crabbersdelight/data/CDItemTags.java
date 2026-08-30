@@ -1,7 +1,6 @@
 package alabaster.crabbersdelight.data;
 
 import alabaster.crabbersdelight.CrabbersDelight;
-import alabaster.crabbersdelight.common.registry.CDModBlocks;
 import alabaster.crabbersdelight.common.registry.CDModItems;
 import alabaster.crabbersdelight.common.tags.CDModTags;
 import net.minecraft.core.HolderLookup;
@@ -16,7 +15,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import vectorwing.farmersdelight.common.tag.CommonTags;
+import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 import javax.annotation.Nullable;
@@ -74,8 +73,8 @@ public class CDItemTags extends ItemTagsProvider {
 
         // Raw Fishes
         tag(Tags.Items.FOODS_RAW_FISH)
-                .add(CDModItems.TROPICAL_FISH_SLICE.get())
-                .add(CDModItems.PUFFERFISH_SLICE.get());
+                .add(CDModItems.TROPICAL_FISH_SLICE.get());
+                //.add(CDModItems.PUFFERFISH_SLICE.get());
 
         // Cooked Fishes
         tag(Tags.Items.FOODS_COOKED_FISH)
@@ -95,38 +94,42 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.RAW_CRAB.get())
                 .add(Items.STICK)
                 .add(Items.NAUTILUS_SHELL)
-                .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
+                .add(ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
                 .add(CDModItems.CAN.get())
+                .add(CDModItems.MESSAGE_BOTTLE.get())
                 .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.SALMON)
                 .add(CDModItems.RAW_CLAWSTER.get())
                 .add(Items.STICK)
                 .add(Items.NAUTILUS_SHELL)
-                .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
+                .add(ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
                 .add(CDModItems.CAN.get())
+                .add(CDModItems.MESSAGE_BOTTLE.get())
                 .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.PUFFERFISH)
                 .add(CDModItems.CLAM.get())
                 .add(Items.STICK)
                 .add(Items.NAUTILUS_SHELL)
-                .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
+                .add(ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
                 .add(CDModItems.CAN.get())
                 .add(CDModItems.CORAL_FRAGMENTS.get())
+                .add(CDModItems.MESSAGE_BOTTLE.get())
                 .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.TROPICAL_FISH)
                 .add(CDModItems.RAW_SHRIMP.get())
                 .add(Items.STICK)
                 .add(Items.NAUTILUS_SHELL)
-                .add(vectorwing.farmersdelight.common.registry.ModItems.ROPE.get())
+                .add(ModItems.ROPE.get())
                 .add(Items.COPPER_INGOT)
                 .add(CDModItems.CAN.get())
                 .add(CDModItems.CORAL_FRAGMENTS.get())
+                .add(CDModItems.MESSAGE_BOTTLE.get())
                 .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.BUCKET_OF_CRAB_CHUM)
@@ -149,6 +152,7 @@ public class CDItemTags extends ItemTagsProvider {
                 .add(CDModItems.CLAM.get())
                 .add(CDModItems.RAW_CLAWSTER.get())
                 .add(CDModItems.RAW_CRAB.get())
+                .add(CDModItems.MESSAGE_BOTTLE.get())
                 .add(CDModItems.FISH_BONES.get());
 
         tag(CDModTags.FISHING_BAIT)
