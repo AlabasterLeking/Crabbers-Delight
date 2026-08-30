@@ -36,6 +36,11 @@ public class FishingBaitEvents {
             return;
         }
 
+        ItemStack lure = tackleBox.getSlot(TackleBoxItemHandler.LURE_SLOT);
+        if (!lure.isEmpty() && player instanceof ServerPlayer serverPlayer) {
+            grantMasterBaiter(serverPlayer);
+        }
+
         int baitSlot = TackleBoxItemHandler.BAIT_SLOT_1;
         ItemStack bait = tackleBox.getSlot(baitSlot);
         if (bait.isEmpty()) {
@@ -65,15 +70,19 @@ public class FishingBaitEvents {
         event.getDrops().addAll(rolled);
 
         if (player instanceof ServerPlayer serverPlayer) {
-            ResourceLocation advancementId = ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "main/master_baiter");
-            AdvancementHolder masterBaiter = serverPlayer.server.getAdvancements().get(advancementId);
-            if (masterBaiter != null) {
-                serverPlayer.getAdvancements().award(masterBaiter, "bait_catch");
-            }
+            grantMasterBaiter(serverPlayer);
         }
 
         ItemStack shrunk = bait.copy();
         shrunk.shrink(1);
         tackleBox.setSlot(baitSlot, shrunk);
+    }
+
+    private static void grantMasterBaiter(ServerPlayer serverPlayer) {
+        ResourceLocation advancementId = ResourceLocation.fromNamespaceAndPath(CrabbersDelight.MODID, "main/master_baiter");
+        AdvancementHolder masterBaiter = serverPlayer.server.getAdvancements().get(advancementId);
+        if (masterBaiter != null) {
+            serverPlayer.getAdvancements().award(masterBaiter, "bait_catch");
+        }
     }
 }

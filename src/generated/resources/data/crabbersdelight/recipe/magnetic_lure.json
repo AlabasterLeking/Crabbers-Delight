@@ -5,20 +5,20 @@
     "I": {
       "item": "minecraft:iron_ingot"
     },
-    "b": {
-      "item": "minecraft:blue_dye"
-    },
     "i": {
       "item": "minecraft:iron_nugget"
     },
+    "l": {
+      "item": "minecraft:lapis_lazuli"
+    },
     "r": {
-      "item": "minecraft:red_dye"
+      "item": "minecraft:redstone"
     }
   },
   "pattern": [
     " i ",
     " I ",
-    "rib"
+    "rIl"
   ],
   "result": {
     "count": 1,

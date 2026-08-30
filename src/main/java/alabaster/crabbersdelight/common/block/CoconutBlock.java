@@ -55,7 +55,6 @@ public class CoconutBlock extends FallingBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        // Return a new shape based on the HANGING property; do NOT modify the static SHAPE
         if (state.getValue(HANGING)) {
             return Block.box(3.0D, 5.0D, 3.0D, 13.0D, 15.0D, 13.0D);
         } else {
@@ -65,10 +64,9 @@ public class CoconutBlock extends FallingBlock {
 
     @Override
     public BlockState updateShape(BlockState state, Direction facing, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        if (facing == Direction.UP) {
-            boolean hanging = !neighborState.isAir();
+        if (facing == Direction.UP || facing == Direction.DOWN) {
+            boolean hanging = computeHanging(level, pos);
             if (!hanging) {
-                // Schedule a tick to turn into a falling block
                 level.scheduleTick(pos, this, 1);
             }
             return state.setValue(HANGING, hanging);
@@ -79,12 +77,20 @@ public class CoconutBlock extends FallingBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         Level level = context.getLevel();
-        BlockPos above = context.getClickedPos().above();
-        BlockState aboveState = level.getBlockState(above);
+        BlockPos pos = context.getClickedPos();
+        return this.defaultBlockState().setValue(HANGING, computeHanging(level, pos));
+    }
 
-        // Hanging is true if there is any solid block above (or just any block)
-        boolean hanging = !aboveState.isAir();
-        return this.defaultBlockState().setValue(HANGING, hanging);
+    private boolean computeHanging(BlockGetter level, BlockPos pos) {
+        BlockState aboveState = level.getBlockState(pos.above());
+        boolean hasSupportAbove = !aboveState.isAir();
+        if (!hasSupportAbove) {
+            return false;
+        }
+        BlockPos belowPos = pos.below();
+        BlockState belowState = level.getBlockState(belowPos);
+        boolean hasSolidBelow = belowState.isFaceSturdy(level, belowPos, Direction.UP);
+        return !hasSolidBelow;
     }
 
     @Override
@@ -146,7 +152,6 @@ public class CoconutBlock extends FallingBlock {
         if (!level.isClientSide) {
             BlockPos pos = hit.getBlockPos();
 
-            // Turn off hanging and schedule tick to fall
             if (state.getValue(HANGING)) {
                 level.setBlock(pos, state.setValue(HANGING, false), Block.UPDATE_ALL);
                 level.scheduleTick(pos, this, 1);

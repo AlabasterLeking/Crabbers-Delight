@@ -2,10 +2,10 @@
   "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
-      "modid": "hearthandharvest"
+      "modid": "create"
     }
   ],
-  "type": "hearthandharvest:stomping",
+  "type": "create:compacting",
   "ingredients": [
     {
       "item": "minecraft:sea_pickle"
@@ -20,8 +20,10 @@
       "item": "minecraft:sea_pickle"
     }
   ],
-  "result_fluid": {
-    "amount": 500,
-    "id": "crabbersdelight:sea_pickle_juice"
-  }
+  "results": [
+    {
+      "amount": 500,
+      "id": "crabbersdelight:sea_pickle_juice"
+    }
+  ]
 }

@@ -2,6 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
     "i": {
       "item": "minecraft:iron_nugget"
     },
@@ -17,7 +20,7 @@
   },
   "pattern": [
     " i ",
-    " i ",
+    " I ",
     "rot"
   ],
   "result": {
