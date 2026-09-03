@@ -36,7 +36,7 @@ public class FishingLineEvents {
         hook.setDeltaMovement(velocity.scale(DISTANCE_MULTIPLIER));
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(receiveCanceled = true)
     public static void onItemFished(ItemFishedEvent event) {
         Player player = event.getEntity();
         if (event.getDrops().isEmpty()) {

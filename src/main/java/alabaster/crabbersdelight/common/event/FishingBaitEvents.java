@@ -16,6 +16,7 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.ItemFishedEvent;
@@ -24,7 +25,8 @@ import java.util.List;
 
 @EventBusSubscriber(modid = CrabbersDelight.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class FishingBaitEvents {
-    @SubscribeEvent
+
+    @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onItemFished(ItemFishedEvent event) {
         Player player = event.getEntity();
         if (!(player.level() instanceof ServerLevel serverLevel)) {

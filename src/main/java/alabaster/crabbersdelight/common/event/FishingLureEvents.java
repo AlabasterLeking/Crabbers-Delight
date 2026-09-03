@@ -32,6 +32,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.EventHooks;
@@ -78,7 +79,7 @@ public class FishingLureEvents {
         tackleBox.setSlot(TackleBoxItemHandler.LURE_SLOT, lure);
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOW)
     public static void onItemFished(ItemFishedEvent event) {
         Player player = event.getEntity();
         if (!(player.level() instanceof ServerLevel serverLevel)) {
@@ -100,7 +101,9 @@ public class FishingLureEvents {
                 spawnCaughtItem(serverLevel, hook, player, stack);
                 awardCatchStat(player, stack);
             }
+
             for (ItemStack stack : rollSecondCatch(serverLevel, player, hook)) {
+                FishSizeEvents.rollAndApplySize(player, stack);
                 spawnCaughtItem(serverLevel, hook, player, stack);
                 awardCatchStat(player, stack);
             }
