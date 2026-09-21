@@ -36,15 +36,18 @@
   "item.crabbersdelight.cooked_tropical_fish_slice": "Жареный ломтик тропической рыбы",
   "item.crabbersdelight.pufferfish_slice": "Сырой ломтик иглобрюха",
   "item.crabbersdelight.cooked_pufferfish_slice": "Жареный ломтик иглобрюха",
+  "item.crabbersdelight.fried_fish": "Жареная рыба",
+  "item.crabbersdelight.fish_sandwich": "Сэндвич с рыбой",
   "item.crabbersdelight.bisque": "Биск",
   "item.crabbersdelight.seafood_gumbo": "Гамбо из морепродуктов",
   "item.crabbersdelight.stuffed_nautilus_shell": "Фаршированная раковина наутилуса",
   "item.crabbersdelight.shrimp_fried_rice": "Жареный рис с креветками",
   "item.crabbersdelight.jar_of_pickles": "Банка с огурцами",
   "item.crabbersdelight.sea_pickle_juice": "Сок морских огурцов",
-  "item.crabbersdelight.squid_kebob": "Спрут на палочке",
-  "item.crabbersdelight.frog_leg_kebob": "Лягушачья ножка на палочке",
+  "item.crabbersdelight.squid_kebab": "Спрут на палочке",
+  "item.crabbersdelight.frog_leg_kebab": "Лягушачья ножка на палочке",
   "item.crabbersdelight.coral_crunch": "Коралловые сухарики",
+  "item.crabbersdelight.turtle_stew": "Черепаховое рагу",
 
   "item.crabbersdelight.soggy_flesh": "Сырая плоть",
   "item.crabbersdelight.arid_flesh": "Сухая плоть",
@@ -119,22 +122,110 @@
   "block.crabbersdelight.sea_pickle_crate": "Ящик с морскими огурцами",
   "block.crabbersdelight.seashells": "Ракушки",
   "block.crabbersdelight.fish_plaque": "Рыбная доска",
+  "block.crabbersdelight.note_block": "Нотный блок",
+  "block.crabbersdelight.tackle_box": "Ящик рыболова",
+  "block.crabbersdelight.worm_bin": "Червятник",
+  "block.crabbersdelight.wormy_dirt": "Червивая земля",
+
+  "block.crabbersdelight.life_preserver": "Спасательный круг",
+  "tooltip.crabbersdelight.life_preserver.desc": "Наденьте, чтобы держаться на воде",
+
+  "item.crabbersdelight.note": "Записка",
+  "item.crabbersdelight.signed_note": "Подписанная записка",
+  "item.crabbersdelight.signed_note.author": "от %s",
+  "item.crabbersdelight.message_bottle": "Послание в бутылке",
+  "item.crabbersdelight.bottled_note": "Записка в бутылке",
+  "item.crabbersdelight.message_bottle.desc": "Shift + клик, чтобы открыть",
+  "gui.crabbersdelight.note.edit": "Написать записку",
+  "gui.crabbersdelight.note.placeholder": "Введите своё послание...",
+  "gui.crabbersdelight.note.sign": "Подписать",
+  "gui.crabbersdelight.note.read": "Записка",
+  "gui.crabbersdelight.note.editTitle": "Введите название записки",
+  "gui.crabbersdelight.note.finalizeWarning": "После подписания записку нельзя будет изменить.",
+  "gui.crabbersdelight.note.generation.original": "Оригинал",
+  "gui.crabbersdelight.note.generation.copy": "Копия оригинала",
+  "gui.crabbersdelight.note.generation.copy_of_copy": "Копия с копии",
+  "gui.crabbersdelight.note.generation.tattered": "Потрёпанная",
+
+  "tooltip.crabbersdelight.fish_size.tiny": "Крошечная",
+  "tooltip.crabbersdelight.fish_size.small": "Мелкая",
+  "tooltip.crabbersdelight.fish_size.regular": "Обычная",
+  "tooltip.crabbersdelight.fish_size.large": "Крупная",
+  "tooltip.crabbersdelight.fish_size.huge": "Огромная",
+
+  "item.crabbersdelight.tackle_box": "Ящик рыболова",
+  "item.crabbersdelight.tackle_box.lure": "Приманка: %s",
+  "item.crabbersdelight.tackle_box.line": "Леска: %s",
+  "item.crabbersdelight.tackle_box.bait": "Наживка: %s",
+  "item.crabbersdelight.crab_trap.bait": "Наживка: %s",
+  "gui.crabbersdelight.tackle_box.lure_slot": "Приманка",
+  "gui.crabbersdelight.tackle_box.line_slot": "Леска",
+  "gui.crabbersdelight.tackle_box.bait_slot": "Наживка",
+
+  "item.crabbersdelight.barbed_lure": "Зубчатая приманка",
+  "tooltip.crabbersdelight.barbed_lure.desc": "Даёт больше времени на подсечку после поклёвки",
+
+  "item.crabbersdelight.double_lure": "Двойная приманка",
+  "tooltip.crabbersdelight.double_lure.desc": "Удваивает добычу с каждой рыбалки",
+
+  "item.crabbersdelight.magnetic_lure": "Магнитная приманка",
+  "tooltip.crabbersdelight.magnetic_lure.desc": "Повышает шанс выловить сокровища",
+
+  "item.crabbersdelight.automatic_lure": "Автоматическая приманка",
+  "tooltip.crabbersdelight.automatic_lure.desc": "Автоматически подсекает при поклёвке",
+
+  "item.crabbersdelight.storm_lure": "Штормовая приманка",
+  "tooltip.crabbersdelight.storm_lure.desc": "Повышает удачу в дождь и ещё сильнее — в грозу",
+
+  "item.crabbersdelight.fishing_line": "Леска",
+  "tooltip.crabbersdelight.fishing_line.desc": "Увеличивает максимальную дальность заброса",
+
+  "item.crabbersdelight.worm": "Червь",
+  "item.crabbersdelight.worm_bin": "Червятник",
+
+  "item.crabbersdelight.conch": "Раковина",
+  "tooltip.crabbersdelight.conch.desc": "Приложите к уху и послушайте, что скажет море",
+
+  "message.crabbersdelight.conch.very_bad.1": "Волны не на вашей стороне",
+  "message.crabbersdelight.conch.very_bad.2": "На горизонте собирается буря",
+  "message.crabbersdelight.conch.very_bad.3": "Глубины шепчут о несчастье",
+
+  "message.crabbersdelight.conch.bad.1": "Течения будто неспокойны",
+  "message.crabbersdelight.conch.bad.2": "Раковина гудит от тревоги",
+  "message.crabbersdelight.conch.bad.3": "Воды тихо предупреждают о чём-то",
+
+  "message.crabbersdelight.conch.neutral.1": "Море ничего не выдаёт",
+  "message.crabbersdelight.conch.neutral.2": "Волны поднимаются и опадают, как всегда",
+  "message.crabbersdelight.conch.neutral.3": "Раковина хранит лишь молчание",
+
+  "message.crabbersdelight.conch.good.1": "Воды кажутся спокойными и приветливыми",
+  "message.crabbersdelight.conch.good.2": "Ласковое течение несёт добрые вести",
+  "message.crabbersdelight.conch.good.3": "Раковина тихо благоволит вам",
+
+  "message.crabbersdelight.conch.very_good.1": "Океанские волны вторят удаче",
+  "message.crabbersdelight.conch.very_good.2": "Приливы ярко поют в вашу пользу",
+  "message.crabbersdelight.conch.very_good.3": "Глубины мерцают обещанием",
 
   "entity.crabbersdelight.crab": "Краб",
 
   "crabbersdelight.jei.crab_trap_loot": "Крабовая ловушка",
+  "gui.crabbersdelight.jei.note_cloning": "Копирование записки",
+  "gui.crabbersdelight.jei.bottled_note": "Записка в бутылке",
 
   "crabbersdelight.advancement.root": "Изыски краболова",
   "crabbersdelight.advancement.root.desc": "Вас ждут приключения с морепродуктами!",
 
   "crabbersdelight.advancement.craft_crab_trap": "Это ловушка!",
-  "crabbersdelight.advancement.craft_crab_trap.desc": "Используйте страховочную сеть, плиты и палки, чтобы сделать свою первую крабовую ловушку",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "Смастерите свою первую крабовую ловушку из сетки, плит и палок",
 
   "crabbersdelight.advancement.cook_crustaceans": "Время ракообразных",
-  "crabbersdelight.advancement.cook_crustaceans.desc": "Приготовьте крабов, креветок и лобстеров, отварив их в кухонном котле",
+  "crabbersdelight.advancement.cook_crustaceans.desc": "Приготовьте крабов, креветок и клешнехватов, отварив их в кухонном котле",
 
   "crabbersdelight.advancement.get_pearl": "Нежные жемчужные переливы!",
   "crabbersdelight.advancement.get_pearl.desc": "Получите свой первый жемчуг, разрезав моллюсков на разделочной доске. Может быть, таинственный торговец найдёт его ценным...",
+
+  "crabbersdelight.advancement.get_pearl_necklace": "Жемчуг да на шею",
+  "crabbersdelight.advancement.get_pearl_necklace.desc": "Смастерите жемчужное ожерелье. Очень пригодится в подводных приключениях!",
 
   "crabbersdelight.advancement.a_shrimp_fried_this_rice": "Как креветка жарила рис",
   "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "Приготовьте жареный рис с креветками",
@@ -151,8 +242,17 @@
   "crabbersdelight.advancement.glow_squid_killer": "Ещё более глубоководный убийца",
   "crabbersdelight.advancement.glow_squid_killer.desc": "Используйте нож, чтобы получить щупальца из светящегося спрута",
 
-  "crabbersdelight.block.crab_trap.not_waterlogged": "Крабовая ловушка должна находиться в воде",
-  "crabbersdelight.block.crab_trap.insufficient_surrounding_water": "Крабовой ловушке необходимо пространство из воды 3×3 блока вокруг",
+  "crabbersdelight.advancement.gone_fishin": "Червяк не рыбаку, а рыбке",
+  "crabbersdelight.advancement.gone_fishin.desc": "Смастерите ящик рыболова, чтобы использовать разные приманки и наживки",
+
+  "crabbersdelight.advancement.master_baiter": "Клёвый клёв",
+  "crabbersdelight.advancement.master_baiter.desc": "Используйте наживку во время рыбалки",
+
+  "crabbersdelight.advancement.they_pay_me_in_woims": "Мне платят червями",
+  "crabbersdelight.advancement.they_pay_me_in_woims.desc": "Смастерите червятник, чтобы разводить больше червей",
+
+  "crabbersdelight.advancement.castaway_couture": "Робинзон от-кутюр",
+  "crabbersdelight.advancement.castaway_couture.desc": "Догадайтесь, как надеть кокос себе на голову",
 
   "tag.item.crabbersdelight.raw_seafood": "Сырые морепродукты",
   "tag.item.crabbersdelight.cooked_seafood": "Жареные морепродукты",
@@ -176,6 +276,9 @@
   "tag.item.crabbersdelight.jei_display_results.minecraft.pufferfish": "Ловля на иглобрюха",
   "tag.item.crabbersdelight.jei_display_results.minecraft.salmon": "Ловля на лосося",
   "tag.item.crabbersdelight.jei_display_results.minecraft.tropical_fish": "Ловля на тропическую рыбу",
+
+  "fluid_type.crabbersdelight.sea_pickle_juice": "Сок морских огурцов",
+  "fluid_type.crabbersdelight.coconut_milk": "Кокосовое молоко",
 
   "trim_material.crabbersdelight.pearl": "Жемчужная"
 }
