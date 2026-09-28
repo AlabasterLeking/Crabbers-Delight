@@ -24,20 +24,22 @@
   "item.crabbersdelight.cooked_frog_leg": "熟青蛙腿",
 
   "item.crabbersdelight.kelp_shake": "海带汁",
-  "item.crabbersdelight.crab_cakes": "蟹肉饼",
+  "item.crabbersdelight.crab_cakes": "蟹糕",
   "item.crabbersdelight.crab_legs": "蟹腿",
   "item.crabbersdelight.cooked_tropical_fish": "熟热带鱼",
-  "item.crabbersdelight.shrimp_skewer": "烤虾串",
+  "item.crabbersdelight.shrimp_skewer": "虾串",
   "item.crabbersdelight.surf_and_turf": "海陆大餐",
-  "item.crabbersdelight.fish_stick": "烤鱼柳",
+  "item.crabbersdelight.fish_stick": "鱼柳",
   "item.crabbersdelight.clam_bake": "蛤蜊大杂烩",
   "item.crabbersdelight.clam_chowder": "蛤蜊浓汤",
-  "item.crabbersdelight.tropical_fish_slice": "热带鱼片",
+  "item.crabbersdelight.tropical_fish_slice": "生热带鱼片",
   "item.crabbersdelight.cooked_tropical_fish_slice": "熟热带鱼片",
-  "item.crabbersdelight.pufferfish_slice": "河豚片",
+  "item.crabbersdelight.pufferfish_slice": "生河豚片",
   "item.crabbersdelight.cooked_pufferfish_slice": "熟河豚片",
+  "item.crabbersdelight.fried_fish": "炸鱼",
+  "item.crabbersdelight.fish_sandwich": "鱼肉三明治",
   "item.crabbersdelight.bisque": "法式贝类浓汤",
-  "item.crabbersdelight.seafood_gumbo": "海鲜秋葵浓汤",
+  "item.crabbersdelight.seafood_gumbo": "海鲜浓汤",
   "item.crabbersdelight.stuffed_nautilus_shell": "填馅鹦鹉螺",
   "item.crabbersdelight.shrimp_fried_rice": "虾炒饭",
   "item.crabbersdelight.jar_of_pickles": "泡菜罐",
@@ -45,6 +47,7 @@
   "item.crabbersdelight.squid_kebab": "鱿鱼烤串",
   "item.crabbersdelight.frog_leg_kebab": "青蛙腿烤串",
   "item.crabbersdelight.coral_crunch": "珊瑚脆片",
+  "item.crabbersdelight.turtle_stew": "海龟汤",
 
   "item.crabbersdelight.soggy_flesh": "潮湿的肉",
   "item.crabbersdelight.arid_flesh": "干燥的肉",
@@ -55,14 +58,14 @@
   "item.crabbersdelight.fish_bones": "鱼骨",
 
   "item.minecraft.potion.effect.inky_potion": "墨盲药水",
-  "item.minecraft.splash_potion.effect.inky_potion": "喷溅形墨盲药水",
-  "item.minecraft.lingering_potion.effect.inky_potion": "滞留性墨盲药水",
+  "item.minecraft.splash_potion.effect.inky_potion": "喷溅型墨盲药水",
+  "item.minecraft.lingering_potion.effect.inky_potion": "滞留型墨盲药水",
   "item.minecraft.tipped_arrow.effect.inky_potion": "墨盲之箭",
 
-  "item.crabbersdelight.bucket_of_crab_chum": "螃蟹诱饵桶",
-  "item.crabbersdelight.bucket_of_clawster_chum": "龙虾诱饵桶",
-  "item.crabbersdelight.bucket_of_clam_chum": "蛤蜊诱饵桶",
-  "item.crabbersdelight.bucket_of_shrimp_chum": "虾诱饵桶",
+  "item.crabbersdelight.bucket_of_crab_chum": "蟹糜桶",
+  "item.crabbersdelight.bucket_of_clawster_chum": "龙虾糜桶",
+  "item.crabbersdelight.bucket_of_clam_chum": "蛤蜊糜桶",
+  "item.crabbersdelight.bucket_of_shrimp_chum": "虾糜桶",
 
   "item.crabbersdelight.crab_claw": "蟹钳",
   "item.crabbersdelight.pearl_necklace": "珍珠项链",
@@ -70,7 +73,37 @@
   "item.crabbersdelight.crab_spawn_egg": "螃蟹刷怪蛋",
   "item.crabbersdelight.crab_bucket": "螃蟹桶",
 
-  "block.crabbersdelight.crab_trap": "捕蟹笼",
+  "block.crabbersdelight.palm_log": "棕榈木原木",
+  "block.crabbersdelight.stripped_palm_log": "去皮棕榈木原木",
+  "block.crabbersdelight.palm_wood": "棕榈木",
+  "block.crabbersdelight.stripped_palm_wood": "去皮棕榈木",
+  "block.crabbersdelight.palm_planks": "棕榈木木板",
+  "block.crabbersdelight.palm_slab": "棕榈木台阶",
+  "block.crabbersdelight.palm_stairs": "棕榈木楼梯",
+  "block.crabbersdelight.palm_fence": "棕榈木栅栏",
+  "block.crabbersdelight.palm_fence_gate": "棕榈木栅栏门",
+  "block.crabbersdelight.palm_door": "棕榈木门",
+  "block.crabbersdelight.palm_trapdoor": "棕榈木活板门",
+  "block.crabbersdelight.palm_pressure_plate": "棕榈木压力板",
+  "block.crabbersdelight.palm_button": "棕榈木按钮",
+  "block.crabbersdelight.palm_leaves": "棕榈树叶",
+  "block.crabbersdelight.palm_sapling": "棕榈树苗",
+  "block.crabbersdelight.palm_sign": "棕榈木告示牌",
+  "block.crabbersdelight.palm_hanging_sign": "棕榈木悬挂告示牌",
+  "item.crabbersdelight.palm_boat": "棕榈木船",
+  "item.crabbersdelight.palm_chest_boat": "棕榈木运输船",
+  "block.crabbersdelight.palm_cabinet": "棕榈木橱柜",
+
+  "block.crabbersdelight.coconut": "椰子",
+  "item.crabbersdelight.coconut_helmet": "椰子头盔",
+  "block.crabbersdelight.coconut_crate": "椰子箱",
+  "death.attack.crabbersdelight.falling_coconut": "%s被掉落的椰子砸死了",
+  "item.crabbersdelight.coconut_halve": "半个椰子",
+  "item.crabbersdelight.coconut_milk": "椰奶",
+  "tooltip.farmersdelight.coconut_milk": "随机清除1个效果",
+  "item.crabbersdelight.coconut_pudding": "椰子布丁",
+
+  "block.crabbersdelight.crab_trap": "蟹笼",
   "block.crabbersdelight.crab_barrel": "桶装螃蟹",
   "block.crabbersdelight.clam_barrel": "桶装蛤蜊",
   "block.crabbersdelight.clawster_barrel": "桶装龙虾",
@@ -87,22 +120,112 @@
   "block.crabbersdelight.pearl_block": "珍珠块",
   "block.crabbersdelight.scute_block": "鳞甲块",
   "block.crabbersdelight.sea_pickle_crate": "箱装海泡菜",
+  "block.crabbersdelight.seashells": "贝壳",
+  "block.crabbersdelight.fish_plaque": "鱼牌",
+  "block.crabbersdelight.note_block": "便笺",
+  "block.crabbersdelight.tackle_box": "钓具盒",
+  "block.crabbersdelight.worm_bin": "蚯蚓箱",
+  "block.crabbersdelight.wormy_dirt": "含有蚯蚓的泥土",
+
+  "block.crabbersdelight.life_preserver": "救生圈",
+  "tooltip.crabbersdelight.life_preserver.desc": "装备时允许玩家在水面上漂浮",
+
+  "item.crabbersdelight.note": "便笺",
+  "item.crabbersdelight.signed_note": "签名便笺",
+  "item.crabbersdelight.signed_note.author": "%s著",
+  "item.crabbersdelight.message_bottle": "瓶中信",
+  "item.crabbersdelight.bottled_note": "瓶中便笺",
+  "item.crabbersdelight.message_bottle.desc": "Shift右键打开",
+  "gui.crabbersdelight.note.edit": "编写便笺",
+  "gui.crabbersdelight.note.placeholder": "写点什么……",
+  "gui.crabbersdelight.note.sign": "签名",
+  "gui.crabbersdelight.note.read": "便笺",
+  "gui.crabbersdelight.note.editTitle": "输入便笺标题",
+  "gui.crabbersdelight.note.finalizeWarning": "便笺签名后不可再更改",
+  "gui.crabbersdelight.note.generation.original": "原版",
+  "gui.crabbersdelight.note.generation.copy": "原版的副本",
+  "gui.crabbersdelight.note.generation.copy_of_copy": "副本的副本",
+  "gui.crabbersdelight.note.generation.tattered": "破损",
+
+  "tooltip.crabbersdelight.fish_size.tiny": "超小",
+  "tooltip.crabbersdelight.fish_size.small": "小",
+  "tooltip.crabbersdelight.fish_size.regular": "普通",
+  "tooltip.crabbersdelight.fish_size.large": "大",
+  "tooltip.crabbersdelight.fish_size.huge": "巨大",
+
+  "item.crabbersdelight.tackle_box": "钓具盒",
+  "item.crabbersdelight.tackle_box.lure": "假饵：%s",
+  "item.crabbersdelight.tackle_box.line": "鱼线：%s",
+  "item.crabbersdelight.tackle_box.bait": "鱼饵：%s",
+  "item.crabbersdelight.crab_trap.bait": "诱饵：%s",
+  "gui.crabbersdelight.tackle_box.lure_slot": "假饵",
+  "gui.crabbersdelight.tackle_box.line_slot": "鱼线",
+  "gui.crabbersdelight.tackle_box.bait_slot": "鱼饵",
+
+  "item.crabbersdelight.barbed_lure": "倒刺钩",
+  "tooltip.crabbersdelight.barbed_lure.desc": "延长收线的时间窗口",
+
+  "item.crabbersdelight.double_lure": "双倍饵",
+  "tooltip.crabbersdelight.double_lure.desc": "双倍渔获",
+
+  "item.crabbersdelight.magnetic_lure": "渔用磁铁",
+  "tooltip.crabbersdelight.magnetic_lure.desc": "提升钓起宝藏的概率",
+
+  "item.crabbersdelight.automatic_lure": "自动饵",
+  "tooltip.crabbersdelight.automatic_lure.desc": "上钩时自动收线",
+
+  "item.crabbersdelight.storm_lure": "风暴饵",
+  "tooltip.crabbersdelight.storm_lure.desc": "在雨中获得额外幸运值，在雷暴中获得更多",
+
+  "item.crabbersdelight.fishing_line": "鱼线",
+  "tooltip.crabbersdelight.fishing_line.desc": "提升最大甩竿距离",
+
+  "item.crabbersdelight.worm": "蚯蚓",
+  "item.crabbersdelight.worm_bin": "蚯蚓箱",
+
+  "item.crabbersdelight.conch": "海螺",
+  "tooltip.crabbersdelight.conch.desc": "放在耳边，聆听大海的声音",
+
+  "message.crabbersdelight.conch.very_bad.1": "浪潮对你不利",
+  "message.crabbersdelight.conch.very_bad.2": "一场风暴正在酝酿",
+  "message.crabbersdelight.conch.very_bad.3": "深渊传来厄运的低语",
+
+  "message.crabbersdelight.conch.bad.1": "湍流不息",
+  "message.crabbersdelight.conch.bad.2": "海螺里传来令人不安的低鸣",
+  "message.crabbersdelight.conch.bad.3": "大海发出无声的警告",
+
+  "message.crabbersdelight.conch.neutral.1": "海绵毫无波澜",
+  "message.crabbersdelight.conch.neutral.2": "潮来潮去，一如既往",
+  "message.crabbersdelight.conch.neutral.3": "海螺里什么声音也没有",
+
+  "message.crabbersdelight.conch.good.1": "海面波澜不惊，是个钓鱼的好日子",
+  "message.crabbersdelight.conch.good.2": "潮水中传来喜讯",
+  "message.crabbersdelight.conch.good.3": "海螺发出好运的低鸣",
+
+  "message.crabbersdelight.conch.very_good.1": "海浪敲击出丰收的回响",
+  "message.crabbersdelight.conch.very_good.2": "浪潮高唱着收获的歌谣",
+  "message.crabbersdelight.conch.very_good.3": "海洋深处闪烁着机遇的光芒",
 
   "entity.crabbersdelight.crab": "螃蟹",
 
   "crabbersdelight.jei.crab_trap_loot": "捕蟹笼",
+  "gui.crabbersdelight.jei.note_cloning": "复制便笺",
+  "gui.crabbersdelight.jei.bottled_note": "便笺装瓶",
 
   "crabbersdelight.advancement.root": "蟹农乐事",
   "crabbersdelight.advancement.root.desc": "一场海鲜冒险在等着你！",
 
   "crabbersdelight.advancement.craft_crab_trap": "这是个蟹阱！",
-  "crabbersdelight.advancement.craft_crab_trap.desc": "用绳子、台阶和木棍来制作你的第一个捕蟹笼",
+  "crabbersdelight.advancement.craft_crab_trap.desc": "用绳子、台阶和木棍制作一个捕蟹笼",
 
   "crabbersdelight.advancement.cook_crustaceans": "甲壳动物烹饪站",
   "crabbersdelight.advancement.cook_crustaceans.desc": "将螃蟹、虾和龙虾用厨锅煮熟",
 
   "crabbersdelight.advancement.get_pearl": "美丽的珍珠之母啊！",
   "crabbersdelight.advancement.get_pearl.desc": "在砧板上剖开蛤蜊，获得第一颗珍珠。也许神秘商人会发现它的价值……",
+
+  "crabbersdelight.advancement.get_pearl_necklace": "珍珠白",
+  "crabbersdelight.advancement.get_pearl_necklace.desc": "制作一条珍珠项链——对水下冒险非常有用！",
 
   "crabbersdelight.advancement.a_shrimp_fried_this_rice": "虾炒饭？！",
   "crabbersdelight.advancement.a_shrimp_fried_this_rice.desc": "这饭真的是虾炒的？！不可能！",
@@ -119,29 +242,43 @@
   "crabbersdelight.advancement.glow_squid_killer": "渊洋杀手",
   "crabbersdelight.advancement.glow_squid_killer.desc": "用刀从发光鱿鱼身上切下发光鱿鱼须",
 
-  "crabbersdelight.block.crab_trap.not_waterlogged": "捕蟹笼必须放置在水中",
-  "crabbersdelight.block.crab_trap.insufficient_surrounding_water": "捕蟹笼必须放在3x3的水中才能工作！",
+  "crabbersdelight.advancement.gone_fishin": "钓鱼佬",
+  "crabbersdelight.advancement.gone_fishin.desc": "制作钓具盒来使用各种饵",
+
+  "crabbersdelight.advancement.master_baiter": "打窝仙人",
+  "crabbersdelight.advancement.master_baiter.desc": "在钓鱼时使用鱼饵",
+
+  "crabbersdelight.advancement.they_pay_me_in_woims": "陈年老蚯蚓",
+  "crabbersdelight.advancement.they_pay_me_in_woims.desc": "制作一个蚯蚓箱来生成更多蚯蚓",
+
+  "crabbersdelight.advancement.castaway_couture": "漂流者的针线活",
+  "crabbersdelight.advancement.castaway_couture.desc": "想办法把椰子戴到头上",
 
   "tag.item.crabbersdelight.raw_seafood": "生海鲜",
   "tag.item.crabbersdelight.cooked_seafood": "熟海鲜",
 
-  "tag.item.crabbersdelight.raw_squid": "生鱿鱼须",
-  "tag.item.crabbersdelight.cooked_squid": "熟鱿鱼须",
+  "tag.item.crabbersdelight.raw_squid": "生鱿鱼",
+  "tag.item.crabbersdelight.cooked_squid": "熟鱿鱼",
 
   "tag.item.crabbersdelight.crab_tempt_item": "吸引螃蟹的物品",
-  "tag.item.crabbersdelight.crab_trap_bait": "螃蟹陷阱诱饵",
+  "tag.item.crabbersdelight.crab_trap_bait": "蟹笼用诱饵",
 
-  "tag.item.crabbersdelight.creature_chums": "生物诱饵",
+  "tag.item.crabbersdelight.creature_chums": "鱼糜",
+  
+  "tag.item.crabbersdelight.palm_logs": "棕榈木原木",
 
-  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clam_chum": "蛤蜊诱饵桶",
-  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clawster_chum": "龙虾诱饵桶",
-  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_crab_chum": "螃蟹诱饵桶",
-  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_shrimp_chum": "虾诱饵桶",
-  "tag.item.crabbersdelight.jei_display_results.minecraft.air": "无需诱饵",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clam_chum": "蛤蜊糜桶",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_clawster_chum": "龙虾糜桶",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_crab_chum": "蟹糜桶",
+  "tag.item.crabbersdelight.jei_display_results.crabbersdelight.bucket_of_shrimp_chum": "虾糜桶",
+  "tag.item.crabbersdelight.jei_display_results.minecraft.air": "无诱饵",
   "tag.item.crabbersdelight.jei_display_results.minecraft.cod": "鳕鱼诱饵",
   "tag.item.crabbersdelight.jei_display_results.minecraft.pufferfish": "河豚诱饵",
   "tag.item.crabbersdelight.jei_display_results.minecraft.salmon": "鲑鱼诱饵",
   "tag.item.crabbersdelight.jei_display_results.minecraft.tropical_fish": "热带鱼诱饵",
+
+  "fluid_type.crabbersdelight.sea_pickle_juice": "海泡菜汁",
+  "fluid_type.crabbersdelight.coconut_milk": "椰奶",
 
   "trim_material.crabbersdelight.pearl": "珍珠质"
 }
